@@ -12,6 +12,7 @@ docs/        公开笔记、方法说明与团队规范
 documents/   历年官方试题索引与本地下载工具
 notebooks/   探索性分析与可复现实验
 src/         可复用的建模、求解和可视化代码
+skills/      可复用的数学建模 AI 工作流 Skill
 tests/       关键函数与结果一致性测试
 templates/   论文、实验记录和 AI 使用记录模板
 ```
