@@ -1,0 +1,10 @@
+{
+  "id": "zh08js",
+  "url": "https://robot.sia.cn/style/js/article_cn.js",
+  "final_url": "https://robot.sia.cn/style/js/article_cn.js",
+  "content_type": "application/javascript",
+  "status": "html",
+  "links": [],
+  "metadata": [],
+  "snippet": "var pageTypeDefault = \"zh\";\r\nvar viewType = getUrlParam(\"viewType\");\r\nif ($(\"#articleId\").length > 0) {\r\n    var articleId = allData.article.id;\r\n\r\n    //citation显示  已弃用\r\n    //showCitation();\r\n\r\n    //关系图\r\n    //getRelationship();\r\n    loadCitedByInfo();\r\n    //文章详情页跳转\r\n\r\n    isZhJournalEnArticle();\r\n\r\n\r\n\r\n    if (viewType && \"HTML\" == viewType) {"
+}

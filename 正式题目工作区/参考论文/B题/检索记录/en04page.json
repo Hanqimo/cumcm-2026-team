@@ -1,0 +1,23 @@
+{
+  "id": "en04page",
+  "url": "https://arxiv.org/abs/2002.09850",
+  "final_url": "https://arxiv.org/abs/2002.09850",
+  "content_type": "text/html; charset=utf-8",
+  "status": "html",
+  "links": [
+    "https://arxiv.org/pdf/2002.09850",
+    "https://arxiv.org/pdf/2002.09850",
+    "http://www.bibsonomy.org/BibtexHandler?requTask=upload&amp;url=https://arxiv.org/abs/2002.09850&amp;description=Active localization of multiple targets using noisy relative measurements"
+  ],
+  "metadata": [
+    "<meta name=\"citation_title\" content=\"Active localization of multiple targets using noisy relative measurements\" />",
+    "<meta name=\"citation_author\" content=\"Engin, Selim\" />",
+    "<meta name=\"citation_author\" content=\"Isler, Volkan\" />",
+    "<meta name=\"citation_date\" content=\"2020/02/23\" />",
+    "<meta name=\"citation_online_date\" content=\"2020/02/23\" />",
+    "<meta name=\"citation_pdf_url\" content=\"https://arxiv.org/pdf/2002.09850\" />",
+    "<meta name=\"citation_arxiv_id\" content=\"2002.09850\" />",
+    "<meta name=\"citation_abstract\" content=\"Consider a mobile robot tasked with localizing targets at unknown locations by obtaining relative measurements. The observations can be bearing or range measurements. How should the robot move so as to localize the targets and minimize the uncertainty in their locations as quickly as possible? Most existing approaches are either greedy in nature or rely on accurate initial estimates. We formulate this path planning problem as an unsupervised learning problem where the measurements are aggregated using a Bayesian histogram filter. The robot learns to minimize the total uncertainty of each target in the shortest amount of time using the current measurement and an aggregate representation of the current belief state. We analyze our method in a series of experiments where we show that our method outperforms a standard greedy approach. In addition, its performance is also comparable to an offline algorithm which has access to the true location of the targets.\" />"
+  ],
+  "snippet": ""
+}

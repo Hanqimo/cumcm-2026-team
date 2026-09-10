@@ -1,0 +1,2841 @@
+<!DOCTYPE html>
+<HTML xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<HEAD>
+<TITLE>指挥控制与仿真</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/develop/static/common/css/css.css">
+<link rel="stylesheet" href="/js/jqpagination/jqpagination.css" />
+<script src="/js/jquery/jquery.min.js"></script>
+<script src="/js/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/jquery/jquery.qrcode.min.js"></script>
+<script src="/develop/static/common/js/common_cn.js"></script>
+<script src="/develop/static/common/js/component_cn.js"></script>
+<script language="javascript" src="/js/store.js"></script>
+<script language="javascript" src="/develop/static/common/js/download_cn.js"></script>
+<script language="javascript" src="/js/My97DatePicker/WdatePicker.js"></script>
+<script language="javascript" src="/develop/static/common/js/xss/xss.js"></script>
+<link rel="stylesheet" href="/develop/static/common/bootstrap/js/font-awesome.min.css">
+<script language="javascript" src="/develop/static/common/js/xss/mag-xss.js"></script>
+
+<script>
+	$(document).ready(function(){
+		$("title").text($("title").text().replace(/<\/?[^>]*>/g,""));
+	});
+</script>
+
+<style>
+      svg.markmap {
+        width: 100%;
+        height:100%;
+      }
+      .markmap {
+        width: 100%;
+        height:400px;
+      }
+.circle-border {
+	background-color: #CCCCCC; /* 可选，如果想要看到背景 */
+	border: 2px solid #fff; /* 边框宽度和颜色 */
+	border-radius: 50%; /* 将四个角设置为50%，形成圆形 */
+	padding:3px 8px;
+}
+#soin-summary-div img {
+    max-width: 100%;
+}
+</style>
+
+
+
+
+
+
+
+
+<meta name="renderer"  content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="windows-target" content="_top">
+<meta name="robots" content="follow,noarchive"/>
+
+<meta name="keywords" content="指挥控制与仿真"> <!-- 中文刊名 -->
+
+
+<meta name="keywords" content="Command Control and Simulation">  <!-- 英文刊名 -->
+
+<meta name="description" content="Command Control and Simulation">  <!-- 刊名缩写 -->
+<meta name="generator" content="Magtech">  
+
+<LINK rel=stylesheet type=text/css href="/js/manu/lrtk.css">
+<script language="javascript" src="/js/manu/manu.js"></script>
+<link rel="stylesheet" href="/js/colorbox/colorbox.css" />
+<script src="/js/colorbox/jquery.colorbox.js"></script>
+
+<script>
+MathJax = {
+tex: {
+inlineMath: [['$', '$'], ['\\(', '\\)']]
+},
+svg: {
+fontCache: 'global'
+}
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async src="/js/mathJax3.0/tex-mml-chtml.js"></script>
+<!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+
+<script language="javascript">
+function collectArticle(id) {
+	var url = window.location.href;
+	jQuery.ajax({
+		url: $("#mag-common-journal-url").val()+"/CN/user/addCollectArticle.do",
+		data: {
+			"articleId": id,
+			"url": url
+		},
+		type: "post",
+		success: function(res) {
+			if (res == "true") {
+				mag_layer({content:"收藏成功！"});
+			} else if (res == "false") {
+				mag_layer({content:"您已经收藏过该篇文章啦！"});
+			} else if (res.length > 5) {
+				window.location.href = $("#mag-common-journal-url").val()+"/CN/user/userInfo_cn.jsp?url=" + res;
+			} else {
+				mag_layer({content:"收藏失败！"});
+			}
+		},
+		error: function() {
+			mag_layer({content:"收藏失败！"});
+		}
+	});
+}
+
+//可视化开始
+$(document).ready(function(){
+    var arrSpan=$("[id^='span_visual_article_']");
+    if(arrSpan && arrSpan.length && arrSpan.length>0 ){
+        for(var i=0;i<arrSpan.length;i++){
+            var articleID=arrSpan[i].id.toString().replace("span_visual_article_","");
+            jQuery.getJSON($("#mag-common-journal-url").val()+"/CN/lexeme/existsCnctstInArticle.do?articleID="+articleID, null, function(json){
+                if(json.result){
+                    $("#span_visual_article_"+json.articleID).show();
+                }
+            });
+        }
+    }
+});
+//可视化结束
+
+//整期购买
+$(document).ready(function(){
+	if($("#volumn_"+$("#mag-current-volumn-id").val()+"_buy").length>0){
+		mag_ajax({
+			url:$("#mag-common-contextPath").val()+"/CN/article/getVolumnInfoForBuy.do?" + new Date().getTime(),
+			data:{volumnId:$("#mag-current-volumn-id").val()},
+			dataType:"json",
+			success:function(data){
+				if(data.volumn.volumnDownloadControl==4){//可购买
+					$("#volumn_"+$("#mag-current-volumn-id").val()+"_buy").show();
+				}
+			}
+		});
+	}
+});
+
+$(document).ready(function(){
+	$(".figureClass").colorbox({rel:'figureClass', transition:"none", width:"80%", height:"80%"});
+	
+});
+//选中文章  文章块  变色
+function hightlightrowaction(rowid) {
+	var thisrow = $("#"+rowid);
+	if ($(thisrow).hasClass("selectedrow")) {
+		$(thisrow).removeClass("selectedrow");
+		$(thisrow).addClass("noselectrow");
+	} else {
+		$(thisrow).addClass("selectedrow");
+		$(thisrow).removeClass("noselectrow");
+	}
+}
+
+function selectall(argu,checkBoxName){
+	var obj = document.getElementsByName(checkBoxName);
+    for(var i= 0;i<obj.length;i++){
+		obj[i].checked = argu.checked;
+        //hightlightrowaction('art'+obj[i].value);
+        var thisrow = $("#art"+obj[i].value);
+        if(obj[i].checked){
+        	if (!$(thisrow).hasClass("selectedrow")) {
+				$(thisrow).addClass("selectedrow");
+				$(thisrow).removeClass("noselectrow");
+			}
+        }else{
+        	if ($(thisrow).hasClass("selectedrow")) {
+				$(thisrow).removeClass("selectedrow");
+				$(thisrow).addClass("noselectrow");
+			}
+        }
+    }
+}
+//文章图片显示隐藏用
+function togthumb() {
+	$(".apwrap").toggleClass("hiden");
+	if($('.apwrap').hasClass('hiden'))
+		$("#thumbtn").attr("src", $("#mag-common-journal-url").val()+"/images/sele_pic2.png");
+	else
+		$("#thumbtn").attr("src", $("#mag-common-journal-url").val()+"/images/sele_pic1.png");
+}
+//导出
+function downloadCitations(type){
+	var flag=0;
+	var ids="";
+	var obj = document.getElementsByName('pid');
+	for(var i= 0;i<obj.length;i++){
+		if(obj[i].checked){
+			flag=1;
+			ids+=obj[i].value+",";
+		}
+    }
+	if(flag==0){
+		mag_layer({content:"请选择文章!"});
+		return  false;
+	}
+	window.location.href=$("#mag-common-journal-url").val()+"/CN/article/getTxtFiles.do?fileType="+type+"&articleIds="+ids;
+}
+function DrawImage(ImgD,FitWidth,FitHeight){
+	var image=new Image();
+	image.src=ImgD.src;
+	if(image.width>0 && image.height>0){
+		if(image.width/image.height>= FitWidth/FitHeight){
+			if(image.width>FitWidth){
+				ImgD.width=FitWidth;
+				ImgD.height=(image.height*FitWidth)/image.width;
+			}else{
+				ImgD.width=image.width;
+				ImgD.height=image.height;
+			}
+		} else{
+			if(image.height>FitHeight){
+				ImgD.height=FitHeight;
+				ImgD.width=(image.width*FitHeight)/image.height;
+			}else{
+				ImgD.width=image.width;
+				ImgD.height=image.height;
+			}
+		}
+	}
+}
+
+
+function exportCitations(){
+	var articleSelected=false;
+	var ids=''
+	var checkboxs = document.getElementsByName("pid");
+	if(checkboxs && checkboxs.length && checkboxs.length>0){
+		for(var i=0;i<checkboxs.length;i++){
+			if(checkboxs[i].checked){
+				articleSelected=true;
+				if(ids==''){
+					ids += checkboxs[i].value;
+				}else{
+					ids += ','+checkboxs[i].value;
+				}
+			}
+		}
+	}
+	if(articleSelected){
+		$("#export-citation-form-ids").val(ids);
+		mag_layer({
+			type:4,
+			title:'导出引用',
+			dom:'export-citation-div'
+		})
+	}else{
+		mag_layer({content:'请选择文章.'});
+	}
+}
+
+//导出
+function downloadCitations(){
+	mag_layer_close();
+	$("#export-citation-form").submit();
+}
+
+</SCRIPT>
+
+<style type="text/css">
+.hiden {
+  display: none;
+}
+.black_overlay{
+    display: none;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: #D8D8D8;
+    z-index:1001;
+    -moz-opacity: 0.8;
+    opacity:.80;
+    filter: alpha(opacity=80);
+}
+.waiting_content {
+    display: none;
+    position: absolute;
+    top: 15%;
+    left: 25%;
+    width: 50%;
+    padding: 16px;
+    border: 1px solid orange;
+    background-color: white;
+    z-index:1002;
+    overflow: auto;
+}
+.STYLE58{
+	text-indent: 2em;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--顶部快速导航下拉导航菜单特效css-->
+<!--<link rel="stylesheet" href="https://www.zhkzyfz.cn/images/1673-3819/css/bootsnav.css"> -->
+<!--网站css-->
+<link rel="stylesheet" href="https://www.zhkzyfz.cn/images/1673-3819/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.zhkzyfz.cn/images/1673-3819/css/css.css">
+<script src="https://www.zhkzyfz.cn/images/1673-3819/js/indexjs.js"></script>
+
+
+</HEAD>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<input type="hidden" id="mag-common-contextPath" value=""/>
+
+<div id="mag-component-store-div" style="display:none;"></div>
+			
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="magModal" tabindex="-1" role="dialog" data-keyboard=false data-backdrop='static' aria-labelledby="magModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button buttonGroup="0" type="button"  class="close"  aria-hidden="true" onclick="mag_layer_close();">
+					&times;
+				</button>
+				<h4 class="modal-title" id="magModalLabel">
+					模态框（Modal）标题
+				</h4>
+			</div>
+			<div class="modal-body" id="mag-modal-body" style="overflow:auto;">
+				在这里添加一些文本
+			</div>
+			<div id="mag-layer-button-div" class="modal-footer">
+				<button buttonGroup="1" type="button"  class="btn btn-default"  onclick="mag_layer_close();">关闭
+				</button>
+				<button buttonGroup="2" type="button"  class="btn btn-default"  onclick="mag_layer_close();">关闭
+				</button>
+				<button buttonGroup="2" type="button" class="btn btn-primary" onclick="mag_submit()" id="mag_layer_submit_button_2">
+					提交更改
+				</button>
+				<button buttonGroup="3" type="button"  class="btn btn-default"  onclick="mag_layer_close();">取消
+				</button>
+				<button buttonGroup="3" type="button" class="btn btn-primary" onclick="mag_submit()" id="mag_layer_submit_button_3">
+					确定并提交
+				</button>
+				
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+
+<div id="magModal_2" style="display:none;position:fixed;left:0px;top:0px;right:0px;bottom:0px;z-index:1060">
+	<div class="modal-dialog" style="margin-top:60px;">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button buttonGroup="0" type="button" id="mag-madal-close_bt_2"  class="close"  aria-hidden="true" onclick="mag_layer_close_2();">
+					&times;
+				</button>
+				<h4 class="modal-title" id="magModalLabel_2">
+					模态框（Modal）标题
+				</h4>
+			</div>
+			<div id="modal-body_2" class="modal-body"></div>
+		</div>
+	</div>
+</div>
+
+<!-- 模态框-Tab -->
+<div class="modal fade" id="magTabModal" tabindex="-1" role="dialog" data-keyboard=false data-backdrop='static' aria-labelledby="magTabModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header" style="border-bottom:0px;padding:15px 0px;">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="padding-right:15px;">
+					&times;
+				</button>
+				
+<ul id="magTab" class="nav nav-tabs">
+
+</ul>
+			</div>
+			<div class="modal-body">
+				
+<div id="magTabContent" class="tab-content">
+
+</div>
+			</div>
+			<div id="mag-tablayer-button-div" class="modal-footer">
+				
+			</div>
+			
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+
+
+
+<div style="display:none;">
+	<iframe id="mag_sendLongReq_iframe" name="mag_sendLongReq_iframe"></iframe>
+	<iframe id="mag_cma_sso_login_iframe" name="mag_cma_sso_login_iframe"></iframe>
+</div>
+<input type="hidden" id="mag_cma_sso_authorizeUrl" value=""/>
+		
+
+<input type="hidden" id="mag-common-journal-url" value="https://www.zhkzyfz.cn"/>
+<input type="hidden" id="mag-common-journal-issn" value="1673-3819"/>
+<input type="hidden" id="mag-current-volumn-id" value="5"/>
+
+<!--Export弹出-->
+
+
+
+
+
+
+
+<div id="export-citation-div" class="" style="display:none;">
+	<form id="export-citation-form" action="/CN/article/exportCitation.do" target="_blank">
+	<input type="hidden" id="export-citation-form-ids" name="articleIds" />
+	<div class="panel panel-warning" style="color:gray;">
+		下载引用文件后，可以用常见的文献管理软件打开和编辑，包括: BibTex, EndNote, ProCite, RefWorks, and Reference Manager.
+	</div>
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			<h4 class="panel-title">选择文件类型/文献管理软件名称</h4>
+		</div>
+		<div class="panel-body">
+			<div class="radio">
+				<label> <input type="radio" value="Ris" checked="checked" name="fileType">
+					RIS (ProCite, Reference Manager, EndNote)
+				</label>
+			</div>
+			<!-- 
+			<div class="radio">
+				<label> <input type="radio" value="Ris_en" checked="checked" name="fileType">
+					RIS (ProCite, Reference Manager, EndNote) (导英文)
+				</label>
+			</div>
+			 -->
+			<div class="radio">
+				<label> <input type="radio" value="BibTex" name="fileType">
+					BibTeX
+				</label>
+			</div>
+			<!-- 
+			<div class="radio">
+				<label> <input type="radio" value="BibTex_en" checked="checked" name="fileType">
+					BibTeX (导英文)
+				</label>
+			</div>
+			 -->
+		</div>
+	</div>
+	<div class="panel panel-warning">
+		<div class="panel-heading">
+			<h4 class="panel-title">选择包含的内容</h4>
+		</div>
+		<div class="panel-body">
+			<div class="radio">
+				<label> <input type="radio" value="md" checked="checked" name="contentType">
+					仅文章引用信息
+				</label>
+			</div>
+			<div class="radio">
+				<label> <input type="radio" value="ab" name="contentType">
+					引用信息及摘要
+				</label>
+			</div>
+		</div>
+	</div>
+	
+	<button type="button" class="btn btn-lg btn-primary modal-button" style="width:50%;margin:0 auto;display: block;padding: 7px;"
+		onclick="downloadCitations()">导出</button>
+	</form>
+</div>
+<!--Export弹出end-->
+
+
+<!--头部-->
+
+
+<script language="javascript">
+	function tabChange(obj, id) {
+		var arrayli = obj.parentNode.getElementsByTagName("li"); //获取li数组
+		var arrayul = document.getElementById(id).getElementsByTagName("ul"); //获取ul数组
+		for (i = 0; i < arrayul.length; i++) {
+			if (obj == arrayli[i]) {
+				arrayli[i].className = "cli";
+				arrayul[i].className = "";
+			} else {
+				arrayli[i].className = "";
+				arrayul[i].className = "hidden";
+			}
+		}
+	}
+</script>
+<style type="text/css">
+.tabbox {
+	width: 400px;
+	margin-top: 5px;
+	margin-bottom: 5px
+}
+
+.tabmenu {
+	width: 400px;
+	height: 28px;
+	border-left: 1px solid #CCC;
+	border-top: 1px solid #ccc;
+}
+
+.tabmenu ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.tabmenu li {
+	text-align: center;
+	float: left;
+	display: block;
+	width: 99px;
+	overflow: hidden;
+	background-color: #f1f1f1;
+	line-height: 27px;
+	border-right: #ccc 1px solid;
+	border-bottom: #ccc 1px solid;
+	display: inline;
+}
+
+.tabmenu .cli {
+	text-align: center;
+	float: left;
+	display: block;
+	width: 99px;
+	overflow: hidden;
+	background-color: #fff;
+	line-height: 27px;
+	border-right: #ccc 1px solid;
+	border-bottom: #fff 1px solid;
+	display: inline;
+	cursor: pointer;
+	color: #c30000;
+	font-weight: bold
+}
+
+#tabcontent {
+	width: 399px;
+	background-color: #fff;
+	border-left: #CCC 1px solid;
+	border-right: #CCC 1px solid;
+	border-bottom: #CCC 1px solid;
+	height: 65px;
+}
+
+#tabcontent ul {
+	margin: 0;
+	padding: 5px;
+	list-style-type: none;
+}
+
+#tabcontent .hidden {
+	display: none;
+}
+
+img[src*='.traceImg']{
+	width:44px;
+	height:22px;
+}
+</style>
+<div class="wrap">
+    <div class="container">
+        <div class="top_line_main">
+               中国科技核心期刊
+                &nbsp;&nbsp;<img src="https://www.zhkzyfz.cn/images/1673-3819/images/topline.jpg">&nbsp;&nbsp;
+                中国指挥与控制学会会刊&nbsp;&nbsp;<img src="https://www.zhkzyfz.cn/images/1673-3819/images/topline.jpg">&nbsp;&nbsp;
+                军事装备类重点期刊
+		</div>
+	</div>
+</div>
+<div class="journal-head">
+<div class="container">
+
+    <div class="col-md-8 logo">
+		<h1><a href="https://www.zhkzyfz.cn/CN/home"><img src="https://www.zhkzyfz.cn/images/1673-3819/images/logo.png" class="img-responsive" alt=""></a></h1>
+    </div>
+	
+    
+
+</div>
+
+</div>
+
+<!--导航-->
+
+<!--导航-->
+<div class="navbar site-nav whitebg">
+<div class="container">
+<div class="row">
+
+
+    <div class="navbar-header">
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">导航切换</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand visible-xs" href="">指挥控制与仿真</a> </div>
+    <div class="navbar-collapse collapse" role="navigation">
+		<ul class="nav navbar-nav">
+      	
+        <li><a href="https://www.zhkzyfz.cn/CN/home">首页</a></li>
+                                    
+                        <li><a href="https://www.zhkzyfz.cn/CN/column/column1.shtml">期刊介绍</a></li>
+			           
+                                                
+                        <li><a href="https://www.zhkzyfz.cn/CN/column/column3.shtml">编委会</a></li>
+			           
+                                                
+                        <li><a href="https://www.zhkzyfz.cn/CN/column/column6.shtml">政策指南</a></li>
+			           
+                                                
+                        <li><a href="https://www.zhkzyfz.cn/CN/column/column8.shtml">期刊订阅</a></li>
+			           
+                                                
+                        <li><a href="https://www.zhkzyfz.cn/CN/column/column15.shtml">广告合作</a></li>
+			           
+                                                
+                        <li><a href="https://www.zhkzyfz.cn/CN/column/column12.shtml">联系我们</a></li>
+			           
+                                    <li><a href="https://www.zhkzyfz.cn/EN/home">English</a></li>
+			<!--<li><a href="http://g.zhkzyfz.cn/">旧系统入口</a></li>-->
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+<!--导航 End-->
+
+<!--导航 End-->
+<div class="container" style="height: 20px"></div>
+<script src='https://tongji.journalreport.cn/mstatistics.service.js'></script><script>recordAdd('e13bbb6cfb7a4af6bf3a1c5a5d62bd3f')</script>
+<!--头部 End-->
+
+    
+<!--中间-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 m-center">
+			
+			<!--当期-->
+            <section class="j-article">
+                <h3 class="latest-issue">
+                 	                 		过刊目录
+                 	                 	                 	                 	                </h3>
+
+	<ul class="clearfix">
+	        <li class="journal-fm col-md-4">
+          <img src="https://www.zhkzyfz.cn/fileup/1673-3819/COVER/20220428195746.png" class="img-responsive">
+        </li>
+            <li class="col-md-8">
+			<div class="btn-box">
+			   <span class="n-j-q">
+                    2020年, 第42卷, 第2期
+                    <br>
+					刊出日期：2020-04-10
+                </span>
+			   <div class="j-sx">
+					<span mag-component-type="previousIssue" mag-volumnId="5"></span>
+					&nbsp;&nbsp;
+					<span mag-component-type="nextIssue" mag-volumnId="5"></span>
+				</div>
+		   </div>
+		   
+			<hr style="margin:10px 0;">
+			                          				                <a href="#&lt;subject&gt;信息融合专题&lt;/subject&gt;"><subject>信息融合专题</subject></a><br>
+                                						              										              										              										              										              										              										              										              										              										              				                <a href="#&lt;subject&gt;理论研究&lt;/subject&gt;"><subject>理论研究</subject></a><br>
+                                						              										              										              										              										              										              										              				                <a href="#&lt;subject&gt;工程实践&lt;/subject&gt;"><subject>工程实践</subject></a><br>
+                                						              										              										              										              										              										              										              										      <div class="row">
+        				</div>
+        </li>
+      </ul>
+
+                <ul class="article-choose">
+					<li>
+						<div class="choose">
+							<input class="article_checkbox" onclick="javascript:selectall(this,'pid');"  alt="Select" type="checkbox" id="sel"> <span>全选</span>
+						</div>
+						<div class="other-tools">
+							<span class="other-tools-l"><i class="fa fa-share-square-o" onclick="exportCitations();" title="导出引用"></i></span> 
+							
+							<span class="fengexian"> | </span> <span class="other-tools-r">
+								<i class="fa fa-align-left" title="简洁列表"></i> <i class="fa fa-file-text" title="带摘要列表"></i> <i class="fa fa-file-image-o active" title="带图片列表"></i>
+							</span>
+						</div>
+					</li>
+				</ul>
+				
+                <ul class="article-list">
+                                                	  				
+	  					                <div class="articlesectionlisting">
+	                <a name="&lt;subject&gt;信息融合专题&lt;/subject&gt;"></a>
+	                <div class=dbt_header><subject>信息融合专题</subject></div>
+	                </div>
+	                	                	                
+                	<li id="art25" class="noselectrow">
+                		<div class="article-checkbox">
+							<INPUT id='thisart_25' class=article_checkbox onclick="hightlightrowaction('art25')" value='25' alt=Select type=checkbox name=pid> 
+                  			<LABEL class=hidelabel for='thisart_25'>Select</LABEL>
+						</div>
+						<div class="article-l article-w">
+							<span class="j-column"><subject>信息融合专题</subject></span>
+								<div class="j-title-1">
+									<a href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.001">多源异构图像融合跟踪研究现状与展望<sup>*</sup></a> <iframe src="/EN/article/articleDownloadControl.do?articleId=25"  width="15" height="13"  scrolling=no frameborder=0 allowtransparency="true"></iframe>
+								</div>
+							<div class="j-author">肖刚, 冶平, 张星辰, 刘骏, 贡克</div>
+							<div class="j-volumn-doi">
+								<span class="j-volumn">
+									2020, 42(2): 1-6.
+								</span>
+								<a class="j-doi" href="https://doi.org/10.3969/j.issn.1673-3819.2020.02.001">https://doi.org/10.3969/j.issn.1673-3819.2020.02.001</a>							</div>
+							<div class="j-btn">
+								<a class="j-abs" href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.001"><i class="fa fa-file-text-o"></i> 摘要</a> (
+
+
+
+
+
+<span id="mag-getDinajiShu-25"></span>
+<script>
+$("#mag-getDinajiShu-25").load('/CN/article/getDianJiShu.jsp?articleid=25&ajax=true');
+</script>
+	
+)
+																	<a class="j-pdf" href="javascript:;" onclick="lsdy1('PDF','25');return false;">PDF全文</a> (
+
+
+
+
+	
+<span id="mag-getXiaZaiShu-25"></span>
+<script>
+$("#mag-getXiaZaiShu-25").load('/CN/article/getXiaZaiShu.jsp?articleid=25&ajax=true');
+</script>
+	
+
+
+)
+																								<span class="richhtml">
+										                            <a class="j-html" id="dage" href="#" target="_blank" onclick="lsdy1('RICH_HTML','25');return false;"><i class="fa fa-file-text"></i> HTML</a>
+		                            (
+
+
+
+
+
+<span id="mag-getDianJiRichHtmlShu-25"></span>
+<script>
+$("#mag-getDianJiRichHtmlShu-25").load('/CN/article/getDianJiRichHtmlShu.jsp?articleid=25&ajax=true');
+</script>
+
+)
+																</span>
+								<span class="knomap" id="span_visual_article_25">
+									&nbsp;<img src="/images/knowledge_map.png" width="16" height="16" />
+									<a href="https://www.zhkzyfz.cn/CN/lexeme/showArticleByLexeme.do?articleID=25">可视化</a>
+	                            </span>
+								
+								<span class="shoucang">
+									&nbsp;<img src="/images/1673-3819/reb.png" width="16" height="16" />
+									<a href="javascript:;" onclick="collectArticle('25');">
+										<span class="shouc">收藏</span>
+									</a>
+								</span>
+							</div>
+
+							<div class="j-abstract">
+								<p id="C2">多源异构图像融合是信息融合领域的研究热点之一。多源异构图像的融合跟踪在精确制导、无人驾驶、机器人导航、公共安全等领域起着重要作用。目标跟踪的基本问题是在一系列时序图像中选择感兴趣目标,找到该目标的准确位置并跟踪其运动轨迹。复杂背景下的多源异构图像融合跟踪是一个典型的随机非线性动态系统估计问题,受诸多因素影响,如目标表观非刚性变化,观测场景的天气和光照变化,场景中出现相似目标等。阐述多源异构图像融合跟踪的关键问题,总结近年来该领域研究现状与主要方法,介绍基于深度学习的可见光和红外融合跟踪相关研究,最后预测未来的发展趋势。</p>
+							</div>
+							
+						</div>
+						
+						                	</li>
+                                                	  				
+	  					                
+                	<li id="art43" class="noselectrow">
+                		<div class="article-checkbox">
+							<INPUT id='thisart_43' class=article_checkbox onclick="hightlightrowaction('art43')" value='43' alt=Select type=checkbox name=pid> 
+                  			<LABEL class=hidelabel for='thisart_43'>Select</LABEL>
+						</div>
+						<div class="article-l article-w">
+							<span class="j-column"><subject>信息融合专题</subject></span>
+								<div class="j-title-1">
+									<a href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.002">多站交叉定位相对GDOP及其测向站分布问题研究</a> <iframe src="/EN/article/articleDownloadControl.do?articleId=43"  width="15" height="13"  scrolling=no frameborder=0 allowtransparency="true"></iframe>
+								</div>
+							<div class="j-author">罗双喜</div>
+							<div class="j-volumn-doi">
+								<span class="j-volumn">
+									2020, 42(2): 7-11.
+								</span>
+								<a class="j-doi" href="https://doi.org/10.3969/j.issn.1673-3819.2020.02.002">https://doi.org/10.3969/j.issn.1673-3819.2020.02.002</a>							</div>
+							<div class="j-btn">
+								<a class="j-abs" href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.002"><i class="fa fa-file-text-o"></i> 摘要</a> (
+
+
+
+
+
+<span id="mag-getDinajiShu-43"></span>
+<script>
+$("#mag-getDinajiShu-43").load('/CN/article/getDianJiShu.jsp?articleid=43&ajax=true');
+</script>
+	
+)
+																	<a class="j-pdf" href="javascript:;" onclick="lsdy1('PDF','43');return false;">PDF全文</a> (
+
+
+
+
+	
+<span id="mag-getXiaZaiShu-43"></span>
+<script>
+$("#mag-getXiaZaiShu-43").load('/CN/article/getXiaZaiShu.jsp?articleid=43&ajax=true');
+</script>
+	
+
+
+)
+																								<span class="richhtml">
+										                            <a class="j-html" id="dage" href="#" target="_blank" onclick="lsdy1('RICH_HTML','43');return false;"><i class="fa fa-file-text"></i> HTML</a>
+		                            (
+
+
+
+
+
+<span id="mag-getDianJiRichHtmlShu-43"></span>
+<script>
+$("#mag-getDianJiRichHtmlShu-43").load('/CN/article/getDianJiRichHtmlShu.jsp?articleid=43&ajax=true');
+</script>
+
+)
+																</span>
+								<span class="knomap" id="span_visual_article_43">
+									&nbsp;<img src="/images/knowledge_map.png" width="16" height="16" />
+									<a href="https://www.zhkzyfz.cn/CN/lexeme/showArticleByLexeme.do?articleID=43">可视化</a>
+	                            </span>
+								
+								<span class="shoucang">
+									&nbsp;<img src="/images/1673-3819/reb.png" width="16" height="16" />
+									<a href="javascript:;" onclick="collectArticle('43');">
+										<span class="shouc">收藏</span>
+									</a>
+								</span>
+							</div>
+
+							<div class="j-abstract">
+								<p id="C2">针对两站测向交叉定位的相对几何稀释度难以推广到多站情形的问题,提出一种加权平均距离来重新定义相对几何稀释度。在此基础上探讨了最优RGDOP值与达到该最优值的条件,并给出了计算公式和验证实例。在各测向站到目标的距离已知但不满足全局最优条件时,进一步分析了最优RGDOP值与测向站分布问题,给出了相应的结果。</p>
+							</div>
+							
+						</div>
+						
+						                	</li>
+                                                	  				
+	  					                
+                	<li id="art30" class="noselectrow">
+                		<div class="article-checkbox">
+							<INPUT id='thisart_30' class=article_checkbox onclick="hightlightrowaction('art30')" value='30' alt=Select type=checkbox name=pid> 
+                  			<LABEL class=hidelabel for='thisart_30'>Select</LABEL>
+						</div>
+						<div class="article-l article-w">
+							<span class="j-column"><subject>信息融合专题</subject></span>
+								<div class="j-title-1">
+									<a href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.003">双站紧凑型地波雷达海上目标航迹融合探测<sup>*</sup></a> <iframe src="/EN/article/articleDownloadControl.do?articleId=30"  width="15" height="13"  scrolling=no frameborder=0 allowtransparency="true"></iframe>
+								</div>
+							<div class="j-author">纪永刚, 张杰, 杨启松, 王祎鸣, 于长军, 孙伟峰</div>
+							<div class="j-volumn-doi">
+								<span class="j-volumn">
+									2020, 42(2): 12-17.
+								</span>
+								<a class="j-doi" href="https://doi.org/10.3969/j.issn.1673-3819.2020.02.003">https://doi.org/10.3969/j.issn.1673-3819.2020.02.003</a>							</div>
+							<div class="j-btn">
+								<a class="j-abs" href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.003"><i class="fa fa-file-text-o"></i> 摘要</a> (
+
+
+
+
+
+<span id="mag-getDinajiShu-30"></span>
+<script>
+$("#mag-getDinajiShu-30").load('/CN/article/getDianJiShu.jsp?articleid=30&ajax=true');
+</script>
+	
+)
+																	<a class="j-pdf" href="javascript:;" onclick="lsdy1('PDF','30');return false;">PDF全文</a> (
+
+
+
+
+	
+<span id="mag-getXiaZaiShu-30"></span>
+<script>
+$("#mag-getXiaZaiShu-30").load('/CN/article/getXiaZaiShu.jsp?articleid=30&ajax=true');
+</script>
+	
+
+
+)
+																								<span class="richhtml">
+										                            <a class="j-html" id="dage" href="#" target="_blank" onclick="lsdy1('RICH_HTML','30');return false;"><i class="fa fa-file-text"></i> HTML</a>
+		                            (
+
+
+
+
+
+<span id="mag-getDianJiRichHtmlShu-30"></span>
+<script>
+$("#mag-getDianJiRichHtmlShu-30").load('/CN/article/getDianJiRichHtmlShu.jsp?articleid=30&ajax=true');
+</script>
+
+)
+																</span>
+								<span class="knomap" id="span_visual_article_30">
+									&nbsp;<img src="/images/knowledge_map.png" width="16" height="16" />
+									<a href="https://www.zhkzyfz.cn/CN/lexeme/showArticleByLexeme.do?articleID=30">可视化</a>
+	                            </span>
+								
+								<span class="shoucang">
+									&nbsp;<img src="/images/1673-3819/reb.png" width="16" height="16" />
+									<a href="javascript:;" onclick="collectArticle('30');">
+										<span class="shouc">收藏</span>
+									</a>
+								</span>
+							</div>
+
+							<div class="j-abstract">
+								<p id="C2">多站地波雷达的融合探测,可以扩展探测区域,提高地波雷达海上目标的跟踪性能和定位精度。基于检测级点迹关联主要适合于大型阵列式地波雷达,并不适合于紧凑型地波雷达。因此,针对双站紧凑型目标航迹关联和融合方法进行研究,发展了基于序贯相似度的双站紧凑型地波雷达目标航迹最优化关联方法。通过基于AIS信息地波雷达模拟航迹的仿真分析,表明:基于航迹信息的双站地波雷达目标关联概率明显高于基于点迹信息的关联结果,且双站融合结果误差较融合前明显降低。最后,基于实测双站紧凑型地波雷达目标探测数据,验证了本文方法的有效性。</p>
+							</div>
+							
+						</div>
+						
+						                	</li>
+                                                	  				
+	  					                
+                	<li id="art34" class="noselectrow">
+                		<div class="article-checkbox">
+							<INPUT id='thisart_34' class=article_checkbox onclick="hightlightrowaction('art34')" value='34' alt=Select type=checkbox name=pid> 
+                  			<LABEL class=hidelabel for='thisart_34'>Select</LABEL>
+						</div>
+						<div class="article-l article-w">
+							<span class="j-column"><subject>信息融合专题</subject></span>
+								<div class="j-title-1">
+									<a href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.004">基于多维分配的被动多传感器多目标跟踪方法</a> <iframe src="/EN/article/articleDownloadControl.do?articleId=34"  width="15" height="13"  scrolling=no frameborder=0 allowtransparency="true"></iframe>
+								</div>
+							<div class="j-author">卜石哲, 周共健</div>
+							<div class="j-volumn-doi">
+								<span class="j-volumn">
+									2020, 42(2): 18-22.
+								</span>
+								<a class="j-doi" href="https://doi.org/10.3969/j.issn.1673-3819.2020.02.004">https://doi.org/10.3969/j.issn.1673-3819.2020.02.004</a>							</div>
+							<div class="j-btn">
+								<a class="j-abs" href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.004"><i class="fa fa-file-text-o"></i> 摘要</a> (
+
+
+
+
+
+<span id="mag-getDinajiShu-34"></span>
+<script>
+$("#mag-getDinajiShu-34").load('/CN/article/getDianJiShu.jsp?articleid=34&ajax=true');
+</script>
+	
+)
+																	<a class="j-pdf" href="javascript:;" onclick="lsdy1('PDF','34');return false;">PDF全文</a> (
+
+
+
+
+	
+<span id="mag-getXiaZaiShu-34"></span>
+<script>
+$("#mag-getXiaZaiShu-34").load('/CN/article/getXiaZaiShu.jsp?articleid=34&ajax=true');
+</script>
+	
+
+
+)
+																								<span class="richhtml">
+										                            <a class="j-html" id="dage" href="#" target="_blank" onclick="lsdy1('RICH_HTML','34');return false;"><i class="fa fa-file-text"></i> HTML</a>
+		                            (
+
+
+
+
+
+<span id="mag-getDianJiRichHtmlShu-34"></span>
+<script>
+$("#mag-getDianJiRichHtmlShu-34").load('/CN/article/getDianJiRichHtmlShu.jsp?articleid=34&ajax=true');
+</script>
+
+)
+																</span>
+								<span class="knomap" id="span_visual_article_34">
+									&nbsp;<img src="/images/knowledge_map.png" width="16" height="16" />
+									<a href="https://www.zhkzyfz.cn/CN/lexeme/showArticleByLexeme.do?articleID=34">可视化</a>
+	                            </span>
+								
+								<span class="shoucang">
+									&nbsp;<img src="/images/1673-3819/reb.png" width="16" height="16" />
+									<a href="javascript:;" onclick="collectArticle('34');">
+										<span class="shouc">收藏</span>
+									</a>
+								</span>
+							</div>
+
+							<div class="j-abstract">
+								<p id="C2">数据关联是解决多传感器多目标跟踪问题的关键,通过数据关联处理可确定每个观测数据的来源。在被动多传感器系统中,传感器只能接收角度观测数据,数据关联处理更具有挑战性。因此,提出了一种基于多维分配的数据关联方法实现多传感器多目标跟踪。首先,通过多维分配处理解决多传感器观测数据之间的关联问题,找出各传感器来源于同一目标的观测数据集合,利用该集合中的数据在最大似然准则下估计目标的位置信息。其次,通过二维分配解决目标位置估计和多目标航迹之间的关联问题,利用关联上的位置估计更新多目标航迹。通过仿真实验证明了所述方法的性能,能有效地实现被动多传感器多目标跟踪,且具有跟踪精度高,附加计算量小等优点。</p>
+							</div>
+							
+						</div>
+						
+						                	</li>
+                                                	  				
+	  					                
+                	<li id="art35" class="noselectrow">
+                		<div class="article-checkbox">
+							<INPUT id='thisart_35' class=article_checkbox onclick="hightlightrowaction('art35')" value='35' alt=Select type=checkbox name=pid> 
+                  			<LABEL class=hidelabel for='thisart_35'>Select</LABEL>
+						</div>
+						<div class="article-l article-w">
+							<span class="j-column"><subject>信息融合专题</subject></span>
+								<div class="j-title-1">
+									<a href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.005">基于多地并行融合的多传感器目标识别信息融合方法</a> <iframe src="/EN/article/articleDownloadControl.do?articleId=35"  width="15" height="13"  scrolling=no frameborder=0 allowtransparency="true"></iframe>
+								</div>
+							<div class="j-author">赵照, 吴晓锋</div>
+							<div class="j-volumn-doi">
+								<span class="j-volumn">
+									2020, 42(2): 23-27.
+								</span>
+								<a class="j-doi" href="https://doi.org/10.3969/j.issn.1673-3819.2020.02.005">https://doi.org/10.3969/j.issn.1673-3819.2020.02.005</a>							</div>
+							<div class="j-btn">
+								<a class="j-abs" href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.005"><i class="fa fa-file-text-o"></i> 摘要</a> (
+
+
+
+
+
+<span id="mag-getDinajiShu-35"></span>
+<script>
+$("#mag-getDinajiShu-35").load('/CN/article/getDianJiShu.jsp?articleid=35&ajax=true');
+</script>
+	
+)
+																	<a class="j-pdf" href="javascript:;" onclick="lsdy1('PDF','35');return false;">PDF全文</a> (
+
+
+
+
+	
+<span id="mag-getXiaZaiShu-35"></span>
+<script>
+$("#mag-getXiaZaiShu-35").load('/CN/article/getXiaZaiShu.jsp?articleid=35&ajax=true');
+</script>
+	
+
+
+)
+																								<span class="richhtml">
+										                            <a class="j-html" id="dage" href="#" target="_blank" onclick="lsdy1('RICH_HTML','35');return false;"><i class="fa fa-file-text"></i> HTML</a>
+		                            (
+
+
+
+
+
+<span id="mag-getDianJiRichHtmlShu-35"></span>
+<script>
+$("#mag-getDianJiRichHtmlShu-35").load('/CN/article/getDianJiRichHtmlShu.jsp?articleid=35&ajax=true');
+</script>
+
+)
+																</span>
+								<span class="knomap" id="span_visual_article_35">
+									&nbsp;<img src="/images/knowledge_map.png" width="16" height="16" />
+									<a href="https://www.zhkzyfz.cn/CN/lexeme/showArticleByLexeme.do?articleID=35">可视化</a>
+	                            </span>
+								
+								<span class="shoucang">
+									&nbsp;<img src="/images/1673-3819/reb.png" width="16" height="16" />
+									<a href="javascript:;" onclick="collectArticle('35');">
+										<span class="shouc">收藏</span>
+									</a>
+								</span>
+							</div>
+
+							<div class="j-abstract">
+								<p id="C2">提出了一种多地并行融合的传感器网络目标识别信息融合方法,其中,每个传感器只需要与邻居传感器交换信息。基于D-S证据理论,设计了一种分布式信息融合算法。每个传感器运行该融合算法可在一定的网络拓扑下达到目标识别信息的一致融合结果。实例仿真结果验证了该融合算法的有效性。</p>
+							</div>
+							
+						</div>
+						
+						                	</li>
+                                                	  				
+	  					                
+                	<li id="art36" class="noselectrow">
+                		<div class="article-checkbox">
+							<INPUT id='thisart_36' class=article_checkbox onclick="hightlightrowaction('art36')" value='36' alt=Select type=checkbox name=pid> 
+                  			<LABEL class=hidelabel for='thisart_36'>Select</LABEL>
+						</div>
+						<div class="article-l article-w">
+							<span class="j-column"><subject>信息融合专题</subject></span>
+								<div class="j-title-1">
+									<a href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.006">基于分布式信息融合的多传感器目标定位算法</a> <iframe src="/EN/article/articleDownloadControl.do?articleId=36"  width="15" height="13"  scrolling=no frameborder=0 allowtransparency="true"></iframe>
+								</div>
+							<div class="j-author">陈林秀, 宋闯, 范宇, 张航</div>
+							<div class="j-volumn-doi">
+								<span class="j-volumn">
+									2020, 42(2): 28-33.
+								</span>
+								<a class="j-doi" href="https://doi.org/10.3969/j.issn.1673-3819.2020.02.006">https://doi.org/10.3969/j.issn.1673-3819.2020.02.006</a>							</div>
+							<div class="j-btn">
+								<a class="j-abs" href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.006"><i class="fa fa-file-text-o"></i> 摘要</a> (
+
+
+
+
+
+<span id="mag-getDinajiShu-36"></span>
+<script>
+$("#mag-getDinajiShu-36").load('/CN/article/getDianJiShu.jsp?articleid=36&ajax=true');
+</script>
+	
+)
+																	<a class="j-pdf" href="javascript:;" onclick="lsdy1('PDF','36');return false;">PDF全文</a> (
+
+
+
+
+	
+<span id="mag-getXiaZaiShu-36"></span>
+<script>
+$("#mag-getXiaZaiShu-36").load('/CN/article/getXiaZaiShu.jsp?articleid=36&ajax=true');
+</script>
+	
+
+
+)
+																								<span class="richhtml">
+										                            <a class="j-html" id="dage" href="#" target="_blank" onclick="lsdy1('RICH_HTML','36');return false;"><i class="fa fa-file-text"></i> HTML</a>
+		                            (
+
+
+
+
+
+<span id="mag-getDianJiRichHtmlShu-36"></span>
+<script>
+$("#mag-getDianJiRichHtmlShu-36").load('/CN/article/getDianJiRichHtmlShu.jsp?articleid=36&ajax=true');
+</script>
+
+)
+																</span>
+								<span class="knomap" id="span_visual_article_36">
+									&nbsp;<img src="/images/knowledge_map.png" width="16" height="16" />
+									<a href="https://www.zhkzyfz.cn/CN/lexeme/showArticleByLexeme.do?articleID=36">可视化</a>
+	                            </span>
+								
+								<span class="shoucang">
+									&nbsp;<img src="/images/1673-3819/reb.png" width="16" height="16" />
+									<a href="javascript:;" onclick="collectArticle('36');">
+										<span class="shouc">收藏</span>
+									</a>
+								</span>
+							</div>
+
+							<div class="j-abstract">
+								<p id="C2">针对单平台多传感器目标跟踪定位中的状态信息融合问题,以主/被动雷达为研究对象,基于分布式信息融合结构,首先分别探究了在主动和被动雷达探测条件下几种常用的非线性滤波算法的性能;然后选择对应性能最佳的方法,结合带反馈的协方差交叉融合(CI)算法,在考虑主/被动雷达正常工作和主动雷达在不同时间被干扰的情况下,进行了目标状态的融合。仿真结果表明,主/被动雷达正常工作条件下,利用信息融合算法得到的状态估计优于依赖单一雷达观测信息的目标状态估计。主动雷达在独自跟踪滤波收敛后被有源干扰时,基于信息融合方法得到的目标状态估计比仅依赖被动雷达量测信息得到的状态估计更稳定,且精度更高。</p>
+							</div>
+							
+						</div>
+						
+						                	</li>
+                                                	  				
+	  					                
+                	<li id="art37" class="noselectrow">
+                		<div class="article-checkbox">
+							<INPUT id='thisart_37' class=article_checkbox onclick="hightlightrowaction('art37')" value='37' alt=Select type=checkbox name=pid> 
+                  			<LABEL class=hidelabel for='thisart_37'>Select</LABEL>
+						</div>
+						<div class="article-l article-w">
+							<span class="j-column"><subject>信息融合专题</subject></span>
+								<div class="j-title-1">
+									<a href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.007">基于假设检验思想的雷艇信息关联技术</a> <iframe src="/EN/article/articleDownloadControl.do?articleId=37"  width="15" height="13"  scrolling=no frameborder=0 allowtransparency="true"></iframe>
+								</div>
+							<div class="j-author">丁迎迎</div>
+							<div class="j-volumn-doi">
+								<span class="j-volumn">
+									2020, 42(2): 34-37.
+								</span>
+								<a class="j-doi" href="https://doi.org/10.3969/j.issn.1673-3819.2020.02.007">https://doi.org/10.3969/j.issn.1673-3819.2020.02.007</a>							</div>
+							<div class="j-btn">
+								<a class="j-abs" href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.007"><i class="fa fa-file-text-o"></i> 摘要</a> (
+
+
+
+
+
+<span id="mag-getDinajiShu-37"></span>
+<script>
+$("#mag-getDinajiShu-37").load('/CN/article/getDianJiShu.jsp?articleid=37&ajax=true');
+</script>
+	
+)
+																	<a class="j-pdf" href="javascript:;" onclick="lsdy1('PDF','37');return false;">PDF全文</a> (
+
+
+
+
+	
+<span id="mag-getXiaZaiShu-37"></span>
+<script>
+$("#mag-getXiaZaiShu-37").load('/CN/article/getXiaZaiShu.jsp?articleid=37&ajax=true');
+</script>
+	
+
+
+)
+																								<span class="richhtml">
+										                            <a class="j-html" id="dage" href="#" target="_blank" onclick="lsdy1('RICH_HTML','37');return false;"><i class="fa fa-file-text"></i> HTML</a>
+		                            (
+
+
+
+
+
+<span id="mag-getDianJiRichHtmlShu-37"></span>
+<script>
+$("#mag-getDianJiRichHtmlShu-37").load('/CN/article/getDianJiRichHtmlShu.jsp?articleid=37&ajax=true');
+</script>
+
+)
+																</span>
+								<span class="knomap" id="span_visual_article_37">
+									&nbsp;<img src="/images/knowledge_map.png" width="16" height="16" />
+									<a href="https://www.zhkzyfz.cn/CN/lexeme/showArticleByLexeme.do?articleID=37">可视化</a>
+	                            </span>
+								
+								<span class="shoucang">
+									&nbsp;<img src="/images/1673-3819/reb.png" width="16" height="16" />
+									<a href="javascript:;" onclick="collectArticle('37');">
+										<span class="shouc">收藏</span>
+									</a>
+								</span>
+							</div>
+
+							<div class="j-abstract">
+								<p id="C2">线导鱼雷可作为潜艇平台的前出传感器,通过雷艇信息融合改善态势感知和鱼雷反对抗能力。讨论了雷艇信息融合国外研究现状,对雷艇探测多目标关联算法进行了重点研究,提出了一种基于假设检验的雷艇信息关联技术,通过充分利用雷艇探测目标的空间、时间分布特性对不可能假设进行剔除,克服了关联问题中的NP难题,仿真结果表明了算法在关联方面的良好性能。</p>
+							</div>
+							
+						</div>
+						
+						                	</li>
+                                                	  				
+	  					                
+                	<li id="art38" class="noselectrow">
+                		<div class="article-checkbox">
+							<INPUT id='thisart_38' class=article_checkbox onclick="hightlightrowaction('art38')" value='38' alt=Select type=checkbox name=pid> 
+                  			<LABEL class=hidelabel for='thisart_38'>Select</LABEL>
+						</div>
+						<div class="article-l article-w">
+							<span class="j-column"><subject>信息融合专题</subject></span>
+								<div class="j-title-1">
+									<a href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.008">交互作用多模型集成航迹分裂目标跟踪方法<sup>*</sup></a> <iframe src="/EN/article/articleDownloadControl.do?articleId=38"  width="15" height="13"  scrolling=no frameborder=0 allowtransparency="true"></iframe>
+								</div>
+							<div class="j-author">桑航, 周云锋, 周共健</div>
+							<div class="j-volumn-doi">
+								<span class="j-volumn">
+									2020, 42(2): 38-45.
+								</span>
+								<a class="j-doi" href="https://doi.org/10.3969/j.issn.1673-3819.2020.02.008">https://doi.org/10.3969/j.issn.1673-3819.2020.02.008</a>							</div>
+							<div class="j-btn">
+								<a class="j-abs" href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.008"><i class="fa fa-file-text-o"></i> 摘要</a> (
+
+
+
+
+
+<span id="mag-getDinajiShu-38"></span>
+<script>
+$("#mag-getDinajiShu-38").load('/CN/article/getDianJiShu.jsp?articleid=38&ajax=true');
+</script>
+	
+)
+																	<a class="j-pdf" href="javascript:;" onclick="lsdy1('PDF','38');return false;">PDF全文</a> (
+
+
+
+
+	
+<span id="mag-getXiaZaiShu-38"></span>
+<script>
+$("#mag-getXiaZaiShu-38").load('/CN/article/getXiaZaiShu.jsp?articleid=38&ajax=true');
+</script>
+	
+
+
+)
+																								<span class="richhtml">
+										                            <a class="j-html" id="dage" href="#" target="_blank" onclick="lsdy1('RICH_HTML','38');return false;"><i class="fa fa-file-text"></i> HTML</a>
+		                            (
+
+
+
+
+
+<span id="mag-getDianJiRichHtmlShu-38"></span>
+<script>
+$("#mag-getDianJiRichHtmlShu-38").load('/CN/article/getDianJiRichHtmlShu.jsp?articleid=38&ajax=true');
+</script>
+
+)
+																</span>
+								<span class="knomap" id="span_visual_article_38">
+									&nbsp;<img src="/images/knowledge_map.png" width="16" height="16" />
+									<a href="https://www.zhkzyfz.cn/CN/lexeme/showArticleByLexeme.do?articleID=38">可视化</a>
+	                            </span>
+								
+								<span class="shoucang">
+									&nbsp;<img src="/images/1673-3819/reb.png" width="16" height="16" />
+									<a href="javascript:;" onclick="collectArticle('38');">
+										<span class="shouc">收藏</span>
+									</a>
+								</span>
+							</div>
+
+							<div class="j-abstract">
+								<p id="C2">多目标跟踪是一种处理来自目标的观测数据的过程。它通过处理雷达、声呐等传感器传回的数据来发现目标,并估计目标的运动状态。目标跟踪的结果是确认的航迹,在理想情况下,每一条确认航迹都跟踪一个目标,它们被称为真实航迹。有的确认航迹并未跟踪一个目标,它们被称为虚假航迹。杂波观测是影响目标跟踪性能的重要因素,如何在高杂波密度的情形下区分来自于目标的观测,提高目标跟踪的准确性是一个非常重要的课题。在高杂波密度的环境中,传统目标跟踪方法(IPDA)容易产生虚假航迹,导致跟踪结果准确性下降,大大降低了雷达跟踪结果的可信度。提出集成航迹分裂目标跟踪方法(ITS),通过保留历史航迹,形成航迹分量树的方式减少虚假航迹的出现。利用这种多扫描的目标跟踪方法,目标跟踪在航迹维持、虚假航迹抑制方面的性能得以提升。</p>
+							</div>
+							
+						</div>
+						
+						                	</li>
+                                                	  				
+	  					                
+                	<li id="art39" class="noselectrow">
+                		<div class="article-checkbox">
+							<INPUT id='thisart_39' class=article_checkbox onclick="hightlightrowaction('art39')" value='39' alt=Select type=checkbox name=pid> 
+                  			<LABEL class=hidelabel for='thisart_39'>Select</LABEL>
+						</div>
+						<div class="article-l article-w">
+							<span class="j-column"><subject>信息融合专题</subject></span>
+								<div class="j-title-1">
+									<a href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.009">基于残差聚集网的恶劣天气环境下图像清晰化处理</a> <iframe src="/EN/article/articleDownloadControl.do?articleId=39"  width="15" height="13"  scrolling=no frameborder=0 allowtransparency="true"></iframe>
+								</div>
+							<div class="j-author">刘扬</div>
+							<div class="j-volumn-doi">
+								<span class="j-volumn">
+									2020, 42(2): 46-52.
+								</span>
+								<a class="j-doi" href="https://doi.org/10.3969/j.issn.1673-3819.2020.02.009">https://doi.org/10.3969/j.issn.1673-3819.2020.02.009</a>							</div>
+							<div class="j-btn">
+								<a class="j-abs" href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.009"><i class="fa fa-file-text-o"></i> 摘要</a> (
+
+
+
+
+
+<span id="mag-getDinajiShu-39"></span>
+<script>
+$("#mag-getDinajiShu-39").load('/CN/article/getDianJiShu.jsp?articleid=39&ajax=true');
+</script>
+	
+)
+																	<a class="j-pdf" href="javascript:;" onclick="lsdy1('PDF','39');return false;">PDF全文</a> (
+
+
+
+
+	
+<span id="mag-getXiaZaiShu-39"></span>
+<script>
+$("#mag-getXiaZaiShu-39").load('/CN/article/getXiaZaiShu.jsp?articleid=39&ajax=true');
+</script>
+	
+
+
+)
+																								<span class="richhtml">
+										                            <a class="j-html" id="dage" href="#" target="_blank" onclick="lsdy1('RICH_HTML','39');return false;"><i class="fa fa-file-text"></i> HTML</a>
+		                            (
+
+
+
+
+
+<span id="mag-getDianJiRichHtmlShu-39"></span>
+<script>
+$("#mag-getDianJiRichHtmlShu-39").load('/CN/article/getDianJiRichHtmlShu.jsp?articleid=39&ajax=true');
+</script>
+
+)
+																</span>
+								<span class="knomap" id="span_visual_article_39">
+									&nbsp;<img src="/images/knowledge_map.png" width="16" height="16" />
+									<a href="https://www.zhkzyfz.cn/CN/lexeme/showArticleByLexeme.do?articleID=39">可视化</a>
+	                            </span>
+								
+								<span class="shoucang">
+									&nbsp;<img src="/images/1673-3819/reb.png" width="16" height="16" />
+									<a href="javascript:;" onclick="collectArticle('39');">
+										<span class="shouc">收藏</span>
+									</a>
+								</span>
+							</div>
+
+							<div class="j-abstract">
+								<p id="C2">恶劣天气环境下的图像清晰化处理技术可以协助军事作战人员高效准确地进行目标检测、识别和跟踪,在安防与交通导航等领域也有较高的应用价值。针对沙尘、雨、雪、雾、霾等恶劣天气环境造成的图像失真问题,提出了一种新的基于深度神经网络的图像清晰化技术,通过构造残差聚集模块来提取细节特征,使用稠密连接,并组合低维特征生成高维特征。实验结果表明,该网络在图像去雨流任务上相比DDN和DualCNN有较为明显的改善,在图像去噪、去雾、去模糊、去雨滴等任务上也达到了理想效果。</p>
+							</div>
+							
+						</div>
+						
+						                	</li>
+                                                	  				
+	  					                
+                	<li id="art40" class="noselectrow">
+                		<div class="article-checkbox">
+							<INPUT id='thisart_40' class=article_checkbox onclick="hightlightrowaction('art40')" value='40' alt=Select type=checkbox name=pid> 
+                  			<LABEL class=hidelabel for='thisart_40'>Select</LABEL>
+						</div>
+						<div class="article-l article-w">
+							<span class="j-column"><subject>信息融合专题</subject></span>
+								<div class="j-title-1">
+									<a href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.010">基于&#x003b1;-&#x003b2;-&#x003b3;-&#x003b4;滤波的红外跟踪系统目标跟踪控制方法</a> <iframe src="/EN/article/articleDownloadControl.do?articleId=40"  width="15" height="13"  scrolling=no frameborder=0 allowtransparency="true"></iframe>
+								</div>
+							<div class="j-author">陈家鲤</div>
+							<div class="j-volumn-doi">
+								<span class="j-volumn">
+									2020, 42(2): 53-58.
+								</span>
+								<a class="j-doi" href="https://doi.org/10.3969/j.issn.1673-3819.2020.02.010">https://doi.org/10.3969/j.issn.1673-3819.2020.02.010</a>							</div>
+							<div class="j-btn">
+								<a class="j-abs" href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.010"><i class="fa fa-file-text-o"></i> 摘要</a> (
+
+
+
+
+
+<span id="mag-getDinajiShu-40"></span>
+<script>
+$("#mag-getDinajiShu-40").load('/CN/article/getDianJiShu.jsp?articleid=40&ajax=true');
+</script>
+	
+)
+																	<a class="j-pdf" href="javascript:;" onclick="lsdy1('PDF','40');return false;">PDF全文</a> (
+
+
+
+
+	
+<span id="mag-getXiaZaiShu-40"></span>
+<script>
+$("#mag-getXiaZaiShu-40").load('/CN/article/getXiaZaiShu.jsp?articleid=40&ajax=true');
+</script>
+	
+
+
+)
+																								<span class="richhtml">
+										                            <a class="j-html" id="dage" href="#" target="_blank" onclick="lsdy1('RICH_HTML','40');return false;"><i class="fa fa-file-text"></i> HTML</a>
+		                            (
+
+
+
+
+
+<span id="mag-getDianJiRichHtmlShu-40"></span>
+<script>
+$("#mag-getDianJiRichHtmlShu-40").load('/CN/article/getDianJiRichHtmlShu.jsp?articleid=40&ajax=true');
+</script>
+
+)
+																</span>
+								<span class="knomap" id="span_visual_article_40">
+									&nbsp;<img src="/images/knowledge_map.png" width="16" height="16" />
+									<a href="https://www.zhkzyfz.cn/CN/lexeme/showArticleByLexeme.do?articleID=40">可视化</a>
+	                            </span>
+								
+								<span class="shoucang">
+									&nbsp;<img src="/images/1673-3819/reb.png" width="16" height="16" />
+									<a href="javascript:;" onclick="collectArticle('40');">
+										<span class="shouc">收藏</span>
+									</a>
+								</span>
+							</div>
+
+							<div class="j-abstract">
+								<p id="C2">提出了一种基于&#x003b1;-&#x003b2;-&#x003b3;-&#x003b4;预测滤波算法的红外跟踪系统目标跟踪控制方法。对该方法的目标跟踪回路控制进行了仿真。在实际红外跟踪系统及控制器上实现了该方法,并比较了采用该方法前后的运动目标跟踪精度。结果表明,&#x003b1;-&#x003b2;-&#x003b3;-&#x003b4;预测滤波能抑制脱靶量噪声和滞后对运动目标跟踪的影响,具有较高的跟踪精度。</p>
+							</div>
+							
+						</div>
+						
+						                	</li>
+                                                	  				
+	  					                <div class="articlesectionlisting">
+	                <a name="&lt;subject&gt;理论研究&lt;/subject&gt;"></a>
+	                <div class=dbt_header><subject>理论研究</subject></div>
+	                </div>
+	                	                	                
+                	<li id="art41" class="noselectrow">
+                		<div class="article-checkbox">
+							<INPUT id='thisart_41' class=article_checkbox onclick="hightlightrowaction('art41')" value='41' alt=Select type=checkbox name=pid> 
+                  			<LABEL class=hidelabel for='thisart_41'>Select</LABEL>
+						</div>
+						<div class="article-l article-w">
+							<span class="j-column"><subject>理论研究</subject></span>
+								<div class="j-title-1">
+									<a href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.011">基于深度学习的雷达侦察系统作战能力评估方法<sup>*</sup></a> <iframe src="/EN/article/articleDownloadControl.do?articleId=41"  width="15" height="13"  scrolling=no frameborder=0 allowtransparency="true"></iframe>
+								</div>
+							<div class="j-author">戚宗锋, 王华兵, 李建勋</div>
+							<div class="j-volumn-doi">
+								<span class="j-volumn">
+									2020, 42(2): 59-64.
+								</span>
+								<a class="j-doi" href="https://doi.org/10.3969/j.issn.1673-3819.2020.02.011">https://doi.org/10.3969/j.issn.1673-3819.2020.02.011</a>							</div>
+							<div class="j-btn">
+								<a class="j-abs" href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.011"><i class="fa fa-file-text-o"></i> 摘要</a> (
+
+
+
+
+
+<span id="mag-getDinajiShu-41"></span>
+<script>
+$("#mag-getDinajiShu-41").load('/CN/article/getDianJiShu.jsp?articleid=41&ajax=true');
+</script>
+	
+)
+																	<a class="j-pdf" href="javascript:;" onclick="lsdy1('PDF','41');return false;">PDF全文</a> (
+
+
+
+
+	
+<span id="mag-getXiaZaiShu-41"></span>
+<script>
+$("#mag-getXiaZaiShu-41").load('/CN/article/getXiaZaiShu.jsp?articleid=41&ajax=true');
+</script>
+	
+
+
+)
+																								<span class="richhtml">
+										                            <a class="j-html" id="dage" href="#" target="_blank" onclick="lsdy1('RICH_HTML','41');return false;"><i class="fa fa-file-text"></i> HTML</a>
+		                            (
+
+
+
+
+
+<span id="mag-getDianJiRichHtmlShu-41"></span>
+<script>
+$("#mag-getDianJiRichHtmlShu-41").load('/CN/article/getDianJiRichHtmlShu.jsp?articleid=41&ajax=true');
+</script>
+
+)
+																</span>
+								<span class="knomap" id="span_visual_article_41">
+									&nbsp;<img src="/images/knowledge_map.png" width="16" height="16" />
+									<a href="https://www.zhkzyfz.cn/CN/lexeme/showArticleByLexeme.do?articleID=41">可视化</a>
+	                            </span>
+								
+								<span class="shoucang">
+									&nbsp;<img src="/images/1673-3819/reb.png" width="16" height="16" />
+									<a href="javascript:;" onclick="collectArticle('41');">
+										<span class="shouc">收藏</span>
+									</a>
+								</span>
+							</div>
+
+							<div class="j-abstract">
+								<p id="C2">效能评估是决策的依据,包括指标体系构建与优化、综合评估等。经典的方法是分步进行的,例如基于粗糙集的指标体系优化,综合评估方法包括层次分析法、模糊层次分析法以及神经网络等。借鉴深度学习在特征提取、非线性函数映射等方面的优点,尤其是其可以很好地模拟人类思维,将深度学习与传统的层次分析法相结合。针对指标体系的底层采样数据容易出现的数据量大、缺乏统一标度、指标间权重难以确定等问题进行了模型化处理,用深度置信网络(DBN)模型实现了底层评估数据的分类与判定。最后,结合雷达侦察系统作战能力评估对象,仿真验证了该智能评估方法的合理性和正确性。</p>
+							</div>
+							
+						</div>
+						
+						                	</li>
+                                                	  				
+	  					                
+                	<li id="art42" class="noselectrow">
+                		<div class="article-checkbox">
+							<INPUT id='thisart_42' class=article_checkbox onclick="hightlightrowaction('art42')" value='42' alt=Select type=checkbox name=pid> 
+                  			<LABEL class=hidelabel for='thisart_42'>Select</LABEL>
+						</div>
+						<div class="article-l article-w">
+							<span class="j-column"><subject>理论研究</subject></span>
+								<div class="j-title-1">
+									<a href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.012">基于系统聚类的雷达工作模式识别方法及仿真</a> <iframe src="/EN/article/articleDownloadControl.do?articleId=42"  width="15" height="13"  scrolling=no frameborder=0 allowtransparency="true"></iframe>
+								</div>
+							<div class="j-author">林龙, 吴碧</div>
+							<div class="j-volumn-doi">
+								<span class="j-volumn">
+									2020, 42(2): 65-69.
+								</span>
+								<a class="j-doi" href="https://doi.org/10.3969/j.issn.1673-3819.2020.02.012">https://doi.org/10.3969/j.issn.1673-3819.2020.02.012</a>							</div>
+							<div class="j-btn">
+								<a class="j-abs" href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.012"><i class="fa fa-file-text-o"></i> 摘要</a> (
+
+
+
+
+
+<span id="mag-getDinajiShu-42"></span>
+<script>
+$("#mag-getDinajiShu-42").load('/CN/article/getDianJiShu.jsp?articleid=42&ajax=true');
+</script>
+	
+)
+																	<a class="j-pdf" href="javascript:;" onclick="lsdy1('PDF','42');return false;">PDF全文</a> (
+
+
+
+
+	
+<span id="mag-getXiaZaiShu-42"></span>
+<script>
+$("#mag-getXiaZaiShu-42").load('/CN/article/getXiaZaiShu.jsp?articleid=42&ajax=true');
+</script>
+	
+
+
+)
+																								<span class="richhtml">
+										                            <a class="j-html" id="dage" href="#" target="_blank" onclick="lsdy1('RICH_HTML','42');return false;"><i class="fa fa-file-text"></i> HTML</a>
+		                            (
+
+
+
+
+
+<span id="mag-getDianJiRichHtmlShu-42"></span>
+<script>
+$("#mag-getDianJiRichHtmlShu-42").load('/CN/article/getDianJiRichHtmlShu.jsp?articleid=42&ajax=true');
+</script>
+
+)
+																</span>
+								<span class="knomap" id="span_visual_article_42">
+									&nbsp;<img src="/images/knowledge_map.png" width="16" height="16" />
+									<a href="https://www.zhkzyfz.cn/CN/lexeme/showArticleByLexeme.do?articleID=42">可视化</a>
+	                            </span>
+								
+								<span class="shoucang">
+									&nbsp;<img src="/images/1673-3819/reb.png" width="16" height="16" />
+									<a href="javascript:;" onclick="collectArticle('42');">
+										<span class="shouc">收藏</span>
+									</a>
+								</span>
+							</div>
+
+							<div class="j-abstract">
+								<p id="C2">在现代战争中,各种新型电子设备及武器使用愈发广泛,战场环境越来越复杂。雷达侦察担负着无可替代的任务。通常只能通过人工经验的方式对雷达功能进行辨识,这显然不能满足现代战争需求。利用聚类等数学方法对截获信号进行分类,然后结合参数划分及幅度统计分布情况对雷达搜索、跟踪波形进行自动识别,推断雷达工作模式。这种识别方法适用于多平台雷达,运算量小,易于实现。仿真结果验证了该方法的有效性及可行性。</p>
+							</div>
+							
+						</div>
+						
+						                	</li>
+                                                	  				
+	  					                
+                	<li id="art44" class="noselectrow">
+                		<div class="article-checkbox">
+							<INPUT id='thisart_44' class=article_checkbox onclick="hightlightrowaction('art44')" value='44' alt=Select type=checkbox name=pid> 
+                  			<LABEL class=hidelabel for='thisart_44'>Select</LABEL>
+						</div>
+						<div class="article-l article-w">
+							<span class="j-column"><subject>理论研究</subject></span>
+								<div class="j-title-1">
+									<a href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.013">一体化联合作战卫星地面站支援保障效能指标分析</a> <iframe src="/EN/article/articleDownloadControl.do?articleId=44"  width="15" height="13"  scrolling=no frameborder=0 allowtransparency="true"></iframe>
+								</div>
+							<div class="j-author">何玉晶, 张杰, 霍权, 厉剑</div>
+							<div class="j-volumn-doi">
+								<span class="j-volumn">
+									2020, 42(2): 70-75.
+								</span>
+								<a class="j-doi" href="https://doi.org/10.3969/j.issn.1673-3819.2020.02.013">https://doi.org/10.3969/j.issn.1673-3819.2020.02.013</a>							</div>
+							<div class="j-btn">
+								<a class="j-abs" href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.013"><i class="fa fa-file-text-o"></i> 摘要</a> (
+
+
+
+
+
+<span id="mag-getDinajiShu-44"></span>
+<script>
+$("#mag-getDinajiShu-44").load('/CN/article/getDianJiShu.jsp?articleid=44&ajax=true');
+</script>
+	
+)
+																	<a class="j-pdf" href="javascript:;" onclick="lsdy1('PDF','44');return false;">PDF全文</a> (
+
+
+
+
+	
+<span id="mag-getXiaZaiShu-44"></span>
+<script>
+$("#mag-getXiaZaiShu-44").load('/CN/article/getXiaZaiShu.jsp?articleid=44&ajax=true');
+</script>
+	
+
+
+)
+																								<span class="richhtml">
+										                            <a class="j-html" id="dage" href="#" target="_blank" onclick="lsdy1('RICH_HTML','44');return false;"><i class="fa fa-file-text"></i> HTML</a>
+		                            (
+
+
+
+
+
+<span id="mag-getDianJiRichHtmlShu-44"></span>
+<script>
+$("#mag-getDianJiRichHtmlShu-44").load('/CN/article/getDianJiRichHtmlShu.jsp?articleid=44&ajax=true');
+</script>
+
+)
+																</span>
+								<span class="knomap" id="span_visual_article_44">
+									&nbsp;<img src="/images/knowledge_map.png" width="16" height="16" />
+									<a href="https://www.zhkzyfz.cn/CN/lexeme/showArticleByLexeme.do?articleID=44">可视化</a>
+	                            </span>
+								
+								<span class="shoucang">
+									&nbsp;<img src="/images/1673-3819/reb.png" width="16" height="16" />
+									<a href="javascript:;" onclick="collectArticle('44');">
+										<span class="shouc">收藏</span>
+									</a>
+								</span>
+							</div>
+
+							<div class="j-abstract">
+								<p id="C2">空间已成为战争新的制高点,一体化联合作战是未来战争基本的作战形式。随着空间信息技术的不断发展,卫星地面站作为一体化联合作战的重要战略支撑,具有更加重要的地位。其支援保障效能是实现一体化联合作战指挥控制的前提,也是提高一体化联合作战效能的基础。通过研究分析卫星地面站效能指标选取原则,确立了其效能指标为设备可靠性能、数据可用性能、数据传输性能、安全防护性能、系统保障能力五个指标,并对相关指标进行了描述,为卫星地面站的功能研究奠定了基础。</p>
+							</div>
+							
+						</div>
+						
+						                	</li>
+                                                	  				
+	  					                
+                	<li id="art45" class="noselectrow">
+                		<div class="article-checkbox">
+							<INPUT id='thisart_45' class=article_checkbox onclick="hightlightrowaction('art45')" value='45' alt=Select type=checkbox name=pid> 
+                  			<LABEL class=hidelabel for='thisart_45'>Select</LABEL>
+						</div>
+						<div class="article-l article-w">
+							<span class="j-column"><subject>理论研究</subject></span>
+								<div class="j-title-1">
+									<a href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.014">基于规则推理的陆军突击装备体系贡献度分析</a> <iframe src="/EN/article/articleDownloadControl.do?articleId=45"  width="15" height="13"  scrolling=no frameborder=0 allowtransparency="true"></iframe>
+								</div>
+							<div class="j-author">张书腾, 胡娟</div>
+							<div class="j-volumn-doi">
+								<span class="j-volumn">
+									2020, 42(2): 76-79.
+								</span>
+								<a class="j-doi" href="https://doi.org/10.3969/j.issn.1673-3819.2020.02.014">https://doi.org/10.3969/j.issn.1673-3819.2020.02.014</a>							</div>
+							<div class="j-btn">
+								<a class="j-abs" href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.014"><i class="fa fa-file-text-o"></i> 摘要</a> (
+
+
+
+
+
+<span id="mag-getDinajiShu-45"></span>
+<script>
+$("#mag-getDinajiShu-45").load('/CN/article/getDianJiShu.jsp?articleid=45&ajax=true');
+</script>
+	
+)
+																	<a class="j-pdf" href="javascript:;" onclick="lsdy1('PDF','45');return false;">PDF全文</a> (
+
+
+
+
+	
+<span id="mag-getXiaZaiShu-45"></span>
+<script>
+$("#mag-getXiaZaiShu-45").load('/CN/article/getXiaZaiShu.jsp?articleid=45&ajax=true');
+</script>
+	
+
+
+)
+																								<span class="richhtml">
+										                            <a class="j-html" id="dage" href="#" target="_blank" onclick="lsdy1('RICH_HTML','45');return false;"><i class="fa fa-file-text"></i> HTML</a>
+		                            (
+
+
+
+
+
+<span id="mag-getDianJiRichHtmlShu-45"></span>
+<script>
+$("#mag-getDianJiRichHtmlShu-45").load('/CN/article/getDianJiRichHtmlShu.jsp?articleid=45&ajax=true');
+</script>
+
+)
+																</span>
+								<span class="knomap" id="span_visual_article_45">
+									&nbsp;<img src="/images/knowledge_map.png" width="16" height="16" />
+									<a href="https://www.zhkzyfz.cn/CN/lexeme/showArticleByLexeme.do?articleID=45">可视化</a>
+	                            </span>
+								
+								<span class="shoucang">
+									&nbsp;<img src="/images/1673-3819/reb.png" width="16" height="16" />
+									<a href="javascript:;" onclick="collectArticle('45');">
+										<span class="shouc">收藏</span>
+									</a>
+								</span>
+							</div>
+
+							<div class="j-abstract">
+								<p id="C2">针对陆军突击装备体系中装备对体系的贡献度问题,从体系完成使命任务的角度来分析装备对体系的贡献度。通过规则库来描述体系能力与任务执行水平之间的映射关系,并依据现有体系的能力值和规则库来评估体系对其使命任务的执行水平,通过对比被评装备纳入体系前后的体系任务执行水平的变化来衡量贡献度。最后,以武装直升机对陆军突击装备体系的贡献度为算例,说明了该方法的可行性。</p>
+							</div>
+							
+						</div>
+						
+						                	</li>
+                                                	  				
+	  					                
+                	<li id="art46" class="noselectrow">
+                		<div class="article-checkbox">
+							<INPUT id='thisart_46' class=article_checkbox onclick="hightlightrowaction('art46')" value='46' alt=Select type=checkbox name=pid> 
+                  			<LABEL class=hidelabel for='thisart_46'>Select</LABEL>
+						</div>
+						<div class="article-l article-w">
+							<span class="j-column"><subject>理论研究</subject></span>
+								<div class="j-title-1">
+									<a href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.015">基于发现概率的多平台反潜鱼雷协同火控研究</a> <iframe src="/EN/article/articleDownloadControl.do?articleId=46"  width="15" height="13"  scrolling=no frameborder=0 allowtransparency="true"></iframe>
+								</div>
+							<div class="j-author">吕荧, 王洋洋</div>
+							<div class="j-volumn-doi">
+								<span class="j-volumn">
+									2020, 42(2): 80-83.
+								</span>
+								<a class="j-doi" href="https://doi.org/10.3969/j.issn.1673-3819.2020.02.015">https://doi.org/10.3969/j.issn.1673-3819.2020.02.015</a>							</div>
+							<div class="j-btn">
+								<a class="j-abs" href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.015"><i class="fa fa-file-text-o"></i> 摘要</a> (
+
+
+
+
+
+<span id="mag-getDinajiShu-46"></span>
+<script>
+$("#mag-getDinajiShu-46").load('/CN/article/getDianJiShu.jsp?articleid=46&ajax=true');
+</script>
+	
+)
+																	<a class="j-pdf" href="javascript:;" onclick="lsdy1('PDF','46');return false;">PDF全文</a> (
+
+
+
+
+	
+<span id="mag-getXiaZaiShu-46"></span>
+<script>
+$("#mag-getXiaZaiShu-46").load('/CN/article/getXiaZaiShu.jsp?articleid=46&ajax=true');
+</script>
+	
+
+
+)
+																								<span class="richhtml">
+										                            <a class="j-html" id="dage" href="#" target="_blank" onclick="lsdy1('RICH_HTML','46');return false;"><i class="fa fa-file-text"></i> HTML</a>
+		                            (
+
+
+
+
+
+<span id="mag-getDianJiRichHtmlShu-46"></span>
+<script>
+$("#mag-getDianJiRichHtmlShu-46").load('/CN/article/getDianJiRichHtmlShu.jsp?articleid=46&ajax=true');
+</script>
+
+)
+																</span>
+								<span class="knomap" id="span_visual_article_46">
+									&nbsp;<img src="/images/knowledge_map.png" width="16" height="16" />
+									<a href="https://www.zhkzyfz.cn/CN/lexeme/showArticleByLexeme.do?articleID=46">可视化</a>
+	                            </span>
+								
+								<span class="shoucang">
+									&nbsp;<img src="/images/1673-3819/reb.png" width="16" height="16" />
+									<a href="javascript:;" onclick="collectArticle('46');">
+										<span class="shouc">收藏</span>
+									</a>
+								</span>
+							</div>
+
+							<div class="j-abstract">
+								<p id="C2">海洋环境的复杂性以及单平台单武器的攻潜形式,导致反潜鱼雷对潜发现概率低,难以达到作战需求。通过分析换能器探测误差及潜艇机动性,锁定目标存在区域,结合反潜鱼雷搜索特性,建立基于发现概率的多平台反潜鱼雷火力覆盖模型,可有效提高对潜发现概率。以多平台反潜鱼雷火力覆盖模型为核心的多平台反潜鱼雷协同火控精简了攻潜流程,提高了搜潜发现概率,为协同反潜作战提供了理论支持。</p>
+							</div>
+							
+						</div>
+						
+						                	</li>
+                                                	  				
+	  					                
+                	<li id="art47" class="noselectrow">
+                		<div class="article-checkbox">
+							<INPUT id='thisart_47' class=article_checkbox onclick="hightlightrowaction('art47')" value='47' alt=Select type=checkbox name=pid> 
+                  			<LABEL class=hidelabel for='thisart_47'>Select</LABEL>
+						</div>
+						<div class="article-l article-w">
+							<span class="j-column"><subject>理论研究</subject></span>
+								<div class="j-title-1">
+									<a href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.016">舰炮武器系统动态精度海上测试方法与精度条件分析</a> <iframe src="/EN/article/articleDownloadControl.do?articleId=47"  width="15" height="13"  scrolling=no frameborder=0 allowtransparency="true"></iframe>
+								</div>
+							<div class="j-author">胡春晓, 余光其</div>
+							<div class="j-volumn-doi">
+								<span class="j-volumn">
+									2020, 42(2): 84-88.
+								</span>
+								<a class="j-doi" href="https://doi.org/10.3969/j.issn.1673-3819.2020.02.016">https://doi.org/10.3969/j.issn.1673-3819.2020.02.016</a>							</div>
+							<div class="j-btn">
+								<a class="j-abs" href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.016"><i class="fa fa-file-text-o"></i> 摘要</a> (
+
+
+
+
+
+<span id="mag-getDinajiShu-47"></span>
+<script>
+$("#mag-getDinajiShu-47").load('/CN/article/getDianJiShu.jsp?articleid=47&ajax=true');
+</script>
+	
+)
+																	<a class="j-pdf" href="javascript:;" onclick="lsdy1('PDF','47');return false;">PDF全文</a> (
+
+
+
+
+	
+<span id="mag-getXiaZaiShu-47"></span>
+<script>
+$("#mag-getXiaZaiShu-47").load('/CN/article/getXiaZaiShu.jsp?articleid=47&ajax=true');
+</script>
+	
+
+
+)
+																								<span class="richhtml">
+										                            <a class="j-html" id="dage" href="#" target="_blank" onclick="lsdy1('RICH_HTML','47');return false;"><i class="fa fa-file-text"></i> HTML</a>
+		                            (
+
+
+
+
+
+<span id="mag-getDianJiRichHtmlShu-47"></span>
+<script>
+$("#mag-getDianJiRichHtmlShu-47").load('/CN/article/getDianJiRichHtmlShu.jsp?articleid=47&ajax=true');
+</script>
+
+)
+																</span>
+								<span class="knomap" id="span_visual_article_47">
+									&nbsp;<img src="/images/knowledge_map.png" width="16" height="16" />
+									<a href="https://www.zhkzyfz.cn/CN/lexeme/showArticleByLexeme.do?articleID=47">可视化</a>
+	                            </span>
+								
+								<span class="shoucang">
+									&nbsp;<img src="/images/1673-3819/reb.png" width="16" height="16" />
+									<a href="javascript:;" onclick="collectArticle('47');">
+										<span class="shouc">收藏</span>
+									</a>
+								</span>
+							</div>
+
+							<div class="j-abstract">
+								<p id="C2">针对在海上进行舰炮武器系统动态精度试验测试的能力建设需求,通过对比分析在海上与陆上进行动态精度测试存在的差异及影响,对在海上进行动态精度测试的原理方法进行了分析设计;根据间接测量误差传递原理,建立了跟踪诸元理论真值解算流程模型,通过MATLAB编程实现蒙特卡罗仿真程序,结合实例对在海上进行动态精度测试需满足的真值测量精度水平进行了仿真,并依据试验测试真值精度要求原则,分析出了对位置定位和航向姿态真值的测量精度条件。</p>
+							</div>
+							
+						</div>
+						
+						                	</li>
+                                                	  				
+	  					                
+                	<li id="art48" class="noselectrow">
+                		<div class="article-checkbox">
+							<INPUT id='thisart_48' class=article_checkbox onclick="hightlightrowaction('art48')" value='48' alt=Select type=checkbox name=pid> 
+                  			<LABEL class=hidelabel for='thisart_48'>Select</LABEL>
+						</div>
+						<div class="article-l article-w">
+							<span class="j-column"><subject>理论研究</subject></span>
+								<div class="j-title-1">
+									<a href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.017">四旋翼无人机的反步RBF网络自适应控制</a> <iframe src="/EN/article/articleDownloadControl.do?articleId=48"  width="15" height="13"  scrolling=no frameborder=0 allowtransparency="true"></iframe>
+								</div>
+							<div class="j-author">沈炜皓, 李众</div>
+							<div class="j-volumn-doi">
+								<span class="j-volumn">
+									2020, 42(2): 89-94.
+								</span>
+								<a class="j-doi" href="https://doi.org/10.3969/j.issn.1673-3819.2020.02.017">https://doi.org/10.3969/j.issn.1673-3819.2020.02.017</a>							</div>
+							<div class="j-btn">
+								<a class="j-abs" href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.017"><i class="fa fa-file-text-o"></i> 摘要</a> (
+
+
+
+
+
+<span id="mag-getDinajiShu-48"></span>
+<script>
+$("#mag-getDinajiShu-48").load('/CN/article/getDianJiShu.jsp?articleid=48&ajax=true');
+</script>
+	
+)
+																	<a class="j-pdf" href="javascript:;" onclick="lsdy1('PDF','48');return false;">PDF全文</a> (
+
+
+
+
+	
+<span id="mag-getXiaZaiShu-48"></span>
+<script>
+$("#mag-getXiaZaiShu-48").load('/CN/article/getXiaZaiShu.jsp?articleid=48&ajax=true');
+</script>
+	
+
+
+)
+																								<span class="richhtml">
+										                            <a class="j-html" id="dage" href="#" target="_blank" onclick="lsdy1('RICH_HTML','48');return false;"><i class="fa fa-file-text"></i> HTML</a>
+		                            (
+
+
+
+
+
+<span id="mag-getDianJiRichHtmlShu-48"></span>
+<script>
+$("#mag-getDianJiRichHtmlShu-48").load('/CN/article/getDianJiRichHtmlShu.jsp?articleid=48&ajax=true');
+</script>
+
+)
+																</span>
+								<span class="knomap" id="span_visual_article_48">
+									&nbsp;<img src="/images/knowledge_map.png" width="16" height="16" />
+									<a href="https://www.zhkzyfz.cn/CN/lexeme/showArticleByLexeme.do?articleID=48">可视化</a>
+	                            </span>
+								
+								<span class="shoucang">
+									&nbsp;<img src="/images/1673-3819/reb.png" width="16" height="16" />
+									<a href="javascript:;" onclick="collectArticle('48');">
+										<span class="shouc">收藏</span>
+									</a>
+								</span>
+							</div>
+
+							<div class="j-abstract">
+								<p id="C2">针对存在外界常值干扰和变值干扰的四旋翼无人机系统,传统反步控制不具备良好的抗干扰性,提出了一种将传统反步控制和RBF自适应相结合的控制方法。该方法在传统反步控制基础上,构造径向基函数RBF神经网络逼近外界干扰,并进行干扰补偿,通过Lyapunov方法设计权值的自适应律,在线估计RBF神经网络的权值,并利用Lyapunov稳定性定理证明系统的稳定性。在仿真平台上进行定点控制实验,仿真结果表明当考虑外界常值干扰和变值干扰时。相比于传统反步法,设计的方法调节时间更短,误差更小,验证了反步RBF网络自适应控制方法的抗干扰性更强。</p>
+							</div>
+							
+						</div>
+						
+						                	</li>
+                                                	  				
+	  					                <div class="articlesectionlisting">
+	                <a name="&lt;subject&gt;工程实践&lt;/subject&gt;"></a>
+	                <div class=dbt_header><subject>工程实践</subject></div>
+	                </div>
+	                	                	                
+                	<li id="art49" class="noselectrow">
+                		<div class="article-checkbox">
+							<INPUT id='thisart_49' class=article_checkbox onclick="hightlightrowaction('art49')" value='49' alt=Select type=checkbox name=pid> 
+                  			<LABEL class=hidelabel for='thisart_49'>Select</LABEL>
+						</div>
+						<div class="article-l article-w">
+							<span class="j-column"><subject>工程实践</subject></span>
+								<div class="j-title-1">
+									<a href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.018">航空兵出动计划方案冲突自动探测问题</a> <iframe src="/EN/article/articleDownloadControl.do?articleId=49"  width="15" height="13"  scrolling=no frameborder=0 allowtransparency="true"></iframe>
+								</div>
+							<div class="j-author">邓红艳, 邓桂龙, 董冬梅, 张燕</div>
+							<div class="j-volumn-doi">
+								<span class="j-volumn">
+									2020, 42(2): 95-99.
+								</span>
+								<a class="j-doi" href="https://doi.org/10.3969/j.issn.1673-3819.2020.02.018">https://doi.org/10.3969/j.issn.1673-3819.2020.02.018</a>							</div>
+							<div class="j-btn">
+								<a class="j-abs" href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.018"><i class="fa fa-file-text-o"></i> 摘要</a> (
+
+
+
+
+
+<span id="mag-getDinajiShu-49"></span>
+<script>
+$("#mag-getDinajiShu-49").load('/CN/article/getDianJiShu.jsp?articleid=49&ajax=true');
+</script>
+	
+)
+																	<a class="j-pdf" href="javascript:;" onclick="lsdy1('PDF','49');return false;">PDF全文</a> (
+
+
+
+
+	
+<span id="mag-getXiaZaiShu-49"></span>
+<script>
+$("#mag-getXiaZaiShu-49").load('/CN/article/getXiaZaiShu.jsp?articleid=49&ajax=true');
+</script>
+	
+
+
+)
+																								<span class="richhtml">
+										                            <a class="j-html" id="dage" href="#" target="_blank" onclick="lsdy1('RICH_HTML','49');return false;"><i class="fa fa-file-text"></i> HTML</a>
+		                            (
+
+
+
+
+
+<span id="mag-getDianJiRichHtmlShu-49"></span>
+<script>
+$("#mag-getDianJiRichHtmlShu-49").load('/CN/article/getDianJiRichHtmlShu.jsp?articleid=49&ajax=true');
+</script>
+
+)
+																</span>
+								<span class="knomap" id="span_visual_article_49">
+									&nbsp;<img src="/images/knowledge_map.png" width="16" height="16" />
+									<a href="https://www.zhkzyfz.cn/CN/lexeme/showArticleByLexeme.do?articleID=49">可视化</a>
+	                            </span>
+								
+								<span class="shoucang">
+									&nbsp;<img src="/images/1673-3819/reb.png" width="16" height="16" />
+									<a href="javascript:;" onclick="collectArticle('49');">
+										<span class="shouc">收藏</span>
+									</a>
+								</span>
+							</div>
+
+							<div class="j-abstract">
+								<p id="C2">航空兵出动计划冲突探测问题是信息化条件下空军作战规划中亟须解决问题,在对航空兵出动计划冲突问题分析的基础上,提出了基于仿真推演的航空兵出动计划冲突自动探测方法,并对方法中的核心问题时间策略机制、知识库和数据库设计进行了分析并给出了解决方案。针对某方向航空兵出动计划方案进行实验,实验结果表明,基于仿真推演的航空兵出动计划冲突自动探测方法切实可行。</p>
+							</div>
+							
+						</div>
+						
+						                	</li>
+                                                	  				
+	  					                
+                	<li id="art26" class="noselectrow">
+                		<div class="article-checkbox">
+							<INPUT id='thisart_26' class=article_checkbox onclick="hightlightrowaction('art26')" value='26' alt=Select type=checkbox name=pid> 
+                  			<LABEL class=hidelabel for='thisart_26'>Select</LABEL>
+						</div>
+						<div class="article-l article-w">
+							<span class="j-column"><subject>工程实践</subject></span>
+								<div class="j-title-1">
+									<a href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.019">基于GBB技术海军作战仿真中水下探测和水声对抗设计与实现</a> <iframe src="/EN/article/articleDownloadControl.do?articleId=26"  width="15" height="13"  scrolling=no frameborder=0 allowtransparency="true"></iframe>
+								</div>
+							<div class="j-author">王幸军, 唐晨</div>
+							<div class="j-volumn-doi">
+								<span class="j-volumn">
+									2020, 42(2): 100-104.
+								</span>
+								<a class="j-doi" href="https://doi.org/10.3969/j.issn.1673-3819.2020.02.019">https://doi.org/10.3969/j.issn.1673-3819.2020.02.019</a>							</div>
+							<div class="j-btn">
+								<a class="j-abs" href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.019"><i class="fa fa-file-text-o"></i> 摘要</a> (
+
+
+
+
+
+<span id="mag-getDinajiShu-26"></span>
+<script>
+$("#mag-getDinajiShu-26").load('/CN/article/getDianJiShu.jsp?articleid=26&ajax=true');
+</script>
+	
+)
+																	<a class="j-pdf" href="javascript:;" onclick="lsdy1('PDF','26');return false;">PDF全文</a> (
+
+
+
+
+	
+<span id="mag-getXiaZaiShu-26"></span>
+<script>
+$("#mag-getXiaZaiShu-26").load('/CN/article/getXiaZaiShu.jsp?articleid=26&ajax=true');
+</script>
+	
+
+
+)
+																								<span class="richhtml">
+										                            <a class="j-html" id="dage" href="#" target="_blank" onclick="lsdy1('RICH_HTML','26');return false;"><i class="fa fa-file-text"></i> HTML</a>
+		                            (
+
+
+
+
+
+<span id="mag-getDianJiRichHtmlShu-26"></span>
+<script>
+$("#mag-getDianJiRichHtmlShu-26").load('/CN/article/getDianJiRichHtmlShu.jsp?articleid=26&ajax=true');
+</script>
+
+)
+																</span>
+								<span class="knomap" id="span_visual_article_26">
+									&nbsp;<img src="/images/knowledge_map.png" width="16" height="16" />
+									<a href="https://www.zhkzyfz.cn/CN/lexeme/showArticleByLexeme.do?articleID=26">可视化</a>
+	                            </span>
+								
+								<span class="shoucang">
+									&nbsp;<img src="/images/1673-3819/reb.png" width="16" height="16" />
+									<a href="javascript:;" onclick="collectArticle('26');">
+										<span class="shouc">收藏</span>
+									</a>
+								</span>
+							</div>
+
+							<div class="j-abstract">
+								<p id="C2">在对海军作战仿真中水下探测和水声对抗功能需求、仿真实体类型和实体颗粒度进行界定的基础上,基于GBB技术,构建了水下探测和水声对抗模型体系,设计了与GBB数据表交互的数据结构及交互方式,并进行了实现。以此给出了在一定作战态势下,水下探测和水声对抗的实例分析。证明该水下探测和水声对抗设计可作为海军作战仿真系统的重要组成部分,合乎水下探测和水声对抗训练的需求。</p>
+							</div>
+							
+						</div>
+						
+						                	</li>
+                                                	  				
+	  					                
+                	<li id="art27" class="noselectrow">
+                		<div class="article-checkbox">
+							<INPUT id='thisart_27' class=article_checkbox onclick="hightlightrowaction('art27')" value='27' alt=Select type=checkbox name=pid> 
+                  			<LABEL class=hidelabel for='thisart_27'>Select</LABEL>
+						</div>
+						<div class="article-l article-w">
+							<span class="j-column"><subject>工程实践</subject></span>
+								<div class="j-title-1">
+									<a href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.020">面向组织演进的平行仿真技术</a> <iframe src="/EN/article/articleDownloadControl.do?articleId=27"  width="15" height="13"  scrolling=no frameborder=0 allowtransparency="true"></iframe>
+								</div>
+							<div class="j-author">初阳, 吴章华, 周玉芳</div>
+							<div class="j-volumn-doi">
+								<span class="j-volumn">
+									2020, 42(2): 105-110.
+								</span>
+								<a class="j-doi" href="https://doi.org/10.3969/j.issn.1673-3819.2020.02.020">https://doi.org/10.3969/j.issn.1673-3819.2020.02.020</a>							</div>
+							<div class="j-btn">
+								<a class="j-abs" href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.020"><i class="fa fa-file-text-o"></i> 摘要</a> (
+
+
+
+
+
+<span id="mag-getDinajiShu-27"></span>
+<script>
+$("#mag-getDinajiShu-27").load('/CN/article/getDianJiShu.jsp?articleid=27&ajax=true');
+</script>
+	
+)
+																	<a class="j-pdf" href="javascript:;" onclick="lsdy1('PDF','27');return false;">PDF全文</a> (
+
+
+
+
+	
+<span id="mag-getXiaZaiShu-27"></span>
+<script>
+$("#mag-getXiaZaiShu-27").load('/CN/article/getXiaZaiShu.jsp?articleid=27&ajax=true');
+</script>
+	
+
+
+)
+																								<span class="richhtml">
+										                            <a class="j-html" id="dage" href="#" target="_blank" onclick="lsdy1('RICH_HTML','27');return false;"><i class="fa fa-file-text"></i> HTML</a>
+		                            (
+
+
+
+
+
+<span id="mag-getDianJiRichHtmlShu-27"></span>
+<script>
+$("#mag-getDianJiRichHtmlShu-27").load('/CN/article/getDianJiRichHtmlShu.jsp?articleid=27&ajax=true');
+</script>
+
+)
+																</span>
+								<span class="knomap" id="span_visual_article_27">
+									&nbsp;<img src="/images/knowledge_map.png" width="16" height="16" />
+									<a href="https://www.zhkzyfz.cn/CN/lexeme/showArticleByLexeme.do?articleID=27">可视化</a>
+	                            </span>
+								
+								<span class="shoucang">
+									&nbsp;<img src="/images/1673-3819/reb.png" width="16" height="16" />
+									<a href="javascript:;" onclick="collectArticle('27');">
+										<span class="shouc">收藏</span>
+									</a>
+								</span>
+							</div>
+
+							<div class="j-abstract">
+								<p id="C2">为解决平行仿真中实体关系模型动态构建、模型关系在线修正不足的问题,首先分析了基于兵力和基于组织两种典型的仿真系统演化方式,并结合平行仿真已有理论基础,提出了组织演进条件下的平行仿真框架,提出了实体模型关系动态构建、实体模型动态修正规则设计等方法,最后以某典型作战背景想定为例,进行仿真实验,验证了所提方法的可行性。</p>
+							</div>
+							
+						</div>
+						
+						                	</li>
+                                                	  				
+	  					                
+                	<li id="art28" class="noselectrow">
+                		<div class="article-checkbox">
+							<INPUT id='thisart_28' class=article_checkbox onclick="hightlightrowaction('art28')" value='28' alt=Select type=checkbox name=pid> 
+                  			<LABEL class=hidelabel for='thisart_28'>Select</LABEL>
+						</div>
+						<div class="article-l article-w">
+							<span class="j-column"><subject>工程实践</subject></span>
+								<div class="j-title-1">
+									<a href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.021">军事仿真实验云的设计与应用</a> <iframe src="/EN/article/articleDownloadControl.do?articleId=28"  width="15" height="13"  scrolling=no frameborder=0 allowtransparency="true"></iframe>
+								</div>
+							<div class="j-author">沈昆, 孙鹏, 王军</div>
+							<div class="j-volumn-doi">
+								<span class="j-volumn">
+									2020, 42(2): 111-117.
+								</span>
+								<a class="j-doi" href="https://doi.org/10.3969/j.issn.1673-3819.2020.02.021">https://doi.org/10.3969/j.issn.1673-3819.2020.02.021</a>							</div>
+							<div class="j-btn">
+								<a class="j-abs" href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.021"><i class="fa fa-file-text-o"></i> 摘要</a> (
+
+
+
+
+
+<span id="mag-getDinajiShu-28"></span>
+<script>
+$("#mag-getDinajiShu-28").load('/CN/article/getDianJiShu.jsp?articleid=28&ajax=true');
+</script>
+	
+)
+																	<a class="j-pdf" href="javascript:;" onclick="lsdy1('PDF','28');return false;">PDF全文</a> (
+
+
+
+
+	
+<span id="mag-getXiaZaiShu-28"></span>
+<script>
+$("#mag-getXiaZaiShu-28").load('/CN/article/getXiaZaiShu.jsp?articleid=28&ajax=true');
+</script>
+	
+
+
+)
+																								<span class="richhtml">
+										                            <a class="j-html" id="dage" href="#" target="_blank" onclick="lsdy1('RICH_HTML','28');return false;"><i class="fa fa-file-text"></i> HTML</a>
+		                            (
+
+
+
+
+
+<span id="mag-getDianJiRichHtmlShu-28"></span>
+<script>
+$("#mag-getDianJiRichHtmlShu-28").load('/CN/article/getDianJiRichHtmlShu.jsp?articleid=28&ajax=true');
+</script>
+
+)
+																</span>
+								<span class="knomap" id="span_visual_article_28">
+									&nbsp;<img src="/images/knowledge_map.png" width="16" height="16" />
+									<a href="https://www.zhkzyfz.cn/CN/lexeme/showArticleByLexeme.do?articleID=28">可视化</a>
+	                            </span>
+								
+								<span class="shoucang">
+									&nbsp;<img src="/images/1673-3819/reb.png" width="16" height="16" />
+									<a href="javascript:;" onclick="collectArticle('28');">
+										<span class="shouc">收藏</span>
+									</a>
+								</span>
+							</div>
+
+							<div class="j-abstract">
+								<p id="C2">在分析军事仿真实验云运用需求的基础上,研究提出了军事仿真实验云&#x0201c;4层1体系&#x0201d;的体系架构及其基本应用部署模式;重点研究了仿真实验云数据总线和仿真实验应用虚拟化这两项关键性技术,提出了基本的实现思路;最后,就军事仿真实验云的应用模式展开了研究,针对&#x0201c;人在环&#x0201d;和&#x0201c;人不在环&#x0201d;两种实验模式,提出了基本应用设想。本文的研究可以为军事仿真实验云后续的工程建设和推广应用提供借鉴。</p>
+							</div>
+							
+						</div>
+						
+						                	</li>
+                                                	  				
+	  					                
+                	<li id="art29" class="noselectrow">
+                		<div class="article-checkbox">
+							<INPUT id='thisart_29' class=article_checkbox onclick="hightlightrowaction('art29')" value='29' alt=Select type=checkbox name=pid> 
+                  			<LABEL class=hidelabel for='thisart_29'>Select</LABEL>
+						</div>
+						<div class="article-l article-w">
+							<span class="j-column"><subject>工程实践</subject></span>
+								<div class="j-title-1">
+									<a href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.022">基于频率重构技术的自优化短波电台设计</a> <iframe src="/EN/article/articleDownloadControl.do?articleId=29"  width="15" height="13"  scrolling=no frameborder=0 allowtransparency="true"></iframe>
+								</div>
+							<div class="j-author">徐池, 郭谊, 韩东</div>
+							<div class="j-volumn-doi">
+								<span class="j-volumn">
+									2020, 42(2): 118-123.
+								</span>
+								<a class="j-doi" href="https://doi.org/10.3969/j.issn.1673-3819.2020.02.022">https://doi.org/10.3969/j.issn.1673-3819.2020.02.022</a>							</div>
+							<div class="j-btn">
+								<a class="j-abs" href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.022"><i class="fa fa-file-text-o"></i> 摘要</a> (
+
+
+
+
+
+<span id="mag-getDinajiShu-29"></span>
+<script>
+$("#mag-getDinajiShu-29").load('/CN/article/getDianJiShu.jsp?articleid=29&ajax=true');
+</script>
+	
+)
+																	<a class="j-pdf" href="javascript:;" onclick="lsdy1('PDF','29');return false;">PDF全文</a> (
+
+
+
+
+	
+<span id="mag-getXiaZaiShu-29"></span>
+<script>
+$("#mag-getXiaZaiShu-29").load('/CN/article/getXiaZaiShu.jsp?articleid=29&ajax=true');
+</script>
+	
+
+
+)
+																								<span class="richhtml">
+										                            <a class="j-html" id="dage" href="#" target="_blank" onclick="lsdy1('RICH_HTML','29');return false;"><i class="fa fa-file-text"></i> HTML</a>
+		                            (
+
+
+
+
+
+<span id="mag-getDianJiRichHtmlShu-29"></span>
+<script>
+$("#mag-getDianJiRichHtmlShu-29").load('/CN/article/getDianJiRichHtmlShu.jsp?articleid=29&ajax=true');
+</script>
+
+)
+																</span>
+								<span class="knomap" id="span_visual_article_29">
+									&nbsp;<img src="/images/knowledge_map.png" width="16" height="16" />
+									<a href="https://www.zhkzyfz.cn/CN/lexeme/showArticleByLexeme.do?articleID=29">可视化</a>
+	                            </span>
+								
+								<span class="shoucang">
+									&nbsp;<img src="/images/1673-3819/reb.png" width="16" height="16" />
+									<a href="javascript:;" onclick="collectArticle('29');">
+										<span class="shouc">收藏</span>
+									</a>
+								</span>
+							</div>
+
+							<div class="j-abstract">
+								<p id="C2">频率优选是影响短波通信设备使用效能的主要因素之一,针对常规自适应短波电台预置频率质量不高、数量有限等问题,设计了一种基于北斗模块的自优化短波电台,通过在短波电台中嵌入北斗模块,为短波频率基础数据库提供地理位置、时间等与通信质量密切相关的数据,利用数据库历史数据预测、重构短波通信可用频率,进而实现短波电台通信频率的自我生成、自我更新和自我优化。</p>
+							</div>
+							
+						</div>
+						
+						                	</li>
+                                                	  				
+	  					                
+                	<li id="art31" class="noselectrow">
+                		<div class="article-checkbox">
+							<INPUT id='thisart_31' class=article_checkbox onclick="hightlightrowaction('art31')" value='31' alt=Select type=checkbox name=pid> 
+                  			<LABEL class=hidelabel for='thisart_31'>Select</LABEL>
+						</div>
+						<div class="article-l article-w">
+							<span class="j-column"><subject>工程实践</subject></span>
+								<div class="j-title-1">
+									<a href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.023">战术训练飞行模拟器综合显示系统仿真架构与实现</a> <iframe src="/EN/article/articleDownloadControl.do?articleId=31"  width="15" height="13"  scrolling=no frameborder=0 allowtransparency="true"></iframe>
+								</div>
+							<div class="j-author">朱涛, 沈明辉, 黄绍君, 范蓉, 周兴平</div>
+							<div class="j-volumn-doi">
+								<span class="j-volumn">
+									2020, 42(2): 124-127.
+								</span>
+								<a class="j-doi" href="https://doi.org/10.3969/j.issn.1673-3819.2020.02.023">https://doi.org/10.3969/j.issn.1673-3819.2020.02.023</a>							</div>
+							<div class="j-btn">
+								<a class="j-abs" href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.023"><i class="fa fa-file-text-o"></i> 摘要</a> (
+
+
+
+
+
+<span id="mag-getDinajiShu-31"></span>
+<script>
+$("#mag-getDinajiShu-31").load('/CN/article/getDianJiShu.jsp?articleid=31&ajax=true');
+</script>
+	
+)
+																	<a class="j-pdf" href="javascript:;" onclick="lsdy1('PDF','31');return false;">PDF全文</a> (
+
+
+
+
+	
+<span id="mag-getXiaZaiShu-31"></span>
+<script>
+$("#mag-getXiaZaiShu-31").load('/CN/article/getXiaZaiShu.jsp?articleid=31&ajax=true');
+</script>
+	
+
+
+)
+																								<span class="richhtml">
+										                            <a class="j-html" id="dage" href="#" target="_blank" onclick="lsdy1('RICH_HTML','31');return false;"><i class="fa fa-file-text"></i> HTML</a>
+		                            (
+
+
+
+
+
+<span id="mag-getDianJiRichHtmlShu-31"></span>
+<script>
+$("#mag-getDianJiRichHtmlShu-31").load('/CN/article/getDianJiRichHtmlShu.jsp?articleid=31&ajax=true');
+</script>
+
+)
+																</span>
+								<span class="knomap" id="span_visual_article_31">
+									&nbsp;<img src="/images/knowledge_map.png" width="16" height="16" />
+									<a href="https://www.zhkzyfz.cn/CN/lexeme/showArticleByLexeme.do?articleID=31">可视化</a>
+	                            </span>
+								
+								<span class="shoucang">
+									&nbsp;<img src="/images/1673-3819/reb.png" width="16" height="16" />
+									<a href="javascript:;" onclick="collectArticle('31');">
+										<span class="shouc">收藏</span>
+									</a>
+								</span>
+							</div>
+
+							<div class="j-abstract">
+								<p id="C2">针对战术训练飞行模拟器研制的实际需要,对与之配套的机载综合显示系统进行深入研究及最终实现。提出了一种多种机型通用的综合显示系统仿真架构结构,并对工程实现过程中所需要注意的系统性能高效控制策略、仿真架构可移植性、显示画面组件化设计等关键技术及技术难点进行深入分析并给出具体实现方法。运用该仿真架构已经成功研制了多个型号战术训练飞行模拟器的综合显示系统,经长时间实际训练使用检验,该仿真架构具有良好的通用性,功能完备,性能优良,可扩展性强,具备很好的推广价值。</p>
+							</div>
+							
+						</div>
+						
+						                	</li>
+                                                	  				
+	  					                
+                	<li id="art32" class="noselectrow">
+                		<div class="article-checkbox">
+							<INPUT id='thisart_32' class=article_checkbox onclick="hightlightrowaction('art32')" value='32' alt=Select type=checkbox name=pid> 
+                  			<LABEL class=hidelabel for='thisart_32'>Select</LABEL>
+						</div>
+						<div class="article-l article-w">
+							<span class="j-column"><subject>工程实践</subject></span>
+								<div class="j-title-1">
+									<a href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.024">&#x0201c;低慢小&#x0201d;无人机探测方法</a> <iframe src="/EN/article/articleDownloadControl.do?articleId=32"  width="15" height="13"  scrolling=no frameborder=0 allowtransparency="true"></iframe>
+								</div>
+							<div class="j-author">屈旭涛, 庄东晔, 谢海斌</div>
+							<div class="j-volumn-doi">
+								<span class="j-volumn">
+									2020, 42(2): 128-135.
+								</span>
+								<a class="j-doi" href="https://doi.org/10.3969/j.issn.1673-3819.2020.02.024">https://doi.org/10.3969/j.issn.1673-3819.2020.02.024</a>							</div>
+							<div class="j-btn">
+								<a class="j-abs" href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.024"><i class="fa fa-file-text-o"></i> 摘要</a> (
+
+
+
+
+
+<span id="mag-getDinajiShu-32"></span>
+<script>
+$("#mag-getDinajiShu-32").load('/CN/article/getDianJiShu.jsp?articleid=32&ajax=true');
+</script>
+	
+)
+																	<a class="j-pdf" href="javascript:;" onclick="lsdy1('PDF','32');return false;">PDF全文</a> (
+
+
+
+
+	
+<span id="mag-getXiaZaiShu-32"></span>
+<script>
+$("#mag-getXiaZaiShu-32").load('/CN/article/getXiaZaiShu.jsp?articleid=32&ajax=true');
+</script>
+	
+
+
+)
+																								<span class="richhtml">
+										                            <a class="j-html" id="dage" href="#" target="_blank" onclick="lsdy1('RICH_HTML','32');return false;"><i class="fa fa-file-text"></i> HTML</a>
+		                            (
+
+
+
+
+
+<span id="mag-getDianJiRichHtmlShu-32"></span>
+<script>
+$("#mag-getDianJiRichHtmlShu-32").load('/CN/article/getDianJiRichHtmlShu.jsp?articleid=32&ajax=true');
+</script>
+
+)
+																</span>
+								<span class="knomap" id="span_visual_article_32">
+									&nbsp;<img src="/images/knowledge_map.png" width="16" height="16" />
+									<a href="https://www.zhkzyfz.cn/CN/lexeme/showArticleByLexeme.do?articleID=32">可视化</a>
+	                            </span>
+								
+								<span class="shoucang">
+									&nbsp;<img src="/images/1673-3819/reb.png" width="16" height="16" />
+									<a href="javascript:;" onclick="collectArticle('32');">
+										<span class="shouc">收藏</span>
+									</a>
+								</span>
+							</div>
+
+							<div class="j-abstract">
+								<p id="C2">&#x0201c;低慢小&#x0201d;无人机在航拍、农业、娱乐、军事等领域的广泛应用,在带来产业升级的同时,也带来了安全隐患。作为对&#x0201c;低慢小&#x0201d;无人机管控与反制的前提,&#x0201c;低慢小&#x0201d;无人机探测成为一个备受关注的研究课题。从&#x0201c;低慢小&#x0201d;无人机与客机、战斗机等传统探测目标特性上的不同出发,分析&#x0201c;低慢小&#x0201d;无人机探测的难点,梳理当下针对这一问题研究的最新成果,总结雷达探测、激光探测、光电探测、声探测、金属探测、无线电探测等方法,比较各原理之间的性能差异,提出移动探测、融合探测、跟踪探测等发展方向。</p>
+							</div>
+							
+						</div>
+						
+						                	</li>
+                                                	  				
+	  					                
+                	<li id="art33" class="noselectrow">
+                		<div class="article-checkbox">
+							<INPUT id='thisart_33' class=article_checkbox onclick="hightlightrowaction('art33')" value='33' alt=Select type=checkbox name=pid> 
+                  			<LABEL class=hidelabel for='thisart_33'>Select</LABEL>
+						</div>
+						<div class="article-l article-w">
+							<span class="j-column"><subject>工程实践</subject></span>
+								<div class="j-title-1">
+									<a href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.025">水面靶标综合遥测遥控系统的设计与实现</a> <iframe src="/EN/article/articleDownloadControl.do?articleId=33"  width="15" height="13"  scrolling=no frameborder=0 allowtransparency="true"></iframe>
+								</div>
+							<div class="j-author">王海涛, 刁世伦</div>
+							<div class="j-volumn-doi">
+								<span class="j-volumn">
+									2020, 42(2): 136-140.
+								</span>
+								<a class="j-doi" href="https://doi.org/10.3969/j.issn.1673-3819.2020.02.025">https://doi.org/10.3969/j.issn.1673-3819.2020.02.025</a>							</div>
+							<div class="j-btn">
+								<a class="j-abs" href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.025"><i class="fa fa-file-text-o"></i> 摘要</a> (
+
+
+
+
+
+<span id="mag-getDinajiShu-33"></span>
+<script>
+$("#mag-getDinajiShu-33").load('/CN/article/getDianJiShu.jsp?articleid=33&ajax=true');
+</script>
+	
+)
+																	<a class="j-pdf" href="javascript:;" onclick="lsdy1('PDF','33');return false;">PDF全文</a> (
+
+
+
+
+	
+<span id="mag-getXiaZaiShu-33"></span>
+<script>
+$("#mag-getXiaZaiShu-33").load('/CN/article/getXiaZaiShu.jsp?articleid=33&ajax=true');
+</script>
+	
+
+
+)
+																								<span class="richhtml">
+										                            <a class="j-html" id="dage" href="#" target="_blank" onclick="lsdy1('RICH_HTML','33');return false;"><i class="fa fa-file-text"></i> HTML</a>
+		                            (
+
+
+
+
+
+<span id="mag-getDianJiRichHtmlShu-33"></span>
+<script>
+$("#mag-getDianJiRichHtmlShu-33").load('/CN/article/getDianJiRichHtmlShu.jsp?articleid=33&ajax=true');
+</script>
+
+)
+																</span>
+								<span class="knomap" id="span_visual_article_33">
+									&nbsp;<img src="/images/knowledge_map.png" width="16" height="16" />
+									<a href="https://www.zhkzyfz.cn/CN/lexeme/showArticleByLexeme.do?articleID=33">可视化</a>
+	                            </span>
+								
+								<span class="shoucang">
+									&nbsp;<img src="/images/1673-3819/reb.png" width="16" height="16" />
+									<a href="javascript:;" onclick="collectArticle('33');">
+										<span class="shouc">收藏</span>
+									</a>
+								</span>
+							</div>
+
+							<div class="j-abstract">
+								<p id="C3">介绍水面靶标综合遥测遥控系统的组成和工作原理,针对海面传输的使用环境在C频段上行遥控低速信号采用优化码元宽度的BPSK直接序列扩频技术;下行遥测高速信号传输选择OFDM技术解决方案,利用北斗信道实时回传靶标位置引导地面站天馈伺分系统实现OFDM体制下自跟踪功能,进行了遥测遥控链路计算,有效解决对海面目标遥测遥控的多径衰落技术难题;在靶载站与地面站两个异地局域网之间完成遥测遥控视频、语音和测量数据的交互,海上试验结果表明系统性能指标达到了预期目的。</p>
+							</div>
+							
+						</div>
+						
+						                	</li>
+                                                    
+                </ul>
+            </section>
+			<!--当期 End-->
+        </div>
+        
+		<!--右部-->
+		
+
+<div class="col-md-3 m-left">
+            <div class="box-fixed">
+			
+			    <ul class="office-menu">
+					<li><a href="../../../Journalx_zhkzyfz/authorLogOn.action" target="_blank">
+					<button class="btn btn-shadow journal-btn"><span class="glyphicon glyphicon-user"></span> 作者投稿查稿</button>
+					</a></li>
+					<li><a href="../../../Journalx_zhkzyfz/expertLogOn.action" target="_blank">
+					<button class="btn btn-shadow journal-btn"><span class="glyphicon glyphicon-education"></span> 专家在线审稿</button>
+					</a></li>
+					<li><a href="../../../Journalx_zhkzyfz/editorCommitteeLogOn.action" target="_blank">
+					<button class="btn btn-shadow journal-btn"><span class="glyphicon glyphicon-eye-open"></span> 编委在线审稿</button>
+					</a></li>
+					<li><a href="../../../Journalx_zhkzyfz/editorLogOn.action" target="_blank">
+					<button class="btn btn-shadow journal-btn"><span class="glyphicon glyphicon-edit"></span> 编辑在线办公</button>
+					</a></li>
+					<li><a href="../../../Journalx_zhkzyfz/editorInChiefLogOn.action" target="_blank">
+					<button class="btn btn-shadow journal-btn"><span class="glyphicon glyphicon-pencil"></span> 主编在线办公</button>
+					</a></li>
+			    </ul>
+		
+            <aside class="aside">
+                <div class="column">
+                    <span><i class="fa fa-book"></i> 在线期刊</span>
+                </div>
+                <ul class="wangkan-list">
+                	<!--<li><a href="https://www.zhkzyfz.cn/CN/just_accepted"><i class="fa fa-check-square-o"></i>最新录用</a></li>-->
+					<li><a href="https://www.zhkzyfz.cn/CN/current"><i class="fa fa-file-text-o"></i>当期目录</a></li>
+					<li><a href="https://www.zhkzyfz.cn/CN/archive_by_years"><i class="fa fa-server"></i>过刊浏览</a></li>
+					<li><a href="https://www.zhkzyfz.cn/CN/highlights"><i class="fa fa-paper-plane-o"></i>推荐文章</a></li>
+					<li><a href="https://www.zhkzyfz.cn/CN/top_access"><i class="fa fa-sort-amount-asc"></i>阅读排行</a></li>
+					<li><a href="https://www.zhkzyfz.cn/CN/top_download"><i class="fa fa-signal"></i>下载排行</a></li>
+					<!--<li><a href="https://www.zhkzyfz.cn/CN/top_cited"><i class="fa fa-server"></i>引用排行</a></li>-->
+					<li><a href="https://www.zhkzyfz.cn/CN/alert/showAlertInfo.do"><i class="fa fa-envelope" aria-hidden="true"></i>邮件订阅</a></li>
+					<!--<li><a href="https://www.zhkzyfz.cn/CN/rss/showRssInfo.do"><i class="fa fa-feed" aria-hidden="true"></i>RSS</a></li>-->
+                </ul>
+            </aside>
+			
+			<aside class="aside">
+                <div class="column">
+                    <span><i class="fa fa-download"></i> 下载中心</span>
+                    <a href="https://www.zhkzyfz.cn/CN/column/7/items" class="more">更多</a>
+                </div>
+                <ul class="news-list">
+						        		        		        				<li><a href="https://www.zhkzyfz.cn/CN/item/downloadFile.do?id=16" class="news-title" target="_blank">保密承诺书</a></li>
+		        		        		        		        		        				<li><a href="https://www.zhkzyfz.cn/CN/item/downloadFile.do?id=8" class="news-title" target="_blank">论文模板</a></li>
+		        		        		        		        		        				<li><a href="https://www.zhkzyfz.cn/CN/item/downloadFile.do?id=12" class="news-title" target="_blank">作者贡献声明表（双语）</a></li>
+		        		        		        		        		        				<li><a href="https://www.zhkzyfz.cn/CN/item/downloadFile.do?id=13" class="news-title" target="_blank">利益冲突声明</a></li>
+		        		        		        		        		        				<li><a href="https://www.zhkzyfz.cn/CN/item/downloadFile.do?id=9" class="news-title" target="_blank">版权转让协议（双语）</a></li>
+		        		        		        		        		        				<li><a href="https://www.zhkzyfz.cn/CN/item/downloadFile.do?id=10" class="news-title" target="_blank">参考文献引用格式</a></li>
+		        		        		                        </ul>
+            </aside>
+
+
+    </div>
+    </div>
+
+    </div>
+</div>
+
+<!--底部-->
+
+
+
+<footer class="footer">
+<div class="container">
+	<div class="row">
+			<div class="footer-info">
+				<p>
+				<a href="https://beian.miit.gov.cn" target="_blank">苏ICP备10211333号-1</a><br>	                  网站版权所有 &copy; 《指挥控制与仿真》编辑部<br>
+					地址：江苏省连云港市圣湖路18号　<br class="visible-xs">邮编：222061<br>					电话：0518-85823166　<br class="visible-xs">传真：0518-85823716　<br class="visible-xs">E-mail：info716@vip.163.com<br>					本系统由<a href="https://www.magtech.com.cn/" target="_blank">北京玛格泰克科技发展有限公司</a>设计开发
+
+				</p>
+			</div>
+
+	</div>
+</div>
+</footer>
+<!--返回顶部-->
+<div class="top_web" id="backtop" style="display:block;"> <span class="glyphicon glyphicon-menu-up"></span></div>
+<!--返回顶部end--> 
+
+
+</body>
+</HTML>

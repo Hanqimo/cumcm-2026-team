@@ -1,0 +1,38 @@
+{
+  "id": "zh18page",
+  "url": "https://jeit.ac.cn/article/doi/10.11999/JEIT231293?pageType=en",
+  "final_url": "https://jeit.ac.cn/article/doi/10.11999/JEIT231293?pageType=en",
+  "content_type": "text/html;charset=UTF-8",
+  "status": "html",
+  "links": [
+    "https://jeit.ac.cn/style/web/images/public/download.png"
+  ],
+  "metadata": [
+    "<meta name=\"dc.format\" content=\"text/html\" />",
+    "<meta name=\"dc.title\" content=\"UAV Path Planning Method for Passive Radar Transmitter Localization\" />",
+    "<meta name=\"dc.identifier\" content=\"10.11999/JEIT231293\" />",
+    "<meta name=\"dc.contributor\" content=\"WAN Xianrong\" />",
+    "<meta name=\"dc.contributor\" content=\"WU Bingqian\" />",
+    "<meta name=\"dc.contributor\" content=\"YI Jianxin\" />",
+    "<meta name=\"dc.contributor\" content=\"HU Shibo\" />",
+    "<meta name=\"dc.creator\" content=\"WAN Xianrong\" />",
+    "<meta name=\"dc.creator\" content=\"WU Bingqian\" />",
+    "<meta name=\"dc.creator\" content=\"YI Jianxin\" />",
+    "<meta name=\"dc.creator\" content=\"HU Shibo\" />",
+    "<meta name=\"dc.date\" content=\"2024-05-30\" />",
+    "<meta name=\"dc.keywords\"  content=\"Passive radar, Transmitter localization, Unmanned Aerial Vehicles (UAV), Path planning\"/>",
+    "<meta name=\"citation_journal_title\" content=\"电子与信息学报\" />",
+    "<meta name=\"citation_publisher\" content=\"电子与信息学报\" />",
+    "<meta name=\"citation_journal_abbrev\" content=\"JEIT\" />",
+    "<meta name=\"citation_issn\" content=\"1009-5896\" />",
+    "<meta name=\"citation_date\" content=\"2024-05-30\" />",
+    "<meta name=\"citation_authors\" content=\"WAN Xianrong, WU Bingqian, YI Jianxin, HU Shibo\" />",
+    "<meta name=\"citation_online_date\" content=\"2024-05-30\"/>",
+    "<meta name=\"citation_abstract_html_url\" content=\"https://jeit.ac.cn/en/article/doi/10.11999/JEIT231293?viewType=HTML\" />",
+    "<meta name=\"citation_pdf_url\" content=\"https://jeit.ac.cn/en/article/doi/10.11999/JEIT231293\" />",
+    "<meta name=\"citation_public_url\" content=\"https://jeit.ac.cn/en/article/doi/10.11999/JEIT231293\" />",
+    "<meta name=\"dc.type\" content=\"Radars, Snonar, Electromagnetic Fields and Waves\"/>",
+    "<meta name=\"dc.source\" content=\"Journal of Electronics &amp;amp; Information Technology, 2024, Vol. 46, Issue 5, Pages: 2057-2064\"/>"
+  ],
+  "snippet": ""
+}

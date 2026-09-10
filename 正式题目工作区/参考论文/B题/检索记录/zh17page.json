@@ -1,0 +1,38 @@
+{
+  "id": "zh17page",
+  "url": "https://chinatransducers.seu.edu.cn/ch/reader/view_abstract.aspx?file_no=cg08100129&st=alljournals",
+  "final_url": "https://chinatransducers.seu.edu.cn/ch/reader/view_abstract.aspx?file_no=cg08100129&st=alljournals",
+  "content_type": "text/html; charset=utf-8",
+  "status": "html",
+  "links": [
+    "https://chinatransducers.seu.edu.cn/ch/reader/view_pdf.aspx?file_no=cg08100129",
+    "https://chinatransducers.seu.edu.cn/ch/reader/create_pdf.aspx?file_no=cg08100129&flag=1&year_id=2009&quarter_id=5",
+    "http://ardownload.adobe.com/pub/adobe/reader/win/6.x/6.0/chs/AdbeRdr60_chs_full.exe",
+    "https://chinatransducers.seu.edu.cn/ch/reader/view_pdf.aspx?file_no=cg08100129",
+    "https://chinatransducers.seu.edu.cn/ch/reader/create_pdf.aspx?file_no=cg08100129&flag=1&year_id=2009&quarter_id=5",
+    "http://ardownload.adobe.com/pub/adobe/reader/win/6.x/6.0/chs/AdbeRdr60_chs_full.exe"
+  ],
+  "metadata": [
+    "<meta name=\"DC.Format\" content=\"text/html\"/>",
+    "<meta name=\"DC.Language\" content=\"cn\"/>",
+    "<meta name=\"DC.Title\" content=\"纯方位目标定位观测器轨迹的\r\n快速优化算法\"/>",
+    "<meta name=\"DC.Identifier\" content=\"\"/>",
+    "<meta name=\"DC.Contributor\" content=\"陈晓华\"/>",
+    "<meta name=\"DC.Contributor\" content=\"徐桢\"/>",
+    "<meta name=\"DC.Contributor\" content=\"芮立扬\"/>",
+    "<meta name=\"DC.Date\" content=\"\"/>",
+    "<meta name=\"DC.Keywords\" content=\"无线传感器网络;观测器轨迹优化;纯方位目标定位;方位分布关系\"/>",
+    "<meta name=\"DC.Keywords\" content=\"wireless sensor network; optimization of observer trajectory; bearings-only target localization; bearing distributing relationships;\"/>",
+    "<meta name=\"citation_title\" content=\"纯方位目标定位观测器轨迹的\r\n快速优化算法\"/>",
+    "<meta name=\"citation_journal_title\" content=\"\"/>",
+    "<meta name=\"citation_author\" content=\"陈晓华\"/>",
+    "<meta name=\"citation_author\" content=\"徐桢\"/>",
+    "<meta name=\"citation_author\" content=\"芮立扬\"/>",
+    "<meta name=\"citation_volume\" content=\"22\"/>",
+    "<meta name=\"citation_issue\" content=\"5\"/>",
+    "<meta name=\"citation_date\" content=\"\"/>",
+    "<meta name=\"citation_firstpage\" content=\"\"/>",
+    "<meta name=\"citation_lastpage\" content=\"\"/>"
+  ],
+  "snippet": ""
+}

@@ -1,0 +1,1597 @@
+1
+Optimal Sensor Placement for Target Localization and Tracking
+in 2D and 3D
+Shiyu Zhao, Ben M. Chen and Tong H. Lee
+Abstract
+This paper analytically characterizes optimal sensor placements for target localization and tracking in 2D and 3D. Three types
+of sensors are considered: bearing-only, range-only, and received-signal-strength. The optimal placement problems of the three
+sensor types are formulated as an identical parameter optimization problem and consequently analyzed in a uniﬁed framework.
+Recently developed frame theory is applied to the optimality analysis. We prove necessary and sufﬁcient conditions for optimal
+placements in 2D and 3D. A number of important analytical properties of optimal placements are further explored. In order to
+verify the analytical analysis, we present a gradient control law that can numerically construct generic optimal placements.
+Index Terms
+Fisher information matrix; gradient control; optimal sensor placement; target tracking; tight frame.
+I. I NTRODUCTION
+Target localization and tracking using networked mobile sensor platforms has become an active research area in recent
+years. When localizing a target from noisy measurements of multiple sensors, the sensor placement can signiﬁcantly affect the
+estimation accuracy of any localization algorithms. The term sensor placement as used here refers to the relative sensor-target
+geometry. This paper will address the optimal sensor placement that can minimize the target localization uncertainty.
+In the literature, there are generally two kinds of formulations for optimal sensor placement problems. One is optimal control
+[1]–[4] and the other is parameter optimization [5]–[13].
+The optimal control formulation is usually adopted for cooperative path planning [1]–[3], where the aim is to estimate the
+target position on one hand and plan the path of sensor platforms to minimize the estimation uncertainty on the other hand. This
+problem is also referred as simultaneous-localization-and-planning (SLAP) [2]. In a SLAP problem, target motion and sensor
+measurement models are considered as process and measurement models, respectively. The Kalman ﬁlter usually is applied
+to estimate the target position and to characterize the estimation covariance. In order to minimize the estimation covariance,
+an optimal control problem will be formulated. The disadvantage of this kind of formulation is that the optimal control with
+various constraints generally can only be solved by numerical methods. Analytical properties usually cannot be obtained.
+To avoid complicated optimal control problems, many studies including our work in this paper formulate the optimal
+placement problem as a parameter optimization problem. This kind of formulation has a long history and has been investigated
+extensively in [5]–[13], to name a few. The parameter optimization formulation is based on the assumption that a rough
+estimation of the target position has already been obtained in other ways. By using this rough estimation, the sensor positions
+are the parameters to be optimized such that the consequent target localization based on the optimized placement will be more
+accurate. The objective function in the parameter optimization formulation usually involves the Fisher information matrix (FIM).
+S. Zhao, B. M. Chen and T. H. Lee are with the Department of Electrical and Computer Engineering, National University of Singapore, Singapore 117576,
+Singapore {shiyuzhao, bmchen, eleleeth }@nus.edu.sg
+arXiv:1210.7397v1  [math.OC]  28 Oct 2012
+2
+The FIM is the inverse of the Cramer Rao lower bound (CRLB), which is the minimum achievable estimation covariance. An
+unbiased estimator that achieves the CRLB is called efﬁcient. An optimal placement, which maximizes a function (such as the
+determinant) of the FIM, can be interpreted as maximizing the target information gathered by the sensors or minimizing the
+estimation covariance of any efﬁcient estimators.
+In contrast to the optimal control formulation, the parameter optimization formulation can be solved analytically. The
+analytical solutions are important for us to get insight to the effect of sensor placement on target localization uncertainty. It is
+notable that the numerical results based on the optimal control formulation generally are consistent with the analytical results
+based on the parameter optimization formulation. For example, the numerical simulations in [1], [2] show that the ﬁnal optimal
+angle subtended by two sensors at the target is 90 degrees. In [5], [8], [9], it is also analytically proved that the placement of
+two sensors is optimal if the angle subtended by the two sensors at the target is 90 degrees.
+In this paper, we will investigate optimal sensor placement by adopting the parameter optimization formulation. Our aim is to
+determine the optimal sensor-target geometry based on an initial estimation of the target position. Optimal sensor placement is
+of not only theoretical interest but also signiﬁcantly practical value. Many studies have shown that target tracking performance
+can be improved when sensors are steered to form an optimal placement. In this paper, we only focus on determining optimal
+placements and will not address target tracking. One may refer to [9] for a comprehensive example that illustrates the application
+optimal sensor placements to cooperative target tracking.
+Until now, most of the existing studies only consider 2D optimal sensor placements [5]–[10], [12] . Very few works in the
+literature have tackled 3D cases [13]. Analytical characterization of generic optimal sensor placements in 3D is still an open
+problem. In this paper we will extend the results in [5], [7]–[9] from 2D to 3D. The extension will be non-trivial. Maximizing
+the determinant of the FIM has been widely adopted as the criterion for optimal placements in 2D. This criterion, however,
+cannot be directly applied to 3D cases because the determinant of the FIM is hardly analytically tractable in 3D. Motivated by
+this, we will propose a new criterion for optimal placement, which enables us to analytically characterize optimal placements
+in 2D and 3D. The existing analysis of 2D cases can be regarded as a special case of our general analysis for both 2D and
+3D cases.
+The existing work on optimal sensor placement has addressed many sensor types including bearing-only [5], [8], [14], range-
+only [5], [9], [15], received-signal-strength (RSS) [7], time-of-arrival (TOA) [5], [6], and time-difference-of-arrival (TDOA)
+[5], [12]. These sensor types are analyzed individually in the literature. One of the contributions of this paper is to unify the
+analyses of bearing-only, range-only, and RSS sensors. Based on our proposed optimality criterion, we will show the objective
+functions for the three sensor types are exactly the same. Hence their optimal placement can be analyzed in a uniﬁed way.
+Since the measurement models and FIMs of TOA and TDOA sensors are signiﬁcantly different from those of the three, we
+will not consider TOA and TDOA sensors in this paper.
+By employing recently developed frame theory, we prove necessary and sufﬁcient conditions for optimal placements in 2D
+and 3D. Frames provide a redundant and robust way for representing signals and are widely used in signal processing. We
+refer to [16], [17] for an introduction to frames. It might be interesting to ask why frames arise in optimal sensor placement
+problems. This question can be loosely answered from the redundancy point of view. As mentioned in [16], one would use
+frames when redundancy is a must. In our work, the redundancy can be interpreted as the ratio between the number of sensors
+and the space dimension. When the sensor number equals the dimension, there is no redundancy in the system, then we will
+show that the necessary and sufﬁcient condition of optimal placement can be proved without using frames. But when the sensor
+number is larger than the space dimension, our optimality analysis will heavily rely on frame theory.
+3
+The paper is organized as follows. Section II introduces preliminaries to frame theory. Section III presents a uniﬁed
+formulation for optimal placement problems of bearing-only, range-only, and RSS sensors in 2D and 3D. In Section IV,
+necessary and sufﬁcient conditions for optimal placement in 2D and 3D are proved. Section V further explores a number
+of important properties of optimal placements. In Section VI, a gradient control law is proposed to numerically verify our
+analytical analysis. Conclusions are drawn in Section VII.
+II. P RELIMINARIES TO FRAME THEORY
+Frames can be deﬁned in any Hilbert space. Here we are only interested in d-dimensional Euclidean space Rd. Let∥·∥ be
+the Euclidean norm of a vector or the Frobenius norm of a matrix. As shown in [16]–[19], a set of vectors {ϕi}n
+i=1 in Rd
+(n≥d) is called a frame if there exist constants 0<a ≤b< +∞ so that for all x∈ Rd
+a∥x∥2≤
+n∑
+i=1
+⟨x,ϕ i⟩2≤b∥x∥2, (1)
+where⟨·,·⟩ denotes the inner product of two vectors. The constants a and b are called the frame bounds . A frame {ϕi}n
+i=1
+is called unit-norm if∥ϕi∥ = 1 for all i∈{ 1,...,n }. Denote Φ = [ϕ1,...,ϕ n]∈ Rd×n. Because ⟨x,ϕ i⟩2 = (xTϕi)2 =
+xTϕiϕT
+i x, inequality (1) can be rewritten as
+a∥x∥2≤xT ΦΦTx≤b∥x∥2,
+where the matrix ΦΦT = ∑n
+i=1ϕiϕT
+i is called the frame operator. The frame bounds a and b obviously are the smallest and
+largest eigenvalues of ΦΦT , respectively. Since a> 0, ΦΦT is positive deﬁnite. It is well known that d vectors in Rd form a
+basis if the vectors span Rd. Frame essentially is a generalization of the concept of basis. The frame {ϕi}n
+i=1 can also span
+Rd because ΦΦT is positive deﬁnite and hence Φ is of full row rank. But compared to a basis, a frame have n−d redundant
+vectors. The constant n/d is referred as the redundancy of the system. When n/d = 1, the frame would degenerate to a basis
+of Rd.
+Tight frame is a very important concept in frame theory. A frame is called tight when a =b. From (1), it is easy to see the
+frame{ϕi}n
+i=1 is tight when
+n∑
+i=1
+ϕiϕT
+i =aId. (2)
+Taking trace on both sides of (2) yields a = ∑n
+i=1∥ϕi∥2/d. It is an important and fundamental problem in frame theory to
+construct a tight frame {ϕi}n
+i=1 that solves (2) with speciﬁed norms. This problem is also recognized as notoriously difﬁcult
+[20]. One approach to this problem is to characterize tight frames as the minimizers of the frame potential
+FP ({ϕi}n
+i=1) =
+n∑
+i=1
+n∑
+j=1
+(
+ϕT
+i ϕj
+)2
+. (3)
+Frame potential is ﬁrst proposed in [18] for unit-norm frames, and then generalized in [19] for frames with arbitrary norms.
+The following concept irregularity [16], [19] is crucial for characterizing the minimizers of the frame potential.
+Deﬁnition 2.1 (Irregularity): For any positive non-increasing sequence {ci}n
+i=1 with c1≥···≥ cn > 0, and any integer d
+satisfying 1≤d≤n, denote k0 as the smallest nonnegative integer k for which
+c2
+k+1≤ 1
+d−k
+n∑
+i=k+1
+c2
+i. (4)
+4
+The integer k0 is called the irregularity of {ci}n
+i=1 with respect to d.
+Remark 2.2: The irregularity of a sequence is evaluated with respect to a particular positive integer. The irregularity of a
+sequence may be different when evaluated with respect to different positive integers. In this paper, we will omit mentioning
+this integer when the context is clear.
+Because the index k =d− 1 always makes (4) hold, the irregularity k0 always exists and satisﬁes
+0≤k0≤d− 1.
+When k0 = 0, inequality (4) degenerates to the fundamental inequality [19]
+max
+j=1,...,n
+c2
+j≤ 1
+d
+n∑
+i=1
+c2
+i. (5)
+In this paper we call the sequence {ci}n
+i=1 regular when k0 = 0 , and irregular when 1≤ k0≤ d− 1. The fundamental
+inequality (5) intuitively means that: a sequence is regular when no element is much larger than the others. Next we show
+several examples to illustrate the concept of irregularity.
+Example 2.3: Consider a sequence {ci}n
+i=1 with c =c1 =··· =cn and any d≤n. Because 1/d ∑n
+i=1c2
+i =nc2/d≥c2,
+the fundamental inequality (5) holds. Thus this sequence is regular with respect to any integer d≤n.
+Example 2.4: Consider a sequence{ci}4
+i=1 ={10, 1, 1, 1} and d = 3. Note the feature of this sequence is that one element
+is much larger than the others. Because 102 > 1/3(102 + 1 + 1 + 1), the sequence is irregular with respect to d = 3. In order
+to determine the irregularity k0, we need to further check if {ci}4
+i=2 ={1, 1, 1} is regular with respect to d− 1 = 2. Since the
+elements of{ci}4
+i=2 equal to each other, {ci}4
+i=2 is regular with respect to 2 as shown in Example 2.3. Hence the irregularity
+of{ci}4
+i=1 with respect to d = 3 isk0 = 1. This example shows that a sequence would be irregular if certain element is much
+larger than the others.
+Example 2.5: Consider a sequence {ci}4
+i=1 ={10, 10, 1, 1} and d = 2 or 3. When d = 2 , we have 102 < 1/2(102 +
+102 + 1 + 1). Hence {ci}4
+i=1 is regular with respect to d = 2 . When d = 3 , we have 102 > 1/3(102 + 102 + 1 + 1),
+102 > 1/2(102 + 1 + 1) and 1< 1/1(1 + 1). Hence{ci}4
+i=1 is irregular with respect to d = 3 and the irregularity is k0 = 2.
+This example shows that a sequence might be regular with respect to one integer but irregular with respect to another.
+The minimizers of the frame potential in (3) are characterized by the following lemma [19], which will be used to prove
+the necessary and sufﬁcient conditions for optimal placement.
+Lemma 2.6: In Rd, given a positive non-increasing sequence {ci}n
+i=1 with irregularity as k0, if the norms of the frame
+{ϕi}n
+i=1 are speciﬁed as∥ϕi∥ =ci for all i∈{ 1,...,n }, any minimizer of the frame potential in (3) is of the form
+{ϕi}n
+i=1 ={ϕi}k0
+i=1∪{ϕi}n
+i=k0+1,
+where{ϕi}k0
+i=1 is an orthogonal set, and {ϕi}n
+i=k0+1 is a tight frame in the orthogonal complement of the span of {ϕi}k0
+i=1.
+Any local minimizer is also a global minimizer.
+From Lemma 2.6, a minimizer of the frame potential consists of an orthogonal set {ϕi}k0
+i=1 and a tight frame {ϕi}n
+i=k0+1.
+The partition of the two sets is determined by the irregularity of the speciﬁed frame norms {ci}n
+i=1. When the irregularity
+k0 = 0, it is clear that a minimizer of the frame potential is a tight frame. As a corollary of Lemma 2.6, the following result
+[19] gives the existence condition of the solutions to (2).
+Lemma 2.7: In Rd, given a positive sequence{ci}n
+i=1, there exists a tight frame{ϕi}n
+i=1 with∥ϕi∥ =ci for alli∈{ 1,...,n }
+5
+TABLE I: Measurement models and FIMs of the three sensor types.
+Sensor type Measurement model FIM Coefﬁcient Optimality criterion
+Bearing-only hi(ri) = ri
+∥ri∥ F =
+n∑
+i=1
+c2
+i (Id−gigT
+i ) ci = 1
+σi∥ri∥ min
+
+n∑
+i=1
+c2
+igigT
+i
+
+2
+Range-only hi(ri) =∥ri∥ F =
+n∑
+i=1
+c2
+igigT
+i ci = 1
+σi
+min
+
+n∑
+i=1
+c2
+igigT
+i
+
+2
+RSS hi(ri) = ln∥ri∥ F =
+n∑
+i=1
+c2
+igigT
+i ci = 1
+σi∥ri∥ min
+
+n∑
+i=1
+c2
+igigT
+i
+
+2
+solving (2) if and only if {ci}n
+i=1 is regular.
+III. P ROBLEM FORMULATION
+Consider one target and n sensors in Rd (d = 2 or 3 and n≥d). As shown in Table I, we consider three types of sensors:
+bearing-only, range-only, and RSS. Suppose n sensors involve only one sensor type. Sensor networks with mixed sensor types
+are not addressed. Following [5], [7]–[9], a rough estimation p∈ Rd of the target position is assumed to be obtained in
+other ways. Since p is the only available information of the target, the optimal placement will be determined based on this
+estimation. As illustrated in [9], the rough estimation of the target position can be obtained from a Kalman ﬁlter in practice and
+the optimal placement can be applied to improve target tracking performance. It should be noted that this paper only focuses
+on determining optimal sensor placements and will not discuss their application to target localization or tracking. Denote the
+position of sensor i as si∈ Rd, i∈{ 1,...,n }. Then ri =si−p denotes the position of sensor i relative to the target. The
+relative sensor-target placement can be fully described by {ri}n
+i=1. Our aim is to determine the optimal {ri}n
+i=1 such that
+certain objective function can be optimized. The distance between sensor i and the target is given by ∥ri∥. The unit-length
+vector gi =ri/∥ri∥ represents the orientation of sensor i relative to the target.
+A. Sensor Measurement Model and FIM
+For any sensor type in Table I, the measurement model of sensor i is expressed as
+zi =hi(ri) +vi,
+where zi ∈ Rm denotes the measurement of sensor i, the function hi(ri) : Rd → Rm is determined by the type of the
+sensor, and vi∈ Rm is the additive measurement noise. We assume vi to be a zero-mean Gaussian noise with covariance as
+Σi =σ2
+iIm∈ Rm×m, where Im denotes the m×m identity matrix. By further assuming the measurement noises of different
+sensors are uncorrelated, the FIM given by n sensors is expressed as
+F =
+n∑
+i=1
+(∂hi
+∂p
+)T
+Σ−1
+i
+∂hi
+∂p , (6)
+where ∂hi/∂p denotes the Jacobian of hi(ri) = hi(si−p) with respect to p. We refer to [5], [7]–[9], [21] for a detailed
+derivation of the FIM formula in (6).
+The measurement models of bearing-only, range-only, and RSS sensors are given in Table I. The measurement of a bearing-
+only sensor is conventionally modeled as one angle (azimuth) in 2D or two angles (azimuth and altitude) in 3D. The drawback
+of this kind of model is that the model complexity increases dramatically as the dimension increases. As shown in Table I, we
+6
+model the measurement of a bearing-only sensor as a unit-length vector pointing from the target to the sensor. A unit-length
+vector essentially characterizes a bearing and is very suitable to represent a bearing-only measurement. This model, which
+was proposed in our previous work [14], enables us to easily formulate optimal bearing-only placement in R2 and R3. The
+measurement model of range-only sensors given in Table I is the same as the one in [5]. The measurement model of RSS
+sensors given in Table I is a modiﬁed version of the one in [7]. Without loss of generality, we simplify the model in [7] by
+omitting certain additive and multiplicative constants.
+The FIMs of the three sensor types are shown in Table I. The FIM can be calculated by substituting h(ri) in to (6). The
+calculation is straightforward and omitted here. As will be shown later, the coefﬁcients {ci}n
+i=1 in the FIMs fully determine
+the optimal placements. Following [5], [7]–[9], we assume the coefﬁcient ci to be arbitrary but ﬁxed . (i) For bearing-only or
+RSS sensors, because ci = 1/(σi∥ri∥), both σi and∥ri∥ are assumed to be ﬁxed. Otherwise, if ∥ri∥ is unconstrained, the
+placement will be optimal when ∥ri∥ approaches zero. To avoid this trivial solution, it is reasonable to assume ∥ri∥ to be
+ﬁxed. (ii) For range-only sensors, because ci = 1/σi, only σi is assumed to be ﬁxed. Hence ∥ri∥ will have no inﬂuence on
+the optimality of the placement for range-only sensors.
+To end this subsection, we would like to point out that the FIMs given in Table I are consistent with the ones given in [5],
+[7]–[9] in 2D cases. To verify that, we can substitute gi = [cosθi, sinθi]T∈ R2 into the FIMs in Table I.
+B. New Criterion for Optimal Placement
+The conventional criterion for optimal placement is to maximize the determinant of the FIM, i.e., detF . But detF is hardly
+analytically tractable in R3. In order to analytically characterize optimal placements in R2 and R3, we will consider a new
+objective function. Let{λi}d
+i=1 be the eigenvalues of F and ¯λ = 1/d ∑d
+i=1λi. The new objective function considered in this
+paper is∥F− ¯λId∥2. Compared to the conventional one detF , the new objective function ∥F− ¯λId∥2 is of strong analytical
+tractability. We next formally state the optimal sensor placement problem that we are going to solve.
+Problem 3.1: Consider one target and n sensors in Rd (d = 2 or 3 and n≥d). The sensors involve only one of the three
+sensor types in Table I. Given arbitrary but ﬁxed positive coefﬁcients {ci}n
+i=1, ﬁnd the optimal placement {g∗
+i}n
+i=1 such that
+{g∗
+i}n
+i=1 = arg min
+{gi}n
+i=1⊂Sd−1
+∥F− ¯λId∥2, (7)
+where Sd−1 denotes the unit sphere in Rd.
+Remark 3.2: The relative sensor-target placement can be fully described by {ri}n
+i=1. Recall∥ri∥ is assumed to be ﬁxed for
+bearing-only or RSS sensors, and ∥ri∥ has no effect on the placement optimality for range-only sensors. Thus for any sensor
+type, the optimal sensor placement can also be fully described by {gi}n
+i=1. That means we only need to determine the optimal
+relative sensor-target bearings{g∗
+i}n
+i=1 to obtain the optimal placement.
+Although the FIMs of different sensor types may have different formulas as shown in Table I, the following result shows
+that substituting the FIMs of the three sensor types into (7) will lead to an identical objective function. The following result
+is important because it enables us to unify the formulations of optimal placement for the three sensor types.
+Lemma 3.3: Consider one target and n sensors in Rd (d = 2 or 3 and n≥ d). The sensors involve only one of the three
+sensor types in Table I. The problem deﬁned in (7) is equivalent to
+{g∗
+i}n
+i=1 = arg min
+{gi}n
+i=1⊂Sd−1
+∥G∥2, (8)
+7
+where G = ∑n
+i=1c2
+igigT
+i .
+Proof: If all sensors are bearing-only, the FIM is F = ∑n
+i=1c2
+i (Id−gigT
+i ) and then ¯λ = 1/d ∑d
+j=1λj = trF/d =
+(d− 1)/d ∑n
+i=1c2
+i . Hence
+F− ¯λId =
+n∑
+i=1
+c2
+i (Id−gigT
+i )− d− 1
+d
+n∑
+i=1
+c2
+iId
+=−
+n∑
+i=1
+c2
+igigT
+i + 1
+d
+n∑
+i=1
+c2
+iId.
+If all sensors are range-only or RSS, the FIM is F = ∑n
+i=1c2
+igigT
+i and then ¯λ = 1/d ∑d
+j=1λj = trF/d = 1/d ∑n
+i=1c2
+i .
+Hence
+F− ¯λId =
+n∑
+i=1
+c2
+igigT
+i − 1
+d
+n∑
+i=1
+c2
+iId.
+Therefore, for any one of the three sensor types given in Table I, the new objective function can be rewritten as
+∥F− ¯λId∥2 =
+
+n∑
+i=1
+c2
+igigT
+i − 1
+d
+n∑
+i=1
+c2
+iId
+
+2
+=∥G∥2− 1
+d
+( n∑
+i=1
+c2
+i
+)2
+. (9)
+Because 1/d(∑n
+i=1c2
+i )2 is constant, minimizing ∥G∥2 is equivalent to minimizing ∥F− ¯λId∥2.
+One primary task of this paper is to solve the parameter optimization problem (8). It should be noted that we must clearly
+know the sensor type that we work with, such that the coefﬁcients {ci}n
+i=1 in G can be calculated correctly according to the
+sensor type. Once {ci}n
+i=1 have been calculated, the sensor types will be transparent to us. As a consequence, the analysis of
+optimal sensor placement in the sequel of the paper will apply to all the three sensor types.
+C. Relationship between the New and Conventional Criterions
+The new criterion for optimal placement is to minimize ∥F− ¯λId∥2, while the widely adopted conventional one is to
+maximize detF . We will show that the new criterion has a very close connection to the conventional one.
+Lemma 3.4: For any one of the three sensor types given in Table I, we have
+detF≤ ¯λd,
+where the equality holds if and only if
+∥F− ¯λId∥2 = 0. (10)
+Proof: For any one of the three sensor types, the FIM F is symmetric positive (semi) deﬁnite. Hence λj is real and
+nonnegative. From the FIMs shown in Table I, we have ∑d
+j=1λj = trF = (d− 1) ∑n
+i=1c2
+i for bearing-only sensors, and
+∑d
+j=1λj = tr F = ∑n
+i=1c2
+i for range-only or RSS sensors. Note {ci}n
+i=1 is assumed to be ﬁxed. Hence ∑d
+j=1λj is an
+invariant quantity for any one of the three sensor types. By the inequality of arithmetic and geometric means, the conventional
+8
+objective function detF satisﬁes
+detF =
+d∏
+j=1
+λj≤
+
+1
+d
+d∑
+j=1
+λj
+
+
+d
+= ¯λd, (11)
+where the equality holds if and only if λj = ¯λ for all j∈{ 1,...,d }, which means
+F = ¯λId⇔∥F− ¯λId∥2 = 0. (12)
+To sum up, detF is maximized to its upper bound ¯λd if and only if ∥F− ¯λId∥2 = 0.
+Based on Lemma 3.4, we next further examine the relationship between the new and conventional criterions case by case.
+(i) In R2, we have detF = 1/2((trF)2− tr (F 2)) = 1/2
+(
+4¯λ2−∥F∥2)
+and∥F− ¯λI2∥2 = tr (F− ¯λI2)2 =∥F∥2− 2¯λ2,
+which suggest
+∥F− ¯λI2∥2 =−2 detF + 2¯λ2.
+Because 2¯λ2 is constant, minimizing∥F− ¯λI2∥2 is rigorously equivalent to maximizing detF in R2. Thus the new criterion is
+rigorously equivalent to the conventional one for all 2D cases. As a consequence, our analysis based on the new criterion will
+be consistent with the 2D results in [5], [7]–[9]. (ii) In R3, if∥F− ¯λI3∥2 is able to achieve zero, then detF can be maximized
+to its upper bound as shown in Lemma 3.4. In this case the new criterion is still rigorously equivalent to the conventional
+one. (iii) In R3,∥F− ¯λI3∥2 is not able to reach zero in certain irregular cases (see Section IV for the formal deﬁnition of
+irregular). In these cases detF and∥F− ¯λI3∥2 may not be optimized simultaneously. But as will be shown later, the analysis
+of irregular cases in R3 based on the new criterion is a also reasonable extension of the analysis of irregular cases in R2.
+D. Equivalent Placements
+Before solving (8), we identify a group of placements that result in the same value of ∥G∥2.
+Proposition 3.5: The objective function ∥G∥2 is invariant to the sign of gi for all i ∈ {1,...,n } and any orthogonal
+transformations over{gi}n
+i=1.
+Proof: First, gigT
+i = (−gi)(−gi)T for all i ∈ {1,...,n }, hence ∥G∥2 is invariant to the sign of gi. Second, let
+U ∈ Rd×d be an orthogonal matrix satisfying U TU = Id. Applying U to {gi}n
+i=1 yields {g′
+i = Ug i}n
+i=1. Then we
+have G′ = ∑n
+i=1c2
+ig′
+i(g′
+i)T = ∑n
+i=1c2
+i (Ug i)(Ug i)T = UGU T . Since G and G′ are both symmetric, we have ∥G′∥2 =
+tr (UGU TUGU T ) = tr (G2) =∥G∥2.
+Geometrically speaking, changing the sign of gi means ﬂipping sensor i about the target, and an orthogonal transformation
+represents a rotation, reﬂection or both combined operation over all sensors. It is noticed that the invariance to the sign change
+of gi was originally recognized in [8] for bearing-only sensors. By Proposition 3.5, we deﬁne the following equivalence
+relationship.
+Deﬁnition 3.6 (Equivalent placements): Given arbitrary but ﬁxed coefﬁcients{ci}n
+i=1, two placements{gi}n
+i=1 and{g′
+i}n
+i=1
+are called equivalent if they are differed by indices permutation, ﬂipping any sensors about the target, or any global rotation,
+reﬂection or both combined over all sensors.
+Due to the equivalence, there always exist an inﬁnite number of equivalent optimal placements minimizing ∥G∥2. If two
+optimal placements are equivalent, they lead to the same objective function value. But the converse statement is not true in
+9
+s1
+s3
+s2
+p
+s1
+s3
+s2
+p
+s1
+s3
+s2
+p
+s1
+s3
+s2 p
+(a) (b)
+(c) (d)
+Fig. 1: Examples of equivalent placements ( d = 2 , n = 3 ): (a) Original placement. (b) Rotate all sensors about the target 60 degrees clockwise. (c) Reﬂect
+all sensors about the vertical axis. (d) Flipping the sensor s3 about the target.
+general. In Section V-C, we will give the condition under which the converse is true. Examples of 2D equivalent placements
+are given in Figure 1.
+IV. N ECESSARY AND SUFFICIENT CONDITIONS FOR OPTIMAL PLACEMENT
+In this section, we will prove the necessary and sufﬁcient conditions for optimal placements solving (8). Recall G =
+∑n
+i=1c2
+igigT
+i . Then we have
+∥G∥2 =
+n∑
+i=1
+n∑
+j=1
+(cicjgT
+i gj)2
+=
+n∑
+i=1
+n∑
+j=1
+(ϕiϕj)2,
+where ϕi = cigi for i∈{ 1,...,n }. The vectors {ϕi}n
+i=1 form a frame in Rd. The objective function ∥G∥2 is exactly the
+frame potential of the frame{ϕi}n
+i=1 as shown in (3). The matrix G is the frame operator. Note here∥ϕi∥ =ci. The coefﬁcient
+sequence{ci}n
+i=1 will fully determine the minimizers of ∥G∥2. According to the irregularity of {ci}n
+i=1, optimal placements
+are categorized as regular and irregular as shown below.
+When{ci}n
+i=1 is regular, the necessary and sufﬁcient condition of optimal placement is given below. The 2D version of the
+following result has been proposed in [5], [7], [8].
+Theorem 4.1 (Regular optimal placement): In Rd with d = 2 or 3, if the positive coefﬁcient sequence {ci}n
+i=1 is regular,
+then the objective function ∥G∥2 satisﬁes
+∥G∥2≥ 1
+d
+( n∑
+i=1
+c2
+i
+)2
+. (13)
+The lower bound of ∥G∥2 is achieved if and only if
+n∑
+i=1
+c2
+igigT
+i = 1
+d
+n∑
+i=1
+c2
+iId. (14)
+Proof: Let{µj}d
+j=1 be the eigenvalues of G. Then ∑d
+j=1µj = trG = ∑n
+i=1c2
+i is constant. Let ¯µ = 1/d ∑d
+j=1µj =
+10
+1/d ∑n
+i=1c2
+i . It is obvious that
+∥G∥2 =
+d∑
+j=1
+µ2
+j≥d¯µ2 = 1
+d
+( n∑
+i=1
+c2
+i
+)2
+.
+The lower bound of ∥G∥2 is achieved if and only if µj = ¯µ for all j∈{ 1,...,d }, which implies G = ¯µId, i.e., the equation
+(14). By denoting ϕi = cigi, (14) becomes ∑n
+i=1ϕiϕT
+i = 1/d ∑n
+i=1c2
+iId which is the same as (2). Thus a regular optimal
+placement solving (14) actually corresponds to a tight frame. Because {ci}n
+i=1 is regular, by Lemma 2.7 there exist optimal
+placements solving (14).
+We call a placement regular when its coefﬁcient sequence is regular, and regular optimal when it solves (14). To obtain a
+regular optimal placement, we still need to solve (14). Details of the solutions to (14) will be given in Section V-A.
+Remark 4.2: When∥G∥2 reaches its lower bound 1/d(∑n
+i=1c2
+i )2, we have ∥F− ¯λId∥2 = 0 by (9). By Lemma 3.4, the
+conventional objective function detF will be maximized to its upper bound. Therefore, regular optimal placements not only
+minimize the new objective functions ∥G∥2 and∥F− ¯λId∥2 but also maximize the conventional one detF in R2 and R3.
+When{ci}n
+i=1 is irregular, (14) will have no solution. Then the the necessary and sufﬁcient condition of optimal placement
+is given below. The 2D version of the following result has been proposed in [5], [7], [8].
+Theorem 4.3 (Irregular optimal placement): In Rd with d = 2 or 3, if the positive coefﬁcient sequence{ci}n
+i=1 is irregular
+with irregularity as k0≥ 1, without loss of generality {ci}n
+i=1 can be assumed to be a non-increasing sequence, and then the
+objective function∥G∥2 satisﬁes
+∥G∥2≥
+k0∑
+i=1
+c4
+i + 1
+d−k0
+( n∑
+i=k0+1
+c2
+i
+)2
+. (15)
+The lower bound of ∥G∥2 is achieved if and only if
+{gi}n
+i=1 ={gi}k0
+i=1∪{gi}n
+i=k0+1, (16)
+where{gi}k0
+i=1 is an orthogonal set, and {gi}n
+i=k0+1 forms a regular optimal placement in the (d−k0)-dimensional orthogonal
+complement of{gi}k0
+i=1.
+Proof: Recall∥G∥2 is the frame potential of the frame{ϕi}n
+i=1 whereϕi =cigi. From Lemma 2.6, the minimizer of∥G∥2
+is of the following form: {cigi}k0
+i=1 is an orthogonal set, and {cigi}n
+i=k0+1 is a tight frame (i.e., a regular optimal placement)
+in the orthogonal complement of {cigi}k0
+i=1.
+Let Φ1 = [ϕ1,...,ϕ k0]∈ Rd×k0, Φ2 = [ϕk0+1,...,ϕ n]∈ Rd×(n−k0), and Φ = [Φ1, Φ2]∈ Rd×n. When{gi}n
+i=1 is of the
+form in (16), the columns of Φ1 are orthogonal to those of Φ2. Then
+∥G∥2 = tr (ΦT Φ)2 = tr (ΦT
+1 Φ1)2 + tr (ΦT
+2 Φ2)2.
+Because{gi}k0
+i=1 is an orthogonal set, we have tr (ΦT
+1 Φ1)2 = ∑k0
+i=1∥ϕi∥4 = ∑k0
+i=1c4
+i . Because{gi}n
+i=k0+1 is a regular optimal
+placement in a (d−k0)-dimensional subspace, we have tr (ΦT
+2 Φ2)2 = 1/(d−k0)(∑n
+i=k0+1c2
+i )2 by Theorem 4.1. Therefore,
+when{gi}n
+i=1 is of the form in (16), the objective function ∥G∥2 reaches its lower bound as shown in (15).
+We call a placement irregular when its coefﬁcient sequence is irregular, and irregular optimal when it is of the form in
+(16). In Theorem 4.3, because {gi}n
+i=k0+1 is a regular optimal placement in a (d−k0)-dimensional space, an irregular optimal
+placement problem will eventually convert to a regular one in a lower dimensional subspace.
+11
+p
+s1
+p
+s1
+p
+s1
+s2
+(a)
+(b)
+(c)
+Fig. 2: An illustration of the three kinds of irregular optimal placements in R2 and R3. (a) d = 2, k0 = 1; (b) d = 3, k0 = 1; (c) d = 3, k0 = 2.
+Apparently the irregularity of {ci}n
+i=1 plays a key role in determining optimal placements. Recall the irregularity k0 of an
+irregular sequence with respect to d satisﬁes1≤k0≤d− 1. In R2, we have d = 2 and hence k0 = 1; in R3, we have d = 3
+and hence k0 = 1 or 2. Thus there exist only three kinds of irregular optimal placements in R2 and R3. By Theorem 4.3,
+these three kinds of irregular optimal placements can be intuitively described as below.
+(i) Irregular optimal placement in R2 with irregularity k0 = 1 : the vector g1 is orthogonal to {gi}n
+i=2, and {gi}n
+i=2 are
+collinear. See an illustration in Figure 2 (a).
+(ii) Irregular optimal placement in R3 with irregularity k0 = 1: the vector g1 is orthogonal to {gi}n
+i=2, and{gi}n
+i=2 form a
+regular optimal placement in the 2D plane perpendicular to g1. See an illustration in Figure 2 (b).
+(iii) Irregular optimal placement in R3 with irregularity k0 = 2: the vectors g1, g2 and{gi}n
+i=3 are mutually orthogonal, and
+{gi}n
+i=3 are collinear. See an illustration in Figure 2 (c).
+We now intuitively explain why irregular optimal placements are the way as described above. The sequence {ci}n
+i=1 is
+irregular when certain ci is much larger than the others. The coefﬁcient ci actually is the weight for sensor i. The larger the
+weight ci is, the more sensor i contributes to the FIM. Recall ci = 1/(σi∥ri∥) or ci = 1/σi. If sensor i is very close to the
+target (i.e.,∥ri∥ is small) and its measurement is very accurate (i.e., σi is small), then ci will be very large and sensor i may
+dominate all the others. Thus the dominant sensor can measure the target sufﬁciently accurately in one dimension, and all the
+other sensors should measure the target in the orthogonal complement in order to improve the overall measurement accuracy.
+To make our analysis more general, we do not assume σi’s to be identical. It is also meaningful to check the special case,
+σi =σj for all i̸=j, which often arises in practice. For bearing-only or RSS-based sensors, the coefﬁcient is ci = 1/(σi∥ri∥).
+So when σi = σj for all i̸= j, a regular sequence {ci}n
+i=1 implies the following equation according to the fundamental
+inequality (5):
+max
+j=1,...,n
+1
+∥rj∥2≤ 1
+d
+n∑
+i=1
+1
+∥ri∥2, (17)
+which geometrically means no sensor is much closer to the target than the others. Conversely, if certain sensors are much
+closer to the target than the others, then the sequence {ci}n
+i=1 will be irregular. The 2D version of inequality (17) has been
+proposed in [5], [7], [8]. For range-only sensors, the coefﬁcient is ci = 1/σi. If σi =σj for all i̸=j, then ci =cj and{ci}n
+i=1
+12
+is regular with respect to any d≤n.
+We next consider an important special case n =d, i.e., the sensor number equals to the dimension of the space. This case is
+important because the optimal placement will be independent to the coefﬁcients {ci}n
+i=1 in this case. The optimal placement
+in the case of n =d = 2 has been solved by [5], [7]–[9].
+Theorem 4.4: In Rd with d = 2 or 3, if n =d, the objective function ∥G∥2 satisﬁes
+∥G∥2≥
+d∑
+i=1
+c4
+i.
+The lower bound of ∥G∥2 is achieved if and only if {gi}d
+i=1 is an orthogonal basis of Rd.
+Proof: Since G = ∑d
+i=1c2
+igigT
+i and gT
+i gi = 1 for all i∈{ 1,...,n }, we have
+∥G∥2 = tr (G2)
+=
+d∑
+i=1
+d∑
+j=1
+c2
+ic2
+j(gT
+i gj)2
+=
+d∑
+i=1
+d∑
+j=1,j̸=i
+c2
+ic2
+j(gT
+i gj)2 +
+d∑
+i=1
+c4
+i
+≥
+d∑
+i=1
+c4
+i,
+where the equality holds if and only if gT
+i gj = 0 for all i,j ∈{ 1,...,d } and i̸=j.
+Theorem 4.4 can also be proved as a corollary of Theorem 4.1 and Theorem 4.3. But as shown above, we can also directly
+prove it without using frame theory. This can be explained from the redundancy point of view. Recall the constant n/d reﬂects
+the redundancy of the system. There will be no redundancy when n/d = 1 . Then frames are no longer necessary for the
+optimality analysis.
+V. A NALYTICAL PROPERTIES OF OPTIMAL PLACEMENTS
+In this section, we further explore a number of analytical properties of optimal placements in 2D and 3D. Theorem 4.3
+implies that an irregular optimal placement problem can be eventually converted to a regular one in a lower dimensional space.
+Hence we will only focus on regular optimal placements.
+A. Explicit Construction
+The work in [5], [7]–[9] has proposed explicit construction methods for some special 2D optimal placements. The construction
+of generic optimal placements in 2D or 3D is still an open problem. From Theorem 4.1, we know a regular optimal placement
+is essentially a tight frame. In fact, construction of tight frames in arbitrary dimensions has been extensively studied. Thus by
+referring to [20], [22]–[24], to name a few, we are able to construct optimal placements with an arbitrary number of sensors
+and arbitrary but ﬁxed coefﬁcients in 2D and 3D.
+We here present a proof of the necessary and sufﬁcient condition for 2D regular optimal placements without using frame
+theory. In the meantime, we propose an explicit construction method for arbitrary 2D regular optimal placements. The necessary
+and sufﬁcient condition for 2D optimal placements has already been given in [5], [7], [8], where the sufﬁciency, however, is
+not proved. We will prove the sufﬁciency by construction. The following lemma can be found in [5], [7]–[9], [18], [25], [26].
+13
+Lemma 5.1: In R2, the unit-length vector gi can be written as gi = [cosθi, sinθi]T . Then (14) is equivalent to
+n∑
+i=1
+c2
+i ¯gi = 0, (18)
+where ¯gi = [cos 2θi, sin 2θi]T .
+Proof: Substituting gi = [cosθi, sinθi]T into (14) gives
+n∑
+i=1
+c2
+i
+
+
+1
+2 cos 2θi 1
+2 sin 2θi
+1
+2 sin 2θi − 1
+2 cos 2θi
+
+ = 0,
+which is equivalent to (18).
+By Lemma 5.1, the matrix equation (14) is simpliﬁed to a vector equation (18). In order to construct{gi}n
+i=1 solving (14), we
+can ﬁrst construct{¯gi}n
+i=1 solving (18). Once ¯gi = [cos 2θi, sin 2θi]T is obtained, gi can be retrieved as gi =±[cosθi, sinθi]T .
+Note the sign changes of gi give equivalent optimal placement as mentioned in Deﬁnition 3.6.
+Theorem 5.2: In R2, given a positive sequence {ci}n
+i=1, there exists {¯gi}n
+i=1 with∥¯gi∥ = 1 solving (18) if and only if
+max
+j=1,...,n
+c2
+j≤ 1
+2
+n∑
+i=1
+c2
+i. (19)
+Proof: Necessity: If ∑n
+i=1c2
+i ¯gi = 0, then c2
+j ¯gj = ∑
+i̸=jc2
+i ¯gi for all j∈{ 1,...,n }. Hence c2
+j =∥c2
+j ¯gj∥ =∥ ∑
+i̸=jc2
+i ¯gi∥≤
+∑
+i̸=j∥c2
+i ¯gi∥ = ∑
+i̸=jc2
+i . Then adding c2
+j on both sides of the inequality gives 2c2
+j≤ ∑n
+i=1c2
+i .
+Sufﬁciency: Ifc2
+j≤ 1/2 ∑n
+i=1c2
+i for all j∈{ 1,...,n }, it is obvious that there always exists an index n0 (2≤ n0≤ n)
+such that
+c2
+1 +··· +c2
+n0−1≤ 1
+2
+n∑
+i=1
+c2
+i, (20)
+c2
+1 +··· +c2
+n0−1 +c2
+n0≥ 1
+2
+n∑
+i=1
+c2
+i. (21)
+When n0 <n , denote
+ℓ1 =c2
+1 +··· +c2
+n0−1,
+ℓ2 =c2
+n0,
+ℓ3 =c2
+n0+1 +··· +c2
+n. (22)
+Obviouslyℓ1 +ℓ2 +ℓ3 = ∑n
+i=1c2
+i . From (19), cn0≤ 1/2 ∑n
+i=1c2
+i and hence ℓ1 +ℓ3≥ℓ2. From (20), ℓ1≤ 1/2 ∑n
+i=1c2
+i and
+hence ℓ2 +ℓ3≥ℓ1. From (21), ℓ1 +ℓ2≥ 1/2 ∑n
+i=1c2
+i and hence ℓ1 +ℓ2≥ℓ3. Therefore, ℓ1, ℓ2 and ℓ3 satisfy the triangle
+inequality and can form a triangle. Choose ¯g1 =··· = ¯gn0−1. Then ∑n0−1
+i=1 c2
+i ¯gi = ℓ1¯g1. Choose ¯gn0+1 =··· = ¯gn. Then
+∑n
+i=n0+1c2
+i ¯gi =ℓ3¯gn. Then (18) becomes
+ℓ1¯g1 +ℓ2¯gn0 +ℓ3¯gn = 0. (23)
+We can choose ¯g1, ¯gn0 and ¯gn that align with the three sides of the triangle with side length as ℓ1,ℓ2 andℓ3, respectively (see
+Figure 3). Then (23) and consequently (18) can be solved. When n0 =n, the above proof is still valid. In this case, we have
+ℓ3 = 0 and ℓ1 =ℓ2, and (23) becomes ¯g1 + ¯gn0 = 0.
+From the proof of Theorem 5.2, an explicit construction of 2D regular optimal placements can be summarized in Algorithm
+14
+ℓ1
+ℓ3ℓ2
+α12 α13
+¯gi (i<n 0)
+¯gi (i>n 0)
+¯gn0
+Fig. 3: Geometric illustration for the 2D construction.
+Algorithm 1 Construction of 2D regular optimal placements {gi}n
+i=1 with coefﬁcients{ci}n
+i=1.
+1: Choose n0 satisfying (20) and (21). Then compute ℓ1, ℓ2 and ℓ3 in (22).
+2: Compute interior angles α12 and α13 of the triangle with side lengths as ℓ1, ℓ2 and ℓ3 (See Figure 3).
+3: Choose gi = [1 , 0]T for i ∈ {1,...,n 0 − 1}, gn0 = [cos(( π +α12)/2), sin((π +α12)/2)]T , and gi =
+[cos((π−α13)/2), sin((π−α13)/2)]T for i∈{n0 + 1,...,n }.
+1. The following example illustrates the construction method in Algorithm 1.
+Example 5.3: In R2, given six bearing-only sensors with sensor-target ranges respectively as ∥r1∥ = 5,∥r2∥ = 6,∥r3∥ = 7,
+∥r4∥ = 8,∥r5∥ = 9, and∥r6∥ = 10. The measurement noise variance is σi = 1 for all i∈{ 1,..., 6}. Recall ci = 1/(σi∥ri∥)
+for bearing-only sensors. Then c2
+1 = 0.0400, c2
+2 = 0.0278, c2
+3 = 0.0204, c2
+4 = 0.0156, c2
+5 = 0.0123, c2
+6 = 0.0100, and
+1/2 ∑6
+i=1c2
+i = 0.0631. It is easy to check the sequence {ci}6
+i=1 is regular. Because c2
+1 < 1/2 ∑6
+i=1c2
+i and c2
+1 +c2
+2 >
+1/2 ∑6
+i=1c2
+i , choose n0 = 2 . Hence ℓ1 = 0.0400, ℓ2 = 0.0278, and ℓ3 = 0.0584. Then α12 = 2.0560 rad and α13 =
+0.4344 rad. As instructed in Algorithm 1, choose g1 = [1, 0]T,g 2 = [0.8563,−0.5165]T,g 3 =··· =g6 = [0.2155, 0.9765]T .
+It can be veriﬁed that ∑6
+i=1c2
+igigT
+i = 1/2 ∑6
+i=1c2
+iI2.
+B. Equally-weighted Optimal Placements
+The coefﬁcientci actually is the weight of sensor i. A placement is called equally-weighted ifc1 =··· =cn. Since{ci}n
+i=1
+is regular with respect to any d≤n if c1 =··· =cn, equally-weighted placements must be regular. For bearing-only or RSS
+sensors, equally-weighted means σi =σj and∥ri∥ =∥rj∥ for all i̸=j as ci = 1/(σi∥ri∥). The corresponding geometry is
+that all sensors are restricted on a 2D circle or a 3D sphere centered at the target. For range-only sensors, equally-weighted
+means σi =σj for all i̸=j as ci = 1/σi.
+Equally-weighted placements are important because they often arise in practice and have some important special properties. In
+the equally-weighted case, (14) is simpliﬁed to ∑n
+i=1gigT
+i =n/dId, which implies that an equally-weighted optimal placement
+is essentially a unit-norm tight frame [18], [26]. In R2, an equally-weighted placement is optimal if n (n≥ 3) sensors are
+located at the vertices of an n-side regular polygon [5], [7]–[9], [18], [26] as shown in Figure 4. In R3, an equally-weighted
+placement is optimal if n sensors are located at the vertices of a Platonic solid [18], [26]. There are only ﬁve Platonic solids as
+shown in Figure 5. It should be noted that equally-weighted optimal placements are not limited to regular polygons or Platonic
+solids. In Section V-D we will show more examples of equally-weighted optimal placements.
+15
+(a)
+ (b)
+ (c)
+ (d)
+ (e)
+Fig. 4: Examples of 2D equally-weighted optimal placements: regular polygons. Red square: target; blue dots: sensors.
+(a)
+ (b)
+ (c)
+ (d)
+ (e)
+Fig. 5: Examples of 3D equally-weighted optimal placements: Platonic solids. Red square: target; blue dots: sensors. (a) Tetrahedron, n = 4. (b) Octahedron,
+n = 6. (c) Hexahedron, n = 8. (d) Icosahedron, n = 12. (e) Dodecahedron, n = 20.
+C. Uniqueness
+Due to placement equivalence, there exist at least an inﬁnite number of equivalent optimal placements minimizing ∥G∥2.
+It is interesting to ask whether all optimal placements are mutually equivalent. Now we give the condition under which all
+optimal placements are mutually equivalent, or in other words, the optimal placement is unique up to the equivalence. Again
+we only consider regular cases.
+According to Theorem 4.4, it is clear that the optimal placement is unique in the case of n =d. We next show the regular
+optimal placement is also unique in the case of n = d + 1 (i.e., three sensors in R2 or four sensors in R3). The uniqueness
+will be proved by construction, which is inspired by the work in [25] on unit-norm tight frames.
+Theorem 5.4: In Rd with d = 2 or 3, if n = d + 1, given a regular coefﬁcient sequence {ci}d+1
+i=1 , the regular optimal
+placement{gi}d+1
+i=1 is unique up to the equivalence in Deﬁnition 3.6.
+Proof: Suppose{gi}d+1
+i=1 is a regular optimal placement solving (14). Denote ϕi = cigi and Φ = [ ϕ1,...,ϕ d+1]∈
+Rd×(d+1). Then (14) can be written in matrix form as ΦΦT = 1/d ∑d+1
+i=1 c2
+iId. Hence Φ has mutually orthogonal rows with
+row norm as
+√
+1/d ∑d+1
+i=1 c2
+i . Let x = [x1,...,x d+1]∈ Rd+1 be a vector in the orthogonal complement of the row space
+of Φ. Assume ∥x∥ =
+√
+1/d ∑d+1
+i=1 c2
+i . Adding xT after the last row of Φ yields an augmented matrix Φaug =
+[
+ΦT,x
+]T
+∈
+R(d+1)×(d+1). It is clear that ΦaugΦT
+aug = 1
+d
+∑d+1
+i=1 c2
+iId+1. Thus Φaug is a scaled orthogonal matrix and its columns are
+mutually orthogonal. The jth column of Φaug is [ϕT
+j,x j]T∈ Rd+1 for all j∈{ 1,...,d + 1}. Note the column norm of Φaug
+is
+√
+1/d ∑d+1
+i=1 c2
+i . Then we have ∥ϕj∥2 +x2
+j = 1/d ∑d+1
+i=1 c2
+i and hence
+xj =±
+√1
+d
+d+1∑
+i=1
+c2
+i−c2
+j. (24)
+The regularity condition ensures 1/d ∑d+1
+i=1 c2
+i−c2
+j≥ 0.
+16
+Algorithm 2 Construction of the unique regular optimal placement {gi}d+1
+i=1 with coefﬁcients{ci}d+1
+i=1 .
+1: Choose x = [x1,...,x d+1]∈ Rd+1 with xj =±
+√
+1/d ∑d+1
+i=1 c2
+i−c2
+j for i∈{ 1,...,d + 1}.
+2: Use the singular value decomposition (SVD) to numerically compute an orthogonal basis of the orthogonal complement
+of x. Let x =UΣV T be an SVD of x, where U∈ R(d+1)×(d+1) is an orthogonal matrix.
+3: Let ui denote the ith column of U. Then x =±
+√
+1/d ∑d+1
+i=1 c2
+iu1, and Φ can be constructed as
+Φ =
+√1
+d
+d+1∑
+i=1
+c2
+i [u2,...,u d+1]T∈ Rd×(d+1). (27)
+4: Compute gi =ϕi/ci for i∈{ 1,...,d + 1}.
+By reversing the above proof, we can obtain an explicit construction algorithm for optimal placement with n = d + 1 as
+shown in Algorithm 2. The rest is to prove the constructed optimal placements are mutually equivalent. First, given a vector
+x∈ Rd+1 satisfying (24), let Φ and Φ′ be two different bases of the orthogonal complement of x. Due to orthogonality, there
+exists an orthogonal matrix U∈ R(d+1)×(d+1) such that
+U
+
+ Φ
+xT
+
+ =
+
+ Φ′
+xT
+
+. (25)
+Write U as
+U =
+
+ U11 U12
+U21 U22
+
+, (26)
+where U11∈ Rd×d,U 12∈ Rd×1,U 21∈ R1×d, and U22∈ R. Substituting (26) into (25) gives U21Φ + (U22− 1)xT = 0 .
+Since the rows of Φ and xT are linearly independent, we have U21 = 0, U22 = 1. Thus U12 = 0 and U11Φ = Φ′. Therefore,
+the placements described by Φ and Φ′ are differed only by an orthogonal transformation U11. From Deﬁnition 3.6, the two
+placements are equivalent. Second, letE∈ R(d+1)×(d+1) be a diagonal matrix with diagonal entries as 1 or−1. Given arbitrary
+x andx′ both satisfying (24), there exists an E such that x′ =Ex. Note E is also an orthogonal matrix. It can be analogously
+proved that the optimal placements would be differed by an orthogonal transformation and a number of ﬂipping of sensors
+about the target. From Deﬁnition 3.6, these placements are also equivalent.
+From the proof of Theorem 5.4, an explicit construction of the unique regular optimal placement in the case of n =d + 1
+can be summarized in Algorithm 2. The following example illustrates the construction method in Algorithm 2.
+Example 5.5: In R3, given four bearing-only sensors with sensor-target ranges respectively as ∥r1∥ = 20 ,∥r2∥ = 21 ,
+∥r3∥ = 22 and∥r4∥ = 23 . The measurement noise variance of the ith sensor is σi = 0.01 with i∈{ 1,..., 4}. Recall
+ci = 1/(σi∥ri∥) for bearing-only sensors. Then c2
+1 = 25.00, c2
+2 = 22.68, c2
+3 = 20.66, c2
+4 = 18.90 and 1/3 ∑4
+i=1c2
+i = 29.08.
+The sequence {ci}4
+i=1 is regular. From (24), choose x = [2.02, 2.53, 2.90, 3.19]T . Compute the SVD of x and use (27) to
+compute Φ as
+Φ =
+
+
+−2.5307 4 .5286 −0.9906 −1.0891
+−2.9016 −0.9906 4 .2568 −1.2487
+−3.1901 −1.0891 −1.2487 4 .0197
+
+.
+It can be veriﬁed ∑4
+i=1c2
+igigT
+i = ΦΦT = 1/3 ∑4
+i=1c2
+iI3.
+17
+s1
+s2 s3
+(a)
+s1
+s2 s3 (b)
+Fig. 6: The unique equally-weighted optimal placements with n = 3 in R2. Red square: target; blue dots: sensors. (a) Regular triangle. (b) Flip s1 about the
+target.
+s3
+s2
+s4
+s1
+(a)
+s3
+s2
+s4
+s1 (b)
+s2
+s4
+s3
+s1 (c)
+Fig. 7: The unique equally-weighted optimal placements with n = 4 in R3. Red square: target; blue dots: sensors. (a) Regular tetrahedron. (b) Flip s4 about
+the target. (c) Flip s4 and s3 about the target.
+Figure 6 and Figure 7 show examples of unique optimal placements. From the last subsection, we know a regular triangle
+and a regular tetrahedron are equally-weighted optimal. By Theorem 5.4 they are also unique up to equivalence. Hence the
+two equivalent placements in Figure 6 consist of all possible forms of the equally-weight optimal placements with n = 3 in
+R2. The three equivalent placements in Figure 7 consist of all possible forms of the equally-weight optimal placements with
+n = 4 in R3.
+When n>d + 1, the regular optimal placement may not be unique. In the next subsection, we will give examples to show
+the optimal placement may not be unique when n≥ 4 in R2 or n≥ 6 in R3. Now a question remains: whether the regular
+optimal placement with n = 5 in R3 is unique up to the equivalence. The answer is negative. The following is an explanation
+and an explicit construction of the regular optimal placement with n = 5 in R3.
+Suppose the sequence {ci}5
+i=1 is regular with respect to d = 3. Denote ϕi =cigi and Φ = [ϕ1,...,ϕ 5]∈ R3×5. Then (14)
+becomes ΦΦT = 1/3 ∑5
+i=1c2
+iI3. There always exists Φ′ = [ϕ′
+1,...,ϕ ′
+5]∈ R2×5 in the orthogonal complement of the row
+space of Φ such that
+
+ Φ
+Φ′
+
+
+[
+ΦT Φ′T
+]
+= 1
+3
+5∑
+i=1
+c2
+iI5,
+which implies ∥ϕj∥2 +∥ϕ′
+j∥2 = 1/3 ∑5
+i=1c2
+i and Φ′Φ′T = 1/3 ∑5
+i=1c2
+iI2. Thus {ϕ′
+j}5
+j=1 represents a 2D regular optimal
+placement with ∥ϕ′
+j∥ =
+√
+1/3 ∑5
+i=1c2
+i−c2
+j for all j∈{ 1,..., 5} (it can be veriﬁed {∥ϕ′
+j∥}5
+j=1 is regular with respect to
+d = 2). Therefore, to obtain Φ, we can ﬁrst construct{ϕ′
+j}5
+j=1 using Algorithm 1 for example, and then ﬁnd Φ in the orthogonal
+complement of the row space of Φ′. Since {ϕ′
+i}5
+i=1 may have non-equivalent solutions, {ϕi}5
+i=1 would not be unique up to
+the equivalence.
+18
+D. Distributed Construction
+When there are a large number of sensors, it might be inconvenient to design the optimal placement involving all sensors.
+The following property can be applied to construct large-scale optimal placements in a distributed manner. The 2D versions
+of the following result have been proposed in [5], [7], [8].
+Theorem 5.6: The union of multiple disjoint regular optimal placements in Rd (d = 2 or 3) is still a regular optimal
+placement in Rd.
+Proof: In Rd, consider multiple disjoint regular optimal placements: {ci,g i}i∈Ik withIk as the index set of the kth
+placement (k = 1,...,q ). The term disjoint as used here means that different placements share no common sensors. Deﬁne
+I = ⋃q
+k=1Ik. If|·| denotes the cardinality of a set, then |I| = ∑q
+k=1|Ik|.
+For the kth placement, since {ci,g i}i∈Ik is regular optimal in Rd, from Theorem 4.1 we have
+∑
+i∈Ik
+c2
+igigT
+i = 1
+d
+∑
+i∈Ik
+c2
+iId.
+For the union placement, we have
+∑
+j∈I
+c2
+jgjgT
+j =
+q∑
+k=1
+∑
+i∈Ik
+c2
+igigT
+i
+= 1
+d
+q∑
+k=1
+∑
+i∈Ik
+c2
+iId
+= 1
+d
+∑
+j∈I
+c2
+jId.
+By Theorem 4.1, the union placement is regular optimal in Rd.
+Theorem 5.6 implies that a large-scale regular optimal placement can be constructed in a distributed manner: ﬁrstly divide
+the large-scale placement into a number of disjoint regular sub-placements, secondly construct each regular optimal sub-
+placement, and ﬁnally combine these optimal sub-placements together to obtain a large regular optimal placement. We call this
+kind of method distributed construction. Because the combination of the optimal sub-placements can be arbitrary, distributed
+construction will lead to an inﬁnite number of optimal placements for the large system. These optimal placements have the
+same FIM and ∥G∥2, but they are generally non-equivalent. From Theorem 5.6, we also know only regular placements can
+be possibly divided into some regular subsets.
+The distributed construction method is very suitable for constructing equally-weighted optimal placements. That is because
+any equally-weighted sequence {ci}k
+i=1 is regular if k≥d, and thus {ci}n
+i=1 can be easily divided into a number of regular
+subsets. We next present two instances. (i) For any integer n≥ 4, it is obvious that there exist nonnegative integers m1 and
+m2 such that n can be decomposed as n = 2m1 + 3m2. Thus in R2 we can always distributedly construct an equally-weighted
+optimal placement with n≥ 4 by using the ones with n = 2 or 3. (ii) For any integer n≥ 6, there exist nonnegative integers
+m1, m2 and m3 such that n = 3m1 + 4m2 + 5m3. Thus in R3 we can always distributedly construct an equally-weighted
+optimal placement with n≥ 6 by using the ones with n = 3 , 4 or 5. As a consequence, noticing distributed construction
+yields an inﬁnite number of non-equivalent optimal placements, equally-weighted placements with n≥ 4 in R2 or n≥ 6 in
+R3 always have an inﬁnite number of non-equivalent optimal solutions.
+We show some typical examples in Figure 8 to illustrate the distributed construction. From Section V-B, we know a regular
+triangle or regular tetrahedron placement is equally-weighted optimal. The placement shown in Figure 8 (a), (b) or (c) is
+19
+(a)
+ (b)
+ (c)
+(d)
+ (e)
+Fig. 8: Examples of optimal placement by distributed construction. Red square: target; dots: sensors.
+distributedly constructed by two regular optimal placements with n = 3 (the sensors with the same color form a triangle
+optimal placement). The placement shown in Figure 8 (d) or (e) is distributedly constructed by the optimal placement with
+n = 4 as shown in Figure 7 (c), which is equivalent to the regular tetrahedron. Thus by Theorem 5.6 all placements in Figure
+8 are regular optimal.
+VI. N UMERICAL VERIFICATION
+In order to verify our previous analytical analysis, in this section we solve the parameter optimization problem (8) from a
+numerical perspective and then present some numerical simulations. More speciﬁcally, we employ Lyapunov approaches to
+design a centralized gradient control law which can numerically minimize the objective function ∥G∥2 given an appropriate
+initial point. The control law can be applied to numerically construct generic regular and irregular optimal placements in 2D
+and 3D.
+Assume the motion model of sensor i to be ˙si = ui, where ui∈ Rd is the control input. Then we have ˙ri = ui because
+ri =si−p and the target position estimation p is given. Let r = [rT
+1,...,r T
+n ]T∈ Rdn. Denote β as the constant lower bound
+of∥G∥2 as shown in Theorem 4.1 and 4.3. Then the optimal placement set is E0 ={r∈ Rdn :∥G∥2−β = 0}. Choose
+the Lyapunov function as V (r) = 1/4(∥G∥2−β). Clearly V is positive deﬁnite with respect to E0. Denote ∂V/∂r i as the
+Jacobian of V with respect to ri. Then we have
+˙V =
+n∑
+i=1
+∂V
+∂ri
+˙ri =
+n∑
+i=1
+c2
+i
+∥ri∥gT
+i GPi ˙ri,
+where Pi = Id−gigT
+i is an orthogonal projection matrix satisfying P T
+i = Pi, P 2
+i = Pi, and Null(Pi) = span{gi}. Null(·)
+denotes the null space of a matrix. Design the gradient control law as
+˙ri =−PiGgi, (28)
+20
+0 5 100
+0.2
+0.4
+0.6
+0.8
+1
+Time (s)
+Optimality Error
+0 5 100
+0.5
+1
+1.5
+2
+Time (s)
+Optimality Error
+0 5 100
+1
+2
+3
+Time (s)
+Optimality Error
+Fig. 9: Gradient control of equally-weighted (regular) placements with n = 4 in R3.
+0 5 10 15 200
+0.1
+0.2
+0.3
+0.4
+0.5
+Time (s)
+Optimality Error
+(a) n = 3, k0 = 1
+0 5 10 15 200
+0.05
+0.1
+0.15
+0.2
+0.25
+Time (s)
+Optimality Error (b) n = 4, k0 = 1
+0 5 10 15 200
+0.5
+1
+1.5
+Time (s)
+Optimality Error (c) n = 4, k0 = 2
+Fig. 10: Gradient control of irregular placements in R3.
+such that
+˙V =−
+n∑
+i=1
+c2
+i
+∥ri∥∥PiGgi∥2≤ 0
+and ˙V = 0 when PiGgi = 0 for all i∈{ 1,...,n }.
+Proposition 6.1: For any initial condition r(0)∈ Rdn with∥ri(0)∦ = 0 for all i∈{ 1,...,n }, the solution to the nonlinear
+r-dynamics (28) asymptotically converges to the set
+E ={r∈S :PiGgi = 0, i = 1,...,n },
+whereS ={r∈ Rdn :∥ri∥ =∥ri(0)∥, i = 1,...,n }.
+Proof: The time derivative of ∥ri∥ is
+d∥ri∥
+dt = rT
+i
+∥ri∥ ˙ri =−gT
+i PiGgi = 0. (29)
+The last equality uses the fact gT
+i Pi = 0. By (29) we have ∥ri(t)∥≡∥ ri(0)∦ = 0. Hence S is a positive invariant set with
+21
+respect to the r-dynamics. The set S consists of a group of spheres in Rd centered at the origin. Thus S is compact. Note
+˙V = 0 and ˙r = 0 for all points in E. By the invariance principle [27], every solution starting in S asymptotically converges
+toE.
+By Proposition 6.1, the r-dynamics converge either to the optimal placement E0 or the setE\E 0. By introducing Lagrange
+multipliers γi, i = 1,...,n , the constrained optimization problem (8) is equivalent to minimizing the Lagrangian function
+L = ∥G∥2 + ∑n
+i=1γi(gT
+i gi− 1). From ∂L/∂g i = 0 , a short calculation shows that E is the critical point set, which
+consists of not only minimizers of ∥G∥2 (i.e., optimal placements) but also saddle points and maximizers of ∥G∥2 (i.e., non-
+optimal placements). The sets E0 andE are equilibrium manifolds. It is noticed that nonlinear stabilization problems involving
+equilibrium manifolds also emerge in formation control area recently [28]–[30]. It is possible to conduct strict stability analysis
+including identifying the attractive region of E0 by using Center manifold theory [28], [30] or differential geometry [29]. But
+that will be non-trivial because the geometric structure of E0 is extremely complicated as shown in [31].
+Figure 9 and Figure 10 show a number of optimal placements obtained by the proposed gradient control law. Due to space
+limitations, we only show examples in 3D. The three ﬁnal converged placements in Figure 9 are actually the three regular
+optimal ones shown in Figure 7. The three ﬁnal placements in Figure 10 are the two as illustrated in Figure 2 (b) and (c).
+Clearly the numerical results are consistent with our previous analytical analysis. The optimality error refers to the difference
+between∥G∥2 and its lower bound given in (13) or (15). The optimality error can be used as a numerical indicator to evaluate
+the optimality of a placement. As shown in Figure 9 and Figure 10, the optimality errors all converge to zero.
+A. Simulation
+More simulations will be presented to demonstrate the performance of the gradient control. Our previous analytical charac-
+terization of optimal sensor placements will be veriﬁed by the simulations.
+1) Scenario 1 for bearing-only or RSS-based sensors: For bearing-only or RSS-based sensors, the sensor-target ranges are
+assumed to be ﬁxed. The control law (28) naturally fulﬁlls this assumption. Examples of 2D and 3D optimal placements
+achieved by the gradient control are shown in Figure 11 and Figure 12, respectively. The noise covariances of all sensors are
+chosen to be identical in the simulation.
+Figure 11 shows 2D examples. In (a) or (e), the ﬁnal angle subtended at the target by the two sensors is 90 degrees. In (b)
+and (c), the two optimal placements are equivalent. In (d), the optimal placement is a distributed construction by two optimal
+two-sensor sub-placements. The optimal placements in (f), (g), and (h) have non-equal sensor-target ranges. The placement in
+(g) is irregular. The sensor with shortest sensor-target range drives the other two sensors to be collinear with the target.
+Figure 12 shows 3D examples. In (a) or (e), the ﬁnal angle subtended at the target by any two sensors is 90 degrees. The
+ﬁnal placement in (b) forms a tetrahedron. The ﬁnal placements in (c) and (d) are both equivalent to the one in (b). An
+optimal placement with irregularity as k0 = 1 is shown in (f). The sensor with shortest sensor-target range drives the other
+three sensors to an orthogonal plane, in which the three sensors form a 2D optimal placement like the one in Figure 11 (c).
+An optimal placement with irregularity as k0 = 2 is shown in (g). These sensors are mutually orthogonal except the two with
+long sensor-target ranges collinear. A complicated optimal placement with ten sensors is given in (h).
+These simulation results are consistent with our previous optimality analysis. It is also observed that sensors can converge
+to an optimal placement which is close to their initial positions.
+2) Scenario 2 for range-only sensors: For range-only sensors, the sensor-target ranges are not required to be ﬁxed. We
+consider a 3D scenario which might be applied to cooperative air and ground surveillance [32]. Consider two unmanned aerial
+22
+-1 0 1
+-1
+0
+1
+(a) n = 2, k0 = 0
+-1 0 1
+-1
+0
+1 (b) n = 3, k0 = 0
+-1 0 1
+-1
+0
+1 (c) n = 3, k0 = 0
+-1 0 1
+-1
+0
+1 (d) n = 4, k0 = 0
+-1 0 1
+-1
+0
+1
+(e) n = 2, k0 = 1
+-1 0 1
+-1
+0
+1 (f) n = 3, k0 = 0
+-1 0 1
+-1
+0
+1 (g) n = 3, k0 = 1
+-1 0 1
+-1
+0
+1 (h) n = 6, k0 = 0
+Fig. 11: Examples of 2D optimal placements achieved by the gradient control law. k0: irregularity; green diamonds: initial sensor positions; red dots: ﬁnal
+sensor positions; blue curves: sensor trajectories; black square: target.
+(a) n = 3, k0 = 0
+ (b) n = 4, k0 = 0
+ (c) n = 4, k0 = 0
+ (d) n = 4, k0 = 0
+(e) n = 3, k0 = 1
+ (f) n = 4, k0 = 1
+ (g) n = 4, k0 = 2
+ (h) n = 10, k0 = 0
+Fig. 12: Examples of 3D optimal placements achieved by the gradient control law. k0: irregularity; green diamonds: initial sensor positions; red dots: ﬁnal
+sensor positions; blue curves: sensor trajectories; black square: target.
+23
+(a) 3D view
+ (b) Top view
+Fig. 13: Cooperative air and ground surveillance. Green diamonds: initial vehicle positions; red dots: ﬁnal vehicle positions; blue curves: vehicle trajectories;
+black square: ground target.
+0 20 40 60 80 1000
+1
+2
+3
+4
+5
+6
+7
+8
+Time (s)
+Optimality Error
+Fig. 14: The error between ∥G∥2 and its lower bound.
+vehicles (UA Vs) and two unmanned ground vehicles (UGVs). Each vehicle carries a range-only sensor, which can measure
+the distance from the ground target to the vehicle. UA Vs ﬂy at a ﬁxed altitude and UGVs move on the ground. In addition to
+the objective function ∥G∥2, we introduce the following external potential for sensor i:
+VE(ri) =
+(
+eT
+3ri−ℓi
+)2
+,
+where e3 = [0, 0, 1]T and ℓi is the required altitude of the vehicles. Here the external potential is used to control the sensor-
+target range to fulﬁll level-plane position constraints. Denote VI =∥G∥2 as the inter-sensor potential, and VE = ∑n
+i=1VE(ri)
+as the external potential of all sensors. The total potential function is V =VI +VE. And the gradient control law becomes
+˙ri =−(∇riVI +∇riVE),
+24
+where∇ri is the gradient with respect to ri. The external potential VE should be compatible with the inter-sensor potential VI,
+otherwise, the external potential will affect the convergence to optimal placements. By compatible, we mean∇riVI+∇riVE = 0
+if only if ∇riVI = 0 and∇riVE = 0. Since∇riVI⊥ri, VE is compatible with VI if there is no ri make∇riVE⊥ri. One
+compatible example is that all range-only sensors move on the boundary of a convex area containing the target [9].
+In the simulation, we choose ℓ1 =ℓ2 = 10 and ℓ3 =ℓ4 = 0. The noise variances of different sensors are the same. Figure
+13 shows the trajectories and the converged placement of the vehicles. For complicated placements, it is usually difﬁcult to
+intuitively judge their optimality. We can evaluate the optimality by using the error between ∥G∥2 and its lower bound given
+in (15) and (13). As shown in Figure 14, the optimality error converges to zero.
+VII. C ONCLUSIONS
+The main contribution of this paper is that we present a uniﬁed way to analytically characterize optimal placements of
+bearing-only, range-only, or RSS sensors in 2D and 3D. The necessary and sufﬁcient conditions for optimal placement in 2D
+and 3D are proved. The gradient control proposed in this paper is already sufﬁcient for the purpose of numerical veriﬁcation
+of the analytical analysis. But it is a centralized control based on all-to-all communications and ensures local stability of the
+optimal placement set. It is meaningful to study distributed or global stability guaranteed control laws or numerical algorithms
+in the future.
+REFERENCES
+[1] J. Ousingsawat and M. E. Campbell, “Optimal cooperative reconnaissance using multiple vehicles,” Journal of Guidance, Control, and Dynamics, vol. 30,
+pp. 122–132, January–February 2007.
+[2] A. J. Sinclair, R. J. Prazenica, and D. E. Jeffcoat, “Optimal and feedback path planning for cooperative attack,” Journal of Guidance, Control, and
+Dynamics, vol. 31, pp. 1708–1715, November–December 2008.
+[3] Y . Oshman and P. Davidson, “Optimization of observer trajectories for bearings-only target localization,” IEEE Transactions on Aerospace and Electronic
+Systems, vol. 35, pp. 892–902, July 1999.
+[4] B. M. Miller and E. Y . Rubinovich, Impulsive Control in Continuous and Discrete-Continuous Systems. New York: Kluwer Academic/Plenum Publishres,
+2003.
+[5] A. N. Bishop, B. Fidan, B. D. O. Anderson, K. Do ˘ganc ¸ay, and P. N. Pathirana, “Optimality analysis of sensor-target localization geometries,”Automatica,
+vol. 46, pp. 479–492, 2010.
+[6] A. N. Bishop, B. Fidan, B. D. O. Anderson, P. N. Pathirana, and K. Do ˘ganc ¸ay, “Optimality analysis of sensor-target geometries in passive localization:
+Part 2 - time-of-arrival based localization,” in Proceedings of the 3rd International Conference on Intelligent Sensors, Sensor Networks and Information
+Processing, (Melbourne, Australia), pp. 13–18, December 2007.
+[7] A. N. Bishop and P. Jensfelt, “An optimality analysis of sensor-target geometries for signal strength based localization,” in Proceedings of the 5th
+International Conference on Intelligent Sensors, Sensor Networks, and Information Processing , (Melbourne, Australia), pp. 127–132, December 2009.
+[8] K. Do ˘ganc ¸ay and H. Hmam, “Optimal angular sensor separation for AOA localization,” Signal Processing, vol. 88, pp. 1248–1260, 2008.
+[9] S. Mart ´ınez and F. Bullo, “Optimal sensor placement and motion coordination for target tracking,” Automatica, vol. 42, pp. 661–668, 2006.
+[10] H. Zhang, “Two-dimensional optimal sensor placement,” IEEE Transactions on Systems, Man, and Cybernetics , vol. 25, pp. 781–792, May 1995.
+[11] K. Do ˘ganc ¸ay, “Online optimization of receiver trajectories for scan-based emitter localization,” IEEE Transactions on Aerospace and Electronic Systems ,
+vol. 43, pp. 1117–1125, July 2007.
+[12] J. T. Isaacs, D. J. Klein, and J. P. Hespanha, “Optimal sensor placement for time difference of arrival localization,” in Procedings of the 48th Conference
+on Decision and Control , (Shanghai, China), pp. 7878–7884, December 2009.
+[13] D. Moreno-Salinas, A. M. Pascoal, and J. Aranda, “Optimal sensor placement for underwater positioning with uncertainty in the target location,” in
+Proceedings of the 2011 IEEE International Conference on Robotics and Automation , (Shanghai, China), pp. 2308–2314, May 2011.
+[14] S. Zhao, B. M. Chen, and T. H. Lee, “Optimal placement of bearing-only sensors for target localization,” in Amarican Control Conference , (Montreal,
+Canada), pp. 5108–5113, June 2012.
+[15] D. B. Jourdan and N. Roy, “Optimal sensor placement for agent localization,” in Proceedings of the IEEE/ION Position, Location, And Navigation
+Symposium, (San Diego, USA), pp. 128–139, April 2006.
+25
+[16] J. Kova ˇcevi´c and A. Chebira, “Life beyond bases: the advent of frames (part I),” IEEE Signal Processing Magazine , vol. 24, pp. 86–104, July 2007.
+[17] J. Kova ˇcevi´c and A. Chebira, “Life beyond bases: the advent of frames (part II),” IEEE Signal Processing Magazine , vol. 24, pp. 115–125, September
+2007.
+[18] J. J. Benedetto and M. Fickus, “Finite normalized tight frames,” Advances in Computational Mathematics , vol. 18, pp. 357–385, 2003.
+[19] P. G. Casazza, M. Fickus, J. Kova ˘cevi´c, M. T. Leon, and J. C. Tremain, “A physical interpretation of tight frames,” in Harmonic Analysis and Applications,
+Applied and Numerical Harmonic Analysis, pp. 51–76, Birkh 2006.
+[20] P. G. Casazza, M. Fickus, and D. G. Mixon, “Auto-tuning unit norm frames,” Applied and Computational Harmonic Analysis , vol. 32, pp. 1–15, 2012.
+[21] F. L. Lewis, L. Xie, and D. Popa, Optimal and Robust Estimation, Second Edition . Boca Raton, FL: CRC Press, 2007.
+[22] D. Feng, L. Wang, and Y . Wang, “Generation of ﬁnite tight frames by householder transformations,” Advances in Computational Mathematics , vol. 24,
+pp. 297–309, 2006.
+[23] P. G. Casazza and M. T. Leon, “Existence and construction of ﬁnite tight frames,” Journal of Computational and Applied Mathematics , vol. 4, no. 3,
+pp. 277–289, 2006.
+[24] J. Cahill, M. Fickus, D. G. Mixon, M. J. Poteet, and N. K. Strawn, “Constructing ﬁnite frames of a given spectrum and set of lengths,” preprint.
+[25] V . K. Goyal, J. Kova ˘cevi´c, and J. A. Kelner, “Quantized frame expansions with erasures,” Applied and Computational Harmonic Analysis , vol. 10,
+pp. 203–233, May 2001.
+[26] M. Fickus, Finite normalized tight frames and spherical equidistribution . PhD thesis, University of Maryland, 2001.
+[27] H. K. Khalil, Nonlinear Systems, Third Edition . Prentice Hall, 2002.
+[28] L. Krick, M. E. Broucke, and B. A. Francis, “Stabilization of inﬁnitesimally rigid formations of multi-robot networks,” International Journal of Control,
+vol. 82, no. 3, pp. 423–439, 2009.
+[29] F. D ¨orﬂer and B. Francis, “Geometric analysis of the formation problem for autonomous robots,” IEEE Transactions on Automatic Control , vol. 55,
+pp. 2379–2384, October 2010.
+[30] T. H. Summers, C. Yu, S. Dasgupta, and B. D. O. Anderson, “Control of minimally persistent leader-remote-follower and coleader formations in the
+plane,” IEEE Transactions on Automatic Control , vol. 56, pp. 2778–2792, December 2011.
+[31] K. Dykema and N. Strawn, “Manifold structure of spaces of spherical tight frames,” International Journal of Pure and Applied Mathematics , vol. 28,
+pp. 217–256, 2006.
+[32] B. Grocholsky, J. Keller, V . Kumar, and G. Pappas, “Cooperative air and ground surveillance,” IEEE Robotics & Automation Magazine, vol. 13, pp. 16–25,
+September 2006.

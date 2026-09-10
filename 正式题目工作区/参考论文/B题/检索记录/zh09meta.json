@@ -1,0 +1,40 @@
+{
+  "id": "zh09meta",
+  "url": "https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.002",
+  "final_url": "https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.002",
+  "content_type": "text/html;charset=UTF-8",
+  "status": "html",
+  "links": [
+    "https://www.zhkzyfz.cn/develop/static/common/js/download_cn.js",
+    "https://www.zhkzyfz.cn/develop/static/common/images/pdf.png",
+    "https://www.zhkzyfz.cn/develop/static/common/images/pdf.png"
+  ],
+  "metadata": [
+    "<meta name=\"dc.relation.is\" content=\"指挥控制与仿真\"/>",
+    "<meta name=\"dc.citation.volume\" content=\"42\"/>",
+    "<meta name=\"dc.citation.issue\" content=\"2\"/>",
+    "<meta name=\"dc.citation.spage\" content=\"7\"/>",
+    "<meta name=\"dc.citation.epage\" content=\"11\"/>",
+    "<meta name=\"dc.title\" content=\"多站交叉定位相对GDOP及其测向站分布问题研究\"/>",
+    "<meta name=\"dc.source\" content=\"指挥控制与仿真\"/>",
+    "<meta name=\"dc.format\" content=\"text/html\"/>",
+    "<meta name=\"dc.publisher\" content=\"\"/>",
+    "<meta name=\"dc.date\" content=\"2020-04-10\"/>",
+    "<meta name=\"dc.type\" content=\"\"/>",
+    "<meta name=\"dc.language\" content=\"Cn\"/>",
+    "<meta name=\"dc.copyright\" content=\"\"/>",
+    "<meta name=\"dc.description\" content=\"针对两站测向交叉定位的相对几何稀释度难以推广到多站情形的问题,提出一种加权平均距离来重新定义相对几何稀释度。在此基础上探讨了最优RGDOP值与达到该最优值的条件,并给出了计算公式和验证实例。在各测向站到目标的距离已知但不满足全局最优条件时,进一步分析了最优RGDOP值与测向站分布问题,给出了相应的结果。\"/>",
+    "<meta name=\"dc.identifier\" content=\"doi:10.3969/j.issn.1673-3819.2020.02.002\"/>",
+    "<meta name=\"dc.relation.ispartof\" content=\"指挥控制与仿真\"/>",
+    "<meta name=\"dc.creator\" content=\"罗双喜\"/>",
+    "<meta name=\"dc.subject\" content=\"交叉定位\"/>",
+    "<meta name=\"dc.subject\" content=\"相对几何稀释度\"/>",
+    "<meta name=\"dc.subject\" content=\"克拉美-劳下界\"/>",
+    "<meta name=\"dc.subject\" content=\"最优测向站分布\"/>",
+    "<meta name=\"citation_pdf_url\" content=\"https://www.zhkzyfz.cn/CN/PDF/10.3969/j.issn.1673-3819.2020.02.002\"/>",
+    "<meta name=\"citation_abstract_html_url\" content=\"https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.002\" />",
+    "<meta name=\"citation_fulltext_html_url\" content=\"https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2020.02.002\"/>",
+    "<meta name=\"citation_journal_title\" content=\"指挥控制与仿真\" />"
+  ],
+  "snippet": ""
+}

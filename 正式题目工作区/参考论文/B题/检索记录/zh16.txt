@@ -1,0 +1,2209 @@
+纯方位角目标跟踪及移动平台可观性控制方法
+伍明,李广宇,魏振华,汪洪桥
+引用本文:
+伍明,李广宇,魏振华,汪洪桥. 纯方位角目标跟踪及移动平台可观性控制方法[J]. 智能系统学报, 2022, 17(5): 919-930.
+WU Ming,LI Guangyu,WEI Zhenhua,WANG Hongqiao. Bearing only target tracking and observability control of a mobile robot[J].
+CAAI Transactions on Intelligent Systems, 2022, 17(5): 919-930.
+在线阅读 View online: https://dx.doi.org/10.11992/tis.202107066
+您可能感兴趣的其他文章
+基于场景图谱的室内移动机器人目标搜索
+Indoor mobile robot target search based on the scene graphs
+智能系统学报. 2022, 17(5): 1032-1038   https://dx.doi.org/10.11992/tis.202109011
+工业机器人加工轨迹双目3D激光扫描成像修正方法
+Binocular 3D laser scanning imaging-based industrial robot machining trajectory correction method
+智能系统学报. 2021, 16(4): 690-698   https://dx.doi.org/10.11992/tis.202008008
+视觉同时定位与地图创建综述
+A survey of VSLAM
+智能系统学报. 2018, 13(1): 97-106   https://dx.doi.org/10.11992/tis.201703006
+多移动机器人的领航-跟随编队避障控制
+Piloting-following formation and obstacle avoidance control of multiple mobile robots
+智能系统学报. 2017, 12(2): 202-212   https://dx.doi.org/10.11992/tis.201507029
+一种未知环境下机器人多目标跟踪算法
+A robot multi-object tracking algorithm in unknown environments
+智能系统学报. 2015(3): 448-453   https://dx.doi.org/10.3969/j.issn.1673-4785.201405051
+ 
+ 
+ 
+DOI: 10.11992/tis.202107066
+网络出版地址: https://kns.cnki.net/kcms/detail/23.1538.TP.20220729.1154.002.html
+纯方位角目标跟踪及移动平台可观性控制方法
+伍明1，李广宇2，魏振华1，汪洪桥1
+（1. 西安高技术研究所 信息系统室，陕西 西安 710025; 2. 陕西广播电视大学 教学科，陕西 西安 710023）
+摘    要：为了解决未知环境下的单目视觉移动机器人目标跟踪问题，提出了一种将目标状态估计与机器人可观
+性控制相结合的机器人同时定位、地图构建与目标跟踪方法。在状态估计方面，以机器人单目视觉同时定位与
+地图构建为基础，设计了扩展式卡尔曼滤波框架下的目标跟踪算法；在机器人可观性控制方面，设计了基于目
+标协方差阵更新最大化的优化控制方法。该方法能够实现机器人在单目视觉条件下对自身状态、环境状态、
+目标状态的同步估计以及目标跟随。仿真和原型样机实验验证了目标状态估计和机器人控制之间的耦合关
+系，证明了方法的准确性和有效性，结果表明：机器人将产生螺旋状机动运动轨迹，同时，目标跟踪和机器人定
+位精度与机器人机动能力成正比例关系。
+关键词：目标跟踪；纯方位角观测；机器人同时定位与地图构建；机器人导航控制；单目视觉导航；可观性控制；
+自主移动平台；单目视觉
+中图分类号：TP242.6       文献标志码：A       文章编号：1673−4785(2022)05−0919−12
+中文引用格式：伍明,  李广宇,  魏振华,  等.  纯方位角目标跟踪及移动平台可观性控制方法[J].  智能系统学报,  2022,  17(5):
+919–930.
+英文引用格式：WU Ming, LI Guangyu, WEI Zhenhua, et al. Bearing only target tracking and observability control of a mobile ro-
+bot[J]. CAAI transactions on intelligent systems, 2022, 17(5): 919–930.
+Bearing only target tracking and observability control of a mobile robot
+WU Ming1，LI Guangyu2，WEI Zhenhua1，WANG Hongqiao1
+(1. Information System Office, Xi’an High Technology Research Institute, Xi’an 710025, China; 2. Teaching Department, Shaanxi
+Radio and TV University, Xi’an 710023, China)
+Abstract: To address the object tracking issue of a mobile robot based on monocular vision in an unknown environment,
+a method for robotic simultaneous localization, map building, and object tracking is proposed, combining the object state
+estimation with the observability control of a mobile robot. Regarding state estimation, based on robot monocular visual
+simultaneous localization and mapping, a target tracking algorithm under the extended Kalman filtering framework is
+designed. Considering the observability control, an optimal control method based on updating the maximization of the
+target covariance matrix is designed. Using the monocular vision, this method can synchronously estimate the robot’s
+own state, environmental state, and target state, as well as the target following. The simulation and prototype experi-
+ments verify the coupling relationship between the target state estimation and robot control, demonstrating the effective-
+ness and accuracy of the method. The results indicate that by employing this method, the robot can generate a spiral
+maneuvering trajectory, and the accuracy of target tracking and robot positioning is directly proportional to its maneuv-
+ering ability.
+Keywords: object tracking; bearing only observation; SLAM; robot navigation control; monocular visual navigation;
+observability control; autonomous mobile platform; monocular vision
+ 
+智能移动机器人是一类能够通过传感器感知
+环境和自身状态，实现在有障碍物的环境中面向
+目标的自主运动，从而完成一定作业功能的机器
+收稿日期：2021−07−12.    网络出版日期：2022−08−01.
+基金项目：国家自然科学基金项目（61503389）；陕西省自然科
+学基金项目（2015JM6313,2020JM358）.
+通信作者：魏振华. E-mail: weizhenhua8303@163.com.
+第 17 卷第 5 期 智　能　系　统　学　报 Vol.17 No.5
+2022 年 9 月 CAAI  Transactions  on  Intelligent  Systems Sep. 2022
+人系统[1]。从该定义可见，机器人对自身和环境
+对象（包括：静态对象和动态对象）的感知在任务
+执行中起到关键性和基础性作用。
+单目视觉传感器作为一种被动式传感器，凭
+借其体积小、耗能少、细节呈现度高等特点，正在
+机器人导航学中发挥着重要作用[2]。机器人和计
+算机视觉领域的相关学者已经展开了基于单目视
+觉的机器人同时定位、地图构建与目标跟踪(simul-
+taneous localization , mapping and object tracking,
+SLAMOT)问题研究[3]。机器人领域的SLAMOT
+以SLAM为核心[4-6]，目标识别与跟踪目的是提供
+更好的环境特征观测值，通常假设目标为静止的
+结构性物体且不考虑平台可观性机动问题，Cast-
+ler等[7]在PTAM (parallel tracking and mapping)方
+法[8]基础上提出了独立于摄像机SFM (structure
+from motion)的目标识别与跟踪方法，该方法在图
+像关键帧上通过特征点匹配识别环境目标并利用
+扎集优化方法(bundle adjustment, BA)实现对目标
+空间位置的估计，但其假设目标为静止的画像平
+面。De 等[9]将实际场景中运动物体融入地图构
+建以解决增强现实中虚拟物体投影参考缺失问
+题。Dai等[10]利用RGBD传感器解决了动态物体
+对SLAM的影响，但并未研究动态物体跟踪问题。
+Li等[11]研究了基于运动目标跟踪和静止物体识
+别的语义学SLAM方法，运功目标跟踪目的同样
+是为了减少对SLAM的干扰。Civera等[12]将目标
+识别与跟踪纳入到基于反转深度的全关联卡尔曼
+滤波框架[13]中，实现了环境物体的识别和空间位
+置的在线估计。同样，该方法假设目标为静止的
+平面物体。Wangsiripitak等[14]设计了单目SLAM
+与目标跟踪同步估计算法，该算法处理的是空间
+立体静止物体并未考虑目标运动问题。Migliore
+等[15]设计了一种单目SLAM和动态目标跟踪算
+法，该算法将传统的SLAM滤波器和纯方位角观
+测目标跟踪器相结合，实现了对摄像机、环境特
+征和动态目标状态的同时迭代估计，方法利用的
+平台为手持摄像机，因此并未考虑平台可观性机
+动对目标状态估计的影响。
+Bescos等[16]设计了一种SLAM和多目标跟
+踪相结合的方法，验证了动态目标跟踪对SLAM
+的辅助作用。Liu等[17]提出了SLAM和目标跟踪
+强、弱耦合估计切换方法，有效结合了两者的有
+点。Sualehm等[18]采用多传感器融合方法实现动
+态环境下SLAM任务，能够完成对多个运动目标
+的跟踪。Liu等[19]研究了人造动态环境下的SLAM
+问题，提出了动态目标跟踪、视觉里程计和地图
+构建的多线程估计方法。计算机视觉领域的
+SLAMOT以基于单目视觉的目标跟踪为核心，又
+称为：纯方位角观测目标跟踪(bearing only object
+tracking)或目标运动分析(target motion analysis)，
+此类方法希望利用平台机动和目标纯方位角观
+测，实现运动目标的状态估计，通常假设移动平台
+状态已知。Oh等[20]提出了一种基于粒子群优化
+的解决方法，但未考虑平台的机动优化问题。Zhuk
+等[21]通过对比相邻帧中跟踪点实现运动物体检
+测，但并未实现目标状态估计。Watanabe等[22]提
+出了基于单目视觉的移动平台导航方法，该方法
+针对单目视觉传感器特点将导航控制和目标状态
+估计作为耦合问题处理，其假设移动平台状态已
+知。Kim等[23]针对纯方位角观测目标跟踪问题
+提出了“双重作用(dual effect)理论”认为由于观测
+深度信息缺失使得目标状态估计和平台机动运动
+之间存在关联作用，目标跟踪准确性极大依赖于
+平台机动方式，同样，其假设平台状态已知。
+综上所述，学界已经开展了基于单目视觉的
+SLAMOT问题的相关研究，但通常将SLAM和
+OT相互割裂，并未考虑目标的移动性、机器人状
+态未知性以及平台的可观性优化控制问题。文章
+正是针对以上问题展开研究，提出了基于单目视
+觉的机器人同时定位、地图构建与目标跟踪及平
+台控制方法，该方法利用单目视觉SLAM实现对
+机器人状态估计，并结合目标观测模型进行基于
+扩展式卡尔曼滤波的目标状态估计。为了克服观
+测模型缺陷，提出了基于目标协方差阵更新最大
+化的机器人优化控制方法，最终实现了未知环境
+下基于单目视觉的移动机器人目标跟踪。 
+1   问题描述和模型构建 
+1.1    问题描述
+k
+Xr
+k
+Xlmi
+k ; i = 1; 2;   ; m
+Xt
+k
+zt
+k
+zlmi
+k
+Xr
+k
+Xt
+k
+Xlmi
+k ; i = 1; 2;   ; m
+ur
+k
+zt
+k 1
+zt
+k
+假设 时刻机器人状态为 ，环境特征状态为
+ ，目标状态为 ，机器人利用单目
+视觉传感器对目标和环境特征进行观测且观测值
+分别为 和 ，方法处理目的是在机器人端实现
+对 ， 及 的在线估计。由于单目
+摄像机得到的观测量缺少距离信息，存在可观性
+问题。为了估计目标与机器人的相对距离，机器
+人需要根据目标不确定分布实时计算控制量 ，
+以保证在该控制量作用下得到的前后时序目标观
+测值 和 之间存在足够视差，从而为距离估计
+提供足够的信息。
+Xslam
+k =
+相关对象状态演变符合马尔可夫过程，其对
+应的贝叶斯网络模型如图1所示。其中 
+第 17 卷 智　能　系　统　学　报 ·920·
+[
+Xr′
+k XLM′
+k
+]′
+Xslam
+k
+Xt
+k
+Xslam
+k
+Xt
+k
+Xt 
+k
+Pt 
+k
+Xr
+k
+Pr
+k
+zt 
+k
+St 
+k
+Xt 
+k
+Pt 
+k
+Xt
+k
+Pt
+k
+ 为机器人状态和环境特征状态扩展构成
+的SLAM系统状态向量。系统的两条主线为
+ 估计流程和 估计流程， 的估计采用基于
+反转深度的单目视觉SLAM方法[12]。 估计过程
+基于扩展式卡尔曼滤波，首先，根据目标运动模
+型预测目标状态 和协方差阵 ，第二，利用
+SLAM环节得到的机器人状态 和协方差 ，结
+合目标观测模型得到目标预测观测值 和观测残
+差阵 ，最后，对预测状态 和协方差阵 进行
+更新，得到 和 。 
+ 
+Xslam
+k−2 k−1 k+1 k+2Xslam Xk
+slam Xslam Xslam
+X t
+k−2
+X t
+k−1
+X t
+k
+X t
+k+1
+X t
+k+2
+zt
+k
+ur
+k−1
+ur
+k
+ur
+k+1 ur
+k+2
+zLM
+k−1 zk
+LM zLM
+k+1 zLM
+k+2
+zt
+k−1
+zt
+k zt
+k+1
+zt
+k+2
+zLM
+k−2
+…
+…
+  
+图 1    贝叶斯网络模型
+Fig. 1    Bayesian network model  
+Xr
+k
+Xt
+k
+Xlmi
+k ; i = 1; 2;   ; m
+ur
+k
+系统解决的关键问题有两点：1)设计 ， 及
+ 在线估计方法；2)如何生成机器人
+优化控制量 ，这两点将在第4和第5部分讨论。 
+1.2    数学模型构建
+1）目标运动模型
+k
+Xt
+k = [xt
+k yt
+k zt
+k ˙xt
+k ˙yt
+k ˙zt
+k]′
+目标 时刻状态由各坐标轴分量及其速度构
+成，即， 。假设目标运动模式
+为定速度模型(constant velocity model, CVM)[24]，
+则CVM模型的离散形式可表示成为
+Xt
+k = f t(Xt
+k 1; At
+kjk 1; qt
+kjk 1) = At
+kjk 1  Xt
+k 1 + qt
+kjk 1 (1)
+ 
+At
+kjk 1
+qt
+kjk 1
+式中： 为状态转移阵； 为高斯白噪声。
+2）机器人运动模型
+Xr′
+k = [xr′
+k qr′
+k ]
+xr
+k = [xr
+k yr
+k zr
+k]′
+qr
+k = [q1;k q2;k q3;k q4;k]′
+机器人运动模型符合运动方向和线速度解耦的
+多旋翼无人机模型，设k时刻状态为 其中
+ 为空间位置向量， 
+为朝向4元组向量。
+ur
+k = [∆xr
+k ∆φr
+k]′
+∆xr
+k = [∆xr
+k ∆yr
+k ∆zr
+k]′
+∆φr
+k =
+[∆ϕr
+k ∆r
+k ∆ r
+k]′
+假设k时刻机器人的控制量为 ，
+其中 为位移控制分量， 
+ 为角度控制分量，则机器人的状态
+更新可分解位置和朝向更新，即：
+Xr
+k = f (Xr
+k 1; ur
+k 1) =
+26666664
+xr
+k 1 + R(qr
+k 1)  ∆xr
+k 1
+qr
+k 1 + 1
+2  Ω(∆φr
+k 1)  qr
+k 1
+37777775 (2)
+ 
+R(qr)
+qr
+Ω(∆φr)
+其中， 是世界坐标系到机器人坐标系的旋转
+矩阵，其值可根据 计算， 为朝向3元组到
+4元组的反对称矩阵，表示为
+Ω(∆φr)
+266666666666666664
+0  ∆ϕr
+k  ∆r
+k  ∆ r
+k
+∆ϕr
+k 0 ∆ r
+k  ∆r
+k
+∆r
+k  ∆ r
+k 0 ∆ϕr
+k
+∆ r
+k ∆r
+k  ∆ϕr
+k 0
+377777777777777775
+ 
+3）目标观测模型
+Xr
+k
+Xt
+k
+XR,c
+k
+zt
+k= [ut
+k vt
+k]′
+目标观测模型实现从机器人状态 、目标状
+态 ，摄像机在机器人坐标系中的位姿 到图像
+观测值 的映射，其符合单目小孔成像模
+型[25]，可表示为
+zt
+k = ht(Xt
+k; Xr
+k; XR,c
+k ; d; s) + r (3)
+ 
+s = [su sv u0 v0]′
+d = [d1 d2]′
+s
+d
+r
+r
+式中： 为摄像机内参向量， 
+为摄像机畸变系数向量， 和 由文献[16]介绍的
+相机标定方法获得。 是均值为0，标准差为 的
+观测加性白噪声。 
+2   系统总体框架
+系统总体框架如图2所示。 
+ 
+图像环境特
+征点提取
+图像目标
+识别
+z k
+LM
+zt
+k
+单目视觉
+SLAM
+单目视觉
+OT
+机器人控制量
+生成 ur
+k
+里程表
+X r
+k   P r
+k
+X t
+k   Pt
+k
+  
+图 2    系统总体框架
+Fig. 2    Overall framework of the system  
+zt
+k
+zLM
+k
+Xr
+k
+Pr
+k
+zt
+k
+Xt
+k
+Pt
+k
+ur
+k
+机器人外感传感器是前向单目摄像机，每轮
+观测对拍摄的图片进行环境特征提取以及目标识
+别进而获得目标观测值 与环境特征观测值 。
+系统包含3个核心处理模块：1)单目SLAM处理
+模块；2)单目视觉OT模块；3)机器人控制量生成
+模块。其中，单目SLAM处理模块采用基于反转
+深度参数表示法的全概率卡尔曼滤波方法实现机
+器人状态和协方差阵的估计；单目OT模块利用
+ 和 结合此时目标观测值 进行基于扩展式卡
+尔曼滤波的目标跟踪得到目标状态 和协方差阵
+ ；由于单目视觉传感器缺少深度观测值使目标
+状态估计出现可观性问题，即，目标状态无法利
+用机器人状态和观测值直接推导出，因此在机器
+人控制量生成环节，需要利用优化控制方法生成
+机器人控制量 ，以保证机器人对目标的跟随和
+目标状态的有效估计。 
+·921· 伍明，等：纯方位角目标跟踪及移动平台可观性控制方法 第 5 期
+3   机器人单目视觉SLAM
+采用文献[9]提出的反转深度单目视觉
+SLAM方法，基本处理流程图3所示。 
+ 
+EKF 预测 EKF 更新观测值数
+据关联
+zk
+LM
+X k
+slam−
+Pk
+slam−
+X k
+slam
+Pk
+slam
+环境特
+征管理
+  
+图 3    VSLAM处理流程
+Fig. 3    Processing flow of VSLAM  
+Xslam′
+k = [Xr′
+k XLM′
+k ]
+Xr
+k
+XLM
+k
+Xslam
+k
+Xslam
+k
+Xr
+k
+Xr
+k
+系统状态为 ， 和 为机器
+人和环境特征状态向量，初始阶段利用反转深度
+参数法表示环境特征状态，当特征状态线性化程
+度达到预设门限时，在环境特征管理环节将特征
+的反转深度状态转换为笛卡尔状态。在每轮估计
+结束时，提取 和 中的机器人状态和协方差
+分量得到 和 用于后续目标状态估计。 
+4   单目视觉移动机器人目标跟踪方法
+k
+Xr
+k
+Pr
+k
+目标跟踪采用扩展式卡尔曼滤波框架，假设
+ 时刻机器人的状态 和协方差 由第3节介绍
+方法获得。目标跟踪的处理过程如下。
+1）目标状态、协方差预测
+目标状态预测公式如下：
+Xt
+ 
+k = At
+kjk 1  Xt
+k 1 (4)
+ 
+Pt 
+k = At
+kjk 1  Xt
+k 1  At′
+kjk 1 + Q (5)
+ 
+At
+kjk 1
+Q
+式中： 为目标定速模型状态转移矩阵； 为状
+态误差阵。
+2）目标观测值及观测残差阵预测
+Xr
+k
+Xt 
+k
+将机器人状态 和预测目标状态 代入式
+（3）得到目标预测观测值：
+zt 
+k = ht(Xt 
+k; Xr
+k; XR,c
+k ; d; s) (6)
+ 
+Xt 
+k
+Xr
+k
+式中： 为式（4）确定的预测目标状态； 为利用
+单目视觉SLAM环节得到的机器人位姿状态。
+St 
+k
+利用误差传播公式链式产生目标观测残差阵
+ 如下：
+St 
+k = Ht!z  Pt 
+k  Ht!z′
++ Hr!z  Pr
+k  Hr!z′ + Hc!z  Pc
+k
+Hc!z′ + Hs!z  PS
+k  Hs!z′ + Hd!z  Pd
+k  Hd!z′
++ R (7)
+ 
+其中，
+Hr!z = @ht
+@Xr
+k
+Xr
+k=Xr
+k
+; Ht!z = @ht
+@Xt
+k
+Xt
+k=Xt 
+k
+; Hc!z = @ht
+@XR;c
+k
+
+XR;c
+k =XR;c
+k
+Hd!z = @ht
+@d
+d=d*
+; Hs!z = @ht
+@S
+S =S 
+ 
+Xr
+k
+Xt
+k
+XR,c
+k
+d
+s
+Pt 
+k
+Pr
+k
+Pc
+k
+PS
+k
+Pd
+k
+R
+Xr
+k
+Xt
+k
+XR,c
+k
+d
+s
+r
+分别为式（3）对 、 、 、 、 的雅可比
+阵。 、 、 、 、 ， 分别为此刻 、 、 、
+ 、 、 对应的协方差阵。
+3）目标状态、协方差更新
+Xt+
+k
+Pt+
+k
+根据扩展式卡尔曼滤波原理，更新后的目标
+状态 和协方差阵 分别为
+Xt+
+k = Xt 
+k + K  (zt
+k   zt 
+k ) (8)
+ 
+Pt
++
+k = Pt
+ 
+k   K  St
+k  K′ (9)
+ 
+K = Pt 
+k  Ht!z
+k  (St 
+k ) (10)
+ 
+K
+Ht!z
+k
+Xt
+k
+其中， 为卡尔曼增益阵， 为式（6）对 的雅
+可比阵。 
+5   基于目标协方差阵更新最大化的
+机器人优化控制方法
+机器人控制要达到两个目的：首先，要确保机
+器人对目标的追踪，使目标始终在机器人视野内
+并保持一定距离；第二，保证机器人能够在纯方
+位角观测条件下对目标状态的准确估计。优化控
+制量生成过程如图4示。 
+ 
+可观性控制分量
+∆x a
+k
+机器人角度控制量生成 ∆φk
+跟随控制分量
+∆x f
+k
+机器人
+控制量
+生成
+∆ xk
+机器人运动
+状态更新
+机器人估计
+状态及方差
+目标估计状
+态及方差
+目标观测值
+X r
+k、P r
+k
+X t
+k、Pt
+k
+机器人控制量生成
+zt
+k
+  
+图 4    优化控制量生成过程
+Fig. 4    Generation process of optimal control value  
+∆φk
+∆xk
+∆φk
+∆xk
+∆xk
+∆xf
+k
+∆xa
+k
+机器人控制量包括角度控制3元组 和位
+置控制3元组 ，首先，产生角度控制量 ，该
+控制分量要保证机器人始终朝向目标。之后，产
+生位移控制量 ， 由跟随控制分量 和可观
+性控制分量 组成。 
+∆φk
+5.1    角度控制 计算
+zt
+k = [ut vt]′
+假设k时刻，目标观测值为 ，根据摄
+像机小孔成像模型可知：
+xC,r!t =
+2666666664
+xC,r!t
+yC,r!t
+zC,r!t
+3777777775 =
+2666666664
+(ut   u0)=su
+(vt   v0)=sv
+1
+3777777775 (11)
+ 
+uR,r!t =
+2666666664
+xR,r!t
+yR,r!t
+zR,r!t
+3777777775 = RC!R  xC,r!t (12)
+ 
+xC,r!t
+u0
+v0
+su
+sv
+RC!R
+式中： 为摄像机坐标系中，成像焦点指向目标
+的向量； 、 、 、 为摄像机内参； 为机器人
+坐标系中摄像机相对于机器人的旋转矩阵。
+∆φk = [ϕ ]′
+∆φk
+假设k时刻，机器人角度控制量为 ，
+分量表示机器人坐标系中绕X轴（旋转roll），Y
+轴（俯仰pitch）和Z轴（偏航yaw）的角度增量。 
+的计算公式为
+第 17 卷 智　能　系　统　学　报 ·922·
+∆φk =
+2666666664
+ϕ
+
+ 
+3777777775 =
+266666666664
+0
+ arc(sin(zR,r!t))
+arc(tan(yR,r!t=xR,r!t))
+377777777775
+(13)
+ 
+xR,r!t
+yR,r!t
+zR,r!t
+其中 、 、 由式（12）确定。 
+∆xk
+5.2    位移控制量 计算
+∆xk
+假设k时刻，机器人位置控制量为 ，其计
+算公式为
+∆xk =
+2666666664
+∆xk
+∆yk
+∆zk
+3777777775 = V  ∆uk=∆uk (14)
+ 
+其中，
+∆uk = RW!R′
+k 
+2666664∆xf
+k + 
+(
+V  
+∆xf
+k
+
+)
+ ∆xa
+k∆xa
+k
+
+3777775
+ 
+V
+RW!R
+k
+∆xf
+k
+∆xa
+k
+ 为机器人速度常量， 为世界坐标系到
+机器人坐标系的旋转矩阵， 为跟随控制分量，
+ 为产生目标观测视差的可观性控制分量。
+∆xf
+k
+由于机器人通过角度控制始终朝向目标，因
+此， 仅包含前向运动分量，即
+∆xf
+k =
+2666666664
+∆xf
+k
+0
+0
+3777777775 =
+266666666666664
+ V + 2  V
+1 + e(Deq jdR!T
+k j)
+0
+0
+377777777777775
+(15)
+ 
+ 2 (0 1]
+dR!T
+k
+
+Deq
+其中 为转换速度参量，其值越大转换速度
+越快， 为k时刻机器人与目标之间的距离，
+ 为机器人和目标间的平衡距离。
+V = 5 m/s
+Deq=15 m
+
+dR!T
+k
+
+∆xf
+k
+图5为 ， ， 分别取0.3、0.5、
+1， 为0~30连续变换时形成的 曲线。 
+ 
+5
+3
+1
+−3
+−1
+−5
+0 5 10
+λ=0.3
+λ=0.5
+λ=1.0
+15
+m
+m
+20 25 30
+|d k
+R   T|
+  
+∆xf
+k
+dR!T
+k
+
+图 5    随 变化曲线
+∆xf
+k
+dR!T
+k
+
+Fig. 5    Curve graph of  with   
+∆xf
+k
+∆xf
+k
+由图5可见，当机器人和目标距离小于平衡
+距离时， 为负值，以保证远离目标；当机器人
+和目标距离大于平衡距离时， 为正值，以保证
+追随目标。在该值的控制下，能够实现机器人在
+恒定距离对目标的追随。
+∆xf
+k
+若控制量只包含 机器人将始终追随目标
+运动，由于单目视觉无法观测到距离信息，在机
+器人和目标的视线方向的目标不确定性将逐步增
+大，最终造成跟踪失败，如图6所示。图中显示了
+纯追随运动模式下3个时刻目标的不确定椭圆变
+化，目标在机器人视线方向上的不确定性逐步累
+∆xa
+k
+积。为了克服该问题，机器人运动还需包含机动
+运动因素以产生足够的目标观测视差，从而实现
+深度估计，这种机动控制量称为可观性控制分量
+ ，下面介绍其生成方法。 
+ 
+k k +1 k+2 k k +1 k+2
+机器人视线方向
+3 个不同时刻
+目标状态椭圆
+3 个不同时刻机
+器人位置
+  
+图 6    纯追随模式下不同时刻，目标不确定椭圆变化图
+Fig. 6    Target  uncertain  elliptic  change  diagram  at  differ-
+ent times in pure follow-up mode  
+∆xa
+k
+∆xa
+k
+
+ 优化有两点原则：首先，希望由式（9）更新
+后的目标协方差阵对应的分布椭圆体积最小；第
+二，希望 最小以减少机动负担，因此，优化目
+标函数为
+Object:
+min
+∆xa
+k
+[ 1
+2  V t(∆xa
+k) + 1
+2  ∆xa′
+k  B  ∆xa
+k
+]
+(16)
+ 
+V t
+Pt+
+k
+B> 0
+其中， 为式（9）中 对应的位置不确定椭圆体
+积， 为加权常量阵。
+因为：
+min
+∆xa
+k
+[ 1
+2  V t(∆xa
+k)
+]
+ min
+∆xa
+k
+[
+tr(Pt+
+k )
+]
+=
+min
+∆xa
+k
+[
+tr(Pt 
+k   K  St
+k  K′)
+] (17)
+ 
+又有：
+min
+∆xa
+k
+[
+tr
+(
+Pt 
+k   K  St
+k  K′
+)]
+=
+min
+∆xa
+k
+[
+tr
+(
+Pt 
+k
+)
+  tr ( K  St
+k  K′) ] (18)
+ 
+Pt 
+k
+其中 由式（5）确定，其值与机器人控制量无关，
+因此，式（18）可写成：
+min
+∆xa
+k
+[
+tr(Pt 
+k   K  St
+k  K′)
+]
+   min
+∆xa
+k
+[tr ( K  St
+k  K′)] =
+max
+∆xa
+k
+[tr ( K  St
+k  K′)] (19)
+ 
+重写式（16）为
+Object:
+min
+∆xa
+k
+[ 1
+2  V t(∆xa
+k)
+]
++ min
+∆xa
+k
+[ 1
+2  ∆xa′
+k  B  ∆xa
+k
+]
+)
+max
+∆xa
+k
+[tr(K  St
+k  K′)] + min
+∆xa
+k
+[ 1
+2  ∆xa′
+k  B  ∆xa
+k
+]
+)
+max
+∆xa
+k
+[tr(K  St
+k  K′)]   max
+∆xa
+k
+[ 1
+2  ∆xa′
+k  B  ∆xa
+k
+]
+ 
+则最终可得目标函数为
+Object:
+max
+∆xa
+k
+[tr(K  St
+k  K′)]   max
+∆xa
+k
+[ 1
+2  ∆xa′
+k  B  ∆xa
+k
+]
+(20)
+ 
+根据式（10）有：
+·923· 伍明，等：纯方位角目标跟踪及移动平台可观性控制方法 第 5 期
+tr(K  St
+k  K′) =
+tr((Pt 
+k  Ht!z
+k  (St 
+k ) 1)  St 
+k  (Pt 
+k  Ht!z
+k  (St 
+k ) 1)′) =
+tr(Pt 
+k  Ht!z′
+k  (St
+k) 1  Ht!z
+k  Pt 
+k )
+ 
+St
+k = Ht!z
+k  Pt 
+k  Ht!z′
+k + Rk
+其中 ，则有：
+tr(K  St
+k  K′) =
+tr(Pt 
+k  Pt 
+k  Ht!z′
+k  (Ht!z
+k  Pt 
+k  Ht!z′
+k + Rk) 1  Ht!z
+k ) (21)
+ 
+将式（21）代入式（20）可得目标函数最终形式为
+Object:
+max
+∆xa
+k
+[ 1
+2  tr((Pt 
+k )2  Ht!z′
+k  (Ht!z
+k  Pt 
+k  Ht!z′
+k + Rk) 1
+Ht!z
+k )   1
+2  ∆xa′
+k  B  ∆xa
+k
+] (22)
+ 
+∆xa
+k
+∆xa
+k
+对式（22）取 的偏导并令结果为0，整理可
+得 的优化值为
+∆xa
+k = 1
+2  B 1  @
+@∆xa
+k
+(
+tr((Pt 
+k )
+2
+ Ht!z′
+k 
+(Ht!z
+k  Pt 
+k  Ht!z′
+k + Rk)
+ 1
+ Ht!z
+k )
+) (23)
+ 
+Ht!z
+k
+H
+Pt 
+k
+P
+下面给出式（23）的具体求解方法，在不产生
+歧义的情况下，将 写成 ， 写成 。
+xW;r
+k
+xW;t
+k
+∆xW;a
+k
+xW;r!t
+k
+假设k时刻机器人位置状态为 ，目标位置
+状态为 ，机器人可观性控制量为 ，则世界
+坐标系中从机器人到目标的向量 为
+xW;r!t
+k = xW;t
+k   (xW;r
+k + ∆xW;a
+k ) (24)
+ 
+RW!R
+k
+xR;r!t
+k
+此刻世界坐标系到机器人坐标系的旋转矩阵
+为 ，则机器人坐标系下指向目标的向量 为
+xR;r!t
+k =
+2666666664
+xR;r!t
+k
+yR;r!t
+k
+zR;r!t
+k
+3777777775 = RW!R
+k  xW;r!t
+k (25)
+ 
+根据单目摄像机小孔成像模型有：
+z = h(xR;r!t
+k ) = f
+zR;r!t
+[ su  xR;r!t
+sv  yR;r!t
+]
++
+[ u0
+v0
+]
+(26)
+ 
+由偏导链式原则可知：
+H(∆xa
+k) = @h(xR;r!t
+k )
+@∆xW;a
+k
+= @h(xR;r!t
+k )
+@xR;r!t
+k
+ @xR;r!t
+k
+@xW;r!t
+k
+ @xW;r!t
+k
+@∆xW;a
+k
+(27)
+ 
+根据式（24）~（26）分别计算式（27）中各项整
+理可得：
+H(∆xW;a
+k ) = @h(xR;r!t
+k )
+@∆xW;a
+k
+=   f
+zR;r!t  H1  RW!R
+k (28)
+ 
+其中，
+H1 =
+[ su 0
+0 sv
+  1
+f 
+(
+h(xR;r!t
+k )  
+[ u0
+v0
+]) ]
+(29)
+ 
+将式（28）代入式（23）整理可得：
+∆xa
+k = 1
+2  B 1  @
+@∆xa
+k
+(
+tr(P1  P1  H1
+′  S1
+ 1  H1)
+)
+(30)
+ 
+其中，
+S1 = H1  P1  H1
+′ + R1 (31)
+ 
+P1 = RW!R
+k  P  RW!R′
+k (32)
+ 
+R1 = (zR;r!t)
+2/
+f 2  R (33)
+ 
+∆xa
+k
+将式（30）表示的可观性控制量 写成分量
+形式并利用矩阵迹求导性质有：
+∆xa
+k;i = 1
+2  B 1  @
+@∆xa
+k;i
+(
+tr(P1  P1  H′
+1  S1
+ 1  H1)
+)
+=
+B 1  tr
+(
+P1
+2  H′
+1  S1
+ 1  @H1
+@∆xa
+k;i
+) 
+xW;r
+k ;xW;t
+k
++
+1
+2  B 1  tr
+(
+P1
+2  H′
+1  @S1
+ 1
+@∆xa
+k;i
+ H1
+) 
+xW;r
+k ;xW;t
+k
+(34)
+ 
+∆xa
+k;i
+i = 1,2,3
+∆xa
+k
+∆xa
+k;i
+其中 ， 是控制向量 的3个分量。计
+算式（29）对分量 的偏导有：
+@H1
+@∆xa
+k;i
+=
+[ 0 0
+0 0
+ 1
+f  H(∆xW;a
+k )  ei
+]
+(35)
+ 
+∆xa
+k;i
+同样，计算式（31）分量 的偏导有：
+@S1
+ 1
+@∆xa
+k;i
+= 1
+det (S1)
+0BBBB@det
+( @S1
+@∆xa
+k;i
+)
+
+( @S1
+@∆xa
+k;i
+)  1
+ 
+( @det (S1)
+@∆xa
+k;i
+)
+ S1
+ 1
+) (36)
+ 
+将式（35）、（36）代入式（34）即可得到最优控
+制分量。
+实现未知环境下基于单目视觉的机器人目标跟
+踪可观性控制需要完成以下3方面计算：首先，完
+成机器人同时定位于地图构建，第二，完成目标状
+态跟踪，第三，根据机器人和目标状态完成机器
+人控制量计算。计算复杂度主要集中在机器人
+SLAM过程中，由于机器人SLAM、目标跟踪和控
+制量生成在计算上是相互解耦的，因此可以选用
+运算效率较高的SLAM方法（FAST-SLAM等）。 
+6   实验设计与验证分析 
+6.1    实验设计
+1）仿真实验设计
+下面通过仿真实验验证方法的有效性、准确
+性并分析影响目标跟踪准确性的因素。实验仿真
+环境为MATLAB2017，场景如图7所示。 
+ 
+机器人
+目标
+环境特
+征点
+10
+0
+25 201510 5 0 −5−10−15
+−20
+−25 −25
+−20
+−15
+−10
+−5
+0
+X
+5
+10
+15
+20
+25
+−10
+Z
+Y
+  
+图 7    仿真实验场景
+Fig. 7    Experiment scene of simulation 
+第 17 卷 智　能　系　统　学　报 ·924·
+实验场景为三维立体空间，其范围为：X: −25 m~
+25 m，Y: −25 m~25 m，Z: −10 m~10 m，在空间四周
+均匀地分布着环境特征点。相关实验参数配置如
+表1所示。 
+  
+表 1    实验参数配置表
+Table 1    Parameter configuration
+ 
+机器人控制标准差 摄像机内参/像素 图像像素尺寸/像素 观测标准差/像素
+∆ ˜xr
+k = [0:01 m 0:01 m 0:01 m 0:01 m]
+∆˜er
+k = [0:02° 0:02° 0:02° ]
+ 
+u0 = 320，v0 = 240
+su = 320，sv = 320 
+u = 648
+v = 480 
+r = [3 3] 
+  
+2）实体机器人实验设计
+实体机器人实验采用Turtlebot2型差动驱动
+平台，如图8所示。 
+ 
+UWB 室内定
+位系统天线
+Wifi 
+天线
+激光
+扫描仪
+RGB-D 
+摄像机
+差动驱
+动底盘
+  
+图 8    Turtlebot2实体机器人平台
+Fig. 8    Turtlebot2 physical robot platform  
+该平台配备单目摄像头，WiFi无线通信系统
+以及UWB（ultra wide band, UWB）室内定位系
+统。单目摄像头完成RGB图像获取，无线通信系
+统完成机器人端和服务器端的数据传输，UWB定
+位系统提供机器人和目标的定位真值。实验场景
+如图9所示。 
+ 
+UWB
+基站
+UWB
+基站 UWB
+基站
+UWB
+基站
+目标
+色块
+机器人
+  
+图 9    实验场景
+Fig. 9    Experimental scene  
+实验环境为室内环境，载有色块的机器人作
+为目标进行匀速直线运动，后方机器人作为跟踪
+机器人，环境中4个UWB基站作为定位标准点
+且位置已知。
+实验基于ROS（robot operating system, ROS）
+框架，节点及消息关系如图10所示。 
+ 
+环境特
+征检测
+节点
+Turtlebot 机器人
+环境
+特征点
+目标
+观测值
+机器人
+控制量
+运算服务器
+机器人
+状态
+机器人
+状态
+SLAM 
+运算
+节点
+目标
+状态
+目标跟
+踪节点
+控制量
+计算
+节点目标检
+测节点
+运动执
+行节点
+  
+图 10    ROS框架节点及消息关系实验场景
+Fig. 10    ROS framework node and message diagram  
+考虑到图像数据量巨大不利于实时传输，以
+及Turtlebot上位机运算能力有限不利于计算等因
+素，系统将感知与执行，对象状态估计与控制量
+生成分别在机器人端和运算服务器端完成。Tur-
+tlebot机器人端包含感知节点和执行节点分别完
+成环境特征检测、目标检测和平台运动控制任
+务，其中环境特征为Sift特征点，目标检测利用
+Camshift方法实现。运算服务器端包含SLAM运
+算节点、目标跟踪节点和控制量计算节点分别利
+用第3、4、5节介绍方法实现机器人状态估计、目
+标状态估计和平台控制量生成任务。另外，由于
+该机器人运动学受非完整性约束限制，采用文献
+[26]所介绍的控制方法实现完整性约束到非完整
+性约束的转换控制。 
+6.2    仿真实验验证及分析 
+6.2.1   有效性实验分析
+(15; 15; 1)
+(15;  15; 1)
+Deq = 10 m
+vmax = 2:5 m/s
+为了验证方法有效性，假设目标运动轨迹为直
+线，初始位置坐标为 ，速度恒定为2 m/s。
+机器人初始位置坐标为 。机器人与目
+标的平衡距离设为 ，机器人最大机动速
+度设为 ，仿真共进行了300次迭代，时
+·925· 伍明，等：纯方位角目标跟踪及移动平台可观性控制方法 第 5 期
+间步进为0.05 s。
+实验总体跟踪结果俯视图如图11所示。图
+中目标和机器人实际轨迹为实线，目标和机器人
+估计轨迹为虚线，十字点为环境特征实际位置，
+椭圆为环境特征状态估计分布椭圆。从图可见，
+实验开始时机器人距离目标较远，控制以追随为
+主，当机器人距离目标较近时可观性控制分量开
+始发挥作用，机器人做机动运动。从目标估计轨
+迹可见，刚开始由于机器人并未产生可观性机动，
+因此目标估计轨迹逐渐偏离实际轨迹，当机器人
+开始机动时，目标估计轨迹快速收敛到实际轨迹
+附近。 
+ 
+目标和机器
+人实际轨迹
+目标和机器
+人估计轨迹
+环境特征实
+    际位置
+环境特征估
+    计位置
+机器人起点
+目标
+起点
+目标实
+际轨迹
+目标估计轨迹 机器人实
+际轨迹
+机器人估
+计轨迹
+−25
+−20
+−15
+−10
+−5
+0
+5
+10
+15
+20
+Y/m
+X/m
+25−25 −20 −15 −10 −5 0 5 10 15 20 25
+  
+图 11    实验总体跟踪结果
+Fig. 11    Overall tracking results
+  
+图12为三维空间中机器人实际和估计轨迹
+的局部放大图。由图可见，机器人的机动曲线为
+螺旋式曲线。机器人以此种轨迹对目标进行跟随
+有利于产生足够的单目观测视差，从而快速完成
+相对目标距离的估计。 
+3.5
+3.02.52.0
+1.51.0
+0.5 Z
+0
+−4−3−2−1X
+Y
+0 1 2 3 4 9 10 11 12 13 14 15 161718
+ 
+ 
+图 12    三维空间机器人轨迹局部放大图
+Fig. 12    A local large robot trajectory in three dimensional
+space  
+图13为实验中不同时刻机器人控制量成分
+值变化曲线。图中实线为不同时刻机器人速度控
+制值，细虚线为其中追随控制分量值，粗虚线为
+其中可观性控制分量值，由图可见，在跟踪初期
+0~85 s期间，机器人控制量的主要成分为追随控
+制分量。随着机器人靠近目标可观性控制分量开
+始发挥作用，在时段85~300 s期间，可观性控制
+成分大于追随控制成分，因此，在此期间机器人
+开始螺旋式机动运动，从而克服单目视觉深度观
+测值缺失的问题，快速实现目标位置状态估计。 
+ 
+0
+0.25
+0.20
+0.15
+0.10
+0.05
+0
+50 100 150
+Δxa
+k
+Δxf
+k
+t/s
+Δuk/(m·s−1)
+200 250 300
+可观性控制分量值子
+追随控制分量值
+总体控制量值
+  
+图 13    不同时刻机器人控制分量变化曲线
+Fig. 13    The curve of control component of robot at differ-
+ent time  
+图14为不同时刻机器人和目标各分量及位
+置估计误差曲线。 
+ 
+0 50 100 150 200 250 300
+0 50 100 150 200 250 300
+0 50 100 150 200 250 300
+0 50 100 150
+t/s
+t/s
+200 250 300
+0
+0.5
+1.0
+10
+20
+10
+20
+6 X 分量
+误差曲线
+容差曲线
+X 分量
+Y 分量
+Y 分量
+Z 分量
+Z 分量
+位置估计
+位置估计
+4
+e/me/me/me/me/me/me/me/m
+2
+(a) 目标各分量及位置估计误差曲线
+(b) 机器人各分量及位置估计误差曲线
+误差曲线
+容差曲线
+ 
+第 17 卷 智　能　系　统　学　报 ·926·
+t/s
+t/s
+0 50 100 150 200 250 300
+0 50 100 150 200 250 300
+0 50 100 150 200 250 300
+0
+1.0
+0.5
+0.1
+0.2
+0.4
+0.1
+0.2
+0.3
+X 分量
+误差曲线
+容差曲线
+X 分量
+Y 分量
+Y 分量
+Z 分量
+Z 分量
+位置估计
+位置估计
+e/me/me/me/me/me/me/me/m
+0.2
+50 100 150 200 250 300
+(a) 目标各分量及位置估计误差曲线
+(b) 机器人各分量及位置估计误差曲线
+误差曲线
+容差曲线
+ 
+ 
+图 14    目标和机器人各分量及位置估计误差曲线
+Fig. 14    Estimation error curve of each components and position  
+从图14(a)可见，在0~85 s期间，由于机器人
+并未进行可观性机动，因此，目标各分量及位置
+误差持续增加。在85~300 s期间，机器人开始机
+动运动，目标各分量及位置误差快速减小并始终
+保持在较低水平。从图14(b)可见，机器人各分量
+及位置估计始终较为准确，从图11可见，环境特
+征分布均匀且机器人在运动过程中有足够多的、
+准确性高的特征保持在其视野中，这些保证了较
+高的机器人定位精度。
+St
+k
+图15为不同时刻，目标观测残差阵 对应的
+不确定椭圆面积变化曲线。 
+ 
+0 50 100 150 200 250 300
+t/s
+20
+40
+60
+80
+100
+120S
+  
+图 15    不同时刻目标观测值不确定椭圆面积变化曲线
+Fig. 15    Target observation uncertain elliptical area change
+curve  
+由图可见，在0~85 s期间，观测不确定椭圆面
+积变化很平稳，说明机器人对目标的前后时序观
+测视差变化较小，用来进行深度估计的信息量较
+少，因此，目标状态估计误差持续增大。在85 s，
+出现了一个较大跳变，此后机器人开始可观性机
+动运动，在此期间，观测不确定椭圆面积变化较
+为剧烈，这说明机器人在前后观测中存在较大视
+差，能够为目标深度估计提供足够多的信息量，
+从而保证了目标跟踪的准确性。 
+6.2.2   准确性实验及分析
+(0; 15; 1)
+2 m/s
+(10; 15; 1)
+(0; 0; π)
+Deq = 10 m
+vmax = 2:5 m/s
+为了验证方法的准确性，假设目标起点与终
+点均为 ，目标实际运行轨迹为圆形，线速
+度为 。机器人起点为 ，朝向为 ，
+机器人与目标的平衡距离设为 ，机器人
+最大机动速度设为 ，仿真共进行了
+500次迭代，时间步进为0.05 s。实验总图跟踪结
+果如图16所示。 
+ 
+目标和机器
+人实际轨迹
+目标和机器
+人估计轨迹
+环境特征估
+计位置
+环境特征实
+际位置机器人
+终点
+机器人
+起点目标起点
+与终点
+机器人估
+计轨迹机器人实
+际轨迹 目标估
+计轨迹
+目标实
+际轨迹
+25
+20
+15
+10
+5
+0
+−5
+−10
+−15
+−20
+−20 −10 0
+(a) 实验俯视图
+X/m
+Y/m
+10 20 25
+−25
+  
+图 16    实验总体结果
+Fig. 16    Overall tracking results 
+·927· 伍明，等：纯方位角目标跟踪及移动平台可观性控制方法 第 5 期
+从结果可知，机器人和目标的估计轨迹和实
+际轨迹保持较高的一致性。
+图17为机器人和目标轨迹及误差曲线。 
+ 
+(a) 机器人轨迹
+实际轨迹
+估计轨迹
+(b) 目标轨迹
+15
+20 20
+10
+5
+0
+−5
+−10
+−15
+−20−15−10−5 0
+Y/m
+15
+10
+5
+0
+−5
+−10
+−15 Y/m
+X/m
+5 10 15 −20−15−10−5 0
+X/m
+5 10 15
+0 50 10 150 200 250
+(c) 机器人位置估计误差曲线
+(d) 目标位置估计误差曲线
+t/s
+300 350 400 450 500
+0
+0
+5
+10
+50 100 150 200 250
+t/s
+e/m
+0
+0.2
+0.6
+0.4 e/m
+300 350 400 450 500
+实际轨迹
+估计轨迹
+实际轨迹
+估计轨迹
+误差曲线
+容差曲线
+  
+图 17    机器人和目标轨迹及误差曲线
+Fig. 17    Robot , target trajectory and error curve  
+上方两个子图为机器人和目标的实际与估计
+轨迹对比图，下方两个子图为不同时刻机器人和
+目标位置估计误差曲线图，从轨迹图可见，机器
+人和目标估计轨迹始终贴合实际轨迹。从误差曲
+线图可见，机器人和目标估计误差均保持在容差
+范围内。另外，在整个估计过程中机器人平均估
+计误差为0.202 m，目标平均估计误差为1.227 m，
+目标和机器人估计准确性相差一个数量级。 
+6.2.3   影响因素实验及分析
+下面分别分析机器人定位精度、机器人机动
+程度两种因素对目标跟踪精度的影响。
+vmax = 3:5 m/s
+Deq = 10 m
+假设机器人最大速度为 ，平衡距
+离 条件下，机器人位置估计在10种噪声
+干扰下得到的目标状态估计误差均值和方差曲线
+如图18所示。
+由图可见，随着人为引入机器人定位噪声的
+增加，当加性机器人定位高斯白噪声的标准差为
+1时，目标定位误差均值为16.36，误差标准差为
+5.83。由此可见，目标定位精度与机器人定位精
+度呈现正相关性。
+Deq = 10 m
+图19为假设平衡距离 ，机器人最大
+vmax
+速度 取10个不同值时对应的目标状态估计误
+差均值和方差曲线。 
+ 
+25
+20
+15
+10
+5
+0 0.1 0.2 0.3 0.4 0.5 0.6
+σ/m
+e/m
+0.7 0.8 0.9 1.0
+  
+图 18    机器人定位误差对目标定位精度影响曲线
+Fig. 18    Influence between robot and target localization ac-
+curacy  
+ 
+ 
+60e/m
+vmax/(m·s−1)
+50
+40
+30
+20
+10
+0
+1.0 1.5 2.0 2.5 3.0 3.5 4.0 4.5 5.0 5.5 6.0
+  
+图 19    机动能力对目标定位精度影响曲线
+Fig. 19    Influence between robot maneuver ability and tar-
+get localization accuracy  
+vmax
+由图可见，随着机器人最大运动速度 的增
+大，目标状态估计准确性逐步提高并最终趋近于
+恒定值。说明目标定位精度与机器人机动能力成
+正相关性。 
+6.3    实体机器人实验验证及分析
+(0;  2)
+(2;  4)
+Deq = 1 m
+vmax = 0:2 m/s
+实体机器人实验中，目标初始位置坐标为 ，
+速度恒定为0.07 m/s。机器人初始位置坐标为
+ 。机器人与目标的平衡距离设为 ，
+机器人最大机动速度为 ，实验共进行了
+60 s。需要说明的是，由于所选用的机器人平台
+较为简易，其单目摄像头视野狭窄，同时，易产生
+图像晃动问题。因此，在实验中有意将目标和机器
+人运动速度调慢，意在弱化条件，重点检验方法对
+目标状态，机器人状态估计的有效性和准确性。
+实体机器人跟踪结果如图20所示。 
+ 
+(a) 总体跟踪结果
+机器人
+终点
+机器人
+终点
+目标
+终点
+目标
+终点
+环境特
+征估计
+目标和机器
+人实际轨迹
+目标和机器
+人估计轨迹
+环境特征
+估计
+6
+5
+4
+3
+Y/m
+X/m
+2
+1
+0
+−1
+−2
+−3
+−4
+−6 −4 −2 0 2 4 6
+(b) 机器人跟踪结果 (c) 目标跟踪结果
+−2.0
+−2.5 1.5
+1.0
+0.5
+−0.5
+−1.0
+−1.5
+−2.5
+−3.0
+−3.5
+−0.5 −2.0 −1.0 1.0 2.00.5
+Y/m
+Y/m
+X/m X/m
+1.0 1.5 2.0 2.5
+ 
+第 17 卷 智　能　系　统　学　报 ·928·
+(a) 总体跟踪结果
+机器人
+终点
+机器人
+终点
+目标
+终点
+目标
+终点
+环境特
+征估计
+目标和机器
+人实际轨迹
+目标和机器
+人估计轨迹
+环境特征
+估计
+Y/m
+X/m
+−1
+−2
+−3
+−4
+−6 −4 −2
+(b) 机器人跟踪结果 (c) 目标跟踪结果
+−2.0
+−2.5 1.5
+1.0
+0.5
+0
+−0.5
+−1.0
+−1.5
+−2.5
+−3.0
+−3.5
+−0.5 −2.0 −1.0 0 1.0 2.00 0.5
+Y/m
+Y/m
+X/m X/m
+1.0 1.5 2.0 2.5
+ 
+ 
+图 20    实体机器人跟踪结果
+Fig. 20    Physical robot tracking results  
+由图20(b)可见，由于机器人和目标在相同平
+面运动，为了产生观测视差，机器人形成曲线运
+动轨迹，同时估计轨迹和实际轨迹一致。目标估
+计轨迹和实际轨迹开始一致性较差，之后逐步趋
+于一致，其原因在于初始阶段机器人以追随为主
+并未产生足够视差，当机器人接近目标后开始曲
+线运动，足够的视差使目标跟踪精度得以提高。 
+7   结论
+针对未知环境下基于单目视觉的移动机器人
+目标跟踪问题展开研究，提出了一种纯方位角观
+测条件下的机器人同时定位、地图构建与目标跟
+踪及控制方法。该方法在机器人单目视觉SLAM
+基础上，设计了扩展式卡尔曼滤波框架的目标跟
+踪算法，并将目标状态估计和机器人运动控制作
+为耦合问题进行处理，提出了基于目标协方差阵
+更新最大化的机器人优化控制方法。仿真和实体
+实验验证了方法的有效性和准确性，通过对实验
+数据的分析可知：目标跟踪准确性与机器人定位
+精度以及机器人机动能力大小成正相关性。接下
+来将针对障碍物条件下的估计和控制方法展开进
+一步研究。
+参考文献：
+蔡自兴, 邹小兵. 移动机器人环境认知理论与技术的研
+究[J]. 机器人, 2004, 26(1): 87–91.
+CAI Zixing, ZOU Xiaobing. Research on environmental
+cognition theory and methodology for mobile robots[J].
+Robot, 2004, 26(1): 87–91.
+[1]
+YANG Nan, WANG Rui, GAO Xiang, et al. Challenges
+in monocular visual odometry: photometric calibration,
+motion bias, and rolling shutter effect[J]. IEEE robotics
+and automation letters, 2018, 3(4): 2878–2885.
+[2]
+WANG C C, THORPE C, THRUN S, et al. Simultan-
+eous localization, mapping and moving object tracking[J].
+The international journal of robotics research, 2007,
+26(9): 889–916.
+[3]
+伍明, 李琳琳, 孙继银. 基于概率数据关联交互多模滤
+波的移动机器人未知环境下动态目标跟踪[J]. 机器人,
+2012, 34(6): 668–679.
+WU Ming, LI Linlin, SUN Jiyin. PDA-IMM based mov-
+ing object tracking with mobile robots in unknown envir-
+onments[J]. Robot, 2012, 34(6): 668–679.
+[4]
+MUNARO M, LEWIS C, CHAMBERS D, et al. RGB-D
+human detection and tracking for industrial environ-
+ments[M]//Intelligent Autonomous Systems 13. Cham:
+Springer International Publishing, 2015: 1655−1668.
+[5]
+ZHANG Rui, WANG Zhaokui, ZHANG Yulin. Astro-
+naut visual tracking of flying assistant robot in space sta-
+tion based on deep learning and probabilistic model[J].
+International journal of aerospace engineering, 2018,
+2018: 1–17.
+[6]
+CASTLER O, MURRAYDW. Object recognition and
+localization while tracking and mapping[C]// Proceed-
+ings of 8th IEEE International Symposium on Mixed and-
+Augmented Reality. Orlando, IEEE, 2009: 179−180.
+[7]
+KLEIN G, MURRAY D. Parallel tracking and mapping
+for small AR workspaces[C]// Proceedings of6th IEEE
+and ACM International Symposium on Mixed and Aug-
+mented Reality. Nara, IEEE, 2007: 225−234.
+[8]
+DE OLIVEIRA D CB, DE SOUZA DA SILVA R L.
+Moving object tracking for SLAM-based augmented real-
+ity[J]. Journalof mobile multimedia, 2021, 17(4):
+577–602.
+[9]
+DAI W, ZHANG Y, ZHENG Y, et al. RGB-D SLAM
+with moving object tracking in dynamic environments
+[J]. IET cyber-systems and robotics, 2021, 3(4): 11.
+[10]
+LI Guihai, CHEN Songlin. Visual slam in dynamic scenes
+based on object tracking and static points detection[J].
+Journal of intelligent & robotic systems, 2022, 104(2):
+1–10.
+[11]
+CIVERA J, DAVISON A J, MONTIEL J M M. Inverse
+depth parametrization for monocular SLAM[J]. IEEE
+transactions on robotics, 2008, 24(5): 932–945.
+[12]
+DISSANAYAKE M W M G, NEWMAN P, CLARK S,
+et al. A solution to the simultaneous localization and map
+building (SLAM) problem[J]. IEEE transactions on robot-
+ics and automation, 2001, 17(3): 229–241.
+[13]
+WANGSIRIPITAK S, MURRAY D W. Avoiding mov-
+ing outliers in visual SLAM by tracking moving
+objects[C]// Proceedings of IEEE International Confer-
+ence on Robotics and Automation. Kobe, IEEE, 2009:
+375−380.
+[14]
+MIGLIORE D, RIGAMONTI R, MARZORATI D, et al.
+Use a single camera for simultaneous localization and
+mapping with mobile object tracking in dynamic environ-
+[15]
+·929· 伍明，等：纯方位角目标跟踪及移动平台可观性控制方法 第 5 期
+ments[C]//Proceedings of IEEE International Conference
+on Robotics and Automation, Kobe, Japan. IEEE, 2009:
+889−895
+BESCOS B, CAMPOS C, TARDÓS J D, et al.
+DynaSLAM II: tightly-coupled multi-object tracking and
+SLAM[J]. IEEE robotics and automation letters, 2021,
+6(3): 5191–5198.
+[16]
+LIU Yuzhen, LIU Jiacheng, HAO Yun, et al. A switch-
+ing-coupled backend for simultaneous localization and
+dynamic object tracking[J]. IEEE robotics and automa-
+tion letters, 2021, 6(2): 1296–1303.
+[17]
+SUALEH M, KIM G W. Semantics aware dynamic
+SLAM based on 3D MODT[J]. Sensors (Basel, Switzer-
+land), 2021, 21(19): 6355.
+[18]
+LIU Jiacheng, MENG Ziyang, YOU Zheng. A robust
+visual SLAM system in dynamic man-made environ-
+ments[J]. Science China technological sciences, 2020,
+63(9): 1628–1636.
+[19]
+OH R, SHIYifang, CHOI J W. A hybrid Newton-raphson
+and particle swarm optimization method for target mo-
+tion analysis by batch processing[J]. Sensors (Basel,
+Switzerland), 2021, 21(6): 2033.
+[20]
+ZHUK R S. Automatic detection and tracking the mov-
+ing objects observed by an unmanned aerial vehicles
+video camera[J]. Informatics, 2021, 18(2): 83–97.
+[21]
+WATANABE Y. Stochastically optimized monocular vis-
+ion-based navigation and guidance[D]. USA: Georgia In-
+stitute of Technology, 2008: 57.
+[22]
+KIM J, ROCK S. Stochastic feedback controller design
+considering the dual effect[J]//AIAA Guidance, Naviga-
+tion, and Control Conference and Exhibit. Keystone, Col-
+orado. Reston, Virginia: AIAA, 2006: 6090.
+[23]
+SCHÖLLERC, ARAVANTINOS V, LAY F, et al. What
+the constant velocity model can teach us about pedestrian
+motion prediction[J]. IEEE robotics and automation let-
+ters, 2020, 5(2): 1696–1703.
+[24]
+ZHANG Z. A flexible new technique for camera calibra-
+tion[J]. IEEE transactionson pattern analysis and ma-
+chine intelligence, 2000, 22(11): 1330–1334.
+[25]
+DAI Y, LEE S G. The leader-follower formation control
+of non-holonomic mobile robots[J]. International journal
+of control, automation and systems, 2012, 10(2):
+350–361.
+[26]
+作者简介：
+伍明，副教授，博士，主要研究方
+向为自主机器人控制、多机器人协作、
+机器人环境构建。主持国家自然科学
+基金项目1项，陕西省自然科学基金
+项目2项,发表学术论文20余篇，出版
+专著1部。
+李广宇，讲师，主要研究方向为人
+工智能、资源优化管理。主持完成陕
+西省“十三五”规划课题1项，主持完
+成校级课题3项，发表学术论文17篇。
+魏振华，副教授，主要研究方向为
+信息通信和指挥信息系统。主持专项
+课题8项，发表学术论文10余篇。
+第 17 卷 智　能　系　统　学　报 ·930·

@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="keywords" content="传感器,概率,拉格朗日乘子,导数,计算机仿真,最优交会角," />
+<meta name="HW.ad-path" content="https://hkxb.buaa.edu.cn/CN/abstract/abstract8781.shtml" />
+<meta name="HW.identifier" content="https://hkxb.buaa.edu.cn/CN/abstract/abstract8781.shtml" />
+<meta name="DC.Format" content="text/html" />
+<meta name="DC.Language" content="cn" />
+<meta name="DC.Title" content="测向交叉定位系统中的最优交会角研究" />
+<meta name="DC.Identifier" content="" />
+<meta name="DC.Contributor" content="白晶" />
+<meta name="DC.Contributor" content="王国宏" />
+<meta name="DC.Contributor" content="王娜" />
+<meta name="DC.Contributor" content="徐海全" />
+<meta name="DC.Date" content="2009-02-15" />
+<meta name="citation_journal_title" content="航空学报" />
+<meta name="citation_journal_abbrev" content="航空学报" />
+<meta name="citation_issn" content="1000-6893" />
+<meta name="citation_authors" xml:lang="cn" content="白晶;王国宏;王娜;徐海全" />
+<meta name="citation_title" xml:lang="cn" content="测向交叉定位系统中的最优交会角研究" />
+<meta name="DC.Keywords" xml:lang="cn" content="传感器,概率,拉格朗日乘子,导数,计算机仿真,最优交会角,"/>
+<meta name="citation_date" content="2009-02-15" />
+<meta name="citation_volume" content="30" />
+<meta name="citation_issue" content="2" />
+<meta name="citation_firstpage" content="298" />
+<meta name="citation_lastpage" content="304" />
+<meta name="citation_id" content="30/2/298" />
+<meta name="citation_doi" content="" />
+<meta name="citation_authors" xml:lang="en" content="Bai Jing;Wang Guohong;Wang Na;Xu Haiquan" />
+<meta name="citation_title" xml:lang="en" content="Study on Optimum Cut Angles in Bearing-only Location Systems" />
+<meta name="DC.Keywords" xml:lang="en" content="sensor,probability,Lagrange multipliers,derivatives,computer simulation,optimum cut angle,"/>
+<meta name="citation_abstract_html_url" content="https://hkxb.buaa.edu.cn/CN/abstract/abstract8781.shtml" />
+<meta name="citation_pdf_url" content="https://hkxb.buaa.edu.cn/CN/article/downloadArticleFile.do?attachType=PDF&id=8781" />
+<meta name="citation_public_url" content="https://hkxb.buaa.edu.cn/CN/abstract/abstract8781.shtml" />
+<meta name="robots" content="noarchive" />
+ 
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>测向交叉定位系统中的最优交会角研究</title>
+<!--css必引 -->
+	<link rel="stylesheet" href="https://hkxb.buaa.edu.cn/images/1000-6893/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://hkxb.buaa.edu.cn/images/1000-6893/font-awesome-4.7.0/css/font-awesome.css">
+	<link rel="stylesheet" href="https://hkxb.buaa.edu.cn/images/1000-6893/css/common.css" />
+<link rel="stylesheet" href="https://hkxb.buaa.edu.cn/images/1000-6893/css/swiper.min.css"/>
+<link rel="stylesheet" href="https://hkxb.buaa.edu.cn/images/1000-6893/css/style.css"/>
+<link rel="stylesheet" href="https://hkxb.buaa.edu.cn/images/1000-6893/css/xys.css"/>
+<LINK rel=stylesheet type=text/css href="https://hkxb.buaa.edu.cn/js/manu/lrtk.css">
+<!-- jQuery必引-->
+<script src="https://hkxb.buaa.edu.cn/js/jquery/jquery.min.js"></script>
+<link rel="stylesheet" href="https://hkxb.buaa.edu.cn/images/1000-6893/css/css.css">
+<script src="https://hkxb.buaa.edu.cn/images/1000-6893/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://hkxb.buaa.edu.cn/images/1000-6893/fonts/font-awesome.min.css">
+
+<!--兼容性问题-->
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+	
+<!--原摘要中的js -->
+	<!--图片弹出窗口 必须放在jquery.min.js后-->
+	<link rel="stylesheet" href="https://hkxb.buaa.edu.cn/js/colorbox/colorbox.css">
+	<script src="https://hkxb.buaa.edu.cn/js/colorbox/jquery.colorbox.js"></script>
+	<script type="text/javascript">
+	//等比缩放图片
+function DrawImage(ImgD,FitWidth,FitHeight){
+	var image=new Image();
+	image.src=ImgD.src;
+	if(image.width>0 && image.height>0){
+		if(image.width/image.height>= FitWidth/FitHeight){
+			if(image.width>FitWidth){
+				ImgD.width=FitWidth;
+				ImgD.height=(image.height*FitWidth)/image.width;
+			}else{
+				ImgD.width=image.width;
+				ImgD.height=image.height;
+			}
+		} else{
+			if(image.height>FitHeight){
+				ImgD.height=FitHeight;
+				ImgD.width=(image.width*FitHeight)/image.height;
+			}else{
+				ImgD.width=image.width;
+				ImgD.height=image.height;
+			}
+		}enm
+	}
+}
+	window.onload=function(){
+		$(".figureClass").colorbox({rel:'figureClass', inline:true, width:"80%"});
+		$(".inline").colorbox({rel:'inline',inline:true, width:"80%"});
+		
+	}
+	</script>
+	<!--图片弹出窗口结束-->
+	
+	<!--原摘要中js end -->
+<script language="javascript" src="https://hkxb.buaa.edu.cn/js/modelDialog1.js"></script>
+<script language="javascript" src="https://hkxb.buaa.edu.cn/js/layer2.1/layer.js"></script>
+<script language="javascript" src="https://hkxb.buaa.edu.cn/js/drag.js"></script>
+<script language="javascript" src="https://hkxb.buaa.edu.cn/js/store.js"></script>
+<script language="javascript" src="https://hkxb.buaa.edu.cn/js/download.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+	MathJax.Hub.Config({
+		extensions: ["tex2jax.js"],
+		jax: ["input/TeX", "output/HTML-CSS"], 
+		tex2jax: {inlineMath: [ ['$','$'], ["\\(","\\)"] ],displayMath: [ ['$$','$$'], ["\\[","\\]"] ],processEscapes: true},
+		"HTML-CSS": { availableFonts: ["TeX"] },
+		TeX: {equationNumbers: {autoNumber: ["AMS"], useLabelIds: true}},
+        "HTML-CSS": {linebreaks: {automatic: true}},
+        SVG: {linebreaks: {automatic: true}}
+		});
+</script>
+
+
+
+
+
+<script type="text/javascript">
+jQuery(function() {
+	jQuery.ajax({
+		url: "https://hkxb.buaa.edu.cn/CN/user/validateCollectArticle.do?articleId=8781",
+		success: function(res) {
+			collectCount();
+			if (res == "true") {
+				jQuery("#collectArticle").append("已收藏");
+			}
+			if (res == "false") {
+				jQuery("#collectArticle").append("<a href='javascript:;' onclick=\"collectArticle('8781')\">收藏文章</a>");
+			}
+		}
+	});
+});
+
+function collectCount() {
+	jQuery.ajax({
+		url: "https://hkxb.buaa.edu.cn/CN/user/articleCollectionTimes.do?articleId=8781",
+		success: function(res) {
+			jQuery("#collectCount").html("");
+			jQuery("#collectCount").append(res);
+		}
+	});
+}
+
+function collectArticle(id) {
+	var url = window.location.href;
+	jQuery.ajax({
+		url: "https://hkxb.buaa.edu.cn/CN/user/addCollectArticle.do",
+		data: {
+			"articleId": id,
+			"url": url
+		},
+		type: "post",
+		success: function(res) {
+			if (res == "true") {
+				document.getElementById("collectArticle").innerHTML = "已收藏";
+				collectCount();
+				alert("收藏成功！");
+			} else if (res == "false") {
+				alert("您已经收藏过该篇文章啦！");
+				window.location.reload();
+			} else if (res.length > 5) {
+				window.location.href = "https://hkxb.buaa.edu.cn/CN/user/userInfo_cn.jsp?url=" + res;
+			} else {
+				alert("收藏失败！");
+				window.location.reload();
+			}
+		},
+		error: function() {
+			alert("收藏失败！");
+		}
+	});
+}
+
+
+//可视化开始
+$(document).ready(function(){
+    jQuery.getJSON("https://hkxb.buaa.edu.cn/CN/lexeme/existsCnctstInArticle.do?articleID=8781", null, function(json){
+        if(json.result){
+            $("#knowledge_map_count").html(json.count);
+            $("#knowledge_map_div").show();
+        }
+    });
+});
+function changeKnowledgeMapImg(flag){
+    if(flag==1){
+        document.getElementById("knowledge_map_img").src="../../images/knowledge_map1.png";
+    }else{
+        document.getElementById("knowledge_map_img").src="../../images/knowledge_map2.png";
+    }
+}
+//可视化结束
+<!--
+//点赞开始
+jQuery(function() {
+    jQuery.ajax({
+        url: 'https://hkxb.buaa.edu.cn/CN/article/showArticleLikedNum.do',
+        data: {
+            articleId: 8781
+        },
+        type: 'post',
+        dataType: 'json',
+        success:function(data){  //成功的回调函数
+            $("#articleLikedNum").text(data);
+        },
+        error:function (XMLHttpRequest, textStatus, errorThrown) {
+            console.log("错误");
+            // 状态码
+            console.log(XMLHttpRequest.status);
+            // 状态
+            console.log(XMLHttpRequest.readyState);
+            // 错误信息
+            console.log(textStatus);
+        }
+    });
+});
+
+function addArticleLikedNum(id){
+    jQuery.ajax({
+        url: 'https://hkxb.buaa.edu.cn/CN/article/addArticleLikedNum.do',
+        data: {
+            articleId: id
+        },
+        type: 'post',
+        dataType: 'json',
+        success:function(data){  //成功的回调函数
+            if(data==-1){
+                alert('今日已点赞！！');
+            }else{
+                $("#articleLikedNum").text(data);
+            }
+        },
+        error:function (XMLHttpRequest, textStatus, errorThrown) {
+            console.log("错误");
+            // 状态码
+            console.log(XMLHttpRequest.status);
+            // 状态
+            console.log(XMLHttpRequest.readyState);
+            // 错误信息
+            console.log(textStatus);
+        }
+    });
+}
+//点赞结束
+ -->
+
+function lsdy2(attachType,articleId,qiKanWangZhi,nian,issn){
+	var pars = "attachType="+attachType+"&id="+articleId;
+		if(attachType == "RICH_HTML"){
+			jQuery.post(qiKanWangZhi+"/CN/article/downloadArticleFileFee.do?" + new Date(), pars, function(data){
+				window.location.href = qiKanWangZhi+"/article/"+nian+"/"+issn+"/"+articleId;
+			});			
+		}else{
+			window.location.href = qiKanWangZhi+"/CN/article/downloadArticleFile.do?attachType="+attachType+"&id="+articleId;	
+		}	
+					$('.layui-layer').hide();
+	$('.layui-layer-shade').hide();
+}
+function submitLogin(login_id, remote_password){
+	var login_id = document.getElementById(login_id).value;
+	var remote_password = document.getElementById(remote_password).value;
+	var pars = "login_id="+login_id+"&remote_password="+remote_password;
+	jQuery.post("https://hkxb.buaa.edu.cn/CN/user/login.do?" + new Date(), pars, function(data){
+		window.subwin = new SubWindow("下载文件",data,null,null,null,null,'620px','310px',null,null,"#dddddd","true",null,null,"true",null);
+		subwin.show();
+	});
+}
+
+function close(){
+		subwin.close();
+	}
+ 
+function showArticleFile(url,attachType,articleId){
+	var viewAttach = url+"/CN/article/showArticleFile.do?attachType="+attachType+"&id="+articleId;
+	window.open(viewAttach,"下载文件","toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizeable=no,copyhistory=no,width=520,height=200,left=88,top=88");
+}                      
+function searchKeyword(url,id,keyword){
+	var form = document.refForm;
+	form.searchSQL.value="(("+keyword+"[Keyword]) AND "+id+"[Journal])";
+	form.action = url+"/CN/article/advancedSearchResult.do";
+	form.submit();
+}		
+function searchEnKeyword(url,id,keyword){
+	var form = document.refForm;
+	form.searchSQL.value="(("+keyword+"[Keyword]) AND "+id+"[Journal])";
+	form.action = url+"/EN/article/advancedSearchResult.do";
+	form.submit();
+}		
+	
+function searchAuthor(url,id,author){
+	var form = document.refForm;
+	form.searchSQL.value="(("+author+"[Author]) AND "+id+"[Journal])";
+	form.action = url+"/CN/article/searchArticleResult.do";
+	form.submit();
+}
+	
+function addtobookshelf(url,articleId){
+	var addbookshelf = "";
+	addbookshelf = url+"/CN/article/addBookShelf.do?id="+articleId;
+	window.open(addbookshelf,"添加到书架","");
+}	
+	
+function showTxtFile(url,articleId){
+	var showtxtfile = "";
+	showtxtfile = url+"/CN/article/showTxtFile.do?id="+articleId;
+	window.open(showtxtfile,"引用管理器","");
+}
+
+function addComment(url,articleId){
+	var addComment = "";
+	addComment = url+"/CN/comment/addComment.do?id="+articleId;
+	window.open(addComment,"文章反馈","toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizeable=no,copyhistory=no,width=520,height=300,left=88,top=88");
+}
+
+
+
+function findPassword(email){
+	var emailReg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/
+	var email = document.getElementById(email).value;
+	var matchemail = emailReg.test(email);
+	var pars = "email="+email;
+	if(email == '' || email == null){
+		alert("Email不能为空！");
+		return false;
+	} else {
+		if(matchemail){
+			jQuery.post("https://hkxb.buaa.edu.cn/CN/user/findPassword.do?" + new Date(), pars, function(data){
+				subwin.close();
+			});
+		}else{
+			alert("Email格式不正确");		
+		}
+	}
+}
+function chakan(shifoukaifang,id,url){
+	var url2 = "https://hkxb.buaa.edu.cn/fileup/1000-6893/SUPPL/"+url;
+	window.location.href = "https://hkxb.buaa.edu.cn/CN/suppl/validateVideo.do?url="+url2+"&id="+id+"&shifoukaifang="+shifoukaifang;
+}
+
+//编辑推荐 
+$(document).ready(function(){
+    $("#recommendedArticles-list").load("https://hkxb.buaa.edu.cn/CN/article/recommendedArticles.do?id=8781",null,function(){
+    	$("#recommendedArticlesCount").html($("#recommendedArticlesCount1").val());
+    });
+});
+
+</script>
+
+	
+	<script src="https://hkxb.buaa.edu.cn/images/1000-6893/js/bootstrap.min.js"></script>
+	<script src="https://hkxb.buaa.edu.cn/images/1000-6893/js/jquery.pin.js"></script>
+	<script src="https://hkxb.buaa.edu.cn/images/1000-6893/js/abstract.js"></script>
+	<!--[if lt IE 9]>
+	<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	
+	<style>
+		#bsBox{
+			width:560px !important;
+			height:420px !important;
+		}
+		.bFind-wrapper-top{
+			height:25px !important;
+		}
+		#bsWXBox{
+			height: 257px !important;
+			width: 232px !important;
+		}
+	</style>
+	
+
+</head>
+<body id="goTop">
+<link rel="stylesheet" href="https://hkxb.buaa.edu.cn/images/1000-6893/font-awesome-4.7.0/css/font-awesome.css"/>
+
+<link rel="stylesheet" href="https://hkxb.buaa.edu.cn/images/1000-6893/css/common.css" />
+<link rel="stylesheet" href="https://hkxb.buaa.edu.cn/images/1000-6893/css/style.css"/>
+<link rel="stylesheet" href="https://hkxb.buaa.edu.cn/images/1000-6893/css/xys.css"/>
+<style type="text/css">
+		.index_nav_list>li{padding: 0 1.2%;}
+	</style>
+	<div>
+		<div class="hkxbnr_phone">
+			<div class="hkxbnr_phone_top">
+				<div class="phone_search clearfix">
+					<div class="phone_search_cont fl">
+						<form method="post" name="frm_ks_ph" id="frm_ks_ph" action=https://hkxb.buaa.edu.cn/CN/article/searchArticle.do>
+							<input type="text" value="标题/作者/关键词..."  name="ks_keyword_ph" id="ks_keyword_ph"/>
+							<input type="submit" name="" value="搜索"/>
+						</form>
+					</div>
+				<!--<div class="fr phone_zhuce">
+						<a href="https://hkxb.buaa.edu.cn/CN/user/registerUser.do" class="phone_zhuce_a2"></a>
+					</div>
+					<div class="fr phone_login">
+						<a href="https://hkxb.buaa.edu.cn/CN/user/userInfo_cn.jsp" class="phone_login_a1"></a>
+					</div>-->
+				</div>
+				<div class="phone_header clearfix">
+					<a href="https://hkxb.buaa.edu.cn/CN/1000-6893/home.shtml" class="phone_logo fl"><img src="https://hkxb.buaa.edu.cn/images/1000-6893/img/logo.png"/></a>
+					<a href="https://www.sciencedirect.com/journal/chinese-journal-of-aeronautics" class="fr phone_Cia_btn"><img src="https://hkxb.buaa.edu.cn/images/1000-6893/img/book_icon.png" />CJA</a>
+					<a href="https://hkxb.buaa.edu.cn/EN/1000-6893/home.shtml" class="fr phone_E_btn">ENGLISH</a>
+				</div>
+			</div>
+			<div class="hkxbnr_phone_nav clearfix">
+				<p class="fl phone_nav_txt">导航</p>
+				<a href="javascript:;" class="fr phone_nav_btn"></a>
+				<ul class="phone_nav_list">
+					<li class="fl"><a href="https://hkxb.buaa.edu.cn/CN/1000-6893/home.shtml">首页</a></li>
+					<li class="fl"><a href="https://hkxb.buaa.edu.cn/CN/column/column79.shtml">关于我们</a></li>
+					<li class="fl"><a href="https://hkxb.buaa.edu.cn/CN/column/column80.shtml">编委会</a></li>
+					<li class="fl"><a href="https://hkxb.buaa.edu.cn/CN/model/qianyan.shtml">封面文章</a></li>
+					<li class="fl"><a href="https://hkxb.buaa.edu.cn/CN/article/showTenYearOldVolumn.do">过刊一览</a></li>
+					<li class="fl"><a href="https://hkxb.buaa.edu.cn/CN/folder/folder54.shtml">学术资讯</a></li>
+					<li class="fl"><a href="http://www.aerospacefrontiers.com/MeetingMain/Index/2026AFC">空天前沿大会</a></li>
+					<li class="fl"><a href="https://hkxb.buaa.edu.cn/CN/column/column117.shtml">投稿须知</a></li>
+					<li class="fl"><a href="https://hkxb.buaa.edu.cn/CN/column/column86.shtml">下载中心</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="hkxb_header">
+			<div class="hkxb_header_top clearfix">
+				<div class="fr">
+					<a href="javascript:;" class="twos_soso"></a>
+						<div class="twos_soso_cont">
+							<form method="post" name="frm_ks" id="frm_ks" action=https://hkxb.buaa.edu.cn/CN/article/searchArticle.do>
+							<input type="text" name="ks_keyword" id="ks_keyword" placeholder="标题/作者/关键词..." />
+							<input type="submit" name="" value="搜索" />
+							</form>
+						</div>
+				</div>
+				<!--<div class="fr">
+					<a href="https://hkxb.buaa.edu.cn/CN/user/registerUser.do" class="header_a1">注册</a>
+				</div>
+				<div class="fr">
+					<a href="https://hkxb.buaa.edu.cn/CN/user/userInfo_cn.jsp" class="header_a2">登录</a>
+				</div>-->
+				<div class="fr"><a href="https://hkxb.buaa.edu.cn/CN/column/column83.shtml" class="header_a3" style="margin-right:50px">联系我们</a></div>
+				<div class="fr"><a href="../column/column371.shtml" class="header_a3">学术质量&nbsp;&nbsp;&nbsp;|</a></div>
+				<div class="fr"><a href="https://hkxb.buaa.edu.cn/CN/column/column158.shtml" class="header_a4">广告服务&nbsp;&nbsp;&nbsp;|</a></div>
+				<div class="fr"><a href="https://hkxb.buaa.edu.cn/CN/column/column82.shtml;" class="header_a5">期刊征订&nbsp;&nbsp;&nbsp;|</a></div>
+			</div>
+			<div class="index_hkxb_top clearfix">
+				<div class="index_nav_l fl"></div>
+				<div class="index_nav_r fr"></div>
+				<div class="index_nav_cont clearfix">
+					<a href="https://hkxb.buaa.edu.cn/CN/1000-6893/home.shtml" class="index_hkxb_logo fl"><img src="https://hkxb.buaa.edu.cn/images/1000-6893/img/index_logo.png"/></a>
+					<ul class="index_nav_list fl">
+						<li class="fl"><a href="https://hkxb.buaa.edu.cn/CN/1000-6893/home.shtml">首页</a></li>
+						<li class="fl"><a href="https://hkxb.buaa.edu.cn/CN/column/column79.shtml">关于我们</a></li>
+						<li class="fl"><a href="https://hkxb.buaa.edu.cn/CN/column/column80.shtml">编委会</a></li>
+						<li class="fl"><a href="https://hkxb.buaa.edu.cn/CN/model/qianyan.shtml">封面文章</a></li>
+						<li class="fl"><a href="https://hkxb.buaa.edu.cn/CN/article/showTenYearOldVolumn.do">过刊一览</a></li>
+						<li class="fl"><a href="https://hkxb.buaa.edu.cn/CN/folder/folder54.shtml">学术资讯</a></li>
+						<li class="fl"><a href="http://www.aerospacefrontiers.com/MeetingMain/Index/2026AFC">空天前沿大会</a></li>
+						<li class="fl"><a href="https://hkxb.buaa.edu.cn/CN/column/column117.shtml">投稿须知</a></li>
+						<li class="fl"><a href="https://hkxb.buaa.edu.cn/CN/column/column86.shtml">下载中心</a></li>
+						
+					</ul>
+					<div class="index_language_E fl">
+						<a href="https://hkxb.buaa.edu.cn/EN/1000-6893/home.shtml" class="language_E_btn fl">English Version</a>
+						<a href="https://www.sciencedirect.com/journal/chinese-journal-of-aeronautics" targeg="_blank" class="index_Cia_btn fl"><img src="https://hkxb.buaa.edu.cn/images/1000-6893/img/book_icon.png"/>CJA</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<div class="zhaiyao_position">
+						<a href="https://hkxb.buaa.edu.cn">航空学报 ></a>
+						<a Href="https://hkxb.buaa.edu.cn/CN/article/showTenYearVolumnDetail.do?nian=2009">2009</a>, <a Href="https://hkxb.buaa.edu.cn/CN/article/showTenYearVolumnDetail.do?nian=2009">Vol. 30</a>
+						<a href="https://hkxb.buaa.edu.cn/CN/volumn/volumn_1154.shtml">Issue (2)</a>: 298-304					</div>
+
+
+<div class="twoStage_cont">
+				<div class="twos_zhaiyao_top">
+					<div class="twos_zhaiyao_title clearfix">
+						<p class="twos_zy_title fl">论文</p>
+						<div class="twos_zy_ml">
+							<a href="https://hkxb.buaa.edu.cn/CN/volumn/volumn_1154.shtml">本期目录&nbsp;&nbsp;|&nbsp;&nbsp;</a>
+							<a href="https://hkxb.buaa.edu.cn/CN/article/showTenYearOldVolumn.do">过刊浏览&nbsp;&nbsp;|&nbsp;&nbsp;</a>
+							<a href="https://hkxb.buaa.edu.cn/CN/article/advSearchArticle.do">高级检索</a>
+						</div>
+						<div class="twos_zy_fanye fr">
+								  								<a href="https://hkxb.buaa.edu.cn/CN/abstract/abstract8786.shtml" class="twos_fanye_p">前一篇</a>
+		  									  							|
+		  									  								<a href="https://hkxb.buaa.edu.cn/CN/abstract/abstract8410.shtml" class="twos_fanye_n">后一篇</a>
+		  													</div>
+					</div>
+				</div>
+
+<div class="container whitebg">
+<div class="abs-con">
+  <div class="row">
+  <div class="col-md-12">
+       
+    <!--中文-->
+    
+            <h3 class="abs-tit">
+         测向交叉定位系统中的最优交会角研究    
+       </h3>
+         <p data-toggle="collapse" data-target="#divPanel">
+        <span>
+               		白晶，王国宏，王娜，徐海全
+                &nbsp;&nbsp;
+        <span data-placement="right"  type="button">
+        <i class="glyphicon glyphicon-menu-down" style="cursor:pointer;"></i>
+        </span>
+        </span>
+    </p>
+    <div id="divPanel" class="collapse bs-callout">
+        <address class="address">
+            <ol class="list-unstyled">
+            	                <li>海军航空工程学院 信息融合技术研究所</li>
+                            </ol>
+            
+        </address>
+        <ul class="list-unstyled code-style" style="overflow: hidden;">
+            <li>
+				<span>
+											<code>收稿日期:</code>2007-11-06
+									</span>
+				<span>
+											<code>修回日期:</code>2008-03-06
+									</span>
+				<span>
+									</span>
+				<span>
+											<code>出版日期:</code>2009-02-15
+									</span>
+				<span>
+											<code>发布日期:</code>2009-02-15
+									</span>
+			</li>
+            <li>				<code>通讯作者:</code>
+					白晶
+												</li>
+            <li>			</li>
+            <li>            
+            			</li>
+           
+        </ul>
+    </div>
+    <!--中文end-->
+    <!------------------------------------英文---------------------------------------------------------------------->
+        <h3 class="abs-tit">        
+	       Study on Optimum Cut Angles in Bearing-only Location Systems	   
+    </h3>
+        <p data-toggle="collapse" data-target="#divPanelEn">
+        <span>
+               		Bai Jing, Wang Guohong, Wang Na, Xu Haiquan
+			&nbsp;&nbsp;
+			<span data-placement="right"  type="button">
+			<i class="glyphicon glyphicon-menu-down" style="cursor:pointer;"></i>
+			</span>
+                
+        </span>
+    </p>    
+    
+    <div id="divPanelEn" class="collapse bs-callout">
+        <address class="address">
+             <ol class="list-unstyled">
+            	                <li>Research Institute of Information Fusion, Naval Aeronautical and Astronautical University</li>
+                            </ol>
+        </address>
+         <ul class="list-unstyled code-style" style="overflow: hidden;">
+            <li>
+				<span>
+											<code>Received:</code>2007-11-06
+									</span>
+				<span>
+											<code>Revised:</code>2008-03-06
+									</span>
+				<span>
+									</span>
+				<span>
+											<code>Online:</code>2009-02-15
+									</span>
+				<span>
+											<code>Published:</code>2009-02-15
+									</span>
+			</li>
+            <li>				<code>Contact:</code>
+					Bai Jing   
+												</li>
+            <li>			</li>
+            <li>            
+            			</li>           
+        </ul>
+    </div>
+    
+    <!--英文end-->
+    <!-------------------------6大块组----------------------------------------------->
+    <div class="group clearfix">
+        <div class="row diyihangdg">
+                                  <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2 margin-bottom-10">
+	            <span class="change-section">
+	                <a href="#1" onClick="lsdy1('PDF','8781','https://hkxb.buaa.edu.cn','2009','1154');return false;" class="black-bg btn-menu">
+	                    <i class="fa fa-file-pdf-o text-danger"></i>
+	                    <h2>PDF (PC)</h2>
+	                    <span class="badge">
+
+
+
+
+665
+
+</span>
+	                </a>
+	            </span>
+            </div>
+                                  <!--
+            <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2 margin-bottom-10">
+                <span class="change-section">
+                    <a href="javascript:void(0);" class="black-bg btn-menu" id="likedNum" onclick="addArticleLikedNum(8781)">
+                        <i class="fa fa-thumbs-up"></i>
+                        <h2>赞</h2>
+                        <span id="articleLikedNum" class="badge"></span>
+                    </a>
+                </span>
+            </div>
+             -->
+                                    <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2 margin-bottom-10" id="knowledge_map_div" style="display:none;">
+                            <span class="change-section" onmouseover="changeKnowledgeMapImg(2)" onmouseout="changeKnowledgeMapImg(1)">
+                                <a href="../lexeme/showArticleByLexeme.do?articleID=8781" class="black-bg btn-menu">
+                                    <i class="fa text-muted"><img src="../../images/knowledge_map1.png" height="40" style="margin:0px;" width="36" id="knowledge_map_img"></i>
+                                    <h2>可视化</h2>
+                                    <span class="badge" id="knowledge_map_count">0</span>
+                                </a>
+                            </span>
+            </div>
+			
+        </div>
+        
+        <!--<div class="jumbotron" id="showPdf2">
+            <ul class="list-unstyled">
+                <li><a href="">1. 探讨2016版国际胰瘘研究小组定义和分级系统对胰腺术后患者胰瘘分级的影响.PDF<span>(500KB)</span></a></li>
+            </ul>
+        </div>-->
+        
+    </div>
+    <!--6大块组------------------->
+    </div>
+    </div>
+    </div>
+    <div class="row" id="pin">
+        <div class="col-lg-10 col-md-10 col-sm-12 col-sm-12">
+            <!--折叠面板begin-->
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="zhaiyao" onClick="xianshi(this)" style="cursor: pointer;">
+                        <h4 class="panel-title">
+                            <a id="abstract">
+                               	 摘要/Abstract
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne" name="#abstract" style="display:block;">
+                        <div class="panel-body line-height text-justify">
+                                                        <p><strong>摘要： </strong><p>研究了测向交叉定位系统中的最优交会角问题。在目标到两部被动传感器基线之间的垂直距离不同的情况下和最小圆概率误差（CEP）准则下，得出了一些有意义的结论。研究表明，最优交会角跟目标到两部传感器基线的垂直距离与基线长度的比值l有关。当l&ge;&radic;<span style="border-top: 1px solid; padding-top: 0px;">3</span>/6时，只存在一个最优交会角且此时目标与两部被动传感器呈等腰三角形，并在此情况下分析了l的变化对圆概率误差的影响。当l＜&radic;<span style="border-top: 1px solid; padding-top: 0px;">3</span>/6时，存在两个相等的最优交会角。得出的结论在多个被动传感器的优化配置进而提高目标定位精度方面具有一定的理论和实际意义。</p></p>
+                                                        <form name="refForm" action="showCorrelativeArticle.do" method=post target=_blank>
+							<input type="hidden" name="searchSQL" value="" />
+                            <input type=hidden name="keyword" value="" id="keyword">
+							<input type=hidden name="author" value="" id="author">
+                            
+                                                        <p><strong>关键词: </strong>
+                               																				                                       <a href="#" onClick="searchKeyword('https://hkxb.buaa.edu.cn','1','传感器')">传感器, </a>
+	                                                                        											                                       <a href="#" onClick="searchKeyword('https://hkxb.buaa.edu.cn','1','概率')">概率, </a>
+	                                                                        											                                       <a href="#" onClick="searchKeyword('https://hkxb.buaa.edu.cn','1','拉格朗日乘子')">拉格朗日乘子, </a>
+	                                                                        											                                       <a href="#" onClick="searchKeyword('https://hkxb.buaa.edu.cn','1','导数')">导数, </a>
+	                                                                        											                                       <a href="#" onClick="searchKeyword('https://hkxb.buaa.edu.cn','1','计算机仿真')">计算机仿真, </a>
+	                                                                        											                                       <a href="#" onClick="searchKeyword('https://hkxb.buaa.edu.cn','1','最优交会角')">最优交会角</a> 
+	                                                                                                    </p>
+                                                                                    <p><strong>Abstract: </strong><p>This article is concerned with the optimum cut angle in bearing-only location systems. By applying the criterion of minimum circular error probability (CEP) to the condition of different vertical distances between the target and the baseline of two passive sensors, some useful conclusions concerning the optimum cut angle are obtained. The optimum cut angle is dependent on l, the ratio of the vertical distance to the baseline length. If&nbsp; l is greater than or equal to &radic;<span style="border-top: 1px solid; padding-top: 0px;">3</span>/6, there is one optimum cut angle and the deployment of the target and the two passive sensors should be an isosceles triangle with the baseline length as its base side. The relationship between the ratio l and the CEP is investigated too. If l is less than &radic;<span style="border-top: 1px solid; padding-top: 0px;">3</span>/6, there are two identical optimum cut angles. These conclusions can be used for reference in optimal deployment of multiple passive sensors to obtain high location accuracy.</p></p>
+                                                        	                            <p><strong>Key words: </strong>
+	                            																				                                       <a href="#" onClick="searchEnKeyword('https://hkxb.buaa.edu.cn','1','sensor')">sensor, </a>
+	                                    	                            											                                       <a href="#" onClick="searchEnKeyword('https://hkxb.buaa.edu.cn','1','probability')">probability, </a>
+	                                    	                            											                                       <a href="#" onClick="searchEnKeyword('https://hkxb.buaa.edu.cn','1','Lagrange multipliers')">Lagrange multipliers, </a>
+	                                    	                            											                                       <a href="#" onClick="searchEnKeyword('https://hkxb.buaa.edu.cn','1','derivatives')">derivatives, </a>
+	                                    	                            											                                       <a href="#" onClick="searchEnKeyword('https://hkxb.buaa.edu.cn','1','computer simulation')">computer simulation, </a>
+	                                    	                            											                                       <a href="#" onClick="searchEnKeyword('https://hkxb.buaa.edu.cn','1','optimum cut angle')">optimum cut angle</a> 
+	                                    	                                                            </p>
+                                                         </form>
+                            <!--分类号-->
+                            																								<p>
+								<strong>
+																中图分类号:&nbsp;
+																</strong> 
+								</p>
+								<ul class="list-unstyled pacs">
+																								<li> 
+																<p>
+								<a href="../article/showArticleBySubjectScheme.do?code=TN957" target="_blank">
+								TN957
+								</a>
+								</p>
+																</li>
+																																</ul>
+																                            <!--分类号end-->
+                            <div class="row hidden-xs hidden-sm">
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 margin-bottom-10 text-center">
+                                    <div class="text-primary btn-menu">
+                                        <h4>引用本文</h4>
+
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 margin-bottom-10">
+                                    <div class="primary-border">
+                                        															<p>白晶;王国宏;王娜;徐海全. 测向交叉定位系统中的最优交会角研究[J]. 航空学报, 2009, 30(2): 298-304.	</p>
+																																									     												                                                                                                        	                                                                                                                      <p>Bai Jing;Wang Guohong;Wang Na;Xu Haiquan. Study on Optimum Cut Angles in Bearing-only Location Systems[J]. ACTA AERONAUTICAET ASTRONAUTICA SINICA, 2009, 30(2): 298-304.</p>
+															                                                                                            </div>
+
+                                </div>
+                            </div>
+                            <div class="row hidden-xs hidden-sm">
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 margin-bottom-10 text-center">
+
+                                    <div class="btn-menu bs-callout-warning">
+                                        <h4>使用本文</h4>
+                                    </div>
+
+                                </div>
+                                <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 margin-bottom-10">
+
+                                    <div class="primary-border">
+                                        <p>
+                                            <b>
+                                                <form name=mail action="https://hkxb.buaa.edu.cn/CN/article/sendMail.jsp" method=post target=_blank> 
+												
+                                                <a href="#" id="collectArticle" class="shouc"></a> <span id="collectCount"></span> /&nbsp;&nbsp;                                              
+													<a onclick="mail.submit()" href="javascript:void(null)" class="tuij">推荐</a>
+													<input type="hidden" value='我在《航空学报》上发现了关于“测向交叉定位系统中的最优交会角研究”的文章，特向您推荐。请打开下面的网址：https://hkxb.buaa.edu.cn/CN/abstract/abstract8781.shtml' name="neirong">
+													<input type="hidden" name="thishref" value="https://hkxb.buaa.edu.cn/CN/abstract/abstract8781.shtml">
+													<input type="hidden" name="jname" value="航空学报">
+													<input type="hidden" name="title" value='测向交叉定位系统中的最优交会角研究'>
+												<form>
+                                            </b>
+                                        </p>
+                                        <p><b>导出引用管理器</b> <span class="daochu"><a href="https://hkxb.buaa.edu.cn/CN/article/getTxtFile.do?fileType=EndNote&id=8781" id="ris_export">EndNote</a>|<a href="https://hkxb.buaa.edu.cn/CN/article/getTxtFile.do?fileType=Ris&id=8781">Reference Manager</a>|<a href="https://hkxb.buaa.edu.cn/CN/article/getTxtFile.do?fileType=ProCite&id=8781">ProCite</a>|<a id="bibtex_export" href="https://hkxb.buaa.edu.cn/CN/article/getTxtFile.do?fileType=BibTeX&id=8781">BibTeX</a>|<a href="https://hkxb.buaa.edu.cn/CN/article/getTxtFile.do?fileType=RefWorks&id=8781">RefWorks</a></span>
+										</p>
+										<p><strong>链接本文:</strong>
+										<a href="https://hkxb.buaa.edu.cn/CN/" class="txt_zhaiyao1">https://hkxb.buaa.edu.cn/CN/</a>
+										</p>
+										<p>
+										<strong>&nbsp;</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+											<a href="https://hkxb.buaa.edu.cn/CN/Y2009/V30/I2/298" class="txt_zhaiyao1">
+										https://hkxb.buaa.edu.cn/CN/Y2009/V30/I2/298</a>										</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                                                <div class="panel panel-default" >
+                    <div class="panel-heading" role="tab" id="cankaowenxian" onClick="xianshi(this)">
+						<a name="reference"></a>
+                        <h4 class="panel-title">
+                            <a id="reference" class="collapsed"  href="javascript:;">
+                                参考文献                             </a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree" style="display: none;">
+                        <div class="panel-body">
+                            <!---->
+                            <table width="98%" border="0" align="center" cellpadding="0" cellspacing="8">
+																  <tr>
+									<td class="J_author"> </td>
+								  </tr>
+															</table>
+                            <!--end--> 
+                        </div>
+                      </div>         
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="xiangguanwenzhang" onClick="xianshi(this)">
+                        <h4 class="panel-title">
+                            <a id="relatedArticles" class="collapsed"  href="javascript:;">
+                                相关文章 <span class="badge badge-info">15</span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour" style="display: none;">
+                        <div class="panel-body">
+                        
+                        
+                           <table width="100%" border="0" height='25'>
+																																																																																																										<tr>
+																					<td width="30" valign='top' style="line-height:30px;">[1]</td>
+																					<td class="J_zhaiyao" style="line-height:30px;" valign='top'>乔竑玮, 梁剑寒, 张林, 孙明波, 陈玉俏. <a href="https://hkxb.buaa.edu.cn/CN/10.7527/S1000-6893.2023.28802" target="_blank" class="txt_zhaiyao">超声速燃烧中的概率密度函数方法研究进展</a>[J]. 航空学报, 2024, 45(8): 28802-028802.</td>
+																				</tr>
+																																																																																																																																																<tr>
+																					<td width="30" valign='top' style="line-height:30px;">[2]</td>
+																					<td class="J_zhaiyao" style="line-height:30px;" valign='top'>石荣武, 白新玉, 谭义峰, 赵哲. <a href="https://hkxb.buaa.edu.cn/CN/10.7527/S1000-6893.2023.28900" target="_blank" class="txt_zhaiyao">加油接头力传感器设计</a>[J]. 航空学报, 2024, 45(7): 216-226.</td>
+																				</tr>
+																																																																																																																																																<tr>
+																					<td width="30" valign='top' style="line-height:30px;">[3]</td>
+																					<td class="J_zhaiyao" style="line-height:30px;" valign='top'>李洁, 黄文新, 蔡一鸣, 王思远, 高宇飞, 蒋雪峰. <a href="https://hkxb.buaa.edu.cn/CN/10.7527/S1000-6893.2023.29307" target="_blank" class="txt_zhaiyao">基于DFPMM的位置传感器故障诊断与容错控制</a>[J]. 航空学报, 2024, 45(10): 329307-329307.</td>
+																				</tr>
+																																																																																																																																																<tr>
+																					<td width="30" valign='top' style="line-height:30px;">[4]</td>
+																					<td class="J_zhaiyao" style="line-height:30px;" valign='top'>刘进一, 熊建军, 桂康, 葛俊锋, 叶林. <a href="https://hkxb.buaa.edu.cn/CN/10.7527/S1000-6893.2023.29309" target="_blank" class="txt_zhaiyao">基于多光谱和复阻抗的复合结冰探测技术</a>[J]. 航空学报, 2023, 44(S2): 729309-729309.</td>
+																				</tr>
+																																																																																																																																																<tr>
+																					<td width="30" valign='top' style="line-height:30px;">[5]</td>
+																					<td class="J_zhaiyao" style="line-height:30px;" valign='top'>李忠智, 马金毅, 艾剑良, 董一群. <a href="https://hkxb.buaa.edu.cn/CN/10.7527/S1000-6893.2022.27615" target="_blank" class="txt_zhaiyao">拟VGG16网络的航空传感器故障检测分类</a>[J]. 航空学报, 2023, 44(S1): 727615-727615.</td>
+																				</tr>
+																																																																																																																																																<tr>
+																					<td width="30" valign='top' style="line-height:30px;">[6]</td>
+																					<td class="J_zhaiyao" style="line-height:30px;" valign='top'>郭宏轩, 孙富强. <a href="https://hkxb.buaa.edu.cn/CN/10.7527/S1000-6893.2023.27226" target="_blank" class="txt_zhaiyao">加速退化试验测量不确定度评定方法</a>[J]. 航空学报, 2023, 44(7): 227226-227226.</td>
+																				</tr>
+																																																																																																																																																<tr>
+																					<td width="30" valign='top' style="line-height:30px;">[7]</td>
+																					<td class="J_zhaiyao" style="line-height:30px;" valign='top'>罗佳奇, 陈泽帅, 邹正平, 曾飞, 杜鹏程. <a href="https://hkxb.buaa.edu.cn/CN/10.7527/S1000-6893.2022.27203" target="_blank" class="txt_zhaiyao">低压涡轮铸造叶片几何不确定性统计</a>[J]. 航空学报, 2023, 44(6): 427203-427203.</td>
+																				</tr>
+																																																																																																																																																<tr>
+																					<td width="30" valign='top' style="line-height:30px;">[8]</td>
+																					<td class="J_zhaiyao" style="line-height:30px;" valign='top'>郝帅, 马铁林, 王一, 向锦武, 马洪忠, 蒋柏峰, 曹军. <a href="https://hkxb.buaa.edu.cn/CN/10.7527/S1000-6893.2022.27034" target="_blank" class="txt_zhaiyao">传感器飞机核心关键技术进展与应用</a>[J]. 航空学报, 2023, 44(6): 27034-027034.</td>
+																				</tr>
+																																																																																																																																																<tr>
+																					<td width="30" valign='top' style="line-height:30px;">[9]</td>
+																					<td class="J_zhaiyao" style="line-height:30px;" valign='top'>张怀捷, 马静雅, 刘浩源, 郭品, 邓慧超, 徐坤, 丁希仑. <a href="https://hkxb.buaa.edu.cn/CN/10.7527/S1000-6893.2022.26964" target="_blank" class="txt_zhaiyao">视觉与惯性融合的多旋翼飞行机器人室内定位技术</a>[J]. 航空学报, 2023, 44(5): 426964-426964.</td>
+																				</tr>
+																																																																																																																																																<tr>
+																					<td width="30" valign='top' style="line-height:30px;">[10]</td>
+																					<td class="J_zhaiyao" style="line-height:30px;" valign='top'>孙本奇, 杨强, 孙志礼, 李树军, 马宏坤, 王若男. <a href="https://hkxb.buaa.edu.cn/CN/10.7527/S1000-6893.2022.26843" target="_blank" class="txt_zhaiyao">平面约束变胞机构构态切换能力的概率评估模型</a>[J]. 航空学报, 2023, 44(4): 426843-426843.</td>
+																				</tr>
+																																																																																																																																																<tr>
+																					<td width="30" valign='top' style="line-height:30px;">[11]</td>
+																					<td class="J_zhaiyao" style="line-height:30px;" valign='top'>关清帝, 梁剑寒, 张林, 陈文武, 陈玉俏. <a href="https://hkxb.buaa.edu.cn/CN/10.7527/S1000-6893.2022.26677" target="_blank" class="txt_zhaiyao">一般曲线坐标系下概率密度函数方法及其在超声速燃烧中的应用</a>[J]. 航空学报, 2023, 44(4): 126677-126677.</td>
+																				</tr>
+																																																																																																																																																<tr>
+																					<td width="30" valign='top' style="line-height:30px;">[12]</td>
+																					<td class="J_zhaiyao" style="line-height:30px;" valign='top'>徐善劼, 吕宏强, 刘中臣, 冷岩, 刘学军. <a href="https://hkxb.buaa.edu.cn/CN/10.7527/S1000-6893.2021.26269" target="_blank" class="txt_zhaiyao">基于概率模型的声爆试验数据分析</a>[J]. 航空学报, 2023, 44(2): 626269-626269.</td>
+																				</tr>
+																																																																																																																																																<tr>
+																					<td width="30" valign='top' style="line-height:30px;">[13]</td>
+																					<td class="J_zhaiyao" style="line-height:30px;" valign='top'>姜峰, 李华聪, 符江锋, 洪林雄. <a href="https://hkxb.buaa.edu.cn/CN/10.7527/S1000-6893.2022.26667" target="_blank" class="txt_zhaiyao">基于RBF和主动学习的非概率可靠度求解方法</a>[J]. 航空学报, 2023, 44(2): 226667-226667.</td>
+																				</tr>
+																																																																																																																																																<tr>
+																					<td width="30" valign='top' style="line-height:30px;">[14]</td>
+																					<td class="J_zhaiyao" style="line-height:30px;" valign='top'>王鼎, 高卫港, 聂福全, 吴志东. <a href="https://hkxb.buaa.edu.cn/CN/10.7527/S1000-6893.2022.28057" target="_blank" class="txt_zhaiyao">校正源存在下抑制部分同步时钟偏差和传感器位置误差的时差定位闭式解</a>[J]. 航空学报, 2023, 44(16): 328057-328057.</td>
+																				</tr>
+																																																																																																																																																<tr>
+																					<td width="30" valign='top' style="line-height:30px;">[15]</td>
+																					<td class="J_zhaiyao" style="line-height:30px;" valign='top'>杭杰, 李运华, 杨丽曼. <a href="https://hkxb.buaa.edu.cn/CN/10.7527/S1000-6893.2022.28063" target="_blank" class="txt_zhaiyao">航空发动机加力燃烧燃油控制系统主动容错控制</a>[J]. 航空学报, 2023, 44(14): 328063-328063.</td>
+																				</tr>
+																																																																																													</table>
+							
+							
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="tuijianwenzhang" onClick="xianshi(this)">
+                        <h4 class="panel-title">
+                            <a id="recommendedArticles" class="collapsed"  href="javascript:;">
+                                编辑推荐 <span class="badge badge-info" id="recommendedArticlesCount"></span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour" style="display: none;">
+                        <div class="panel-body" id="recommendedArticles-list">
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="panel panel-default" >
+                    <div class="panel-heading" role="tab" id="Metrics" onClick="xianshi(this)">
+                        <h4 class="panel-title">
+                            <a class="collapsed"  href="javascript:;" >
+                                Metrics 
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive" style="display: none;">
+                        <div class="panel-body">
+                           <table width="98%" border="0" cellspacing="0" cellpadding="0">
+											    	<tr>
+											        	<td width="24" height="32"></td>
+											        	<td colspan="2" bgcolor="#E0EEF7"><span class="STYLE1">阅读次数</span></td>
+											        </tr>
+													<tr>
+											        	<td width="24" height="5"></td>
+											        	<td colspan="2" bgcolor="#FFFFFF"></td>
+											        </tr>
+											      	<tr>
+												        <td height="153"></td>
+												        <td width="110" valign="top" bgcolor="#EFEFEF" style="line-height:150%">
+												        	<strong>全文</strong><br />
+												          	<span class="STYLE2"><div id="FullText"></div></span>
+												        </td>
+											        	<td valign="top">
+												        	<table width="63%" border="0" cellspacing="0" cellpadding="0">
+													          	<tr>
+														            <td><div id="HtmlPdfVersion"></div></td>
+													            </tr>
+												        	</table>
+												        	<br />
+												        	<table width="63%" border="0" cellspacing="0" cellpadding="0">
+												        		<tr>
+														            <td colspan="3"><div id="FromHtmlPdf"></div></td>
+													            </tr>
+												        	</table>
+												          	<br />
+												          	<div id="DownloadDistribution"></div>
+												          	<div id="DownloadCountryDistribution"></div>
+														</td>
+													</tr>
+													<tr>
+												        <td></td>
+												        <td colspan="2" height=5></td>
+													</tr>
+													<tr>
+												        <td height="158"></td>
+												        <td valign="top" bgcolor="#efefef" style="line-height:150%">
+												        	<strong>摘要</strong><br>
+												          	<span class="STYLE2"><div id="AbstractCount"></div></span>
+														</td>
+												        <td valign="top">
+															<table width="40%" height="52" border="0" cellpadding="0" cellspacing="0">
+													          	<tr>
+													            	<td><div id="AbstractVersion"></div></td>
+													            </tr>
+													            <tr>
+													            	<td><div id="FromAbstract"></div></td>
+													            </tr>
+												        	</table>
+															<br />
+															<div id="AbstractDistribution"></div>
+															<div id="AbstractCountryDistribution"></div>
+												        </td>
+													</tr>
+													<tr>
+												        <td></td>
+												        <td colspan="2" height=5></td>
+													</tr>
+													<!--
+													<tr>
+												        <td height="30"></td>
+												        <td bgcolor="#E0EEF7"><p><strong>Cited</strong></p></td>
+												        <td>
+												        	<div id="citations"></div>
+												        </td>
+													</tr>
+													<tr>
+												        <td height="8"></td>
+												        <td height="8"></td>
+												        <td height="8"></td>
+													</tr>
+													<tr>
+													    <td height="31">&nbsp;</td>
+													    <td bgcolor="#E0EEF7"><strong>Shared</strong></td>
+													    <td><strong>&nbsp;&nbsp;<a class="shareCount"></a></strong></td>
+												  	</tr>
+												  	-->
+												  	<tr>
+													    <td height="5"></td>
+													    <td></td>
+													    <td></td>
+											  		</tr>
+											</table>
+											
+                        </div>
+                    </div>
+                </div>
+				<div class="panel panel-default" >
+                    <div class="panel-heading" role="tab" id="benwenpingjia" onClick="xianshi(this)">
+                        <h4 class="panel-title">
+                            <a id="pingjia" class="collapsed"  href="javascript:;" >
+                                本文评价 
+                            </a>
+                        </h4>
+                    </div>
+					<div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix" style="display: none;">
+                        <div class="panel-body">
+							<div id="ArticleEstimate">
+								<div id="Estimate"></div>
+								<div id="Comment"></div>
+							</div>
+                        </div>
+                    </div>
+                </div>
+				<!-- <div class="panel panel-default" >
+                    <div class="panel-heading" role="tab" id="tuijianyuedu" onClick="xianshi(this)">
+                        <h4 class="panel-title">
+                            <a id="relatedArticles" class="collapsed"  href="javascript:;" >
+                                推荐阅读 <span class="badge badge-info">0</span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven" style="display: none;">
+                        <div class="panel-body">
+							<table width="98%" border="0" align="center" cellpadding="0" cellspacing="8" valign='top' height='auto'>
+								<tr>
+									<td valign='top'>
+										<table width="100%" border="0" height='25'>
+																																													<tr>
+													<td colspan='2' align='center'><strong>No Suggested Reading articles found!</strong></td>
+												</tr>
+																					</table>
+									</td>
+								</tr>
+							</table>
+                        </div>
+                    </div>
+
+                </div> -->
+            </div>
+			
+            <!--折叠面板end-->
+        </div>
+        <div class="col-lg-2 col-md-2 hidden-print hidden-xs hidden-sm">
+            <!--右快速导航-->
+            <div id="plane" class="pinned">
+                <ul class="plane-bd list-unstyled">
+                    <li>
+                        <a href="javascript:;"  onclick="zhaiyao('#zhaiyao');">
+							<span>摘要</span>
+                            <i class="glyphicon glyphicon-text-color"></i>
+                        </a>
+                    </li>
+				                     <li>
+                        <a href="javascript:;"  onclick="zhaiyao('#cankaowenxian');">
+                            <span>参考文献</span>
+                            <i class="glyphicon glyphicon-equalizer"></i>
+                        </a>
+                    </li>
+                     <li>
+                        <a href="javascript:;"  onclick="zhaiyao('#xiangguanwenzhang');">
+                            <span>相关文章</span>
+                            <i class="glyphicon glyphicon-list-alt"></i>
+                        </a>
+                    </li>
+                     <li>
+                        <a href="javascript:;"  onclick="zhaiyao('#tuijianwenzhang');">
+                            <span>编辑推荐</span>
+                            <i class="glyphicon glyphicon-list-alt"></i>
+                        </a>
+                    </li>
+                     <li>
+                        <a href="javascript:;"  onclick="zhaiyao('#Metrics');">
+                            <span>Metrics</span>
+                            <i class="glyphicon glyphicon-stats"></i>
+                        </a>
+                    </li>
+					 <li>
+                        <a href="javascript:;" onclick="zhaiyao('#benwenpingjia');">
+                            <span>本文评价</span>
+                            <i class="glyphicon glyphicon-stats"></i>
+                        </a>
+                    </li>
+					<!-- <li style="width:100px;">
+                        <a href="javascript:;" onclick="zhaiyao('#tuijianyuedu');">
+                            <span>推荐阅读</span>
+                            <i class="glyphicon glyphicon-list-alt"></i>
+                        </a>
+                    </li> -->
+                </ul>
+                <div class="plane-ft">
+                    <a href="#goTop" target="_self"  title="回顶部" style="color:#ff6600;" class="text-center">回顶部</a>
+                </div>
+            </div>
+            <!--右快速导航-->
+         </div> 
+    </div>
+</div>
+<div>
+	<div class="pc_footer">
+		<div class="foot_top">
+			<div class="foot_top_cont clearfix">
+				<div class="foot_top_d1 fl">
+					<p class="foot_xinxi1">地址：北京市海淀区北四环中路辅路238号柏彦大厦</p>
+					<p class="foot_xinxi2">邮政编码：100083</p>
+					<p class="foot_xinxi4">E-mail：hkxb@buaa.edu.cn</p>
+				</div>
+				<div class="foot_nav_d1 fl">
+					<p class="foot_nav_title">关于我们</p>
+					<ul class="foot_nav_list">
+						<li><a href="https://hkxb.buaa.edu.cn/CN/column/column79.shtml">期刊介绍</a></li>
+						<li><a href="https://hkxb.buaa.edu.cn/CN/folder/folder54.shtml">学报动态</a></li>
+						<li><a href="https://hkxb.buaa.edu.cn/CN/folder/folder71.shtml">会议通知</a></li>
+						<li><a href="https://hkxb.buaa.edu.cn/CN/column/column80.shtml">编委会</a></li>
+						<li><a href="https://hkxb.buaa.edu.cn/CN/folder/folder74.shtml">招聘</a></li>
+					</ul>
+				</div>
+				<div class="foot_nav_d2 fl">
+					<p class="foot_nav_title">期刊社服务</p>
+					<ul class="foot_nav_list">
+						<li><a href="https://hkxb.buaa.edu.cn/CN/model/fuwu.shtml">作者服务</a></li>
+						<li><a href="https://hkxb.buaa.edu.cn/CN/column/column158.shtml">广告服务</a></li>
+						<li><a href="https://hkxb.buaa.edu.cn/CN/model/fuwu.shtml">企业服务</a></li>
+						<li><a href="https://hkxb.buaa.edu.cn/CN/model/fuwu.shtml">合作伙伴服务</a></li>
+					</ul>
+				</div>
+				<div class="foot_nav_d3 fl">
+					<p class="foot_nav_title">专业学科</p>
+					<ul class="foot_nav_list">
+						<li><a href="https://hkxb.buaa.edu.cn/CN/article/showChannelArticle.do?id=7">流体力学与飞行力学</a></li>
+						<li><a href="https://hkxb.buaa.edu.cn/CN/article/showChannelArticle.do?id=9">固体力学与飞行器总体设计</a></li>
+						<li><a href="https://hkxb.buaa.edu.cn/CN/article/showChannelArticle.do?id=79">电子电气工程与控制</a></li>
+						<li><a href="https://hkxb.buaa.edu.cn/CN/article/showChannelArticle.do?id=84">材料工程与机械制造</a></li>
+					</ul>
+				</div>
+				<div class="foot_nav_d4 fl">
+					<p class="foot_nav_title">封面文章</p>
+					<ul class="foot_nav_list">
+						<li><a href="https://hkxb.buaa.edu.cn/CN/model/qianyan.shtml">封面文章</a></li>
+						<li><a href="https://hkxb.buaa.edu.cn/CN/article/showTenYearOldVolumn.do">过刊一览</a></li>
+					</ul>
+				</div>
+				<div class="foot_nav_d5 fl">
+					<p class="foot_nav_title">友情链接</p>
+					<ul class="foot_nav_list">
+						<li><a href="http://hkxb.buaa.edu.cn/" target="_blank">航空期刊杂志社</a></li>
+						<li><a href="http://www.buaa.edu.cn/" target="_blank">北京航空航天大学</a></li>
+						<li><a href="http://www.csaa.org.cn/" target="_blank">中国航空学会</a></li>
+						<li><a href="http://www.cast.org.cn/" target="_blank">中国科学技术协会</a></li>
+						<li><a href="http://www.sciencenet.cn/" target="_blank">科学网</a></li>
+						<li><a href="http://dict.cnki.net/" target="_blank">CNKI翻译助手</a></li>
+						<li><a href="https://www.liwenbianji.cn" target="_blank">理文编辑</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="foot_bot">
+			<div class="foot_bot_cont">
+				<p class="foot_bot_txt"><span class="hkxb_copy">版权所有 © 航空学报编辑部</span></p>
+			</div>
+		</div>
+	</div>
+	<div class="phone_footer">
+		<p>版权所有 © 2011航空学报杂志社</p>
+		<p>主管单位：中国科学技术协会   主办单位：中国航空学会 北京航空航天大学</p>
+	</div>
+</div>
+<script type="text/javascript" src="https://hkxb.buaa.edu.cn/images/1000-6893/js/jquery-1.11.1.min.js" ></script>
+<script type="text/javascript" src="https://hkxb.buaa.edu.cn/images/1000-6893/js/jquery.SuperSlide.2.1.js" ></script>
+<script type="text/javascript" src="https://hkxb.buaa.edu.cn/images/1000-6893/js/style.js" ></script>
+<iframe src="https://hkxb.buaa.edu.cn/EN/article/updateBrowseNum.jsp?articleid=8781" height=0 scrolling=no border=0 frameborder=0 allowtransparency="true"></iframe>
+
+</body>
+</html>
+
+<script type="text/javascript">
+	var hash = window.location.hash;
+	loadMetricsTabc();
+	loadArticleEstimate();
+	$(function() {
+    	$('#container').tabs(1);
+    });
+    $("#MetricsTabC").click(function(){
+		loadMetricsTabc();
+	});
+	 $("#ArticleEstimateTab").click(function(){
+		loadArticleEstimate();
+	});
+	function loadArticleEstimate(){
+		$("#Estimate").empty();
+		$("#Estimate").append("<iframe src=\"https://hkxb.buaa.edu.cn/include/showEstimate.do?articleId=8781\" width=\"1000\" height=\"85\"  scrolling=no frameborder=0 allowtransparency=\"true\" style=\"padding: 20\"></iframe>");
+		$("#Comment").empty();
+		$("#Comment").append("<iframe src=\"https://hkxb.buaa.edu.cn/CN/comment/showCommentList.do?type=article&typeId=8781\" width=\"1000\" style=\"min-height:700px; width:100%;\"   scrolling=no frameborder=0 allowtransparency=\"true\" style=\"padding: 20\" id=\"ifr-comment\"></iframe>");
+	}
+	$(function(){
+		$('.tabs-nav').children('li').eq(0).addClass('tabs-selected');
+		$('.tabs-nav').children('li').last().removeClass('tabs-selected');
+		$('#AbstractTab').removeClass('tabs-hide');
+		$('#MetricsTab').addClass('tabs-hide');
+	})
+	function loadMetricsTabc(){
+		$("#FullText").load("https://hkxb.buaa.edu.cn/CN/matrix/matrix.do?articleId=8781&type=FullText");
+		$("#HtmlPdfVersion").load("https://hkxb.buaa.edu.cn/CN/matrix/matrix.do?articleId=8781&type=HtmlPdfVersion");
+		$("#FromHtmlPdf").load("https://hkxb.buaa.edu.cn/CN/matrix/matrix.do?articleId=8781&type=FromHtmlPdf");
+		$("#AbstractVersion").load("https://hkxb.buaa.edu.cn/CN/matrix/matrix.do?articleId=8781&type=AbstractVersion");
+		$("#AbstractCount").load("https://hkxb.buaa.edu.cn/CN/matrix/matrix.do?articleId=8781&type=AbstractCount");
+		$("#FromAbstract").load("https://hkxb.buaa.edu.cn/CN/matrix/matrix.do?articleId=8781&type=FromAbstract");
+		//$("#citations").load("https://hkxb.buaa.edu.cn/CN/matrix/matrix.do?articleId=8781&type=citations");
+		$("#DownloadDistribution").empty();
+		$("#DownloadDistribution").append("<iframe src=\"https://hkxb.buaa.edu.cn/CN/matrix/matrix.do?articleId=8781&type=DownloadDistribution\" width=\"600\" height=\"300\"  scrolling=no frameborder=0 allowtransparency=\"true\" style=\"padding: 20\"></iframe>");
+		$("#DownloadCountryDistribution").empty();
+		$("#DownloadCountryDistribution").append("<iframe src=\"https://hkxb.buaa.edu.cn/CN/matrix/matrix.do?articleId=8781&type=DownloadCountryDistribution\" width=\"550\" height=\"300\"  scrolling=no frameborder=0 allowtransparency=\"true\"></iframe>");
+		$("#AbstractDistribution").empty();
+		$("#AbstractDistribution").append("<iframe src=\"https://hkxb.buaa.edu.cn/CN/matrix/matrix.do?articleId=8781&type=AbstractDistribution\" width=\"600\" height=\"300\"  scrolling=no frameborder=0 allowtransparency=\"true\" style=\"padding: 20\"></iframe>");
+		$("#AbstractCountryDistribution").empty();
+		$("#AbstractCountryDistribution").append("<iframe src=\"https://hkxb.buaa.edu.cn/CN/matrix/matrix.do?articleId=8781&type=AbstractCountryDistribution\" width=\"550\" height=\"300\"  scrolling=no frameborder=0 allowtransparency=\"true\" style=\"padding: 20\"></iframe>");
+	}
+	
+</script>
+
+    <!--css必引 -->	
+	<link rel="stylesheet" href="https://hkxb.buaa.edu.cn/images/1000-6893/css/abstract.css">

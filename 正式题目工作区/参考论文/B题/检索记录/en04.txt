@@ -1,0 +1,865 @@
+Active localization of multiple targets using noisy relative
+measurements*
+Selim Engin 1 and V olkan Isler1
+Abstract— Consider a mobile robot tasked with localizing tar-
+gets at unknown locations by obtaining relative measurements.
+The observations can be bearing or range measurements. How
+should the robot move so as to localize the targets and minimize
+the uncertainty in their locations as quickly as possible? Most
+existing approaches are either greedy in nature or rely on
+accurate initial estimates.
+We formulate this path planning problem as an unsupervised
+learning problem where the measurements are aggregated using
+a Bayesian histogram ﬁlter. The robot learns to minimize the
+total uncertainty of each target in the shortest amount of time
+using the current measurement and an aggregate representation
+of the current belief state. We analyze our method in a series
+of experiments where we show that our method outperforms a
+standard greedy approach. In addition, its performance is also
+comparable to an ofﬂine algorithm which has access to the true
+location of the targets.
+I. I NTRODUCTION
+Environmental monitoring is an application area where
+robotics can have a major impact. Robots can be used for
+gathering data, collecting samples and performing surveil-
+lance across large environments over long periods of time. A
+practical problem of interest is the localization of animals in
+the wild who have been previously radio-tagged by wildlife
+biologists. The animals can be localized by mobile robots
+which can obtain bearing measurements using a directional
+antenna. Figure 1 shows two examples of such platforms
+built by our group.
+In this paper, we study the problem of localizing multiple
+targets given their noisy measurements relative to a robot.
+In particular, we study the bearing-only and range-only
+measurement models which are commonly used in practice.
+For both of these models, the localization uncertainty given
+the true target location and robot measurement locations is
+well established (Section III-A). However, computing the
+measurement locations is hard when the true location of the
+target is known or if there are multiple targets.
+Existing methods described in Section II mostly focused
+on the case where there is only a single target. Moreover,
+most of them are greedy in nature, optimizing the mutual
+information or entropy at each step locally. This approach
+is however susceptible to getting stuck in local minima
+when the best next steps are in opposite directions. Other
+approaches rely on accurate initial estimates, which may not
+be available in general settings. We show that instead of using
+a local greedy approach, long-term planning and maximizing
+*This work was supported by the NSF grant #1617718.
+1Selim Engin and V olkan Isler are with Department of Computer
+Science and Engineering, University of Minnesota, MN 55455, USA
+{engin003, isler }@umn.edu
+Fig. 1: Target localization problem: given noisy relative
+measurements, the goal is to localize the targets as quickly
+as possible using a robot with complex dynamics such as an
+autonomous quadrotor (left) or surface vehicle [1] (right).
+the expected rewards can help the localization system. We
+assume all the targets to be initially observable, therefore we
+do not address the search problem. However, a noisy initial
+observation of the target can result in arbitrarily bad initial
+estimates. Our method is able to accurately localize targets
+using a bearing-only sensor with noise level up to 30◦ angles,
+and range measurements with up to 30 meters of error in a
+200 × 200 m2 area.
+Our work lies in the class of model-free Reinforcement
+Learning (RL), where the robot learns to accomplish a given
+task in a ﬁxed time-horizon without using prior information
+about the environment or robot dynamics. In contrast to
+model-based methods, this approach does not use an en-
+gineered or a learned dynamics model. Instead, it directly
+optimizes its policy through a sequence of trial-and-error
+process [2].
+While the policy learning is performed in a model-
+free paradigm, our method uses a representation of the
+environment that encapsulates the sensor modality and the
+uncertainty of the estimations. Speciﬁcally, we use a top-
+down image of the environment where the intensity of each
+pixel indicates the likelihood of that point being the position
+of the target. As the sensor noise increases there are more
+pixels indicating a high likelihood of containing the target.
+II. R ELATED WORK AND CONTRIBUTIONS
+The problem of localizing targets has received signiﬁcant
+attention and been studied in several different settings. In
+this section we go over three different scenarios where each
+setup has a different set of assumptions about the target
+and sensor mobility: a) sensor placement, the problem of
+deploying a group of static sensors to localize static targets;
+b) active target localization, the problem of localizing static
+targets with mobile sensors; and c) active target tracking, the
+problem of tracking mobile targets with mobile sensors.
+arXiv:2002.09850v1  [cs.RO]  23 Feb 2020
+A. Sensor Placement
+In the sensor placement problem we have a group of
+static targets whose positions are unknown residing in a
+given candidate area and an uncertainty model. The goal
+is usually to minimize the number of sensors deployed in
+the area given a desired uncertainty level [3], [4], [5], or to
+optimize the sensor-target geometries after ﬁxing the number
+of sensors [6]. Both the targets and sensors are assumed to be
+static in this setting, and a greedy approach is shown to have
+a near-optimal performance [3]. The results in this setting,
+however, are not directly applicable to the case when the
+targets or sensors are moving.
+B. Active Target Localization
+In the problem of active target localization, one or multiple
+mobile robots need to localize the targets as quickly as possi-
+ble. In [7] a method is proposed to perform target localization
+with bearing measurements using the Fisher information to
+optimize the trajectory of a single aerial vehicle. In [1] a
+cooperative algorithm is presented to localize a static target
+using two networked robots with communication constraints.
+The robots in this work need to periodically meet to update
+their estimate of the target position.
+C. Active Target Tracking
+In the active target tracking problem, both the sensors and
+targets are able to move. The target motion can be modeled
+in various ways and this model plays an important role in
+the performance of the tracking system. One approach is
+to treat the target motion adversarial, which means that the
+target actively evades the sensor [8], [9]. Another approach
+can model the motion of the target to be a random walk,
+especially when there is no prior information about the
+mobility of the target [10], [11]. The mobility is modeled
+by a 2D Brownian motion in [12] where the target can move
+within a bounded region.
+For this problem setting, most of the existing approaches
+use a position-based measurement model [13], [14], [15],
+[16]. This enables the robot to estimate the target positions
+with a few observations, unlike using bearing or range
+measurements where the geometry of the sensor-target con-
+ﬁguration signiﬁcantly impacts the accuracy of the estimator.
+D. Statement of contributions
+Our contributions can be summarized as follows.
+• We propose a novel RL formulation of the multi-target
+localization problem.
+• We present a representation to model the localization
+estimates for each target encapsulating the uncertainty
+in the predictions.
+• We compare our RL algorithm against a greedy ap-
+proach that uses local observations to plan the sensor
+motion, and an ofﬂine algorithm which has access to
+the true positions of the targets.
+III. P RELIMINARIES
+The setup in our problem consists of a tracker robot with
+an omnidirectional bearing or range sensor and a set of
+m targets deployed in an environment V. The mobility of
+the robot is modeled to be holonomic, that is it can do
+instantaneous turns without any kinematic constraints. We
+denote the position of the robot at time t by pt ∈ R2.
+Similarly, the locations of the targets are q = {q1,...,q m},
+whereqi ∈ R2, and the predicted positions of the targets are
+ˆq. The trajectory of the robot until time step t is denoted
+by P1:t =p1,...,p t. Throughout the paper we use a global
+frame, such as the initial coordinate frame of the robot to
+denote the positions of the robot and targets.
+The true bearing direction from a sensor location p =
+(px,py) to a target location qi = (qx
+i,qy
+i ) is denoted by
+φi =φ(p,qi) and expressed as:
+φi = arctan
+(
+(qy
+i −py)/(qx
+i −px)
+)
+. (1)
+We assume that the measurement model has a Gaussian
+distribution noise. Then, a bearing measurement from a
+sensor can be written as ˆφi = φi +e, where e ∼ N (0,σ 2
+s)
+and σ2
+s is the variance of the sensor measurement error. We
+denote the set of bearing measurements acquired from a robot
+position pt at time step t by ˆΦt = {ˆφ1,... ˆφm}.
+The distance between a sensor p and a target qi is denoted
+bydi =d(p,qi). Similar to the bearing measurement model,
+we assume a normally distributed zero-mean noise for the
+range measurements. A range measurement at time t is
+expressed as ˆdi =di +e, where e ∼ N (0,σ 2
+s). Throughout
+the paper we denote the relative noisy measurements by ˆzi,
+and use ˆφi or ˆdi to indicate a speciﬁc sensor model.
+A. Uncertainty Measures
+In this section we describe the uncertainty measures used
+in the paper.
+1) Fisher Information: Predicting a target location using
+relative measurements is typically achieved by triangulation
+from multiple positions. Quantifying the accuracy of the
+triangulation relies on the geometry of the sensor-target
+conﬁguration and the noise in the sensor measurement.
+For a given sensor-target geometry and a noise level
+in the measurements, we can use the Fisher Information
+Matrix (FIM) to compute the amount of information given
+by the measurements. The FIM characterizes the amount
+of information an observable parameter carries about an
+unobservable variable. In our case, the observable parameter
+is the relative measurement and the unobservable variable of
+interest is the position of the target.
+Suppose Fq is the FIM for a given sensor-target conﬁgura-
+tion, where q∗ is the true location of the target. The ( i,j )-th
+entry of Fq for a single target can be expressed as:
+(Fq)i,j = E
+[ ∂
+∂qi
+ln(P(ˆz|q)) ∂
+∂qj
+ln(P(ˆz|q))
+]
+, (2)
+where P(·) denotes the probability density function. The
+determinant of the FIM is inversely proportional to the
+uncertainty area of the estimation [17], [18]. The determinant
+of Fq for n bearing measurements is given by [19]:
+det(Fq) = 1
+σ4s
+∑
+{pi,pj}∈P
+sin2(φ(pi,q∗) −φ(pj,q∗))
+d(pi,q∗)2 ·d(pj,q∗)2 , i<j
+(3)
+where σ2
+s denotes the variance of the measurement error,
+and P deﬁnes the set of all pairwise combinations as
+{{pi,pj}} withi,j ∈ {1,...,n } andi<j . The inverse FIM
+F−1
+q (also known as the Cramer-Rao inequality lower bound)
+quantiﬁes an uncertainty ellipsoid for unbiased estimators.
+The square root of the eigenvalues of F−1
+q , denoted by√λi deﬁnes the axis length of the ellipsoid along the i-th
+dimension.
+The determinant of F−1
+q provides a scalar for measuring
+the uncertainty. For a given sensor-target geometry and a
+measurement model, we measure the total uncertainty by:
+U(P, q) =
+m∑
+i=1
+det(F−1
+qi ). (4)
+Since the true position of the target is required to compute
+the Fisher information, it is challenging to obtain an accurate
+uncertainty estimate based on the Fisher information in prac-
+tical scenarios. The next uncertainty measure we present is
+better suited for practical applications where we do not have
+access to the true positions. We use the Fisher information
+as an uncertainty estimate in the ofﬂine case where the true
+position of the targets are available to the algorithm.
+2) Bayesian Histograms: In Bayesian histograms we dis-
+cretize the environment V into a grid, where each cell
+of the grid indicates the likelihood of being the target
+position given the measurements. Bayesian histograms are
+particularly useful to represent the likelihood posteriors for
+models with nonlinear dynamics. Filtering techniques relying
+on linearization, in general are sensitive to disturbances when
+using a nonlinear sensor model like bearing measurements.
+Without accurate initialization, the measurement errors can
+easily lead to a poor localization performance. Several exist-
+ing methods [20], [21] have also used Bayesian histograms
+for the problem of target localization.
+Since the measurement model assumes a zero-mean nor-
+mal distribution for the sensor noise, we can compute the
+probability of a point v being the true target location q∗
+given a relative measurement ˆz as:
+P(v =q∗|p, ˆz) =f(zv|ˆz,σ 2
+s) = 1√
+2πσ 2s
+exp{− 1
+2σ2s
+(zv − ˆz)2},
+(5)
+where zv is the true angle φ(p,v ) or distance d(p,v )
+between the point v and a robot position p. Over the course
+of the robot’s trajectory, the likelihood of a point is updated
+as measurements are obtained:
+P(v =q∗|P1:T, ˆz1:T ) =
+T∏
+k=1
+f(z(pk,v )|ˆzk,σ 2
+s). (6)
+Fig. 2: The Bayesian histograms computed by aggregating
+the bearing measurements taken from the sensor trajectory
+shown in red. The blue dot corresponds to the true target
+location, and the darker to brighter colors in the heatmap
+indicate an increase in the likelihood.
+At each measurement update, the probabilities are normal-
+ized such that maxv∈Vf(z(pk,v )|ˆzk,σ 2
+s) = 1, where V is a
+given domain for the target positions. When initializing the
+heatmap, we use a uniform distribution of probability 1 indi-
+cating that each point in the domain is equally likely to be the
+true position of the target. We denote the histogram at time
+step t for a target qi as Ht(P1:t, ˆz1:t,i ). The histograms are
+updated separately and stacked as a tensor Ht(P1:t, ˆz1:t) ∈
+Rm×W×H. The histogram dimensions W ×H determine the
+granularity of the grid discretization of the environment and
+result in a trade-off between accuracy and efﬁciency. Finer
+resolution histograms have smaller discretization errors at the
+cost of higher computational resources. An instance of the
+Bayesian histogram representation is shown in Figure 2. At
+each time step the bearing measurement is incorporated to
+update the likelihood of the points in V. The sensor trajectory
+and target position are overlaid in the heatmap ﬁgures to give
+context.
+B. Reinforcement Learning
+In Reinforcement Learning (RL), we have an agent sensing
+and acting within an environment over a course of discrete
+time steps. At each time step, the agent observes the current
+state of the environment and performs an action. Depending
+on the current state and action pair, the state changes and
+the agent receives a reward according to an environment
+model [2].
+These type of problems are usually formulated as Markov
+Decision Processes (MDP) described by statess ∈ S , actions
+a ∈ A, transition dynamics T : S × A × S →[0, 1], a reward
+functionr : S ×A×S → R, and a discount factor γ ∈ [0, 1].
+For the case when the agent cannot fully observe the states,
+this description is redeﬁned as a Partially Observable MDP
+(POMDP), where there is also an associated observation
+function.
+The agent selects actions using a policy π(a|s) so as to
+maximize the expectedγ-discounted future rewards given by
+Gt = E
+[∑T
+i=tγi−tr(si,ai,si+1)
+]
+, where T is the planning
+time-horizon. Suppose that Qπ(s,a ) is the expected future
+returns by taking the action a in state s using the policy π,
+which is expressed asQπ(s,a ) = E
+[
+Gt|st =s,at =a
+]
+. The
+goal of RL algorithms is to learn an optimal policy π∗ that
+maximizes the expected future returns for all state and action
+pairs. A popular method for this problem is Q-learning [22],
+where the Bellman equation,
+Q(st,at) = ET (st+1|st,at)
+[
+r(st,at,st+1)+γ max
+a′
+Q(st+1,a′)
+]
+,
+(7)
+is recursively used to adjust Qπ to approach the optimal Q-
+values for π∗. When the state and action spaces are large,
+this value function can be approximated as a neural network
+Qθ(s,a ), with parameters θ.
+IV. P ROBLEM STATEMENT
+We are now ready to formally state the problem studied
+in this paper.
+Problem 1 (Target Localization). We are given a mobile
+robot equipped with a sensor obtaining relative measure-
+ments according to a known measurement model, a starting
+position p1, a ﬁxed planning horizon T and a set of targets
+whose positions are unknown. In addition, we are given a
+function U(P,q ) measuring the uncertainty of the target esti-
+mates for a given sensor-target geometry and a measurement
+model. The goal is to ﬁnd a path P1:T =p1,...,p T for the
+robot such that the total uncertainty of the target positions∑m
+i=1 U(P1:T,qi) is minimized.
+V. M ETHOD
+Our method uses two different models to represent the
+state. In this section we go over these representations and
+present our unsupervised learning method for target local-
+ization.
+Target 
+Dynamics
+Robot 
+DynamicsRL Agent
+HeatmapsImage
+Fig. 3: Method overview: A single iteration of the robot-
+environment interaction. The blue arrow indicates the relative
+measurements vector used in the multi-modal representation,
+while the red arrow marks the image used as the observation
+in the image representation.
+An overview of our method is shown in Figure 3. At
+every iteration, the robot acquires noisy measurements from
+the target locations according to the measurement model.
+The measurements are either taken as raw observations,
+or they are aggregated into a single image representation.
+Depending on the observation, the agent selects an action
+which drives the robot to a new position. The measurements
+are accumulated in the form of heatmaps at each step, which
+are then used to predict the position of the target. This
+process repeats until the end of the planning time-horizon.
+A. Representing the observations
+We start with describing the representations we use for the
+target observations.
+1) Multi-modal representation: The ﬁrst representation
+our method uses is a multi-modal Gaussian distribution for
+characterizing the localization belief. At each step, the robot
+receives a distinct bearing or range measurement from all
+the targets (i.e. perfect assignment). The sensor noise σs is
+assumed to be known, therefore we are able to represent the
+likelihood distribution over the domain V. We construct the
+likelihood of each point v ∈ V as the normalized probability
+f(zv|ˆz,σ 2
+s), where ˆz is the observation for a single target.
+In a standard Markov process, at any time step the next
+state depends on the current state and the action. For local-
+izing the targets, the robot needs to maintain an estimate of
+the target position using observations from the past locations.
+Hence, we append the predictions for the target positions to
+the state vector so as to select the next actions.
+The augmented state of the system is deﬁned as st :=
+(pt, ˆzt, ˆqt) ∈ R2+m+2m, concatenating the position vector of
+the robotpt, observations from each target ˆzt, and a ﬂattened
+vector of the predicted positions of the targets ˆqt. In the
+multi-modal representation, we use the noisy bearing ˆφt or
+range measurements ˆdt as the observation vector ˆzt.
+2) Image representation: We also use images to represent
+the belief for the predicted position of the target. The image
+It ∈ RW×H at time step t is computed by the sum of
+histograms maintained for each target estimate, expressed
+as:
+It =
+m∑
+i=1
+Ht(P1:t, ˆz1:t,i ). (8)
+The image is then normalized to have values in the range
+[0, 1], and resized into a desired resolution with bilinear
+interpolation. We use a convolutional neural network with
+the ResNet-34 architecture [23] followed by three fully
+connected layers to encode It into a latent vector lt ∈ Rc.
+For all our experiments, we set the dimension of the latent
+code to bec = 128. This encoding vector implicitly describes
+the uncertainty level and the position estimates for all the
+targets in a latent space.
+The state vector we use in the image representation is
+expressed as st := (pt,lt) ∈ R2+c, a concatenation of the
+position vector pt and latent code lt. The RL algorithm we
+present next inputs the state vector corresponding to the
+desired observation representation.
+B. Learning target localization
+We build our method on the Twin Delayed Deep De-
+terministic (TD3) algorithm, a deep reinforcement learning
+algorithm introduced in [24] that uses policy gradients to
+directly optimize the policy network. Similar to the Deep
+Deterministic Policy Gradient algorithm [25], TD3 uses an
+actor-critic architecture that jointly learns an actor πϕ (the
+policy) and a critic function Qθ (the value function) modeled
+by neural networks with parameters ϕ and θ, respectively.
+A replay buffer is maintained to store the previous interac-
+tions of the agent, as in the Deep Q-Network algorithm [26].
+The replay buffer stores samples in the form of ( si, ai,
+si+1, ri, yi) tuples, where each sample is associated with
+a state transition from si tosi+1 by executing the action ai.
+With this transition, the agent receives a reward ri, and the
+termination of the episode is indicated by a label yi ∈ {0, 1}.
+To prevent the over-estimation bias of the value function,
+TD3 trains two (twin) critic networks that are updated at
+different (delayed) frequencies and uses the minimum of the
+two as the value estimate. In our notation,minj=1,2Qθj(s,a )
+is replaced by Qθ(s,a ) for brevity.
+For both the actor and critic, periodically updated target
+networksπϕ′ andQθ′ are also used. Constraining the change
+in the target networks to be slow helps the stabilization when
+learning the actor and critic functions.
+The actor and critic networks are trained with the Adam
+optimizer [27] using the loss functions Lactor and Lcritic
+over mini-batches of size B. The loss functions are given
+by:
+Lactor = 1
+B
+B∑
+i=1
+−Qθ(si,πϕ(si)) (9)
+Lcritic = 1
+B
+B∑
+i=1
+[
+Qθ(si,ai) −
+(
+ri +γ(1 −yi)
+·Qθ′
+(
+si+1,πϕ′(si+1)
+))]2
+.
+(10)
+Intuitively, the actor network πϕ is trained to maximize
+the Q-values generated from the action πϕ(si) given a state
+si, by minimizing −Qθ(si,πϕ(si)). On the other hand, the
+critic network is trained to minimize the Bellman error
+computed by a variation of the Bellman equation given
+in Equation (7). During the training process, the slowly
+changing target networks are assumed to characterize the
+optimal policy and the Q-function. The policy πϕ inputs the
+state vector st according to the observation representation
+and outputs an action at. This action is a heading angle in
+the continuous space represented in the inertial coordinate
+frame, taking values bounded as at ∈ [0, 2π).
+1) Reward functions: For learning the policy we use two
+different reward functions, one for each observation repre-
+sentation. In the multi-modal representation, the reward is the
+negative mean squared error between the true and predicted
+target positions, expressed as −1/m ·∑m
+i ||qi − ˆqi||2.
+For the image representation, on the other hand, we simply
+use the mean of the image intensities as the loss term. The
+reward function we use is given by − 1
+WH ·∑
+u,v It(u,v ),
+where the pixel intensities of the image are all non-negative.
+Maximizing this reward function minimizes the likelihood
+of parts of the environment V not containing the targets,
+which in turn amounts to minimizing the total entropy of the
+Bayesian histograms. The reward function does not use the
+true position of the targets and it is completely unsupervised.
+VI. A NALYSIS
+In this section we evaluate our method with a set of
+experiments. The experiments are designed around questions
+concerned about the performance of our method compared
+to several baseline approaches.
+A. Ofﬂine Trajectory Optimization
+We ﬁrst investigate whether we can generate optimal
+trajectories for a robot to minimize the uncertainty, given
+the true position of the targets.
+This problem has been addressed in two recent papers
+for bearing [28] and range-only [29] measurement models,
+where they study the optimal one-step action for the sensor
+so as to maximize the information about the target estimate.
+The cost function they provide for one-step maximization
+has the form: Jφ = sin(φ(pt−1,q ) −φ(pt,q ))2/d(pt,q )2,
+which is used to select the best action to move the sensor
+from position pt−1 topt when using bearing measurements.
+This expression closely resembles the geometric dilution
+of precision (GDOP) [30], commonly used in navigation
+systems. The uncertainty estimate using the GDOP function
+for a given sensor-target geometry is given by:
+UGDOP = d(pi,q ) ·d(pj,q )
+| sin(φ(pi,q ) −φ(pj,q ))|. (11)
+The ofﬂine algorithm we compare against is based on
+the minimization of the uncertainty measure U(P, q). This
+measure is equal to a constant times the GDOP function
+summed over all pairs of the measurement locations P . We
+call this ofﬂine algorithm O FFLINE -FISHER and present it in
+Algorithm 1.
+Algorithm 1 OFFLINE -FISHER
+Input: U: uncertainty function , q: target positions, T : time
+horizon, δp: step size
+Output: P1:T : a trajectory for minimizing the uncertainty
+of the target estimates
+1: p1 ← Starting position of the robot
+2: fort ← 2 to T do
+3: a∗
+t ← arg minat∈A
+∑m
+i=1 U(P1:t−1 ∪ {pt},qi)
+4: p∗
+t ←δp ·
+[
+cos(a∗
+t ); sin(a∗
+t )
+]
+; P1:t ←P1:t−1 ∪ {p∗
+t }
+5: returnP1:T
+B. Localizing Static Targets
+In practical settings, the true location of the targets are
+not available to us, therefore the algorithm needs to operate
+under uncertainty. The second method we compare against is
+a local greedy approach which chooses an action to minimize
+the conditional entropy given the past measurements of the
+targets, at each step. This approach is commonly used in
+practice and it resembles e.g. [31].
+In this section we present experimental evaluations com-
+paring our method against O FFLINE -FISHER and the local
+greedy algorithms. Speciﬁcally, we investigate the contribu-
+tion of having expected future rewards in the cost function,
+in contrast to optimizing only the next step.
+The environment used in our experiments is a 20 × 20
+square area. The robot step size is set to be 0.5 units,
+and the planning time-horizon is 50 steps. Variance of the
+sensor noise for bearing measurements is σ2
+s = 0.22 which
+corresponds to about 11◦, and for range measurements it is
+1. Each unit in the histogram has a resolution of 10, thus the
+dimensions of Ht are 200 × 200.
+(a) Target localization with bearing measurements
+(b) Target localization with range measurements
+Fig. 4: The trajectory of the robot acquiring bearing (a)
+and range (b) measurements, using the image representation.
+Both rows show the robot trajectory (red), true (blue) and
+predicted (yellow) target position, also the Bayesian his-
+togram as the colored heatmap. The insets contain the images
+taken as input to the network at corresponding instants. Best
+viewed in color.
+Localization of two targets with bearing and range-only
+measurements using the image representation is shown in
+Figure 4. The ﬁgure shows the measurements acquired from
+the targets by the robot, and its trajectory to minimize the
+uncertainty of the predictions by using the corresponding
+images. We see that the learned policy is able to generate
+smooth trajectories that can accurately localize multiple
+targets.
+We provide quantitative results for the localizing the
+targets using bearing and range-only measurements in Fig-
+ure 5. The plots show the mean localization error using
+four methods, averaged over 100 episodes. We compute
+the localization error by ﬁnding the point with the highest
+likelihood from the uncertainty histograms, and use it to
+calculate the mean distance error between the predicted and
+true target positions. We observe that both representations
+we use outperform the greedy strategy over the course of an
+episode, and have a performance very close to that of the
+ofﬂine algorithm.
+The mean localization error at the end of the episodes
+for each method is presented in Table I. Unsurprisingly, the
+best trajectories minimizing the localization uncertainty are
+generated by the ofﬂine algorithm, in all cases. We see that
+our method using either of the observation representation
+yields very close results to the ofﬂine algorithm. The perfor-
+mance of the two representations are similar using bearing
+measurements, however the multi-modal representation re-
+sults in better localization when using range measurements.
+A possible reason for this is the spatially characteristics of
+0 10 20 30 40 50
+Number of iterations
+0
+2
+4
+6
+8Localization error
+Ours (multimodal)
+Ours (image)
+Oﬄine-Fisher
+Local-Greedy
+(a) m = 4, bearing (φ)
+0 10 20 30 40 50
+Number of iterations
+0
+2
+4
+6
+8Localization error
+Ours (multimodal)
+Ours (image)
+Oﬄine-Fisher
+Local-Greedy (b) m = 8, bearing (φ)
+0 10 20 30 40 50
+Number of iterations
+0
+2
+4
+6
+8Localization error
+Ours (multimodal)
+Ours (image)
+Oﬄine-Fisher
+Local-Greedy
+(c) m = 4, range (d)
+0 10 20 30 40 50
+Number of iterations
+0
+2
+4
+6
+8Localization error
+Ours (multimodal)
+Ours (image)
+Oﬄine-Fisher
+Local-Greedy (d) m = 8, range (d)
+Fig. 5: Mean localization errors computed over 100 trials
+using bearing and range measurements from m = 4 , 8
+targets. Shaded area represents 1σ.
+the image in the case of range measurements. In bearing
+measurements the centroid of the high-likelihood pixels gives
+a reasonable prediction about the target position, which is
+not always the case for range measurements. However, in all
+experiments we see that our method outperforms the greedy
+strategy.
+Method m = 2 m = 4 m = 8
+φ
+Ofﬂine-Fisher 0.228 / 0.012 0.285 / 0.006 0.268 / 0.301
+Greedy-Local 2.599 / 0.404 2.444 / 0.190 2.406 / 0.284
+Ours (Multi-modal) 0.481 / 0.092 0.457 / 0.272 0.557 / 0.223
+Ours (Image) 0.479 / 0.255 0.305 / 0.041 0.618 / 0.256
+d
+Ofﬂine-Fisher 0.276 / 0.001 0.282 / 0.007 0.284 / 0.016
+Greedy-Local 1.357 / 0.264 1.430 / 0.137 1.388 / 0.381
+Ours (Multi-modal) 0.461 / 0.070 0.524 / 0.104 0.468 / 0.186
+Ours (Image) 0.990 / 0.257 0.646 / 0.299 0.954 / 0.336
+TABLE I: Mean and standard deviation of localization errors
+using bearing ( φ) and range ( d) measurements from static
+targets
+C. Localizing Dynamic Targets
+We next analyze the localization performance when the
+targets are moving locally in a contained area. The target
+movement is modeled by a 2D Brownian motion with a
+covariance of 0.1I2, similar to the setting in [12]. Our current
+formulation of the uncertainty histogram does not allow
+tracking targets performing large displacements. However,
+when the target motion is relatively small our method gives
+reasonable performances compared to the baseline algo-
+rithms.
+The results of this experiment are reported in Table II.
+We see that the error dynamics follow a similar trend to
+the case of stationary targets. Moreover, for all the methods
+Method m = 2 m = 4 m = 8
+φ
+Ofﬂine-Fisher 0.696 / 0.042 0.707 / 0.023 0.706 / 0.039
+Greedy-Local 3.177 / 0.396 2.851 / 0.305 2.810 / 0.257
+Ours (Multi-modal) 0.981 / 0.661 0.992 / 0.728 0.899 / 0.444
+Ours (Image) 0.901 / 0.215 0.699 / 0.140 1.031 / 0.368
+d
+Ofﬂine-Fisher 0.591 / 0.028 0.597 / 0.013 0.611 / 0.033
+Greedy-Local 1.985 / 0.106 2.003 / 0.149 2.159 / 0.338
+Ours (Multi-modal) 0.947 / 0.034 0.874 / 0.134 0.845 / 0.180
+Ours (Image) 1.312 / 0.328 0.978 / 0.279 1.390 / 0.195
+TABLE II: Localization errors using relative measurements
+from moving targets
+the localization performance degrades as the targets start to
+move.
+D. Generalization Performance
+The experiments reported so far evaluated the networks
+with the same number of targets they have seen during
+training. In this section we investigate the generalization
+performance of our method when there are more number
+of targets than what the network was trained on.
+Since the image representation is agnostic to the number
+of targets to be localized, testing our networks on generalized
+number of targets is seamless. In this set of experiments, we
+take our policy network trained with 2 targets and evaluate it
+on m = 6 and 12 targets. The results presented in Table III
+suggest that our method generalizes to localizing unseen
+number of targets, owing to the image representation it uses
+for the observations.
+Method m = 6 m = 12
+Ofﬂine-Fisher 0.315 / 0.067 0.286 / 0.038
+Greedy-Local 2.316 / 0.146 1.921 / 0.299
+Ours (Image) 0.729 / 0.202 0.728 / 0.267
+TABLE III: Generalization performance: Evaluation on m =
+6, 12 targets using a policy network trained to localize 2
+targets with bearing measurements
+VII. C ONCLUSION
+In this paper we presented a method for localizing multiple
+targets using bearing or range measurements. Leveraging
+recent advances in reinforcement learning and convolutional
+networks, our method is able to generate trajectories for a
+robot to localize targets when obtaining noisy relative obser-
+vations. We show that our method outperforms a standard
+greedy approach and performs similarly compared to an
+ofﬂine algorithm which has access to the true position of
+the targets, without knowing the true target locations.
+Future work includes tracking multiple targets that have
+adversarial movements. Another interesting research direc-
+tion is to study the target localization problem in higher di-
+mensions and cluttered environments such as animal tracking
+with an aerial vehicle in a forest.
+REFERENCES
+[1] Joshua Vander Hook, Pratap Tokekar, and V olkan Isler. Algorithms
+for cooperative active localization of static targets with mobile bearing
+sensors under communication constraints. IEEE Transactions on
+Robotics, 31(4):864–876, 2015.
+[2] Richard S Sutton and Andrew G Barto. Reinforcement learning: An
+introduction. MIT press, 2018.
+[3] Carlos Guestrin, Andreas Krause, and Ajit Paul Singh. Near-optimal
+sensor placements in gaussian processes. In Proceedings of the 22nd
+International Conference on Machine Learning, pages 265–272. ACM,
+2005.
+[4] Onur Tekdas and V olkan Isler. Sensor placement for triangulation-
+based localization. Transactions on Automation Science and Engi-
+neering, 7(3):681–685, 2010.
+[5] Krishnendu Chakrabarty, S Sitharama Iyengar, Hairong Qi, and Eu-
+ngchun Cho. Grid coverage for surveillance and target location
+in distributed sensor networks. IEEE transactions on computers ,
+51(12):1448–1453, 2002.
+[6] Shiyu Zhao, Ben M Chen, and Tong H Lee. Optimal placement of
+bearing-only sensors for target localization. In 2012 American Control
+Conference (ACC), pages 5108–5113. IEEE, 2012.
+[7] Sameera Ponda, Richard Kolacinski, and Emilio Frazzoli. Trajectory
+optimization for target localization using small unmanned aerial ve-
+hicles. In AIAA Guidance, Navigation, and Control Conference , page
+6015, 2009.
+[8] Simone Battistini and Tal Shima. Differential games missile guidance
+with bearings-only measurements. IEEE Transactions on Aerospace
+and Electronic Systems , 50(4):2906–2915, 2014.
+[9] Tal Shima and Josef Shinar. Time-varying linear pursuit-evasion game
+models with bounded controls. J. of Guidance, Control, and Dynamics,
+25(3):425–432, 2002.
+[10] Dirk Schulz, Wolfram Burgard, Dieter Fox, and Armin B Cremers.
+Tracking multiple moving targets with a mobile robot using particle
+ﬁlters and statistical data association. In Proceedings 2001 ICRA.
+IEEE International Conference on Robotics and Automation (Cat. No.
+01CH37164), volume 2, pages 1665–1670. IEEE, 2001.
+[11] Ting Yu and Ying Wu. Decentralized multiple target tracking using
+netted collaborative autonomous trackers. In IEEE Computer Society
+Conference on Computer Vision and Pattern Recognition , volume 1,
+pages 939–946. IEEE, 2005.
+[12] Haruki Nishimura and Mac Schwager. Sacbp: Belief space planning
+for continuous-time dynamical systems via stochastic sequential action
+control. In The 13th International Workshop on the Algorithmic
+Foundations of Robotics (WAFR) , 2018.
+[13] Heejin Jeong, Brent Schlotfeldt, Hamed Hassani, Manfred Morari,
+Daniel D Lee, and George J Pappas. Learning q-network for active
+information acquisition. In International Conference on Intelligent
+Robots and Systems (IROS) . IEEE, 2019.
+[14] Ruijie He, Abraham Bachrach, and Nicholas Roy. Efﬁcient planning
+under uncertainty for a target-tracking micro-aerial vehicle. In Inter-
+national Conference on Robotics and Automation , pages 1–8. IEEE,
+2010.
+[15] Karol Hausman, J ¨org M ¨uller, Abishek Hariharan, Nora Ayanian, and
+Gaurav S Sukhatme. Cooperative multi-robot control for target
+tracking with onboard sensing. The International Journal of Robotics
+Research, 34(13):1660–1677, 2015.
+[16] Alyssa Pierson and Daniela Rus. Distributed target tracking in
+cluttered environments with guaranteed collision avoidance. In Inter-
+national Symposium on Multi-Robot and Multi-Agent Systems (MRS) ,
+pages 83–89. IEEE, 2017.
+[17] Harry L Van Trees. Detection, estimation, and modulation theory, part
+I: detection, estimation, and linear modulation theory . John Wiley &
+Sons, 2004.
+[18] Adrian N Bishop, Baris Fidan, Brian DO Anderson, Kutluyil Dogan-
+cay, and Pubudu N Pathirana. Optimality analysis of sensor-target
+geometries in passive localization: Part 1-bearing-only localization. In
+3rd International Conference on Intelligent Sensors, Sensor Networks
+and Information, pages 7–12. IEEE, 2007.
+[19] Adrian N Bishop, Barıs ¸ Fidan, Brian DO Anderson, Kutluyıl
+Do˘ganc ¸ay, and Pubudu N Pathirana. Optimality analysis of sensor-
+target localization geometries. Automatica, 46(3):479–492, 2010.
+[20] Folker Hoffmann, Hans Schily, Alexander Charlish, Matthew Ritchie,
+and Hugh Grifﬁths. A rollout based path planner for emitter localiza-
+tion. 2019.
+[21] Oliver M Cliff, Robert Fitch, Salah Sukkarieh, Debra L Saunders, and
+Robert Heinsohn. Online localization of radio-tagged wildlife with an
+autonomous aerial robot system. In Robotics: Science and Systems ,
+2015.
+[22] Christopher JCH Watkins and Peter Dayan. Q-learning. Machine
+learning, 8(3-4):279–292, 1992.
+[23] Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. Deep
+residual learning for image recognition. In IEEE Conference on
+Computer Vision and Pattern Recognition , pages 770–778, 2016.
+[24] Scott Fujimoto, Herke Van Hoof, and David Meger. Addressing
+function approximation error in actor-critic methods. arXiv preprint
+arXiv:1802.09477, 2018.
+[25] Timothy P Lillicrap, Jonathan J Hunt, Alexander Pritzel, Nicolas
+Heess, Tom Erez, Yuval Tassa, David Silver, and Daan Wierstra.
+Continuous control with deep reinforcement learning. arXiv preprint
+arXiv:1509.02971, 2015.
+[26] V olodymyr Mnih, Koray Kavukcuoglu, David Silver, Andrei A Rusu,
+Joel Veness, Marc G Bellemare, Alex Graves, Martin Riedmiller,
+Andreas K Fidjeland, Georg Ostrovski, et al. Human-level control
+through deep reinforcement learning. Nature, 518(7540):529–533,
+2015.
+[27] Diederik P Kingma and Jimmy Ba. Adam: A method for stochastic
+optimization. arXiv preprint arXiv:1412.6980 , 2014.
+[28] Shaoming He, Hyo-Sang Shin, and Antonios Tsourdos. Trajectory
+optimization for target localization with bearing-only measurement.
+Transactions on Robotics , 35(3):653–668, 2019.
+[29] Shaoming He, Hyo-Sang Shin, and Antonios Tsourdos. Optimal active
+target localisation strategy with range-only measurements. 2019.
+[30] Alonzo Kelly. Precision dilution in triangulation based mobile robot
+position estimation. In Intelligent Autonomous Systems , volume 8,
+pages 1046–1053, 2003.
+[31] Mac Schwager, Philip Dames, Daniela Rus, and Vijay Kumar. A
+multi-robot control policy for information gathering in the presence
+of unknown hazards. In Robotics research, pages 455–472. Springer,
+2017.

@@ -1,0 +1,756 @@
+RF Source-Seeking by a Micro Aerial V ehicle using Rotation-Based
+Angle of Arrival Estimates
+Sriram V enkateswaran, Jason T. Isaacs, Kingsley Fregene, Richard Ratmansky, Brian M. Sadler,
+Jo˜ao P . Hespanha and Upamanyu Madhow
+Abstract— We investigate a computationally and memory
+efﬁcient algorithm for radio frequency (RF) source-seeking with
+a single-wing rotating micro aerial vehicle (MA V) equipped
+with a directional antenna. The MA V is assumed to have no
+knowledge of its position and to have only an estimate of
+orientation through a magnetometer . A key novelty of our
+approach is in exploiting the rotation of the MA V and the
+directionality of its RF antenna to derive estimates of the angle
+of arrival (AOA) at each rotation. The MA V then follows the
+estimated direction until the next rotation is complete. We
+prove convergence of this greedy algorithm under rather weak
+assumptions on the noise associated with the AOA estimates,
+using recent results on the property of recurrence for systems
+governed by stochastic difference inclusions. These convergence
+results are supplemented by simulations quantifying the amount
+of excess travel, relative to the straight line distance to the
+source. Indoor experiments using Lockheed Martin’s Samarai
+MA V demonstrate the efﬁcacy of the greedy algorithm both for
+static source-seeking, and for the more challenging problem of
+tracking a moving source.
+I. I NTRODUCTION
+We consider the problem of drawing in a micro aerial
+vehicle (MA V) towards an RF source by using the received
+signal strength (RSS) to guide the MA V’s trajectory. The
+RF beacon could originate from a source for search and
+rescue in civilian/military operations, or from a sensor that
+wishes to establish an on-demand high data rate link with the
+MA V . There are two key challenges in solving this problem:
+ﬁrst, since MA Vs are very small and light, the computa-
+tional power and the size of the RF sensors on-board an
+MA V are highly constrained. On the other hand, the spatial
+RF ﬁeld is complex and it is difﬁcult to make inferences
+from: waves scattered off reﬂectors lead to numerous local
+minima and maxima in signal strength at different locations,
+rendering simple source-seeking algorithms that rely on
+the local gradient information of the underlying ﬁeld very
+fragile. We alleviate these difﬁculties by jointly designing
+the MA V platform, the on-board sensors, and the source-
+seeking algorithm. This joint design provides us with enough
+ﬂexibility to adhere to all the complexity constraints and yet
+S. V enkateswaran, J. T. Isaacs, J. P . Hespanha and U. Madhow are
+with the Department of Electrical and Computer Engineering, University
+of California Santa Barbara, CA 93106. K. Fregene is with Lockheed
+Martin Advanced Technology Labs, Cherry Hill, NJ. B. M. Sadler is
+with Army Research Laboratory, Adelphi, MD 20783. Email: {sriram, jti-
+saacs, hespanha, madhow }@ece.ucsb.edu, kingsley.fregene@lmco.com and
+brian.m.sadler6.civ@mail.mil.
+This work was supported by the Institute for Collaborative Biotechnolo-
+gies through grant W911NF-09-0001 from the U.S. Army Research Ofﬁce.
+The content of the information does not necessarily reﬂect the position or the
+policy of the Government, and no ofﬁcial endorsement should be inferred.
+build a system that is very efﬁcient in terms of minimizing
+the distance traversed while localizing the source.
+Motor/propeller
+Trailing-edge 
+Flap
+Conformal 
+Antenna 
+(Directional)
+XBee Radio
+Avionics Pod
+Sunday, September 16, 12
+Fig. 1. A photograph of the MA V ﬁtted with a conformal antenna and an
+Xbee radio. As the antenna rotates, the MA V estimates the source bearing
+to be the direction in which the RSS is largest and moves in this direction.
+We use the single-wing rotating Samarai MA V presented
+in [1]. It consists of a pod-like structure that houses the elec-
+tronics (including the microprocessor) and a rotating blade
+that is ﬁtted to the avionics pod as shown in Figure 1. This
+design, inspired by the structure of maple seeds, has numer-
+ous mechanical advantages: it is simple, it is stable in hover,
+it has clean aerodynamics and it has a factor of ten smaller
+wing loading than conventional designs, which signiﬁcantly
+reduces its power requirement. We attach a directional RF
+antenna to the rotating blade, which is key towards solving
+the source-seeking problem with low complexity: as the
+antenna rotates, we can measure the signal power incident
+from different directions. In a Line-of-Sight (LoS) scenario,
+the direction in which the RSS is maximal provides the
+bearing to the source. We build on this idea in choosing the
+MA Vs path: after each rotation of the MA V , we average the
+angular RSS pattern observed over the previous few rotations
+and pick the direction in which the average RSS is largest.
+The MA V translates in this direction even as it continues
+to rotate and the process is repeated at the end of the next
+rotation. There is no mobility cost involved in making these
+bearing measurements, which is not the case for platforms
+that are not constantly rotating (such as ﬁxed wing aircraft or
+ground robots), where a rotation of the platform necessarily
+slows down the translational motion. In our case, the single-
+wing MA V rotates whether it is translating or hovering and,
+therefore, the bearing information is always available. This
+scheme is also easy to implement: all that is needed for sens-
+ing is a directional antenna and a magnetometer (to establish
+a reference direction) and, in terms of storage/computation
+we only need to compute a running average of angular RSS
+patterns and choose the best direction.
+While the simplicity of the proposed scheme makes it
+attractive, we also need to demonstrate that it is effective
+in realistic settings when the received signal includes inter-
+ference from reﬂected paths in addition to the Line-of-Sight
+path. To provide some analytical insight into this question,
+we consider a simple model where each bearing estimate is
+either (a) the true bearing plus some relatively small additive
+noise, or (b) a complete outlier, perhaps originating off some
+reﬂectors whose positions we do not explicitly model. The
+latter occurs with some “outlier” probability p, while the
+former occurs with probability 1−p. We prove convergence
+results for this model under two different, but both relatively
+weak, assumptions on the sequence of outlier values that we
+observe, thereby establishing the robustness of the algorithm.
+We then present simulations to quantify the performance of
+the proposed algorithm and experimental results that validate
+the theory and the simulations.
+Contributions: Our main contributions can be summarized
+as follows:
+•We propose a simple architecture for localizing an
+RF source using bearing measurements from a directional
+antenna mounted on a rotating MA V .
+•We introduce an RF seeking algorithm that consists of
+three steps: (i) form the spatial RSS pattern observed after
+each rotation, (ii) reduce noise by passing the spatial RSS
+proﬁle through an autoregressive ﬁlter and (iii) instruct the
+MA V to translate in the direction for which the averaged
+RSS pattern is largest.
+•We prove two convergence results for a stochastic model
+of the proposed source-seeking algorithm: We ﬁrst show that
+when the sequence of values taken by the outlier angles is
+independent and identically distributed (and extremely weak
+conditions that quantify how “small” the additive noise can
+be), the MA V will return to a small ball surrounding the
+source inﬁnitely often. When the outlier bearings originate
+off a few ﬁxed reﬂectors, assuming the outlier values to be
+independent might be optimistic. To avoid this assumption,
+we prove a similar result under more relaxed criteria on
+the sequence of outliers , but stronger assumptions on the
+probability with which they occur. Speciﬁcally, we show
+that if the outlier probability p is smaller than a threshold
+depending only on the additive noise distribution, then no
+matter how the outlier values arise , the MA V will return to
+a small ball surrounding the source inﬁnitely often.
+•We present detailed Monte Carlo simulations to quantify
+the excess distance traversed by the MA V relative to the
+straight-line distance between its starting location and the
+source. Under the independent outlier model, we ﬁnd that
+even for relatively large values of the outlier probability p
+and additive noise, the excess distance traversed is small.
+•We present experimental results where an MA V seeks
+an RF source starting from a distance of about 50m. While
+the algorithm is designed with stationary sources in mind,
+we show through our experiments that it is equally effective
+in following mobile sources.
+Related Work: Source-seeking and localization of RF emit-
+ters has been a topic of extensive recent research. Much of
+the relevant related work falls into one or more of three
+categories, source-seeking, network localization, and bearing
+estimation.
+Source-seeking with mobile agents has been studied for a
+number of fairly general signal ﬁelds and vehicle models [2–
+5]. While the concepts proposed in some of these references
+can be applied to the speciﬁc problem of seeking an RF
+source, we ﬁnd that exploiting the properties of the RF ﬁeld
+and the sensing architecture gives us substantial beneﬁts.
+Closer to our work, in [6], the motion of a mobile robot
+is utilized along with an omni-directional radio to estimate
+the RSS gradient by taking signal strength measurements
+at a sequence of locations. This method depends on the
+mobile robot to accurately know its position relative to the
+starting point of the gradient measurement and also relies
+on monotonicity and symmetry of the signal strength decay
+as a function of distance between transmitter and receiver
+which may be problematic under multi-path scenarios. The
+problems of frontier exploration and radio source-seeking
+were addressed in [7] by using local RSS gradient estimates
+to govern which frontier waypoint to approach. In [8], a
+rotating directional antenna is mounted on a wheeled mobile
+robot for the purpose of wireless node localization. The
+RSS is measured as a function of antenna angle and cross-
+correlation with a known antenna gain pattern is used to
+determine the relative bearing between an unknown radio
+source and the mobile robot. A particle ﬁlter is used to
+determine the location of the unknown radio source. Unlike
+our work, [8] needs to attach a servo motor for the robot to
+rotate, leading to extra payload and power requirements. A
+different approach to source-seeking that uses RSS measure-
+ments from an omnidirectional antenna mounted on a UA V
+to compute the spatial gradient is described in [9].
+The fundamental problem of bearing estimation has re-
+ceived a lot attention. For example, a direction-of-arrival
+(DOA) sensor constructed using an actuated parabolic reﬂec-
+tor is described in [10]. The DOA is found by identifying the
+direction of the maximum received signal strength indicator.
+In [11], the authors make the clever observation that while
+rotating a wireless antenna around a signal-blocking obstacle
+one can infer the angle of arrival of the received signal from
+the direction in which the signal was most attenuated.
+In both [12] and [13], a mobile robot is equipped with
+a directional antenna for the purpose of localizing multiple
+stationary nodes in a wireless network. A localization algo-
+rithm based on a particle ﬁlter was used in [12], while a spa-
+tiotemporal probability occupancy grid was used in [13] to
+track posterior probability distributions of source locations.
+A Multi-Hypothesis Extended Kalman Filter framework is
+used to localize agents in a mobile robot team in [14], where
+each robot is equipped with an antenna that provides a π
+periodic estimate of the relative bearing between each pair
+of communicating agents.
+Antenna&Gain&Pa*ern&
+Fig. 2. The gain pattern of the directional antenna ﬁtted on the rotating
+wing of the MA V .
+II. RSS M EASUREMENTS & A LGORITHM
+The MA V is ﬁtted with an XBee radio with a custom
+designed directional antenna whose gain pattern in the az-
+imuthal plane is shown in Figure 2. We use the antenna to
+make RSS measurements 600 times a second as the MA V
+rotates and translates. We denote the RSS measurement at
+time t by Pt. At the same time t, we use a magnetometer
+to estimate the antenna’s orientation relative to a reference
+direction and denote it by βt.
+In a single path Line-of-Sight environment, the bearing
+to the source is given by the direction in which the RSS
+is largest as the MA V rotates. While this observation forms
+the basis of our algorithm, we need to modify it to better
+handle practical settings, where the received signal may have
+signiﬁcant measurement noise, leading to large errors. To
+reduce such errors, we average the variations in the RSS
+patterns over multiple rotations.
+Our implementation is further constrained by the fact that
+RSS patterns from different rotations can only be averaged
+in a coarse manner. As the MA V rotates, it only makes RSS
+measurements at discrete antenna orientations (say, spaced
+7◦ apart) and are not necessarily integer divisors of 360◦.
+Therefore, the angles at which the RSS is measured varies
+across multiple rotations. Consequently, we coarsely average
+the RSS pattern over multiple rotations as follows: we split
+the angular space into appropriately sized bins so that, in
+every rotation, there is at least one RSS measurement in each
+bin. We use all the measurements that fall into a bin over a
+rotation to update the average RSS value corresponding to
+that bin.
+Speciﬁcally, our algorithm proceeds in the following man-
+ner:
+1) We divide the angular space into B bins, with the bth
+bin spanning [ 2π
+B (b−1), 2π
+Bb], b = 1, 2,...,B .
+2) We maintain an average RSS value for each bin and
+denote the value in the bth bin by Q[b].
+3) As the MA V rotates, suppose that we get an RSS
+measurement Pt and the corresponding yaw for the
+MA Vβt. We identify the bin in which the yaw falls
+(say bin b0) and update the average RSS in this bin
+using an autoregressive ﬁlter:
+Q[b0]←αQ[b0] + (1−α)Pt. (1)
+4) At the end of a rotation, we pick the bin that has the
+largest value of the average RSS Q[b]. Denoting this
+bin by ˆb, we instruct the MA V to ﬂy in a direction that
+makes an angle of 2πˆb/B with the azimuth.
+5) We return to Step 3 and repeat the process.
+In the rest of the paper, we assume that the bin size B is
+given. A detailed analysis of the impact of the bin size is
+left for future work.
+III. A NALYSIS
+We now provide analytical insight into the algorithm
+using a stochastic model for the bearing measurements made
+after each rotation and proving that, under this model, the
+proposed algorithm will converge.
+The bearing estimates typically fall into one of two cate-
+gories: (a) they are roughly correct, with small errors that can
+be attributed to the bin quantization and small measurement
+noise or (b) they are outliers and have large errors, either
+due to large measurement noise or because signals from
+reﬂected paths distort the bearing estimate. We propose a
+ﬁrst-order model to capture these possibilities: we assume
+that reasonably correct estimates occur with probability 1−p
+and outlier estimates occur with probability p. We analyze
+the algorithm under two different models for the sequence of
+outliers. First, we consider outlier values that are independent
+of one another, potentially caused by measurement noise
+that is occasionally large. Subsequently, we analyze the case
+where the outlier values are arbitrary and possibly highly
+correlated. This could arise from outlier estimates caused by
+reﬂectors, which typically would not be independent of each
+other. In both cases, we use recently established Lyapunov
+results to prove the recurrence of appropriately deﬁned sets
+for discrete-time differential inclusions.
+A. Stochastic Motion Model
+Suppose that, after the kth rotation, the MA V makes
+a bearing estimate ψk of an RF source according to the
+following model:
+ψk = (1−σk)(θk +nk) +σkwk, ∀k∈Z≥ 0, (2)
+where θk denotes the true direction of the source after
+the kth rotation, nk an i.i.d. sequence of additive noise,
+wk is a sequence of outlier measurements (not necessarily
+independent), and σk∈{0, 1}an i.i.d. sequence of Bernoulli
+random variables with parameter p ∈[0, 1). The event
+σk = 1 corresponds to the sensor producing an outlier
+measurement after the kth rotation, that is unrelated to the
+true direction of the source.
+Assuming the source is at the origin and the MA V is at
+(xk,y k), the true source direction θk satisﬁes
+cosθk =−xk
+rk
+, sinθk =−yk
+rk
+.
+where rk :=
+√
+x2
+k +y2
+k is the MA V’s distance from the
+source.
+We assume that at each time step, the MA V moves in the
+estimated source direction ψk for a ﬁxed distance h. Thus,
+the MA V’s position satisﬁes the recursive relationship
+[
+xk+1
+yk+1
+]
+=
+[
+xk
+yk
+]
++h
+[
+cosψk
+sinψk
+]
+(3)
+Using the trigonometric expansions
+cos(θk +nk) =−xk cosnk
+rk
++ yk sinnk
+rk
+,
+sin(θk +nk) =−xk sinnk
+rk
+−yk cosnk
+rk
+,
+in (3), we conclude that
+[
+xk+1
+yk+1
+]
+= (1−σk)
+[
+(1−hr− 1
+k cosnk)xk +hykr− 1
+k sinnk
+(1−hr− 1
+k cosnk)yk−hxkr− 1
+k sinnk
+]
++
+σk
+[
+xk +h coswk
+yk +h sinwk
+]
+.
+B. Stochastic Outliers
+We begin by considering the case where the sequence of
+outlier measurements wk are i.i.d.
+Lemma 1: Assume that nk, wk, and σk are i.i.d. se-
+quences with
+E[coswk] = E[sinwk] = 0, (4)
+and that
+η:= E[cosnk]> 0. (5)
+Then, the set
+O :=
+{
+(x,y )∈R2 :
+√
+x2 +y2 < h
+2(1−p)η
+}
+is globally recurrent for (3). □
+Before proving this result, it is worth emphasizing that this
+result holds under fairly mild assumptions: The condition (5)
+essentially requires the additive noise angle nk to be mostly
+concentrated in the region [−π/2,π/ 2] for which the cosine
+is positive. The condition (4) requires some symmetry in the
+distribution of the outlier measurements so that the average
+of its sine and cosine are both zero.
+Proof of Lemma 1. Deﬁning V (x,y ) := α(x2 + y2), we
+have
+E[V (xk+1,y k+1)−V (xk,y k)|xk,y k]
+=αE
+[
+(1−σk)
+(
+(1−hr− 1
+k cosnk)2r2
+k +h2 sin2nk
+)
++
+σk
+(
+r2
+k +h2 + 2hxk coswk + 2hyk sinwk
+)
+−r2
+k|xk,y k
+]
+=αE
+[
+(1−σk)(1 +h2r− 2
+k cos2nk−2hr− 1
+k cosnk)r2
+k+
+σk
+(
+h2 + 2hxk coswk + 2hyk sinwk
+)
++ (σk−1)r2
+k+
+(1−σk)h2 sin2nk|xk,y k
+]
+=αE
+[
+h2−2h(1−σk)rk cosnk + 2hσkxk coswk+
+2hσkyk sinwk|xk,y k
+]
+.
+Using the fact that nk, wk, and σk are i.i.d., we conclude
+that
+E[V (xk+1,y k+1)−V (xk,y k)|xk,y k]
+=αh2 + 2αhp(xkE[coswk] +ykE[sinwk])
+−2αh(1−p)E[cosnk]rk
+=−2αh(1−p)ηrk +αh2,
+where we used (4) in the second equality. Setting α:= 1/h 2,
+we have
+E[V (xk+1,y k+1)−V (xk,r k)|xk,y k]
+=−2h− 1(1−p)ηrk + 1 =−ρ(rk) +I<ϵ(rk),
+where
+ρ(r) =
+{
+2h− 1(1−p)ηr r<ϵ
+2h− 1(1−p)ηr−1 r≥ϵ
+andI<ϵ(r) is the indicator function taking the value 1 when
+r < ϵand 0 otherwise. Assuming that η >0, this function
+is positive as long as
+2h− 1(1−p)ηϵ>1⇔ϵ> h
+2(1−p)η,
+from which we can conclude that the following set is globally
+recurrent
+O :=
+{
+(x,y )∈R2 :
+√
+x2 +y2 < h
+2(1−p)η
+}
+[15], i.e., the state (xk,r k) will always return to this set with
+probability one.
+C. Worst-case outliers
+When the outliers result from reﬂections off a speciﬁc
+object, the sequence of outliers wk need not be i.i.d. To
+account for such scenarios, we allow for any arbitrary (worst-
+case) sequence of outliers wk∈[0, 2π].
+Lemma 2: Assume thatnk andσk are i.i.d. sequences and
+that
+p< η√
+2 +η, η := E[cosnk]> 0. (6)
+Then, the set
+O :=
+{
+(x,y )∈R2 :
+√
+x2 +y2 < h
+2(η−pη−p
+√
+2)
+}
+is globally recurrent for any solution to (3) that is adapted
+to the ﬁltration generated by (nk,σk), k∈Z≥ 0 with wk∈
+[0, 2π]. □
+We emphasize that Lemma 2 no longer places any assump-
+tion on the sequence of outliers. The price to pay is that we
+can only guarantee convergence when the probability of an
+outlier measurement satisﬁes (6). Lemma 2 applies to any
+solution to (3) that is adapted to the ﬁltration generated by
+(nk,σk), k∈Z≥ 0. This technical condition is needed when
+one mixes worst-case selections with stochastic processes
+and it essentially excludes the possibility for selections of a
+worst-case outlier wk that depends on future realizations of
+the stochastic processes ηℓ, σℓ, for ℓ>k[15].
+Proof of Lemma 2. As in the proof of Lemma 1, we ﬁnd a
+globally recurrent set by computing
+E[sup
+wk
+V (xk+1,y k+1)−V (xk,y k)|xk,y k]
+=αE
+[
+sup
+wk
+h2−2h(1−σk)rk cosnk + 2hσkxk coswk+
+2hσkyk sinwk|xk,y k
+]
+=αE
+[
+h2−2h(1−σk)rk cosnk + 2hσk(|xk|+|yk|)|xk,y k
+]
+=αh2−2αh(1−p)ηrk + 2αhp(|xk|+|yk|).
+Using the fact that
+|xk|+|yk|≤
+√
+2rk,
+we conclude that
+E[sup
+wk
+V (xk+1,y k+1)−V (xk,y k)|xk,y k]
+≤−2αh
+(
+(1−p)η−p
+√
+2
+)
+rk +αh2.
+Setting α:= 1/h 2, we have
+E[V (xk+1,y k+1)−V (xk,r k)|xk,y k]
+≤−2h− 1(
+(1−p)η−p
+√
+2
+)
+rk + 1 =−ρ(rk) +I<ϵ(rk),
+where
+ρ(r) :=
+{
+2h− 1(
+(1−p)η−p
+√
+2
+)
+r r<ϵ
+2h− 1(
+(1−p)η−p
+√
+2
+)
+r−1 r≥ϵ.
+Assuming that
+(1−p)η−p
+√
+2> 0⇔p< η√
+2 +η,
+this function is positive as long as
+2h− 1(
+(1−p)η−p
+√
+2
+)
+ϵ>1⇔ϵ> h
+2(η−pη−p
+√
+2),
+from which we can conclude that the following set is globally
+recurrent
+O :=
+{
+(x,y )∈R2 :
+√
+x2 +y2 < h
+2(η−pη−p
+√
+2)
+}
+[15], i.e., the state (xk,r k) will always return to this set with
+probability one.
+Fig. 3. Average stretch for different choices of outlier probability p and
+standard deviation of additive noise σ .
+IV. S IMULATION RESULTS
+To simulate the algorithm, we begin with the RF source
+at the origin of a two-dimensional plane and the MA V at
+position (50m, 50m). At each time step, the MA V makes
+a bearing measurement according to the model in (2). The
+additive noise nk and the outliers wk are both independent
+across time with nk∼N (0,σ2) andwk is chosen uniformly
+from [0, 2π]. The MA V then moves a distance h = 0. 1m
+in the direction of the bearing, after which the process is
+repeated. We terminate the simulation when the MA V is
+within 1m of the source. We run simulations for multiple
+values of the outlier probability p between 0 and 0.6 and the
+standard deviation of the additive noise σbetween 0 andπ/3.
+For each choice of p andσ, we run 1200 trials. We quantify
+the algorithm’s performance by its stretch, deﬁned to be the
+ratio of the distance traversed by MA V and the straight-line
+distance between the source and the MA V’s starting location.
+We plot the average stretch for different choices of p andσ
+in Figure 3. We observe that even for relatively large values
+ofp andσ, the stretch is fairly small. For example, the stretch
+is only 1. 6 even when outliers occur with a probability p =
+0. 4 and the noise standard deviation σ= 20 ◦.
+We plot the distribution of the stretch in Figure 4 to
+understand the variability in performance. Speciﬁcally, we
+plot histograms of the stretch for different values of σ, with
+p set to 0. 2667 in Figure 4(a). Similarly, Figure 4(b) plots
+histograms of the stretch for different choices of p with
+σ= 0. 4654. We see from this ﬁgure that the distribution
+in the stretch increases fairly fast with the probability of
+outliers. On the other hand, Figure 4(a) shows that the
+distribution in the stretch increases much more slowly with
+the standard deviation of the additive noise σ. The reason for
+this is intuitive: additive noise perturbs the true estimate, but
+the MA V still moves in the general direction of the source.
+Outliers, however, can send the MA V in any direction. Thus,
+(a) Distribution of stretch for differ-
+ent values of σ , with p set to 0. 2667.
+(b) Distribution of the stretch for dif-
+ferent values of p, with σ set to
+0. 4654.
+Fig. 4. Distribution of the stretch as we vary one of the two parameters p
+and σ while holding the other ﬁxed.
+Fig. 5. Distribution of Angle of Arrival errors.
+as the probability of outliers increase, the MA V makes
+random-walk like steps more frequently, thereby increasing
+the variability in the stretch.
+V. E XPERIMENTAL RESULTS
+A. Angle of Arrival V eriﬁcation Test
+The ﬁrst experiment was designed to characterize the
+bearing errors seen by the MA V as well as the probability
+of an outlier. The experiments were conducted in a domed
+soccer ﬁeld complex. We instructed the MA V to ﬂy in a criss-
+cross pattern around a stationary source while recording the
+AOA estimate, GPS location of the source, GPS location of
+the MA V , and raw RSS. The histogram of the error between
+the estimated AOA and ground truth AOA calculated from
+comparing GPS measurements of the MA V and source can
+be seen in Figure 5. Out of 2671 AOA estimates there were
+613 errors of greater than π/3, and the mean and standard
+deviation of all 2671 measurements were −0. 04 and 1. 02
+radians, respectively.
+B. Stationary Source-Seeking and Mobile Source-Tracking
+We ran several experiments using the algorithm described
+in Section II with the shortest distance between the MA V’s
+starting position and the source at roughly 50 meters. In the
+example run shown in Figure 6, the MA V started at a distance
+(a) MA V’s trajectory as it seeks a stationary source located at the
+origin.
+(b) Headings computed by MA V after each rotation
+Fig. 6. Results from MA V seeking a stationary source showing the MA V’s
+trajectory and the headings that it follows.
+of 55.16 meters and covered distance of 59.85 meters to
+ﬁnd the source. The sequence of bearing estimates computed
+using the source-seeking algorithm is plotted in Figure 6(b).
+In addition to the successful experiments with a stationary
+source, we have also found in preliminary tests that the
+greedy algorithm is successful in tracking a moving source.
+An example run is shown in Figure 7. The source (red
+trace) starts at [7,−23] while the MA V (blue trace) starts
+at [6,−14]. As the MA V gets close to the source, the
+source moves in the positive Y direction. Then the source
+moves to [−9,−4], the MA V follows, overshoots the source
+location slightly, and returns towards the source. The MA V
+repeats this behavior as the source moves. We also plot the
+sequence of bearing estimates computed using the source-
+seeking algorithm in Figure 7(b).
+VI. C ONCLUSIONS
+We have proposed and demonstrated a minimalist architec-
+ture for RF source-seeking using a lightweight rotating MA V .
+The key idea is to derive bearing estimates using a directional
+antenna on the MA V’s rotating blade. Greedy translation in
+the direction of these bearing estimates is proven to converge
+even in the presence of outliers which are not necessarily
+independent, and the dependence of stretch (relative to the
+shortest path) on the statistics of the measurement noise
+and outliers is quantiﬁed via simulations. Indoor experiments
+(a) MA V’s trajectory as it tracks a moving source
+(b) Headings computed by MA V after each rotation
+Fig. 7. Results from MA V tracking a moving source showing the MA V’s
+trajectory and the headings that it follows.
+demonstrate the performance of the algorithm both for static
+and moving sources. Important topics for future work include
+reﬁnement of our analytical model based on electromagnetic
+propagation modeling, extending source seeking to three
+dimensions by electrically steering the antenna pattern or
+mechanically orienting the MA V , extension of our analytical
+framework to mobile sources and realistic MA V motion
+models, and detailed experimental validation in both indoor
+and outdoor environments.
+VII. A CKNOWLEDGMENT
+We would like to thank Aseem Wadhwa at UCSB for
+helping with an earlier version of the experiments.
+REFERENCES
+[1] K. Fregene and C. Bolden, “Dynamics and control of a
+biomimetic single-wing nano air vehicle,” in American
+Control Conference , Baltimore, MD, June 2010, pp.
+51–56.
+[2] C. Mayhew, R. Sanfelice, and A. Teel, “Robust source-
+seeking hybrid controllers for autonomous vehicles,”
+in American Control Conference , New Y ork, NY , July
+2007, pp. 1185–1190.
+[3] A. R. Mesquita, J. P . Hespanha, and K. ˚Astr¨om,
+“Optimotaxis: A stochastic multi-agent on site opti-
+mization procedure,” in Hybrid Systems: Computation
+and Control , ser. Lecture Notes in Computer Science,
+M. Egerstedt and B. Mishra, Eds. Springer-V erlag,
+2008, no. 4981, pp. 358–371.
+[4] S.-J. Liu and M. Krstic, “Stochastic nonholonomic
+source seeking,” in IEEE Conference on Decision and
+Control, Atlanta, GA, December 2010, pp. 6985–6990.
+[5] S. Azuma, M. Sakar, and G. Pappas, “Nonholonomic
+source seeking in switching random ﬁelds,” in IEEE
+Conference on Decision and Control , Atlanta, GA,
+December 2010, pp. 6337–6342.
+[6] K. Dantu, P . Goyal, and G. S. Sukhatme, “Relative
+bearing estimation from commodity radios,” in IEEE
+International Conference on Robotics and Automation ,
+Kobe, Japan, May 2009, pp. 3215–3221.
+[7] J. Twigg, J. Fink, P . Y u, and B. Sadler, “RSS gradient-
+assisted frontier exploration and radio source local-
+ization,” in International Conference on Robotics and
+Automation, St. Paul, MN, May 2012, pp. 889–895.
+[8] J. Graefenstein, A. Albert, P . Biber, and A. Schilling,
+“Wireless node localization based on RSSI using a
+rotating antenna on a mobile robot,” in Workshop on
+Positioning, Navigation and Communication , Hanover,
+Germany, March 2009, pp. 253–259.
+[9] A. Wadhwa, U. Madhow, J. Hespanha, and B. Sadler,
+“Following an RF trail to its source,” in 49th Annual
+Allerton Conference on Communication, Control and
+Computing, Monticello, IL, October 2011, pp. 580–587.
+[10] B. Hood and P . Barooah, “Estimating DoA from radio-
+frequency RSSI measurements using an actuated reﬂec-
+tor,” IEEE Sensors Journal, vol. 11, no. 2, pp. 413–417,
+2011.
+[11] Z. Zhang, X. Zhou, W. Zhang, Y . Zhang, G. Wang,
+B. Y . Zhao, and H. Zheng, “I am the antenna: accurate
+outdoor AP location using smartphones,” in Conference
+on Mobile Computing and Networking , Las V egas, NV ,
+2011, pp. 109–120.
+[12] D. Song, J. Yi, and Z. Goodwin, “Localization of
+unknown networked radio sources using a mobile robot
+with a directional antenna,” in American Control Con-
+ference, New Y ork, NY , July 2007, pp. 5952–5957.
+[13] D. Song, C.-Y . Kim, and J. Yi, “Monte Carlo si-
+multaneous localization of multiple unknown transient
+radio sources using a mobile robot with a directional
+antenna,” in International Conference on Robotics and
+Automation, Kobe, Japan, May 2009, pp. 3154–3159.
+[14] J. Derenick, J. Fink, and V . Kumar, “Localization
+using ambiguous bearings from radio signal strength,”
+in International Conference on Intelligent Robots and
+Systems, San Francisco, CA, Sept 2011, pp. 3248–3253.
+[15] A. R. Teel, J. P . Hespanha, and A. Subbaraman,
+“Stochastic difference inclusions: results on recurrence
+and asymptotic stability in probability,” in IEEE Con-
+ference on Decision and Control , Maui, HI, December
+2012, to appear.

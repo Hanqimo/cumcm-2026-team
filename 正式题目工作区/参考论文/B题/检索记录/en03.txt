@@ -1,0 +1,1673 @@
+668 IEEE TRANSACTIONS ON ROBOTICS, VOL. 28, NO. 3, JUNE 2012
+Simultaneous Localization of Multiple Unknown and
+Transient Radio Sources Using a Mobile Robot
+Dezhen Song, Senior Member, IEEE, Chang-Young Kim, Student Member, IEEE,
+and Jingang Yi, Senior Member, IEEE
+Abstract—We report system and algorithm developments that
+utilize a single mobile robot to simultaneously localize multiple un-
+known transient radio sources. Because of signal source anonymity,
+short transmission durations, and dynamic transmission patterns,
+the robot cannot treat the radio sources as continuous radio bea-
+cons. To deal with this challenging localization problem, we model
+the radio source behaviors using a novel spatiotemporal probabil-
+ity occupancy grid that captures transient characteristics of radio
+transmissions and tracks posterior probability distributions of ra-
+dio sources. As a Monte Carlo method, a ridge walking motion
+planning algorithm is proposed to enable the robot to efﬁciently
+traverse the high-probability regions to accelerate the convergence
+of the posterior probability distribution. We also formally show
+that the time to ﬁnd a radio source is insensitive to the number
+of radio sources, and hence, our algorithm has great scalability.
+We have implemented the algorithms and extensively tested them
+in comparison with two heuristic methods: a random walk and a
+ﬁxed-route patrol. The localization time of our algorithms is con-
+sistently shorter than that of the two heuristic methods.
+Index Terms—Localization, networked robots, wireless sensor
+network.
+I. I NTRODUCTION
+A
+WIRELESS sensor network is usually composed of a
+large number of miniature wireless sensor nodes with self-
+conﬁgurable ad hoc networking capabilities. Its ability to col-
+lect and gather information remotely over a large region makes
+it a powerful tool in many applications. It may be used as a
+new espionage tool that threatens our security and privacy. For
+example, an enemy may deploy a sensor network in a battle-
+ﬁeld to detect our troop movements. We need a countermeasure
+for the potential misuse of the fast-developing sensor-network
+technology.
+From a listener perspective, a wireless sensor network is a
+large set of multiple unknown transient radio sources. Here,
+we report system and algorithm developments that enable a
+Manuscript received June 14, 2011; revised November 15, 2011; accepted
+January 3, 2012. Date of publication February 3, 2012; date of current version
+June 1, 2012. This paper was recommended for publication by Associate Editor
+J. A. Castellanos and Editor D. Fox upon evaluation of the reviewers’ comments.
+This work was supported in part by the National Science Foundation under
+CAREER Grant IIS-0643298 and Grant MRI-0923203.
+D. Song and C.-Y . Kim are with the Department of Computer Science and
+Engineering, Texas A&M University, College Station, TX 77843 USA (e-mail:
+dzsong@cs.tamu.edu; kcyoung@cs.tamu.edu).
+J. Yi is with the Department of Mechanical and Aerospace Engineering,
+Rutgers University, Piscataway, NJ 08854 USA (e-mail: jgyi@rutgers.edu).
+Color versions of one or more of the ﬁgures in this paper are available online
+at http://ieeexplore.ieee.org.
+Digital Object Identiﬁer 10.1109/TRO.2012.2183069
+Fig. 1. Schematics of deployment of a single mobile robot to localize unknown
+transient radio sources. The radio sources with dashed circles indicate that they
+are sending radio signals.
+single mobile robot to simultaneously localize multiple un-
+known transient radio sources (see Fig. 1). Since the robot is
+equipped with a directional antenna and on-board positional
+sensors, the robot knows its own position and can detect re-
+ceived signal strengths (RSS) as it travels in the ﬁeld of radio
+sources. When the radio sources and communication protocols
+are unknown, the robot cannot treat the radio sources as contin-
+uous radio beacons. More speciﬁcally,
+1) the number of radio sources is unknown,
+2) the periods of radio transmission are short,
+3) the signal source cannot be identiﬁed, and
+4) radio sources transmit intermittently.
+To deal with this challenging localization problem, we model
+the radio source behaviors using a novel spatiotemporal proba-
+bility occupancy grid (SPOG) that captures transient characteris-
+tics of radio transmissions and tracks their posterior probability
+distributions. We then propose an SPOG update algorithm that
+incrementally updates the SPOG as radio transmissions are in-
+tercepted. We also propose a Monte Carlo ridge walking motion
+planning algorithm that enables the robot to efﬁciently traverse
+high-probability regions to accelerate the convergence of the
+posterior probability distributions of radio source locations. We
+formally show that the time to ﬁnd a radio source is insensi-
+tive to the number of radio sources, and hence, our algorithm
+has great scalability. We have implemented the algorithms and
+extensively tested them in comparison with two heuristics: a
+random walk and a ﬁxed-route patrol. In experiments, the local-
+ization time of our algorithms is consistently shorter than that
+of the two heuristic methods.
+The rest of the paper is organized as follows. We begin with a
+review of related work in Section II. We present the system archi-
+tecture and the problem deﬁnition in Section III. In Section IV,
+we introduce the sensing model. Building on the outcome of
+1552-3098/$31.00 © 2012 IEEE
+SONG et al.: SIMULTANEOUS LOCALIZATION OF MULTIPLE UNKNOWN AND TRANSIENT RADIO SOURCES USING A MOBILE ROBOT 669
+the sensing model, a robot motion planer is introduced in
+Section V. The overall algorithms and localization time bounds
+are presented in Section VI. We validate our model and al-
+gorithm through experiments in Section VII. We conclude the
+paper in Section VIII.
+II. R ELATED WORK
+Localization of unknown transient radio sources relates to
+three research ﬁelds that includes radio frequency (RF)-based
+localization, simultaneous localization and mapping (SLAM),
+and occupancy grid methods.
+RF-based localization has witnessed fast development as
+wireless communication technologies grow rapidly [1]–[5]. Sig-
+nal strength, the time or the time difference of arrival [6], [7],
+angle/bearing [6], and phase shift are commonly used in de-
+riving the locations of signal sources using triangulation-based
+approaches. Researchers in sensor and wireless network com-
+munities have studied the RF-based localization problem ex-
+tensively [8]–[14]. In their problem setup, sensors usually have
+some prior knowledge about radio signals, such as source identi-
+ﬁcation, packet length, network protocols/conﬁgurations, source
+signal strength, and transmission rates. For example, recent de-
+velopments of range-free localization use the prior knowledge
+or part of it to estimate sensor locations by network connec-
+tivity [15]–[18]. Nonparametric belief propagation [19] and the
+sequence-based localization [20] methods are proposed. Recent
+work also focuses on distributed solutions [21]–[24].
+As a very relevant work, in [2], the authors use a network
+of wireless access points to localize a mobile unit. This can be
+viewed as a dual version of our problem. They use multiple static
+listeners to localize a single mobile transmitter, while we try to
+localize multiple static transmitters using a mobile listener. As
+another closely related work, in [11], the authors try to localize
+sensor-network nodes with a mobile beacon. The mobile beacon
+and the sensor-network nodes are assumed to share the network
+information. This type of work can be viewed as the localization
+of “friendly” radio sources.
+In robotics research, the SLAM is deﬁned as the process
+of mapping the environment and localizing robot position at
+the same time [25]–[27]. Although both SLAM and our ap-
+proach are built on the Bayesian methods, the SLAM assumes
+that the environment is static or close to static. Directly ap-
+plying the SLAM methods to our problem is not appropriate
+because networked radio sources create a highly dynamic envi-
+ronment, where the signal-transmission patterns change quickly.
+Although recent advance in the SLAM allows tracking of mov-
+ing objects [28], the environment largely remains static.
+Since the authors introduce occupancy grid maps as a prob-
+abilistic sensor model in [29] and [30], the occupancy grid has
+been proved to be an elegant representation of the sensor cov-
+erage for mobile robot applications, such as localization and
+mapping [25]. Recent work further improves occupancy grid
+maps to incorporate multisensor fusion, an inverse sensor model,
+and a forward sensor model. Occupancy grid-based methods
+have recently been adapted to a variety of applications includ-
+ing gas/odor source localization [31]. The existing occupancy
+grid-based methods focus on using the spatial probabilistic rep-
+resentation to describe sensing uncertainty and are not capable
+of dealing with time-variant environments. In this study, we ex-
+tend the occupancy grid methods into the temporal dimension
+to deal with the dynamic characteristics of the transient radio
+transmissions.
+In [32], the authors also work on a similar problem that en-
+ables a robot to search for multiple radio transmitters. In their
+setup, the robot needs to ﬁnd all transmitters in an indoor envi-
+ronment. Again, all transmitters are treated as continuous bea-
+cons. The main focus of their approach is to provide a robust
+gradient-based method to guide the robot to search for the trans-
+mitters at the presence of complex and noise indoor signal ﬁelds.
+The transient behaviors and signal correspondence are not con-
+cerns of the approach.
+We work on localization of unknown and transient radio
+sources [33], [34]. In our previous works [35] and [36], we use
+a single mobile robot that is equipped with a log-periodic dipole
+array antenna to localize unknown networked sensor nodes. By
+the usage of a particle-ﬁlter approach, we assume that the carrier
+sensing multiple access (CSMA)-based protocol is used among
+the networked radio sources. However, this method suffers from
+the restrictive assumption on the CSMA protocol and scalabil-
+ity issue of the particle-ﬁlter method. In this paper, we relax
+the assumption and develop a protocol-independent localiza-
+tion scheme that extends our previous conference paper [37] by
+adding new convergence analysis and experimental results.
+III. S YSTEM DESIGN AND PROBLEM DEFINTION
+A. System Architecture
+Fig. 2(a) illustrates the hybrid system architecture. The robot
+knows its own position from the Global Positioning System or
+other localization sensors and wants to search/localize the un-
+known signal sources. From the robot perspective, the input is
+the RSS readings from the directional antenna with the cor-
+responding antenna orientations. The output of the system is
+the planned trajectory for the robot to execute in the follow-
+ing period. The entire system is built around the SPOG, which
+tracks each cell’s probability of containing a radio source and
+its transmission rate.
+The system updates the SPOG whenever a radio transmission
+is detected by the antenna. The antenna model outputs the pos-
+terior probability distribution of the signal source as the inputs
+to the SPOG. This update process is described by a continuous
+time system. As a convention in this paper, we use t to denote
+the continuous time.
+On the other hand, the robot plans its motion periodically.
+We denote the period length by τ0 , which is carefully chosen
+to ensure that the robot has enough time to execute the planned
+trajectory. At the beginning of each period, the robot plans its
+trajectory based on the current SPOG. This decision-making
+process is a discrete time system. We denote the discrete time
+index variable by k ∈ N.
+Fig. 2(b) illustrates the relationship between the continuous
+time system and the discrete time system. Let tk ∈ R be the
+exact time at the moment of the discrete time k. We deﬁne the
+670 IEEE TRANSACTIONS ON ROBOTICS, VOL. 28, NO. 3, JUNE 2012
+Fig. 2. (a) System diagram and (b) system timing.
+kth period as the time interval between tk −1 and tk . Hence,
+tk − tk −1 = τ0 for k> 1. We also deﬁne tk
+j ∈ R as the exact
+time when the jth radio transmission occurs in the kth period:
+tk −1 ≤ tk
+j <t k . The index variable j is reset to zero at the
+beginning of each period.
+B. Problem Setup
+To formulate the localization problem, we make the following
+assumptions.
+1) Both the robot and radio sources are located in an obstacle-
+free 2-D Euclidean space. Radio sources are stationary and
+can be treated as points. In the later section, we will discuss
+how to handle obstacles.
+2) The network trafﬁc is light and each transmission is short.
+This is the typical characteristic of a low-power sensor
+network.
+3) Each radio transmission is transmitted at the same power
+level. This assumption can be relaxed if the robot is
+equipped with an orthogonal antenna pair, which can pro-
+vide directional information regardless of the transmission
+power. For example, in recent works [38] and [39], the au-
+thors show how to obtain distance to a radio source using
+multiple antennas with different polarizations and/or sig-
+nal ratios.
+4) The radiation pattern of the radio sources is circular be-
+cause most miniature wireless sensors are equipped with
+omnidirectional antennas.
+Because of the transient transmission and the fact that the
+robot cannot associate a signal with its source, the robot cannot
+simply triangulate the signal source. Since only one robot is
+considered, the single robot perspective makes it more difﬁcult
+than the cases where multiple robots or receivers are used.
+C. Spatiotemporal Probability Occupancy Grid
+We introduce the SPOG to track the posterior spatiotemporal
+distributions of radio sources. To deﬁne the SPOG, we partition
+the entire ﬁeld into equally sized square cells using a grid. Let
+us deﬁne cell index set I := {1,...,n }, where n is the total
+number of cells. Deﬁne i ∈ I as a cell index variable. The size
+of each cell is determined by the RSS resolution of the antenna.
+Inside each cell, we approximate radio source locations using
+locations of the cell center. Deﬁne Ci as the event that cell i
+contains at least one radio source and P(Ci) as the probability
+that event Ci occurs. Hence, ∑
+i∈I P(Ci) equals the number of
+cells that contain radio sources if P(Ci) converges to a correct
+value in the Monte Carlo localization process.P(Ci) tracks the
+radio source location distribution and is the spatial component
+of the SPOG. Localizing radio sources becomes ﬁnding cells
+that ensure P(Ci) > 0.
+At time tk
+j , a transmission occurs. We deﬁne C1
+i as the event
+that cell i is the active radio source at time tk
+j . Deﬁne C0
+i as the
+event that cell i is inactive at time tk
+j . Hence
+P(C0
+i )+ P(C1
+i )=1 and
+∑
+i∈I
+P(C1
+i )=1 (1)
+because there is only one active transmission when the transmis-
+sion is detected. We ignore the collision case because we take an
+RSS measurement as soon as the transmission is initiated. The
+probability of two or more transmissions that are initiated at the
+exact same moment is negligible in a light-trafﬁc network. C1
+i
+is determined by the relative radio transmission rate and is the
+temporal part of the SPOG. Unlike a regular occupancy grid, the
+SPOG is unique because each cell is described by two types of
+correlated random events: the spatial eventCi and the temporal
+events C0
+i and C1
+i .
+D. Problem Formulation
+Fig. 2(a) suggests that the overall localization problem can be
+divided into two subproblems: a sensing problem and a motion
+planning problem. Let a random variable Zk
+j ∈ N be the corre-
+sponding RSS reading at time tk
+j . Note that the RSS readings
+are from a receiver with a discrete resolution. Deﬁne Z(Zk
+j )
+as the set of all RSS values sensed from the beginning of the
+localization process to the moment whenZk
+j is sensed. We also
+deﬁne a set Z− (Zk
+j ): = Z(Zk
+j ) \{ Zk
+j }, which is the set of all
+RSS readings from the beginning of the localization process to
+the moment right before Zk
+j is sensed. Deﬁne P(Ci |Z(Zk
+j ))
+as the conditional probability that cell i contains at least one
+radio source given the RSS setZ(Zk
+j ). Following the same con-
+vention, we deﬁne the conditional probabilitiesP(Ci |Z− (Zk
+j )),
+P(C1
+i |Z(Zk
+j )), and P(C1
+i |Z− (Zk
+j )). The sensing problem up-
+dates the SPOG when a new transmission is detected.
+Problem 1 (Sensing Problem): Given the current RSS
+Zk
+j , the previous RSS set Z− (Zk
+j ), P(Ci |Z− (Zk
+j )),
+P(C1
+i |Z− (Zk
+j )), and the corresponding robot conﬁgurations,
+compute P(Ci |Z(Zk
+j )) and P(C1
+i |Z(Zk
+j )) for each cell i.
+At the beginning of each period k, we plan the robot tra-
+jectory. Let us deﬁne the robot position and orientation as
+r(t)=[ x(t),y (t),θ(t)]T ∈ R2 × S, where S =( −π,π] is the
+orientation angle set. Since the antenna is ﬁxed on the robot and
+points to the robot forwarding direction,θ(t) is also the antenna
+orientation. Deﬁne jmax as the index for the last transmission
+sensed in periodk. Therefore, we can deﬁne the motion planning
+problem for time k (or tk ) as follows.
+SONG et al.: SIMULTANEOUS LOCALIZATION OF MULTIPLE UNKNOWN AND TRANSIENT RADIO SOURCES USING A MOBILE ROBOT 671
+Fig. 3. HyperGain HG2415G parabolic directional antenna properties. (a)
+Antenna photo and (b) calibrated radiation pattern.
+Problem 2 (Radio Source Localization Motion
+Planning): Given the current SPOG, which are the sets
+{P(Ci |Z(Zk
+jmax ))|i ∈ I} and {P(C1
+i |Z(Zk
+jmax ))|i ∈ I},p l a n
+the robot trajectory {r(t)|tk ≤ t<t k+1 } that enables the robot
+to quickly localize radio sources.
+This overall approach is a Monte Carlo method with following
+localization condition.
+Deﬁnition 1 (Localization Condition): A radio source is be-
+lieved to be located at cell i if P(Ci |Z(Zk
+j )) ≥ pt for a given
+probability threshold pt .
+IV . SENSING MODELING
+We address the sensing problem ﬁrst. The sensing problem
+actually has two components: an antenna model and an SPOG
+update process.
+A. Antenna Model
+The antenna model describes the property of the directional
+antenna. As illustrated in Fig. 3, we use a HyperGain HG2415G
+parabolic antenna in our system. We have introduced the antenna
+model in [36]. For completeness, we brieﬂy reiterate the model
+here.
+Bearing and distance are the two most important variables
+in an antenna model [40]. Let (xk
+j ,y k
+j ,θk
+j ) be the robot con-
+ﬁguration when the jth radio transmission in the kth period is
+sensed. Let (xi,yi) be the location of cell center. Deﬁne dk
+ij as
+the distance from the robot to the center of the cell:
+dk
+ij =
+√
+(xk
+j − xi)2 +( yk
+j − yi)2. (2)
+Let φk
+ij be the bearing of the cell with respect to the robot:
+φk
+ij = atan2(yk
+j − yi,xk
+j − xi) − θk
+j . (3)
+By the assumption that the active radio source is located in cell
+i, the expected RSS si of the directional antenna is given as
+si = c · (dk
+ij )−βϕ(φk
+ij ) (4)
+where c is a constant depending on radio transmission power,
+and (dk
+ij )−β is the signal decay function. The directivity of the
+antenna is captured by the term ϕ(φk
+ij ), which describes the
+radiation pattern of the antenna. Note that dk
+ij >d a , where da
+is the length of the longest physical dimension of the antenna.
+We obtain c = 63.09 and the decay factor β = 2.53 for our
+antenna from the calibration process. Our β value conforms to
+the widely accepted notion that the decay factor is between 2
+and 4 [41].
+Since our receiver uses dBm as an RSS unit, we have to take
+a 10 log10 with respect to (4):
+μi =1 0
+(
+log10 c − βlog10 dk
+ij + log10 ϕ(φk
+ij )
+)
+(5)
+where μi is the expected RSS in units of dBm. From the antenna
+theory and the results from the antenna calibration, we perform
+curve ﬁtting to obtain the radiation pattern function as illustrated
+in Fig. 3(b):
+ϕ(φk
+ij )=
+⎧
+⎪⎨
+⎪⎩
+1, if dk
+ij ≤ da,
+cos2 (4φk
+ij ), if φk
+ij ∈ [±20◦] and dk
+ij >d a
+cos2 (80◦), otherwise.
+(6)
+Note that the peak at the zero bearing in Fig. 3(b) is about
+15 dB ·m higher than the average of nonpeak regions, which
+conﬁrms antenna speciﬁcations.
+Equations (5) and (6) describe the expected RSS given that
+the radio transmission is from cell i. However, the RSS is not a
+constant but a random variable because of the uncertainties in
+radio transmissions, receiver resolution, and background noises.
+Therefore, the mean value ofZk
+j is μi . From the antenna calibra-
+tion, we know that the distribution of Zk
+j can be approximated
+by a normal distribution with a density function of
+gi(ζ) ≈ 1√
+2πσ2 e− (ζ−μ i )2
+2 σ 2 (7)
+where the value of σ is 3.3 that is obtained from the antenna
+calibration.
+Let
+Gi(z): =
+∫ z
+−∞
+gi(ζ)dζ (8)
+be the cumulative density function of the normal distribution,
+where z is the RSS value.
+Deﬁne P(Zk
+j = z|C1
+i ) as the conditional probability that the
+RSS is an integer z given cell i contains at least an active radio
+source. P(Zk
+j = z|C1
+i ) actually is the overall antenna model.
+Since Zk
+j can only take integer values, we have
+P(Zk
+j = z|C1
+i )= Gi(z +0 .5) − Gi(z − 0.5)
+=
+∫ z+0 .5
+z −0.5
+gi(ζ)dζ (9)
+as a function of z and μi . Because of high antenna resolution
+and small integration intervals, (9) can be further approximated
+as
+P(Zk
+j = z|C1
+i ) ≈ αgi(z) (10)
+672 IEEE TRANSACTIONS ON ROBOTICS, VOL. 28, NO. 3, JUNE 2012
+where α = 1∑z max
+z = z min
+gi (z) is the normalization factor that en-
+sures
+zmax∑
+z=zmin
+P(Zk
+j = z|C1
+i )=1 .
+Here, zmin and zmax are the minimum and the maximum RSS
+that the antenna can sense, respectively. In fact, the antenna
+sensitivity is tuned to satisfy the following condition:
+zmax ≤ 10 log10 c := μmax (11)
+so that we can fully utilize the sensitivity and resolution of the
+antenna. Any RSS that is stronger than zmax is perceived as
+zmax .
+B. Determining Grid Resolution
+The variance of reception σ in (7) can also be used to choose
+an appropriate cell size. More cells mean more computation.
+Indeed, later we will show that the overall algorithm is O(n2).
+On the other hand, a sparse grid would lead to low localization
+resolution. We use a2σ-separation rule as follows. Let celli and
+cell s be two adjacent cells. If a radio source that is located at
+cell i emits a signal, then the expected RSS values from robots
+that are located at cellsi and s would beμi and μs , respectively.
+In addition, μi = μmax because of the signal saturation. The
+2σ-separation rule is that we choose the cell size such that
+μi − μs =2 σ. (12)
+Deﬁne dis the distance between adjacent centers of cells i and
+s. From (5) and (12), we have
+dis =1 0
+1
+β (0.2σ+log 10 cos 2 (80 ◦)) . (13)
+C. Updating the SPOG
+When a radio transmission with an RSS level of z is sensed,
+we are interested in P(Ci |Zk
+j = z), which is the conditional
+probability that cell i contains at least one radio source given
+the RSS is z. According to (1), we have
+P(Ci |Zk
+j = z)= P(Ci,C 1
+i |Zk
+j = z)+ P(Ci,C 0
+i |Zk
+j = z).
+Since event C1
+i implies event Ci , the joint event (Ci,C 1
+i ) is the
+same as C1
+i . Hence,
+P(Ci |Zk
+j = z)= P(C1
+i |Zk
+j = z)+ P(Ci,C 0
+i |Zk
+j = z).
+(14)
+According to Bayes’ theorem
+P(C1
+i |Zk
+j = z)= P(Zk
+j = z|C1
+i )P(C1
+i )∑
+i∈I P(Zk
+j = z|C1
+i )P(C1
+i ). (15)
+Equation (15) describes the posterior conditional distribution
+of the active radio source given the RSS is z. If we assume that
+the radio transmission is equally likely to be initiated by any
+cell in the grid, which means that P(C1
+i ) is the same across all
+cells, then the posterior condition distribution actually captures
+the radiation pattern (see Fig. 4).
+The second term P(Ci,C 0
+i |Zk
+j = z) in (14) is the joint con-
+ditional probability that there is at least one radio source in cell
+Fig. 4. Distribution of P (C1
+i |Zk
+j = z) over a 50 × 50 grid for the directional
+antenna given that P (C1
+i ) is the same across all cells.
+i and none of the radio sources in celli transmits given the RSS
+is z. Joint event (Ci,C 0
+i ) implies the following information.
+1) Since none of radio sources in cell i is transmitting, the
+condition Zk
+j = z cannot provide additional information
+for event Ci , which implies P(Ci |Zk
+j = z)= P(Ci).
+2) There must be one active cell s, s ∈ I and s ̸= i.
+3) Joint conditional event (Ci,C 0
+i |Zk
+j = z) is equivalent
+to the union of the collection of events {(Ci,C 1
+s |Zk
+j =
+z),s ̸= i, s ∈ I} because of no collision.
+4) Events Ci and C1
+s are independent.
+Therefore, we can obtain
+P(Ci,C 0
+i |Zk
+j = z)= P(Ci)
+∑
+s̸=i,s ∈I
+P(C1
+s |Zk
+j = z). (16)
+Note that P(C1
+s |Zk
+j = z) can be computed using (15). By the
+substitution of (15) and (16) into (14), we obtain
+P(Ci |Zk
+j = z)
+=
+(
+P(Zk
+j = z|C1
+i )P(C1
+i )
++P(Ci)∑
+s̸=i,s ∈I P(Zk
+j = z|C1
+s )P(C1
+s )
+)
+∑
+s∈I P(Zk
+j = z|C1s )P(C1s ) . (17)
+Unfortunately, (15) and (17) cannot be directly used in the sys-
+tem because P(Ci) and P(C1
+i ) are not available. We have to
+rely on the conditional versions of P(Ci) and P(C1
+i ) that build
+on the observation Z− (Zk
+j ). We can derive the following from
+(15) by adding Z− (Zk
+j ) as the condition:
+P(C1
+i |{Zk
+j = z}∪ Z− (Zk
+j ))
+= P(Zk
+j = z|C1
+i ,Z− (Zk
+j ))P(C1
+i |Z− (Zk
+j ))∑
+s∈I P(Zk
+j = z|C1s ,Z− (Zk
+j ))P(C1s |Z− (Zk
+j )). (18)
+Since the conditional event Zk
+j = z is independent of the
+previous RSS values Z− (Zk
+j ) given C1
+i , we know P(Zk
+j =
+z|C1
+i ,Z− (Zk
+j )) = P(Zk
+j = z|C1
+i ). According to the deﬁnition,
+SONG et al.: SIMULTANEOUS LOCALIZATION OF MULTIPLE UNKNOWN AND TRANSIENT RADIO SOURCES USING A MOBILE ROBOT 673
+{Zk
+j = z}∪ Z− (Zk
+j )= Z(Zk
+j ). Equation (18) can be rewritten
+as
+P(C1
+i |Z(Zk
+j )) = P(Zk
+j = z|C1
+i )P(C1
+i |Z− (Zk
+j ))∑
+s∈I P(Zk
+j = z|C1s )P(C1s |Z− (Zk
+j )).
+(19)
+Similarly, from (17), we can derive the following:
+P(Ci |Z(Zk
+j ))
+=
+⎛
+⎝
+P(Zk
+j = z|C1
+i )P(C1
+i |Z− (Zk
+j ))
++P(Ci |Z− (Zk
+j ))
+×∑
+s̸=i,s ∈I P(Zk
+j = z|C1
+s )P(C1
+s |Z− (Zk
+j ))
+⎞
+⎠
+∑
+s∈I P(Zk
+j = z|C1s )P(C1s |Z− (Zk
+j )) . (20)
+Equations (19) and (20) provide a recursive formulation for
+updating the SPOG when a new radio transmission is sensed.
+V. R OBOT MOTION PLANNING
+We threshold P(Ci |Z(Zk
+j )) to determine if cell i con-
+tains at least a radio source (see Deﬁnition 1). The rate that
+P(Ci |Z(Zk
+j )) → 1 for cells that contain radio sources deter-
+mines localization speed and accuracy. Equations (19) and (20)
+show that P(Ci |Z(Zk
+j )) largely depends the antenna model
+P(Zk
+j = z|C1
+i )= αgi(z), which actually is a function of robot
+conﬁgurations. We can design robot conﬁgurations to increase
+P(Ci |Z(Zk
+j )), which will increase convergence speed. A good
+motion planner should warrant a good convergence speed.
+Recall that (20) predicts P(Ci |Z(Zk
+j )) at time k.A tt h e
+moment before time k, deﬁne ws := P(C1
+s |Z− (Zk
+j )),s ∈ I,
+which are constants. To simplify the notation, we deﬁne ξk =
+P(Ci |Z(Zk
+j )) and ξk −1 = P(Ci |Z− (Zk
+j )). Then, (20) can be
+rewritten as
+ξk = ξk −1 + (1 − ξk −1)wi∑
+s ∈I gs (z)ws
+gi (z)
+. (21)
+We are interested in choosing a robot conﬁgura-
+tion (xk
+j ,y k
+j ,θk
+j ) to maximize the posterior probability
+P(Ci |Z(Zk
+j )). Since ws,s ∈ I, and ξk −1 are constants at the
+moment prior to time k, (21) implies that the maximization of
+the posterior probability is
+(xk ∗
+j ,y k ∗
+j ,θk ∗
+j ) = arg max(xk
+j ,y k
+j ,θk
+j )ξk
+= arg min(xk
+j ,y k
+j ,θk
+j )
+∑
+s∈I gs(z)ws
+gi(z) (22)
+= arg min(xk
+j ,y k
+j ,θk
+j )
+∑
+s∈I
+wsrsi (z) (23)
+where
+rsi (z)= gs(z)
+gi(z) = e− 1
+2 σ 2 [(z −μs )2 −(z −μi )2 ] (24)
+(xk ∗
+j ,y k ∗
+j ,θk ∗
+j ) is the optimal robot conﬁguration, and
+μs =1 0
+(
+log10 C − βlog10 dk
+sj + log10 ϕ(φk
+sj )
+)
+∀s ∈ I.
+(25)
+Fig. 5. (a) Example of P (Ci |Z(Zk
+j )) distribution and (b) radio source loca-
+tions, a sample level set L(0.3), and ridges over a 50 × 50 grid for the case.
+The radio source locations are shown with black dots. The level set is bounded
+inside the blue solid lines. The red dashed lines denote the corresponding ridges
+for the level set components.
+To simplify the notation, let us deﬁneri := ∑
+s∈I wsrsi (z).R e -
+call thatws = P(C1
+s |Z− (Zk
+j )),s ∈ I. From statistics [42], [43],
+we know that ri is the likelihood ratio for two candidate dis-
+tributions: the univariate Gaussian distribution that is repre-
+sented by gi(z) and the Gaussian mixture that is represented
+by ∑
+s∈I wsgs(z). Let us use the Gaussian mixture as H0 hy-
+pothesis and the univariate Gaussian as H1 hypothesis for the
+likelihood ratio test of the unknown distribution of the random
+noise in z. Minimizing ri actually minimizes the likelihood
+that noise in z is from the Gaussian mixture as opposed to the
+univariate Gaussian distribution. This is very intuitive for our
+problem.
+The optimization problem in (23) is not directly solvable be-
+cause z is the RSS of the future reception at timek and ri is not
+available. Therefore, to ﬁnd the global optimal (xk ∗
+j ,y k ∗
+j ,θk ∗
+j )
+for the nonlinear optimization problem is impractical. Actually,
+a robust local optimal solution would be a good candidate so-
+lution because the solution can also effectively accelerate the
+posterior probability convergence for ξk . Deﬁning xk
+j =[ xk
+j
+yk
+j
+],
+and xi =[ xi
+yi
+], we have the following lemma with its proof in
+the Appendix.
+Lemma 1: If the robot is located at the center of the cell i at
+time k, xk
+j = xi , then the likelihood ratiori is located at a local
+minima regardless of future reception z.
+Remark 1: Note that Lemma 1 and its proof do not specify
+robot orientation θk
+j . This is because of the fact that the RSS
+receiver is saturated when xk
+j → xi according to (6). Hence,
+ϕ =1 is constant in (25), which means that the θk
+j value is
+irrelevant.
+Lemma 1 suggests that the principle of the motion planning
+is to drive the robot into the cells with the high P(Ci |Z(Zk
+j ))
+values. This principle inspires us to develop a ridge walking
+algorithm (RW A) for the robot motion planning.
+Fig. 5(a) illustrates an example of the distribution of
+P(Ci |Z(Zk
+j )) over a 50 × 50 grid. The actual radio source po-
+sitions are shown as black dots in Fig. 5(b).P(Ci |Z(Zk
+j )) value
+is much larger in the area adjacent to radio sources than that of
+other areas. To study the spatial distribution of P(Ci |Z(Zk
+j )),
+674 IEEE TRANSACTIONS ON ROBOTICS, VOL. 28, NO. 3, JUNE 2012
+we introduce level set L(p), p ∈ (0,1] as follows:
+L(p)= {i|P(Ci |Z(Zk
+j )) ≥ p, i ∈ I}. (26)
+Let us envision that a plane parallel to the ground plane inter-
+sects the mountain-like P(Ci |Z(Zk
+j )) distribution at height p
+in Fig. 5(a). The intersection generates L(p) that contains all
+cells with P(Ci |Z(Zk
+j )) above the plane. Fig. 5(b) illustrates
+the level set L(0.3) for the example shown in Fig. 5(a).
+Fig. 5(b) also shows that L(p) usually consists of several
+disconnected components. Deﬁne lmax as the total number of
+the disconnected components and Ll as the lth component,
+l =1 ,...,l max . Therefore,L(p)= L1 ∪ L2 ∪···∪ Llmax , and
+Ll ∩ Lm = ∅, where m ̸= l and m =1 ,2,...,l max .F o rt h elth
+component, we deﬁne its ridge Rl as the line segment deﬁned
+by points (x′,y ′) and (x′′,y ′′) on Ll :
+Rl = {(x, y)|x =( 1 − α)x′ + αx′′
+y =( 1 − α)y′ + αy′′,α ∈ [0,1]} (27)
+where points (x′,y ′) and (x′′,y ′′) are the two points on Ll such
+that the distance between (x′,y ′) and (x′′,y ′′) is the maximum.
+If the robot walks on the ridge, the probability that the robot
+is close to a potential radio source is high. Because of the walk-
+ing direction, the antenna always points along the ridge, which
+ensures the most sensitive reception region of the antenna to
+overlap with thelth component. In the RW A, there are two types
+of robot motion: on-ridge movements and off-ridge movements.
+Since the on-ridge movement is the effective movement for the
+localization purpose, it is desirable for the robot to allocate its
+time to on-ridge movements as much as possible. The off-ridge
+movement denotes the travel in-between ridges for the robot.
+Since we have a ﬁxed time period, we set the robot to travel at
+its fastest speed along the shortest path for off-ridge movements
+to save time for on-ridge movements.
+We treat the end point of each on-ridge segment as a vertex.
+We deﬁne edges as the line segments connecting different ver-
+tices on the 2-D plane. With a vertex set V , an edge set E, and
+a graph G(V,E ), to ﬁnd the shortest path is an instance of the
+traveling salesman problem (TSP). The only difference is that
+edges corresponding to on-ridge movements must be included
+in the solution. We can modify the original TSP by treating each
+on-ridge edge and its two end points as a super vertex. Then,
+solving the TSP provides an efﬁcient trajectory for the robot.
+Deﬁne vmax as the maximum velocity that the robot can travel.
+The time available for on-ridge movements tON is
+tON = τ0 − dOFF /vmax (28)
+where dOFF is the total length of off-ridge edges. We allocate
+tON to each ridge proportional to the probability that the cor-
+responding component contains a radio source. For component
+l, we deﬁne the time the robot spend on the ridge Rl as τl .
+Therefore
+τl =
+∑
+i∈Ll P(Ci |Z(Zk
+j ))∑
+i∈L(p) P(Ci |Z(Zk
+j ))tON . (29)
+With τl and the length of each ridge, it is trivial to ﬁnd the robot
+velocity for the ridge. If the low-cost robot cannot accurately
+control its speed, then we cannot execute the precise time allo-
+cation in (29). If so, we can simply set the robot to its maximum
+speed for off-ridge movements and minimum speed for on-ridge
+movements.
+VI. A LGORITHMS
+A. Algorithm Pseudo Code and Complexity
+To summarize our analysis, we present two algorithms includ-
+ing an SPOG update algorithm and the RW A. Corresponding to
+the sensing problem in Section III-D, the SPOG update algo-
+rithm (i.e., Algorithm 1) runs when a radio signal is detected.
+Deﬁne set C∗ as the set of cells that contain radio sources with
+the initial value C∗ = ∅. Recall that pt is the probability thresh-
+old for ﬁnding the radio source. The robot reports the cells that
+satisfy P(Ci |Z(Zk
+j )) >p t as the cells that contain at least one
+radio source.
+Recall that n is the total number of cells. It is clear that the
+complexity of Algorithm 1 is O(n2). The initial value settings
+are P(Ci |Z(Z0
+0 )) = 0 and P(C1
+i |Z(Z0
+0 )) = 1/n.
+The RW A runs everyτ0 time. As illustrated in Algorithm 2,
+the robot performs random walking until setL(p) ̸= ∅at the ini-
+tialization stage. Then, the robot switches into the normal ridge
+walking mode. The robot stops when no additional radio source
+has been found in kmax consecutive periods, where kmax is a
+preset iteration number. For the Euclidean TSP, we can also use
+approximation approaches, such as the minimum spanning tree
+(MST) approximation [44, p. 969]. If so, the overall complexity
+can be reduced to O(n + l2
+max ).
+B. Localization Time
+An important question that remains to be answered is how
+long does it take for the RW A to ﬁnd a radio source. We need
+to ﬁnd the upper bound of the searching/localization time. Let
+Ts denote the searching time. Obviously, Ts is related to how
+often the radio source transmits. To facilitate our analysis, let us
+assume that the radio source i transmits according to a Poisson
+process with a rate of λi . Since we are looking for the upper
+SONG et al.: SIMULTANEOUS LOCALIZATION OF MULTIPLE UNKNOWN AND TRANSIENT RADIO SOURCES USING A MOBILE ROBOT 675
+bound of Ts , we also tighten the convergence condition by in-
+creasing the probability threshold pt in Deﬁnition 1. Threshold
+pt is set high so that the robot must receive a saturated signal
+when considering radio source i found. It means that the robot
+must receive the transmission within the distance of da of the
+radio source. This deﬁnesa sensing circlewith its center located
+at the radio source i and a radius of da .
+Without loss of generality, we assume the ﬁeld of localization
+as a disk with a radius of 1. Deﬁne TTSP to be the amount of
+time for the robot to ﬁnish a TSP tour in the RW A. LetτIN and
+τOUT be portions of the tour within and outside distance of da
+of radio source i, respectively. Hence
+TTSP = τIN + τOUT . (30)
+We have the following theorem.
+Theorem 1: The expected searching time E(Ts) of radio
+source i has the following upper bound:
+E(Ts) ≤ τ0
+1 − e−λi τ0
++ 1
+λi
++ 4
+√
+3
+vavg
+[ 1
+2 + E
+( e−λi τIN
+1 − e−λi τIN
+)]
+(31)
+wherevavg is the average traveling speed of the robot and deﬁned
+in (40).
+Proof: From [34, Th. 1], we know that the expected time to
+search for a transient signal source is
+E(Ts)= E(D)+ 1
+λi
++ E
+(
+τOUT
+e−λi τIN
+1 − e−λi τIN
+)
+(32)
+whereD is the amount of time from the beginning to the moment
+that the robot is within the distance da of the radio source i
+during the repetitive TSP tours. It is clear that D is a random
+variable. From Algorithm 2, the robot performs random walk
+in the ﬁrst period to initialize the SPOG. The expect value of
+D can be obtained by conditioning on the event Ai that radio
+source i has at least one transmission during the initial τ0 time.
+If Ai is true, then the TSP tour planned at the end of ﬁrst period
+would come across the sensing circle of the radio sourcei.I f Ai
+is not true, the system returns to the same initial state because
+the chance that the next TSP tour will come across the sensing
+circle is negligible. Hence, we have
+E(D|Ai)= τ0 + E(TTSP )/2 (33)
+E(D| ¯Ai) ≈ τ0 + E(D). (34)
+From the property of a Poisson process, we know
+P( ¯Ai)= e−λi τ0 and P(Ai)=1 − e−λi τ0 . (35)
+Combining (35) with (33) and (34), we have
+E(D)= E(D|Ai)P(Ai)+ E(D| ¯Ai)P( ¯Ai)
+= τ0
+1 − e−λi τ0
++ E(TTSP )/2. (36)
+In addition, sinceτIN ≪ τOUT and τIN is independent ofTTSP ,
+the last term of (32) can be approximated as
+E
+(
+τOUT
+e−λi τIN
+1 − e−λi τIN
+)
+≈ E(TTSP )E
+(
+e−λi τIN
+1 − e−λi τIN
+)
+.
+(37)
+If the TSP tour straightly crosses the sensing circle with a speed
+of v, we have shown how to computeE( e−λi τIN
+1−e−λi τIN
+) in [34]:
+E
+(
+e−λi τIN
+1 − e−λi τIN
+)
+=
+∫ π/2
+0
+1
+e
+2 λi d a sin θ
+v − 1
+sin θdθ. (38)
+When the ﬁeld is large, the TSP tour consists of long and straight
+line segments. Equation (38) is a good approximation for general
+E( e−λi τIN
+1−e−λi τIN
+). By the substitution of (36) and (37) into (32), we
+have
+E(Ts)= τ0
+1 − e−λi τ0
++ 1
+λi
++ E(TTSP )
+×
+[
+1
+2 + E
+(
+e−λi τIN
+1 − e−λi τIN
+)]
+. (39)
+Deﬁne LTSP as the length of the TSP tour and vavg as the
+average speed during the tour that satisﬁes
+E(TTSP )= E(LTSP )/vavg . (40)
+Deﬁne LMST as the summation of MST edges for the vertices
+in the TSP tour. From [44], we know thatLTSP ≤ 2LMST since
+triangle inequalities are satisﬁed for the Euclidean TSP. Deﬁne
+E as the edge index set for the MST and el as the lth edge in E.
+From its deﬁnition, we know that LMST = ∑
+l∈E |el | and that
+LMST =
+√
+( ∑
+l∈E
+|el |
+) 2
+≤
+√
+2
+∑
+l∈E
+|el |2. (41)
+Since all vertices are located inside a unit disk and distances are
+Euclidean, from [45, Th. 1], we have
+∑
+l∈E
+|el |2 ≤ 6 (42)
+regardless of the number of vertices in the graph. Combining
+(40)–(42), we have
+E(TTSP ) ≤ 4
+√
+3/vavg . (43)
+Equation (31) is proved by substituting (43) into (39). ■
+676 IEEE TRANSACTIONS ON ROBOTICS, VOL. 28, NO. 3, JUNE 2012
+Remark 2: An important result that is given by Theorem 1 is
+the fact that entries in (31) are not sensitive to the number of
+radio sources. This means that our RW A has excellent scalability
+when the number of radio sources increases.
+C. Extensions
+Increasing localization accuracy, handling of uneven trans-
+mission rates, and dealing with obstacles in the searching region
+are the three important extensions for application purposes.
+Increasing localization accuracy: We discretize the search-
+ing space, and the localization accuracy is inherently limited by
+grid resolution. If the localization accuracy cannot satisfy ap-
+plication requirement, we can run a postprocessing algorithm to
+increase the accuracy. Once a cell that contains a radio source is
+identiﬁed, we can verify all RSSs to identify transmissions that
+are initiated by the source based on distances between the cell
+center and the robot positions when transmissions occurred. We
+can identify a group of transmissions that are within a preset dis-
+tance threshold since the robot has less range ambiguity when
+it moves closer to the source. Based on the transmissions, we
+can estimate the source location using the maximum likelihood
+estimator by minimizing the Mahalanobis distance. The process
+can provide both mean and variance of the source position. Since
+the method is a standard approach [46], we omit the details. In
+fact, when the cell is identiﬁed, the problem can be reduced to
+the regular localization problem with multiple measurements.
+Handling of uneven transmission rates:The RW A tracks high-
+probability regions by patrolling. This is an efﬁcient approach
+when the transmission rates of radio sources are close to each
+other. If a few nodes transmit signiﬁcantly more frequently than
+others, their residing cells can be quickly identiﬁed. This often
+happens if the sensor network employs some nodes as routers.
+In such cases, repeatedly visiting the cells is inefﬁcient, and the
+RW A needs to remove ridges corresponding to the identiﬁed
+nodes before solving the TSP such that the robot can focus on
+searching for the remaining nodes.
+Dealing with obstacles in the searching region: In the pres-
+ence of obstacles, the SPOG framework can be easily adapted by
+marking obstacle-occupied cells as nontraversable. For motion
+planning, we can still use the idea of RW A but connecting the
+ridges in the presence of obstacle is different because simple line
+connections may not work. This can be addressed by using the
+established techniques in motion planning, such as sampling- or
+rapid-exploring random tree (RRT)-based approaches [47]. De-
+pending upon the methods that are used, the path length, which
+is the most important factor that determines the convergence
+speed, may vary, and the ﬁnal searching time analysis should
+reﬂect the complexity of obstacles.
+VII. E XPERIMENTS
+We have implemented the algorithms using Microsoft Visual
+C++ .NET 2005 with OpenGL on a PC desktop with an In-
+tel 2.13-GHz Core 2 Duo CPU and 2-GB RAM. The machine
+runs Microsoft Windows XP. The algorithms are tested in the
+hardware-driven simulation and physical experiments. The an-
+tenna on the robot is HyperGainT Model HG2415G that is a
+2.4-GHz 15-dBi reﬂector grid antenna. The radio sources are
+Zigbee nodes, which are XBeeT with ZigBeeT/802.15.4 OEM
+RF Modules by MaxStream, Inc. The antenna is calibrated ﬁrst
+with the radio sources. The calibration is conducted at 328 con-
+ﬁgurations and 6560 readings have been collected. The cali-
+brated antenna model is represented as the coefﬁcients in (5)
+and σ in (7).
+A. Simulation
+We use the data from the real hardware to drive the simulation
+experiments here.
+The grid is a square with 50 × 50 cells. Each grid cell has a
+size of 5.08× 5.08 cm2 . Each radio source generates radio trans-
+mission signals according to an independently and identically
+distributed Poisson process with a rate of λ=0 .012 packets
+per second. The threshold pt =0 .8 and the level set parameter
+p = 6
+n
+∑
+i P(Ci |Z(Zk
+j )), where the constant 6 is determined by
+many experimental trials. During each trial of the simulation,
+we randomly generate radio source locations in the 50× 50 grid.
+The ﬁrst experiment we conducted is to study how fast the
+RW A can localize all radio sources under differentτ0 settings.
+This determines how often we should run the RW A. Fig. 6(a)
+shows the test results. We change the radio source number from
+2 to 10 during the simulation. Each point in Fig. 6(a) is an
+average of 10 trials. It is interesting that the RW A is at its best
+performance when τ0 = 800 s, regardless of the radio source
+number. This means that the robot needs to listen to each radio
+for an expected value of800λ=9 .6 times before repeating the
+algorithm.
+Fig. 6(b) illustrates how P(Ci |Z(Zk
+j )) converges at the ra-
+dio source for a trial with six radio sources. It is clear that
+P(Ci |Z(Zk
+j )) tends monotonically toward 1. This is what we
+expect to see: P(Ci |Z(Zk
+j )) → 1 for cells containing radio
+sources.
+We also compare our algorithms to two intuitive heuristics,
+namely, a random walk and a ﬁxed-route patrol. The random
+walk is chosen because it is considered as the most conservative
+approach. According to [34], a 2-D lattice-based random walk
+can cover the entire ﬁeld over a long run. Hence, it does not have
+a blind spot. The ﬁxed-route patrol traverses the ﬁeld using a pre-
+deﬁned route that scans all cells. It warrants equal coverage but
+might not visit cells with radio sources frequent enough because
+of the route length. We increase the radio source number from 2
+to 10 to observe the performance of each method. For each trial,
+we test all three methods. We repeat for 10 trials for each radio
+source number and compute the average time required for the
+localization of all radio sources. Fig. 6(c) illustrates comparison
+results. It is clear that the RW A signiﬁcantly outperforms the
+two heuristics in terms of localization time. The result can be
+explained that the robot motion for the two heuristics does not
+consider sensor location distribution and, hence, cannot achieve
+good performance.
+B. Physical Experiments
+We test both SPOG update and RW A in physical experiments.
+The physical experiment is conducted in a 10 × 10 m2 ﬁeld,
+SONG et al.: SIMULTANEOUS LOCALIZATION OF MULTIPLE UNKNOWN AND TRANSIENT RADIO SOURCES USING A MOBILE ROBOT 677
+Fig. 6. Simulation results. (a) RW A performance versus τ0 , (b) convergence of P (Ci |Z(Zk
+j )) at radio source locations for a six-radio source case, and (c)
+localization time comparison among the RW A, the random walk, and the ﬁxed-route patrol.
+Fig. 7. Physical experiment hardware and results. (a) Robot. (b) RF source is XBeeT with ZigBeeT/802.15.4 OEM RF Modules by MaxStream, Inc. (c) Sample
+robot trajectory. (d) Convergence ofP (Ci |Z(Zk
+j )) for cells containing radio sources.
+which is evenly divided into 50 × 50 cells. Each cell has a side
+length of 20 cm. The threshold for the SPOG convergence is
+pt =0 .7.
+The robot is custom made in our laboratory [see Fig. 7(a)].
+The robot measures 50× 47× 50 cm3 in size. The robot has two
+front drive wheels and one rear cast wheel and uses a typical dif-
+ferential driving structure. The robot has a maximum traveling
+speed vmax of 40 cm/s. The four color patches on the top of the
+robot are used for obtaining robot location and orientation from
+an overhead camera that is mounted at a height of a three-story
+building. The top sliver ring above the color patches contains
+white LEDs that are used to illuminate the color patches at night
+for night experiments. The vision-based localization system can
+provide the robot with location at an accuracy of±5 cm in each
+dimension of position and orientation at ±3.5◦ at a frame rate
+of 11 frames/s.
+Fig. 7(b) illustrates the aforementioned radio sources. We use
+three such radio sources in the experiment. Each of them is pro-
+grammed with a Poisson transmission rate of 0.05 packets/s. We
+set τ0 = 160 s in the experiments. Fig. 7(c) illustrates the actual
+robot trajectory, actual location of the three radio sources, and
+the estimated locations of the radio sources. It is clear that the
+robot has successfully found all three radio sources with rea-
+sonable accuracy. The on-ridge and off-ridge parts of the robot
+trajectory are represented by red solid lines and blue dashed
+lines, respectively. The fact that most of on-ridge movements
+are close to the radio sources indicates that the RW A is effective.
+Fig. 7(d) illustrates how P(Ci |Z(Zk
+j )) converges at the
+three radio source cells during the physical experiment. Sim-
+ilar to what we have seen in simulation results in Fig. 6(b),
+P(Ci |Z(Zk
+j )) of these cells tends toward 1. The cell represented
+by the blue dashed line has the slowest growing rate because
+the corresponding radio source transmits the fewest number of
+signals.
+VIII. C ONCLUSION AND FUTURE WORK
+System and algorithm developments that enable a mobile
+robot to localize multiple unknown transient radio sources have
+been reported. By the employment of a Monte Carlo approach,
+the radio transmission activities using an SPOG have been mod-
+eled and an SPOG update algorithm to track the radio source
+location and transmission rates has been proposed. Based on
+the SPOG, an RW A for robot motion planning by accelerating
+the SPOG convergence rate has been developed. For the n-cell
+grid, the SPOG update algorithm runs in O(n2) time and the
+RW A runs inO(n + l2
+max ) time. The fact that the time to ﬁnd
+a radio source is insensitive to the number of radio sources,
+and hence, our algorithm has great scalability has been formally
+proved. The algorithm using simulation with the data from the
+678 IEEE TRANSACTIONS ON ROBOTICS, VOL. 28, NO. 3, JUNE 2012
+real hardware and a physical experiment has been tested. In
+the simulation experiment, algorithms with a random walk and
+a ﬁxed-route patrol heuristics have been compared. Our algo-
+rithms showed a consistently faster localization speed than that
+of the two heuristics. In the physical experiment, the SPOG and
+RW A have been tested in the setup that directs the mobile robot
+to search for three radio sources. The physical experiment re-
+sults showed that the system and algorithm development were
+successful.
+In the future, we are interested in extending SPOG and RW A
+to design a decentralized multiple-robot localization scheme.
+Tracking moving radio sources is another interesting extension
+of the proposed framework. We will consider various kinody-
+namic and energy constraints imposed by robots. More efﬁ-
+cient motion planning strategies considering obstacles in the
+environment and optimal velocity proﬁle will be explored for
+these problems. We will also apply the algorithms to human
+tracking in search and rescue and animal tracking in the nature
+environment.
+APPENDIX
+PROOF OF LEMMA 1
+From (23), each entry in the Jacobian of ri with respect to
+μs , s ∈ I, can be computed as follows:
+∂ri
+∂μs
+=
+{ ws
+σ2 (z − μs)rsi (z), if s ̸= i
+− ∑
+a∈I,a ̸=i
+wa
+σ2 (z − μi)rai (z), if s = i (44)
+where a ∈ I is the new index variable. By the use of the chain
+rule, we obtain
+∂ri
+∂xk
+j
+=
+∑
+s∈I
+∂ri
+∂μs
+∂μs
+∂xk
+j
+= −
+∑
+s∈I,s ̸=i
+ws
+σ2 rsi (z)(μi − μs)∂(μi − μs)
+∂xk
+j
+. (45)
+From (5), we know
+μi − μs =1 0βlog10
+dk
+sj
+dk
+ij
++ 10 log10
+ϕ(φk
+ij )
+ϕ(φk
+sj ). (46)
+By the substitution of (2) into the previous equations, we can
+compute its partial derivative with respect tox as follows:
+∂(μi − μs)
+∂xk
+j
+=1 0β
+(
+xk
+j − xs
+(dk
+sj )2 − xk
+j − xi
+(dk
+ij )2
+)
+. (47)
+Combining (45) and (47), we have
+∂ri
+∂xk
+j
+= −10β
+∑
+s∈I,s ̸=i
+ws
+σ2 rsi (z)(μi − μs)
+(
+xk
+j − xs
+(dk
+sj )2 − xk
+j − xi
+(dk
+ij )2
+)
+.
+(48)
+Similarly, we obtain
+∂ri
+∂yk
+j
+= −10β
+∑
+s∈I,s ̸=i
+ws
+σ2 rsi (z)(μi − μs)
+(
+yk
+j − ys
+(dk
+sj )2 − yk
+j − yi
+(dk
+ij )2
+)
+.
+(49)
+Deﬁning ∇rT =[ ∂ri
+∂xk
+j
+, ∂ri
+∂yk
+j
+], we can verify the ﬁrst-order opti-
+mality condition by computing ∇rT (xk
+j − xi) at the neighbor-
+hood of (xk
+j = xi):
+∇rT (xk
+j − xi)
+= −10β
+∑
+s∈I,s ̸=i
+ws
+σ2 rsi (z)(μi − μs) (50)
+×
+{(
+xk
+j − xs
+(dk
+sj )2 − xk
+j − xi
+(dk
+ij )2
+)
+(xk
+j − xi)
++
+(
+yk
+j − ys
+(dk
+sj )2 − yk
+j − yi
+(dk
+ij )2
+)
+(yk
+j − yi)
+}
+≈− 10β
+∑
+s∈I,s ̸=i
+ws
+σ2 rsi (z)(μi − μs)
+×
+{
+− (xk
+j − xi)2 +( yk
+j − yi)2
+(dk
+ij )2
+}
+. (51)
+Note that the approximation from (50) to (51) is based on
+the fact that
+⏐⏐⏐
+xk
+j −xs
+(dk
+sj )2
+⏐⏐⏐ ≪
+⏐⏐⏐
+xk
+j −xi
+(dk
+ij )2
+⏐⏐⏐ and
+⏐⏐⏐
+yk
+j −ys
+(dk
+sj )2
+⏐⏐⏐ ≪
+⏐⏐⏐
+yk
+j −yi
+(dk
+ij )2
+⏐⏐⏐ when
+xk
+j → xi . From (51), we know
+lim
+xk
+j → xi
+∇rT (xk
+j − xi)=1 0 β
+∑
+s∈I,s ̸=i
+ws
+σ2 rsi (z)(μi − μs) ≥ 0.
+(52)
+Therefore,xk
+j = xi is a local minima (see [48]) regardless of the
+z value. This proof relies on the limiting format of the ﬁrst-order
+sufﬁcient condition instead of a regular format because of the
+degeneracy in ratio computation. ■
+ACKNOWLEDGMENT
+The authors would like to thank K. Goldberg, R. V olz, E. Frew,
+and J. Xiao for their insightful discussions. The authors would
+also like to thank Q. Hu and Z. Goodwin for their contributions
+to the earlier implementation and experiments and Y . Xu, W. Li,
+H. Li, Y . Lu, and H. Ge for their inputs and contributions to the
+Networked Robots Laboratory, Texas A&M University.
+REFERENCES
+[1] P. Bahl and V . N. Padmanabhan, “RADAR: An in-building RF-based user
+location and tracking system,” inProc. IEEE Int. Conf. Comput. Commun.,
+2000, pp. 775–784.
+[2] J. Letchner, D. Fox, and A. LaMarce, “Large-scale localization from wire-
+less signal strength,” in Proc. Nat. Conf. Artif. Intell., 2005, pp. 15–20.
+[3] N. Malhotra, M. Krasniewski, C. Yang, S. Bagchi, and W. Chappell,
+“Location estimation in ad hoc networks with directional antennas,” in
+Proc. 25th IEEE Int. Conf. Distrib. Comput. Syst . Washington, DC:
+IEEE Computer Society, 2005, pp. 633–642.
+[4] M. Youssef, A. Agrawala, and U. Shankar, “Wlan location determination
+via clustering and probability distributions,” in Proc. IEEE Pervasive
+Comput. Commun., 2003, p. 143.
+[5] G. Mao, B. Fidan, and B. Anderson, “Wireless sensor network localization
+techniques,” Comput. Netw., vol. 51, no. 7, pp. 2529–2553, 2007.
+[6] A. Savvides, C. Han, and M. B. Strivastava, “Dynamic ﬁne-grained lo-
+calization in ad-hoc networks of sensors,” in Proc. ACM SIGMOBILE ,
+Rome, Italy, Jul. 2001, pp. 166–179.
+SONG et al.: SIMULTANEOUS LOCALIZATION OF MULTIPLE UNKNOWN AND TRANSIENT RADIO SOURCES USING A MOBILE ROBOT 679
+[7] B. H. Wellenhoff, H. Lichtenegger, and J. Collins, Global Positioning
+System: Theory and Practice. New York: Springer-Verlag, 1997.
+[8] N. Bulusu, J. Heidemann, and D. Estrin, “GPS-less low cost outdoor
+localization for very small devices,” IEEE Pers. Commun. Mag.,v o l .7 ,
+no. 5, pp. 28–34, Oct. 2000.
+[9] X. Ji and H. Zha, “Sensor positioning in wireless ad-hoc sensor networks
+using multidimensional scaling,” in Proc. IEEE Int. Conf. Comput. Com-
+mun., 2004, pp. 2562–2661.
+[10] K. Lorincz and M. Welsh, “Motetrack: A robust, decentralized approach
+to RF-based location tracking,” in Proc. Int. Workshop Location Context-
+Awareness Pervasive,, 2005, pp. 63–82.
+[11] M. Sichitiu and V . Ramadurai, “Localization of wireless sensor networks
+with a mobile beacon,” in Proc. 1st IEEE Int. Conf. Mobile Ad hoc Sens.
+Syst., 2004, pp. 174–183.
+[12] N. Bulusu, V . Bychkovskiy, D. Estrin, and J. Heidemann. (2002,
+Oct.). Scalable, ad hoc deployable rf-based localization. in Grace
+Hopper Celebration of Women in Computing Conf. 2002, Vancou-
+ver, BC, Canada. Los Angeles, CA: UCLA Press. [Online]. Avail-
+able:http://www.cs.ucla.edu/bulusu/papers/Bulusu02a.html.
+[13] D. Koutsonikolas, S. Das, and Y . Hu, “Path planning of mobile landmarks
+for localization in wireless sensor networks,” Comput. Commun., vol. 30,
+pp. 2577–2592, 2007.
+[14] T. Sit, Z. Liu, M. Ang, and W. Seah, “Multi-robot mobility enhanced hop-
+count based localization in ad hoc networks,”Robot. Auton. Syst., vol. 55,
+pp. 244–252, 2007.
+[15] T. He, C. Huang, B. M. Blum, J. A. Stankovic, and T. Abdelzaher, “Range-
+free localization schemes for large scale sensor networks,” in Proc. 9th
+Annu. Int. Conf. Mobile Comput. Netw., 2003, pp. 81–95.
+[16] D. Niculescu and B. Nath, “DV based positioning in ad hoc networks,”
+Telecommun. Syst., vol. 22, no. 1–4, pp. 267–280, 2003.
+[17] Y . Shang and W. Ruml, “Improved MDS-based localization,” in Proc.
+IEEE Int. Conf. Comput. Commun., Hong Kong, 2004, pp. 2640–2651.
+[18] P. Biswas and Y . Ye, “Semideﬁnite programming for ad hoc wireless
+sensor network localization,” in Proc. 3rd Int. Symp. Inf. Process. Sens.
+Netw., Berkeley, CA, Apr. 2004, pp. 46–54.
+[19] A. Ihler, I. Fisher, J. W., R. Moses, and A. Willsky, “Nonparametric belief
+propagation for self-localization of sensor networks,” IEEE J. Sel. Areas
+Commun., vol. 23, no. 4, pp. 809–819, Apr. 2005.
+[20] K. Yedavalli and B. Krishnamachari, “Sequence-based localization in
+wireless sensor networks,” IEEE Trans. Mobile Comput. , vol. 7, no. 1,
+pp. 81–94, Jan. 2008.
+[21] J. A. Costa, N. Patwari, and A. O. H. Iii, “Distributed weighted-
+multidimensional scaling for node localization in sensor networks,”ACM
+Trans. Sens. Netw., vol. 2, pp. 39–64, 2005.
+[22] U. Khan, S. Kar, and J. Moura, “A linear iterative algorithm for distributed
+sensor localization,” inProc. 42nd Asilomar Conf. Signals, Syst. Comput.,
+Oct. 2008, pp. 1160–1164.
+[23] U. Khan, S. Kar, and J. Moura, “Distributed sensor localization in random
+environments using minimal number of anchor nodes,” IEEE Trans.
+Signal Process., vol. 57, no. 5, pp. 2000–2016, May 2009.
+[24] U. Khan, S. Kar, and J. Moura, “Diland: An algorithm for distributed sen-
+sor localization with noisy distance measurements,” IEEE Trans. Signal
+Process., vol. 58, no. 3, pp. 1940–1947, Mar. 2010.
+[25] S. Thrun, W. Burgard, and D. Fox, Probabilistic Robotics. Cambridge,
+MA: MIT Press, 2005.
+[26] J. Kelly and G. S. Sukhatme, “Visual-inertial sensor fusion: Localization,
+mapping and sensor-to-sensor self-calibration,”Int. J. Robot. Res., vol. 30,
+no. 1, pp. 56–79, 2011.
+[27] E. S. Jones and S. Soatto, “Visual-inertial navigation, mapping and local-
+ization: A scalable real-time causal approach,” Int. J. Robot. Res., vol. 30,
+no. 4, pp. 407–430, 2011.
+[28] C. Wang, C. Thorpe, S. Thrun, M. Hebert, and H. Durrant-Whyte, “Simul-
+taneous localization, mapping and moving object tracking,” Int. J. Robot.
+Res., vol. 26, no. 9, pp. 889–916, Sep. 2007.
+[29] A. Elfes, “Occupancy grids: A probabilistic framework for robot per-
+ception and navigation” Ph.D. dissertation, Dept. Elect. Comput. Eng.,
+Carnegie Mellon Univ., Pittsburgh, PA, 1989.
+[30] H. P. Moravec, “Sensor fusion in certainty grids for mobile robots,” Artif.
+Intell. Mag., no. 9, pp. 61–74, 1988.
+[31] G. Ferri, M. Jakuba, E. Caselli, V . Mattoli, B. Mazzolai, D. Yoerger, and
+P. Dario, “Localizing multiple gas/odor sources in an indoor environment
+using Bayesian occupancy grid mapping,” inProc. Int. Conf. Intell. Robots
+Syst., Nov. 2007, pp. 566–571.
+[32] X. Zhang, Y . Sun, J. Xiao, and F. Cabrera-Mora, “Theseus gradient guide:
+An indoor transmitter searching approach using received signal strength,”
+in Proc. IEEE Int. Conf. Robot. Autom. , Shanghai, China, May. 2011,
+pp. 2560–2565.
+[33] C. Kim, D. Song, Y . Xu, and J. Yi, “Localization of multiple unknown
+transient radio sources using multiple paired mobile robots with limited
+sensing ranges,” inProc. IEEE Int. Conf. Robot. Autom., Shanghai, China,
+May 2011, pp. 5167–5172.
+[34] D. Song, C. Kim, and J. Yi, “On the time to search for an intermittent
+signal source under a limited sensing range,”IEEE Trans. Robot., vol. 27,
+no. 2, pp. 313–323, Apr. 2011.
+[35] D. Song, J. Yi, and Z. Goodwin, “Localization of unknown networked
+radio sources using a mobile robot with a directional antenna,” in Proc.
+Am. Control Conf., New York, Jul. 2007, pp. 5952–5957.
+[36] D. Song, C. Kim, and J. Yi, “Simultaneous localization of multiple un-
+known CSMA-based wireless sensor network nodes using a mobile robot
+with a directional antenna,” J. Intell. Serv. Robots, vol. 2, no. 4, pp. 219–
+233, Oct. 2009.
+[37] D. Song, C. Kim, and J. Yi, “Monte carlo simultaneous localization of
+multiple unknown transient radio sources using a mobile robot with a
+directional antenna,” inProc. IEEE Int. Conf. Robot. Autom.,K o b e ,J a p a n ,
+May 2009, pp. 3154–3159.
+[38] M. Kim and N. Y . Chong, “Direction sensing rﬁd reader for mobile robot
+navigation,” IEEE Trans. Autom. Sci. Eng., vol. 6, no. 1, pp. 44–54, Jan.
+2009.
+[39] Y . Sun, J. Xiao, and F. Cabrera-Mora, “Robot localization and energy-
+efﬁcient wireless communications by multiple antennas,” in Proc.
+IEEE/RSJ Int. Conf. Intell. Robots Syst. , St. Louis, MO, Oct. 2009,
+pp. 377–381.
+[40] W. L. Stutzman and G. A. Thiele, Antenna Theory and Design .N e w
+York: Wiley, 2003.
+[41] R. S. Elliott, Antenna Theory and Design. Piscataway, NJ: IEEE Press,
+2003.
+[42] B. Garel, “Likelihood ratio test for univariate Gaussian mixture,”J. Statist.
+Plan. Infer., vol. 96, pp. 325–350, 2001.
+[43] C. Delmas, “On likelihood ratio tests in Gaussian mixture models,”Indian
+J. Statist., vol. 65, no. 3, pp. 513–531, Aug. 2003.
+[44] T. Cormen, C. E. Leiserson, R. Rivest, and C. Stein, Eds., Instruction to
+Algorithms. Cambridge, MA: McGraw-Hill, 1989.
+[45] C. Amb ¨uhl, “An optimal bound for the MST algorithm to compute en-
+ergy efﬁcient broadcast trees in wireless networks,” in Automata, Lan-
+guages and Programming (Lecture Notes in Computer Science Series
+3580), L. Caires, G. Italiano, L. Monteiro, C. Palamidessi, and M. Yung,
+Eds. Berlin, Germany: Springer-Verlag, 2005, pp. 1139–1150.
+[46] G. McLachlan, Discriminant Analysis and Statistical Pattern Recognition.
+New York: Wiley-Interscience, 1992.
+[47] H. Choset, W. Burgard, S. Hutchinson, G. Kantor, L. E. Kavraki, K. Lynch,
+and S. Thrun, Principles of Robot Motion: Theory, Algorithms, and Im-
+plementation. Cambridge, MA: MIT Press, Apr. 2005.
+[48] M. Bazaraa, H. Shelrali, and C. Shetty, Nonlinear Programming: Theory
+and Algorithms. New York: Wiley, 1993, p. 132, Def. 4.1.1.
+Dezhen Song (S’02–M’04–SM’09) received the
+B.S. and M.S. degrees from Zhejiang University,
+Hangzhou, China, in 1995 and 1998, respectively,
+and the Ph.D. degree from the University of Califor-
+nia, Berkeley, in 2004.
+He is currently an Associate Professor with the
+Department of Computer Science and Engineering,
+Texas A&M University, College Station, TX. His pri-
+mary research interests include networked robotics,
+distributed sensing, computer vision, surveillance,
+and stochastic modeling.
+Dr. Song received the Kayamori Best Paper Award at the 2005 IEEE In-
+ternational Conference on Robotics and Automation (with J. Yi and S. Ding).
+He received the National Science Foundation Faculty Early Career Develop-
+ment (CAREER) Award in 2007. He co-chaired IEEE Robotics and Automa-
+tion Society Technical Committee on Networked Robots from 2007 to 2009.
+He is an Associate Editor of the IEEE T RANSACTIONS ON ROBOTICS and an
+Associate Editor of the IEEE T RANSACTIONS ON AUTOMATION SCIENCE AND
+ENGINEERING.
+680 IEEE TRANSACTIONS ON ROBOTICS, VOL. 28, NO. 3, JUNE 2012
+Chang-Young Kim (S’11) received the B.S. de-
+gree in electrical engineering from Korea University,
+Seoul, Korea, in 2005. He is currently working toward
+the Ph.D. degree with the Department of Computer
+Science and Engineering, Texas A&M University,
+College Station.
+He was with the GIT Co., Ltd, Seoul, where he
+was involved in the ﬁelds of automotive and embed-
+ded systems. His research interests include mobile
+robots, networked robots, radio localization, robot
+navigation, sensor networks, and surveillance.
+Jingang Yi (S’99–M’02–SM’07) received the B.S.
+degree in electrical engineering from Zhejiang Uni-
+versity, Hangzhou, China, in 1993, the M.Eng. de-
+gree in precision instruments from Tsinghua Univer-
+sity, Beijing, China, in 1996, and the M.A. degree
+in mathematics and the Ph.D. degree in mechani-
+cal engineering from the University of California,
+Berkeley, in 2001 and 2002, respectively.
+He is currently an Assistant Professor with the
+Department of Mechanical and Aerospace Engineer-
+ing, Rutgers University, Piscataway, NJ. His research
+interests include autonomous robotic systems, dynamic systems and con-
+trol, and automation science and engineering, with applications to biomedical
+systems, civil infrastructural and transportation systems, and semiconductor
+manufacturing.
+Dr. Yi received the 2010 National Science Foundation Faculty Early Career
+Development (CAREER) Award. He has co-authored papers that received the
+Kayamori Best Paper Award from the 2005 IEEE International Conference on
+Robotics and Automation. He currently an Associate Editor of the American
+Society of Mechanical Engineers Dynamic Systems and Control Division and
+the IEEE Robotics and Automation Society Conference Editorial Boards. He
+is an Associate Editor for the IEEE T RANSACTIONS ON AUTOMATION SCIENCE
+AND ENGINEERING.

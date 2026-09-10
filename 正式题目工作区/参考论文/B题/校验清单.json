@@ -1,0 +1,158 @@
+{
+  "pdf_count": 24,
+  "chinese": 11,
+  "english": 13,
+  "total_pages": 245,
+  "checks": [
+    "file MIME = application/pdf",
+    "all pages parsed with pypdf",
+    "unique SHA-256",
+    "titles and primary bibliographic metadata reviewed"
+  ],
+  "files": [
+    {
+      "rank": 1,
+      "pdf": "论文全文/01_有界测角误差下的传感器布置与选择.pdf",
+      "pages": 6,
+      "sha256": "f12a5e11d694a85353b019835d6ef2de810a4124f094c16318257f877468d6ca"
+    },
+    {
+      "rank": 2,
+      "pdf": "论文全文/02_纯方位定位的最坏位置误差界.pdf",
+      "pages": 6,
+      "sha256": "e7aa8896372388d94635a68e75980f466d0d013c3d2068d4c186aa20581da7d9"
+    },
+    {
+      "rank": 3,
+      "pdf": "论文全文/03_兼顾移动与测量耗时的谨慎贪心主动定位.pdf",
+      "pages": 23,
+      "sha256": "ec7976a4129b8df2b03eac3916345a68f2f4c3778f971382cad410d05b1338bc"
+    },
+    {
+      "rank": 4,
+      "pdf": "论文全文/04_卫星导航干扰源无人机定位观测路径规划方法.pdf",
+      "pages": 13,
+      "sha256": "83e1d70e37a682aff8001ac60b2105eee2e6acfff74f43b45ab87e364a3b6544"
+    },
+    {
+      "rank": 5,
+      "pdf": "论文全文/05_带噪相对观测下的多目标主动定位.pdf",
+      "pages": 8,
+      "sha256": "30eb9fe97a353525814c7728379f14688f91b29bbde9951abcc7ddbdece6ed62"
+    },
+    {
+      "rank": 6,
+      "pdf": "论文全文/06_存在系统误差下交叉定位系统最优交会角研究.pdf",
+      "pages": 8,
+      "sha256": "7c33026eee3b5394a36608e8c4a6038693996710dce9fcce0362a890e3ba3638"
+    },
+    {
+      "rank": 7,
+      "pdf": "论文全文/07_测向交叉定位系统中的最优交会角研究.pdf",
+      "pages": 7,
+      "sha256": "54859e166ad7f5244c2a3e1b13dd43a9fea6842a882321396fd4bc305c9600ce"
+    },
+    {
+      "rank": 8,
+      "pdf": "论文全文/08_测向交叉定位体制下平台航迹最优规划算法.pdf",
+      "pages": 7,
+      "sha256": "1bb0b6431c49e820a568ba901f87eac1da50df3e095e1caa84d544cb702c76b8"
+    },
+    {
+      "rank": 9,
+      "pdf": "论文全文/09_单机器人同时定位多个未知瞬态无线电源.pdf",
+      "pages": 13,
+      "sha256": "81f1cf28de8139f24ee5e78981a6dab7dd88777970918350761fca147af73c0a"
+    },
+    {
+      "rank": 10,
+      "pdf": "论文全文/10_多站交叉定位相对GDOP及其测向站分布问题研究.pdf",
+      "pages": 5,
+      "sha256": "fbdd50ab4820a1678dcfeb7049b66ac0b9f7ed503a2f63f3fe8b2b548d170dd1"
+    },
+    {
+      "rank": 11,
+      "pdf": "论文全文/11_最小包围圆及球椭球的随机算法.pdf",
+      "pages": 12,
+      "sha256": "54cc7859ff186e9067a300cc5fb7a9667fb4f976dbeea53bd043d1bd7610cdab"
+    },
+    {
+      "rank": 12,
+      "pdf": "论文全文/12_面向未知定向辐射源组合定位的无人机群优化部署.pdf",
+      "pages": 15,
+      "sha256": "31992619d5251c8bcbbd9ade565b21e79aabc9f7740540fdeb4e674fd5d6830f"
+    },
+    {
+      "rank": 13,
+      "pdf": "论文全文/13_二维三维目标定位跟踪的最优传感器布置.pdf",
+      "pages": 25,
+      "sha256": "e9f39b9aeee97ab76544a56ad336940ac3b291d44cb46fae98b04bb207b4ede6"
+    },
+    {
+      "rank": 14,
+      "pdf": "论文全文/14_定向接收天线下单机器人定位未知网络无线电源.pdf",
+      "pages": 6,
+      "sha256": "36c01aad0c1dca89b01c06236c3c0c56d022a13338ec8d92511c5733d2ae543d"
+    },
+    {
+      "rank": 15,
+      "pdf": "论文全文/15_有限感知范围下间歇信号源的搜索时间.pdf",
+      "pages": 11,
+      "sha256": "baa5105bdc4a29751f48dea44852f3806fa0bcc32fcaafc2648e6fef404947cd"
+    },
+    {
+      "rank": 16,
+      "pdf": "论文全文/16_无人机无线电监测混合定位算法.pdf",
+      "pages": 6,
+      "sha256": "9a1cc2b77255f38a847fa3f9796f9b5410532a9039b2099313f89aa44c4572c2"
+    },
+    {
+      "rank": 17,
+      "pdf": "论文全文/17_纯方位角目标跟踪及移动平台可观性控制方法.pdf",
+      "pages": 13,
+      "sha256": "ea294ae1f3494479e77031c717b2975e22c87122c65be8824516ef695a4d0501"
+    },
+    {
+      "rank": 18,
+      "pdf": "论文全文/18_非合作目标测角定位下的布站优化方法与仿真.pdf",
+      "pages": 14,
+      "sha256": "a5b2bc7239bd374a6f5f1dc5eebf64f34a942cdd943b52dd166ee9732f7c67ea"
+    },
+    {
+      "rank": 19,
+      "pdf": "论文全文/19_用旋转测角驱动微型飞行器趋近射频源.pdf",
+      "pages": 7,
+      "sha256": "f2dc4c7c4c574bee2ecfb7a6643d813c68daff4c9955b8ced1818769ac934a0b"
+    },
+    {
+      "rank": 20,
+      "pdf": "论文全文/20_成对机器人分散搜索多个未知瞬态无线电源.pdf",
+      "pages": 8,
+      "sha256": "76397edb8ede21b7b6fd72948b03372c0fbb29a3994bd990df42f880545d7d39"
+    },
+    {
+      "rank": 21,
+      "pdf": "论文全文/21_多个成对机器人协作搜索未知瞬态无线电源.pdf",
+      "pages": 13,
+      "sha256": "282441340fb4c6814821043b97741f7d6ba63985101b639b41a2d7170ec44a84"
+    },
+    {
+      "rank": 22,
+      "pdf": "论文全文/22_最大熵重加权改善纯方位传感器D最优布置.pdf",
+      "pages": 8,
+      "sha256": "6c7fb8873af86c8d05263c2b8a8ab4aef95e25e39346a9b873c8ccd7a69f3a7a"
+    },
+    {
+      "rank": 23,
+      "pdf": "论文全文/23_测控装备干扰源快速侦测系统设计研究.pdf",
+      "pages": 8,
+      "sha256": "51877d2633660ad3d98bad4911c62aef5c06a51a2601d6c60f35b4fee9ac06cf"
+    },
+    {
+      "rank": 24,
+      "pdf": "论文全文/24_无线电监测中多站测向交叉定位精度研究.pdf",
+      "pages": 3,
+      "sha256": "c73c8a5fdde9f95eea6cd5b901d7b29232155b6cef307a8ee2485a07b36eeb07"
+    }
+  ]
+}

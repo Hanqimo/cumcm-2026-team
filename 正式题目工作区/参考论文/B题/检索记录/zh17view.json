@@ -1,0 +1,10 @@
+{
+  "id": "zh17view",
+  "url": "https://chinatransducers.seu.edu.cn/ch/reader/view_pdf.aspx?file_no=cg08100129",
+  "final_url": "https://chinatransducers.seu.edu.cn/ch/reader/view_pdf.aspx?file_no=cg08100129",
+  "content_type": "text/html; charset=utf-8",
+  "status": "html",
+  "links": [],
+  "metadata": [],
+  "snippet": "\r\n\r\n \r\n\r\n \r\n  \r\n\t\r\n   \r\n          \r\n\t\t\thtml, body\t{ height:100%; }\r\n\t\t\tbody { margin:0;padding:0;overflow:auto;}   \r\n\t\t\t#flashContent { display:none; }\r\n          \r\n        \r\n         \r\n            var URLParams = new Object() ;\r\n            var aParams = document.location.search.substr(1).split('&') ;\r\n            for (i=0 ; i  \r\n\r\n\t\t\r\n\t\t  \r\n\t\t\r\n\t"
+}
