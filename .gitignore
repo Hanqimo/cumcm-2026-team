@@ -21,29 +21,24 @@ venv/
 .DS_Store
 Thumbs.db
 
-# Generated outputs and local datasets
-data/
-outputs/
-artifacts/
+# Temporary and scratch files
 tmp/
-documents/_local/
-*.log
+**/.cache/
+**/scratch/
+*.tmp
+
+# Download and extraction caches
+resources/problems/.cache/
 
 # LaTeX build products
+contest/paper/build/
 *.aux
 *.bbl
 *.blg
 *.fdb_latexmk
 *.fls
-*.log
-*.out
 *.synctex.gz
 *.toc
 *.xdv
 
-# Keep source documents; ignore generated PDFs by default
-*.pdf
-
-# Local-only CUMCM paper/review corpus. Keep generated indexes and fetch script trackable.
-documents/papers/reviews/**/*.md
-!references/**/*.pdf
+# Contest data, results, figures, PDFs and paper files are intentionally trackable.
