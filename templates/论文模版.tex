@@ -1,0 +1,250 @@
+% !TeX program = xelatex
+% !TeX encoding = UTF-8
+% 编译方法：xelatex 论文模版.tex（建议连续编译两次以更新交叉引用）
+\documentclass[UTF8,a4paper,zihao=-4,fontset=none]{ctexart}
+
+% 字体采用三级自动选择机制，使模板能够在不同电脑上直接编译。
+% 先检查 Windows 标准字体目录；再检查 macOS 版 Microsoft Word 的字体；均不可用时回退到 TeX Live 自带的 Fandol 字体。
+% 无论选择哪一组字体，主字体的 BoldFont 都显式绑定到对应黑体，确保 \textbf 下的中文字体正确。
+\newcommand{\UseWindowsMicrosoftFonts}{
+  \setCJKmainfont{simsun.ttc}[Path={C:/Windows/Fonts/},BoldFont=simhei.ttf]
+  \setCJKsansfont{simhei.ttf}[Path={C:/Windows/Fonts/},BoldFont=simhei.ttf]
+  \setCJKmonofont{simsun.ttc}[Path={C:/Windows/Fonts/}]
+  \setCJKfamilyfont{paperhei}{simhei.ttf}[Path={C:/Windows/Fonts/},BoldFont=simhei.ttf]
+  \PackageInfo{paper-template}{Using Windows SimSun and SimHei}
+}
+
+\newcommand{\UseOfficeMicrosoftFonts}{
+  \setCJKmainfont{Simsun.ttc}[
+    Path={/Applications/Microsoft Word.app/Contents/Resources/DFonts/},
+    BoldFont=SimHei.ttf
+  ]
+  \setCJKsansfont{SimHei.ttf}[
+    Path={/Applications/Microsoft Word.app/Contents/Resources/DFonts/},
+    BoldFont=SimHei.ttf
+  ]
+  \setCJKmonofont{Simsun.ttc}[
+    Path={/Applications/Microsoft Word.app/Contents/Resources/DFonts/}
+  ]
+  \setCJKfamilyfont{paperhei}{SimHei.ttf}[
+    Path={/Applications/Microsoft Word.app/Contents/Resources/DFonts/},
+    BoldFont=SimHei.ttf
+  ]
+  \PackageInfo{paper-template}{Using Microsoft Office SimSun and SimHei}
+}
+
+\newcommand{\UsePortableFandolFonts}{
+  \setCJKmainfont{FandolSong-Regular.otf}[cmap=UniGB-UTF16-H,BoldFont=FandolHei-Regular.otf]
+  \setCJKsansfont{FandolHei-Regular.otf}[cmap=UniGB-UTF16-H,BoldFont=FandolHei-Regular.otf]
+  \setCJKmonofont{FandolFang-Regular.otf}[cmap=UniGB-UTF16-H]
+  \setCJKfamilyfont{paperhei}{FandolHei-Regular.otf}[cmap=UniGB-UTF16-H,BoldFont=FandolHei-Regular.otf]
+  \PackageWarningNoLine{paper-template}{SimSun and SimHei not found; using portable Fandol fonts}
+}
+
+\newcommand{\UseOfficeOrPortableFonts}{
+  \IfFileExists{/Applications/Microsoft Word.app/Contents/Resources/DFonts/Simsun.ttc}{
+    \IfFileExists{/Applications/Microsoft Word.app/Contents/Resources/DFonts/SimHei.ttf}{
+      \UseOfficeMicrosoftFonts
+    }{
+      \UsePortableFandolFonts
+    }
+  }{
+    \UsePortableFandolFonts
+  }
+}
+
+% 将下面的 0 改为 1，可强制使用完全随 TeX Live 提供的 Fandol 字体进行兼容性测试。
+\providecommand{\ForcePortableFonts}{0}
+\ifnum\ForcePortableFonts=1
+  \UsePortableFandolFonts
+\else
+  \IfFileExists{C:/Windows/Fonts/simsun.ttc}{
+    \IfFileExists{C:/Windows/Fonts/simhei.ttf}{
+      \UseWindowsMicrosoftFonts
+    }{
+      \UseOfficeOrPortableFonts
+    }
+  }{
+    \UseOfficeOrPortableFonts
+  }
+\fi
+\newcommand{\heifont}{\CJKfamily{paperhei}}
+
+% 页面、行距与段落。
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,footskip=1.2cm]{geometry}
+\usepackage{setspace}
+\singlespacing
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+
+% 数学公式、表格与插图。
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{graphicx}
+\usepackage{booktabs,tabularx,array,multirow}
+\usepackage[table]{xcolor}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{enumitem}
+
+% 标题、页码与交叉引用。
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+
+% 一级标题使用中文序号并居中，下级标题使用阿拉伯数字层级编号并左对齐。
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
+\setcounter{secnumdepth}{3}
+\titleformat{\section}[block]
+  {\centering\heifont\bfseries\zihao{4}}
+  {\chinese{section}、}{0pt}{}
+\titleformat{\subsection}[hang]
+  {\raggedright\heifont\bfseries\zihao{-4}}
+  {\thesubsection}{0.8em}{}
+\titleformat{\subsubsection}[hang]
+  {\raggedright\heifont\bfseries\zihao{-4}}
+  {\thesubsubsection}{0.8em}{}
+\titlespacing*{\section}{0pt}{2.8ex plus 0.5ex minus 0.2ex}{1.7ex}
+\titlespacing*{\subsection}{0pt}{1.6ex plus 0.3ex minus 0.1ex}{0.8ex}
+\titlespacing*{\subsubsection}{0pt}{1.4ex plus 0.2ex minus 0.1ex}{0.7ex}
+
+% 页码从摘要页开始，位于页脚中央。
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\zihao{5}\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% 图表及列表的常用设置。
+\captionsetup{font=small,labelfont=bf,labelsep=quad}
+\setlist[itemize]{itemsep=0.35\baselineskip,topsep=0.8ex,parsep=0pt,partopsep=0pt}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{Z}{>{\centering\arraybackslash}X}
+
+% 请优先修改下面三个字段。
+\newcommand{\papertitle}{论文题目}
+\newcommand{\paperabstract}{请在此填写摘要。摘要应简要说明研究问题、所用方法、主要结果与结论，避免写成正文各节的简单罗列。}
+\newcommand{\paperkeywords}{关键词一；关键词二；关键词三}
+
+\hypersetup{
+  pdftitle={\papertitle},
+  pdfauthor={}
+}
+
+\begin{document}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\thispagestyle{fancy}
+
+% 第一页：标题、摘要与关键词。
+\begin{center}
+  \vspace*{0.3cm}
+  {\heifont\bfseries\zihao{3}\papertitle\par}
+  \vspace{1.5\baselineskip}
+  {\heifont\bfseries\zihao{4}摘要\par}
+\end{center}
+
+\paperabstract\par
+\vspace{0.5\baselineskip}
+\noindent{\heifont\bfseries 关键词：}\paperkeywords
+
+\newpage
+
+\section{问题重述}
+
+\subsection{问题背景}
+
+请在此介绍问题产生的现实背景、研究对象与研究意义。对题目材料中的事实应准确转述，不宜在本小节提前展开模型推导。
+
+\subsection{问题重述}
+
+请在此用自己的语言准确概括需要解决的各项任务，明确已知条件、待求目标及各问之间的关系。
+
+\section{模型假设}
+
+为使模型可解且与实际问题相符，可在此列出必要假设，并逐条说明假设依据。
+\begin{itemize}[label=\textbullet,leftmargin=2em]
+  \item \textbf{假设一：}请在此填写假设内容及其依据。
+  \item \textbf{假设二：}请在此填写假设内容及其依据。
+  \item \textbf{假设三：}请在此填写假设内容及其依据。
+\end{itemize}
+
+\section{符号说明}
+
+% 可继续复制表格行；三栏内容均居中，表格只保留顶部、表头下方和底部三条横线。
+\begin{table}[H]
+  \centering
+  \begingroup
+  \renewcommand{\arraystretch}{1.45}
+  \begin{tabularx}{\textwidth}{C{0.18\textwidth}ZC{0.18\textwidth}}
+    \toprule[1.2pt]
+    {\heifont\bfseries 符号} & {\heifont\bfseries 定义} & {\heifont\bfseries 单位} \\
+    \midrule[0.5pt]
+    $x_i$ & 第 $i$ 个研究对象对应的变量值 & 请填写 \\
+    $n$ & 样本量 & 个 \\
+    $\theta$ & 请填写参数定义 & -- \\
+    $y$ & 请填写因变量定义 & 请填写 \\
+    \bottomrule[1.2pt]
+  \end{tabularx}
+  \endgroup
+\end{table}
+
+\section{问题分析}
+
+\subsection{问题一分析}
+
+请在此说明问题一的核心矛盾、数据特征、可采用的方法以及选择该方法的理由。
+
+\subsection{问题二分析}
+
+请在此说明问题二与问题一之间的联系，以及需要新增或调整的模型要素。
+
+\section{问题一的模型建立与求解}
+
+\subsection{模型建立}
+
+请在此给出变量关系、目标函数、约束条件和参数含义。数学公式可使用 equation、align 等环境，并通过 label 与 cref 命令交叉引用。
+
+\subsection{模型求解}
+
+请在此说明求解方法、计算过程与主要结果。
+
+\section{问题二的模型建立与求解}
+
+\subsection{模型建立}
+
+请在此说明问题二所需的新变量、模型关系和约束条件。
+
+\subsection{模型求解}
+
+请在此说明问题二的求解过程与主要结果。其余问题可按相同层级继续添加新的 section。
+
+\section{模型检验}
+
+请在此通过误差分析、敏感性分析、稳健性检验或与实际数据对照等方式检验模型。
+
+\section{模型评价与推广}
+
+\subsection{模型的优点}
+
+请在此概括模型在合理性、解释性、精度或计算效率方面的优点。
+
+\subsection{模型的局限性}
+
+请在此客观说明假设、数据和方法带来的限制。
+
+\subsection{模型的推广}
+
+请在此说明模型能够扩展到哪些情形，以及推广时需要修改的条件。
+
+\begin{thebibliography}{99}
+  \bibitem{reference1} 作者. 文献题目[J]. 期刊名称, 年份, 卷号(期号): 起止页码.
+  \bibitem{reference2} 作者. 书名[M]. 出版地: 出版社, 年份.
+\end{thebibliography}
+
+\end{document}

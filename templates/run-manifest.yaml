@@ -1,0 +1,15 @@
+run_id: R001
+question: q1
+model: M01-v01
+algorithm: A01-v01
+data: D01
+git_commit: null
+command: null
+random_seed: null
+environment: null
+started_at: null
+finished_at: null
+status: unverified
+outputs: []
+verification: []
+notes: null
