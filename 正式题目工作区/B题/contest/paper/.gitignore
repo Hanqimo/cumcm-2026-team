@@ -1,0 +1,3 @@
+# 本目录下 xelatex 的编译中间产物不进版本库。
+# 根目录 .gitignore 中的 contest/paper/build/ 只覆盖仓库根下的路径，不覆盖本子树。
+build/
