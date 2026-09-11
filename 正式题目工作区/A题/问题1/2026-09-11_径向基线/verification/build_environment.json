@@ -1,0 +1,20 @@
+{
+  "compiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin\n",
+  "command": [
+    "clang++",
+    "-O3",
+    "-std=c++17",
+    "src/solver.cpp",
+    "-o",
+    "/private/tmp/a_q1_solver"
+  ],
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "numpy": "2.3.5",
+  "openpyxl": "3.1.5",
+  "solver_sha256": "5cf0cf302cb00b1243e8df58682440248dd73084c147c53b02cc7acb255a3a55",
+  "binary_sha256": "7f615b40ef178d2f9570b0d1638a5c0a701d9c560359ba3db9911258eadf762f",
+  "total_cases": 29,
+  "no_fast_math": true,
+  "deterministic": true
+}

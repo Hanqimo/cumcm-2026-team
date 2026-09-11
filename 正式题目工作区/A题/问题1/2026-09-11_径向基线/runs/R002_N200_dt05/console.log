@@ -1,0 +1,7 @@
+time 300 steps 600 wall 0.010451
+time 600 steps 1200 wall 0.0212528
+time 900 steps 1800 wall 0.0318191
+time 1200 steps 2400 wall 0.0424708
+time 1500 steps 3000 wall 0.053112
+time 1800 steps 3600 wall 0.063435
+done /Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/正式题目工作区/A题/问题1/2026-09-11_径向基线/runs/R002_N200_dt05/solution wall 0.0642438 complete 1
