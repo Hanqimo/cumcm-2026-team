@@ -1,0 +1,22 @@
+{
+  "温度": {
+    "result_values_checked": 37800,
+    "all_equal_to_rounded_raw": true,
+    "four_decimal_formats": true
+  },
+  "水分浓度": {
+    "result_values_checked": 37800,
+    "all_equal_to_rounded_raw": true,
+    "four_decimal_formats": true
+  },
+  "comparison": {
+    "time_series_values_checked": 23413,
+    "formula_caches_match_raw": true,
+    "summary_matches_raw": true,
+    "chart_count": 1
+  },
+  "files": {
+    "result1.xlsx": "2f5c5f95569d65520231f1e6a38728b25700bd86078429b58d3717b88cbcedd5",
+    "模型对比.xlsx": "5591118829ce52f2546d880c51833d201d83bc9919a829c12013e78e948fd5a8"
+  }
+}

@@ -1,0 +1,81 @@
+from pathlib import Path
+import json,numpy as np
+P=Path(__file__).resolve().parents[1];m=json.loads((P/'results/selection_and_comparison.json').read_text());v=json.loads((P/'verification/checks.json').read_text());a=np.loadtxt(P/'results/full_precision.csv',delimiter=',',skiprows=1)
+rows=['| 半径 / cm | 无潜热温度 / °C | 有潜热温度 / °C | 温度降低 / °C | 共用含水率 / (kg/kg) |','|---:|---:|---:|---:|---:|']
+for i,r in enumerate([0,.5,1,1.5,2]):rows.append(f"| {r:g} | {m['T_no_latent_at1800'][i]:.4f} | {m['T_at1800'][i]:.4f} | {m['drop_at1800'][i]:.4f} | {m['C_at1800'][i]:.4f} |")
+checks=['| 加密方向 | 完整输出最大差 | 最大差位置 |','|---|---:|---|']
+for key,label in [('thermal_time_final','温度时间步减半，°C'),('thermal_space_final','温度空间网格加倍，°C'),('moisture_time_final_T','水分时间步减半对温度的影响，°C'),('moisture_space_final_T','水分网格加倍对温度的影响，°C'),('moisture_time_final_C','水分时间步减半，kg/kg'),('moisture_space_final_C','水分网格加倍，kg/kg')]:
+ z=v['comparisons'][key];checks.append(f"| {label} | {z['max_abs_difference']:.8e} | {z['time_s']} s，r={z['radius_cm']:g} cm |")
+text=f'''# A题第一问：表面蒸发潜热模型与对比
+
+## 核心结论
+
+在保留原有效水分边界的条件下，加入表面汽化耗热会使温度结果发生**非常明显的变化**。1800 s时，表面温度由约36.7856°C变为11.6454°C，降低25.1402°C；轴心温度降低23.2737°C。全输出最大温差为 {m['max_temperature_drop_C']:.8f} °C，发生在 {m['max_drop_time_s']} s、r={m['max_drop_radius_cm']:g} cm；全部1800×21位置的温差均方根为 {m['rms_temperature_drop_C']:.6f} °C。此差异远大于本轮的数值加密差异。
+
+两模型水分方程完全相同，且D只依赖含水率、外界有效平衡值也不依赖药材温度。因此新模型是水分驱动温度的单向耦合，同网格比较的含水率差**严格为零**，1800 s表面仍为1.5102 kg/kg。不能把这一数学结构结论解读为真实干燥过程中温度不影响蒸发。
+
+**本轮也发现物理解释上的条件性冲突。** 若附件的烘房水分浓度是常见的kg水蒸气/kg干空气，并假定总压101325 Pa，则1800 s空气露点约为 {m['dewpoint_check']['dewpoint_at1800_C']:.2f} °C，高于新模型表面温度11.65°C。此时保留的有效边界仍强制正向蒸发，与水蒸气分压驱动的传质方向不相容。所以结果证明“当前模型对潜热极为敏感”，但不能把约11.65°C当作已验证的药材实际表面温度。进一步用于真实预测，需要同时修正湿度—平衡含水率关系或采用水活度/蒸气压驱动的传质边界。
+
+## 模型、参数和算法入口
+
+完整方程、物理定律来源、题目依据、补充假设和可实现的算法推导见 [模型与求解算法](model/模型与求解算法.md)。模型编号M02-v01，算法A02。新增热边界为kT_r=h(Tinf−Ts)−L_v(Ts)j，其中j=rho_d hm(Cs−Ce)，rho_d=820/(1+2.55)={m['rho_d_kg_m3']:.9f} kg/m³，L_v(T)=2500900−2370T J/kg，T为°C。
+
+rho_d的计算条件是把题给820 kg/m³解释为初始湿药材总体密度，并假设干物质和体积不变。L_v是纯水汽化焓差的近似，不含未知药材的结合水解吸附加热。NIST/IAPWS物性来源为 https://www.nist.gov/document/nistir5078-tab1pdf ，原始核对节点与访问说明在inputs。相变仅设在侧表面，不在体热源中重复扣除，其他假设继承M01，包括有效Ce直接等同附件烘房水分浓度、忽略显式水分显热输运、辐射、收缩和端面效应。
+
+先求与M01相同的水分子问题，保存每个接受时间步的表面含水率，再线性插值到热时间网格形成实际蒸发质量通量。空间采用含轴心和表面节点的守恒有限体积法，含水率相关D采用算术平均界面系数。正式两场时间推进均采用带两个后向欧拉半步启动的Crank–Nicolson隐式梯形格式，水分由Picard求解并检查新状态的原非线性残差；温度因L_v为仿射函数，表面有效系数为h−2370j，仍可直接解三对角系统。最终网格和时间步下该有效系数始终为正。
+
+本次先按原后向欧拉算法运行，发现新增边界冷却使温度初期也需要很细空间网格，而温度对水分通量历史的时间误差更敏感。为了满足相同验收门槛，在保留空间离散、守恒和Picard结构的基础上，把两场时间积分改为二阶；已完成的后向欧拉结果保留为交叉对照，没有静默覆盖。
+
+## 最终结果与对照口径
+
+下表为1800 s。同网格无潜热温度是在同一热求解过程中并行求解的lambda=0场，有潜热场为lambda=1，二者使用完全相同的热空间网格、步长、外界输入及初值。
+
+{chr(10).join(rows)}
+
+无潜热平均温度为 {m['mean_T0_at1800']:.6f} °C，有潜热平均温度为 {m['mean_T_at1800']:.6f} °C，平均降低 {m['mean_drop_at1800']:.6f} °C。新模型表面最低温度为 {m['temperature_stats']['min_T']:.6f} °C，细时间网格定位约 {m['temperature_stats']['min_time_s']:.4f} s；按题目整数秒输出，最低点位于917 s附近。所有温度都在纯水物性近似使用的0—50°C范围内，未触发冻结问题。
+
+与上轮已经交付的M01文件相比，本轮同网格无潜热场的最大温度差为 {m['historical_temperature_output_max_difference_to_new_no_latent']:.8e} °C，共用水分场的最大差为 {m['historical_moisture_output_max_difference']:.8e} kg/kg。这些微小差异来自数值方法与分辨率变化，不是潜热造成的水分变化。原M01文件保持原样，快照、校验值和源目录记录在inputs/manifest.json。
+
+## 潜热影响的数量级
+
+本模型1800 s累计外排水量约为 {m['water_loss_kg']:.8f} kg，累计汽化耗热约 {m['energy_latent_J']/1000:.4f} kJ，累计外界对流供热约 {m['energy_convective_J']/1000:.4f} kJ，差额由药材内部储热下降提供。实际热通量积分与有限体积储热增量的累计差为 {m['energy_balance_J']:.3e} J。这个检查只验证所建模型的能量守恒，并不验证有效蒸发边界的物理合理性。
+
+在1800 s，汽化耗热通量约 {m['latent_flux_at1800_W_m2']:.3f} W/m²，对流供热约 {m['convective_flux_at1800_W_m2']:.3f} W/m²。若把同一蒸发水量代入原无潜热模型的表面温度，潜热负荷约 {m['latent_flux_using_no_latent_surface_at1800_W_m2']:.3f} W/m²，而原模型对流输入只有 {m['convection_no_latent_at1800_W_m2']:.3f} W/m²。这说明在当前失水量和质量换算下，遗漏项的数量级足以显著改变热量收支，不能仅以第一问“预热”或未给潜热参数为由忽略它。
+
+## 数值验证
+
+最终温度运行 `FINAL` 与水分运行 `CCN12800_4096` 均使用N=12800和基本步长1/4096 s，在0—2、2—8、8—32、32—128、128—512、512—1800 s区间内分别乘1、4、16、64、128、256。最初基本步长由两个半步代替；每场共 {m['temperature_stats']['steps']} 个接受步，水分拒绝步数为 {m['moisture_stats']['rejected_steps']}。尽管本次最后选取同一网格尺度，分别改变每一场的分辨率仍是检验单向数据传递误差所必需的。
+
+以下每项均在全部1800×21个输出位置取最大绝对差，门槛为各自状态量单位下4e-6。
+
+{chr(10).join(checks)}
+
+水分时间三层比较的观测阶约为 {v['comparisons']['moisture_time_final_C']['observed_order']:.4f}；温度实际输入包含60秒折点和表面历史插值折点，其本次观测时间阶约为 {v['comparisons']['thermal_time_final']['observed_order']:.4f}，未强行宣称恰好二阶。空间加密和解析特例表现为约二阶趋势。以上是经验数值验收，不是严格连续解误差上界；四位小数仍可能在舍入分界附近变化，完整位置清单在verification/rounding_disagreements.csv。
+
+Picard容差收紧十倍后，共用含水率最大变化为 {v['comparisons']['tight_C']['max_abs_difference']:.3e} kg/kg，温度最大变化为 {v['comparisons']['tight_T']['max_abs_difference']:.3e} °C。最终水分原非线性缩放残差最大 {m['moisture_stats']['max_scaled_original_residual']:.3e}，相对接受门槛比值最大 {m['moisture_stats']['max_residual_ratio']:.3e}；最终温度原离散缩放残差最大 {m['temperature_stats']['max_scaled_original_residual']:.3e} °C。整体守恒与非线性收敛分别检查。
+
+独立验证包括修正Robin边界下的恒温抵消测试、贝塞尔解析瞬态、水分常扩散解析特例及非线性制造解，另用零潜热开关检验新边界精确退化回原结构。Python参考贝塞尔函数用幂级数计算，与C++系统函数不同；公式和全部误差见verification/checks.json。N=80、160、320下误差按空间加密下降。旧后向欧拉水分参照与最终CN场最大差 {v['BE_moisture_reference']['max_abs_difference']:.3e} kg/kg；温度N=800的BE参照尚有 {v['BE_thermal_reference']['max_abs_difference']:.3e} °C时间误差，其减半步长结果向CN场收敛，故只作为交叉趋势验证，不冒充通过最终4e-6温度门槛的运行。
+
+热时间网格上的蒸发质量积分与最终水分质量损失相差 {m['intergrid_water_transfer_defect_kg']:.3e} kg，说明本次两场时间传递的一致性误差很小；它与水分求解器自身收支残差分别记录。运行均设600秒墙钟预算、50次Picard上限，双精度，不启用fast-math。每次运行的实际时间、命令、源代码校验值及输入校验值见runs/*/manifest.json，算法无随机种子。
+
+## 物理一致性检查及适用范围
+
+若空气含湿量w按kg水蒸气/kg干空气定义，理想气体混合关系给出p_v=pw/(0.62198+w)。取p=101325 Pa，NIST饱和蒸气压表经log p线性插值得到露点近似，初始约 {m['dewpoint_check']['dewpoint_initial_C']:.2f} °C，1800 s约 {m['dewpoint_check']['dewpoint_at1800_C']:.2f} °C。露点只保留到0.01°C用于辨别明显差异，不作为高精度气象计算。
+
+新模型在整数输出的第 {m['dewpoint_check']['first_below_dewpoint_integer_second']} 秒起出现表面低于条件性露点，1800个整数时刻中有 {m['dewpoint_check']['count_integer_seconds_below_dewpoint']} 个符合这一情况。对水活度不超过1的液水表面，表面平衡蒸气压不高于同温度纯水饱和蒸气压，因此空气实际水蒸气分压高于这一上限时，通常不能仍由表面向空气净蒸发。固定Ce的有效边界没有表达这个反馈，于是出现“温度大幅降低但蒸发仍继续”的数学结果。
+
+因此，本次模型适合作为检查潜热遗漏影响的受控对照，**数值计算通过，物理预测尚存在条件性冲突，采用状态为候选**。若题目空气浓度另有定义，需要先核对其物理分母及传质系数含义；若采用通常空气含湿量定义，应补充吸附等温线/水活度，使用表面温度控制的蒸气压差重新闭合传质，再计算双向热湿耦合。未在本轮擅自替换这些边界参数。
+
+## 文件与复现
+
+- `results/result1.xlsx` 为有潜热模型的题目格式结果，温度和水分各1800×21值；`results/模型对比.xlsx` 给出1800 s对比和完整时间序列及曲线。
+- `results/full_precision.csv` 是有潜热两场的双精度数据，`comparison_full.csv` 保存每个时空点的新旧模型及历史交付数据，`paper_tables.csv` 为题目论文表格的35个位置。
+- `model/模型与求解算法.md` 为完整模型和算法说明，`inputs/sources.md` 记录外部纯水物性；既有题面和附件快照均保留。
+- `src/` 包含全部计算、核验、抽表、导出和复现代码；`runs/` 保留所有试算及对照；`verification/` 保留解析、加密、残差、工作簿逐值核验和渲染证据。
+- `src/reproduce.py` 可在新目录重新运行所选最终配置、生成原始结果及同网格对照，拒绝覆盖现有目录。完整历史配置则见各run manifest。
+
+本轮在 `q1/surface-latent-20260911` 本地研究分支保存，未提交、推送、合并，也未修改M01结果或团队正式采用入口。当前仓库main包含的历史成果与本轮未提交新增文件分别追溯。
+'''
+(P/'README.md').write_text(text)
+(P/'state.md').write_text('# 当前状态\n\nA题第一问，M02-v01表面蒸发潜热敏感性模型，A02有限体积与启动阻尼隐式梯形推进。\n\n模型、算法、求解、数值验证和输出均已完成。数值检查通过；条件性空气湿度解释下的蒸发方向检查存在物理冲突，详见README。采用状态为候选，不能直接作为已验证的实际温度预测。\n\n未修改M01输出，未提交或推送，未开始下一问。下一步应优先审查有效Ce与空气含湿量的换算及水活度闭合。\n')
+print('Report written.')

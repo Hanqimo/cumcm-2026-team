@@ -1,0 +1,932 @@
+{
+  "created": "2026-09-11T11:40:02.400528+08:00",
+  "completed_run_count": 57,
+  "all_cases_exit_zero": true,
+  "original_baseline_preserved": true,
+  "input_snapshot_hashes_match": true,
+  "numerical_refinement_passes": true,
+  "physical_validation": "conditional dewpoint conflict; candidate sensitivity model only",
+  "export_values_checked": 75600,
+  "comparison_values_checked": 23413,
+  "visual_review": "Four workbook ranges reviewed; exported moisture sheet reimported for additional display verification.",
+  "reproduction_wrapper": "Syntax checked; numerical cores and each retained case actually executed; wrapper not replayed as an extra duplicate batch.",
+  "branch": "q1/surface-latent-20260911",
+  "committed_or_pushed": false,
+  "compiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin\n",
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "runs": [
+    {
+      "name": "C12800_16384",
+      "seconds": 145.97403066698462,
+      "config": {
+        "kind": "C",
+        "name": "C12800_16384",
+        "n": 12800,
+        "den": 16384,
+        "history": "",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "C12800_32768",
+      "seconds": 278.268177208025,
+      "config": {
+        "kind": "C",
+        "name": "C12800_32768",
+        "n": 12800,
+        "den": 32768,
+        "history": "",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "C12800_8192",
+      "seconds": 74.03450187499402,
+      "config": {
+        "kind": "C",
+        "name": "C12800_8192",
+        "n": 12800,
+        "den": 8192,
+        "history": "",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "C6400_8192",
+      "seconds": 38.475957832997665,
+      "config": {
+        "kind": "C",
+        "name": "C6400_8192",
+        "n": 6400,
+        "den": 8192,
+        "history": "",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "CCN12800_1024",
+      "seconds": 9.87961683300091,
+      "config": {
+        "kind": "CCN",
+        "name": "CCN12800_1024",
+        "n": 12800,
+        "den": 1024,
+        "history": "",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "CCN12800_2048",
+      "seconds": 18.76160616701236,
+      "config": {
+        "kind": "CCN",
+        "name": "CCN12800_2048",
+        "n": 12800,
+        "den": 2048,
+        "history": "",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "CCN12800_4096",
+      "seconds": 36.48521020897897,
+      "config": {
+        "kind": "CCN",
+        "name": "CCN12800_4096",
+        "n": 12800,
+        "den": 4096,
+        "history": "",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "CCN12800_4096_tight",
+      "seconds": 37.23331062501529,
+      "config": {
+        "kind": "CCN",
+        "name": "CCN12800_4096_tight",
+        "n": 12800,
+        "den": 4096,
+        "history": "",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-13,
+        "budget": 600
+      }
+    },
+    {
+      "name": "CCN3200_2048",
+      "seconds": 4.786712665983941,
+      "config": {
+        "kind": "CCN",
+        "name": "CCN3200_2048",
+        "n": 3200,
+        "den": 2048,
+        "history": "",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "CCN6400_2048",
+      "seconds": 9.662118458014447,
+      "config": {
+        "kind": "CCN",
+        "name": "CCN6400_2048",
+        "n": 6400,
+        "den": 2048,
+        "history": "",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "CCN6400_4096",
+      "seconds": 19.120352209021803,
+      "config": {
+        "kind": "CCN",
+        "name": "CCN6400_4096",
+        "n": 6400,
+        "den": 4096,
+        "history": "",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "CCN_bessel160",
+      "seconds": 0.019894541008397937,
+      "config": {
+        "kind": "CCN",
+        "name": "CCN_bessel160",
+        "n": 160,
+        "den": 1024,
+        "history": "",
+        "lambda_": 1,
+        "mode": "bessel",
+        "end": 10,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "CCN_bessel320",
+      "seconds": 0.03836558299371973,
+      "config": {
+        "kind": "CCN",
+        "name": "CCN_bessel320",
+        "n": 320,
+        "den": 1024,
+        "history": "",
+        "lambda_": 1,
+        "mode": "bessel",
+        "end": 10,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "CCN_bessel80",
+      "seconds": 0.018366416974458843,
+      "config": {
+        "kind": "CCN",
+        "name": "CCN_bessel80",
+        "n": 80,
+        "den": 1024,
+        "history": "",
+        "lambda_": 1,
+        "mode": "bessel",
+        "end": 10,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "CCN_equilibrium200",
+      "seconds": 0.01973050000378862,
+      "config": {
+        "kind": "CCN",
+        "name": "CCN_equilibrium200",
+        "n": 200,
+        "den": 1024,
+        "history": "",
+        "lambda_": 1,
+        "mode": "equilibrium",
+        "end": 10,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "CCN_mms160",
+      "seconds": 0.07230408297618851,
+      "config": {
+        "kind": "CCN",
+        "name": "CCN_mms160",
+        "n": 160,
+        "den": 1024,
+        "history": "",
+        "lambda_": 1,
+        "mode": "mms",
+        "end": 10,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "CCN_mms320",
+      "seconds": 0.12453395803458989,
+      "config": {
+        "kind": "CCN",
+        "name": "CCN_mms320",
+        "n": 320,
+        "den": 1024,
+        "history": "",
+        "lambda_": 1,
+        "mode": "mms",
+        "end": 10,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "CCN_mms80",
+      "seconds": 0.03611549997003749,
+      "config": {
+        "kind": "CCN",
+        "name": "CCN_mms80",
+        "n": 80,
+        "den": 1024,
+        "history": "",
+        "lambda_": 1,
+        "mode": "mms",
+        "end": 10,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "CN12800_1024",
+      "seconds": 3.238162292051129,
+      "config": {
+        "kind": "CN",
+        "name": "CN12800_1024",
+        "n": 12800,
+        "den": 1024,
+        "history": "C12800_8192",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "CN12800_2048",
+      "seconds": 5.021413292037323,
+      "config": {
+        "kind": "CN",
+        "name": "CN12800_2048",
+        "n": 12800,
+        "den": 2048,
+        "history": "C12800_8192",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "CN12800_2048_C16384",
+      "seconds": 4.657050082983915,
+      "config": {
+        "kind": "CN",
+        "name": "CN12800_2048_C16384",
+        "n": 12800,
+        "den": 2048,
+        "history": "C12800_16384",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "CN12800_2048_C32768",
+      "seconds": 4.683245958993211,
+      "config": {
+        "kind": "CN",
+        "name": "CN12800_2048_C32768",
+        "n": 12800,
+        "den": 2048,
+        "history": "C12800_32768",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "CN12800_2048_C6400",
+      "seconds": 4.539771457959432,
+      "config": {
+        "kind": "CN",
+        "name": "CN12800_2048_C6400",
+        "n": 12800,
+        "den": 2048,
+        "history": "C6400_8192",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "CN12800_4096",
+      "seconds": 9.121995707973838,
+      "config": {
+        "kind": "CN",
+        "name": "CN12800_4096",
+        "n": 12800,
+        "den": 4096,
+        "history": "C12800_8192",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "CN1600_2048",
+      "seconds": 0.6716250409954228,
+      "config": {
+        "kind": "CN",
+        "name": "CN1600_2048",
+        "n": 1600,
+        "den": 2048,
+        "history": "C12800_8192",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "CN3200_2048",
+      "seconds": 1.2155535409692675,
+      "config": {
+        "kind": "CN",
+        "name": "CN3200_2048",
+        "n": 3200,
+        "den": 2048,
+        "history": "C12800_8192",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "CN6400_1024",
+      "seconds": 2.0030924169695936,
+      "config": {
+        "kind": "CN",
+        "name": "CN6400_1024",
+        "n": 6400,
+        "den": 1024,
+        "history": "C12800_8192",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "CN6400_2048",
+      "seconds": 2.298661249980796,
+      "config": {
+        "kind": "CN",
+        "name": "CN6400_2048",
+        "n": 6400,
+        "den": 2048,
+        "history": "C12800_8192",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "CN800cross",
+      "seconds": 0.3222775830072351,
+      "config": {
+        "kind": "CN",
+        "name": "CN800cross",
+        "n": 800,
+        "den": 2048,
+        "history": "C12800_8192",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "CN_bessel160",
+      "seconds": 0.0768269170075655,
+      "config": {
+        "kind": "CN",
+        "name": "CN_bessel160",
+        "n": 160,
+        "den": 1024,
+        "history": "C12800_8192",
+        "lambda_": 1,
+        "mode": "bessel",
+        "end": 10,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "CN_bessel320",
+      "seconds": 0.0768199170124717,
+      "config": {
+        "kind": "CN",
+        "name": "CN_bessel320",
+        "n": 320,
+        "den": 1024,
+        "history": "C12800_8192",
+        "lambda_": 1,
+        "mode": "bessel",
+        "end": 10,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "CN_bessel80",
+      "seconds": 0.07183220802107826,
+      "config": {
+        "kind": "CN",
+        "name": "CN_bessel80",
+        "n": 80,
+        "den": 1024,
+        "history": "C12800_8192",
+        "lambda_": 1,
+        "mode": "bessel",
+        "end": 10,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "CN_equilibrium",
+      "seconds": 0.07509270904120058,
+      "config": {
+        "kind": "CN",
+        "name": "CN_equilibrium",
+        "n": 200,
+        "den": 1024,
+        "history": "C12800_8192",
+        "lambda_": 1,
+        "mode": "equilibrium",
+        "end": 10,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "CN_zero",
+      "seconds": 0.4062947499915026,
+      "config": {
+        "kind": "CN",
+        "name": "CN_zero",
+        "n": 800,
+        "den": 2048,
+        "history": "C12800_8192",
+        "lambda_": 0.0,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "Cspace6400",
+      "seconds": 8.247314125008415,
+      "config": {
+        "kind": "CN",
+        "name": "Cspace6400",
+        "n": 12800,
+        "den": 4096,
+        "history": "CCN6400_4096",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "Ctime1024",
+      "seconds": 7.983095541014336,
+      "config": {
+        "kind": "CN",
+        "name": "Ctime1024",
+        "n": 12800,
+        "den": 4096,
+        "history": "CCN12800_1024",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "Ctime2048",
+      "seconds": 7.928102916979697,
+      "config": {
+        "kind": "CN",
+        "name": "Ctime2048",
+        "n": 12800,
+        "den": 4096,
+        "history": "CCN12800_2048",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "FINAL",
+      "seconds": 7.697099040960893,
+      "config": {
+        "kind": "CN",
+        "name": "FINAL",
+        "n": 12800,
+        "den": 4096,
+        "history": "CCN12800_4096",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "P_T800_C12800_8192",
+      "seconds": 1.0009980829781853,
+      "config": {
+        "kind": "T",
+        "name": "P_T800_C12800_8192",
+        "n": 800,
+        "den": 8192,
+        "history": "C12800_8192",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "P_T800_C6400_8192",
+      "seconds": 1.649183458997868,
+      "config": {
+        "kind": "T",
+        "name": "P_T800_C6400_8192",
+        "n": 800,
+        "den": 8192,
+        "history": "C6400_8192",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "T1600_65536_C8192",
+      "seconds": 15.752574874961283,
+      "config": {
+        "kind": "T",
+        "name": "T1600_65536_C8192",
+        "n": 1600,
+        "den": 65536,
+        "history": "C12800_8192",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "T400_65536_C8192",
+      "seconds": 4.132394167012535,
+      "config": {
+        "kind": "T",
+        "name": "T400_65536_C8192",
+        "n": 400,
+        "den": 65536,
+        "history": "C12800_8192",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "T800_32768_C8192",
+      "seconds": 4.078275499981828,
+      "config": {
+        "kind": "T",
+        "name": "T800_32768_C8192",
+        "n": 800,
+        "den": 32768,
+        "history": "C12800_8192",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "T800_65536_C8192",
+      "seconds": 8.187307458021678,
+      "config": {
+        "kind": "T",
+        "name": "T800_65536_C8192",
+        "n": 800,
+        "den": 65536,
+        "history": "C12800_8192",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "Tfrom_CCN12800_1024",
+      "seconds": 3.9112364589818753,
+      "config": {
+        "kind": "CN",
+        "name": "Tfrom_CCN12800_1024",
+        "n": 12800,
+        "den": 2048,
+        "history": "CCN12800_1024",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "Tfrom_CCN12800_2048",
+      "seconds": 4.033068624965381,
+      "config": {
+        "kind": "CN",
+        "name": "Tfrom_CCN12800_2048",
+        "n": 12800,
+        "den": 2048,
+        "history": "CCN12800_2048",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "Tfrom_CCN12800_4096",
+      "seconds": 3.862965499982238,
+      "config": {
+        "kind": "CN",
+        "name": "Tfrom_CCN12800_4096",
+        "n": 12800,
+        "den": 2048,
+        "history": "CCN12800_4096",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "Tfrom_CCN3200_2048",
+      "seconds": 4.134138167020865,
+      "config": {
+        "kind": "CN",
+        "name": "Tfrom_CCN3200_2048",
+        "n": 12800,
+        "den": 2048,
+        "history": "CCN3200_2048",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "Tfrom_CCN6400_2048",
+      "seconds": 4.434537124994677,
+      "config": {
+        "kind": "CN",
+        "name": "Tfrom_CCN6400_2048",
+        "n": 12800,
+        "den": 2048,
+        "history": "CCN6400_2048",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "Tspace6400",
+      "seconds": 3.913481791038066,
+      "config": {
+        "kind": "CN",
+        "name": "Tspace6400",
+        "n": 6400,
+        "den": 4096,
+        "history": "CCN12800_4096",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "Ttight",
+      "seconds": 7.641212457965594,
+      "config": {
+        "kind": "CN",
+        "name": "Ttight",
+        "n": 12800,
+        "den": 4096,
+        "history": "CCN12800_4096_tight",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "Ttime1024",
+      "seconds": 1.9983520830282941,
+      "config": {
+        "kind": "CN",
+        "name": "Ttime1024",
+        "n": 12800,
+        "den": 1024,
+        "history": "CCN12800_4096",
+        "lambda_": 1,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "bessel160",
+      "seconds": 0.5060503340209834,
+      "config": {
+        "kind": "T",
+        "name": "bessel160",
+        "n": 160,
+        "den": 65536,
+        "history": "C12800_8192",
+        "lambda_": 1,
+        "mode": "bessel",
+        "end": 10,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "bessel320",
+      "seconds": 0.9219152919831686,
+      "config": {
+        "kind": "T",
+        "name": "bessel320",
+        "n": 320,
+        "den": 65536,
+        "history": "C12800_8192",
+        "lambda_": 1,
+        "mode": "bessel",
+        "end": 10,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "bessel80",
+      "seconds": 0.28288516600150615,
+      "config": {
+        "kind": "T",
+        "name": "bessel80",
+        "n": 80,
+        "den": 65536,
+        "history": "C12800_8192",
+        "lambda_": 1,
+        "mode": "bessel",
+        "end": 10,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "equilibrium",
+      "seconds": 0.07341387501219288,
+      "config": {
+        "kind": "T",
+        "name": "equilibrium",
+        "n": 200,
+        "den": 1024,
+        "history": "C12800_8192",
+        "lambda_": 1,
+        "mode": "equilibrium",
+        "end": 10,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    },
+    {
+      "name": "zero_latent",
+      "seconds": 1.1621327500324696,
+      "config": {
+        "kind": "T",
+        "name": "zero_latent",
+        "n": 800,
+        "den": 8192,
+        "history": "C12800_8192",
+        "lambda_": 0.0,
+        "mode": "real",
+        "end": 1800,
+        "tol": 1e-12,
+        "budget": 600
+      }
+    }
+  ]
+}

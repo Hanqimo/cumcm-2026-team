@@ -1,0 +1,346 @@
+{
+  "comparisons": {
+    "thermal_time_coarse": {
+      "coarse": "Ttime1024",
+      "fine": "Tfrom_CCN12800_4096",
+      "field": "T",
+      "max_abs_difference": 1.6491327592405014e-07,
+      "time_s": 1021,
+      "radius_cm": 2.0,
+      "rms_difference": 5.3947448786455e-08,
+      "round4_disagreements": 23,
+      "passes_4e_6": true
+    },
+    "thermal_time_final": {
+      "coarse": "Tfrom_CCN12800_4096",
+      "fine": "FINAL",
+      "field": "T",
+      "max_abs_difference": 5.3136659516894724e-08,
+      "time_s": 1021,
+      "radius_cm": 2.0,
+      "rms_difference": 1.410833857992906e-08,
+      "round4_disagreements": 10,
+      "passes_4e_6": true,
+      "observed_order": 1.6339281044553677
+    },
+    "thermal_space_final": {
+      "coarse": "Tspace6400",
+      "fine": "FINAL",
+      "field": "T",
+      "max_abs_difference": 3.5275200147566466e-06,
+      "time_s": 1,
+      "radius_cm": 2.0,
+      "rms_difference": 4.711031396699997e-08,
+      "round4_disagreements": 13,
+      "passes_4e_6": true
+    },
+    "moisture_time_coarse_T": {
+      "coarse": "Ctime1024",
+      "fine": "Ctime2048",
+      "field": "T",
+      "max_abs_difference": 4.294186339848238e-08,
+      "time_s": 1,
+      "radius_cm": 2.0,
+      "rms_difference": 4.914693961849515e-09,
+      "round4_disagreements": 5,
+      "passes_4e_6": true
+    },
+    "moisture_time_final_T": {
+      "coarse": "Ctime2048",
+      "fine": "FINAL",
+      "field": "T",
+      "max_abs_difference": 1.4712277618400549e-08,
+      "time_s": 1,
+      "radius_cm": 2.0,
+      "rms_difference": 1.3585704633087909e-09,
+      "round4_disagreements": 3,
+      "passes_4e_6": true,
+      "observed_order": 1.5453641876155328
+    },
+    "moisture_space_final_T": {
+      "coarse": "Cspace6400",
+      "fine": "FINAL",
+      "field": "T",
+      "max_abs_difference": 2.639994782782651e-06,
+      "time_s": 1,
+      "radius_cm": 2.0,
+      "rms_difference": 9.454123975421919e-07,
+      "round4_disagreements": 361,
+      "passes_4e_6": true
+    },
+    "moisture_time_coarse_C": {
+      "coarse": "CCN12800_1024",
+      "fine": "CCN12800_2048",
+      "field": "C",
+      "max_abs_difference": 3.314846175328512e-09,
+      "time_s": 51,
+      "radius_cm": 2.0,
+      "rms_difference": 3.450659411303212e-10,
+      "round4_disagreements": 0,
+      "passes_4e_6": true
+    },
+    "moisture_time_final_C": {
+      "coarse": "CCN12800_2048",
+      "fine": "CCN12800_4096",
+      "field": "C",
+      "max_abs_difference": 8.286917818622896e-10,
+      "time_s": 51,
+      "radius_cm": 2.0,
+      "rms_difference": 8.648957444808705e-11,
+      "round4_disagreements": 0,
+      "passes_4e_6": true,
+      "observed_order": 2.000034403811605
+    },
+    "moisture_space_final_C": {
+      "coarse": "CCN6400_4096",
+      "fine": "CCN12800_4096",
+      "field": "C",
+      "max_abs_difference": 2.920723135790837e-06,
+      "time_s": 1,
+      "radius_cm": 2.0,
+      "rms_difference": 3.7322545018896154e-08,
+      "round4_disagreements": 1,
+      "passes_4e_6": true
+    },
+    "tight_C": {
+      "coarse": "CCN12800_4096",
+      "fine": "CCN12800_4096_tight",
+      "field": "C",
+      "max_abs_difference": 2.233768725545815e-13,
+      "time_s": 403,
+      "radius_cm": 0.0,
+      "rms_difference": 5.519883825715316e-14,
+      "round4_disagreements": 0,
+      "passes_4e_6": true
+    },
+    "tight_T": {
+      "coarse": "FINAL",
+      "fine": "Ttight",
+      "field": "T",
+      "max_abs_difference": 1.4210854715202004e-12,
+      "time_s": 1762,
+      "radius_cm": 2.0,
+      "rms_difference": 4.516254417367751e-13,
+      "round4_disagreements": 0,
+      "passes_4e_6": true
+    }
+  },
+  "analytic": [
+    {
+      "case": "CN_bessel80",
+      "N": 80,
+      "independent_sample_max_error": 1.2071858243700717e-05,
+      "all_node_integer_time_error": 1.2071858243700717e-05
+    },
+    {
+      "case": "CN_bessel160",
+      "N": 160,
+      "independent_sample_max_error": 3.0221841669231253e-06,
+      "all_node_integer_time_error": 3.0221841669231253e-06
+    },
+    {
+      "case": "CN_bessel320",
+      "N": 320,
+      "independent_sample_max_error": 7.5580823022392e-07,
+      "all_node_integer_time_error": 7.5580823022392e-07
+    },
+    {
+      "case": "CCN_bessel80",
+      "N": 80,
+      "independent_sample_max_error": 1.875290198682933e-07,
+      "all_node_integer_time_error": 1.875290198682933e-07
+    },
+    {
+      "case": "CCN_bessel160",
+      "N": 160,
+      "independent_sample_max_error": 5.03713752930679e-08,
+      "all_node_integer_time_error": 5.03713752930679e-08
+    },
+    {
+      "case": "CCN_bessel320",
+      "N": 320,
+      "independent_sample_max_error": 1.2771792734511678e-08,
+      "all_node_integer_time_error": 1.2771792734511678e-08
+    },
+    {
+      "case": "CCN_mms80",
+      "N": 80,
+      "independent_sample_max_error": 3.787185680503846e-05,
+      "all_node_integer_time_error": 3.787185680503846e-05
+    },
+    {
+      "case": "CCN_mms160",
+      "N": 160,
+      "independent_sample_max_error": 1.0598885222146137e-05,
+      "all_node_integer_time_error": 1.0598885222146137e-05
+    },
+    {
+      "case": "CCN_mms320",
+      "N": 320,
+      "independent_sample_max_error": 2.7011166885415605e-06,
+      "all_node_integer_time_error": 2.7011166885415605e-06
+    }
+  ],
+  "CN_equilibrium": {
+    "max_constant_error": 1.8118839761882555e-13
+  },
+  "CCN_equilibrium200": {
+    "max_constant_error": 2.1183055309847987e-13
+  },
+  "zero_latent": {
+    "max_difference": 3.410605131648481e-13
+  },
+  "BE_moisture_reference": {
+    "coarse": "C12800_32768",
+    "fine": "CCN12800_4096",
+    "field": "C",
+    "max_abs_difference": 6.944107404649458e-07,
+    "time_s": 228,
+    "radius_cm": 2.0,
+    "rms_difference": 2.230614676019171e-07,
+    "round4_disagreements": 41,
+    "passes_4e_6": true
+  },
+  "BE_moisture_reference_coarse": {
+    "coarse": "C12800_16384",
+    "fine": "CCN12800_4096",
+    "field": "C",
+    "max_abs_difference": 1.388656050593795e-06,
+    "time_s": 228,
+    "radius_cm": 2.0,
+    "rms_difference": 4.460993979867698e-07,
+    "round4_disagreements": 91,
+    "passes_4e_6": true
+  },
+  "BE_thermal_reference": {
+    "coarse": "T800_65536_C8192",
+    "fine": "CN800cross",
+    "field": "T",
+    "max_abs_difference": 3.4204782117797095e-05,
+    "time_s": 1284,
+    "radius_cm": 0.0,
+    "rms_difference": 2.266368157688489e-05,
+    "round4_disagreements": 7755,
+    "passes_4e_6": false
+  },
+  "BE_thermal_reference_coarse": {
+    "coarse": "T800_32768_C8192",
+    "fine": "CN800cross",
+    "field": "T",
+    "max_abs_difference": 6.838660858221601e-05,
+    "time_s": 1284,
+    "radius_cm": 0.0,
+    "rms_difference": 4.5312266945102805e-05,
+    "round4_disagreements": 15565,
+    "passes_4e_6": false
+  }
+}
+{
+  "model": "M02-v01",
+  "algorithm": "A02 FV + Rannacher startup + Crank-Nicolson + moisture Picard",
+  "temperature_run": "FINAL",
+  "moisture_run": "CCN12800_4096",
+  "rho_d_kg_m3": 230.98591549295776,
+  "latent_formula_J_kg": "2500900-2370*T_C",
+  "T_at1800": [
+    10.301614507243952,
+    10.345747727358823,
+    10.510602635539701,
+    10.893288592370494,
+    11.645387927056053
+  ],
+  "T_no_latent_at1800": [
+    33.57534482540672,
+    33.77200191524938,
+    34.36416079552421,
+    35.36212458901362,
+    36.785560346424184
+  ],
+  "drop_at1800": [
+    23.273730318162762,
+    23.42625418789056,
+    23.853558159984505,
+    24.468835996643122,
+    25.14017241936813
+  ],
+  "C_at1800": [
+    2.549992404119007,
+    2.5497239342374174,
+    2.5383005514116004,
+    2.375469857160807,
+    1.510234607456113
+  ],
+  "max_temperature_drop_C": 25.14017241936813,
+  "max_drop_time_s": 1800,
+  "max_drop_radius_cm": 2.0,
+  "rms_temperature_drop_C": 17.572082801390213,
+  "mean_T_at1800": 10.862138388973962,
+  "mean_T0_at1800": 35.16791357699533,
+  "mean_drop_at1800": 24.30577518802137,
+  "mean_C_at1800": 2.293557196038559,
+  "water_loss_kg": 0.01860912224712137,
+  "energy_convective_J": 34569.807838449706,
+  "energy_latent_J": 46048.534243431255,
+  "energy_balance_J": 1.0558103586883874e-07,
+  "intergrid_water_transfer_defect_kg": 1.790893822128936e-13,
+  "latent_flux_at1800_W_m2": 675.1204337938008,
+  "convective_flux_at1800_W_m2": 746.6903018235986,
+  "historical_temperature_output_max_difference_to_new_no_latent": 2.631724832724558e-06,
+  "historical_moisture_output_max_difference": 2.777132605658039e-06,
+  "paired_model_moisture_difference": 0.0,
+  "temperature_stats": {
+    "time_method": "Rannacher-Crank-Nicolson",
+    "completed": true,
+    "reason": "",
+    "N": 12800,
+    "base_dt": 0.000244140625,
+    "lambda": 1,
+    "steps": 59521,
+    "end_time": 1800,
+    "min_T": 8.90841446011635,
+    "min_time_s": 916.9375,
+    "min_radius_m": 0.02,
+    "max_T": 28.000000000045418,
+    "min_effective_h": 23.89192449163575,
+    "max_linear_backward_error": 1.5855844199731704e-16,
+    "max_scaled_original_residual": 1.0661674123910048e-14,
+    "max_heat_balance_per_2piL": 1.3520407016187619e-11,
+    "sum_heat_balance_per_2piL": 6.721497502115356e-08,
+    "integral_water_per_2piL": 0.011846935169036912,
+    "exact_max_error": 0,
+    "wall_seconds": 7.654780667
+  },
+  "moisture_stats": {
+    "time_method": "Rannacher-Crank-Nicolson",
+    "completed": true,
+    "reason": "",
+    "N": 12800,
+    "base_dt": 0.000244140625,
+    "steps": 59521,
+    "end_time": 1800,
+    "rejected_steps": 0,
+    "max_picard": 4,
+    "total_picard": 211459,
+    "max_scaled_original_residual": 1.3457899939372905e-15,
+    "max_residual_ratio": 0.00037909577294008154,
+    "max_linear_backward_error": 2.2364204816415476e-16,
+    "min_C": 1.510234607456113,
+    "max_C": 2.550000000000878,
+    "max_water_balance_per_rhod_2piL": 1.898873746225199e-19,
+    "sum_water_balance_per_rhod_2piL": 4.930787153530988e-16,
+    "outward_water_per_rhod_2piL": 5.128856079278069e-05,
+    "exact_max_error": 0,
+    "wall_seconds": 36.45215425
+  },
+  "dewpoint_check": {
+    "conditional_assumptions": "101325 Pa; attachment air concentration interpreted as kg vapor/kg dry air; liquid water surface has activity <= 1",
+    "interpolation": "log saturation pressure interpolated from NIST table nodes",
+    "dewpoint_initial_C": 24.633229754088,
+    "dewpoint_at1800_C": 33.30178846996127,
+    "first_below_dewpoint_integer_second": 6,
+    "count_integer_seconds_below_dewpoint": 1795,
+    "conclusion": "If these conventional air-humidity definitions apply, continuing positive evaporation below dewpoint is inconsistent with vapor-pressure-driven mass transfer. This is a conditional sensitivity model, not a validated physical forecast."
+  },
+  "latent_flux_using_no_latent_surface_at1800_W_m2": 658.8566730143044,
+  "convection_no_latent_at1800_W_m2": 118.18599133939536
+}
