@@ -1,0 +1,56 @@
+{
+  "neg_g0.08_b0": {
+    "scan_gain": 0.08,
+    "info_distance": 250,
+    "initial_baseline": 0,
+    "initial_force": false,
+    "initial_rotation": 0,
+    "anchor_radius": 1200.0,
+    "negative_regions": true
+  },
+  "neg_g0.08_b400": {
+    "scan_gain": 0.08,
+    "info_distance": 250,
+    "initial_baseline": 400,
+    "initial_force": false,
+    "initial_rotation": 0,
+    "anchor_radius": 1200.0,
+    "negative_regions": true
+  },
+  "neg_g0.18_b0": {
+    "scan_gain": 0.18,
+    "info_distance": 250,
+    "initial_baseline": 0,
+    "initial_force": false,
+    "initial_rotation": 0,
+    "anchor_radius": 1200.0,
+    "negative_regions": true
+  },
+  "neg_g0.18_b400": {
+    "scan_gain": 0.18,
+    "info_distance": 250,
+    "initial_baseline": 400,
+    "initial_force": false,
+    "initial_rotation": 0,
+    "anchor_radius": 1200.0,
+    "negative_regions": true
+  },
+  "neg_g0.3_b0": {
+    "scan_gain": 0.3,
+    "info_distance": 250,
+    "initial_baseline": 0,
+    "initial_force": false,
+    "initial_rotation": 0,
+    "anchor_radius": 1200.0,
+    "negative_regions": true
+  },
+  "neg_g0.3_b400": {
+    "scan_gain": 0.3,
+    "info_distance": 250,
+    "initial_baseline": 400,
+    "initial_force": false,
+    "initial_rotation": 0,
+    "anchor_radius": 1200.0,
+    "negative_regions": true
+  }
+}

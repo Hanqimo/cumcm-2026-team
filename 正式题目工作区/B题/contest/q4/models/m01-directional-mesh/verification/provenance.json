@@ -1,0 +1,36 @@
+{
+  "created_at": "2026-09-11T05:52:38.044320+00:00",
+  "base_commit": "39e61248107699470b6b3b7ab547e02bd6098046",
+  "branch": "codex/b-q1-q3-research-sync",
+  "workspace_has_uncommitted_changes": true,
+  "official_simulator_access": false,
+  "new_systematic_literature_search": false,
+  "problem_pages_read": "1-4, with visual inspection of page 2",
+  "sources": {
+    "contest\\global\\problem\\B-v1\\B题.pdf": {
+      "sha256": "81c992a9bee5376308c4768b58719b177f17d6ee1f9861577a851924c5a838ca"
+    },
+    "contest\\global\\problem\\B-v1\\附件\\附件1.docx": {
+      "sha256": "20a27603ea81efa8f11658b3fa5b859a69aa3ff88fb3664d2abb80d740b47553"
+    },
+    "contest\\global\\problem\\B-v1\\附件\\附件2.docx": {
+      "sha256": "c882513d5b7e0ec50f3068570ea55fdc1b5c4a5fa2d6e9e54e79b33cf0858cb2"
+    },
+    "正式题目工作区\\参考论文\\B题\\B题论文逐篇分析与策略映射.md": {
+      "sha256": "8f50f22f0dc806f068483de5e517b159f8b9e906294c361796cd04c435c69eb3"
+    },
+    "contest\\q3\\models\\m04-service-routing\\verification\\report-v1\\本轮优化与结果.md": {
+      "sha256": "6435d11ca2d2fc753c32aa3049090375be641d386cb6412f65483648f73446e4"
+    },
+    "skills\\cumcm-subproblem-modeling\\SKILL.md": {
+      "sha256": "2098ecd882bd87799e293e1939ea99a8dfd356d84e4a422e3b4670f88272db0f"
+    }
+  },
+  "final_run_groups": [
+    "R006-final-v11",
+    "R007-final-outward",
+    "R008-final-tangent",
+    "R009-final-cluster"
+  ],
+  "source_of_final_statistics": "verification/V003-final-audit/summary.json"
+}

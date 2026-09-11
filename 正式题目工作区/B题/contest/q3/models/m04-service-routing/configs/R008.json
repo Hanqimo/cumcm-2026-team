@@ -1,0 +1,33 @@
+{
+  "v3": {
+    "_class": "v3"
+  },
+  "v4": {
+    "_class": "v4",
+    "cost_action": true,
+    "cost_risk": 1.0,
+    "exact_reception": true,
+    "cover_sweeps": 3
+  },
+  "fusion": {
+    "service_route": true,
+    "cover_trials": 6,
+    "transit_probes": true
+  },
+  "all_new": {
+    "initial_design": true,
+    "cover_trials": 3,
+    "cover_radii": [
+      1150,
+      1350,
+      1500
+    ],
+    "service_route": true,
+    "transit_probes": true
+  },
+  "centroid_fusion": {
+    "target_estimator": "centroid",
+    "cover_trials": 6,
+    "transit_probes": true
+  }
+}

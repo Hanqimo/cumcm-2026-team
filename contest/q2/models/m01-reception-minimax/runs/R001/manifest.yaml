@@ -1,0 +1,36 @@
+# Generated from manifest.json; JSON is valid YAML.
+{
+  "model": "Q2-M01-v01",
+  "algorithm": "A01-finite-candidates-outer-reading-bins",
+  "data": "D01-synthetic-first-bearing",
+  "run": "R001",
+  "seed": 20260910,
+  "utc": "2026-09-10T15:31:58.338272+00:00",
+  "command": "python contest\\q2\\models\\m01-reception-minimax\\src\\run_q2.py --run-id R001",
+  "base_git_commit": "40b4b022179519d0ad8000d9eab58aad3b3919e8",
+  "uncommitted_source": true,
+  "source_sha256": {
+    "contest\\q2\\models\\m01-reception-minimax\\src\\run_q2.py": "f7b3bfd0bf75832ea24c925c1107022a8124cfd7316ce1a0c6e3e6b8dea17b8c",
+    "contest\\q2\\models\\m01-reception-minimax\\src\\second_point.py": "d7bd9029de4e980396237ce6dedf775b3cff2fedd49b11242864b121a26ce8e5",
+    "contest\\q1\\models\\m01-bounded-bearing\\src\\bearing_geometry.py": "c0c5f9bb24d8285b255776469758876102410864beafbbfe9aec311e37a7c1cb"
+  },
+  "versions": {
+    "python": "3.10.11",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "matplotlib": "3.10.8"
+  },
+  "configuration": {
+    "epsilon_deg": 1.0,
+    "disk_sides": 360,
+    "lateral_min_m": 20.0,
+    "budgets_m": [
+      250.0,
+      500.0,
+      750.0,
+      1000.0
+    ],
+    "quick": false
+  },
+  "validation": "passed"
+}

@@ -1,0 +1,26 @@
+{
+  "v3": {
+    "_class": "v3"
+  },
+  "v4": {
+    "_class": "v4",
+    "cost_action": true,
+    "cost_risk": 1.0,
+    "exact_reception": true,
+    "cover_sweeps": 3
+  },
+  "service": {
+    "service_route": true
+  },
+  "rotate6": {
+    "cover_trials": 6
+  },
+  "transit": {
+    "transit_probes": true
+  },
+  "fusion": {
+    "service_route": true,
+    "cover_trials": 6,
+    "transit_probes": true
+  }
+}

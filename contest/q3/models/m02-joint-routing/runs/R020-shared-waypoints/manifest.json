@@ -1,0 +1,83 @@
+{
+  "command": [
+    "contest/q3/models/m02-joint-routing/verification/benchmark.py",
+    "--output",
+    "contest/q3/models/m02-joint-routing/runs/R020-shared-waypoints",
+    "--count",
+    "20",
+    "--config",
+    "contest/q3/models/m02-joint-routing/configs/R020-grid.json",
+    "--variants",
+    "shared_w0.25_b0,shared_w0.25_b250,shared_w0.5_b0,shared_w0.5_b250,shared_w1_b0,shared_w1_b250"
+  ],
+  "started_epoch": 1789093546.2890465,
+  "ended_epoch": 1789093574.7072387,
+  "data": "synthetic uniform disk, fixed bounded spatial sine errors",
+  "source_sha256": {
+    "api_client.py": "6ce270ffb316142e5d22da27e67eeab87f22797bd22f27ea984ab55deeec8203",
+    "bearing_geometry.py": "c0c5f9bb24d8285b255776469758876102410864beafbbfe9aec311e37a7c1cb",
+    "benchmark.py": "e3e418d0aa41db28a41eac3b8fa0eb4025dac7c4a47c8427e778a95c244ed206",
+    "config.json": "a580fd1e529cd66c269a36d61084852bffde459149fdefda9dbb1e7575bb8228",
+    "exact_coverage.py": "ce6ab1e744d01d848edb479821cb5b66d944a5afb20d59d4b70ebb4ef14a591b",
+    "joint_strategies.py": "2f52e7ed580504094fff82c8e2347b5bf6c4616344433e36c872e1e2e1506d34",
+    "legacy_strategy.py": "064a03e8fb1b6e40640747b2e4a0441c7952e766304f27f1b12be68945f6238f",
+    "verify.py": "f6c0c707ce33a75e26375bce8f5e86a701651bb6986dc16d7c653975ceaae7fe"
+  },
+  "dirty_worktree": true,
+  "summary": {
+    "shared_w0.25_b0": {
+      "cases": 20,
+      "full": 20,
+      "mean_per_source_s": 265.0064913061093,
+      "median_per_source_s": 258.1394120552969,
+      "mean_distance_m": 11818.014516075458,
+      "mean_measures": 142.65,
+      "max_elapsed_s": 0.35530609999841545
+    },
+    "shared_w0.25_b250": {
+      "cases": 20,
+      "full": 20,
+      "mean_per_source_s": 256.70738360480834,
+      "median_per_source_s": 241.34525986169717,
+      "mean_distance_m": 11122.598076326029,
+      "mean_measures": 147.15,
+      "max_elapsed_s": 0.3129583999980241
+    },
+    "shared_w0.5_b0": {
+      "cases": 20,
+      "full": 20,
+      "mean_per_source_s": 263.3310535603243,
+      "median_per_source_s": 256.85930029731065,
+      "mean_distance_m": 11633.903868050078,
+      "mean_measures": 144.6,
+      "max_elapsed_s": 0.3167674000142142
+    },
+    "shared_w0.5_b250": {
+      "cases": 20,
+      "full": 20,
+      "mean_per_source_s": 257.8999953244801,
+      "median_per_source_s": 252.50563418838925,
+      "mean_distance_m": 11113.4415675192,
+      "mean_measures": 148.65,
+      "max_elapsed_s": 0.28136090000043623
+    },
+    "shared_w1_b0": {
+      "cases": 20,
+      "full": 20,
+      "mean_per_source_s": 265.22725701176705,
+      "median_per_source_s": 261.1395585831149,
+      "mean_distance_m": 11598.035825717616,
+      "mean_measures": 149.55,
+      "max_elapsed_s": 0.32437689999642316
+    },
+    "shared_w1_b250": {
+      "cases": 20,
+      "full": 20,
+      "mean_per_source_s": 255.48636891356645,
+      "median_per_source_s": 245.90802277871052,
+      "mean_distance_m": 10965.242022931592,
+      "mean_measures": 149.5,
+      "max_elapsed_s": 0.3218282000016188
+    }
+  }
+}

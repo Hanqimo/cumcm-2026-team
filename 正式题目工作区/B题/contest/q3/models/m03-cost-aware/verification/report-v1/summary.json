@@ -1,0 +1,94 @@
+{
+  "cases": 100,
+  "baseline_mean": 244.01567574370517,
+  "combined_mean": 242.58081008804288,
+  "mean_saved": 1.4348656556623007,
+  "relative_mean_reduction_percent": 0.5880219175629366,
+  "paired_saved_95_t_ci": [
+    0.17332392200081537,
+    2.6964073893237863
+  ],
+  "combined_mean_95_t_ci": [
+    236.4452126369362,
+    248.71640753914957
+  ],
+  "median": 242.4813870739514,
+  "p90": 276.7346905772735,
+  "improved": 65,
+  "worsened": 35,
+  "tied": 0,
+  "at_most_200": 8,
+  "at_most_220": 23,
+  "all_full": true,
+  "failed_clears": 0,
+  "worst_regression": {
+    "seed": 9070,
+    "n": 13,
+    "baseline": 253.73264088380526,
+    "combined": 272.0418279830791,
+    "saved": -18.309187099273828
+  },
+  "largest_saving": {
+    "seed": 9035,
+    "n": 12,
+    "baseline": 244.95753428557256,
+    "combined": 226.25983026737504,
+    "saved": 18.697704018197527
+  },
+  "by_n": {
+    "10": {
+      "cases": 14,
+      "baseline": 282.7689192140557,
+      "combined": 280.14891815723826
+    },
+    "11": {
+      "cases": 14,
+      "baseline": 272.7013574153172,
+      "combined": 270.53051598425867
+    },
+    "12": {
+      "cases": 23,
+      "baseline": 254.79572572224353,
+      "combined": 253.23433839025864
+    },
+    "13": {
+      "cases": 15,
+      "baseline": 235.20338537003354,
+      "combined": 236.1730225694992
+    },
+    "14": {
+      "cases": 18,
+      "baseline": 221.84828468616038,
+      "combined": 219.45933247658303
+    },
+    "15": {
+      "cases": 9,
+      "baseline": 206.80830797962923,
+      "combined": 207.38638790238372
+    },
+    "16": {
+      "cases": 7,
+      "baseline": 197.4410476042348,
+      "combined": 194.9769048007065
+    }
+  },
+  "audit_summary": {
+    "baseline": {
+      "cases": 100,
+      "full": 100,
+      "mean_s": 244.01567574370517,
+      "mean_distance_m": 11306.811241412952,
+      "mean_measures": 120.24,
+      "max_compute_s": 0.2873424999997951
+    },
+    "combined": {
+      "cases": 100,
+      "full": 100,
+      "mean_s": 242.58081008804288,
+      "mean_distance_m": 11308.264614447638,
+      "mean_measures": 117.22,
+      "max_compute_s": 4.3155140000003485
+    }
+  },
+  "interval_scope": "Approximate t interval across generated scenes, not official distribution or adversarial guarantee"
+}

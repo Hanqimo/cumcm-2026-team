@@ -1,0 +1,10 @@
+{
+  "seed": 15001,
+  "rectangles": 120,
+  "direct_membership_checks": 22472,
+  "cases_with_holes": 3,
+  "disconnected_cases": 61,
+  "passed": true,
+  "excluded_radius_m": 19.999,
+  "polygon_sides": 64
+}

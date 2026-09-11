@@ -1,0 +1,12 @@
+{
+  "artifact": "audit-v5.png",
+  "inspection": "Visual inspection with view_image",
+  "result": "pass",
+  "checks": [
+    "Zero baseline for stacked costs",
+    "200 second target shown",
+    "All 100 paired observations include negative values",
+    "Readable labels and no clipping"
+  ],
+  "data_source": "summary.json and paired-data.json"
+}

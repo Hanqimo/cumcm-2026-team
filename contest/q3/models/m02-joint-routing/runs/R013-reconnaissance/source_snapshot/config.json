@@ -1,0 +1,65 @@
+{
+  "recon_r400_n2": {
+    "scan_gain": 0.18,
+    "info_distance": 150,
+    "anchor_radius": 1200.0,
+    "recon_radius": 400,
+    "recon_count": 2
+  },
+  "recon_r400_n3": {
+    "scan_gain": 0.18,
+    "info_distance": 150,
+    "anchor_radius": 1200.0,
+    "recon_radius": 400,
+    "recon_count": 3
+  },
+  "recon_r400_n4": {
+    "scan_gain": 0.18,
+    "info_distance": 150,
+    "anchor_radius": 1200.0,
+    "recon_radius": 400,
+    "recon_count": 4
+  },
+  "recon_r700_n2": {
+    "scan_gain": 0.18,
+    "info_distance": 150,
+    "anchor_radius": 1200.0,
+    "recon_radius": 700,
+    "recon_count": 2
+  },
+  "recon_r700_n3": {
+    "scan_gain": 0.18,
+    "info_distance": 150,
+    "anchor_radius": 1200.0,
+    "recon_radius": 700,
+    "recon_count": 3
+  },
+  "recon_r700_n4": {
+    "scan_gain": 0.18,
+    "info_distance": 150,
+    "anchor_radius": 1200.0,
+    "recon_radius": 700,
+    "recon_count": 4
+  },
+  "recon_r1000_n2": {
+    "scan_gain": 0.18,
+    "info_distance": 150,
+    "anchor_radius": 1200.0,
+    "recon_radius": 1000,
+    "recon_count": 2
+  },
+  "recon_r1000_n3": {
+    "scan_gain": 0.18,
+    "info_distance": 150,
+    "anchor_radius": 1200.0,
+    "recon_radius": 1000,
+    "recon_count": 3
+  },
+  "recon_r1000_n4": {
+    "scan_gain": 0.18,
+    "info_distance": 150,
+    "anchor_radius": 1200.0,
+    "recon_radius": 1000,
+    "recon_count": 4
+  }
+}

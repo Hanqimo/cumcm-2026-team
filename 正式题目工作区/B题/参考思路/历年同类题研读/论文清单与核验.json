@@ -1,0 +1,320 @@
+{
+  "date": "2026-09-10",
+  "selection_basis": "reasoning function and current problem requirements; not an award ranking",
+  "scope": {
+    "existing_official_display_corpus": 45,
+    "existing_paper_years": "2021—2025",
+    "selected_papers": 12,
+    "selected_pdf_pages": 569,
+    "visual_review_pages": 35,
+    "visual_paper_pages": 30,
+    "historical_experiments_reproduced": false,
+    "new_simulator_tests": false
+  },
+  "papers": [
+    {
+      "id": "P01",
+      "year": "2022",
+      "problem": "B",
+      "key": "2022-B035",
+      "title": "基于计算几何与带阈值启发式搜索的无人机无源定位模型",
+      "group": "核心：定位与选点",
+      "pdf": "D:\\math modeling\\documents\\papers\\B\\2022\\2022-B035-official-display.pdf",
+      "ocr_markdown": "D:\\math modeling\\outputs\\ocr-corpus\\papers\\B\\2022\\2022-B035-official-display.md",
+      "pages": 41,
+      "sha256": "09d4a94ffc5e3efb2067fdd8732ec0774113f6d530b407e5ac26cd7890aad659",
+      "ocr_matches_current_pdf": true,
+      "recommended_pages": "3—4、7、18、20",
+      "reading_scope": "定向研读",
+      "visually_checked_pages": [
+        4,
+        7,
+        18,
+        20
+      ],
+      "provenance": "official-display classification in existing local corpus; no award level inferred"
+    },
+    {
+      "id": "P02",
+      "year": "2022",
+      "problem": "B",
+      "key": "2022-B086",
+      "title": "基于局部最优模型的无人机位置调整策略与仿真定位",
+      "group": "核心：信息边界",
+      "pdf": "D:\\math modeling\\documents\\papers\\B\\2022\\2022-B086-official-display.pdf",
+      "ocr_markdown": "D:\\math modeling\\outputs\\ocr-corpus\\papers\\B\\2022\\2022-B086-official-display.md",
+      "pages": 32,
+      "sha256": "b18f234a976bdb71a22055935c366c4fcbdf62c6c55d0ed8cf387569ff134f48",
+      "ocr_matches_current_pdf": true,
+      "recommended_pages": "13—14、24",
+      "reading_scope": "定向研读",
+      "visually_checked_pages": [
+        13,
+        14,
+        24
+      ],
+      "provenance": "official-display classification in existing local corpus; no award level inferred"
+    },
+    {
+      "id": "P03",
+      "year": "2022",
+      "problem": "B",
+      "key": "2022-B030",
+      "title": "无人机遂行编队飞行中的纯方位无源定位",
+      "group": "核心：几何分类",
+      "pdf": "D:\\math modeling\\documents\\papers\\B\\2022\\2022-B030-official-display.pdf",
+      "ocr_markdown": "D:\\math modeling\\outputs\\ocr-corpus\\papers\\B\\2022\\2022-B030-official-display.md",
+      "pages": 42,
+      "sha256": "ffa7735af04c75a57a22836f66c56c288bf60a13ab58fc6bd159fa985ed0a46d",
+      "ocr_matches_current_pdf": true,
+      "recommended_pages": "6、11、23",
+      "reading_scope": "定向研读",
+      "visually_checked_pages": [
+        6,
+        11,
+        23
+      ],
+      "provenance": "official-display classification in existing local corpus; no award level inferred"
+    },
+    {
+      "id": "P04",
+      "year": "2023",
+      "problem": "B",
+      "key": "2023-B311",
+      "title": "基于主要目标法的测线设计问题",
+      "group": "核心：覆盖与终止",
+      "pdf": "D:\\math modeling\\documents\\papers\\B\\2023\\2023-B311-official-display.pdf",
+      "ocr_markdown": "D:\\math modeling\\outputs\\ocr-corpus\\papers\\B\\2023\\2023-B311-official-display.md",
+      "pages": 34,
+      "sha256": "c992e707208ef562da070a8cb4a5f918741979a7ab83396c343336da0102730f",
+      "ocr_matches_current_pdf": true,
+      "recommended_pages": "3、13、17",
+      "reading_scope": "定向研读",
+      "visually_checked_pages": [
+        3,
+        13,
+        17
+      ],
+      "provenance": "official-display classification in existing local corpus; no award level inferred"
+    },
+    {
+      "id": "P05",
+      "year": "2023",
+      "problem": "B",
+      "key": "2023-B226",
+      "title": "多波束测线布设",
+      "group": "核心：结果与机制",
+      "pdf": "D:\\math modeling\\documents\\papers\\B\\2023\\2023-B226-official-display.pdf",
+      "ocr_markdown": "D:\\math modeling\\outputs\\ocr-corpus\\papers\\B\\2023\\2023-B226-official-display.md",
+      "pages": 51,
+      "sha256": "59953b9c0c1437725ffb6c13d4c84d020b04b6b5cbaf404984c7efe3dc534681",
+      "ocr_matches_current_pdf": true,
+      "recommended_pages": "19—20、25",
+      "reading_scope": "定向研读",
+      "visually_checked_pages": [
+        19,
+        20,
+        25
+      ],
+      "provenance": "official-display classification in existing local corpus; no award level inferred"
+    },
+    {
+      "id": "P06",
+      "year": "2023",
+      "problem": "B",
+      "key": "2023-B477",
+      "title": "多波束测深合理探测方案的设计及效果分析",
+      "group": "核心：定义与分区",
+      "pdf": "D:\\math modeling\\documents\\papers\\B\\2023\\2023-B477-official-display.pdf",
+      "ocr_markdown": "D:\\math modeling\\outputs\\ocr-corpus\\papers\\B\\2023\\2023-B477-official-display.md",
+      "pages": 50,
+      "sha256": "2ddea3cb552535b1fa605e0b13bbe778b375d115c7cf0e275c7bb8637c1fe49a",
+      "ocr_matches_current_pdf": true,
+      "recommended_pages": "5、18、20",
+      "reading_scope": "定向研读",
+      "visually_checked_pages": [
+        5,
+        18,
+        20
+      ],
+      "provenance": "official-display classification in existing local corpus; no award level inferred"
+    },
+    {
+      "id": "P07",
+      "year": "2024",
+      "problem": "B",
+      "key": "2024-B159",
+      "title": "生产过程中的决策优化设计",
+      "group": "补充：状态与费用",
+      "pdf": "D:\\math modeling\\documents\\papers\\B\\2024\\2024-B159-official-display.pdf",
+      "ocr_markdown": "D:\\math modeling\\outputs\\ocr-corpus\\papers\\B\\2024\\2024-B159-official-display.md",
+      "pages": 37,
+      "sha256": "741f232756f47ffb3f8a870674cfd6aecada842bc9847f43672fdd9f77b9828a",
+      "ocr_matches_current_pdf": true,
+      "recommended_pages": "13—15",
+      "reading_scope": "定向研读",
+      "visually_checked_pages": [
+        13,
+        14
+      ],
+      "provenance": "official-display classification in existing local corpus; no award level inferred"
+    },
+    {
+      "id": "P08",
+      "year": "2024",
+      "problem": "B",
+      "key": "2024-B195",
+      "title": "基于多阶段模拟仿真的生产决策问题",
+      "group": "备查：循环流程",
+      "pdf": "D:\\math modeling\\documents\\papers\\B\\2024\\2024-B195-official-display.pdf",
+      "ocr_markdown": "D:\\math modeling\\outputs\\ocr-corpus\\papers\\B\\2024\\2024-B195-official-display.md",
+      "pages": 70,
+      "sha256": "3c67ec01a66d1657b5e597afb170898c357ed076a916bec03f9da915778a9925",
+      "ocr_matches_current_pdf": true,
+      "recommended_pages": "1、16—17",
+      "reading_scope": "初筛与相关文本阅读",
+      "visually_checked_pages": [
+        1
+      ],
+      "provenance": "official-display classification in existing local corpus; no award level inferred"
+    },
+    {
+      "id": "P09",
+      "year": "2024",
+      "problem": "B",
+      "key": "2024-B196",
+      "title": "基于蚁群算法与遗传算法优化的蒙特卡洛模拟在生产决策优化中的应用研究",
+      "group": "备查：决策编码",
+      "pdf": "D:\\math modeling\\documents\\papers\\B\\2024\\2024-B196-official-display.pdf",
+      "ocr_markdown": "D:\\math modeling\\outputs\\ocr-corpus\\papers\\B\\2024\\2024-B196-official-display.md",
+      "pages": 28,
+      "sha256": "1a6583faf6a35919850d10beda67172cce2b59b5be2a9e79af7bc175c1e47dbe",
+      "ocr_matches_current_pdf": true,
+      "recommended_pages": "1、3、10",
+      "reading_scope": "初筛与相关文本阅读",
+      "visually_checked_pages": [
+        1
+      ],
+      "provenance": "official-display classification in existing local corpus; no award level inferred"
+    },
+    {
+      "id": "P10",
+      "year": "2024",
+      "problem": "A",
+      "key": "2024-A163",
+      "title": "基于几何模型的板凳龙运动路径问题",
+      "group": "补充：递推复用",
+      "pdf": "D:\\math modeling\\documents\\papers\\A\\2024\\2024-A163-official-display.pdf",
+      "ocr_markdown": "D:\\math modeling\\outputs\\ocr-corpus\\papers\\A\\2024\\2024-A163-official-display.md",
+      "pages": 45,
+      "sha256": "f22c7c658b57d0d0a660a84384df35e7500831558822f8f282a2787461826b8d",
+      "ocr_matches_current_pdf": true,
+      "recommended_pages": "8、28",
+      "reading_scope": "定向研读",
+      "visually_checked_pages": [
+        8,
+        28
+      ],
+      "provenance": "official-display classification in existing local corpus; no award level inferred"
+    },
+    {
+      "id": "P11",
+      "year": "2025",
+      "problem": "B",
+      "key": "2025-B157",
+      "title": "碳化硅外延层厚度的双光束和多光束干涉法测量研究",
+      "group": "补充：可靠性验证",
+      "pdf": "D:\\math modeling\\documents\\papers\\B\\2025\\2025-B157-official-display.pdf",
+      "ocr_markdown": "D:\\math modeling\\outputs\\ocr-corpus\\papers\\B\\2025\\2025-B157-official-display.md",
+      "pages": 67,
+      "sha256": "25ba779b18c8e271e999548a435b71fb6c0c8404104ef19af88f688f957f21c2",
+      "ocr_matches_current_pdf": true,
+      "recommended_pages": "14—18",
+      "reading_scope": "定向研读",
+      "visually_checked_pages": [
+        14,
+        17,
+        18
+      ],
+      "provenance": "official-display classification in existing local corpus; no award level inferred"
+    },
+    {
+      "id": "P12",
+      "year": "2025",
+      "problem": "B",
+      "key": "2025-B060",
+      "title": "红外干涉法测量外延层厚度的建模分析",
+      "group": "补充：机制与互验",
+      "pdf": "D:\\math modeling\\documents\\papers\\B\\2025\\2025-B060-official-display.pdf",
+      "ocr_markdown": "D:\\math modeling\\outputs\\ocr-corpus\\papers\\B\\2025\\2025-B060-official-display.md",
+      "pages": 72,
+      "sha256": "163d1c64959aba3ca9df7d5fae206dd01b771629c0301e77b984dc4521a4704e",
+      "ocr_matches_current_pdf": true,
+      "recommended_pages": "25、29",
+      "reading_scope": "定向研读",
+      "visually_checked_pages": [
+        25,
+        29
+      ],
+      "provenance": "official-display classification in existing local corpus; no award level inferred"
+    }
+  ],
+  "supplemental_problems": [
+    {
+      "key": "2020-B",
+      "local_file": "D:\\math modeling\\正式题目工作区\\参考论文\\B题\\历年同类题研读\\补充旧题\\2020B-穿越沙漠.docx",
+      "official_url": "https://www.mcm.edu.cn/html_cn/node/10405905647c52abfd6377c0311632b5.html",
+      "reading_scope": "DOCX text read; equation objects not used in conclusions",
+      "existing_excellent_papers_found": 0,
+      "sha256": "fdbd15f7d0bb29068b596554898246c5a9c566b13394d5743094bab53c5011ea"
+    },
+    {
+      "key": "2015-A",
+      "local_file": "D:\\math modeling\\正式题目工作区\\参考论文\\B题\\历年同类题研读\\补充旧题\\2015A-太阳影子定位.doc",
+      "official_url": "https://www.mcm.edu.cn/html_cn/node/ac8b96613522ef62c019d1cd45a125e3.html",
+      "reading_scope": "Binary DOC visible prose extracted; detailed equations and layout not reviewed",
+      "existing_excellent_papers_found": 0,
+      "sha256": "885cd63880c8aa66f053c5c19aad74e2cb99c57c17a5349d62cba6fe0fd4b714"
+    },
+    {
+      "key": "2011-B",
+      "local_file": "D:\\math modeling\\正式题目工作区\\参考论文\\B题\\历年同类题研读\\补充旧题\\2011B-交巡警服务平台的设置与调度.doc",
+      "official_url": "https://www.mcm.edu.cn/html_cn/node/a1ffc4c5587c8a6f96eacefb8dbcc34e.html",
+      "reading_scope": "Binary DOC visible prose extracted; detailed equations and layout not reviewed",
+      "existing_excellent_papers_found": 0,
+      "sha256": "5af3eeb0838aed0f29d868fbb3e5cec9dc3430e131f6783140dc9d0339b327e2"
+    }
+  ],
+  "official_review_visual_pages": [
+    {
+      "key": "2023-B-review-1868299",
+      "pdf": "D:\\math modeling\\documents\\papers\\reviews\\2023\\B\\2023-B-review-1868299.pdf",
+      "page": 69,
+      "image": "D:\\math modeling\\tmp\\b-history-research\\2023-B-review-1868299-p69.png"
+    },
+    {
+      "key": "2023-B-review-1868299",
+      "pdf": "D:\\math modeling\\documents\\papers\\reviews\\2023\\B\\2023-B-review-1868299.pdf",
+      "page": 73,
+      "image": "D:\\math modeling\\tmp\\b-history-research\\2023-B-review-1868299-p73.png"
+    },
+    {
+      "key": "2023-B-review-1868299",
+      "pdf": "D:\\math modeling\\documents\\papers\\reviews\\2023\\B\\2023-B-review-1868299.pdf",
+      "page": 75,
+      "image": "D:\\math modeling\\tmp\\b-history-research\\2023-B-review-1868299-p75.png"
+    },
+    {
+      "key": "2025-B-review-2024993",
+      "pdf": "D:\\math modeling\\documents\\papers\\reviews\\2025\\B\\2025-B-review-2024993.pdf",
+      "page": 80,
+      "image": "D:\\math modeling\\tmp\\b-history-research\\2025-B-review-2024993-p80.png"
+    },
+    {
+      "key": "2025-B-review-2024993",
+      "pdf": "D:\\math modeling\\documents\\papers\\reviews\\2025\\B\\2025-B-review-2024993.pdf",
+      "page": 81,
+      "image": "D:\\math modeling\\tmp\\b-history-research\\2025-B-review-2024993-p81.png"
+    }
+  ]
+}

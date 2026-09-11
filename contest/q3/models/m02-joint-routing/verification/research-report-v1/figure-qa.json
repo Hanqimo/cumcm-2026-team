@@ -1,0 +1,17 @@
+{
+  "size_px": [
+    2320,
+    960
+  ],
+  "dpi": [
+    199.9996,
+    199.9996
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    255,
+    255
+  ],
+  "visual_review": "Checked plotted PNG: all points retained, no clipped labels or overlapping legends; two panels and units readable.",
+  "limits": "Draft research figure; font embedding and final manuscript dimensions pending."
+}

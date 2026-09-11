@@ -1,0 +1,16 @@
+{
+  "directional_v1": {
+    "mesh_spacing_m": 990.0,
+    "visibility_planning": true,
+    "joint_routing": true,
+    "max_local_measurements": 10,
+    "max_consecutive_losses": 3
+  },
+  "mesh_chase_baseline": {
+    "mesh_spacing_m": 990.0,
+    "visibility_planning": false,
+    "joint_routing": false,
+    "max_local_measurements": 10,
+    "max_consecutive_losses": 3
+  }
+}

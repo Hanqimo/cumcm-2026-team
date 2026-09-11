@@ -1,0 +1,161 @@
+[
+  {
+    "design": [
+      6,
+      12,
+      980,
+      1900
+    ],
+    "stations": 19,
+    "proved": false,
+    "failure": {
+      "point": [
+        1601.6495410267644,
+        -789.8534885582962
+      ],
+      "level": 4
+    },
+    "cells": 4,
+    "seconds": 0.0065572261810302734
+  },
+  {
+    "design": [
+      6,
+      12,
+      980,
+      1950
+    ],
+    "stations": 19,
+    "proved": false,
+    "failure": {
+      "point": [
+        1601.6495410267644,
+        -789.8534885582962
+      ],
+      "level": 4
+    },
+    "cells": 4,
+    "seconds": 0.005550384521484375
+  },
+  {
+    "design": [
+      6,
+      12,
+      980,
+      1980
+    ],
+    "stations": 19,
+    "proved": false,
+    "failure": {
+      "point": [
+        1601.6495410267644,
+        -789.8534885582962
+      ],
+      "level": 4
+    },
+    "cells": 4,
+    "seconds": 0.004042863845825195
+  },
+  {
+    "design": [
+      6,
+      14,
+      980,
+      1850
+    ],
+    "stations": 21,
+    "proved": false,
+    "failure": {
+      "point": [
+        1485.0,
+        -978.7509291437453
+      ],
+      "level": 4
+    },
+    "cells": 8,
+    "seconds": 0.007280826568603516
+  },
+  {
+    "design": [
+      6,
+      14,
+      980,
+      1900
+    ],
+    "stations": 21,
+    "proved": false,
+    "failure": {
+      "point": [
+        1536.543673970892,
+        -933.3348367793246
+      ],
+      "level": 6
+    },
+    "cells": 24,
+    "seconds": 0.023241519927978516
+  },
+  {
+    "design": [
+      7,
+      14,
+      980,
+      1850
+    ],
+    "stations": 22,
+    "proved": true,
+    "failure": null,
+    "cells": 1334,
+    "seconds": 1.0245838165283203
+  },
+  {
+    "design": [
+      7,
+      14,
+      980,
+      1900
+    ],
+    "stations": 22,
+    "proved": false,
+    "failure": {
+      "point": [
+        773.4375,
+        -455.47523580287816
+      ],
+      "level": 4
+    },
+    "cells": 58,
+    "seconds": 0.04466986656188965
+  },
+  {
+    "design": [
+      7,
+      16,
+      980,
+      1850
+    ],
+    "stations": 24,
+    "proved": false,
+    "failure": {
+      "point": [
+        375.1171875,
+        -1757.6197753213562
+      ],
+      "level": 7
+    },
+    "cells": 161,
+    "seconds": 0.12469911575317383
+  },
+  {
+    "design": [
+      8,
+      16,
+      980,
+      1850
+    ],
+    "stations": 25,
+    "proved": true,
+    "failure": null,
+    "cells": 722,
+    "seconds": 0.529435396194458
+  }
+]

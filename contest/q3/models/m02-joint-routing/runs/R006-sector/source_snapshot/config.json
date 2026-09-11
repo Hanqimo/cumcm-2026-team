@@ -1,0 +1,44 @@
+{
+  "sector_r1200_pFalse": {
+    "_class": "sector",
+    "anchor_radius": 1200,
+    "preclear": false,
+    "info_distance": 250,
+    "info_maxobs": 2
+  },
+  "sector_r1200_pTrue": {
+    "_class": "sector",
+    "anchor_radius": 1200,
+    "preclear": true,
+    "info_distance": 250,
+    "info_maxobs": 2
+  },
+  "sector_r1300_pFalse": {
+    "_class": "sector",
+    "anchor_radius": 1300,
+    "preclear": false,
+    "info_distance": 250,
+    "info_maxobs": 2
+  },
+  "sector_r1300_pTrue": {
+    "_class": "sector",
+    "anchor_radius": 1300,
+    "preclear": true,
+    "info_distance": 250,
+    "info_maxobs": 2
+  },
+  "sector_r1450_pFalse": {
+    "_class": "sector",
+    "anchor_radius": 1450,
+    "preclear": false,
+    "info_distance": 250,
+    "info_maxobs": 2
+  },
+  "sector_r1450_pTrue": {
+    "_class": "sector",
+    "anchor_radius": 1450,
+    "preclear": true,
+    "info_distance": 250,
+    "info_maxobs": 2
+  }
+}

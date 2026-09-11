@@ -1,0 +1,28 @@
+{
+  "python": "3.10.11",
+  "numpy": "2.2.6",
+  "scipy": "1.15.3",
+  "shapely": "2.1.2",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "git_head": "39e61248107699470b6b3b7ab547e02bd6098046",
+  "dirty_worktree": true,
+  "checks": [
+    {
+      "model": "contest/q3/models/m05-action-value",
+      "readme": true,
+      "math": true,
+      "package_replay": true
+    },
+    {
+      "model": "contest/q4/models/m02-adaptive-cover",
+      "readme": true,
+      "math": true,
+      "package_replay": true
+    }
+  ],
+  "original_q3_source_unchanged": true,
+  "official_called": false,
+  "committed": false,
+  "pushed": false,
+  "report_sha256": "e6d9f5a7c8e895bfac0e938a195d053be488d44c543401f068429e23d9c238c4"
+}

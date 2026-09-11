@@ -1,0 +1,41 @@
+{
+  "status": "verified_recommendation_not_team_adopted",
+  "files": [
+    {
+      "path": "contest\\q1\\models\\m01-bounded-bearing\\runs\\R003\\manifest.json",
+      "sha256": "ec948e68972d643c810e577bb78bddc657425775bc6771daa82667f8781e71e4"
+    },
+    {
+      "path": "contest\\q1\\models\\m01-bounded-bearing\\runs\\R003\\verification.json",
+      "sha256": "265383326985233bb6d7a2a88ce243d8bbf377edc9bc5d7da62b9c9f00164763"
+    },
+    {
+      "path": "contest\\q2\\models\\m01-reception-minimax\\runs\\R002\\manifest.json",
+      "sha256": "1328cf3d62d93e7bf668af70d0e41719efef7f03b99277702dac224eb15450f5"
+    },
+    {
+      "path": "contest\\q2\\models\\m01-reception-minimax\\runs\\R002\\verification.json",
+      "sha256": "6c69c31262c5db304aef85046b81405fbce63b089330782349840b39465df293"
+    },
+    {
+      "path": "contest\\q2\\models\\m01-reception-minimax\\runs\\R002\\selected_points.csv",
+      "sha256": "1263399ac9b4f87ea0d67d07d01ffdc55c0ff0ebbee34ac3b053f9b42b607358"
+    },
+    {
+      "path": "contest\\q2\\models\\m01-reception-minimax\\verification\\V02\\result.json",
+      "sha256": "bc9aeb321880595a018d63175947568de255620b4bfe07fce12c03f6b52e72c6"
+    },
+    {
+      "path": "contest\\q2\\models\\m01-reception-minimax\\verification\\V03\\results.json",
+      "sha256": "f2b9e9745c314bc4c756dbcf271349f29a0972b977ad4bf00b5b489c4210b077"
+    },
+    {
+      "path": "contest\\paper\\tables\\q12-v1-results.md",
+      "sha256": "64b6ca7047facb6031f3dc84baa59a953619bfd392ea30f393439e3481733d6c"
+    },
+    {
+      "path": "contest\\paper\\bibliography\\q12-v1.bib",
+      "sha256": "bb856f9fb66df5714c8dd19142b166837b700bf8d1e68a91a9e3aa3c22fe973d"
+    }
+  ]
+}
