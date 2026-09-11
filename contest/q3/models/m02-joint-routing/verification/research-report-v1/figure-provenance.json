@@ -1,0 +1,18 @@
+{
+  "source": "D:\\math modeling\\正式题目工作区\\B题建模第一版\\contest\\q3\\models\\m02-joint-routing\\runs\\R039-final-audit-recovery\\results.json",
+  "source_sha256": "784868198c5456c5fa0206bc0731feaf7e1f59cc2e8dedff50636b144e4b9141",
+  "width_inches": 11.6,
+  "height_inches": 4.8,
+  "png_dpi": 200,
+  "svg_text": "editable; requires Microsoft YaHei",
+  "python": "3.10.11",
+  "matplotlib": "3.10.8",
+  "transformations": [
+    "T / actual N per completed scene",
+    "paired points: all 200 scenes, no filtering",
+    "stratified means with 95% Student t confidence intervals"
+  ],
+  "uncertainty_scope": "Monte Carlo scene variation under the stated local generator, not official score uncertainty",
+  "destination": "provisional CUMCM research figure; manuscript size/typesetting not finalized",
+  "alt_text": "All 200 paired scene results compare the old strategy with the best observed frozen candidate. The second panel separates results by 10 through 16 sources. The candidate improves mean performance but its overall mean remains above the 200 second target."
+}

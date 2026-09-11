@@ -1,0 +1,82 @@
+{
+  "b0_a0": {
+    "scan_gain": 0.18,
+    "info_distance": 250,
+    "initial_baseline": 0,
+    "initial_force": false,
+    "initial_rotation": 0,
+    "anchor_radius": 1200.0
+  },
+  "b250_a0": {
+    "scan_gain": 0.18,
+    "info_distance": 250,
+    "initial_baseline": 250,
+    "initial_force": false,
+    "initial_rotation": 0,
+    "anchor_radius": 1200.0
+  },
+  "b250_a45": {
+    "scan_gain": 0.18,
+    "info_distance": 250,
+    "initial_baseline": 250,
+    "initial_force": false,
+    "initial_rotation": 45,
+    "anchor_radius": 1200.0
+  },
+  "b250_a90": {
+    "scan_gain": 0.18,
+    "info_distance": 250,
+    "initial_baseline": 250,
+    "initial_force": false,
+    "initial_rotation": 90,
+    "anchor_radius": 1200.0
+  },
+  "b450_a0": {
+    "scan_gain": 0.18,
+    "info_distance": 250,
+    "initial_baseline": 450,
+    "initial_force": false,
+    "initial_rotation": 0,
+    "anchor_radius": 1200.0
+  },
+  "b450_a45": {
+    "scan_gain": 0.18,
+    "info_distance": 250,
+    "initial_baseline": 450,
+    "initial_force": false,
+    "initial_rotation": 45,
+    "anchor_radius": 1200.0
+  },
+  "b450_a90": {
+    "scan_gain": 0.18,
+    "info_distance": 250,
+    "initial_baseline": 450,
+    "initial_force": false,
+    "initial_rotation": 90,
+    "anchor_radius": 1200.0
+  },
+  "b650_a0": {
+    "scan_gain": 0.18,
+    "info_distance": 250,
+    "initial_baseline": 650,
+    "initial_force": false,
+    "initial_rotation": 0,
+    "anchor_radius": 1200.0
+  },
+  "b650_a45": {
+    "scan_gain": 0.18,
+    "info_distance": 250,
+    "initial_baseline": 650,
+    "initial_force": false,
+    "initial_rotation": 45,
+    "anchor_radius": 1200.0
+  },
+  "b650_a90": {
+    "scan_gain": 0.18,
+    "info_distance": 250,
+    "initial_baseline": 650,
+    "initial_force": false,
+    "initial_rotation": 90,
+    "anchor_radius": 1200.0
+  }
+}

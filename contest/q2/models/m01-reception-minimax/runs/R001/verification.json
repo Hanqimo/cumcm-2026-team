@@ -1,0 +1,6540 @@
+{
+  "checks": [
+    {
+      "name": "direct_distance_reception_grid",
+      "passed": true,
+      "details": 1.9322062225126047
+    },
+    {
+      "name": "perpendicular_move_can_lose_signal",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "candidate_disk_equivalence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_posterior_nonempty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress_true_target_covered",
+      "passed": true,
+      "details": 4.064304448547773e-12
+    },
+    {
+      "name": "continuous_bin_bound_dominates_samples",
+      "passed": true,
+      "details": 0.0
+    },
+    {
+      "name": "rotated_center_context",
+      "passed": true,
+      "details": null
+    }
+  ],
+  "count": 1305,
+  "passed": true,
+  "worst_reception_margin_m": 1.9322062225126047,
+  "target_coverage_violation_m": 4.064304448547773e-12,
+  "upper_bound_violation_m": 0.0,
+  "elapsed_s": 14.703649800001585,
+  "caveats": [
+    "Synthetic conditional cases, not official simulator tests",
+    "Finite spatial search, no continuous global-optimum claim",
+    "Bounds use outer polygons and expanded bearing bins; floating-point residuals are not interval-certified"
+  ]
+}

@@ -1,0 +1,11 @@
+# Preserve byte-exact research evidence, source snapshots and recorded hashes.
+* whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+contest/q[123]/models/** -text
+contest/q[123]/models/README.md text=auto
+contest/global/problem/B-v1/** -text
+contest/paper/notes/q12-v1-* -text
+contest/paper/bibliography/q12-v1.bib -text
+contest/paper/tables/q12-v1-results.md -text
+
+# Matplotlib emits legal whitespace inside SVG path data. Keep exports intact.
+contest/**/*.svg -whitespace

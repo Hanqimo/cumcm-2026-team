@@ -1,0 +1,62 @@
+{
+  "status": "polygon",
+  "vertices": [
+    [
+      -5.047136064194729e-13,
+      -0.0
+    ],
+    [
+      37.99999999999981,
+      -0.0
+    ],
+    [
+      18.999999999999655,
+      32.908965343808916
+    ]
+  ],
+  "diameter_m": 38.00000000000031,
+  "diameter_pair": [
+    0,
+    1
+  ],
+  "cover_center": [
+    18.999999999999652,
+    10.969655114602967
+  ],
+  "cover_radius_m": 21.939310229205955,
+  "support_indices": [
+    0,
+    1,
+    2
+  ],
+  "diameter_disk_covers": false,
+  "guaranteed_clear_possible": false,
+  "max_halfplane_residual_m": 7.105427357601002e-15,
+  "observations": [
+    {
+      "position": [
+        -1000.0,
+        0.0
+      ],
+      "bearing_deg": 1.0
+    },
+    {
+      "position": [
+        538.0,
+        -866.0254037844386
+      ],
+      "bearing_deg": 121.00000000000001
+    },
+    {
+      "position": [
+        519.0,
+        898.9343691282472
+      ],
+      "bearing_deg": 241.0
+    }
+  ],
+  "true_target_for_consistency": [
+    19.0,
+    10.969655114602888
+  ]
+}

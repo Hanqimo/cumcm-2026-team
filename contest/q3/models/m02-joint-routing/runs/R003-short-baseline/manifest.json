@@ -1,0 +1,118 @@
+{
+  "command": [
+    "contest/q3/models/m02-joint-routing/verification/benchmark.py",
+    "--output",
+    "contest/q3/models/m02-joint-routing/runs/R003-short-baseline",
+    "--count",
+    "20",
+    "--config",
+    "contest/q3/models/m02-joint-routing/configs/R003-grid.json",
+    "--variants",
+    "b0_a0,b250_a0,b250_a45,b250_a90,b450_a0,b450_a45,b450_a90,b650_a0,b650_a45,b650_a90"
+  ],
+  "started_epoch": 1789091571.8834252,
+  "ended_epoch": 1789091595.8674188,
+  "data": "synthetic uniform disk, fixed bounded spatial sine errors",
+  "source_sha256": {
+    "api_client.py": "6ce270ffb316142e5d22da27e67eeab87f22797bd22f27ea984ab55deeec8203",
+    "bearing_geometry.py": "c0c5f9bb24d8285b255776469758876102410864beafbbfe9aec311e37a7c1cb",
+    "benchmark.py": "8338969d21090674d931f47364576a39972ac416e22846d386e131bc06d4f14f",
+    "config.json": "dbb36408d42ae36fb03ffa33ce7fc457388f8462fe9480385011574a3836560a",
+    "joint_strategies.py": "770a33ab1de951ca7a61f08573bf0d426b70e60428f30476f1b77d0315c8a93c",
+    "legacy_strategy.py": "064a03e8fb1b6e40640747b2e4a0441c7952e766304f27f1b12be68945f6238f",
+    "verify.py": "f6c0c707ce33a75e26375bce8f5e86a701651bb6986dc16d7c653975ceaae7fe"
+  },
+  "dirty_worktree": true,
+  "summary": {
+    "b0_a0": {
+      "cases": 20,
+      "full": 20,
+      "mean_per_source_s": 263.4262785464798,
+      "median_per_source_s": 253.41845281058013,
+      "mean_distance_m": 12251.400151950971,
+      "mean_measures": 126.6,
+      "max_elapsed_s": 0.15275779999501538
+    },
+    "b250_a0": {
+      "cases": 20,
+      "full": 20,
+      "mean_per_source_s": 258.23891911219823,
+      "median_per_source_s": 257.54787779757646,
+      "mean_distance_m": 12118.558432611171,
+      "mean_measures": 119.85,
+      "max_elapsed_s": 0.17427150000003166
+    },
+    "b250_a45": {
+      "cases": 20,
+      "full": 20,
+      "mean_per_source_s": 257.28372259757185,
+      "median_per_source_s": 254.0963458624168,
+      "mean_distance_m": 12099.407529895161,
+      "mean_measures": 119.1,
+      "max_elapsed_s": 0.157739300004323
+    },
+    "b250_a90": {
+      "cases": 20,
+      "full": 20,
+      "mean_per_source_s": 255.1481087979811,
+      "median_per_source_s": 260.01809743635573,
+      "mean_distance_m": 11958.911354815657,
+      "mean_measures": 118.3,
+      "max_elapsed_s": 0.19094719999702647
+    },
+    "b450_a0": {
+      "cases": 20,
+      "full": 20,
+      "mean_per_source_s": 258.80764512688376,
+      "median_per_source_s": 258.1623611585919,
+      "mean_distance_m": 12085.690693375382,
+      "mean_measures": 124.25,
+      "max_elapsed_s": 0.18789859999378677
+    },
+    "b450_a45": {
+      "cases": 20,
+      "full": 20,
+      "mean_per_source_s": 259.3886339416899,
+      "median_per_source_s": 251.88782606622718,
+      "mean_distance_m": 12117.592501531686,
+      "mean_measures": 121.85,
+      "max_elapsed_s": 0.18033970000396948
+    },
+    "b450_a90": {
+      "cases": 20,
+      "full": 20,
+      "mean_per_source_s": 255.17120561398892,
+      "median_per_source_s": 250.47366608475414,
+      "mean_distance_m": 12030.922502500274,
+      "mean_measures": 116.2,
+      "max_elapsed_s": 0.17269809999561403
+    },
+    "b650_a0": {
+      "cases": 20,
+      "full": 20,
+      "mean_per_source_s": 261.0921934473332,
+      "median_per_source_s": 259.9627213050103,
+      "mean_distance_m": 12201.620259986625,
+      "mean_measures": 123.95,
+      "max_elapsed_s": 0.1798383000132162
+    },
+    "b650_a45": {
+      "cases": 20,
+      "full": 20,
+      "mean_per_source_s": 260.8295723072002,
+      "median_per_source_s": 256.65885208542807,
+      "mean_distance_m": 12162.28408177932,
+      "mean_measures": 123.6,
+      "max_elapsed_s": 0.17622030001075473
+    },
+    "b650_a90": {
+      "cases": 20,
+      "full": 20,
+      "mean_per_source_s": 260.96673325467003,
+      "median_per_source_s": 253.70406577521166,
+      "mean_distance_m": 12186.8198077086,
+      "mean_measures": 122.5,
+      "max_elapsed_s": 0.1710880000027828
+    }
+  }
+}

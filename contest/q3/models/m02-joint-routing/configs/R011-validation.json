@@ -1,0 +1,27 @@
+{
+  "joint_best": {
+    "scan_gain": 0.18,
+    "info_distance": 250,
+    "initial_baseline": 250,
+    "initial_force": false,
+    "initial_rotation": 90,
+    "anchor_radius": 1200.0
+  },
+  "adaptive_best": {
+    "family": "adaptive",
+    "scan_gain": 0.18,
+    "info_distance": 250,
+    "initial_baseline": 400,
+    "initial_force": false,
+    "anchor_radius": 1200.0,
+    "cover_move_weight": 0.5
+  },
+  "short_probe": {
+    "scan_gain": 0.18,
+    "info_distance": 150,
+    "initial_baseline": 0,
+    "anchor_radius": 1200.0,
+    "probe_length": 100,
+    "one_step": true
+  }
+}

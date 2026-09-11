@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "utc": "2026-09-10T15:50:09.184015+00:00",
+  "purpose": "generic observable-input API integration, separate grid from Q2-R002",
+  "command": "python -X utf8 contest/q2/models/m01-reception-minimax/verification/check_planner.py",
+  "uncommitted_source": true,
+  "source_sha256": {
+    "contest\\q2\\models\\m01-reception-minimax\\verification\\check_planner.py": "d3d58ad878e768798f0b16406ec256946e40f9476f3ef8d3ddd14e3fc419422a",
+    "contest\\q2\\models\\m01-reception-minimax\\src\\planner.py": "8e0e1e6a2762401bf09d6171243aa4da03f5694faa99f720a043b3fe2754eb4e",
+    "contest\\q2\\models\\m01-reception-minimax\\src\\second_point.py": "d7bd9029de4e980396237ce6dedf775b3cff2fedd49b11242864b121a26ce8e5",
+    "contest\\q1\\models\\m01-bounded-bearing\\src\\bearing_geometry.py": "c0c5f9bb24d8285b255776469758876102410864beafbbfe9aec311e37a7c1cb"
+  }
+}
