@@ -1,0 +1,143 @@
+{
+  "started_at": "2026-09-11T07:06:42.963767+00:00",
+  "command": [
+    "contest/q4/models/m02-adaptive-cover/verification/benchmark.py",
+    "--output",
+    "contest/q4/models/m02-adaptive-cover/runs/R005-selection",
+    "--start",
+    "25000",
+    "--count",
+    "12",
+    "--policies",
+    "directional_v1,polar25,polar22"
+  ],
+  "python": "3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]",
+  "numpy": "2.2.6",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "sources_sha256": {
+    "adaptive_cover.py": "23e3277393d261972d1385231f47b611c2f8081621945b6ea37a6ac123261e50",
+    "api_client.py": "6ce270ffb316142e5d22da27e67eeab87f22797bd22f27ea984ab55deeec8203",
+    "baseline_strategy.py": "68cd89b3c6821e8627f988954df2227be3d2aa23f39138bf201fc5fde859b2d5",
+    "bearing_geometry.py": "c0c5f9bb24d8285b255776469758876102410864beafbbfe9aec311e37a7c1cb",
+    "clearance_geometry.py": "579998fa4e0fd4c75b1597522cd65a4164598b2601c84feb2811613b29ea5d93",
+    "directional_geometry.py": "5da881b13f53e5c96e1f59bc7cfe3cc6e8826a3a5edcf2abb3e3ad9218f22927",
+    "run_robot.py": "cd6b92ed73965d982cf61a6091b43c64f0f93ea6e0c332a52827f2adcaf27568",
+    "strategy.py": "59528b36dcb3051b8b0ec3187eaf3ff657b0a37a50ce49e9391cb8392554edaf",
+    "polar22.json": "2bbfa994577526a2f4cb86ee551a75d78b2b59593a855b8cc01283a6ff721860",
+    "polar25.json": "c6fdbd2737b3c5f598cfed4ce41118a0034e123e31fdd9720f1122108e1c9e47",
+    "policies.json": "e8b673d7bc1b43dd9cce4d22ba24cd5e2c01732ad0831681f70a26937934947d",
+    "benchmark.py": "4c3bf4f09d0a8901d2425422b6a7c18d5eb896202d10253941c0020f9c11be74"
+  },
+  "policies": {
+    "directional_v1": {
+      "mesh_spacing_m": 990.0,
+      "visibility_planning": true,
+      "joint_routing": true,
+      "max_local_measurements": 10,
+      "max_consecutive_losses": 3
+    },
+    "mesh_chase_baseline": {
+      "mesh_spacing_m": 990.0,
+      "visibility_planning": false,
+      "joint_routing": false,
+      "max_local_measurements": 10,
+      "max_consecutive_losses": 3
+    },
+    "adaptive_v2": {
+      "mesh_spacing_m": 990.0,
+      "visibility_planning": true,
+      "joint_routing": true,
+      "max_local_measurements": 10,
+      "max_consecutive_losses": 3,
+      "adaptive_cover": true,
+      "cell_depth": 2
+    },
+    "adaptive_fine": {
+      "mesh_spacing_m": 990.0,
+      "visibility_planning": true,
+      "joint_routing": true,
+      "max_local_measurements": 10,
+      "max_consecutive_losses": 3,
+      "adaptive_cover": true,
+      "cell_depth": 3
+    },
+    "adaptive_share": {
+      "mesh_spacing_m": 990.0,
+      "visibility_planning": true,
+      "joint_routing": true,
+      "max_local_measurements": 10,
+      "max_consecutive_losses": 3,
+      "adaptive_cover": true,
+      "cell_depth": 2,
+      "clear_scans": true
+    },
+    "adaptive_offer": {
+      "mesh_spacing_m": 990.0,
+      "visibility_planning": true,
+      "joint_routing": true,
+      "max_local_measurements": 10,
+      "max_consecutive_losses": 3,
+      "adaptive_cover": true,
+      "cell_depth": 2,
+      "target_offers": true
+    },
+    "adaptive_both": {
+      "mesh_spacing_m": 990.0,
+      "visibility_planning": true,
+      "joint_routing": true,
+      "max_local_measurements": 10,
+      "max_consecutive_losses": 3,
+      "adaptive_cover": true,
+      "cell_depth": 2,
+      "clear_scans": true,
+      "target_offers": true
+    },
+    "polar25": {
+      "mesh_spacing_m": 990.0,
+      "visibility_planning": true,
+      "joint_routing": true,
+      "max_local_measurements": 10,
+      "max_consecutive_losses": 3,
+      "adaptive_cover": true,
+      "cell_depth": 2,
+      "layout": "polar25.json"
+    },
+    "polar25_share": {
+      "mesh_spacing_m": 990.0,
+      "visibility_planning": true,
+      "joint_routing": true,
+      "max_local_measurements": 10,
+      "max_consecutive_losses": 3,
+      "adaptive_cover": true,
+      "cell_depth": 2,
+      "layout": "polar25.json",
+      "clear_scans": true
+    },
+    "polar25_offer": {
+      "mesh_spacing_m": 990.0,
+      "visibility_planning": true,
+      "joint_routing": true,
+      "max_local_measurements": 10,
+      "max_consecutive_losses": 3,
+      "adaptive_cover": true,
+      "cell_depth": 2,
+      "layout": "polar25.json",
+      "target_offers": true
+    },
+    "polar22": {
+      "mesh_spacing_m": 990.0,
+      "visibility_planning": true,
+      "joint_routing": true,
+      "max_local_measurements": 10,
+      "max_consecutive_losses": 3,
+      "adaptive_cover": true,
+      "cell_depth": 2,
+      "layout": "polar22.json"
+    }
+  },
+  "official_simulator": false,
+  "error_mode": "smooth",
+  "fixtures": "uniform disk/range/orientation unless labelled stress",
+  "completed_at": "2026-09-11T07:08:22.463554+00:00",
+  "executions": 36
+}

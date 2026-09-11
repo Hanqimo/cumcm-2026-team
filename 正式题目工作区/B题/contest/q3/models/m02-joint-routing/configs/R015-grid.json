@@ -1,0 +1,80 @@
+{
+  "exact_joint_r1125": {
+    "family": "joint",
+    "scan_gain": 0.18,
+    "info_distance": 250,
+    "initial_baseline": 250,
+    "initial_force": false,
+    "initial_rotation": 90,
+    "anchor_radius": 1125,
+    "info_range": 1200,
+    "rare_cover": true,
+    "cover_move_weight": 0.5,
+    "exact_cover": true
+  },
+  "exact_joint_r1175": {
+    "family": "joint",
+    "scan_gain": 0.18,
+    "info_distance": 250,
+    "initial_baseline": 250,
+    "initial_force": false,
+    "initial_rotation": 90,
+    "anchor_radius": 1175,
+    "info_range": 1200,
+    "rare_cover": true,
+    "cover_move_weight": 0.5,
+    "exact_cover": true
+  },
+  "exact_joint_r1250": {
+    "family": "joint",
+    "scan_gain": 0.18,
+    "info_distance": 250,
+    "initial_baseline": 250,
+    "initial_force": false,
+    "initial_rotation": 90,
+    "anchor_radius": 1250,
+    "info_range": 1200,
+    "rare_cover": true,
+    "cover_move_weight": 0.5,
+    "exact_cover": true
+  },
+  "exact_adaptive_r1125": {
+    "family": "adaptive",
+    "scan_gain": 0.18,
+    "info_distance": 250,
+    "initial_baseline": 250,
+    "initial_force": false,
+    "initial_rotation": 90,
+    "anchor_radius": 1125,
+    "info_range": 1200,
+    "rare_cover": true,
+    "cover_move_weight": 0.5,
+    "exact_cover": true
+  },
+  "exact_adaptive_r1175": {
+    "family": "adaptive",
+    "scan_gain": 0.18,
+    "info_distance": 250,
+    "initial_baseline": 250,
+    "initial_force": false,
+    "initial_rotation": 90,
+    "anchor_radius": 1175,
+    "info_range": 1200,
+    "rare_cover": true,
+    "cover_move_weight": 0.5,
+    "exact_cover": true
+  },
+  "exact_adaptive_r1250": {
+    "family": "adaptive",
+    "scan_gain": 0.18,
+    "info_distance": 250,
+    "initial_baseline": 250,
+    "initial_force": false,
+    "initial_rotation": 90,
+    "anchor_radius": 1250,
+    "info_range": 1200,
+    "rare_cover": true,
+    "cover_move_weight": 0.5,
+    "exact_cover": true
+  }
+}

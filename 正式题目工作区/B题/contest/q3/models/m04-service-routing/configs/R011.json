@@ -1,0 +1,26 @@
+{
+  "v3": {
+    "_class": "v3"
+  },
+  "hybrid": {
+    "hybrid_cover": true
+  },
+  "hybrid_fusion": {
+    "hybrid_cover": true,
+    "cover_trials": 6,
+    "service_route": true,
+    "transit_probes": true
+  },
+  "hybrid_small": {
+    "hybrid_cover": true,
+    "cover_trials": 3,
+    "cover_radii": [
+      1100,
+      1150,
+      1200,
+      1400
+    ],
+    "service_route": true,
+    "transit_probes": true
+  }
+}

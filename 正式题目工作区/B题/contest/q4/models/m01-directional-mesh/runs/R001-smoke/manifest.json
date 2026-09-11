@@ -1,0 +1,46 @@
+{
+  "started_at": "2026-09-11T05:40:36.088133+00:00",
+  "command": [
+    "contest/q4/models/m01-directional-mesh/verification/benchmark.py",
+    "--output",
+    "contest/q4/models/m01-directional-mesh/runs/R001-smoke",
+    "--start",
+    "20000",
+    "--count",
+    "2"
+  ],
+  "python": "3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]",
+  "numpy": "2.2.6",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "sources_sha256": {
+    "api_client.py": "6ce270ffb316142e5d22da27e67eeab87f22797bd22f27ea984ab55deeec8203",
+    "bearing_geometry.py": "c0c5f9bb24d8285b255776469758876102410864beafbbfe9aec311e37a7c1cb",
+    "clearance_geometry.py": "579998fa4e0fd4c75b1597522cd65a4164598b2601c84feb2811613b29ea5d93",
+    "directional_geometry.py": "d3fecad1cc5894c31f8ebd8866d612df802c04006ffa0090863d727655f3773e",
+    "run_robot.py": "cd6b92ed73965d982cf61a6091b43c64f0f93ea6e0c332a52827f2adcaf27568",
+    "strategy.py": "d750068140773b7e727e9042ede93918f8ee65574b499c9ee257488900c1dd82",
+    "policies.json": "d4c262ca0b54d854b143e0723a4f08bdfb4c2e20f8d15c7d51ff772ced9fa823",
+    "benchmark.py": "5d21fbfe8561f896df37772cefea0e9f4f2c3c19a0bcc1621e28d5ce9d4d9730"
+  },
+  "policies": {
+    "directional_v1": {
+      "mesh_spacing_m": 990.0,
+      "visibility_planning": true,
+      "joint_routing": true,
+      "max_local_measurements": 10,
+      "max_consecutive_losses": 3
+    },
+    "mesh_chase_baseline": {
+      "mesh_spacing_m": 990.0,
+      "visibility_planning": false,
+      "joint_routing": false,
+      "max_local_measurements": 10,
+      "max_consecutive_losses": 3
+    }
+  },
+  "official_simulator": false,
+  "error_mode": "smooth",
+  "fixtures": "uniform disk/range/orientation unless labelled stress",
+  "completed_at": "2026-09-11T05:40:36.804225+00:00",
+  "executions": 4
+}

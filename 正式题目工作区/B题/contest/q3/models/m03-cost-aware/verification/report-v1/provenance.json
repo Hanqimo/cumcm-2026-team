@@ -1,0 +1,22 @@
+{
+  "source_sha256": {
+    "runs\\R009-frozen-audit\\results.json": "c065ec7543254569b9d44839e660538bb08fe0bf8e699279ddd53ca5cf673156",
+    "runs\\R009-frozen-audit\\manifest.json": "50fc6c2b1cd49b19ff742269d12153dd4fb08f52444556a7163b1bc31c827a01",
+    "verification\\build_report.py": "4cad3e5abb4eadd968a2d697f301254a1d0785bb09f96a5aaf4a0db32c346fe8"
+  },
+  "python": "3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]",
+  "numpy": "2.2.6",
+  "scipy": "1.15.3",
+  "matplotlib": "3.10.8",
+  "figure_dimensions_in": [
+    10,
+    4.1
+  ],
+  "png_dpi": 220,
+  "replicate": "one generated scene",
+  "exclusions": "none",
+  "transformation": "T/N per scene; paired difference v3-v4; no smoothing or clipping",
+  "uncertainty": "two-sided 95% Student t interval on scene means/differences",
+  "figure_alt": "Left: every audited scene as old versus new time, with equality line. Right: every paired saving in seed order, retaining negative regressions.",
+  "destination": "research and later contest-paper draft; no journal-specific compliance claimed"
+}

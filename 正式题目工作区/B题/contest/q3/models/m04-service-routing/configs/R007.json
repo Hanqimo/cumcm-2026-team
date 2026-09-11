@@ -1,0 +1,35 @@
+{
+  "v3": {
+    "_class": "v3"
+  },
+  "scout750_0": {
+    "initial_baseline": 750,
+    "initial_rotation": 0,
+    "initial_force": true
+  },
+  "scout750_90": {
+    "initial_baseline": 750,
+    "initial_rotation": 90,
+    "initial_force": true
+  },
+  "scout1000_0": {
+    "initial_baseline": 1000,
+    "initial_rotation": 0,
+    "initial_force": true
+  },
+  "scout1000_90": {
+    "initial_baseline": 1000,
+    "initial_rotation": 90,
+    "initial_force": true
+  },
+  "scout1200_0": {
+    "initial_baseline": 1200,
+    "initial_rotation": 0,
+    "initial_force": true
+  },
+  "scout1200_90": {
+    "initial_baseline": 1200,
+    "initial_rotation": 90,
+    "initial_force": true
+  }
+}

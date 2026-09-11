@@ -1,0 +1,11 @@
+{
+  "merge_targets": {
+    "_class": "merge",
+    "merge_target_scans": true
+  },
+  "merge_targets3": {
+    "_class": "merge",
+    "merge_target_scans": true,
+    "cover_sweeps": 3
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "run": "contest\\q3\\models\\m05-action-value\\runs\\R004-frozen-audit",
+  "cases": 60,
+  "baseline": "v5",
+  "candidate": "v6",
+  "baseline_s": 234.0297574044325,
+  "candidate_s": 232.6014136448729,
+  "saving_s": 1.4283437595595738,
+  "improvement_percent": 0.6103257019111541,
+  "ci95_s": [
+    1.0976293713606293,
+    1.7590581477585183
+  ],
+  "improved": 54,
+  "worse": 6,
+  "unchanged": 0,
+  "worst_seed": 17020,
+  "worst_saving_s": -1.758832034839088,
+  "baseline_distance_m": 10833.100880596825,
+  "candidate_distance_m": 10816.564071358782,
+  "baseline_measures": 123.28333333333333,
+  "candidate_measures": 118.73333333333333,
+  "candidate_failures": 3.3333333333333335,
+  "max_compute_s": 14.86328390000017
+}

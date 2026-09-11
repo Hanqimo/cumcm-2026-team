@@ -1,0 +1,10 @@
+{
+  "no_service": {
+    "cover_trials": 6,
+    "transit_probes": true
+  },
+  "no_probe": {
+    "service_route": true,
+    "cover_trials": 6
+  }
+}

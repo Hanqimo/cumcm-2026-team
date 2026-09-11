@@ -1,0 +1,16 @@
+{
+  "sha_match": true,
+  "records": [
+    {
+      "seed": 17000,
+      "time_difference_s": 0.0,
+      "complete": true
+    },
+    {
+      "seed": 17020,
+      "time_difference_s": 0.0,
+      "complete": true
+    }
+  ],
+  "official_called": false
+}

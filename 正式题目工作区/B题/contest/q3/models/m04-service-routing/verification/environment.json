@@ -1,0 +1,12 @@
+{
+  "base_commit": "39e61248107699470b6b3b7ab547e02bd6098046",
+  "branch": "codex/b-q1-q3-research-sync",
+  "dirty_worktree": true,
+  "python": "3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]",
+  "numpy": "2.2.6",
+  "scipy": "1.15.3",
+  "matplotlib": "3.10.8",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "source_snapshot_files_checked_so_far": 395,
+  "note": "Environment unchanged throughout M04 experiments; no dependency installation or official simulator calls"
+}

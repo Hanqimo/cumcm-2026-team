@@ -1,0 +1,49 @@
+{
+  "q1_cases": 200,
+  "q1_mean_saved_m": 0.7704153733430448,
+  "q1_max_saved_m": 3.8266329391881584,
+  "q1_max_solver_objective_error_m": 3.2490720514033455e-07,
+  "q2_cases": 300,
+  "q2_direct_points": 1200000,
+  "q2_example": {
+    "polygon": [
+      [
+        200.0,
+        -1.0
+      ],
+      [
+        1499.0,
+        -1.0
+      ],
+      [
+        1499.0,
+        1.0
+      ],
+      [
+        200.0,
+        1.0
+      ]
+    ],
+    "first_sensor": [
+      0.0,
+      0.0
+    ],
+    "new_point": [
+      550.0,
+      840.0
+    ],
+    "distance_from_first_m": 1004.0418317978589,
+    "max_distance_to_polygon_m": 1268.0228704562076,
+    "max_squared_violation_m2": -90219.44999986258,
+    "worst_witness": [
+      999.999499999875,
+      -1.0
+    ],
+    "old_sufficient_tests_accept": false,
+    "new_region_test_accept": true
+  },
+  "source_sha256": {
+    "clearance_geometry.py": "579998fa4e0fd4c75b1597522cd65a4164598b2601c84feb2811613b29ea5d93",
+    "reception_region.py": "a7fc840075c9665ae3a53febffd90de2dc47250348211aaacb7dd5e7567c89ad"
+  }
+}

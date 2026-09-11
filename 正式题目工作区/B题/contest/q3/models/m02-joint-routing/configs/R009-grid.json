@@ -1,0 +1,62 @@
+{
+  "route1_probe0": {
+    "scan_gain": 0.18,
+    "info_distance": 150,
+    "initial_baseline": 400,
+    "initial_force": false,
+    "anchor_radius": 1200.0,
+    "probe_length": 0,
+    "one_step": true,
+    "route_restarts": 1
+  },
+  "route1_probe100": {
+    "scan_gain": 0.18,
+    "info_distance": 150,
+    "initial_baseline": 400,
+    "initial_force": false,
+    "anchor_radius": 1200.0,
+    "probe_length": 100,
+    "one_step": true,
+    "route_restarts": 1
+  },
+  "route6_probe0": {
+    "scan_gain": 0.18,
+    "info_distance": 150,
+    "initial_baseline": 400,
+    "initial_force": false,
+    "anchor_radius": 1200.0,
+    "probe_length": 0,
+    "one_step": true,
+    "route_restarts": 6
+  },
+  "route6_probe100": {
+    "scan_gain": 0.18,
+    "info_distance": 150,
+    "initial_baseline": 400,
+    "initial_force": false,
+    "anchor_radius": 1200.0,
+    "probe_length": 100,
+    "one_step": true,
+    "route_restarts": 6
+  },
+  "route14_probe0": {
+    "scan_gain": 0.18,
+    "info_distance": 150,
+    "initial_baseline": 400,
+    "initial_force": false,
+    "anchor_radius": 1200.0,
+    "probe_length": 0,
+    "one_step": true,
+    "route_restarts": 14
+  },
+  "route14_probe100": {
+    "scan_gain": 0.18,
+    "info_distance": 150,
+    "initial_baseline": 400,
+    "initial_force": false,
+    "anchor_radius": 1200.0,
+    "probe_length": 100,
+    "one_step": true,
+    "route_restarts": 14
+  }
+}

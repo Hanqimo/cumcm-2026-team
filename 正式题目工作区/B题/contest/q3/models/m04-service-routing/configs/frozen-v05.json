@@ -1,0 +1,27 @@
+{
+  "v3": {
+    "_class": "v3"
+  },
+  "v4": {
+    "_class": "v4",
+    "cost_action": true,
+    "cost_risk": 1.0,
+    "exact_reception": true,
+    "cover_sweeps": 3
+  },
+  "v5": {
+    "projection": false,
+    "merge_stations": false,
+    "service_route": true,
+    "cover_trials": 6,
+    "transit_probes": true,
+    "probe_gain": 100.0,
+    "probe_min_radius": 100.0,
+    "cost_action": false,
+    "continuous_stop": false,
+    "hybrid_cover": false,
+    "target_estimator": "mec",
+    "initial_design": false,
+    "warm_cover": false
+  }
+}

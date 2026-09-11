@@ -1,0 +1,22 @@
+{
+  "v3": {
+    "_class": "v3"
+  },
+  "fusion": {
+    "service_route": true,
+    "cover_trials": 6,
+    "transit_probes": true
+  },
+  "lookahead2": {
+    "_class": "lookahead",
+    "cover_trials": 3,
+    "transit_probes": true,
+    "rollout_samples": 2
+  },
+  "lookahead4": {
+    "_class": "lookahead",
+    "cover_trials": 3,
+    "transit_probes": true,
+    "rollout_samples": 4
+  }
+}

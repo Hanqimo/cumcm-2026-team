@@ -1,0 +1,26 @@
+{
+  "v3": {
+    "_class": "v3"
+  },
+  "fusion": {
+    "service_route": true,
+    "cover_trials": 6,
+    "transit_probes": true
+  },
+  "search": {
+    "_class": "search",
+    "cover_trials": 3
+  },
+  "search_bonus": {
+    "_class": "search",
+    "cover_trials": 3,
+    "search_bonus": 300.0
+  },
+  "search_fusion": {
+    "_class": "search",
+    "cover_trials": 3,
+    "search_bonus": 150.0,
+    "service_route": true,
+    "transit_probes": true
+  }
+}

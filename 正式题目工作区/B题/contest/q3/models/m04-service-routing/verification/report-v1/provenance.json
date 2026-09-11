@@ -1,0 +1,23 @@
+{
+  "source_sha256": {
+    "runs\\R018-frozen-audit\\results.json": "2f8c9c131751a8992228b1be260f9e6aa6c87aeb785c5b3156b65a56c9410890",
+    "runs\\R018-frozen-audit\\manifest.json": "a18e21c0eab0f1741f8e857c1cb09925a031280d68d6f670ddefae444c8f41e1",
+    "runs\\R019-frozen-random-checker\\manifest.json": "f1515a40ad99e598af42d5c59e7deacb00c6a4e693190c99e82716fb0bf6a682",
+    "verification\\build_report.py": "f998aa18af29ab06ade93c8eeac416a1ce51008ad79fb1680650c66d7a396517"
+  },
+  "python": "3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]",
+  "numpy": "2.2.6",
+  "scipy": "1.15.3",
+  "matplotlib": "3.10.8",
+  "figure_inches": [
+    10,
+    4.2
+  ],
+  "png_dpi": 220,
+  "replicate": "scene",
+  "estimator": "equal-weight mean of each complete T/N",
+  "uncertainty": "two-sided approximate Student t 95% interval across scenes",
+  "exclusions": "none in final audit",
+  "figure_alt": "Left: all moving, measuring/switching and clearing costs, with a 200-second target line. Right: every paired v4-v5 time saving, including regressions.",
+  "destination": "research and later contest-paper draft; no publisher-specific compliance claimed"
+}

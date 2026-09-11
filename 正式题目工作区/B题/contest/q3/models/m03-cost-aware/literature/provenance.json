@@ -1,0 +1,52 @@
+{
+  "date": "2026-09-11",
+  "sources": [
+    {
+      "library_number": "03",
+      "path": "正式题目工作区/参考论文/B题/论文全文/03_兼顾移动与测量耗时的谨慎贪心主动定位.pdf",
+      "sha256": "ec7976a4129b8df2b03eac3916345a68f2f4c3778f971382cad410d05b1338bc",
+      "pages_read": [
+        4,
+        6,
+        7,
+        8,
+        9
+      ],
+      "page_numbering": "one-based physical PDF pages",
+      "method": "pypdf text extraction and manual method review"
+    },
+    {
+      "library_number": "05",
+      "path": "正式题目工作区/参考论文/B题/论文全文/05_带噪相对观测下的多目标主动定位.pdf",
+      "sha256": "30eb9fe97a353525814c7728379f14688f91b29bbde9951abcc7ddbdece6ed62",
+      "pages_read": [
+        4,
+        5
+      ],
+      "page_numbering": "one-based physical PDF pages",
+      "method": "pypdf text extraction and manual method review"
+    },
+    {
+      "library_number": "09",
+      "path": "正式题目工作区/参考论文/B题/论文全文/09_单机器人同时定位多个未知瞬态无线电源.pdf",
+      "sha256": "81f1cf28de8139f24ee5e78981a6dab7dd88777970918350761fca147af73c0a",
+      "pages_read": [
+        7,
+        8
+      ],
+      "page_numbering": "one-based physical PDF pages",
+      "method": "pypdf text extraction and manual method review"
+    },
+    {
+      "library_number": "23",
+      "path": "正式题目工作区/参考论文/B题/论文全文/23_测控装备干扰源快速侦测系统设计研究.pdf",
+      "sha256": "51877d2633660ad3d98bad4911c62aef5c06a51a2601d6c60f35b4fee9ac06cf",
+      "pages_read": [
+        5,
+        6
+      ],
+      "page_numbering": "one-based physical PDF pages",
+      "method": "pypdf text extraction and manual method review"
+    }
+  ]
+}

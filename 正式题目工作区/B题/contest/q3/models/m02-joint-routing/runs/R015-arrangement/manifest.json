@@ -1,0 +1,83 @@
+{
+  "command": [
+    "contest/q3/models/m02-joint-routing/verification/benchmark.py",
+    "--output",
+    "contest/q3/models/m02-joint-routing/runs/R015-arrangement",
+    "--count",
+    "20",
+    "--config",
+    "contest/q3/models/m02-joint-routing/configs/R015-grid.json",
+    "--variants",
+    "exact_joint_r1125,exact_joint_r1175,exact_joint_r1250,exact_adaptive_r1125,exact_adaptive_r1175,exact_adaptive_r1250"
+  ],
+  "started_epoch": 1789092945.6930387,
+  "ended_epoch": 1789092956.5530484,
+  "data": "synthetic uniform disk, fixed bounded spatial sine errors",
+  "source_sha256": {
+    "api_client.py": "6ce270ffb316142e5d22da27e67eeab87f22797bd22f27ea984ab55deeec8203",
+    "bearing_geometry.py": "c0c5f9bb24d8285b255776469758876102410864beafbbfe9aec311e37a7c1cb",
+    "benchmark.py": "2248c6d4a7653f66bd8e3fae8d4b7d3f300e612ddc8297145a00e8f4b1e99e47",
+    "config.json": "220ed944f223c000c3b44c43aa719f3b535e155a9f8cec75201b7a7a0507e0b9",
+    "exact_coverage.py": "ce6ab1e744d01d848edb479821cb5b66d944a5afb20d59d4b70ebb4ef14a591b",
+    "joint_strategies.py": "d275c034e7347d00145e6868c844d7ee64de3222d6c273a43f9458671b37aeef",
+    "legacy_strategy.py": "064a03e8fb1b6e40640747b2e4a0441c7952e766304f27f1b12be68945f6238f",
+    "verify.py": "f6c0c707ce33a75e26375bce8f5e86a701651bb6986dc16d7c653975ceaae7fe"
+  },
+  "dirty_worktree": true,
+  "summary": {
+    "exact_joint_r1125": {
+      "cases": 20,
+      "full": 20,
+      "mean_per_source_s": 251.78583016942457,
+      "median_per_source_s": 252.74550712267944,
+      "mean_distance_m": 11940.430607937815,
+      "mean_measures": 112.5,
+      "max_elapsed_s": 0.10241410000890028
+    },
+    "exact_joint_r1175": {
+      "cases": 20,
+      "full": 20,
+      "mean_per_source_s": 251.68876884177325,
+      "median_per_source_s": 250.855903073743,
+      "mean_distance_m": 11905.885285754066,
+      "mean_measures": 112.7,
+      "max_elapsed_s": 0.0919795000081649
+    },
+    "exact_joint_r1250": {
+      "cases": 20,
+      "full": 20,
+      "mean_per_source_s": 255.62487789919774,
+      "median_per_source_s": 258.71672309636745,
+      "mean_distance_m": 12185.489557783638,
+      "mean_measures": 112.15,
+      "max_elapsed_s": 0.08851180000056047
+    },
+    "exact_adaptive_r1125": {
+      "cases": 20,
+      "full": 20,
+      "mean_per_source_s": 344.9419062836715,
+      "median_per_source_s": 354.4263462312034,
+      "mean_distance_m": 16294.536251019254,
+      "mean_measures": 152.7,
+      "max_elapsed_s": 0.13673929999640677
+    },
+    "exact_adaptive_r1175": {
+      "cases": 20,
+      "full": 20,
+      "mean_per_source_s": 341.04134095246457,
+      "median_per_source_s": 347.92776905809455,
+      "mean_distance_m": 16100.404661142777,
+      "mean_measures": 152.25,
+      "max_elapsed_s": 0.14818920000107028
+    },
+    "exact_adaptive_r1250": {
+      "cases": 20,
+      "full": 20,
+      "mean_per_source_s": 341.7793049013577,
+      "median_per_source_s": 349.74592221366566,
+      "mean_distance_m": 16044.56743864523,
+      "mean_measures": 152.35,
+      "max_elapsed_s": 0.1464099000004353
+    }
+  }
+}
