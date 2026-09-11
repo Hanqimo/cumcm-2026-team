@@ -1,0 +1,635 @@
+var pageTypeDefault = "zh";
+var viewType = getUrlParam("viewType");
+if ($("#articleId").length > 0) {
+    var articleId = allData.article.id;
+
+    //citation显示  已弃用
+    //showCitation();
+
+    //关系图
+    //getRelationship();
+    loadCitedByInfo();
+    //文章详情页跳转
+
+    isZhJournalEnArticle();
+
+
+
+    if (viewType && "HTML" == viewType) {
+        getVisitInfo(articleId, 1);
+    } else {
+        //摘要访问记录
+        getVisitInfo(articleId, 0);
+    }
+}
+
+/**
+ * 文章详情页附件分类
+ */
+if (allData.article) {
+    allData.article.wxLinkSupplementList = [];
+    allData.article.sgyjSupplementList = [];
+    allData.article.cgsmSupplementList = [];
+    allData.article.linkSupplementList = [];
+    allData.article.figSupplementList = [];
+    allData.article.videoSupplementList = [];
+    allData.article.audioSupplementList = [];
+    allData.article.fileSupplementList = [];
+    // firstVideo、videoAbstract、附件视频类型
+    allData.article.hasVideo = false;
+    // 除去上述3种类型的
+    allData.article.otherSupplements = allData.article.supplements ? allData.article.supplements.length : 0;
+}
+if (allData.article && allData.article.supplements && allData.article.supplements != "") {
+    allData.article.supplements.forEach(function (item) {
+        if (item.fileType == "wxLink") {
+            allData.article.wxLinkSupplementList.push(item)
+        } else if (item.fileType == "sgyj") {
+            allData.article.sgyjSupplementList.push(item)
+        } else if (item.fileType == "cgsm") {
+            allData.article.cgsmSupplementList.push(item)
+        } else if (item.fileType == "link") {
+            allData.article.linkSupplementList.push(item)
+        } else if (item.fileType == "fig") {
+            allData.article.figSupplementList.push(item)
+        } else if (item.fileType == "video") {
+            allData.article.videoSupplementList.push(item)
+        } else if (item.fileType == "audio") {
+            allData.article.audioSupplementList.push(item)
+        } else if (item.fileType == "file") {
+            allData.article.fileSupplementList.push(item)
+        }
+
+    });
+    // console.log("---supplementDetailData", supplementDetailData);
+}
+if (allData.article && allData.article.firstVideo) {
+    allData.article.hasVideo = true;
+    allData.article.otherSupplements--;
+} else if (allData.article && allData.article.supplements) {
+    $.each(allData.article.supplements, function () {
+        if (this.fileType == "videoAbstract") {
+            allData.article.hasVideo = true;
+            allData.article.otherSupplements--;
+        } else if (this.fileType == "video") {
+            allData.article.hasVideo = true;
+            allData.article.otherSupplements--;
+        } else if (this.fileType == "firstFig") {
+            allData.article.otherSupplements--;
+        }
+    })
+}
+
+
+// 英文文章详情页附件渲染
+renderTpl($("#Supplementary"), "articleCnSupplementsTpl", allData);
+
+//中文期刊 英文文章时 中英文位置对调
+function isZhJournalEnArticle() {
+    var articleL = allData.article.language || "";
+    var journalL = allData.journal.language || "";
+    if (journalL == "zh" && articleL == "en") {
+        //PC
+        var citationEn = $("div.citationEn").html();
+        var citationCn = $("div.citationCn").html();
+        var articleEn = $("div.articleEn").html();
+        var articleCn = $("div.articleCn").html();
+        var abstractcn = $("div.abstract-cn").html();
+        var abstracten = $("div.abstract-en").html();
+
+        $("div.citationEn").html(citationCn);
+        $("div.citationCn").html(citationEn);
+        $("div.articleEn").html(articleCn);
+        $("div.articleCn").html(articleEn);
+        $("div.abstract-cn").html(abstracten);
+        $("div.abstract-en").html(abstractcn);
+        //APP
+        var articleCn = $("section.articleCn").html();
+        var articleEn = $("section.articleEn").html();
+
+        $("section.articleEn").html(articleCn);
+        $("section.articleCn").html(articleEn);
+        $(".open-articleEn").html("<h3 class='mainColor'><span class='iconfont icon-jia'></span>中文摘要</h3>");
+    }
+}
+/**
+ * 已弃用
+ */
+/*
+function showCitation() {
+    var articleId = $("#articleId").val();
+    if ($("#language").val() == "en") {
+        pageType = "en";
+    } else {
+        pageType = "cn";
+    }
+    if (!isNull(articleId)) {
+        $.ajax({
+            async: false,
+            type: 'post',
+            url: basePath + "article/getCitationStr",
+            data: {
+                'ids': articleId,
+                'fileType': 2,
+                'pageType': pageType
+            },
+            success: function (dataMap) {
+                if (!isNull(dataMap.citationCn)) {
+                    $(".copyCitationInfo-cn").html(dataMap.citationCn);
+                }
+                if (!isNull(dataMap.citationEn)) {
+                    $(".copyCitationInfo-en").html(dataMap.citationEn);
+                }
+            }
+        })
+    }
+}
+*/
+//下载pdf  ----中文的
+function downloadpdf(articleId) {
+    var url = basePath + "article/checkArticlePdf?id=" + articleId;
+    $.ajax({
+        type: "post",
+        url: url,
+        dataType: "json",
+        success: function (data) {
+            if (data.access != "true") {
+                alert(data.access);
+                if (data.access != '无权限') {
+                    $.ajax({
+                        type: "post",
+                        async: false,
+                        url: basePath + "/user/nowUser",
+                        dataType: "text",
+                        success: function (data) {
+                            data = $.parseJSON(data);
+                            if (isNull(data.data)) {
+                                window.location.href = basePath + 'login.htm';
+                            } else {
+                                window.location.href = basePath + 'article_buy.htm?id=' + articleId;
+                            }
+                        }
+                    })
+                }
+            } else if (data.result == 'true') {
+
+                var url = basePath + "article/exportPdf";
+                var form = $("<form>");   //定义一个form表单
+                form.attr('style', 'display:none');   //在form表单中添加查询参数
+                form.attr('target', '');
+                //form.attr('method', 'post');
+                form.attr('action', url);
+
+                var input1 = $('<input>');
+                input1.attr('type', 'hidden');
+                input1.attr('name', 'id');
+                input1.attr('value', articleId);
+                $('body').append(form);  //将表单放置在web中
+                form.append(input1);   //将查询参数控件提交到表单上
+                form.submit();
+
+                //添加文章PDF访问记录
+                getVisitInfo(articleId, 2);
+            } else if (data.result == 'false') {
+                var url = window.location.href;
+                var pageType = getUrlParam("pageType") || pageTypeDefault;
+                if (url.indexOf("_en.htm") > 0 || pageType == "en") {
+                    alert("PDF not found!")
+                } else {
+                    alert("该文章没有PDF");
+                }
+                //$(".icon-user").click();
+            }
+        },
+        error: function () {
+            alert("下载失败，请联系管理员！");
+        }
+    });
+}
+
+// pdf预览记录pdf下载量
+function previewPdf(previewPdfPath, articleId) {
+    var url = basePath + "article/checkArticlePdf?id=" + articleId;
+    $.ajax({
+        type: "post",
+        url: url,
+        dataType: "json",
+        success: function (data) {
+            if (data.access != "true") {
+                alert(data.access);
+                if (data.access != '无权限') {
+                    $.ajax({
+                        type: "post",
+                        async: false,
+                        url: basePath + "/user/nowUser",
+                        dataType: "text",
+                        success: function (data) {
+                            data = $.parseJSON(data);
+                            if (isNull(data.data)) {
+                                window.location.href = basePath + 'login.htm';
+                            } else {
+                                window.location.href = basePath + 'article_buy.htm?id=' + articleId;
+                            }
+                        }
+                    })
+                }
+            } else if (data.result == 'true') {
+                window.open(previewPdfPath, '_blank');
+            } else if (data.result == 'false') {
+                var url = window.location.href;
+                var pageType = getUrlParam("pageType") || pageTypeDefault;
+                if (url.indexOf("_en.htm") > 0 || pageType == "en") {
+                    alert("PDF not found!")
+                } else {
+                    alert("该文章没有PDF");
+                }
+                //$(".icon-user").click();
+            }
+        },
+        error: function () {
+            alert("下载失败，请联系管理员！");
+        }
+    });
+}
+
+
+/** 
+ * ajax增加文章HTML浏览次数   ----中文的
+ * @return
+ */
+function ajaxCountHtmlView(articleId) {
+    getVisitInfo(articleId, 1);
+}
+
+/**
+ * ajax增加文章HTML浏览次数
+ * @return
+ */
+// var currentState = 0;	//当前页面不刷新只记录一次
+function ajaxCountHtmlView(articleId, callback) {
+    //获取全文数据
+    // language 未生效
+    // 是否跳过文章多语言验证
+    // if (!allData.dic.isSkipArticleMultilingual) {
+    //     if (!((allData.article.multilingual === 1 || (allData.article.language === allData._language || (allData.article.language !== 'en' && allData._language === 'cn'))) ? allData.article.htmlAccess : false)) {
+    //         if (callback) {
+    //             callback();
+    //         }
+    //         return;
+    //     }
+    // }
+    var language = $("#articlelanguage").val();
+    if (language == "zh") language = "cn";
+    var contentHtml;
+    // 渲染中文全文
+    function renderArticleCn() {
+        contentHtml = cacheObj.get('htmlContent', articleId);
+
+        if (!contentHtml) {
+            if (allData.dic.hasMixPara && allData.article.secList && allData.article.secList.length) {
+                $.each(allData.article.secList, function (i, sec) {
+                    if (sec.paraContents && sec.paraContents.length) {
+                        $.each(sec.paraContents, function (n, para) {
+                            if (para.paraType == "formula") {
+                                // 检测字符串是否被 <p> 标签包裹
+                                var wrappedInPTag = /^<p>(.*?)<\/p>$/.test(para.paraContent);
+                                // 如果被包裹，去掉 <p> 标签
+                                if (wrappedInPTag) {
+                                    para.paraContent = para.paraContent.replace(/^<p>(.*?)<\/p>$/, "$1");
+                                }
+                                // 正则表达式匹配 <disp-formula> 标签
+                                var regex = /^<disp-formula(?:\s+\w+=".*?")*><\/disp-formula>$/;
+                                // 检测字符串是否匹配正则表达式
+                                var onlyContainsFormulaTag = regex.test(para.paraContent);
+                                if (!onlyContainsFormulaTag) {
+                                    para.paraType = 'mixPara';
+                                    // 正则表达式匹配 <disp-formula> 标签及其内容
+                                    var regex = /<disp-formula[^>]*>.*?<\/disp-formula>/g;
+                                    // 初始化数组
+                                    para.paraContents = [];
+                                    var lastIndex = 0;
+                                    var match;
+                                    // 迭代匹配结果
+                                    while ((match = regex.exec(para.paraContent)) !== null) {
+                                        // 处理匹配结果之前的纯字符串内容
+                                        var substring = para.paraContent.substring(lastIndex, match.index);
+                                        if (substring.trim() !== "") {
+                                            para.paraContents.push({
+                                                type: "mixParaString",
+                                                paraContent: substring.trim()
+                                            });
+                                        }
+                                        // 更新 lastIndex
+                                        lastIndex = regex.lastIndex;
+                                        // 如果匹配到了 <disp-formula> 标签，提取 label 的值
+                                        var labelRegex = /<label>(.*?)<\/label>/;
+                                        var labelTextMatch = labelRegex.exec(match[0]);
+                                        var labelText = labelTextMatch ? labelTextMatch[1] : null;
+                                        para.paraContents.push({
+                                            type: "mixParaFormula",
+                                            labelText: labelText,
+                                            // 删除段落公式里的label标签
+                                            paraContent: match[0].replace(/<label>.*?<\/label>/g, ""),
+                                        });
+                                    }
+                                    // 处理剩余的字符串内容
+                                    var substring = para.paraContent.substring(lastIndex);
+                                    if (substring.trim() !== "") {
+                                        para.paraContents.push({
+                                            type: "mixParaString",
+                                            paraContent: substring.trim()
+                                        });
+                                    }
+                                }
+                            }
+                        })
+                    }
+                })
+            }
+            var html = '<h3 class="navTitle"><span class="sec-title">参考文献</span></h3>' + $("#References").html();
+            if ($(".footnotesBox").length > 0) {
+                var fotnotes = $(".footnotesBox").html()
+            } else {
+                var fotnotes = ''
+            }
+
+            if ($('#reference:checked').length > 0) {
+                $('#htmlContent').html(template("articleHTMLCnTpl", allData) + fotnotes + html);
+            } else {
+                $('#htmlContent').html(template("articleHTMLCnTpl", allData) + fotnotes);
+            }
+            cacheObj.set('htmlContent', articleId, true)
+
+            //渲染数学公式
+            if (window.MathJax && MathJax.Hub || (document.addEventListener('mathjaxLoaded', function () {
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+            }))) {
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+            }
+
+
+            //加载全文时检查参考文献是否有内容，如无内容添加参考文献内容   已更改为前端渲染
+            /*if ($(".References-wrap").text().length == 0) {
+                loadReferences();
+            }*/
+
+            if (callback) {
+                callback();
+            }
+
+        }
+    }
+    // 是否开启html访问权限控制
+    if (!allData.dic.htmlAccessControl) {
+        contentHtml || renderArticleCn();
+    } else {
+        contentHtml || $.ajax({
+            url: basePath + 'data/article/articleFulltextData',
+            type: 'post',
+            async: false,
+            dataType: 'json',
+            data: { 'id': articleId, 'language': language },
+            success: function (data) {
+                if (data.access == false) {
+                    window.location.href = basePath + 'member/login';
+                    //alert(data.message);
+                } else {
+                    allData.article.secList = data.data.secList;
+                    renderArticleCn();
+                }
+            }
+        })
+    }
+
+    $(".group4").colorbox({
+        rel: 'group4', width: '90%', height: "75%", opacity: '0.8', inline: true,
+        onComplete: function () {
+            removeTableBorder();
+            $("#cboxTitle").niceScroll({
+                cursorcolor: "transparent",
+                cursoropacitymax: 1,
+                touchbehavior: false,
+                cursorwidth: "5px",
+                cursorborder: "0",
+                cursorborderradius: "5px"
+            });
+            //渲染数学公式
+            if (window.MathJax && MathJax.Hub || (document.addEventListener('mathjaxLoaded', function () {
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+            }))) {
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+            }
+        }
+    });
+    //现在已显示真实表格，不需要生成SVG图
+    // createTableSub();
+    //重置图表中table是图片的路径
+    setTableImg();
+    //重置全文中的公式是图片的路径
+    resetFormulaSrc();
+
+}
+
+/**
+ * 单篇论文查询cnki被引信息
+ * @return
+ */
+function loadCitedByInfo() {
+    var id = $("#articleId").val();
+    var ajaxArg = {
+        url: basePath + "article/getArticleCitedBy",
+        data: { 'articleIds': id },
+        returnFun: outCitedByInfo
+    };
+    ajaxPost(ajaxArg);
+}
+
+/**
+ * 输出列表中的文章citedBy引证文献信息
+ * @param data
+ * @param indexArray
+ * @return
+ */
+function outCitedByInfo(data) {
+    if (typeof (data) != "undefined") {
+        data = jQuery.parseJSON(data);
+        console.log("citedBy  data", data);
+        allData.allCitedBy = data;
+        console.log(allData);
+        $.each(allData.allCitedBy, function (i, e) {
+            if (e.citedCount > 0) {
+                var jnum = 0;
+                $("#citedby-num").html("(" + e.citedCount + ")");
+                $("#citedby-num-phone").html("(" + e.citedCount + ")");
+                $(".citedByCount").html(e.citedCount);
+                $(".citedByCount").parent().show();
+                $.each(e.citedByArticles, function (i, v) {
+                    if (v.articleType == "journal") {
+                        jnum++;
+                    }
+                })
+                var qtnum = e.citedCount - jnum;
+                allData.jnum = jnum;
+                allData.qtnum = qtnum;
+            }
+        })
+
+        // $("#citedByNode").html(template("citedByTpl", allData));
+        renderTpl($("#citedby-info"), "citedByTpl", allData);
+    }
+}
+
+
+/**
+ * 图片类型的附件切换展示，待确认，待处理
+ * article_en.js中有同样的方法，考虑整合，待移动，待处理
+ * 待移动到articles.js
+ * TODO:
+ * @param {*} id 
+ */
+function showSupplementary(id) {
+    $('#file_' + id).toggle();
+}
+
+// 附件预览切换事件
+$('.supp-preview').click(function () {
+    $(this).toggleClass('show');
+})
+
+/**
+ * 导出附件
+ * article_en.js中有同样的方法，考虑整合，待移动，待处理
+ * 待移动到articles.js
+ * TODO:
+ * @param {*} id 
+ */
+/*
+function exportSupplementary(id) {
+   var url = basePath + "article/exportSupplementary";
+   var form = $("<form>");   //定义一个form表单
+   form.attr('style', 'display:none');   //在form表单中添加查询参数
+   form.attr('target', '');
+   //form.attr('method', 'post');
+   form.attr('action', url);
+
+   var input1 = $('<input>');
+   input1.attr('type', 'hidden');
+   input1.attr('name', 'id');
+   input1.attr('value', id);
+
+   var input2 = $('<input>');
+   input2.attr('type', 'hidden');
+   input2.attr('name', 'pageType');
+   input2.attr('value', $('#language').val());
+
+   $('body').append(form);  //将表单放置在web中
+   form.append(input1);   //将查询参数控件提交到表单上
+   form.append(input2);
+   form.submit();
+}
+*/
+/**
+ * 获取并设置中文文章详情页二维码
+ * 待移动到articles.js
+ */
+function getQrcode() {
+    var link = $("#rhhzQrcodeImg").attr("src");
+    var url = window.location.href;
+    link = link + url;
+    $("#rhhzQrcodeImg").attr("src", link);
+}
+
+/**
+ * 输出相关文章
+ * 英文也有相关文章，考虑放到一起
+ * 待移动到articles.js
+ */
+function loadRelativeArticles() {
+    if ($('#relative-article table').length > 0) {
+        return false;
+    }
+    var id = $("#articleId").val();
+    var ajaxArg = {
+        url: basePath + "data/article/relativeArticles",
+        type: "post",
+        data: {
+            'id': id,
+            // 'language': 'cn'
+        },
+        dataType: "json",
+        returnFun: outRelativeArticles
+    };
+    ajaxPost(ajaxArg);
+}
+function outRelativeArticles(data) {
+    if (typeof (data) != "undefined") {
+        // $("#relative-article").html(data.data);
+
+        if (data.result == "success") {
+            console.log("data/article/relativeArticles allData", allData);
+            allData.relativeArticles = data.data;
+            renderTpl($("#relative-article"), "relativeArticlesTpl", allData)
+            head.ready(function () {
+                if (window.MathJax && MathJax.Hub || (document.addEventListener('mathjaxLoaded', function () {
+                    MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+                }))) {
+                    MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+                }
+            })
+        } else if (data.result == "failure") {
+            console.log("data/article/recommend", data.message);
+        }
+    }
+
+}
+
+/**
+ * 图表栏为空时，加载图表
+ */
+
+
+function loadFigTab() {
+    if ($('.articleDetailPart_figTab  div').length > 0) {
+        return false;
+    }
+    loadArticlePart('figTab');
+    setTableImg();
+}
+
+
+/**
+ * 参考文献栏为空时，加载参考文献
+ */
+function loadReferences() {
+    if ($('.articleDetailPart_reference  div').length > 0) {
+        return false;
+    }
+    loadArticlePart('reference');
+}
+/**
+ * 附件栏为空时，加载附件
+ */
+
+function loadSupplementary() {
+    if ($('.articleDetailPart_supplement  div').length > 0) {
+        return false;
+    }
+    loadArticlePart('supplement');
+}
+
+
+function loadArticlePart(part) {
+    var id = $("#articleId").val();
+    $.ajax({
+        async: false,
+        url: local_host + "/article/getArticleDitailPart",
+        data: $.param({
+            'id': id,
+            'language': 'cn',
+            'part': part
+        }),
+        success: function (data) {
+            $('.articleDetailPart_' + part).html(data.data);
+        }
+    })
+}

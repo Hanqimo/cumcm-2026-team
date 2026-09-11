@@ -1,0 +1,784 @@
+Localization of Unknown Networked Radio Sources Using a Mobile Robot with a
+Directional Antenna
+Dezhen Song, Jingang Yi, and Zane Goodwin
+Abstract— In this paper, we present algorithmic develop-
+ments for a single mobile robot equipped with a directional
+antenna to localize unknown networked radio sources. We
+assume that the robot only senses radio transmissions at the
+physical layer and that the network has a carrier sense multiple
+access (CSMA)-type medium access control (MAC) layer. The
+total number of radio sources are assumed unknown. We ﬁrst
+formulate the localization problem and then propose a particle
+ﬁlter-based localization algorithm. The algorithm combines a
+new CSMA model and a new directional antenna model. The
+new CSMA model provides network conﬁguration data, such as
+the network size and the probability of collision, when listening
+to network trafﬁc. The directional antenna model enhances the
+efﬁciency of robot motion. The new combined sensing model is
+capable of handling transmission collisions during localization.
+The overall algorithm runs in O(nm) time for n particles and
+m radio sources at each step. The numerical results show that
+the algorithm can localize unknown networked radio sources
+effectively.
+I. I NTRODUCTION
+The recent fast-evolving technology of radio frequency
+(RF) wireless sensor networks is a double-edged sword.
+On the one hand, it improves our capability of acquiring
+information from a remote environment; on the other hand,
+it provides new espionage tools that threaten our security
+and privacy. A sensor network is usually composed of a
+large number of miniature wireless sensor nodes with self-
+conﬁgurable ad hoc networking capabilities, which make it
+very difﬁcult to be localized. When a mobile robot does not
+understand the communication packet and does not know the
+total number of radio sources, it is challenging for the robot
+to perform the localization process because: (1) the periods
+of radio transmission are short and radio sources may not be
+active at all times and awaken intermittently and (2) there
+could be more than one radio source transmitting signals.
+We are interested in developing algorithms and schemes
+to guide robots that are equipped with directional radio
+antennas to localize unknown networked radio sources. This
+paper reports the ﬁrst step of the study in which only one
+robot is used for the localization task (Fig. 1). Using the
+equipped directional antenna, the robot can detect variations
+of radio signal strengths as it travels in the ﬁeld of radio
+sources. Although the antenna cannot decode intercepted
+packets and identify the transmitter by on-the-ﬂy packet
+content, by listening to the transmission patterns, we can
+D. Song and Z. Goodwin are with the Department of Com-
+puter Science, Texas A&M University, College Station, TX 77843.
+dzsong@cs.tamu.edu (D. Song) and zgoodwin@cs.tamu.edu (Z.
+Goodwin).
+J. Yi is with the Department of Mechanical Engineering, San Diego State
+University, San Diego, CA 92182. jgyi@mail.sdsu.edu.
+still obtain the physical layer information and limited MAC
+layer information of the wireless network.
+Directional antenna 
+Undiscovered radio sources Localized radio sources 
+Networked radio source field 
+(a)
+Detected 
+radio 
+source 
+(b)
+Fig. 1. (a) Schematics of deploying a single mobile robot to localize
+unknown networked radio sources. The radio sources with dashed circles
+indicate that they are sending radio signals. (b) A prototype of a mobile
+robot and a radio source.
+The recent development of radio frequency-based local-
+ization can be viewed as the localization of “friendly” radio
+sources because researchers assume either a continuously
+transmitting radio source (similar to a lighthouse) [1]–[4] or
+known packet information of the network [5]–[9]. Letchner
+et al. [2] use a network of wireless access points to localize
+a mobile agent, which can be viewed as a dual version of
+our problem. They use multiple static listeners to localize a
+mobile transmitter, while we try to localize multiple static
+transmitters using a mobile listener. The problem we are
+facing is more challenging because the robot/listener are not
+assumed to understand the packet. In [8], Sichitiu and Ra-
+madurai try to localize sensor network nodes with a mobile
+beacon. However, the scheme requires the communication
+between the mobile beacon and sensor nodes to identify the
+transmitter of the radio signal.
+In robotics research, simultaneous localization and map-
+ping (SLAM) is the process of mapping the environment
+and localizing the robot’s position at the same time [10]–
+[12]. Directly applying SLAM methods to our problem is
+not appropriate because networked radio sources create a
+highly dynamic environment where the signal transmission
+patterns change quickly. A directional log-periodic dipole
+array (LPDA) antenna is used in our setup because it has
+excellent wide-band reception. Although physical models of
+the LPDA antenna have been discussed for more than 20
+years [17], unfortunately, for a given antenna, the model
+cannot provide an accurate prediction of the real signal ﬁeld
+due to many random factors, such as the antenna surface and
+shape. Moreover, the physical model is computationally ex-
+pensive and cannot be used for real-time applications. Most
+existing research often simpliﬁes the signal ﬁeld as an inverse
+quadratic function with a circular radiation pattern, and such
+a simpliﬁcation cannot capture the antenna’s directivity. In
+this paper, we construct a tractable computational model
+based on a half wave dipole antenna model.
+An early work in [3] uses multiple orthogonal antennas to
+triangulate the position of a radio source. Although only the
+physical layer information is assumed for the receiver, the
+antenna model [3] does not address the problem of multiple
+simultaneous transmissions, namely, modeling of network
+trafﬁc. Since a large class of wireless networks use a CSMA-
+based MAC layer protocol [18], we assume such a proto-
+col as prior knowledge of the network. Incorporating this
+knowledge into the localization mechanism greatly enhances
+the system’s performance. Existing MAC layer models [19]
+focus on modeling of MAC protocol behaviors, such as
+transmission delay and channel capacity and do not provide
+information for the localization purpose.
+Our approach builds on an augmented particle ﬁlter
+that combines three new developments: an antenna sensing
+model, a probabilistic sensing model, and a CSMA protocol
+model. The new antenna model characterizes the properties
+of an LPDA antenna, and the combined probabilistic sensing
+model predicts sensor readings when there are collisions
+between multiple transmissions. Combining the information
+from the three developments, we generate robot control
+commands to search for and localize radio sources. The
+overall algorithm runs in O(nm) time for n particles and m
+radio sources at each step. Our preliminary simulation results
+show that the scheme can effectively localize networked
+radio sources.
+The remainder of the paper is organized as follows. We
+formulate the localization problem in Section II. We also
+present the system architecture in this section. In Section III,
+we introduce our sensing model based on the antenna and
+the CSMA protocol models. The overall algorithm and simu-
+lation experiments are presented in Section IV. We conclude
+the paper with Section V.
+II. P
+ROBLEM STA TEMENT AND SYSTEM DESIGN
+A. Problem Statement
+We denote the location of the ith radio source as (xi,yi),
+i =1 ,...,m , where m is the total number of the radio
+sources. Denote xk = {(xi,yi)|i =1 ,...,m } as the state
+variable and uk as the robot motion command at time k.W e
+measure the radio signal strength Zk at time k, and φij is
+the carrier phase difference between radio sources i and j.
+We consider following assumptions.
+1. The robot and radio sources are in a free 2D space, and
+the radio sources are static nodes,
+2. The network trafﬁc of the radio sources is light and each
+transmission is short. Therefore, radio sources cannot be
+treated as continuous beacons,
+3. The radio sources communicate with each other using a
+CSMA-type MAC protocol,
+4. The directional antenna on the robot has high sensitivity
+and can listen to all trafﬁc,
+5. The radiation pattern of the radio sources is circular
+and the phase difference between any two carrier waves
+from radio sources i and j is uniformly, identically,
+and independently distributed, φij ∼ U[0,2π], i, j =
+1,...,m ,
+6. The robot accurately executes its motion command and
+we do not consider the mobile robot’s dynamics.
+We deﬁne the localization problem as
+Localization Problem : Given the received RF signal
+strengths, Z1,Z 2,...,Z k, and robot motions, u1, u2,..., uk
+at time k, identify the number of radio sources m and localize
+the position of each radio source, {(xi,yi)},i =1 ,2,...,m .
+B. System Design
+Fig. 2 illustrates the system architecture. The input is the
+signal strength from the directional LPDA and the output of
+the system is robot motion commands. The antenna model
+outputs a probabilistic distribution of transmitter locations
+according to the LPDA properties and RF wave superposi-
+tion. The CSMA model listens to the communication trafﬁc
+and estimates the total number of transmitters. Both the
+antenna and CSMA models are integrated together in our
+sensing model. A particle ﬁlter is then employed to estimate
+the posterior probabilistic distribution of states and output
+such a distribution to the motion generation module. The
+motion generation module selects the motion that leads the
+robot toward the most probable radio source location. The
+robot makes the movement, and the system advances to the
+next step.
+Particle  
+filter Sensing model 
+Antenna model 
+CSMA model 
+Robot motion  
+command 
+Antenna readings 
+Motion  
+generation 
+Fig. 2. System architecture.
+The localization framework builds around a particle ﬁlter.
+The estimate of the probabilistic distribution p(xk|Zk) char-
+acterizes possible states given current sensor readings. Using
+Bayes’ theorem, p(x
+k|Zk) can be computed iteratively as
+p(xk|Zk)= ηp(Zk|xk)∫
+p(xk|xk− 1, uk− 1)p(xk− 1|Zk− 1)dxk− 1, (1)
+where η is a normalization constant and p(Zk|xk) is the
+measurement model that characterizes the conditional prob-
+ability distribution of sensor readings Z
+k given state xk.
+p(xk|xk− 1, uk− 1) is the motion model that characterizes the
+distribution of states xk given its previous state xk− 1 and
+motion commands uk− 1. Computation in Eq. (1) is non-
+trivial because p(xk|Zk) is often non-Gaussian and nonlin-
+ear. We adopt a Monte Carlo localization method [14] with
+a sampling/importance sampling (SIS) particle ﬁlter.
+The localization problem is considered as the following
+two subproblems. The ﬁrst subproblem is to compute the
+conditional probability of the signal strength reading given
+known sensor locations p(Zk|xk). The second subproblem
+is to estimate the total number of radio sources m based
+on CSMA modeling. The resulting m and p(Zk|xk) is fed
+into Eq. (1). Then, the SIS particle ﬁlter is used to compute
+p(xk|Zk). Given the current posterior probability p(xk|Zk)
+and m, the robot motion uk+1 is computed toward the most
+probable radio source locations. If the robot moves close to
+a radio source within a preset radius, we consider the radio
+source to be localized.
+III. S YSTEM MODELING
+The sensing problem is to compute p(Zk|xk), the probabil-
+ity distribution of the measured signal strength given a known
+robot and radio source conﬁguration. Z
+k is a random variable
+because (1) a radio transmission pattern is a random event
+and (2) the carrier wave phase difference between collided
+transmissions is random variable. To compute Z
+k, we need to
+address the following three problems: (1) What is the antenna
+reading for an individual transmitter? (2) What is the antenna
+reading if there is more than one simultaneous transmitter (or
+a collision)? (3) What are all possible collision types? In the
+following, we address these three problems sequentially.
+A. Antenna model
+1) Single radio source: We denote r
+i as the distance
+between the robot and the ith radio source, θi as the antenna
+orientation with respect to the ith radio source, zi as the
+measured signal strength from the ith radio source, Z{v} (a
+random variable) as the measured signal strength when v
+radio sources are transmitting signals simultaneously, Zij (a
+random variable) as the measured signal strength when both
+ith and jth radio sources transmit signals simultaneously, and
+Pidle as the channel idle probability.
+(a) Antenna photo
+300240
+180
+120 60
+0
+10 dBi
+0
+−10
+−20
+−30
+−3dB
+Radiation Pattern (Azimuth)Azimuth   
+(b) Radiation pattern
+Fig. 3. WiNRADiO AX-31B planar log-periodic directional antenna
+properties.
+We use a WiNRADiO AX-31B Planar LPDA in our
+system (Fig. 3). Because the reception and radiation patterns
+of an antenna are identical [20], either pattern may be
+referred to as the “radiation pattern.” In order to compute
+the measured signal strength z
+i, we need to model the
+LPDA directional antenna. The received signal strength of
+the directional antenna is given as
+zi = Cr−β
+i f(θi), (2)
+where C is a constant depending on transmission power and
+r−β
+i is the signal decay function. We use the well-accepted
+0.00
+0.30
+0.60
+0.90
+1.20
+1.50
+1 37 73 109 145 181 217 253 289 325 361
+Gain
+θi  (degrees)  
+Data from SuperNEC The fitting function 
+Fig. 4. LPDA antenna gain curve ﬁtting.
+decay factor β =2 [21]. The directivity of the antenna is
+captured by the term f(θi), which describes the radiation
+pattern of the antenna.
+To obtain an efﬁcient computational model, we use a
+curve-ﬁtting method based on numerical data from the an-
+tenna simulator SuperNEC [22]. We use our LPDA conﬁgu-
+rations, such as beam lengths and spacing, and the simulator
+generates the radiation pattern as shown in Fig. 3(b). Note
+that an LPDA is a wide band antenna with multiple beams
+and only the beam with length close to half of the wave
+length is the most effective receiver. Therefore, we use a
+half wave dipole antenna model to ﬁt the radiation pattern
+of the LPDA antenna at 433 MHz. We choose this frequency
+because it is the working frequency of the Berkeley mica2
+[23] motes that are used in the experiment.
+The radiation pattern in Fig. 3(b) is given by a unit of
+dBi, which is the antenna gain over a theoretical isotropic
+(point source) antenna. We convert the radiation pattern to
+an absolute gain as shown by the solid-line curve in Fig. 4.
+The resulting function is given by
+f(θ
+i)=
+{ 1.4825 cosθi, 0 ≤ θi < π
+2 or 3π
+2 ≤ θi < 2π
+−1.0654 cosθi, π
+2 ≤ θi < 3π
+2 .
+(3)
+The model ﬁts well with simulation data as illustrated in
+Fig. 4. We then compute the probability distribution of Zk
+given that only radio source i is transmitting,
+p(Zk|i, xk)=
+{
+1,Z k = ⌊zi +0 .5⌋
+0, otherwise, (4)
+where ⌊⌋ is the ﬂoor function. The model in Eq. (4)
+considers that the antenna only takes integer readings and
+there is no randomness in a single radio source.
+2) Two or more radio sources: Assume that there are
+v, 1 <v ≤ m, radio sources transmitting at the same
+time. Each radio source i has amplitude Ai and phase φi,
+i =1 ,2,...,v . The wave Ψi caused by radio source i can
+be described with a wave function, Ψi = Ai cos (ωt + φi),
+where ω is the carrier frequency. According to the the-
+ory of wave superposition, the combined wave Ψ=
+v∑
+i=1
+Ai cos (ωt + φi)= Acos (ωt + φ), where A is the com-
+bined amplitude with
+A2 =
+v∑
+i=1
+A2
+i +2
+v∑
+i=1
+v∑
+j>i
+AiAj cos (φi − φj). (5)
+Based on RF theory, the received signal strength is propor-
+tional to the square of the wave amplitude, i.e. zi ∼ A2
+i .
+Therefore, we have
+Z{v} =
+v∑
+i=1
+zi +2
+v∑
+i=1
+v∑
+j>i
+√zizj cos (φi − φj). (6)
+When the network trafﬁc is light, the CSMA protocol
+introduces a random back-off mechanism that makes the
+probability of collisions involving three or more nodes negli-
+gible. We consider only collisions between two radio sources.
+Deﬁning φij = φi − φj , Eq. (6) becomes
+Zij = zi + zj +2 √zizj cos (φij). (7)
+Since φij ∼ U[0,2π], the cumulative distribution function
+(CDF) of Zij is obtained as
+FZ(y)= p(Zij ≤ y)= P
+(
+cos(φij) ≤ y − zi − zj
+2√zizj
+)
+=
+⎧
+⎪⎪
+⎨
+⎪⎪
+⎩
+1 if y ≥ z
+i + zj +2 √zizj
+0 if y ≤ zi + zj − 2√zizj
+1 − 1
+π cos− 1
+(
+y−zi−zj
+2√ zizj
+)
+otherwise.
+(8)
+Since zi and zj are readings for individual receptions from
+radio sources i and j, respectively, they can be obtained
+based on known radio source and robot locations using
+Eq. (2). Hence, we can compute the probability distribution
+of Z
+k = Zij over the integer reading y when transmissions
+have collided,
+p(Zk = y|i, j,xk)= P(y − 0.5 ≤ Zk ≤ y +0 .5)
+=FZ(y +0 .5) − FZ(y − 0.5). (9)
+B. Sensing model
+Now we are ready to compute the sensing model
+p(Zk|xk). Only three possibilities exist in the network,
+namely, no radio transmission, single transmission, and col-
+lision. When there is no transmission, p(Zk =0 )= Pidle,
+where the calculation of the channel idle probability Pidle
+will be discussed in the next section. Considering that
+collisions involving three or more radio transmitters have
+a very small probability of occurring under light network
+trafﬁc, we approximate the general sensing model by only
+considering two-source collisions,
+p(Zk|xk)=
+m∑
+i=1
+p(Zk|i, xk)p(i)+
+m∑
+i=1
+m∑
+j>i
+p(Zk|i, j,xk)p(i, j),
+(10)
+where p(i) and p(i, j) are the probabilities of the given
+collision types (no collision or collision) when the channel
+is busy, namely, non-zero received signal strength. We next
+discuss the calculation of p(i) and p(i, j).
+C. CSMA-based MAC protocol model
+Let Pb denote the channel busy probability, Pc denote the
+channel collision probability, Ppc denote the probability that
+a collision happens during a busy period, and Pbc denote the
+long-run probability of collision given the channel is busy.
+We compute p(i) and p(i, j) in Eq. (10) based on the
+CSMA-based MAC protocol model. Assuming that all the
+radio sources are identical and the communication protocol
+is fair, the probability that each radio source transmits is thus
+equal, and the probability that any two radio sources transmit
+during the same transmission period is equal. We deﬁne
+p(i)= p, p(i, j)= q, i =1 ,...,m , j >i . Recall that P
+idle
+is the channel idle probability. The channel busy probability
+is then Pb =1 − Pidle. We deﬁne the busy collision
+probability Pbc as the conditional probability of a collision
+given the channel is busy, namely, Pbc = Pc
+Pb
+= Pc
+1−Pidle
+,
+where Pc is the unconditional channel collision probability.
+The busy period is composed of the single-source sending
+and the two-source sending cases. Thus,
+m∑
+i=1
+p(i)+
+m∑
+i=1
+m∑
+j>i
+p(i, j)= mp + m(m − 1)
+2 q =1 , (11)
+where
+m∑
+i=1
+m∑
+j>i
+p(i, j) is the busy collision probability, and
+Pbc = m(m − 1)q/2. Therefore,
+p = 1
+m(1 − Pbc),q = 2Pbc
+m(m − 1). (12)
+If we know Pbc, we can compute p and q. In addition, the
+measured channel idle probability Pidle is critical to estimate
+the number of radio sources m. We now begin modeling for
+Pbc and Pidle.
+Normalized  
+time  Packet 1 
+Successful transmission period 
+Busy period B 
+T=1 a 
+Unsuccessful transmission period 
+Busy period B 
+T=1 a 
+Packet 3 
+t 
+Y 
+a Idle period I 
+Packet 2 
+Fig. 5. CSMA: transmission period analysis.
+Fig. 5 illustrates the timing diagram of a CSMA proto-
+col. The time axis is divided into busy and idle periods
+alternatively. In the ﬁgure, a ≪ 1 denotes the propagation
+delay, t is the starting time of a busy period, and t + Y
+is the time when the last packet arrives between t and
+t + a, 0 <Y ≤ a. B, I, and U are the durations of the
+busy period, the idle period, and the time during a cycle
+that the channel is used without conﬂicts, respectively. Each
+busy period is also termed a transmission period, which is
+further classiﬁed as a successful transmission period or an
+unsuccessful transmission period.
+Without loss of generality, we set packet length T =1
+in Fig. 5. A packet takes additional time a to propagate.
+Therefore, a successful transmission takes time (1 + a).I f
+a radio source decides to transmit Packet 2 at time t, then
+the duration between t and t + a is a “vulnerable” period
+because other radio sources cannot sense its transmission
+and may initiate another transmission (e.g. Packet 3), which
+leads to a collision.
+We assume that each radio source is an independent
+Poisson source with the same packet generation rate λ. Thus,
+the aggregated transmission rate S is given by S = mλ. Due
+to retransmission (with rate R), the actual packet arrival rate
+G = S + R, and we call it the offered trafﬁc rate. By the
+aggregation of several Poisson signal sources, S is also a
+Poisson process. The offered trafﬁc rate G can also be ap-
+proximated with a Poisson process. The collision probability
+of a transmission period Ppc is calculated as Ppc =1 −e−aG.
+Upon each collision, there are two retransmissions scheduled.
+Each retransmission time is determined by the congestion
+backoff (CBO) value of the protocol used by the radio
+sources. Deﬁning δ as the expected CBO time, R can be
+represented as R =2 SPpc( 1
+δ)= 2S(1−e−aG)
+δ . Therefore,
+G = S + 2S(1 − e−aG)
+δ . (13)
+Now we are ready to compute the channel idle probability
+Pidle and the busy collision probability Pbc. Using the
+renewal reward theorem and recalling that B and I are
+the length of the busy and idle periods, respectively, then
+Pidle = I
+B+I , where I =1 /G is the expected idle period,
+and B is the expected busy period. Recall that Y is the
+moment that a packet arrives between t and t + a (Fig. 5).
+Then B =1 + a + Y , where Y = E(Y ) is the mean
+value of Y . The value of Y depends on whether there is
+a collision or not. A collision means there is at least one
+new arrival in [t, t+ a). Y =0 if there is no collision.
+Therefore, we obtain Y = E(Y )= E(Y |collision)Pbc =
+E(Y |collision)(1 − e−aG). The CDF of Y given a collision
+case is
+FY (τ|collision)= p(Y ≤ τ|collision)
+= p(no arrival in [t + τ,t + a), at least one in [t, t+ a))
+p(at least one in [t, t+ a))
+= p(at least one arrival in [t, t+ τ))
+p(at least one arrival in [t, t+ a)) = 1 − e−τG
+1 − e−aG ,
+where 0 ≤ τ<a . Since Y is non-negative,
+E(Y |collision)=
+∫ a
+0
+(1 − FY (τ|collision))dτ.
+We then obtain Y = 1
+G (1 − e−aG) − ae−aG and
+Pidle = 1
+G(1 +a)+2 − e−aG − aGe−aG . (14)
+The busy collision probability Pbc is different from Ppc,
+since Ppc is deﬁned as the probability that a collision happens
+in a busy period, while Pbc counts the total time that the
+channel has more than one simultaneous transmitter during
+a busy period. Since we consider the case that two radio
+transmissions collide (Fig. 5), the actual busy collision time
+should be 1 −
+Y , and the actual busy period should be 1+
+a + Y . Pbc is obtained
+Pbc = Ppc
+1 − Y
+1+ a + Y =( 1 − e−aG) 1 − Y
+1+ a + Y . (15)
+Recalling that S = mλ, Eq. (13) establishes the connec-
+tion between m and G. We thus obtain m using Pidle based
+on Eqs. (13) and (14). We compute p and q using m and
+Pbc using Eq. (12). Hence, the sensing model in Eq. (10) is
+complete.
+IV . A LGORITHM AND EXPERIMENTS
+A. Localization algorithm
+We summarize the algorithm as follows.
+Localization ← false; step ← 0; inext ← 1 O(1)
+While Localization = false and step < MAXSTEP do
+Sample signal strength O(1)
+Update Pidle according to Eq. (14) O(1)
+Update Zk according to non-zero signal readings O(1)
+Update m estimate according to Eqs. (13) and (14) O(1)
+Compute p(Zk |xk ) according to Eq. (10) O(m2)
+Apply SIS particle ﬁlter [14] with n particles O(nm)
+Extract next estimated radio source location with the
+highest probability from particles O(nm)
+Generate motion command and update robot position O(1)
+Update Pbc according to Eq. (15) O(1)
+If a radio source is identiﬁed then
+inext ← inext +1 O(1)
+Regenerate particles and update particle ﬁlter O(nm)
+If inext = m or step > MAXSTEP then
+Localization ← true O(1)
+End if step ← step + 1 O(1)
+End while
+Since the number of particles n ≫ m, we know that the
+overall localization algorithm takes O(nm) time.
+B. Experiments
+We have implemented the localization algorithm using
+Microsoft Visual C++ .NET 2003 on a PC laptop with a
+1.6 GHz Pentium-M CPU and 512MB RAM.
+We ﬁrst verify our CSMA modeling by comparing our
+model of Pidle and Pbc with the network simulation results
+(also implemented in Visual C++). We simulate the CSMA
+protocol for different values of m, a, and λ. The results in
+Fig. 6 show that our model conforms to the output of the
+network simulation when λ is small. Because we assume
+light trafﬁc in our model, large values of λ mean heavy trafﬁc
+and the probability of collisions involving more than two
+nodes increases. This is what we expected because we used
+the approximation in Eq. (10). The number of radio sources
+m and the length of propagation delay a have a similar effect
+on the model.
+λ 
+m=3, a=0.03, simuation
+m=2, a=0.02, model
+m=2, a=0.02, simulation
+m=3, a=0.03, model
+m=4, a=0.03, simuation
+m=4, a=0.03, model
+1.0
+0.9
+0.8
+0.7
+0.01 0.03 0.05 0.07 0.09
+Pidl e
+(a) Pidle
+0.01 0.03 0.05 0.07 0.09 λ 
+    0 
+0.01 
+0.02 
+0.03 
+0.04 
+Pbc 
+m=4, a= 0.04, simulation
+m=4, a= 0.04, model
+m=5, a= 0.05, simulation
+m=5, a= 0.05, model
+m=5, a= 0.08, simulation
+m=5, a= 0.08, model
+(b) Pbc
+Fig. 6. Comparison of Pidle and Pbc from the network simulation and
+the proposed model under different values of a, m, and λ.
+We then test the overall localization algorithm. We repeat
+the experiments for different network sizes m. Each data
+point in Fig. 7 is an average of 5000 independent trials with
+each radio source uniformly distributed in a square 2D free
+space. The network has a =0 .02 and λ =0 .05, which is
+unknown to the robot. Initially 5000 particles are used in the
+particle ﬁlter. We are interested in how efﬁcient the method
+0
+5000
+10000
+15000
+20000
+25000
+30000
+35000
+123456789 1 0
+# of radio sources detected
+Steps
+m=5
+m=6
+m=7
+m=8
+m=9
+m=10
+Fig. 7. The number of steps needed to localize an m-node network.
+-12
+-10
+-8
+-6
+-4
+-2
+0
+2
+4
+6
+8
+10
+- 1 2 - 1 0 - 8 - 6 - 4 - 2 0246
+x 
+y 
+Estimated locations of radio sources 
+Actual locations of radio sources 
+Fig. 8. Sample robot trajectory with network size m =3 .
+can localize the radio sources. Fig. 7 reports that the number
+of steps needed is linearly proportional to the network size,
+which conforms to our analysis. However, there are some
+outlying cases. It is unclear why the number of steps drops
+for m =7 .
+Fig. 8 illustrates a sample robot trajectory with a network
+size m =3 . The parameters are the same as those in Fig. 7.
+As we can see, the density of the trajectory depends on how
+difﬁcult it is to identify the radio sources. The two radio
+sources at the bottom are very close to each other. The robot
+has to wander around the region for a long time to obtain
+enough data to distinguish them.
+V. C
+ONCLUSION AND FUTURE WORK
+We report our initial algorithmic developments of using a
+mobile robot equipped with a directional antenna to localize
+unknown networked radio sources. We propose a particle
+ﬁlter-based localization approach that combines a new sens-
+ing model with a CSMA model and a new directional antenna
+model. The new sensing model is capable of dealing with
+scenarios when transmission collisions occur. The overall
+algorithm runs in O(nm) time for n particles and m radio
+sources at each step. We have implemented and tested the
+algorithm using a simulation platform. The results show that
+the algorithm is capable of localizing unknown networked
+radio sources when network trafﬁc is light.
+We are currently testing our algorithm using physical ex-
+periments. The particle ﬁlter has also shown its low efﬁciency
+when the problem space becomes large. Therefore, we plan
+to develop other more scalable mechanisms.
+R
+EFERENCES
+[1] P . Bahl and V . N. Padmanabhan, “RADAR: An in-building RF-based
+user location and tracking system,” in Proc. 19th INFOCOM, Tel-Aviv,
+Israel, 2000, pp. 775–784.
+[2] J. Letchner, D. Fox, and A. LaMarce, “Large-scale localization from
+wireless signal strength,” in Proc. Nat. Conf. on Artiﬁcial Intelligence ,
+Pittsburgh, PA, 2005, pp. 15–20.
+[3] N. Malhotra, M. Krasniewski, C. Y ang, S. Bagchi, and W. Chappell,
+“Location estimation in ad hoc networks with directional antennas,” in
+Proc. 25th IEEE Int. Conf. Dist. Comput. Syst. (ICDCS) , Washington,
+DC, 2005, pp. 633–642.
+[4] M. Y oussef, A. Agrawala, and U. Shankar, “WLAN location determi-
+nation via clustering and probability distributions,” in Proc. IEEE Int.
+Conf. Perv. Comp. Comm. (PerCom) , Fort Worth, TX, 2003, pp. 23–
+26.
+[5] N. Bulusu, J. Heidemann, and D. Estrin, “GPS-less low cost outdoor
+localization for very small devices,” IEEE Pers. Comm. Mag. , vol. 7,
+no. 5, 2000, pp. 28–34.
+[6] X. Ji and H. Zha, “Sensor positioning in wireless ad-hoc sensor
+networks using multidimensional scaling,” in Proc. 23rd INFOCOM ,
+Hong Kong, China, 2004, pp. 2652–2661.
+[7] K. Lorincz and M. Welsh, “Motetrack: A robust, decentralized ap-
+proach to RF-based location tracking,” in Proc. 1st Int. Workshop
+on Location- and Context-Awareness (LoCA) , Oberpfaffenhofen, Ger-
+many, 2005, pp. 63–82.
+[8] M. Sichitiu and V . Ramadurai, “Localization of wireless sensor net-
+works with a mobile beacon,” in Proc. 1st IEEE Int. Conf. Mobile Ad
+hoc Sensor Syst. (MASS) , Fort Lauderdale, FL, 2004, pp. 174–183.
+[9] N. Bulusu, V . Bychkovskiy, D. Estrin, and J. Heidemann, “Scalable,
+ad hoc deployable rf-based localization,” in Proc. Grace Hopper
+Celebration of Women in Computing , V ancouver, Canada, 2002.
+[10] M. W. M. G. Dissanayake, P . Newman, S. Clark, H. F. Durrant-Whyte,
+and M. Csorba, “A solution to the simultaneous localization and map
+building (SLAM) problem,” IEEE Trans. Robot. Automat. , vol. 17,
+no. 3, 2001, pp. 229–241.
+[11] S. Thrun, D. Fox, and W. Burgard, “A probabilistic approach to
+concurrent mapping and localization for mobile robots,” Machine
+Learning, vol. 31, 1998, pp. 29–53.
+[12] D. Fox, S. Thrun, F. Dellaert, and W. Burgard, “Particle ﬁlters for
+mobile robot localization,” in Sequential Monte Carlo Methods in
+Practice, A. Doucet, N. de Freitas, and N. Gordon, Eds., New Y ork:
+Springer V erlag, 2000.
+[13] S. Thrun, W. Burgard, and D. Fox, Probabilistic Robotics, MIT Press,
+2005.
+[14] F. Dellaert, D. Fox, W. Burgard, and S. Thrun, “Monte Carlo local-
+ization for mobile robots,” in Proc. IEEE Int. Conf. Robotics and
+Automation, Detroit, MI, 1999, pp. 1322–1328.
+[15] S. Thrun, D. Fox, W. Burgard, and F. Dellaert, “Robust Monte Carlo
+localization for mobile robots,” J. Artiﬁcial Intelligence , vol. 128,
+no. 1–2, 2001, pp. 99–141.
+[16] A. Doucet, N. de Freitas, K. P . Murphy, and S. J. Russell, “Rao-
+blackwellised particle ﬁltering for dynamic bayesian networks,” in
+Proc. 16th Conf. Uncertainty in Artiﬁcial Intelligence , San Francisco,
+CA, 2000, pp. 176–183.
+[17] A. Paul and I. Gupta, “An analysis of log periodic antenna with printed
+dipoles,” IEEE Trans. Microwave Theory and Techniq. , vol. 29, no. 2,
+1981, pp. 114–117.
+[18] J. Walrand and P . V araiya, High-Performance Communication Net-
+works, 2nd Ed., Morgan Kaufmann Press, 2000.
+[19] F. Cali, M. Conti, and A. Gregoryi, “Dynamic tuning of the IEEE
+802.11 protocol to achieve a theoretical throughput limit,” IEEE/ACM
+Trans. Networking, vol. 8, no. 6, 2000, pp. 785–799.
+[20] W. L. Stutzman and G. A. Thiele, Antenna Theory and Design , 2nd
+Ed., Wiley, 1997.
+[21] R. S. Elliott, Antenna Theory and Design , Revised Ed., Wiley-IEEE
+Press, 2003.
+[22] “Supernec antenna simulation software.” [Online]. Available:
+http://www.supernec.com
+[23] “Crossbow Technology Inc.” [Online]. Available:
+http://www.xbow.com

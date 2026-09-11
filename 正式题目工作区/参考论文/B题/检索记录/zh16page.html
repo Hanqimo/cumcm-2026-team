@@ -1,0 +1,279 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN" dir="ltr">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="content-type" content="text/html" charset="gb2312" />
+    <meta http-equiv="content-language" content="zh-cn" />
+    <meta http-equiv="imagetoolbar" content="false" />
+    <title>
+        ����λ��Ŀ����ټ��ƶ�ƽ̨�ɹ��Կ��Ʒ���-������ϵͳѧ����</title>
+    <meta name="robots" content="all" />
+    <meta name="author" content="����֪����Ϣ�������޹�˾������(TM)�ڿ��ɱ�ϵͳ���������ƽ̨" />
+    <meta name="copyright" content="(c) ��Ȩ���� 2003-2026 ����֪����Ϣ�������޹�˾������(TM)�ڿ��ɱ�ϵͳ" />
+    <meta name="description" content="����(TM)�ڿ��ɱ�ϵͳ���������ƽ̨" />
+    <meta name="keywords" content="����(TM)�ڿ��ɱ�ϵͳ���������ƽ̨���������ϵͳ" />
+    
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/cover.css" rel="stylesheet">
+    <script src="/js/ie-emulation-modes-warning.js"></script>
+    <script src="/js/tab.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript" src="/js/common.js"
+        charset="utf-8"></script>
+    <script src="/Js/ShowSubMenu.js" type="text/javascript"></script>
+    <script src="/Js/newstool.js" type="text/javascript"></script>
+    <link href="/oa/" title="RSS" type="application/rss+xml"
+        rel="alternate">
+    <script src="/Syscss/jquery-1.7.1.js" type="text/javascript"></script>
+    <script src="/Js/ZeroClipboard-1.0.7.js"
+        type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+        function copy() {
+            var div = document.getElementById('referencestop');
+            //ie
+            if (document.body.createControlRange) {
+                div.contentEditable = 'true';
+                var controlRange;
+                controlRange = document.body.createControlRange();
+                controlRange.addElement(div);
+                controlRange.execCommand('Copy');
+
+                div.contentEditable = 'false';
+                alert('�ɹ����Ƶ������壡');
+            }
+            else {
+                try {
+                    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+                } catch (e) {
+                    alert("��������ܾ���\n�����������ַ������'about:config'���س�\nȻ��'signed.applets.codebase_principal_support'����Ϊ'true'");
+                    return;
+                }
+
+                //ff
+                var clip = Components.classes['@mozilla.org/widget/clipboard;1'].createInstance(Components.interfaces.nsIClipboard);
+                if (!clip)
+                    return;
+                var trans = Components.classes['@mozilla.org/widget/transferable;1'].createInstance(Components.interfaces.nsITransferable);
+                if (!trans)
+                    return;
+                trans.addDataFlavor('text/unicode');
+                var str = new Object();
+                var len = new Object();
+                var str = Components.classes["@mozilla.org/supports-string;1"].createInstance(Components.interfaces.nsISupportsString);
+                alert(div.innerHTML)
+                var copytext = div.innerHTML.replace(/<br>/gi, "\r\n").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
+                str.data = copytext;
+                trans.setTransferData("text/unicode", str, copytext.length * 2);
+                var clipid = Components.interfaces.nsIClipboard;
+                if (!clip)
+                    return false;
+                clip.setData(trans, null, clipid.kGlobalClipboard);
+                alert('�ɹ����Ƶ������壡');
+
+            }
+
+        }
+        
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $("a[name='delBtn']").click(function () {
+                var id = '202107066';
+                if (id.length == 0) {
+                    //alert("��ѡ��");
+                    return;
+                }
+                id = id.substring(0, id.length);
+                var dataStr = "command=sel&num=" + id;
+                d(dataStr);
+            });
+            function d(str) {
+                $.ajax({
+                    type: "POST",
+                    url: "output.ashx",
+                    data: str,
+                    error: function (request) {
+                        //alert(request);
+                    },
+                    success: function (msg) {
+                        window.open("save.aspx");
+                    }
+                });
+            }
+        })
+    </script>
+</head>
+<body>
+    
+    
+    
+    <div class="body_bg">
+        
+<div class="container">
+    <div class="row top">
+        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 logo">
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 textright hidden-sm hidden-xs">
+            <img src="/images/top_right.png" /> 
+        </div>
+    </div>
+</div>
+<div class="menu">
+    <div class="navbar navbar-default navbar-static-top">
+        <div class="container cover">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span
+                        class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav"><li><a href="/Default.aspx">��ҳ</a></li><li class="dropdown"><a href="/Corp/10.aspx" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">���ڱ���<span class="glyphicon glyphicon-menu-down" style="" /></a><ul class="dropdown-menu"><li><a href="/Corp/10.aspx">�ڿ�����</a></li><li role="separator" class="divider" /><li><a href="/docs/slqk/default.aspx">��¼���</a></li><li role="separator" class="divider" /><li><a href="/docs/qkry/default.aspx">�ڿ�����</a></li><li role="separator" class="divider" /><li><a href="/Corp/5012.aspx">�ڿ�Ӱ����</a></li><li role="separator" class="divider" /><li><a href="/corp/50.aspx">��ϵ����</a></li><li role="separator" class="divider" /><li><a href="/Corp/3600.aspx">����</a></li></ul></li><li class="dropdown"><a href="/Corp/3300.aspx" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">��ί��<span class="glyphicon glyphicon-menu-down" style="" /></a><ul class="dropdown-menu"><li><a href="/Corp/5013.aspx">������</a></li><li role="separator" class="divider" /><li><a href="/Corp/3300.aspx">��Ա����</a></li></ul></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">��������<span class="glyphicon glyphicon-menu-down" style="" /></a><ul class="dropdown-menu"><li><a href="/Corp/30.aspx">Ͷ����֪</a></li><li role="separator" class="divider" /><li><a href="/docs/lwmb/default.aspx">����ģ��</a></li><li role="separator" class="divider" /><li><a href="http://tis.hrbeu.edu.cn/Upload/Park/9c4028a4-7c2a-4d8b-a385-e9a1d0f4f006.doc">��ȨЭ��</a></li><li role="separator" class="divider" /><li><a href="/docs/details.aspx?documentid=161&amp;Nid=A592C110-B045-4AC8-B05B-BC1F58BF0792#">����/�����˵��</a></li><li role="separator" class="divider" /><li><a href="http://tis.hrbeu.edu.cn/Upload/Park/8195066f-3b1d-4c3a-ab62-a45cd23201bf.doc">�������޸���֪</a></li><li role="separator" class="divider" /><li><a href="http://tis.hrbeu.edu.cn/Upload/Park/df91171d-579c-46db-a393-50fd7f1fe672.doc">¼�ø���޸���֪</a></li><li role="separator" class="divider" /><li><a href="http://www.ztflh.com/">��ͼ����Ų�ѯ</a></li><li role="separator" class="divider" /><li><a href="/docs/details.aspx?documentid=162&amp;Nid=2296FC19-6D92-4627-A152-6EAF459BB09F">֣������</a></li></ul></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ר������<span class="glyphicon glyphicon-menu-down" style="" /></a><ul class="dropdown-menu"><li><a href="/Corp/5020.aspx">���ָ��</a></li><li role="separator" class="divider" /><li><a href="/Corp/5021.aspx">���ԭ��</a></li></ul></li><li class="dropdown"><a href="/oa/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">�����ڿ�<span class="glyphicon glyphicon-menu-down" style="" /></a><ul class="dropdown-menu"><li><a href="/OA/OAML.aspx">����һ��</a></li><li role="separator" class="divider" /><li><a href="/oa/dlistnum.aspx">�������</a></li><li role="separator" class="divider" /><li><a href="/oa/defindexnum.aspx">�������</a></li><li role="separator" class="divider" /><li><a href="/oa/defindexnum.aspx?id=1">��������</a></li><li role="separator" class="divider" /><li><a href="/oa/">�߼�����</a></li></ul></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">�����������ƶ�<span class="glyphicon glyphicon-menu-down" style="" /></a><ul class="dropdown-menu"><li><a href="/Corp/5014.aspx">������������</a></li><li role="separator" class="divider" /><li><a href="/Corp/5015.aspx">�о������ƶ�</a></li><li role="separator" class="divider" /><li><a href="/Corp/5016.aspx">ѧ������������</a></li><li role="separator" class="divider" /><li><a href="/Corp/5017.aspx">�ر��ƶ�</a></li><li role="separator" class="divider" /><li><a href="/Corp/5018.aspx">����ͳ����ƶ�</a></li><li role="separator" class="divider" /><li><a href="/Corp/5019.aspx">�������</a></li></ul></li><li><a href="/en">English</a></li></ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div class="container M_top">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <!--��ҳ�ұ�-->
+                    <div class="side_con">
+                        <div class="digest1">
+                            <div class="switch">
+                                <a href="DArticle.aspx?type=view&id=202107059" id="Prev"><-��һƪ/Previous Article</a><a href="DArticle.aspx?type=view&id=202107040" id="Next">��һƪ/Next
+                                    Article-></a></div>
+                            <div class="referencestop clx">
+                                <div id="referencestop" class="lbreferencecn">
+                                    <span id="lbreferencecn">[1]����,�����,κ��,��.����λ��Ŀ����ټ��ƶ�ƽ̨�ɹ��Կ��Ʒ���[J].����ϵͳѧ��,2022,17(5):919-930.[doi:10.11992/tis.202107066]</span>
+                                    <br />
+                                    <span id="lbreferenceen">��WU Ming,LI Guangyu,WEI Zhenhua,et al.Bearing only target tracking  and observability control of a mobile robot[J].CAAI transactions on intelligent systems,2022,17(5):919-930.[doi:10.11992/tis.202107066]</span>
+                                </div>
+                                <a href="#" onclick="copy()" class="referencesa">�������</a>
+                                <div class="referencesend">
+                                </div>
+                            </div>
+                            <div class="clearfix">
+                            </div>
+                            <h1>
+                                <div class="referencetitle">
+                                    <span id="LbTitleC">����λ��Ŀ����ټ��ƶ�ƽ̨�ɹ��Կ��Ʒ���</span>
+                                </div>
+                                <div id="downlinks" class="pdf">
+                                    <a href="pdfdow.aspx?Sid=202107066" id="pdf" rel="external">PDF����</a><a href="http://html.rhhz.net/tis/html/202107066.htm" id="html" rel="external">HTML</a></div>
+                            </h1>
+                            
+                            <div class="clearfix">
+                            </div>
+                            <div class="articleinfo">
+                                <div class="maginfo">
+                                    <span id="LbZaZhiShe">������ϵͳѧ����</span>[ISSN <span id="LbISSN">1673-4785</span>/CN <span id="LbCN">23-1538/TP</span>] <span>��:</span>
+                                    <span id="lbvolumne">17</span>
+                                    <span>����:</span>
+                                    <span id="LbIssue">2022���5��</span>
+                                    <span>ҳ��:</span>
+                                    <span id="LbPageNum">919-930</span>
+                                    <span>��Ŀ:</span>
+                                    <span id="LbCoulmn">ѧ�����ġ�����ѧϰ</span>
+                                    <span>��������:</span>
+                                    <span id="LbIssueDate">2022-09-05</span>
+                                </div>
+                                <dl id="title" class="clx">
+                                    <dt>Title:</dt>
+                                    <dd>
+                                        <span id="LbTitleE">Bearing only target tracking  and observability control of a mobile robot</span></dd>
+                                </dl>
+                                
+                                <dl id="divauthor" class="clx">
+                                    <dt>����:</dt>
+                                    <dd>
+                                        <span id="LbAuthorC"><a href='KeySearch.aspx?type=Name&Sel=����' target="_blank" rel="external">����</a><sup>1</sup>, <a href='KeySearch.aspx?type=Name&Sel=�����' target="_blank" rel="external">�����</a><sup>2</sup>, <a href='KeySearch.aspx?type=Name&Sel=κ��' target="_blank" rel="external">κ��</a><sup>1</sup>, <a href='KeySearch.aspx?type=Name&Sel=������' target="_blank" rel="external">������</a><sup>1</sup></span></dd>
+                                    <dd>
+                                        <span id="LbUnitC">1. �����߼����о��� ��Ϣϵͳ�ң����� ���� 710025;<br />2. �����㲥���Ӵ�ѧ ��ѧ�ƣ����� ���� 710023</span></dd>
+                                </dl>
+                                <dl id="divauthors" class="clx">
+                                    <dt>Author(s):</dt>
+                                    <dd>
+                                        <span id="LbAuthorE"><a href='KeySearch.aspx?type=Name&Sel=WU Ming' target="_blank" rel="external">WU Ming</a><sup>1</sup>, <a href='KeySearch.aspx?type=Name&Sel=LI Guangyu' target="_blank" rel="external">LI Guangyu</a><sup>2</sup>, <a href='KeySearch.aspx?type=Name&Sel=WEI Zhenhua' target="_blank" rel="external">WEI Zhenhua</a><sup>1</sup>, <a href='KeySearch.aspx?type=Name&Sel=WANG Hongqiao' target="_blank" rel="external">WANG Hongqiao</a><sup>1</sup></span></dd>
+                                    <dd>
+                                        <span id="LbUnitE">1. Information System Office, Xi��an High Technology Research Institute, Xi��an 710025, China;<br />2. Teaching Department, Shaanxi Radio and TV University, Xi��an 710023, China</span></dd>
+                                    <dd>
+                                </dl>
+                                <dl id="divLbKeyC" class="clx">
+                                    <dt>�ؼ���:</dt>
+                                    <dd>
+                                        <span id="LbKeyC"><a href='KeySearch.aspx?type=KeyWord&Sel=Ŀ�����' target="_blank" rel="external">Ŀ�����</a>;&nbsp;<a href='KeySearch.aspx?type=KeyWord&Sel=����λ�ǹ۲�' target="_blank" rel="external">����λ�ǹ۲�</a>;&nbsp;<a href='KeySearch.aspx?type=KeyWord&Sel=������ͬʱ��λ���ͼ����' target="_blank" rel="external">������ͬʱ��λ���ͼ����</a>;&nbsp;<a href='KeySearch.aspx?type=KeyWord&Sel=�����˵�������' target="_blank" rel="external">�����˵�������</a>;&nbsp;<a href='KeySearch.aspx?type=KeyWord&Sel=��Ŀ�Ӿ�����' target="_blank" rel="external">��Ŀ�Ӿ�����</a>;&nbsp;<a href='KeySearch.aspx?type=KeyWord&Sel=�ɹ��Կ���' target="_blank" rel="external">�ɹ��Կ���</a>;&nbsp;<a href='KeySearch.aspx?type=KeyWord&Sel=�����ƶ�ƽ̨' target="_blank" rel="external">�����ƶ�ƽ̨</a>;&nbsp;<a href='KeySearch.aspx?type=KeyWord&Sel=��Ŀ�Ӿ�' target="_blank" rel="external">��Ŀ�Ӿ�</a></span></dd>
+                                </dl>
+                                <dl id="ekey" class="clx">
+                                    <dt>Keywords:</dt>
+                                    <dd>
+                                        <span id="LbKeyE"><a href='KeySearch.aspx?type=KeyWord&Sel=object tracking' target="_blank" rel="external">object tracking</a>;&nbsp;<a href='KeySearch.aspx?type=KeyWord&Sel=bearing only observation' target="_blank" rel="external">bearing only observation</a>;&nbsp;<a href='KeySearch.aspx?type=KeyWord&Sel=SLAM' target="_blank" rel="external">SLAM</a>;&nbsp;<a href='KeySearch.aspx?type=KeyWord&Sel=robot navigation control' target="_blank" rel="external">robot navigation control</a>;&nbsp;<a href='KeySearch.aspx?type=KeyWord&Sel=monocular visual navigation' target="_blank" rel="external">monocular visual navigation</a>;&nbsp;<a href='KeySearch.aspx?type=KeyWord&Sel=observability control' target="_blank" rel="external">observability control</a>;&nbsp;<a href='KeySearch.aspx?type=KeyWord&Sel=autonomous mobile platform' target="_blank" rel="external">autonomous mobile platform</a>;&nbsp;<a href='KeySearch.aspx?type=KeyWord&Sel=monocular vision' target="_blank" rel="external">monocular vision</a></span></dd>
+                                </dl>
+                                <dl id="divLbFLH" class="clx">
+                                    <dt>�����:</dt>
+                                    <dd>
+                                        <span id="LbFLH">TP242.6</span></dd>
+                                </dl>
+                                <dl id="divLbDOI" class="clx">
+                                    <dt>DOI:</dt>
+                                    <dd>
+                                        <span id="LbDOI"><a href="http://dx.doi.org/10.11992/tis.202107066" target="_blank">10.11992/tis.202107066</a></span></dd>
+                                </dl>
+                                <dl id="divTbWXBSM" class="clx">
+                                    <dt>���ױ�־��:</dt>
+                                    <dd>
+                                        <span id="TbWXBSM">2022-08-01</span></dd>
+                                </dl>
+                                <dl id="divLbZY" class="clx">
+                                    <dt>ժҪ:</dt>
+                                    <dd>
+                                        <span id="LbZY" style="line-height: 2;">Ϊ�˽��δ֪�����µĵ�Ŀ�Ӿ��ƶ�������Ŀ��������⣬�����һ�ֽ�Ŀ��״̬����������˿ɹ��Կ������ϵĻ�����ͬʱ��λ����ͼ������Ŀ����ٷ�������״̬���Ʒ��棬�Ի����˵�Ŀ�Ӿ�ͬʱ��λ���ͼ����Ϊ�������������չʽ�������˲�����µ�Ŀ������㷨���ڻ����˿ɹ��Կ��Ʒ��棬����˻���Ŀ��Э�����������󻯵��Ż����Ʒ������÷����ܹ�ʵ�ֻ������ڵ�Ŀ�Ӿ������¶�����״̬������״̬��Ŀ��״̬��ͬ�������Լ�Ŀ����档�����ԭ������ʵ����֤��Ŀ��״̬���ƺͻ����˿���֮�����Ϲ�ϵ��֤���˷�����׼ȷ�Ժ���Ч�ԣ���������������˽���������״�����˶��켣��ͬʱ��Ŀ����ٺͻ����˶�λ����������˻�����������������ϵ��</span></dd>
+                                </dl>
+                                <dl id="eabs" class="clx">
+                                    <dt>Abstract:</dt>
+                                    <dd>
+                                        <span id="LbZYE" style="line-height: 2;">To address the object tracking issue of a mobile robot based on monocular vision in an unknown environment, a method for robotic simultaneous localization, map building, and object tracking is proposed, combining the object state estimation with the observability control of a mobile robot. Regarding state estimation, based on robot monocular visual simultaneous localization and mapping, a target tracking algorithm under the extended Kalman filtering framework is designed. Considering the observability control, an optimal control method based on updating the maximization of the target covariance matrix is designed. Using the monocular vision, this method can synchronously estimate the robot��s own state, environmental state, and target state, as well as the target following. The simulation and prototype experiments verify the coupling relationship between the target state estimation and robot control, demonstrating the effectiveness and accuracy of the method. The results indicate that by employing this method, the robot can generate a spiral maneuvering trajectory, and the accuracy of target tracking and robot positioning is directly proportional to its maneuvering ability.</span></dd>
+                                </dl>
+                            </div>
+                            <div id="references">
+                                <dl id="divReferences">
+                                    <dt>�ο�����/References:</dt>
+                                    <dd style="margin-left: 76px;">
+                                        <span id="LbCK" style="line-height: 2;">[1] ������, ��С��. �ƶ������˻�����֪�����뼼�����о�[J]. ������, 2004, 26(1): 87�C91<br />CAI Zixing, ZOU Xiaobing. Research on environmental cognition theory and methodology for mobile robots[J]. Robot, 2004, 26(1): 87�C91<br />[2] YANG Nan, WANG Rui, GAO Xiang, et al. Challenges in monocular visual odometry: photometric calibration, motion bias, and rolling shutter effect[J]. IEEE robotics and automation letters, 2018, 3(4): 2878�C2885. <br />[3] WANG C C, THORPE C, THRUN S, et al. Simultaneous localization, mapping and moving object tracking[J]. The international journal of robotics research, 2007, 26(9): 889�C916. <br />[4] ����, ������, �����. ���ڸ������ݹ���������ģ�˲����ƶ�������δ֪�����¶�̬Ŀ�����[J]. ������, 2012, 34(6): 668�C679<br />WU Ming, LI Linlin, SUN Jiyin. PDA-IMM based moving object tracking with mobile robots in unknown environments[J]. Robot, 2012, 34(6): 668�C679<br />[5] MUNARO M, LEWIS C, CHAMBERS D, et al. RGB-D human detection and tracking for industrial environments[M]//Intelligent Autonomous Systems 13. Cham: Springer International Publishing, 2015: 1655?1668.<br />[6] ZHANG Rui, WANG Zhaokui, ZHANG Yulin. Astronaut visual tracking of flying assistant robot in space station based on deep learning and probabilistic model[J]. International journal of aerospace engineering, 2018, 2018: 1�C17. <br />[7] CASTLER O, MURRAYDW. Object recognition and localization while tracking and mapping[C]// Proceedings of 8th IEEE International Symposium on Mixed andAugmented Reality. Orlando, IEEE, 2009: 179?180.<br />[8] KLEIN G, MURRAY D. Parallel tracking and mapping for small AR workspaces[C]// Proceedings of6th IEEE and ACM International Symposium on Mixed and Augmented Reality. Nara, IEEE, 2007: 225?234.<br />[9] DE OLIVEIRA D CB, DE SOUZA DA SILVA R L. Moving object tracking for SLAM-based augmented reality[J]. Journalof mobile multimedia, 2021, 17(4): 577�C602. <br />[10] DAI W, ZHANG Y, ZHENG Y, et al. RGB-D SLAM with moving object tracking in dynamic environments[J]. IET cyber-systems and robotics, 2021, 3(4): 11. <br />[11] LI Guihai, CHEN Songlin. Visual slam in dynamic scenes based on object tracking and static points detection[J]. Journal of intelligent &amp; robotic systems, 2022, 104(2): 1�C10. <br />[12] CIVERA J, DAVISON A J, MONTIEL J M M. Inverse depth parametrization for monocular SLAM[J]. IEEE transactions on robotics, 2008, 24(5): 932�C945. <br />[13] DISSANAYAKE M W M G, NEWMAN P, CLARK S, et al. A solution to the simultaneous localization and map building (SLAM) problem[J]. IEEE transactions on robotics and automation, 2001, 17(3): 229�C241. <br />[14] WANGSIRIPITAK S, MURRAY D W. Avoiding moving outliers in visual SLAM by tracking moving objects[C]// Proceedings of IEEE International Conference on Robotics and Automation. Kobe, IEEE, 2009: 375?380.<br />[15] MIGLIORE D, RIGAMONTI R, MARZORATI D, et al. Use a single camera for simultaneous localization and mapping with mobile object tracking in dynamic environments[C]//Proceedings of IEEE International Conference on Robotics and Automation, Kobe, Japan. IEEE, 2009: 889?895<br />[16] BESCOS B, CAMPOS C, TARD��S J D, et al. DynaSLAM II: tightly-coupled multi-object tracking and SLAM[J]. IEEE robotics and automation letters, 2021, 6(3): 5191�C5198. <br />[17] LIU Yuzhen, LIU Jiacheng, HAO Yun, et al. A switching-coupled backend for simultaneous localization and dynamic object tracking[J]. IEEE robotics and automation letters, 2021, 6(2): 1296�C1303. <br />[18] SUALEH M, KIM G W. Semantics aware dynamic SLAM based on 3D MODT[J]. Sensors (Basel, Switzerland), 2021, 21(19): 6355. <br />[19] LIU Jiacheng, MENG Ziyang, YOU Zheng. A robust visual SLAM system in dynamic man-made environments[J]. Science China technological sciences, 2020, 63(9): 1628�C1636. <br />[20] OH R, SHIYifang, CHOI J W. A hybrid Newton-raphson and particle swarm optimization method for target motion analysis by batch processing[J]. Sensors (Basel, Switzerland), 2021, 21(6): 2033. <br />[21] ZHUK R S. Automatic detection and tracking the moving objects observed by an unmanned aerial vehicles video camera[J]. Informatics, 2021, 18(2): 83�C97. <br />[22] WATANABE Y. Stochastically optimized monocular vision-based navigation and guidance[D]. USA: Georgia Institute of Technology, 2008: 57.<br />[23] KIM J, ROCK S. Stochastic feedback controller design considering the dual effect[J]//AIAA Guidance, Navigation, and Control Conference and Exhibit. Keystone, Colorado. Reston, Virginia: AIAA, 2006: 6090.<br />[24] SCH?LLERC, ARAVANTINOS V, LAY F, et al. What the constant velocity model can teach us about pedestrian motion prediction[J]. IEEE robotics and automation letters, 2020, 5(2): 1696�C1703. <br />[25] ZHANG Z. A flexible new technique for camera calibration[J]. IEEE transactionson pattern analysis and machine intelligence, 2000, 22(11): 1330�C1334. <br />[26] DAI Y, LEE S G. The leader-follower formation control of non-holonomic mobile robots[J]. International journal of control, automation and systems, 2012, 10(2): 350�C361. <br /></span></dd>
+                                </dl>
+                                <dl id="div1xswx">
+                                    <dt>��������/References:</dt>
+                                    <dd style="margin-left: 76px;">
+                                        <span id="lbxswx" style="line-height: 2;">[1]������ ������,�°���.<a  target='_blank' href='darticle.aspx?type=view&id=080301'>�Ľ��������˲���Ŀ����ٷ���[J].</a>����ϵͳѧ��,2008,3(3):189.<br/>��WANG Shao-yu,CAI Zi-xing,CHEN Ai-bin.Improved object tracking method for particle filters[J].CAAI transactions on intelligent systems,2008,3():189.<br/>[2]�� ��,��־��,� ��,��.<a  target='_blank' href='darticle.aspx?type=view&id=090612'>�����˲�����ƵĿ������㷨�о�[J].</a>����ϵͳѧ��,2009,4(6):538.[doi:10.3969/j.issn.1673-4785.2009.06.012]<br/>��LIU Qing,WU Zhi-gang,DOU Qin,et al.A particle filtering algorithm for tracking moving objects in videos[J].CAAI transactions on intelligent systems,2009,4():538.[doi:10.3969/j.issn.1673-4785.2009.06.012]<br/>[3]�� ��,�����.<a  target='_blank' href='darticle.aspx?type=view&id=100206'>һ�ֻ�����δ֪�����¶�̬Ŀ����ٽ�����ģ�˲��㷨[J].</a>����ϵͳѧ��,2010,5(2):127.<br/>��WU Ming,SUN Ji-yin.An interacting multiple model filtering algorithm for mobile robots to improve tracking of moving objects in unknown environments[J].CAAI transactions on intelligent systems,2010,5():127.<br/>[4]�� ��,���Ĺ�.<a  target='_blank' href='darticle.aspx?type=view&id=100412'>������ɫ�Ŀ���������ټ��ڵ�����[J].</a>����ϵͳѧ��,2010,5(4):353.<br/>��LI Jin,HU Wen-guang.Tracking fast movement using colors while accommodating occlusion[J].CAAI transactions on intelligent systems,2010,5():353.<br/>[5]����,��ұ,�ϴ�.<a  target='_blank' href='darticle.aspx?type=view&id=20110413'>ͳ�Ʋ������������Camshift�����㷨[J].</a>����ϵͳѧ��,2011,6(4):355.<br/>��LIU Xia,TAO Ye,XING Chun.An objective tracking Camshift algorithm based onautomatic startup and the statistical differential method[J].CAAI transactions on intelligent systems,2011,6():355.<br/>[6]����,�����.<a  target='_blank' href='darticle.aspx?type=view&id=20130211'>���������˲���δ֪�����»�����ͬʱ��λ����ͼ������Ŀ�����[J].</a>����ϵͳѧ��,2013,8(2):168.[doi:10.3969/j.issn.1673-4785.201202001]<br/>��WU Ming,SUN Jiyin.Simultaneous localization, mapping and object tracking in an unknown environment using particle filtering[J].CAAI transactions on intelligent systems,2013,8():168.[doi:10.3969/j.issn.1673-4785.201202001]<br/>[7]�س�,����ƽ,�︻��,��.<a  target='_blank' href='darticle.aspx?type=view&id=20130506'>����Kinect���ƶ�������Ŀ����������[J].</a>����ϵͳѧ��,2013,8(5):426.[doi:10.3969/j.issn.1673-4785.201301028]<br/>��HE Chao,LIU Huaping,SUN Fuchun,et al.Target tracking and obstacle avoidance of mobile robot using Kinect[J].CAAI transactions on intelligent systems,2013,8():426.[doi:10.3969/j.issn.1673-4785.201301028]<br/>[8]����,��Ϊ,Ǯ�V��.<a  target='_blank' href='darticle.aspx?type=view&id=20150203'>���ڹ켣����ĳ��й˿��˶�����[J].</a>����ϵͳѧ��,2015,10(2):187.[doi:10.3969/j.issn.1673-4785.201401002]<br/>��WANG Xi,WU Wei,QIAN Yuntao.Trajectory clustering based customer movement tracking in a supermarket[J].CAAI transactions on intelligent systems,2015,10():187.[doi:10.3969/j.issn.1673-4785.201401002]<br/>[9]����,����.<a  target='_blank' href='darticle.aspx?type=view&id=20150309'>Ԫ��֪�����˲�Ŀ������㷨[J].</a>����ϵͳѧ��,2015,10(3):387.[doi:10.3969/j.issn.1673-4785.201405052]<br/>��CHEN Zhen,WANG Zhao.Object tracking algorithm with metacognitive model-based particle filters[J].CAAI transactions on intelligent systems,2015,10():387.[doi:10.3969/j.issn.1673-4785.201405052]<br/>[10]����,������,������,��.<a  target='_blank' href='darticle.aspx?type=view&id=20150518'>����ͶӰֱ��ͼƥ���˫Ŀ�Ӿ������㷨[J].</a>����ϵͳѧ��,2015,10(5):775.[doi:10.11992/tis.201410009]<br/>��WANG Jie,JIANG Mingmin,HUA Xiaohui,et al.Binocular object tracking method using projection histogram matching[J].CAAI transactions on intelligent systems,2015,10():775.[doi:10.11992/tis.201410009]<br/></span></dd>
+                                </dl>
+                                <script src="https://static.contrimetric.com/widget_online/1935235321614594288/1666/contrimetric_widget.min.js" charset="utf-8" defer></script>
+                            </div>
+                            <div id="memo" class="clx">
+                                <h2>
+                                    ��ע/Memo</h2>
+                                <p>
+                                    <span id="LbMemory">�ո�����:2021-07-12��<br />������Ŀ:������Ȼ��ѧ������Ŀ��61503389��������ʡ��Ȼ��ѧ������Ŀ��2015JM6313,2020JM358��<br />���߼��:�����������ڣ���ʿ����Ҫ�о�����Ϊ���������˿��ơ��������Э���������˻������������ֹ�����Ȼ��ѧ������Ŀ1�����ʡ��Ȼ��ѧ������Ŀ2��,����ѧ������20��ƪ������ר��1��;������ʦ����Ҫ�о�����Ϊ�˹����ܡ���Դ�Ż������������������ʡ��ʮ���塱�滮����1��������У������3�����ѧ������17ƪ;κ�񻪣������ڣ���Ҫ�о�����Ϊ��Ϣͨ�ź�ָ����Ϣϵͳ������ר�����8�����ѧ������10��ƪ��<br />ͨѶ����:κ��. E-mail: weizhenhua8303@163.com</span></p>
+                            </div>
+                            <div id="lastupdate">
+                                ��������/Last Update:
+                                <span id="LbTime">1900-01-01</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bottom fifth">
+        
+<div class="bottom">
+    <span id="PageFooter1_lbfoot"><span style="line-height: 180%; font-family: Arial;">Copyright &#169;&#160;�� ����ϵͳѧ����&#160;�༭��<br />��ַ����150001��������ʡ���������ϸ�����ͨ���145-1��¥ �绰��0451- 82534001��82518134�����䣺tis@vip.sina.com</span></span>
+</div>
+
+    </div>
+</body>
+</html>

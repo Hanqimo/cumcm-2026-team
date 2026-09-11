@@ -1,0 +1,1150 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>纯方位目标定位观测器轨迹的
+快速优化算法-A fast optimization algorithm of observer trajectory forbearings-only target localization</title>
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="无线传感器网络;观测器轨迹优化;纯方位目标定位;方位分布关系"/>
+<meta name="HW.ad-path" content="http://chinatransducers.seu.edu.cn/ch/reader/view_abstract.aspx?file_no=cg08100129"/>
+<meta name="HW.identifier" content="http://chinatransducers.seu.edu.cn/ch/reader/view_abstract.aspx?file_no=cg08100129"/>
+<meta name="DC.Format" content="text/html"/>
+<meta name="DC.Language" content="cn"/>
+<meta name="DC.Title" content="纯方位目标定位观测器轨迹的
+快速优化算法"/>
+<meta name="DC.Identifier" content=""/>
+<meta name="DC.Contributor" content="陈晓华"/>
+<meta name="DC.Contributor" content="徐桢"/>
+<meta name="DC.Contributor" content="芮立扬"/>
+<meta name="DC.Date" content=""/>
+<meta name="DC.Keywords" content="无线传感器网络;观测器轨迹优化;纯方位目标定位;方位分布关系"/>
+<meta name="DC.Keywords" content="wireless sensor network; optimization of observer trajectory; bearings-only target localization; bearing distributing relationships;"/>
+<meta name="Description" content="在移动传感器网络中,观测器与目标的相对位置对目标的定位性能有重要的影响。为了提高目标的定位精度,提出
+了一种观测器运动轨迹的优化算法。算法把目标均方位置误差作为优化对象,使用扩展卡尔曼滤波器估计目标的位置。算
+法以目标和观测器的方位分布关系为基础,减小了观测器最优位置的搜索范围。仿真结果表明,使用多个观测器进行目标定
+位,滤波收敛速度快,定位误差小。最后给出了单个和多个观测器的“最优”运动规则。;In the mobile sensor network, the relative position of observer and target is an important factor which significantly affects the localization performance of target. In order to improve the localization accuracy of target, optimization algorithm of observer trajectory is proposed. It is based on minimizing the filtered mean square (MS) position error. It estimates the
+target position utilizing an extended Kalman filter (EKF). It decreases the uncertain region of observer optimization position, based on the observer and target bearing distributing relationships. Simulation results show that the convergence rate, utilizing more observations moving to estimate the target localization, is more quicker than using one observer, and the localization error is less. Finally, the general rules of one and more observer moving are given."/>
+<meta name="Keywords" content="无线传感器网络;观测器轨迹优化;纯方位目标定位;方位分布关系;wireless sensor network; optimization of observer trajectory; bearings-only target localization; bearing distributing relationships;"/>
+<meta name="citation_title" content="纯方位目标定位观测器轨迹的
+快速优化算法"/>
+<meta name="citation_journal_title" content=""/>
+<meta name="citation_author" content="陈晓华"/>
+<meta name="citation_author" content="徐桢"/>
+<meta name="citation_author" content="芮立扬"/>
+<meta name="citation_volume" content="22"/>
+<meta name="citation_issue" content="5"/>
+<meta name="citation_date" content=""/>
+<meta name="citation_firstpage" content=""/>
+<meta name="citation_lastpage" content=""/>
+
+
+
+
+<script type="text/javascript">
+// Executes the function when DOM will be loaded fully
+$(document).ready(function () {	
+	// hover property will help us set the events for mouse enter and mouse leave
+	$('.navigation li').hover(
+		// When mouse enters the .navigation element
+		function () {
+			//Fade in the navigation submenu
+			$('dl', this).fadeIn(); 	// fadeIn will show the sub cat menu
+		}, 
+		// When mouse leaves the .navigation element
+		function () {
+			//Fade out the navigation submenu
+			$('dl', this).fadeOut();	 // fadeOut will hide the sub cat menu		
+		}
+	);
+});
+	</script>
+	<script>
+function addCookie(url,title)
+{
+ if (document.all)
+    {
+       window.external.addFavorite(url,title);
+    }
+    else if (window.sidebar)
+    {
+       window.sidebar.addPanel(title, url, "");
+ }
+}
+
+function setHomepage(homeurl)
+{
+ if (document.all)
+    {
+        document.body.style.behavior='url(#default#homepage)';
+  document.body.setHomePage(homeurl);
+ 
+    }
+    else if (window.sidebar)
+    {
+    if(window.netscape)
+    {
+         try
+   {  
+            netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");  
+         }  
+         catch (e)  
+         {  
+    alert( "该操作被浏览器拒绝，如果想启用该功能，请在地址栏内输入 about:config,然后将项 signed.applets.codebase_principal_support 值该为true" );  
+         }
+    } 
+    var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components. interfaces.nsIPrefBranch);
+    prefs.setCharPref('browser.startup.homepage',homeurl);
+ }
+} 
+</script>
+
+
+</head>
+<script type="text/javascript" src="../js/checkform.js"></script>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<LINK href="../css/index_style.css" rel="stylesheet" type="text/css">
+<LINK href="../css/front_table_css.css" rel="stylesheet" type="text/css">
+<body>
+<div class="header">
+
+<div class="banner" style="background:url(/uploadfile/cgjsxb/fixed_content/zzbg/3.jpg);">	
+
+<!--
+<div class="zz_logo"><img src="" width="84" height="84" /></div>
+
+	-->		
+	
+           
+		   
+			
+     </div>
+     <div class="zznav">
+            <ul class="zznav_ul">
+               <li class="menu"><A href="../index.aspx">首页</A></li><li class="menu"><A href="../first_menu.aspx?parent_id=20190124142147001">期刊简介</A></li><li class="menu"><a href="../common_item.aspx?parent_id=20190605135900001&menu_id=20260105223253001&is_three_menu=0">编委会</a><DIV class=menu-list id=menu2><ul><li class="menu"><a href="../common_item.aspx?parent_id=20190605135900001&menu_id=20260105223253001" style="padding-left:5px;height:28px;font-weight:normal">顾问编委</a></li><li class="menu"><a href="../common_item.aspx?parent_id=20190605135900001&menu_id=20260105223334001" style="padding-left:5px;height:28px;font-weight:normal">编委</a></li><li class="menu"><a href="../common_item.aspx?parent_id=20190605135900001&menu_id=20260105223355001" style="padding-left:5px;height:28px;font-weight:normal">青年编委</a></li></ul></DIV></li><li class="menu"><A href="../first_menu.aspx?parent_id=20190124142203001">投稿须知</A></li><li class="menu"><A href="../first_menu.aspx?parent_id=20190826105350001">编辑部</A></li><li class="menu-e"><A href="../first_menu.aspx?parent_id=20190124142231001">联系我们</A></li>
+            </ul>
+     </div>
+</div>
+<style>
+   
+    .zznav .menu .menu-list{ display: none; }
+  
+    .zznav .menu{ position: relative; padding: 5px 8px; }
+   
+    .zznav .menu .menu-list{
+        position: absolute; 
+        top: 100%; left: 0;
+        z-index: 9999; 
+        background: #ffffff;
+        border: 1px solid #e5e5e5;
+        min-width: 120px;
+        padding: 5px 0;
+        margin: 0;
+    }
+       .zznav .menu .menu-list .menu a{
+        color:#000;
+    }
+    .zznav .menu-list li:hover{ background: #f5f5f5; }
+</style>
+
+<script>
+$(function(){
+    //
+    $(".zznav .menu").hover(
+        function(){
+           
+            $(this).children(".menu-list").show();
+        },
+        function(){
+            $(this).children(".menu-list").hide();
+        }
+    );
+  
+    $(".zznav .menu-list").hover(
+        function(){ $(this).show(); },
+        function(){ $(this).hide(); }
+    );
+});
+</script>
+<div class="main">
+
+
+
+
+<link href="../css/secondary_pages.css" rel="stylesheet" type="text/css">
+
+<!--startprint-->
+<div style="padding:0 10px 0 10px; border-left:#f8f8f8 30px solid; border-right:#f8f8f8 30px solid;">
+<table cellspacing="1" cellpadding="10" align="center" id="QueryUI" class="front_table">
+  <tr> 
+    <td height="420" valign="top" align="center">
+      <table width="100%" border="0"  cellpadding="0" cellspacing="0">
+      <tr> 
+      <td align=left vAlign=top > 
+	   <table border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tr>
+          <td width="100%">
+            <table border="0" cellpadding="4" cellspacing="4" width="100%">
+			<tr><td>
+				<table width="100%">
+                      <tr><td width="80" style="font-size: 14px;"><b>引用本文</b>：</td>
+					  <td width="92%">
+					  <ul style=" font-size:13px; line-height:16px; font-family: Arial; ">
+					  
+							<li style=" margin-bottom:4px;">							
+							<span id="fe_text"> </span>&nbsp;&nbsp;&nbsp;[<a href="#" id="d_clip_button" data-clipboard-target="fe_text"><font color="#0000ee">点击复制</font></a>]</li>
+							<li style=" margin-bottom:10px;"><span id="fe_text3"></span>&nbsp;&nbsp;&nbsp;[<a href="#" id="d_clip_button3" data-clipboard-target="fe_text3"><font color="#0000ee">点击复制</font></a>]</li>
+					  
+					  
+					  <script type="text/javascript" src="../js/fuzhi/ZeroClipboard.js"></script>
+<script type="text/javascript">
+// 定义一个新的复制对象
+var clip = new ZeroClipboard( document.getElementById("d_clip_button"), {
+  moviePath: "../js/fuzhi/ZeroClipboard.swf"
+} );
+
+// 复制内容到剪贴板成功后的操作
+clip.on( 'complete', function(client, args) {
+   alert("复制成功!");
+} );
+
+
+// 定义一个新的复制对象
+var clip = new ZeroClipboard( document.getElementById("d_clip_button3"), {
+  moviePath: "ZeroClipboard.swf"
+} );
+
+// 复制内容到剪贴板成功后的操作
+clip.on( 'complete', function(client, args) {
+   alert("复制成功!");
+} );
+
+
+</script>
+					  </ul>					  
+					  </td>
+					  </tr>
+				</table>
+			</td> 
+			</tr>
+
+			    <tr>
+                <td width="100%" height="1" style="border-bottom:1px dashed #666;padding:0px" > </td>
+              </tr>
+
+
+<tr><td style="padding-left:none;border-bottom:1px solid #666">
+<table style="width:80%; line-height:25px; margin:0 auto;"> 
+	  <tr>
+		<td width="100%" height="35" class="wzanniu1">	
+		<a href="javascript:void(0)" onclick="preview()" id="ziti">【打印本页】</a>
+		<!--<a href="view_pdf.aspx?file_no=cg08100129" target="_blank" style="text-decoration:underline;">【在线阅读全文】</a>--><a href="create_pdf.aspx?file_no=cg08100129&flag=1&year_id=2009&quarter_id=5">【在线阅读全文】</a>
+		<a href="appraise.aspx?file_no=cg08100129&journal_id=cgjsxb">【<span id="ViewAppraiseLabel">查看/发表评论</span>】</a><a href="http://ardownload.adobe.com/pub/adobe/reader/win/6.x/6.0/chs/AdbeRdr60_chs_full.exe">【<span id="DownloadReaderLabel">下载PDF阅读器</span>】</a><a href="#" onclick="return window.close();">【<span id="CloseLabel">关闭</span>】</a></td>
+		</tr>
+		<tr>
+		<td height="35" class="wzanniu1">
+	   <p style="float:left;"><a href="view_abstract.aspx?file_no=cg08100128&flag=1">←前一篇</a>|<a href="view_abstract.aspx?file_no=cg08100130&flag=1">后一篇→ </a></p>
+		<p style="float:right;"><a href="issue_browser.aspx" target="_blank">过刊浏览</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="advance_query.aspx">高级检索</a>
+		</p><td>
+		</tr>
+   </tr>
+</table>
+</td></tr>
+
+           
+			<tr>
+			<td >
+<table  width="100%" style=" font-size:14px; background: rgba(253, 253, 253, 0.98);">
+ <tr>
+			<td width="100%" height="30" style=" font-size:14px;"><b>本文已被</b>：浏览<span id="ClickNum">&nbsp;1629</span>次&nbsp;&nbsp;&nbsp;下载<span id="PDFClickNum">&nbsp;0</span>次</td>
+			
+			</tr>
+           <!--标题-->
+			<tr>
+				<td width="100%" height="30" align="center" style=" font-size:24px;"><font><b><span id="FileTitle">纯方位目标定位观测器轨迹的
+快速优化算法</span></b></font></td>				
+ 
+			</tr>
+           <!--作者-->
+			<tr>
+                <td width="100%" align="center" height="20" style=" font-size:14px;"></td>				
+           </tr>
+		   <tr>
+                <td width="100%" height="20" style=" font-size:14px;">
+				
+				<div class="font_s"><b><font color="#FF6600">字体:</font></b><a href="#" class="fontSizePlus">加大+</a>|<a href="#" class="fontReset">默认</a>|<a href="#" class="fontSizeMinus">缩小-</a></div>
+
+
+				</td>
+           </tr>
+           <!--单位-->
+		   <tr>
+                <td width="80%" align="center" style=" font-size:12px;"></td>
+           </tr>
+</table>
+		   </td>
+</tr><div ID="Content">
+             <tr>			 
+		     <td width="100%" class="unnamed3" style=" font-size:14px;"><b><span id="AbstractLabel">摘要</span>:</b><span id="Abstract">在移动传感器网络中,观测器与目标的相对位置对目标的定位性能有重要的影响。为了提高目标的定位精度,提出
+了一种观测器运动轨迹的优化算法。算法把目标均方位置误差作为优化对象,使用扩展卡尔曼滤波器估计目标的位置。算
+法以目标和观测器的方位分布关系为基础,减小了观测器最优位置的搜索范围。仿真结果表明,使用多个观测器进行目标定
+位,滤波收敛速度快,定位误差小。最后给出了单个和多个观测器的“最优”运动规则。</span></td>
+	         </tr>
+			 <!--<tr>
+		     <td width="100%" style="font-size:14px; text-indent: 30px; line-height: 22px; word-break:break-all;Width:fixed" class="unnamed3 intro">在移动传感器网络中,观测器与目标的相对位置对目标的定位性能有重要的影响。为了提高目标的定位精度,提出
+了一种观测器运动轨迹的优化算法。算法把目标均方位置误差作为优化对象,使用扩展卡尔曼滤波器估计目标的位置。算
+法以目标和观测器的方位分布关系为基础,减小了观测器最优位置的搜索范围。仿真结果表明,使用多个观测器进行目标定
+位,滤波收敛速度快,定位误差小。最后给出了单个和多个观测器的“最优”运动规则。</td>
+	         </tr>-->
+			
+	         <tr>
+				<td width="100%" height="20" style=" font-size:14px;"><b><span id="KeyWordLabel">关键词</span>:</b>&nbsp;&nbsp;<span id="KeyWord"><a href="https://aipub.cn/article/search?subject=industry_technology&major=zdhjsjsjjs&field=key_word&q=%e6%97%a0%e7%ba%bf%e4%bc%a0%e6%84%9f%e5%99%a8%e7%bd%91%e7%bb%9c" target="_blank"><font color='blue'><u>无线传感器网络</u></font></a>&nbsp;&nbsp;<a href="https://aipub.cn/article/search?subject=industry_technology&major=zdhjsjsjjs&field=key_word&q=%e8%a7%82%e6%b5%8b%e5%99%a8%e8%bd%a8%e8%bf%b9%e4%bc%98%e5%8c%96" target="_blank"><font color='blue'><u>观测器轨迹优化</u></font></a>&nbsp;&nbsp;<a href="https://aipub.cn/article/search?subject=industry_technology&major=zdhjsjsjjs&field=key_word&q=%e7%ba%af%e6%96%b9%e4%bd%8d%e7%9b%ae%e6%a0%87%e5%ae%9a%e4%bd%8d" target="_blank"><font color='blue'><u>纯方位目标定位</u></font></a>&nbsp;&nbsp;<a href="https://aipub.cn/article/search?subject=industry_technology&major=zdhjsjsjjs&field=key_word&q=%e6%96%b9%e4%bd%8d%e5%88%86%e5%b8%83%e5%85%b3%e7%b3%bb" target="_blank"><font color='blue'><u>方位分布关系</u></font></a></span></td>
+	         </tr>
+			 <!--<tr>
+                <td width="100%" height="20" style=" font-size:14px;" class="intro"><b>DOI：</b><span id="DOI"></span></td>
+           </tr>
+		     <tr>
+                <td width="100%" align="left" style=" font-size:14px;" class="intro"><b><span id="SendTime"></span></b><span id="LastModifyTime"></span></b></td>
+             </tr>
+			 <tr>
+                <td width="100%" style=" font-size:14px; line-height:20px;" class="intro"><b><span id="FundProjectLabel">基金项目</span>:</b><span id="FundProject">:国家自然科学基金(60532030) ;国家杰出青年科学基金(60625102) ;博士点基金（）</span></td>
+             </tr>-->
+
+
+          <tr><td style="height:25px"></td></tr>
+           <tr>
+                <td width="100%" align="center" style="font-family:times new roman "class="intro" ><font><b><span id="EnTitle">A fast optimization algorithm of observer trajectory forbearings-only target localization</span></b></font></td>
+           </tr>
+           <!--作者-->
+			<tr>
+                <td width="100%" align="center" style="font-family:times new roman; font-size:14px;" class="intro"></td>
+           </tr>
+           <!--单位-->
+		   <tr>
+                <td width="100%" align="center" style="font-family:times new roman; font-size:14px;" class="intro"></td>
+           </tr>
+
+             <tr>
+                <td width="100%" class="unnamed3" style="font-size:14px; font-family:times new roman" class="intro"><b><span id="EnAbstractLabel">Abstract</span>:</b><span id="EnAbstract">In the mobile sensor network, the relative position of observer and target is an important factor which significantly affects the localization performance of target. In order to improve the localization accuracy of target, optimization algorithm of observer trajectory is proposed. It is based on minimizing the filtered mean square (MS) position error. It estimates the
+target position utilizing an extended Kalman filter (EKF). It decreases the uncertain region of observer optimization position, based on the observer and target bearing distributing relationships. Simulation results show that the convergence rate, utilizing more observations moving to estimate the target localization, is more quicker than using one observer, and the localization error is less. Finally, the general rules of one and more observer moving are given.</span></td>
+              </tr>
+			<!--<tr>
+                <td width="100%" class="unnamed3 intro" style="font-size:14px; text-indent: 30px; line-height: 22px; font-size:14px; font-family:times new roman">In the mobile sensor network, the relative position of observer and target is an important factor which significantly affects the localization performance of target. In order to improve the localization accuracy of target, optimization algorithm of observer trajectory is proposed. It is based on minimizing the filtered mean square (MS) position error. It estimates the
+target position utilizing an extended Kalman filter (EKF). It decreases the uncertain region of observer optimization position, based on the observer and target bearing distributing relationships. Simulation results show that the convergence rate, utilizing more observations moving to estimate the target localization, is more quicker than using one observer, and the localization error is less. Finally, the general rules of one and more observer moving are given.</td>
+            </tr>-->
+	       <tr>
+                <td width="100%" height="20" style="font-size:14px; font-family:times new roman" class="intro"><b><span id="EnKeyWordLabel">Key words</span>:&nbsp;&nbsp;</b><span id="EnKeyWord"><a href="https://aipub.cn/article/search?subject=industry_technology&major=zdhjsjsjjs&field=key_word&q=wireless+sensor+network" target="_blank"><font color='blue'><u>wireless sensor network</u></font></a>&nbsp;&nbsp;<a href="https://aipub.cn/article/search?subject=industry_technology&major=zdhjsjsjjs&field=key_word&q=optimization+of+observer+trajectory" target="_blank"><font color='blue'><u>optimization of observer trajectory</u></font></a>&nbsp;&nbsp;<a href="https://aipub.cn/article/search?subject=industry_technology&major=zdhjsjsjjs&field=key_word&q=bearings-only+target+localization" target="_blank"><font color='blue'><u>bearings-only target localization</u></font></a>&nbsp;&nbsp;<a href="https://aipub.cn/article/search?subject=industry_technology&major=zdhjsjsjjs&field=key_word&q=bearing+distributing+relationships" target="_blank"><font color='blue'><u>bearing distributing relationships</u></font></a>&nbsp;&nbsp;<a href="https://aipub.cn/article/search?subject=industry_technology&major=zdhjsjsjjs&field=key_word&q=" target="_blank"><font color='blue'><u></u></font></a></span></td>
+           </tr>
+ </div>
+             <tr><td style="border-bottom:1px dashed #666"></td></tr>
+	       
+		   
+	         <!--<tr>
+                <td width="100% height="20" align="left"><span id="AttacheList"></span></td>
+              </tr>  
+			  -->
+	      <tr>
+                <td width="100%" height="20" align="center"></td>
+              </tr>  
+            </table>
+          </td>
+        
+        </tr>
+      </table>
+
+<div class="recommend_article"></div>
+<script src="https://cdn.aipub.cn/vue.min.js?v=6745b06d343ffa33d8871539001a66e6"></script>
+<script>
+    const referConfig = {
+        vendor: "qy",
+        column_num: 2,
+        column_css: 1,
+        page_name: 'abstract',
+       
+         
+            "pcid": "11118c97064381af4e885e0237db14b2b44b2e1ba90a6b5ec83049e15eb7fd78",
+            "cid": "d02e979dd9f667acaab8e21a72dada14",
+            "jid": "6efb639b4c1b0348ea0391c0a2dda826"
+      
+    }
+
+    if(referConfig.pcid!=""){
+	//$('.recommend_article').append("<div id='et_extend' > </div>")
+	}	
+
+</script>
+<script src="https://recommend.aipub.cn/file/aipub.ad.js"></script>
+
+<style>
+#KeyWord a{ color:#f00;}
+#EnTitle{ font-size:23px;}
+.bshare-custom{ font-size: 13px;width: 200px;float:right ;line-height: 16px !important;}
+.font_s{ float:left ; width:214px; padding-left: 10px;}
+.font_s .fontSizePlus,.fontReset,.fontSizeMinus{ padding-left:10px;  padding-right:10px; }
+</style>
+<table width="100%" align="center">
+<tr><td  align="left">
+<div id="ReferenceList">
+</div>
+</td></tr>
+<tr><td  align="left">
+<div id="WasReferencedList">
+</div>
+</td></tr>
+
+<tr><td align="left">
+<div id="RelateArticleList">
+</div>
+</td></tr>
+
+</table>
+  </td>    
+</table> 
+</td>    
+</tr>
+ <tr><td align="center"></td></tr>
+</table>  
+</div>
+<!--endprint-->
+
+
+<script type="text/javascript">
+$(document).ready(function () {
+
+	//min font size
+	var min=9; 	
+
+	//max font size
+	var max=20;	
+	
+	//grab the default font size
+	var reset = $('td').css('fontSize'); 
+	
+	//font resize these elements
+	var elm = $('td.intro, p.ending');  
+	
+	//set the default font size and remove px from the value
+	var size = str_replace(reset, 'px', ''); 
+	
+	//Increase font size
+	$('a.fontSizePlus').click(function() {
+		
+		//if the font size is lower or equal than the max value
+		if (size<=max) {
+			
+			//increase the size
+			size++;
+			
+			//set the font size
+			elm.css({'fontSize' : size});
+		}
+		
+		//cancel a click event
+		return false;	
+		
+	});
+
+	$('a.fontSizeMinus').click(function() {
+
+		//if the font size is greater or equal than min value
+		if (size>=min) {
+			
+			//decrease the size
+			size--;
+			
+			//set the font size
+			elm.css({'fontSize' : size});
+		}
+		
+		//cancel a click event
+		return false;	
+		
+	});
+	
+	//Reset the font size
+	$('a.fontReset').click(function () {
+		
+		//set the default font size	
+		 elm.css({'fontSize' : reset});		
+	});
+		
+});
+
+//A string replace function
+function str_replace(haystack, needle, replacement) {
+	var temp = haystack.split(needle);
+	return temp.join(replacement);
+}
+</script>
+
+
+
+
+
+
+<p class="float"></p>
+</div>
+<div class="footer">
+<script src="js/liulanqitishi.js" type="text/javascript" charset="utf-8"></script>
+<script>liuqitis();</script><br/>
+
+版权所有：《传感技术学报》编辑部  </br>
+地址：南京市江宁区东南大学路2号东南大学九龙湖校区  邮政编码：211189<br />
+电话：025-52091533 传真：025-52091533  Email：dzcg-bjb@seu.edu.cn;dzcg_bjb@126.com<br />
+技术支持：<a href="http://www.e-tiller.com" target="_blank">北京勤云科技发展有限公司
+
+</div>
+
+
+<div class="go-top dn" id="go-top">
+    <a href="javascript:;" class="ta uc-2vm"></a>
+	<div class="uc-2vm-pop dn">
+		<h2 class="title-2wm">用微信扫一扫</h2>
+		<div class="logo-2wm-box">
+			<img src="" alt="用微信扫一扫" width="240" height="240">
+		</div>
+	</div>
+    <a href="#" target="_blank" class="ta feedback"></a>
+    <a href="javascript:;" class="ta go"></a>
+</div>
+
+<script>
+$(function(){
+	$(window).on('scroll',function(){
+		var st = $(document).scrollTop();
+		if( st>0 ){
+			if( $('#main-container').length != 0  ){
+				var w = $(window).width(),mw = $('#main-container').width();
+				if( (w-mw)/2 > 70 )
+					$('#go-top').css({'left':(w-mw)/2+mw+20});
+				else{
+					$('#go-top').css({'left':'auto'});
+				}
+			}
+			$('#go-top').fadeIn(function(){
+				$(this).removeClass('dn');
+			});
+		}else{
+			$('#go-top').fadeOut(function(){
+				$(this).addClass('dn');
+			});
+		}	
+	});
+	$('#go-top .go').on('click',function(){
+		$('html,body').animate({'scrollTop':0},500);
+	});
+
+	$('#go-top .uc-2vm').hover(function(){
+		$('#go-top .uc-2vm-pop').removeClass('dn');
+	},function(){
+		$('#go-top .uc-2vm-pop').addClass('dn');
+	});
+});
+</script>
+
+</body>
+</html>
+
+<script type="text/javascript">function copyText(obj)  
+{
+var rng = document.body.createTextRange();
+rng.moveToElementText(obj);
+rng.scrollIntoView();
+rng.select();
+rng.execCommand("Copy");
+rng.collapse(false);
+alert("复制成功!");
+}
+</script>
+<!--打印-->
+<script language="javascript">
+function preview()
+{
+  $("td").css("font-size","16px");
+  $("font").css("font-size","16px");
+  $("div").css("font-size","16px");
+  $("#en").css("padding-left","74px");
+   $("#yywb").css("width","80px");
+ bdhtml=window.document.body.innerHTML;
+ sprnstr="<!--startprint-->";
+ eprnstr="<!--endprint-->";
+ prnhtml=bdhtml.substr(bdhtml.indexOf(sprnstr)+17);
+ prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr));
+ window.document.body.innerHTML=prnhtml;
+ window.print();
+ //prnform.htext.value=prnhtml;
+ //prnform.submit();
+ //alert(prnhtml);
+}
+</script>
+
+<script language=javascript>
+function PdfOpen(url){
+      var win="toolbar=no,location=no,directories=no,status=yes,menubar=yes,scrollbars=yes,resizable=yes";  
+      window.open(url,"",win);
+ }
+</script>
+<script language="javascript">
+ function openWin(url,w,h){ 
+   var win="toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no,width=" + w + ",height=" + h;  
+   controlWindow=window.open(url,"",win);
+}
+</script>
+<script language="javascript" src="../js/jquery.js"></script>
+<script language="javascript" src="search_reference.aspx?ct=6E7E7B6C22A346DB9DBEBAC4EF0E5C4D1C367767113B9CC6961AC4B2CA727CEB64516ED2ED2A11FB2BE5A477369D3AA957102A2DF087954075DA4676A06C90DE&et=E7C2221CA039159EF872AA971A522AF1E9076C03C5E7BCAB08F2D1CED38BAF5EB77C791EAFE2EFCC3B68C9BAF53551E606336AC0E64906DBDB4B363C1296C5DA8213887EEBC931514933DADBE6603E74E7A752121CFC39AF89AEAB6E8AB57995&pcid=5B3AB970F71A803DEACDC0559115BFCF0A068CD97DD29835&cid=8240383F08CE46C8B05036380D75B607&jid=4EC140118CC2B969FE0A31BEF571176F&yid=DE12191FBD62783C&aid=EF8F7FFDC08C1C993C4F7B50540C5B6C&vid=&iid=94C357A881DFC066&sid=&eid=&fileno=cg08100129&flag=1&is_more=0"></script>
+
+
+<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+
+
+<script type="text/javascript">
+// Executes the function when DOM will be loaded fully
+$(document).ready(function () {	
+	// hover property will help us set the events for mouse enter and mouse leave
+	$('.navigation li').hover(
+		// When mouse enters the .navigation element
+		function () {
+			//Fade in the navigation submenu
+			$('dl', this).fadeIn(); 	// fadeIn will show the sub cat menu
+		}, 
+		// When mouse leaves the .navigation element
+		function () {
+			//Fade out the navigation submenu
+			$('dl', this).fadeOut();	 // fadeOut will hide the sub cat menu		
+		}
+	);
+});
+	</script>
+	<script>
+function addCookie(url,title)
+{
+ if (document.all)
+    {
+       window.external.addFavorite(url,title);
+    }
+    else if (window.sidebar)
+    {
+       window.sidebar.addPanel(title, url, "");
+ }
+}
+
+function setHomepage(homeurl)
+{
+ if (document.all)
+    {
+        document.body.style.behavior='url(#default#homepage)';
+  document.body.setHomePage(homeurl);
+ 
+    }
+    else if (window.sidebar)
+    {
+    if(window.netscape)
+    {
+         try
+   {  
+            netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");  
+         }  
+         catch (e)  
+         {  
+    alert( "该操作被浏览器拒绝，如果想启用该功能，请在地址栏内输入 about:config,然后将项 signed.applets.codebase_principal_support 值该为true" );  
+         }
+    } 
+    var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components. interfaces.nsIPrefBranch);
+    prefs.setCharPref('browser.startup.homepage',homeurl);
+ }
+} 
+</script>
+
+
+</head>
+<script type="text/javascript" src="../js/checkform.js"></script>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<LINK href="../css/index_style.css" rel="stylesheet" type="text/css">
+<LINK href="../css/front_table_css.css" rel="stylesheet" type="text/css">
+<body>
+<div class="header">
+
+<div class="banner" style="background:url(/uploadfile/cgjsxb/fixed_content/zzbg/3.jpg);">	
+
+<!--
+<div class="zz_logo"><img src="" width="84" height="84" /></div>
+
+	-->		
+	
+           
+		   
+			
+     </div>
+     <div class="zznav">
+            <ul class="zznav_ul">
+               <li class="menu"><A href="../index.aspx">首页</A></li><li class="menu"><A href="../first_menu.aspx?parent_id=20190124142147001">期刊简介</A></li><li class="menu"><a href="../common_item.aspx?parent_id=20190605135900001&menu_id=20260105223253001&is_three_menu=0">编委会</a><DIV class=menu-list id=menu2><ul><li class="menu"><a href="../common_item.aspx?parent_id=20190605135900001&menu_id=20260105223253001" style="padding-left:5px;height:28px;font-weight:normal">顾问编委</a></li><li class="menu"><a href="../common_item.aspx?parent_id=20190605135900001&menu_id=20260105223334001" style="padding-left:5px;height:28px;font-weight:normal">编委</a></li><li class="menu"><a href="../common_item.aspx?parent_id=20190605135900001&menu_id=20260105223355001" style="padding-left:5px;height:28px;font-weight:normal">青年编委</a></li></ul></DIV></li><li class="menu"><A href="../first_menu.aspx?parent_id=20190124142203001">投稿须知</A></li><li class="menu"><A href="../first_menu.aspx?parent_id=20190826105350001">编辑部</A></li><li class="menu-e"><A href="../first_menu.aspx?parent_id=20190124142231001">联系我们</A></li>
+            </ul>
+     </div>
+</div>
+<style>
+   
+    .zznav .menu .menu-list{ display: none; }
+  
+    .zznav .menu{ position: relative; padding: 5px 8px; }
+   
+    .zznav .menu .menu-list{
+        position: absolute; 
+        top: 100%; left: 0;
+        z-index: 9999; 
+        background: #ffffff;
+        border: 1px solid #e5e5e5;
+        min-width: 120px;
+        padding: 5px 0;
+        margin: 0;
+    }
+       .zznav .menu .menu-list .menu a{
+        color:#000;
+    }
+    .zznav .menu-list li:hover{ background: #f5f5f5; }
+</style>
+
+<script>
+$(function(){
+    //
+    $(".zznav .menu").hover(
+        function(){
+           
+            $(this).children(".menu-list").show();
+        },
+        function(){
+            $(this).children(".menu-list").hide();
+        }
+    );
+  
+    $(".zznav .menu-list").hover(
+        function(){ $(this).show(); },
+        function(){ $(this).hide(); }
+    );
+});
+</script>
+<div class="main">
+
+
+
+
+<link href="../css/secondary_pages.css" rel="stylesheet" type="text/css">
+
+<!--startprint-->
+<div style="padding:0 10px 0 10px; border-left:#f8f8f8 30px solid; border-right:#f8f8f8 30px solid;">
+<table cellspacing="1" cellpadding="10" align="center" id="QueryUI" class="front_table">
+  <tr> 
+    <td height="420" valign="top" align="center">
+      <table width="100%" border="0"  cellpadding="0" cellspacing="0">
+      <tr> 
+      <td align=left vAlign=top > 
+	   <table border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tr>
+          <td width="100%">
+            <table border="0" cellpadding="4" cellspacing="4" width="100%">
+			<tr><td>
+				<table width="100%">
+                      <tr><td width="80" style="font-size: 14px;"><b>引用本文</b>：</td>
+					  <td width="92%">
+					  <ul style=" font-size:13px; line-height:16px; font-family: Arial; ">
+					  
+							<li style=" margin-bottom:4px;">							
+							<span id="fe_text"> </span>&nbsp;&nbsp;&nbsp;[<a href="#" id="d_clip_button" data-clipboard-target="fe_text"><font color="#0000ee">点击复制</font></a>]</li>
+							<li style=" margin-bottom:10px;"><span id="fe_text3"></span>&nbsp;&nbsp;&nbsp;[<a href="#" id="d_clip_button3" data-clipboard-target="fe_text3"><font color="#0000ee">点击复制</font></a>]</li>
+					  
+					  
+					  <script type="text/javascript" src="../js/fuzhi/ZeroClipboard.js"></script>
+<script type="text/javascript">
+// 定义一个新的复制对象
+var clip = new ZeroClipboard( document.getElementById("d_clip_button"), {
+  moviePath: "../js/fuzhi/ZeroClipboard.swf"
+} );
+
+// 复制内容到剪贴板成功后的操作
+clip.on( 'complete', function(client, args) {
+   alert("复制成功!");
+} );
+
+
+// 定义一个新的复制对象
+var clip = new ZeroClipboard( document.getElementById("d_clip_button3"), {
+  moviePath: "ZeroClipboard.swf"
+} );
+
+// 复制内容到剪贴板成功后的操作
+clip.on( 'complete', function(client, args) {
+   alert("复制成功!");
+} );
+
+
+</script>
+					  </ul>					  
+					  </td>
+					  </tr>
+				</table>
+			</td> 
+			</tr>
+
+			    <tr>
+                <td width="100%" height="1" style="border-bottom:1px dashed #666;padding:0px" > </td>
+              </tr>
+
+
+<tr><td style="padding-left:none;border-bottom:1px solid #666">
+<table style="width:80%; line-height:25px; margin:0 auto;"> 
+	  <tr>
+		<td width="100%" height="35" class="wzanniu1">	
+		<a href="javascript:void(0)" onclick="preview()" id="ziti">【打印本页】</a>
+		<!--<a href="view_pdf.aspx?file_no=cg08100129" target="_blank" style="text-decoration:underline;">【在线阅读全文】</a>--><a href="create_pdf.aspx?file_no=cg08100129&flag=1&year_id=2009&quarter_id=5">【在线阅读全文】</a>
+		<a href="appraise.aspx?file_no=cg08100129&journal_id=cgjsxb">【<span id="ViewAppraiseLabel">查看/发表评论</span>】</a><a href="http://ardownload.adobe.com/pub/adobe/reader/win/6.x/6.0/chs/AdbeRdr60_chs_full.exe">【<span id="DownloadReaderLabel">下载PDF阅读器</span>】</a><a href="#" onclick="return window.close();">【<span id="CloseLabel">关闭</span>】</a></td>
+		</tr>
+		<tr>
+		<td height="35" class="wzanniu1">
+	   <p style="float:left;"><a href="view_abstract.aspx?file_no=cg08100128&flag=1">←前一篇</a>|<a href="view_abstract.aspx?file_no=cg08100130&flag=1">后一篇→ </a></p>
+		<p style="float:right;"><a href="issue_browser.aspx" target="_blank">过刊浏览</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="advance_query.aspx">高级检索</a>
+		</p><td>
+		</tr>
+   </tr>
+</table>
+</td></tr>
+
+           
+			<tr>
+			<td >
+<table  width="100%" style=" font-size:14px; background: rgba(253, 253, 253, 0.98);">
+ <tr>
+			<td width="100%" height="30" style=" font-size:14px;"><b>本文已被</b>：浏览<span id="ClickNum"></span>次&nbsp;&nbsp;&nbsp;下载<span id="PDFClickNum"></span>次</td>
+			
+			</tr>
+           <!--标题-->
+			<tr>
+				<td width="100%" height="30" align="center" style=" font-size:24px;"><font><b><span id="FileTitle"></span></b></font></td>				
+ 
+			</tr>
+           <!--作者-->
+			<tr>
+                <td width="100%" align="center" height="20" style=" font-size:14px;"></td>				
+           </tr>
+		   <tr>
+                <td width="100%" height="20" style=" font-size:14px;">
+				
+				<div class="font_s"><b><font color="#FF6600">字体:</font></b><a href="#" class="fontSizePlus">加大+</a>|<a href="#" class="fontReset">默认</a>|<a href="#" class="fontSizeMinus">缩小-</a></div>
+
+
+				</td>
+           </tr>
+           <!--单位-->
+		   <tr>
+                <td width="80%" align="center" style=" font-size:12px;"></td>
+           </tr>
+</table>
+		   </td>
+</tr><div ID="Content">
+             <tr>			 
+		     <td width="100%" class="unnamed3" style=" font-size:14px;"><b><span id="AbstractLabel">摘要</span>:</b><span id="Abstract"></span></td>
+	         </tr>
+			 <!--<tr>
+		     <td width="100%" style="font-size:14px; text-indent: 30px; line-height: 22px; word-break:break-all;Width:fixed" class="unnamed3 intro">在移动传感器网络中,观测器与目标的相对位置对目标的定位性能有重要的影响。为了提高目标的定位精度,提出
+了一种观测器运动轨迹的优化算法。算法把目标均方位置误差作为优化对象,使用扩展卡尔曼滤波器估计目标的位置。算
+法以目标和观测器的方位分布关系为基础,减小了观测器最优位置的搜索范围。仿真结果表明,使用多个观测器进行目标定
+位,滤波收敛速度快,定位误差小。最后给出了单个和多个观测器的“最优”运动规则。</td>
+	         </tr>-->
+			
+	         <tr>
+				<td width="100%" height="20" style=" font-size:14px;"><b><span id="KeyWordLabel">关键词</span>:</b>&nbsp;&nbsp;<span id="KeyWord"></span></td>
+	         </tr>
+			 <!--<tr>
+                <td width="100%" height="20" style=" font-size:14px;" class="intro"><b>DOI：</b><span id="DOI"></span></td>
+           </tr>
+		     <tr>
+                <td width="100%" align="left" style=" font-size:14px;" class="intro"><b><span id="SendTime"></span></b><span id="LastModifyTime"></span></b></td>
+             </tr>
+			 <tr>
+                <td width="100%" style=" font-size:14px; line-height:20px;" class="intro"><b><span id="FundProjectLabel">基金项目</span>:</b><span id="FundProject"></span></td>
+             </tr>-->
+
+
+          <tr><td style="height:25px"></td></tr>
+           <tr>
+                <td width="100%" align="center" style="font-family:times new roman "class="intro" ><font><b><span id="EnTitle"></span></b></font></td>
+           </tr>
+           <!--作者-->
+			<tr>
+                <td width="100%" align="center" style="font-family:times new roman; font-size:14px;" class="intro"></td>
+           </tr>
+           <!--单位-->
+		   <tr>
+                <td width="100%" align="center" style="font-family:times new roman; font-size:14px;" class="intro"></td>
+           </tr>
+
+             <tr>
+                <td width="100%" class="unnamed3" style="font-size:14px; font-family:times new roman" class="intro"><b><span id="EnAbstractLabel">Abstract</span>:</b><span id="EnAbstract"></span></td>
+              </tr>
+			<!--<tr>
+                <td width="100%" class="unnamed3 intro" style="font-size:14px; text-indent: 30px; line-height: 22px; font-size:14px; font-family:times new roman">In the mobile sensor network, the relative position of observer and target is an important factor which significantly affects the localization performance of target. In order to improve the localization accuracy of target, optimization algorithm of observer trajectory is proposed. It is based on minimizing the filtered mean square (MS) position error. It estimates the
+target position utilizing an extended Kalman filter (EKF). It decreases the uncertain region of observer optimization position, based on the observer and target bearing distributing relationships. Simulation results show that the convergence rate, utilizing more observations moving to estimate the target localization, is more quicker than using one observer, and the localization error is less. Finally, the general rules of one and more observer moving are given.</td>
+            </tr>-->
+	       <tr>
+                <td width="100%" height="20" style="font-size:14px; font-family:times new roman" class="intro"><b><span id="EnKeyWordLabel">Key words</span>:&nbsp;&nbsp;</b><span id="EnKeyWord"></span></td>
+           </tr>
+ </div>
+             <tr><td style="border-bottom:1px dashed #666"></td></tr>
+	       
+		   
+	         <!--<tr>
+                <td width="100% height="20" align="left"><span id="AttacheList"></span></td>
+              </tr>  
+			  -->
+	      <tr>
+                <td width="100%" height="20" align="center"></td>
+              </tr>  
+            </table>
+          </td>
+        
+        </tr>
+      </table>
+
+<div class="recommend_article"></div>
+<script src="https://cdn.aipub.cn/vue.min.js?v=6745b06d343ffa33d8871539001a66e6"></script>
+<script>
+    const referConfig = {
+        vendor: "qy",
+        column_num: 2,
+        column_css: 1,
+        page_name: 'abstract',
+       
+         
+            "pcid": "11118c97064381af4e885e0237db14b2b44b2e1ba90a6b5ec83049e15eb7fd78",
+            "cid": "d02e979dd9f667acaab8e21a72dada14",
+            "jid": "6efb639b4c1b0348ea0391c0a2dda826"
+      
+    }
+
+    if(referConfig.pcid!=""){
+	//$('.recommend_article').append("<div id='et_extend' > </div>")
+	}	
+
+</script>
+<script src="https://recommend.aipub.cn/file/aipub.ad.js"></script>
+
+<style>
+#KeyWord a{ color:#f00;}
+#EnTitle{ font-size:23px;}
+.bshare-custom{ font-size: 13px;width: 200px;float:right ;line-height: 16px !important;}
+.font_s{ float:left ; width:214px; padding-left: 10px;}
+.font_s .fontSizePlus,.fontReset,.fontSizeMinus{ padding-left:10px;  padding-right:10px; }
+</style>
+<table width="100%" align="center">
+<tr><td  align="left">
+<div id="ReferenceList">
+</div>
+</td></tr>
+<tr><td  align="left">
+<div id="WasReferencedList">
+</div>
+</td></tr>
+
+<tr><td align="left">
+<div id="RelateArticleList">
+</div>
+</td></tr>
+
+</table>
+  </td>    
+</table> 
+</td>    
+</tr>
+ <tr><td align="center"></td></tr>
+</table>  
+</div>
+<!--endprint-->
+
+
+<script type="text/javascript">
+$(document).ready(function () {
+
+	//min font size
+	var min=9; 	
+
+	//max font size
+	var max=20;	
+	
+	//grab the default font size
+	var reset = $('td').css('fontSize'); 
+	
+	//font resize these elements
+	var elm = $('td.intro, p.ending');  
+	
+	//set the default font size and remove px from the value
+	var size = str_replace(reset, 'px', ''); 
+	
+	//Increase font size
+	$('a.fontSizePlus').click(function() {
+		
+		//if the font size is lower or equal than the max value
+		if (size<=max) {
+			
+			//increase the size
+			size++;
+			
+			//set the font size
+			elm.css({'fontSize' : size});
+		}
+		
+		//cancel a click event
+		return false;	
+		
+	});
+
+	$('a.fontSizeMinus').click(function() {
+
+		//if the font size is greater or equal than min value
+		if (size>=min) {
+			
+			//decrease the size
+			size--;
+			
+			//set the font size
+			elm.css({'fontSize' : size});
+		}
+		
+		//cancel a click event
+		return false;	
+		
+	});
+	
+	//Reset the font size
+	$('a.fontReset').click(function () {
+		
+		//set the default font size	
+		 elm.css({'fontSize' : reset});		
+	});
+		
+});
+
+//A string replace function
+function str_replace(haystack, needle, replacement) {
+	var temp = haystack.split(needle);
+	return temp.join(replacement);
+}
+</script>
+
+
+
+
+
+
+<p class="float"></p>
+</div>
+<div class="footer">
+<script src="js/liulanqitishi.js" type="text/javascript" charset="utf-8"></script>
+<script>liuqitis();</script><br/>
+
+版权所有：《传感技术学报》编辑部  </br>
+地址：南京市江宁区东南大学路2号东南大学九龙湖校区  邮政编码：211189<br />
+电话：025-52091533 传真：025-52091533  Email：dzcg-bjb@seu.edu.cn;dzcg_bjb@126.com<br />
+技术支持：<a href="http://www.e-tiller.com" target="_blank">北京勤云科技发展有限公司
+
+</div>
+
+
+<div class="go-top dn" id="go-top">
+    <a href="javascript:;" class="ta uc-2vm"></a>
+	<div class="uc-2vm-pop dn">
+		<h2 class="title-2wm">用微信扫一扫</h2>
+		<div class="logo-2wm-box">
+			<img src="" alt="用微信扫一扫" width="240" height="240">
+		</div>
+	</div>
+    <a href="#" target="_blank" class="ta feedback"></a>
+    <a href="javascript:;" class="ta go"></a>
+</div>
+
+<script>
+$(function(){
+	$(window).on('scroll',function(){
+		var st = $(document).scrollTop();
+		if( st>0 ){
+			if( $('#main-container').length != 0  ){
+				var w = $(window).width(),mw = $('#main-container').width();
+				if( (w-mw)/2 > 70 )
+					$('#go-top').css({'left':(w-mw)/2+mw+20});
+				else{
+					$('#go-top').css({'left':'auto'});
+				}
+			}
+			$('#go-top').fadeIn(function(){
+				$(this).removeClass('dn');
+			});
+		}else{
+			$('#go-top').fadeOut(function(){
+				$(this).addClass('dn');
+			});
+		}	
+	});
+	$('#go-top .go').on('click',function(){
+		$('html,body').animate({'scrollTop':0},500);
+	});
+
+	$('#go-top .uc-2vm').hover(function(){
+		$('#go-top .uc-2vm-pop').removeClass('dn');
+	},function(){
+		$('#go-top .uc-2vm-pop').addClass('dn');
+	});
+});
+</script>
+
+</body>
+</html>
+
+<script type="text/javascript">function copyText(obj)  
+{
+var rng = document.body.createTextRange();
+rng.moveToElementText(obj);
+rng.scrollIntoView();
+rng.select();
+rng.execCommand("Copy");
+rng.collapse(false);
+alert("复制成功!");
+}
+</script>
+<!--打印-->
+<script language="javascript">
+function preview()
+{
+  $("td").css("font-size","16px");
+  $("font").css("font-size","16px");
+  $("div").css("font-size","16px");
+  $("#en").css("padding-left","74px");
+   $("#yywb").css("width","80px");
+ bdhtml=window.document.body.innerHTML;
+ sprnstr="<!--startprint-->";
+ eprnstr="<!--endprint-->";
+ prnhtml=bdhtml.substr(bdhtml.indexOf(sprnstr)+17);
+ prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr));
+ window.document.body.innerHTML=prnhtml;
+ window.print();
+ //prnform.htext.value=prnhtml;
+ //prnform.submit();
+ //alert(prnhtml);
+}
+</script>
+
+<script language=javascript>
+function PdfOpen(url){
+      var win="toolbar=no,location=no,directories=no,status=yes,menubar=yes,scrollbars=yes,resizable=yes";  
+      window.open(url,"",win);
+ }
+</script>
+<script language="javascript">
+ function openWin(url,w,h){ 
+   var win="toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no,width=" + w + ",height=" + h;  
+   controlWindow=window.open(url,"",win);
+}
+</script>
+<script language="javascript" src="../js/jquery.js"></script>
+<script language="javascript" src="search_reference.aspx?ct=&et=&pcid=&cid=&jid=&yid=&aid=&vid=&iid=&sid=&eid=&fileno=cg08100129&flag=1&is_more=0"></script>

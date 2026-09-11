@@ -1,0 +1,1830 @@
+系统仿真学报系统仿真学报 ©
+Journal of System Simulation
+第  37  卷第  9  期
+2025  年  9  月
+V ol . 37  No . 9
+Sept .  2025
+非合作目标测角定位下的布站优化方法与仿真非合作目标测角定位下的布站优化方法与仿真
+宁以达 ， 王炯琦
+*
+， 魏居辉 ， 白臻祖 ， 何章鸣
+( 国防科技大学  理学院 ， 湖南  长沙  410073 )
+摘要摘要 ：： 在测角体制下的非合作目标跟踪定位中 ， 目标真实位置难以获取 ， 导致几何精度因子等传
+统布站指标无法指导布站优化 。 针对这一问题 ， 基 于 测 角 体 制 下 的 角 度 差 分 、 基 线 交 会 角 和 观 目
+线 距 离 等 定 位 精 度 影 响 因 素 ， 结 合 非 合 作 目 标 定 位 跟 踪 中 “ 空 - 空 ” 对 抗 场 景 下 的 实 际 数 据 符 合 性
+问 题 ， 即 “ 弹 道 段 - 相 遇 段 ” 数 据 符 合 性 与 “ 载 机 - 导 弹 ” 数 据 符 合 性 等 多 要 素 ， 构 建 了 一 种 新 的
+布 站 优 化 评 估 指 标 。 该 指 标 仅 需 获 取 非 合 作 目 标 运 动 的 方 向 矢 量 ， 脱 离 了 对 理 论 弹 道 的 依 赖 。 结
+合 历 史 合 作 弹 道 ， 通 过 自 适 应 遗 传 算 法 确 定 各 要 素 的 最 优 权 重 ， 并 将 其 用 于 非 合 作 目 标 的 定 位 中 ，
+依 此 获 得 用 于 非 合 作 目 标 定 位 的 较 优 的 布 站 方 案 。 仿真实验验证了合作目标定位下新指标的有效
+性 ， 并且分析了非合作目标跟踪定位下新指标相对两类偏置的敏感度 ， 评估了布站优化新指标的
+适用性 。
+关键词关键词 ：： 测角定位 ； 非合作目标 ； 布站优化 ； 指标构建 ； 仿真优化
+中图分类号 ： TP 391 . 9 ； TP 873    文献标志码 ： A    文章编号 ： 1004 - 731 X ( 2025 ) 09 - 2287 - 14
+DOI :  10 . 16182 /j . issn 1004731 x . joss . 24 - 0474
+引用格式引用格式 :  宁以达 ,  王炯琦 ,  魏居辉 ,  等 .  非合作目标测角定位下的布站优化方法与仿真 [ J ].  系统仿真学报 ,  2025 ,  37
+( 9 ):  2287 - 2300 .
+Reference format :  Ning Yida ,  Wang Jiongqi ,  Wei Juhui ,  et al .  Station Layout Optimization Method and Simulation for 
+Non-cooperative Target in Angle of Arrival Positioning [ J ].  Journal of System Simulation ,  2025 ,  37 ( 9 ):  2287 - 2300 .
+Station Layout Optimization Method and Simulation for Non-cooperative Target in Angle of 
+Arrival Positioning
+Ning Yida ,  Wang Jiongqi
+*
+,  Wei Juhui ,  Bai Zhenzu ,  He Zhangming
+( College of Science ,  National University of Defense Technology ,  Changsha 410073 ,  China )
+Abstract :  In the context of angle of arrival ( AOA )  positioning system for non-cooperative target tracking 
+and positioning ,  accurately determining true location of the target poses a significant challenge .   
+Conventional station deployment indicators like geometric dilution of precision ( GDOP )  fail to provide 
+effective guidance for optimization station layout .  To address the issue ,  this study introduces a novel 
+indicator for station optimization and evaluation based on factors that influence positioning accuracy 
+within an angle measurement system .  These factors encompass angular differencing ,  baseline intersection 
+angles ,  and the observer-target line distance .  Moreover ,  this indicator encompasses the challenges 
+associated with data conformity in "air to air" confrontation scenarios during non-cooperative target 
+tracking and positioning ,  involving both "trajectory segment to encounter segment" and "carrier to 
+missile" data conformity .  The proposed indicator's strength lies in its reliance on the directional vector of 
+motion exhibited by non-cooperative targets ,  eliminating the need for theoretical trajectory information .  
+收稿日期 ： 2024 - 04 - 30     修回日期 ： 2024 - 06 - 27
+基金项目 ： 国家自然科学基金 ( 62203458 ) ； 湖南省研究生科研创新项目资助 ( CX 20220024 ,  CX 20230014 )
+第一作者 ： 宁以达 ( 1997 - ) ， 男 ， 博士生 ， 研究方向为测量数据建模与仿真 、 多源信息融合理论与方法 。
+通信作者 ： 王炯琦 ( 1979 - ) ， 男 ， 教授 ， 博士 ， 研究方向为智能优化与调度 、 多源信息融合理论与方法 。
+第  37  卷第  9  期
+2025  年  9  月
+V ol . 37  No . 9
+Sept .  2025
+系统仿真学报
+Journal of System Simulation
+http :  / /  ww w . china-simulation . com
+By incorporating historical cooperative trajectory data ,  optimal weights are determined using an adaptive 
+genetic algorithm and applied to position non-cooperative targets effectively ,  resulting in an improved 
+configuration for station layout .  Simulation experiments results have confirmed the effectiveness of the 
+new indicator in cooperative target positioning ,  while also analyzing its applicability towards two types of 
+biases encountered during non-cooperative target tracking and positioning .
+Keywords :  angle of arrival ( AOA )  positioning ;  non-cooperative target ;  stations layout optimization ;  
+indicator construction ;  simulation optimization
+0 　引言　引言
+随着现代信息科学技术的不断升级 ， 战争环
+境逐渐呈现信息化的新趋势 ， 电子对抗在现代化
+战争中逐渐崭露头角 。 采用有源定位的方式对目
+标定位容易暴露自身位置 ， 容易受到针对性打击 。
+而无源定位
+[ 1 ]
+有着位置隐蔽性好 、 通信带宽要求
+低 、 作用距离远等方面的优势 。 随着测量技术的
+不断完善 ， 对信号的截获能力与处理能力也在同
+步上升 ， 无源定位技术在电子对抗领域的应用愈
+加广泛 。
+在无源定位系统中 ， 一般认为有直接与间接
+两种目标定位方法
+[ 2 ]
+。 直接定位法在复杂环境中较
+难直接获取目标信号 ， 因此无源定位系统普遍使
+用 间接定位法对目标定位 。 间接定位方法是通过测
+量一系列与目标位置相关的参数 ， 利用这些参数定
+位目标的方法 。 根据传感器测量值类型的不同 ， 无
+源定位中的间接定位方法可分为基于到达角 ( angle 
+of arrival ,  AOA ) 测量的单站 / 多站定位技术
+[ 3 ]
+、 基于
+到达时间 ( time of arrival ,  TOA ) 的多站定位技术
+[ 4 ]
+、
+基于到达时间差 ( time difference of arrival ,  TDOA )
+的多站时差定位技术等
+[ 5 ]
+。 与其他间接定位方法相
+比 ， AOA 对测量设备数量要求较少 ， 且时间对齐
+预处理较为简单 ， 因此对 AOA 的研究与 AOA 的
+应用场景都在不断增多 。
+AOA 的关键技术主要包括目标定位技术与站
+址选择方法 ( 以下简称布站方法 ) ， 其中定位技术研
+究较多且已较为成熟
+[ 6 - 7 ]
+， 但学界对布站问题 ， 特
+别是非合作目标定位下的布站问题研究较少 。 布
+站优化就是在一定的约束条件下 ， 建立合理布站
+几何和拓扑结构 ， 提高测量体系的效能
+[ 8 ]
+。 在设备
+误差和目标轨迹基本确定的情况下 ， 布站几何将
+成为影响目标定位精度的唯一因素
+[ 9 ]
+。
+目前 ， 无源测角定位系统求解最优布站构型
+的方法有很多 ， 这些方法可大致分为解析法与智
+能优化方法
+[ 10 ]
+。 解析法一般用在特殊或规则的布
+站方案中 ， 通过理论推导得到几种特殊布站结构
+的最优布站方案 。 如文献 [ 11 ] 将定位节点选择问题
+转化为非凸优化问题 ， 在矩形布站条件下使用半
+正定规划方法 ， 研究了 TDOA 中最优定位节点的
+选择问题 。 文献 [ 12 ] 在三角形布站下分析研究了交
+会角与圆概率误差半径的关系 ， 通过计算不同定
+位精度下的最优交会角 ， 提出一种最优布站方法 。
+文献 [ 13 ] 研究了 8 种规则布站的定位效果 ， 说明了
+需要根据实际环境与目标轨迹配置不同布站 。 文
+献 [ 14 - 16 ] 通 过 推 导 了 克 拉 美 罗 下 界 ( Cramer-Rao 
+lower bound ,  CRLB ) 的迹并得出结论 ， 任意数量的
+传感器呈等角多边形包围目标可被证明是最佳的
+传感器布置结构 。 由于解析法大多仅考虑了特殊
+布站情况 ， 而现实情况中布站空间环境复杂 ， 一
+般无法实现理想情况下的规则布站 ， 因此解析布
+站法不具有普遍性 。
+随着智能算法的发展 ， 越来越多的研究者利
+用智能优化方法解决最优布站问题 ， 其中主要包
+括进化算法
+[ 17 ]
+、 粒子群算法
+[ 10 ]
+与神经网络
+[ 18 ]
+等 。 文
+献 [ 19 - 20 ] 提出利用遗传算法搜寻最优布站位置 ，
+定位精度衡量指标为 CRLB 的迹 ， 将获取最优布
+•• 2288
+第  37  卷第  9  期
+2025  年  9  月
+V ol . 37  No . 9
+Sept .  2025宁以达 ,  等 :  非合作目标测角定位下的布站优化方法与仿真
+http :  / /  ww w . china-simulation . com
+站位置转化为求最优解问题 ， 以整片目标区域定
+位精度作为目标函数 ， 求解函数最优解 。 文献 [ 21 ]
+同样将 CRLB 的迹作为精度指标 ， 使用粒子群算
+法 ， 研究了定位站数不同情况下的最优布站形式 。
+文献 [ 22 ] 使用遗传算法 ， 定位精度衡量指标为几何
+精 度 因 子 ( geometric dilution of precision ,  GDOP ) 。
+文献 [ 23 ] 也使用 GDOP 为指标 ， 提出了基于模拟退
+火算法的布站优化方法 。 相比于传统的解析法 ，
+利用智能算法求解最优布站构型更具普遍适用性 ，
+原理简单 ， 计算方便 。 但智能算法往往存在收敛
+慢 、 收敛效果差 、 组合爆炸等缺陷 ， 需要在考虑
+实际问题的情况下对智能算法进行改良以取得较
+好的效果 。
+综上所述 ， 评价布站构型优劣的精度指标在
+不断变化 。 从解析求布站形式最优交汇角大小 ，
+到将 CRLB 的迹或 GDOP 等 作为指标 。 随着智能
+优化方法在布站问题中的推广 ， 布站优化问题从
+特殊布站构型 ， 例如矩形布站 、 菱形布站等 ， 到
+大规模整片区域的更为广泛的布站优化问题 。 但
+无论是 CRLB 的迹或 GDOP ， 这些传统布站评价
+指标对目标轨迹都有先验信息要求 ， 因此这些指
+标只适用于合作目标定位的布站问题 。 在对非合
+作目标定位时 ， 由于目标真实轨迹未知 ， 无法计
+算 GDOP 等精度指标 ， 因此无法通过传统方法评
+判布站方案的优劣 。
+针对这一问题 ， 本文构建了一种新的布站优
+化指标 ， 结合自适应遗传算法 ， 在无源测角体制
+下提出了新的布站优化方法 。 该方法在不依赖理
+论弹道 ， 仅使用目标起点至终点连成的方向矢量 ，
+可以完成布站优化 。 本文方法为非合作目标定位
+下的布站优化问题提供了新的思路 。
+1 　布站优化仿真模型　布站优化仿真模型
+1 . 1 　　 传统布站优化仿真模型传统布站优化仿真模型
+使用无源测角定位体制定位测量靶场外弹道
+时 ， 通常使用的测量设备为光学经纬仪 。 本文主
+要围绕多站光学经纬仪 ( 下称光测设备或测站 ) 交会
+的测角定位方式 ( 如图 1 所示 ) ， 考虑解决在该测量
+体制与定位方式中的布站优化问题 。
+传统布站优化模型以定位精度指标最小为目
+标来优化布站位置 ， 本文首先讨论在 2 站测角定
+位场景下以 GDOP 为例的传统优化模型计算方法 。
+图 2  Oxyz 为 地 心 系 ， 测 量 目 标 点 X
+d
+的 坐 标 为
+( x  y  z ) ， 目标在不同测站系下坐标不同 ， 在第 i 个
+测站系下坐标为 X
+c  i
+= ( x
+c  i
+ y
+c  i
+ z
+c  i
+)
+T
+  i = 1  2 ； 假定
+第 i 个测站在靶心系下的坐标为 ( x
+i
+ y
+i
+ z
+i
+) ， 第 i 个
+测站的地心系坐标为 X
+0  i
+， 大地坐标经纬高分别为
+( B
+i
+ L
+i
+ H
+i
+) ， 在水平面上的投影分别为 O
+1
+ O
+2
+， 2 台
+光测设备对目标 X
+d
+测量得到的方位角及俯仰角分
+别为 A
+i
+及 E
+i
+， 测站与目标之间的夹角被称为交会
+角 ， 定义图 2 中 2 站交会的交会角为 ϕ
+1 2
+。
+图 2  两站交会图示
+Fig .  2  Two-station intersection diagram
+在测站部署空间较大的情况下 ， 不同测站对
+应的测站系 ( 以测站位置为原点 ) 在东 、 北 、 天方向
+图 1  测角定位示意图
+Fig .  1  Angle of arrival positioning schematic diagram
+•• 2289
+第  37  卷第  9  期
+2025  年  9  月
+V ol . 37  No . 9
+Sept .  2025
+系统仿真学报
+Journal of System Simulation
+http :  / /  ww w . china-simulation . com
+有 显著 差异 ， 在各自测站系下进行测量得到的目
+标位置差别较大 ， 因此必须将测站所属的测站系
+转换至同一坐标系下 。 本文选择统一转换至地心
+系 ， 然后解算得到目标位置 ， 再根据解算信息算
+得 GDOP 。
+假定 M 为旋转矩阵 ， 不同测站系坐标可以统
+一到地心系坐标 ：
+X
+c  i
+= M ( - B
+i
+ L
+i
+) ( X
+d
+- X
+0  i
+) ( 1 )
+式中 ：
+M ( - B
+i
+ L
+i
+) =
+é
+ë
+ê
+ê
+êê
+ê
+ê ù
+û
+ú
+ú
+úú
+ú
+ú
+- s i n L
+i
+c o s L
+i
+0
+- c o s L
+i
+s i n B
+i
+- c o s L
+i
+s i n B
+i
+c o s B
+i
+c o s B
+i
+c o s L
+i
+c o s B
+i
+s i n L
+i
+s i n B
+i
+( 2 )
+记符号函数 s
+c  i
+= s i g n ( x - x
+c  i
+) ， 方位角 、 俯仰
+角的测量方程为
+ì
+í
+î
+ï
+ïï
+ï
+ï
+ïï
+ï
+A
+i
+= π ( 1 - s
+c  i
+) + s
+c  i
+× a r c c o s
+y - y
+c  i
+D
+i
+E
+i
+= a r c t a n
+z - z
+c  i
+D
+i
+  ( 3 )
+记 D
+i
+为测站 i 与目标连线的水平投影长 ， 即 ：
+D
+i
+= x
+2
+c  i
++ y
+2
+c  i
+( 4 )
+R
+i
+为目标到测站 i 的连线距离 ：
+R
+i
+= x
+2
+c  i
++ y
+2
+c  i
++ z
+2
+c  i
+( 5 )
+可得单站在测站系下的测角雅克比矩阵为
+J
+c  i
+=
+¶ ( A
+i
+ E
+i
+)
+T
+¶ ( x
+c  i
+ y
+c  i
+ z
+c  i
+)
+=
+é
+ë
+ê
+ê
+ê
+ê
+êê
+ê
+ê
+ê
+ê
+ù
+û
+ú
+ú
+ú
+ú
+úú
+ú
+ú
+ú
+ú
+y
+c  i
+D
+2
+i
+-
+x
+c  i
+D
+2
+i
+0
+-
+1
+R
+2
+i
+×
+z
+c  i
+× x
+c  i
+D
+i
+-
+1
+R
+2
+i
+×
+y
+c  i
+× z
+c  i
+D
+i
+D
+i
+R
+2
+i
+( 6 )
+由 于 地 心 系 坐 标 X
+0  i
+与 M 为 常 量 ， 根 据
+式 ( 1 ) 得 ：
+¶ ( x
+c  i
+ y
+c  i
+ z
+c  i
+)
+T
+¶ ( x  y  z )
+= M ( - B
+i
+ L
+i
+) ( 7 )
+由于旋转矩阵都是正交矩阵 ， 且行列式等于
+1 ， 基于复合微分公式可得各测站在地心系下的雅
+克比矩阵为
+J
+d  i
+=
+¶ ( R
+i
+ A
+i
+)
+T
+¶ ( x  y  z )
+=
+¶ ( R
+i
+ A
+i
+)
+T
+¶ ( x
+c  i
+ y
+c  i
+ z
+c  i
+)
+×
+¶ ( x
+c  i
+ y
+c  i
+ z
+c  i
+)
+T
+¶ [ x  y  z ]
+
+J
+c  i
+M ( - B
+i
+ L
+i
+) ( 8 )
+由式 ( 8 ) 得到多站测角雅克比矩阵为
+J
+d
+=
+é
+ë
+ê
+ê
+êê
+ê
+ê
+ù
+û
+ú
+ú
+úú
+ú
+ú
+J
+c  1
+M ( - B
+1
+ L
+1
+)
+J
+c  2
+M ( - B
+2
+ L
+2
+)
+
+( 9 )
+以两站交会定位为例 ， 由式 ( 9 ) 求得的多站测
+角雅可比矩阵为
+J =
+é
+ë
+ê
+ê
+ê
+êê
+ê
+ê
+ê
+ù
+û
+ú
+ú
+ú
+úú
+ú
+ú
+ú
+D
+- 2
+1
+D
+- 2
+2
+R
+- 2
+1
+D
+- 1
+1
+R
+- 2
+2
+D
+- 1
+2
+´
+é
+ë
+ê
+ê
+ê
+ê
+êê
+ê
+ê
+ê
+ê
+ù
+û
+ú
+ú
+ú
+ú
+úú
+ú
+ú
+ú
+ú
+y - y
+1
+- ( x - x
+1
+) 0
+y - y
+2
+- ( x - x
+2
+) 0
+- ( z - z
+1
+) ( x - x
+1
+) - ( y - y
+1
+) ( z - z
+1
+) D
+2
+1
+- ( z - z
+2
+) ( x - x
+2
+) - ( y - y
+2
+) ( z - z
+2
+) D
+2
+2
+( 10 )
+简单起见 ， 假定 D
+1
+= D
+2
+= R ， 可以得到 GDOP
+与视线距离 R 、 交会角 ϕ
+1 2
+的关系 ：
+G D O P = t r a c e ( ( J
+T
+J )
+- 1
+) =
+t r a c e [ ( J
+T
+1
+J
+1
+)
+- 1
+] + t r a c e [ ( J
+T
+2
+J
+2
+)
+- 1
+] »
+R
+( )
+2
+s i n
+2
+ϕ
+1 2
++
+1
+2
+( 11 )
+由式 ( 11 ) 易看出 ， 目标位置通过影响视线距离
+与视线间交会角 ， 直接影响 GDOP 的精确度 ， 传
+统优化模型需要使 GDOP 最小来评估布站方案的
+优劣 ， 进而达到布站优化的目的 。 由于无法准确
+定位获得非合作目标位置 ， 且其理论弹道无法获
+取 ， 因此 GDOP 指标失效 ， 无法使用 GDOP 优化
+评估非合作目标跟踪定位的布站方案 。
+1 . 2 　　 新布站优化仿真模型新布站优化仿真模型
+布站优化模型中 ， 定位精度评价指标的构建
+是布站优化方法的核心 ， 指标中各要素的选择直
+接关系到布站方案评价准则的可靠性 ， 因此指标
+的选择需要从多维多角度考虑 。 一般认 为 ， 影响
+目标定位精度的主要因素有测量设备的测元精度
+•• 2290
+第  37  卷第  9  期
+2025  年  9  月
+V ol . 37  No . 9
+Sept .  2025宁以达 ,  等 :  非合作目标测角定位下的布站优化方法与仿真
+http :  / /  ww w . china-simulation . com
+与布站构型 ， 因此新指标的构建需要涵盖 2 方面
+影响因素 。
+从测元精度的响应因素考虑 ， 本文布站优化
+评估指标将角度差分与观目线距离加入指标构建
+要素 。 此外 ， 交会互差与基线交会角为影响布站
+构型的主要因素 ， 而基线交会角与交会互差存在
+高度相关性 ， 因此本文仅将测站基线交会角纳入
+指标 。 另一方面 ， 在非合作目标定位跟踪中 “ 空 -
+空 ” 对抗场景下 ， 由于环境特殊性与复杂性 ， 弹
+道段数据与相遇段数据的符合性以及发射时载机
+数据与导弹数据的符合性将同时从算法上影响目
+标定位精度 ， 因此需将它们作为指标要素 。 设 Y
+为实际测量数据 ， X ̂ 为目标解算结果 ， 新指标要
+素集 ϕ ( Y ) 包含上述 5 个内容 ， 具体为角度差分 、
+观目线距离 、 基线交会角 、 道段数据与相遇段数
+据的符合性 、 发射时载机数据与导弹数据的符合
+性 ， 分别记为
+ϕ ( Y ) = { ϕ
+1
+( Y )  ϕ
+2
+( Y )  ϕ
+3
+( Y )  ϕ
+4
+( Y  X ̂ )  ϕ
+5
+( Y  X ̂ ) } ( 12 )
+1 . 2 . 1 　　 角度差分角度差分
+角度差分定义为第 j 台设备第 i 时刻的测角与
+第 i - 1 时刻测角的差值 。 设 m
+a
+ n
+a
+分别为测量总点
+数与测量设备总台数 ； A
+i j
+ E
+i j
+分别为靶场系下设备
+测 量 的 方 位 角 、 俯 仰 角 ； d A
+i j
+ d E
+i j
+为 一 阶 差 分 ；
+d
+2
+A
+i j
+ d
+2
+E
+i j
+为二阶差分 。 d A
+i j
+ d E
+i j
+ d
+2
+A
+i j
+ d
+2
+E
+i j
+的计
+算公式为
+ì
+í
+î
+ï
+ï
+ï
+ï
+ï
+ï
+ï
+ï
+ïï
+ï
+ï
+d A
+i j
+= A
+i j
+- A
+( )i - 1 j
+d E
+i j
+= E
+i j
+- E
+( )i - 1 j
+d
+2
+A
+i j
+= d A
+i j
+- d A
+( )i - 1 j
+d
+2
+E
+i j
+= d E
+i j
+- d E
+( )i - 1 j
+i = 2  3    m
+a
+- 1 ; j = 1  2    n
+a
+( 13 )
+角度差分的大小取决于设备采样频率与目标
+运动幅度 ， 而光测设备在对目标跟踪测量过程中 ，
+旋转角速度及角加速度不能超过设备的极限值 ，
+否则容 易丢失目标或导致动态滞后误差增加 。 一般
+认为 ， 角度一阶差分主要体现目标运动状态 ， 而角
+度二阶差分主要体现目标测量中的设备测元精度 。
+因此需要约束 使得角度二阶差分值尽可能小 ：
+ϕ
+1
+( Y ) = m i n ( d
+2
+A
+i j
++ d
+2
+E
+i j
+) ( 14 )
+1 . 2 . 2 　　 观目线距离观目线距离
+观目线距离即靶场中 2 台不同设备观测目标
+各自视线间的距离 ， 即靶场系空间内两条视线间
+的距离 。
+观目线距离反映的是设备的测元精度 ， 在测
+量过程中测元精度不断变化 。 记 D 为 2 台不同设
+备测量间的观目线距离 ， 易知观目线距离越小 ，
+精度越高 ， 误差越小 ， 因此需要约束使得不同设
+备的观目线距离值尽可能小 ：
+ϕ
+2
+( Y ) = m i n ( D ) ( 15 )
+1 . 2 . 3 　　 基线交会角基线交会角
+基线为测站与目标位置的连线 ， 基线交会角
+为 2 个不同测站基线间的夹角 。
+记 α 为交会角 ， 根据式 ( 11 ) 可知 ， 交会角越接
+近 90 ° 精度越高 ， 因此需要约束使得基线交会角接
+近 90 ° ：
+ϕ
+3 ( Y ) = m i n
+(
+|| α - 9 0
+9 0 )
+( 16 )
+1 . 2 . 4 　　 弹道段数据与相遇段数据的符合性弹道段数据与相遇段数据的符合性
+在 “ 空 - 空 ” 对抗场景下 ， 可将目标运动划分
+为发条段 、 弹道段 、 相遇段 3 个不同阶段 ， 如图 3
+所示 ， 其中发条段是载机与导弹共同飞行阶段 ；
+发条段末尾导弹脱离载机 ， 朝靶机单独飞行 ， 此
+时定位目标变为导弹 ， 进入测量定位弹道段 ； 相
+遇段为弹道段末尾段 ， 当光测设备的测量图像中
+同时观测到导弹与靶机 ， 直至导弹击中靶机 ， 该
+段为相遇段 。
+由于靶场中通常由不同设备承担测量载机导
+弹与靶标的任务 ， 因此在相遇段中存在测量重合
+段 ， 此时通过对比重合段中不同测量源得到的弹
+道位置数据 ， 即 为数据符合性 。
+•• 2291
+第  37  卷第  9  期
+2025  年  9  月
+V ol . 37  No . 9
+Sept .  2025
+系统仿真学报
+Journal of System Simulation
+http :  / /  ww w . china-simulation . com
+设 ( x
+d d
+ y
+d d
+ z
+d d
+) 为弹道段设备测得的测量重合
+段目标位置 ， ( x
+x y
+ y
+x y
+ z
+x y
+) 为相遇段设备测量测得
+的测量重合段目标位置 ， 可得约束弹道段与相遇
+段测量重合段的位置差 ：
+ϕ
+4
+( Y  X ̂ ) = m i n  ( x
+d d
+ y
+d d
+ z
+d d
+) - ( x
+x y
+ y
+x y
+ z
+x y
+) ( 17 )
+1 . 2 . 5 　　 发射时载机数据与导弹数据的符合性发射时载机数据与导弹数据的符合性
+发条段时导弹尚未脱离载机 ， 测量设备将同
+时测量定位载机位置与导弹位置 ， 测得二者的差
+距应小于载机本身结构长度 、 宽度 、 高度的 1 / 2 。
+假设载机长为 a ， 宽为 b ， 高为 c ， 记载机在
+靶场系下的坐标位置 ( x
+z j
+ y
+z j
+ z
+z j
+) ， 靶标在靶场系下
+的坐标位置 ( x
+b b
+ y
+b b
+ z
+b b
+) ：
+ϕ
+5
+( Y  X ̂ ) = m i n
+é
+ë
+ê
+êê
+ê
+ê
+ê
+( )
+| x
+z j
+- x
+b b
+| - 1 2 a
+1 2 a
+2
++
+( )
+| y
+z j
+- y
+b b
+| - 1 2 b
+1 2 b
+2
++
+ù
+û
+ú
+úú
+ú
+ú
+ú
+( )
+| z
+z j
+- z
+b b
+| - 1 2 c
+1 2 c
+2
+( 18 )
+在确定新要素集后 ， 给各要素赋予不同的权
+重 ， 由于各要素的量纲不同 ， 新指标 J 为各要素
+在标准化后的线性加权和 ， 即 ：
+J = λ
+1
+× ϕ
+1
+( Y ) + λ
+2
+× ϕ
+2
+( Y ) +  =
+∑
+i = 1
+5
+λ
+i
+× ϕ
+i
+( Y )   ∑
+i = 1
+5
+λ
+i
+= 1 ( 19 )
+本 文基于该指标 ， 提出了新的布站优化仿真
+模 型 。 该 模 型 对 比 传 统 模 型 存 在 2 方 面 优 势 ：
+① 不需要理论弹道 ， 仅需对比非合作目标运动方
+向矢量与历史合作目标两方面的相似度 ， 就能完
+成无源测角体制下非合作目标跟踪定位的布站优
+化 ； ② 模型中新评估优化指标考虑了真实场景下
+的数据符合性问题 ， 对比传统模型考虑的因素更
+多 ， 新模型可信度更高 。
+2 　基于新模型的布站优化仿真方法　基于新模型的布站优化仿真方法
+在靶场测角体制的目标定位中 ， 角度测量数
+据与未知真实目标位置的关系为
+Y = F ( X ) + ε ( 20 )
+式中 ： Y 为实际测量数据 ； X 为未知的真实目标位
+置 ； F ( X ) 为角度测量方程 ； ε 为噪声 。 目标定位
+中的布站优化是指 ： 依据布站评估优化指标 ， 在
+已有站址中选择任务需求的若干个站 ， 使得定位
+精度最高 ， 各点的精度为
+P =  X - X ̂ ( 21 )
+式中 ： X ̂ 为目标解算结果 ， 目标定位精度为所有
+位置点精度的均值 。 在非合作定位情况下 ， X 未
+知 ， 传统指标无法衡量 P ， 因此传统指标无法指
+导非合作目标定位的布站 。
+针对这一问题 ， 本文将目标运动的方向矢量
+作为目标真实位置 ， 基于新指标设计了新的布站
+优化仿真方法 ， 该方法的具体流程如图 4 所示 。
+图 3  靶场测角体制下的运动目标定位各阶段
+Fig .  3  Phases of moving target positioning in range AOA 
+measurement system
+•• 2292
+第  37  卷第  9  期
+2025  年  9  月
+V ol . 37  No . 9
+Sept .  2025宁以达 ,  等 :  非合作目标测角定位下的布站优化方法与仿真
+http :  / /  ww w . china-simulation . com
+基于新指标的布站优化仿真方法在合作目标
+定位中最终需要确定最其优权值 ， 具体包括 6 个
+步骤 。
+输入 ： 指标中各要素的初始权值 λ
+i 0
+， 理论弹道
+X ， 实际测量弹道 Y ， 测站站址 ( C Z
+1
+ C Z
+2
+   C Z
+N
+)
+输出 ： 最优权值 λ
+* i
+step 1 ： 构建新指标要素集 。 上文已分析得出
+新指标要素集内包含的 5 个要素 ， 具体为角度差
+分 、 观目线距离 、 基线交会角 、 弹道段数据与相遇段
+数据的符合性 、 发射时载机数据与导弹数据的符合
+性 ， 分别记为
+ϕ ( Y ) = { ϕ
+1
+( Y )  ϕ
+2
+( Y )  ϕ
+3
+( Y )  ϕ
+4
+( Y )  ϕ
+5
+( Y ) }
+step 2 ： 选择一组测站 ( C Z
+k 1
+ C Z
+k 2
+   C Z
+k n
+) ， 通
+过实 际测量弹道 Y 进行弹道解算得到 X ̂
+k
+， 根据弹道
+解算结果计算指标内各要素的值 ϕ
+i
+( Y ͂ ) ：
+( Y ( C Z
+k 1
+ C Z
+k 2
+   C Z
+k n
+) ) ®
+ϕ
+i
+( X ̂
+k
+( C Z
+k 1
+ C Z
+k 2
+   C Z
+k n
+) )
+step 3 ： 通过 λ
+i 0
+与指标要素 ϕ
+i
+( Y ͂ ) 计算指标 J ：
+J = λ
+1 0
+× ϕ
+1
+( Y ͂ ) + λ
+2 0
+× ϕ
+2
+( Y ͂ ) +  =
+∑
+i = 1
+5
+λ
+i 0
+× ϕ
+i
+( Y ͂ )   ∑
+i = 1
+5
+λ
+i 0
+= 1
+step 4 ： 使指标值最小 ， 选出指标最小时的测
+站站址 ；
+m i n ( J ) ® ( C Z
+*
+k 1
+ C Z
+*
+k 2
+   C Z
+*
+k n
+)
+step 5 ： 根据上述指标值最小时的测站站址与
+理论弹道 ， 计算得到定位精度 ：
+( X ( C Z
+*
+k 1
+ C Z
+*
+k 2
+   C Z
+*
+k n
+) ) ® 精 度 P ( X ̂
+k
+ X )
+step 6 ： 通过自适应遗传算法 ， 优化得到精度最
+小时的最优指标权值 λ
+* i
+：
+m i n ( P ) ® λ
+* i
+在上述非合作目标布站优化仿真方法中 ， 本
+文需要通过智能优化算法 ， 获得合作目标精度最
+小时的最优权重 ， 但算法迭代过程易陷入局部最
+优 ， 因此需要平衡算法的局部与全局搜索能力 。
+自适应遗传算法能随适应度值调整交叉与变异概
+率 ， 改善了传统遗传算法在算法后期局部搜索能
+力不足的通病 ， 能在确保种群收敛性的同时提升
+种群多样性 ， 能较好的解决本文的权值优化问题 。
+因此本文使用自适应遗传算法优化获取精度最高
+时的最优权值 。
+自适应遗传算法旨在通过以不同的方式实现
+搜索和随机性之间的权衡 ， 根据适合度值自适应
+地改变交叉与变异概率的值 ， 当群体倾向于停留
+在局部最优时 ( 群体适应度集中 ， 多样性比较差
+时 ) ， 交叉与变异概率增加 ， 当群体在解空间中散
+布时 ( 群体适应度分散 ， 多样性比较高时 ) 概率减
+小 。 所以自适应遗传算法设计了针对交叉变异概
+率的计算公式 ， 让其符合动态变化 ， 交叉概率 P
+c
+与变异概率 P
+m
+分别为
+图 4  布站优化仿真方法流程图
+Fig .  4  Flow chart of station optimization selection method
+•• 2293
+第  37  卷第  9  期
+2025  年  9  月
+V ol . 37  No . 9
+Sept .  2025
+系统仿真学报
+Journal of System Simulation
+http :  / /  ww w . china-simulation . com
+P
+c
+=
+ì
+í
+î
+ïïïï
+ï
+ïï
+ï
+P
+c 1
+( f
+m a x
+- f  ′ )
+f
+m a x
+- f
+m i n
+  f  ′ ≥ f
+a v g
+P
+c 1
+     f  ′ < f
+a v g
+P
+m
+=
+ì
+í
+î
+ïïïï
+ï
+ïï
+ï
+P
+m 1
+( f
+m a x
+- f )
+f
+m a x
+- f
+m i n
+  f  ′ ≥ f
+a v g
+P
+m 1
+     f  ′ < f
+a v g
+( 22 )
+式中 ： f  ′ 为交叉中适应度较大的值 ； f 为变异中的
+适应度值 ； f
+m a x
+为种群中适应度最大值 ； f
+m i n
+为种
+群 适 应 度 最 小 值 ； f
+a v g
+为 种 群 适 应 度 平 均 值 ；
+P
+c 1
+ P
+m 1
+分别为 [ 0  1 ] 范围内的常数 ， 本文 P
+c 1
+的取
+值为 1 ， P
+m 1
+的取值为 0 . 5 。 在使用自适应遗传算
+法优化仿真布站构型时 ， 需要用一个染色体表示
+指标中的各要素权重 ， 因此必须指标中的 5 个要
+素的权值转换为二进制编码 。 本文选择的种群大
+小为 100 ， 迭代上限为 100 次 。
+算法流程如图 5 所示 。
+图 5  自适应遗传算法流程图
+Fig .  5  Flow chart of adaptive genetic algorithm
+本文合作目标定位与非合作目标定位的优化
+函数不同 ， 合作目标下需要使用自适应遗传算法
+优化得出最优权值 ， 而非合作目标需要对比与历
+史合作目标的偏置大小 ， 按照指标适用性选择合
+适的最优权值并使得指标值最小 。
+合作目标定位情况 下 ， 优化的决策变量为指
+标权值 λ
+i
+， 目标函数 f 为指标值 J 最小时对应布站
+构 型 的 GDOP ， 记 为 G D O P
+J
+m i n
+， 最 优 布 站 构 型
+GDOP ， 记为 G D O P
+m i n
+， 以上两者之间的差值为
+f = G D O P
+J
+m i n
+- G D O P
+m i n
+( 23 )
+在选择使用合适的最优权值 λ
+* i
+后 ， 非合作目
+标的优化目标函数为
+f = m i n ( J ) ( 24 )
+在非合作目标定位中 ， 有足够多组最优权值
+的情况下 ， 即靶场中的历史弹道库中有足够多的
+历史试验弹道 ， 将非合作目标与历史试验弹道对
+比 ， 非合作弹道在历史弹道的 2 种偏置下 ， 可将
+这些历史弹道的最优权值 λ
+* i
+直接用于非合作目标
+的布站优化仿真 。
+3 　仿真与分析　仿真与分析
+3 . 1 　　 场景设计场景设计
+基于靶场任务要求 ， 需要从靶场中存在的 30
+个固定位置且位置已知的高精度光学经纬仪中 ，
+选出 4 台光学经纬仪用于定位测量理论弹道已知
+的合作目标与理论弹道未知的非合作目标 。 图 6
+给出了光学测量设备四站交会测量模型 。
+测量目标点 X
+d
+的坐标为 ( x  y  z ) ， 目标在第 i 个
+测站系下坐标为 X
+c  i
+= ( x
+c  i
+ y
+c  i
+ z
+c  i
+)
+T
+  i = 1  2  3  4 ； 假
+定第 i 个测站在靶心系下的坐标为 ( x
+i
+ y
+i
+ z
+i
+) ， 第 i
+个测站的地心系坐标为 X
+0  i
+， 大地坐标经纬高分别
+为 ( B
+i
+ L
+i
+ H
+i
+) ， 在 水 平 面 上 的 投 影 分 别 为
+O
+1
+ O
+2
+ O
+3
+ O
+4
+。
+•• 2294
+第  37  卷第  9  期
+2025  年  9  月
+V ol . 37  No . 9
+Sept .  2025宁以达 ,  等 :  非合作目标测角定位下的布站优化方法与仿真
+http :  / /  ww w . china-simulation . com
+图 6  四站交会定位图示
+Fig . 6  Four-station intersection positioning diagram
+以下给出本文仿真中各参数取值与合作弹道
+数据 ， 如表 1 所示 。 其中 ， 合作目标定位实验使
+用的是下落段弹道 ， 非合作目标定位实验使用了
+下落段 ( 也称斜飞段弹道 ) 与平飞段数据 。
+在构建图 6 的四站交会模型后 ， 下面使用靶场
+真实任务的斜飞段理论弹道数据 ( 如图 7 ) 进行合作
+目标的定位实验 。 靶场布站空间为 40  km× 40  km ，
+在布站空间内通过仿真随机生成 30 个测站 ， 生成
+的仿真测站中两站之间的距离至少为 200  m 。
+3 . 2 　　 结果分析结果分析
+3 . 2 . 1 　　 合作目标定位合作目标定位
+合作目标的理论弹道已知且布站空间内的仿
+真测站位置已知 ， 使用上述布站优化仿真方法对
+合作目标的验证实验 ， 结果如图 8 所示 。 假设算
+法完成收敛的条件为
+f
+I
+- f
+I - 1
+≤ 1 0
+- 6
+( 25 )
+式中 ： I 为迭代次数 。 在此合作情况下 ， 算法经过
+11 次迭代后完成收敛达到全局最优 ， 图 8 可知 ，
+方法优化出布站构型的 GDOP 从 13  799 . 6 下降至
+12  038 . 1 ， 精度上升了接近 12 . 76 % 。 达到全局最
+优后 ， 指标最小时选出的测站组合与通过最小
+GDOP 选择的测站组合一致 ， 得到该理论弹道的
+最优权值 λ
+* i
+。
+图 8  合作目标定位的布站优化精度结果
+Fig .  8  Accuracy result of station selection for cooperative 
+target positioning
+表 1 　仿真中合作目标数据与各参数取值
+Table 1 　 Cooperative ballistic data and the value of each 
+parameter in the simulation
+参数
+测量时间 t
+下落段
+( 斜飞段 )
+平飞段
+染色体长度
+种群大小
+迭代上限
+P
+c 1
+P
+m 1
+载机长 a /m
+载机宽 b /m
+载机高 c /m
+x /m
+y /m
+z /m
+x /m
+y /m
+z /m
+取值
+- 1 0 : 0 . 0 1 : - 5
+- 1 0 t
+2
++ 9 9 0 t + 2 5  0 0 0
+1 0 t
+2
+- 9 9 0 t
+2 0  0 0 0
+- 1 0 t
+2
++ 9 9 0 t + 2 5  0 0 0
+2 0  0 0 0
+1 0 t
+2
+- 9 9 0 t
+70
+100
+100
+1
+0 . 5
+14
+12
+2
+图 7  理论弹道
+Fig .  7  Theoretical ballistic trajectory
+•• 2295
+第  37  卷第  9  期
+2025  年  9  月
+V ol . 37  No . 9
+Sept .  2025
+系统仿真学报
+Journal of System Simulation
+http :  / /  ww w . china-simulation . com
+以下实验说明使用上述布站优化仿真方法不
+会产生组合爆炸问题 。 仿真实验在布站空间中 ，
+使用上述实际任务的理论弹道 ， 仿真变化靶场中
+的测站位置 。 假设靶场中测站总数 N 可变 ， 分别
+为 ： N = 1 0  2 0  3 0  4 0  5 0  7 0 ， 需要从中优选出 4 个
+测站执行定位任务 ， 测站间隔不变 。 图 9 为使用
+上述算法在测站总数中优选出最优布站构型所需
+迭代次数的结果 。
+由图 9 可知 ， 靶场中测站总数在 70 时 ， 算法
+完成收敛的平均迭代次数仍然小于 10 次 ， 而 70 个
+测站总数早已超过 40  km× 40  km 的靶场空间现实
+条件下最多可容纳的设备总数 。 因此 ， 本文提出
+的非合作目标布站优化仿真方法在现实靶场条件
+下将不会产生组合爆炸的问题 。 以上结论证明 ，
+本文布站优选优化仿真方法可推广至更大靶场空
+间与更多测站的优选问题中 ； 其次 ， 该方法完成
+收敛的迭代次数较少 ， 也能有效提升目标定位场
+景下的测站优化效率 。
+3 . 2 . 2 　　 非合作目标定位时的指标适用性非合作目标定位时的指标适用性
+下面讨论本文方法中新指标的适用性问题 ，
+即在观测到非合作目标在靶场测量空间内的起点
+与终点时 ， 在何种情况下能够使用该指标 。 设 l
+为非合作目标在起点至终点的连线 ， 以下考虑非
+合 作 目 标 运 动 方 向 矢 量 与 历 史 任 务 弹 道 的 2 种
+偏置 。
+如图 10 所示 ， 若非合作目标运动方向矢量 l
+的起点与历史任务库中任意轨迹 l
+1
+的起点相近 ，
+终点不同 ， 定义两条轨迹之间的夹角为 θ ； 若非合
+作目标轨迹 l 与历史任务任意轨迹的起点均完全不
+同 ， 落向差距也较大 ， 但 l 与历史任务库中任意轨
+迹 l
+2
+近乎平行 ， 定义两条轨迹之间的距离为 d 。
+为了分析指标在 2 类偏置下的非合作目标轨
+迹中的适用性 ， 做了以下 2 种场景的仿真实验 。
+首先 ， 检验指标在与历史弹道夹角为 θ 的非
+合作弹道上的适用性问题 。 由于前文提到的理论
+弹道 ( 如图 7 ) 仅在北 、 天方向变动 ， 在东方向上保
+持不变 。 因此在仿真中 ， 将该理论弹道在东方向
+不变的平面上绕弹道起点旋转 ， 旋转角度为 1 °~
+30 ° ， 每次旋转角度为 1 ° ， 如图 11 所示 ， 得到不同
+的非合作轨迹 。
+图 11  生成 2 种偏置下的斜飞段非合作目标轨迹
+Fig .  11  Generate two kinds of bias non-cooperative target 
+trajectory in oblique flight
+图 9  布站优化仿真方法收敛性实验结果
+Fig .  9  Experimental results of astringency of station 
+optimization method
+图 10  符合 2 种偏置的非合作目标轨迹
+Fig .  10  Non-cooperative target trajectories conforming to 
+two biases
+•• 2296
+第  37  卷第  9  期
+2025  年  9  月
+V ol . 37  No . 9
+Sept .  2025宁以达 ,  等 :  非合作目标测角定位下的布站优化方法与仿真
+http :  / /  ww w . china-simulation . com
+在得到不同的 30 条非合作目标运动方向矢量
+后 ， 进行弹道解算并通过算出每条仿真弹道的最
+优布站构型得到的最小 GDOP 值 ， 记为 G D O P
+m i n
+；
+使用上述实验中通过理论弹道得到的最优指标权
+重 λ
+* i
+， 将 λ
+* i
+代入每条新的仿真弹道的结算结果
+中 ， 得到每条仿真弹道在指标最小时的布站构型
+对应的 GDOP 值 ， 记为 G D O P
+J
+m i n
+， 再通过式 ( 26 ) 检
+测本文构建的布站优化评估指标在起点相同但旋
+转角不同的非合作目标下的适用性 ：
+A
+θ
+=
+G D O P
+J
+m i n
+- G D O P
+m i n
+G D O P
+m i n
+( 26 )
+重复 10 次上述实验 ， 每次实验仅有测站位置
+重新随机取点 ， 实验结果如图 12 所示 ， 可以看
+出 ， 使用理论弹道得到的最优权值 λ
+* i
+， 应用到各
+条新的仿真弹道中 ， 算出的最小指标值 G D O P
+J
+m i n
+对应的布站方案 ， 相对于理论最优值 G D O P
+m i n
+的
+退化程度 ， 指标在东方向平面旋转 1 °~ 30 ° 的平均
+退化程度约为 0 . 2 。
+接下来考虑第二类偏置 ， 检验指标在与历史
+弹道距离为 d 的平行目标运动方向矢量上的适用
+性问题 。 在仿真中 ， 将上述理论弹道在东方向不
+变的平面上左右平移 ， 距离为向平移左 3  km 至向
+右平移 3  km ， 每次平移距离为 100  m ， 在得到不
+同的 60 条仿真弹道后 ( 如图 11 ) ， 进行弹道解算并
+得到每条仿真弹道的最优布站构型 ， 以及该构型
+对应的 GDOP 值 G D O P
+m i n
+； 同样的 ， 利用上述实
+验中理论弹道的最优指标权重 λ
+* i
+， 代入每条仿真
+弹道的结算结果中 ， 求得每条仿真弹道在该权重
+下指标最小时对应的 GDOP 值 G D O P
+J
+m i n
+， 再通过
+式 ( 27 ) 检测本文构建的布站优化评估指标在起点相
+同但旋转角不同的非合作目标下的适用性 ：
+A
+d
+=
+G D O P
+J
+m i n
+- G D O P
+m i n
+G D O P
+m i n
+( 27 )
+重复 10 次上述实验 ， 其结果如图 13 所示 ， 横
+坐标为平移距离 d ， 左移为负右移为正 。 越往右
+( 北方向 ) 平移 ， G D O P
+J
+m i n
+相对于 G D O P
+m i n
+的退化程
+度越低 ， 指标效果越好 ， 反之则效果逐渐变差 。
+在平移偏置的非合作目标下 ， 指标效果较差 ， 即
+使往右平移 3  000  m ， G D O P
+J
+m i n
+相对于 G D O P
+m i n
+的
+退化程度依然接近 0 . 4 。
+根据斜飞段的适用性实验结果可以看出 ： 经
+平移 ， 由斜飞段合作轨迹生成的非合作目标运动
+方向矢量在天方向上变化较大 ， 导致测站在定位
+时的交会角与视线距离变化较大 ， 将会对定位精
+度产生较大的影响 ， 因此两者的最优布站组合变
+化较大 ， 新指标对于天方向变化的变化较为敏感 。
+可以进一步得出以下结论 ： ① 当非合作目标起点
+终点连线为斜飞轨迹时 ， 尽量选择天方向上变化
+较小的历史合作轨迹 ， 通过该历史轨迹的最优权
+值优化布站方案 ； ② 当历史库中没有合适的与非
+图 12  新指标在斜飞轨迹旋转偏置下的适用性实验结果
+Fig .  12  Experimental results of applicability of indicator 
+under rotation bias of oblique flight trajectory
+图 13  指标在斜飞轨迹平移偏置下的适用性实验结果
+Fig .  13  Experimental results of applicability of indicator 
+under shift bias of oblique flight trajectory
+•• 2297
+第  37  卷第  9  期
+2025  年  9  月
+V ol . 37  No . 9
+Sept .  2025
+系统仿真学报
+Journal of System Simulation
+http :  / /  ww w . china-simulation . com
+合作目标起点或终点一致的合作弹道时 ， 使用本
+文 布站 优化仿真方法挑选基于平移偏置的历史合
+作轨迹来优化布站方案时 ， 应当选择位于非合作
+弹道南方向上的历史轨迹 。
+为了进一步检测指标在不同合作  轨迹下的适
+用性 ， 以下实验将检验指标在平飞段目标运动方
+向矢量上的适用性 。 首先生成了平飞段仿真弹道
+( 如图 14 所示 ) ， 即弹道在天方向上保持不变 ， 检
+验方法与斜飞段检验方法相同 。
+将平飞段仿真弹道在天方向不变的平面上绕
+弹道起点旋转 ， 旋转角度为 1 °~ 30 ° ， 每次旋转角
+度为 1 ° ， 得到不同的 30 条非合作目标运动方向矢
+量 。 将平飞段仿真弹道在天方向不变的平面上左
+右平移 ， 距离为向平移左 3  km 至向右平移 3  km ，
+每次平移距离为 100  m ， 得到不同的 60 条仿真弹
+道 ， 如图 15 所示 。
+在得到这些非合作目标运动方向矢量后 ， 检
+测指标适用性 A
+θ
+与 A
+d
+， 图 16 为重复 10 次实验的
+实验结果图 。
+由 图 16 可 知 ， 旋 转 1 °~ 30 ° 与 平 移 - 3 ~ 3  km ，
+根据历史弹道得到的指标输出布站方案 GDOP 相
+对理论最优值的退化程度 ， 旋转退化平均值为
+0 . 049  8 ， 平移退化平均值为 0 . 063  7 。 相对于本文
+斜飞段适用性实验 ， 平飞段适用性实验生成的非
+合作目标运动方向矢量在天方向上变化较小 ， 指
+标适用性效果较好 ， 进一步验证了新指标对于天
+方向的变化较为敏感 的结 论 。
+因此 ， 根据上述实验可得出以下结论 ： ① 平
+飞段弹道在 1 °~ 30 ° 旋转范围内 ， 以及 [ - 3 , 3 ] km 的
+平移范围内 ， 根据本文布站优化仿真方法得出的
+图 14  平飞段仿真弹道
+Fig .  14  Simulation trajectory of level flight
+图 15  生成 2 种偏置下的平飞段非合作目标轨迹
+Fig .  15  Generate two kinds of bias non-cooperative target 
+trajectory in level flight
+图 16  指标在平飞轨迹 2 种偏置下的适用性实验结果
+Fig .  16  Experimental results of applicability of indicator 
+under two biases of level flight trajectory
+•• 2298
+第  37  卷第  9  期
+2025  年  9  月
+V ol . 37  No . 9
+Sept .  2025宁以达 ,  等 :  非合作目标测角定位下的布站优化方法与仿真
+http :  / /  ww w . china-simulation . com
+布站方案与弹道完全已知情况下理论最优值差距
+小于 5 % ； ② 对比斜飞段弹道 ， 指标在平飞段弹道
+的适用性更好 。
+4 　结论　结论
+本文针对无源测角体制的布站优化问题 ， 区
+别于传统 GDOP 、 CRLB 的迹等布站方案评估指
+标 ， 构建了新的布站方案优化评估指标 ， 并基于
+该指标提出了新的布站优化仿真方法 ， 旨在解决
+传统布站方法无法应用于非合作目标的问题 。
+实验部分 ， 首先将本文提出的方法应用在定
+位合作目标中 ， 达到全局最优后指标最小时选出
+的测站组合与通过 GDOP 选择的测站组合一致 ，
+验证了指标的有效性与方法的可行性 。 其次 ， 在
+非合作目标定位的仿真实验中 ,  分析了新指标相对
+两类偏置的敏感度 ， 说明了该指标的适用性条件 ：
+新指标对于天方向变化的变化较为敏感 ， 应尽量
+选择天方向上变化较小的历史合作轨迹 ， 通过该
+历史轨迹的最优权值优化布站方案 ； 对比斜飞段
+弹道 ， 指标在平飞段弹道的适用性更好 。 该方法
+脱离了对弹道的先验信息的依赖 ， 不需要理论弹
+道的支持 ， 仅需获取非合作目标在定位空间中起
+点至终点的连线 ， 将其与历史弹道对比 ， 通过计
+算新指标的大小 ， 可以解决非合作目标的布站优
+化问题 。
+但是 ， 仅用两个偏置不能完全刻画非合作弹
+道与历史合作弹道的区别 ， 下一步工作中将基于
+运动学或动力学方程参数估计或新型偏置设计 ，
+开展更深入细致的研究 。 本指标在斜飞段的有效
+性也是后期需要开展的重要工作 。
+参考文献参考文献 ：：
+[ 1 ] 艾小锋 ,  曾勇虎 ,  汪连栋 ,  等 .  基于实测信号的无源雷达
+仿 真 评 估 系 统 [ J ].  系 统 仿 真 学 报 ,  2016 ,  28 ( 8 ):  1833 -
+1840 .
+Ai Xiaofeng ,  Zeng Yonghu ,  Wang Liandong ,  et al .  
+Passive Radar Simulation and Evaluation System Based 
+on Raw Signals [ J ].  Journal of System Simulation ,  2016 ,  
+28 ( 8 ):  1833 - 1840 .
+[ 2 ] 邹继锋 .  基于一维角度测量的三维定位方法研究 [ D ].  
+成都 :  电子科技大学 ,  2020 .
+Zou Jifeng .  Study on Three Dimentional Localization 
+Method Using one Dimentional Angle Measurements [ D ].  
+Chengdu :  University of Electronic Science and 
+Technology of China ,  2020 .
+[ 3 ] 黄亚楠 .  基于时差优选与布站优化的无源定位技术研
+究 [ D ].  厦门 :  厦门大学 ,  2019 .
+Huang Yanan .  Research on Passive Location Technology 
+Based on Station Selection Optimization and Placement 
+Optimization [ D ].  Xiamen :  Xiamen University ,  2019 .
+[ 4 ] Xing Yao ,  He Zhangming ,  Wang Jiongqi ,  et al .  TOA 
+Positioning Algorithm of LBL System for Underwater 
+Target Based on PSO [ J ].  Journal of Systems Engineering 
+and Electronics ,  2023 ,  34 ( 5 ):  1319 - 1332 .
+[ 5 ] Lu Yu ,  Wang Jiongqi ,  Zhou Haiyin ,  et al .  Station Layout 
+Optimization for Underwater Acoustic Positioning 
+System Based on Combined Cone Configuration [ J ].  
+Ocean Engineering ,  2024 ,  294 :  116753 .
+[ 6 ] 何章鸣 ,  周萱影 ,  王炯琦 .  数据建模与分析 [ M ].  北京 :  科
+学出版社 ,  2021 .
+[ 7 ] 何章鸣 ,  曾科军 ,  魏超 ,  等 .  遥外测数据实时及事后处理
+方法 [ M ].  北京 :  科学出版社 ,  2024 .
+[ 8 ] 徐公国 ,  蔡利兵 ,  杜配冰 ,  等 .  复杂环境下多探测传感器
+协同定位优化布站建模仿真研究 [ J ].  系统仿真学报 ,  
+2022 ,  34 ( 10 ):  2171 - 2180 .
+Xu Gongguo ,  Cai Libing ,  Du Peibing ,  et al .  Research on 
+Modeling and Simulation of Optimization Deployment 
+for Cooperative Localization by Multiple Detection 
+Sensors in Complex Environment [ J ].  Journal of System 
+Simulation ,  2022 ,  34 ( 10 ):  2171 - 2180 .
+[ 9 ] 项树林 .  基于系统思想的外测布站优化设计 [ D ].  大连 :  
+大连理工大学 ,  2009 .
+Xiang Shulin .  Optimization Design of Station 
+Distribution for Exterior Ballistic Measurement Based on 
+System Idea [ D ].  Dalian :  Dalian University of 
+Technology ,  2009 .
+[ 10 ] 赵家凯 .  基于群智能算法的无源时差定位最优布站研
+究 [ D ].  西安 :  西安电子科技大学 ,  2022 .
+Zhao Jiakai .  Research on Optimal Location of Passive 
+Time Difference Based on Swarm Intelligence Algorithm
+[ D ].  Xi'an :  Xidian University ,  2022 .
+[ 11 ] 郝本建 ,  王林林 ,  李赞 ,  等 .  面向 TDOA 被动定位的定位
+节 点 选 择 方 法 [ J ].  电 子 与 信 息 学 报 ,  2019 ,  41 ( 2 ):  
+462 - 468 .
+Hao Benjian ,  Wang Linlin ,  Li Zan ,  et al .  Sensor Selection 
+Method for TDOA Passive Localization [ J ].  Journal of 
+Electronics & Information Technology ,  2019 ,  41 ( 2 ):  
+462 - 468 .
+•• 2299
+第  37  卷第  9  期
+2025  年  9  月
+V ol . 37  No . 9
+Sept .  2025
+系统仿真学报
+Journal of System Simulation
+http :  / /  ww w . china-simulation . com
+[ 12 ] 毛泽湘 ,  梁汝鹏 .  基于圆概率误差的时差定位系统最优
+布站 [ J ].  指挥信息系统与技术 ,  2020 ,  11 ( 4 ):  74 - 77 ,  83 .
+Mao Zexiang ,  Liang Rupeng .  Optimum Station 
+Arrangement Strategy of TDOA Location System Based 
+on CEP [ J ].  Command Information System and 
+Technology ,  2020 ,  11 ( 4 ):  74 - 77 ,  83 .
+[ 13 ] Lei Yanping ,  Gong Fengxun ,  Ma Yanqiu .  Optimal 
+Distribution for Four-station TDOA Location System [ C ] //
+Proceedings of the 2010  3 rd International Conference on 
+Biomedical Engineering and Informatics .  Piscataway :  
+IEEE ,  2010 :  2858 - 2862 .
+[ 14 ] Yang B ,  Scheuing J .  Cramer-rao Bound and Optimum 
+Sensor Array for Source Localization from Time 
+Differences of Arrival [ C ] //IEEE International Conference 
+on Acoustics ,  Speech ,  and Signal Processing ,  2005 .  
+Piscataway :  IEEE ,  2005 :  961 - 964 .
+[ 15 ] Bishop A N ,  Fidan B ,  Anderson B D O ,  et al .  Optimality 
+Analysis of Sensor-target Geometries in Passive 
+Localization :  Part 2  - Time-of-arrival Based Localization
+[ C ] // 2007  3 rd International Conference on Intelligent 
+Sensors ,  Sensor Networks and Information .  Piscataway :  
+IEEE ,  2007 :  13 - 18 .
+[ 16 ] 夏伟 ,  罗明 ,  赵美霞 .  无源时差定位系统最优布站方法
+研究 [ J ].  雷达科学与技术 ,  2020 ,  18 ( 1 ):  34 - 38 .
+Xia Wei ,  Luo Ming ,  Zhao Meixia .  Study on Optimal 
+Station Distribution and Performance of Passive Time 
+Difference Localization System [ J ].  Radar Science and 
+Technology ,  2020 ,  18 ( 1 ):  34 - 38 .
+[ 17 ] 高颖 .  基于差分进化的定位算法研究 [ D ].  淄博 :  山东理
+工大学 ,  2023 .
+Gao Ying .  Research on Localization Algorithm Based on 
+Differential Evolution [ D ].  Zibo :  Shandong University of 
+Technology ,  2023 .
+[ 18 ] Wu Shixun ,  Feng Qiang ,  Huang Wenxian ,  et al .  Linear 
+Cooperative Localization Algorithm with TOA/ AOA/ 
+AOD and Multipath [ C ] // 2021  World Conference on 
+Computing and Communication Technologies 
+( WCCCT ).  Piscataway :  IEEE ,  2021 :  47 - 51 .
+[ 19 ] 李蕊 ,  邓亭强 ,  窦修全 .  基于遗传算法优化的短波时差
+定位算法 [ J ].  电波科学学报 ,  2023 ,  38 ( 6 ):  1096 - 1104 .
+Li Rui ,  Deng Tingqiang ,  Dou Xiuquan .  High Frequency 
+TDOA Geolocation Method Based on Genetic Algorithm 
+Optimization [ J ].  Chinese Journal of Radio Science ,  2023 ,  
+38 ( 6 ):  1096 - 1104 .
+[ 20 ] 陈兆 ,  王玫 ,  周陬 ,  等 .  基于多参数融合的超宽带基站布
+设优化方法 [ J ].  电子学报 ,  2023 ,  51 ( 10 ):  2855 - 2865 .
+Chen Zhao ,  Wang Mei ,  Zhou Zou ,  et al .  Optimization 
+Method for Ultra-wideband Base Station Configuration 
+Based on Multi-parameter Fusion [ J ].  Acta Electronica 
+Sinica ,  2023 ,  51 ( 10 ):  2855 - 2865 .
+[ 21 ] 王程民 ,  平殿发 ,  宋斌斌 ,  等 .  基于粒子群算法的多机无
+源定位系统优化布站 [ J ].  计算机与数字工程 ,  2021 ,  49
+( 3 ):  487 - 492 .
+Wang Chengmin ,  Ping Dianfa ,  Song Binbin ,  et al .  
+Optimization of Multi-machine Passive Positioning 
+System Based on PSO [ J ].  Computer & Digital 
+Engineering ,  2021 ,  49 ( 3 ):  487 - 492 .
+[ 22 ] Sun Ruiqi ,  He Zhonghang ,  Gao Lu ,  et al .  Station Layout 
+Optimization Genetic Algorithm for Four Stations TDOA 
+Location [ J ].  Journal of Physics :  Conference Series ,  2019 ,  
+1176 ( 6 ):  062008 .
+[ 23 ] Zhang Zhiwei ,  Sun Ao ,  Zhang Xu ,  et al .  Optimal 
+Placement of Base Stations in Falling Point Measurement 
+at Sea [ C ] // 2020  5 th International Conference on 
+Automation ,  Control and Robotics Engineering 
+( CACRE ).  Piscataway :  IEEE ,  2020 :  468 - 472 .
+•• 2300

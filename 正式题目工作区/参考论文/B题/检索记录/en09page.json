@@ -1,0 +1,36 @@
+{
+  "id": "en09page",
+  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12109225/",
+  "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12109225/",
+  "content_type": "text/html; charset=utf-8",
+  "status": "html",
+  "links": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12109225/pdf/biomimetics-10-00336.pdf",
+    "https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/usa-icons/file_download.svg",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12109225/pdf/biomimetics-10-00336.pdf",
+    "https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/usa-icons/file_download.svg",
+    "https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/usa-icons/file_download.svg"
+  ],
+  "metadata": [
+    "<meta name=\"citation_journal_title\" content=\"Biomimetics\">",
+    "<meta name=\"citation_title\" content=\"Bio-Inspired Observability Enhancement Method for UAV Target Localization and Sensor Bias Estimation with Bearing-Only Measurement\">",
+    "<meta name=\"citation_author\" content=\"Qianshuai Wang\">",
+    "<meta name=\"citation_author_institution\" content=\"School of Automation, Southeast University, Nanjing 210096, China; xiaoshuaiwang703@gmail.com (Q.W.); 220242202@seu.edu.cn (Z.L.); pengjicheng@seu.edu.cn (J.P.)\">",
+    "<meta name=\"citation_author\" content=\"Zeyuan Li\">",
+    "<meta name=\"citation_author_institution\" content=\"School of Automation, Southeast University, Nanjing 210096, China; xiaoshuaiwang703@gmail.com (Q.W.); 220242202@seu.edu.cn (Z.L.); pengjicheng@seu.edu.cn (J.P.)\">",
+    "<meta name=\"citation_author\" content=\"Jicheng Peng\">",
+    "<meta name=\"citation_author_institution\" content=\"School of Automation, Southeast University, Nanjing 210096, China; xiaoshuaiwang703@gmail.com (Q.W.); 220242202@seu.edu.cn (Z.L.); pengjicheng@seu.edu.cn (J.P.)\">",
+    "<meta name=\"citation_author\" content=\"Kelin Lu\">",
+    "<meta name=\"citation_author_institution\" content=\"School of Automation, Southeast University, Nanjing 210096, China; xiaoshuaiwang703@gmail.com (Q.W.); 220242202@seu.edu.cn (Z.L.); pengjicheng@seu.edu.cn (J.P.)\">",
+    "<meta name=\"citation_publication_date\" content=\"2025 May 20\">",
+    "<meta name=\"citation_volume\" content=\"10\">",
+    "<meta name=\"citation_issue\" content=\"5\">",
+    "<meta name=\"citation_firstpage\" content=\"336\">",
+    "<meta name=\"citation_doi\" content=\"10.3390/biomimetics10050336\">",
+    "<meta name=\"citation_pmid\" content=\"40422166\">",
+    "<meta name=\"citation_abstract_html_url\" content=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC12109225/\">",
+    "<meta name=\"citation_fulltext_html_url\" content=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC12109225/\">",
+    "<meta name=\"citation_pdf_url\" content=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC12109225/pdf/biomimetics-10-00336.pdf\">"
+  ],
+  "snippet": ""
+}

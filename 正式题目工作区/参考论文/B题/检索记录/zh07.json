@@ -1,0 +1,12 @@
+{
+  "id": "zh07",
+  "url": "https://pdf.hanspub.org/csa20181000000_55843731.pdf",
+  "final_url": "https://pdf.hanspub.org/csa20181000000_55843731.pdf",
+  "content_type": "application/pdf",
+  "status": "pdf",
+  "pages": 8,
+  "bytes": 876097,
+  "sha256": "51877d2633660ad3d98bad4911c62aef5c06a51a2601d6c60f35b4fee9ac06cf",
+  "path": "/Users/hanqimo/University/Junior/数学建模/CUMCM2026Problems/B题/参考文献_20260910/检索记录/zh07.pdf",
+  "first_page": "Computer Science and Application 计算机科学与应用, 2018, 8(10), 1565-1572 \nPublished Online October 2018 in Hans. http://www.hanspub.org/journal/csa \nhttps://doi.org/10.12677/csa.2018.810171    \n文章引用: 顾保国, 陈华中, 许文彤, 吴迪, 郭彦斐. 测控装备干扰源快速侦测系统设计研究[J] . 计算机科学与应用, \n2018, 8(10): 1565-1572. DOI: 10.12677/csa.2018.810171 \n \n \nDesign and Research of Quick Detection \nSystem for TT & C Equipment Interference \nSources \nBaoguo Gu, Huazhong Chen, Wentong Xu, Di Wu, Yanfei Guo  \nUnit 63726 of the PLA, Yinchuan Ningxia  \n \n \nReceived: Oct. 7th, 2018; accepted: Oct. 18th, 2018; published: Oct. 25th, 2018 \n \n \n \nAbstract \nThe Unmanned Aerial Vehicle (UAV) platform is used as a carrier, equipped with radio detection \nequipment, which analyzes and processes the interference signal. The direction finding algorithm \ndetects finds and locates the interference source, and takes photos and images of the interference \nsource through the onboard camera. The location information and image information of the in-\nterference source are transmitted to the ground terminal, which provides a convenient and effi-\ncient technical means for the TT  & C equipment to check the interference source, and avoids the \nadverse effects caused by the ground detection.  \n \nKeywords \nTT & C, Interference Source, Detection \n \n \n测控装备干扰源快速侦测系统设计研究 \n顾保国，陈华中，许文彤，吴  迪，郭彦斐 \n63726部队，宁夏 银川 \n \n \n收稿日期：2018年10月7日；录用日期：2018年10月18日；发布日期：2018年10月25日 \n \n \n \n摘  要 \n以无人机平台为载体，搭载无线电探测设备，对干扰信号进行分析处理，通过测向定位算法对干扰源进\n"
+}

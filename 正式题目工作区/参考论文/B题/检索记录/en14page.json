@@ -1,0 +1,25 @@
+{
+  "id": "en14page",
+  "url": "https://arxiv.org/abs/1210.7397",
+  "final_url": "https://arxiv.org/abs/1210.7397",
+  "content_type": "text/html; charset=utf-8",
+  "status": "html",
+  "links": [
+    "https://arxiv.org/pdf/1210.7397",
+    "https://arxiv.org/pdf/1210.7397",
+    "http://www.bibsonomy.org/BibtexHandler?requTask=upload&amp;url=https://arxiv.org/abs/1210.7397&amp;description=Optimal Sensor Placement for Target Localization and Tracking in 2D and 3D"
+  ],
+  "metadata": [
+    "<meta name=\"citation_title\" content=\"Optimal Sensor Placement for Target Localization and Tracking in 2D and 3D\" />",
+    "<meta name=\"citation_author\" content=\"Zhao, Shiyu\" />",
+    "<meta name=\"citation_author\" content=\"Chen, Ben M.\" />",
+    "<meta name=\"citation_author\" content=\"Lee, Tong H.\" />",
+    "<meta name=\"citation_doi\" content=\"10.1080/00207179.2013.792606\" />",
+    "<meta name=\"citation_date\" content=\"2012/10/28\" />",
+    "<meta name=\"citation_online_date\" content=\"2012/10/28\" />",
+    "<meta name=\"citation_pdf_url\" content=\"https://arxiv.org/pdf/1210.7397\" />",
+    "<meta name=\"citation_arxiv_id\" content=\"1210.7397\" />",
+    "<meta name=\"citation_abstract\" content=\"This paper analytically characterizes optimal sensor placements for target localization and tracking in 2D and 3D. Three types of sensors are considered: bearing-only, range-only, and received-signal-strength. The optimal placement problems of the three sensor types are formulated as an identical parameter optimization problem and consequently analyzed in a unified framework. Recently developed frame theory is applied to the optimality analysis. We prove necessary and sufficient conditions for optimal placements in 2D and 3D. A number of important analytical properties of optimal placements are further explored. In order to verify the analytical analysis, we present a gradient control law that can numerically construct generic optimal placements.\" />"
+  ],
+  "snippet": ""
+}

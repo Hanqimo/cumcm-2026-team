@@ -1,0 +1,10 @@
+{
+  "id": "en17doi",
+  "url": "https://doi.org/10.1016/j.robot.2013.09.004",
+  "final_url": "https://linkinghub.elsevier.com/retrieve/pii/S092188901300167X",
+  "content_type": "text/html;charset=UTF-8",
+  "status": "html",
+  "links": [],
+  "metadata": [],
+  "snippet": "\n\n\n\n\n\n\n\n\n \n \n \n \n \n \n \n \n  \n  \n Redirecting \n \n \nvar timerStart = Date.now();\nvar pageName = \"\";\n\nif (pageName == \"\") {\n\tpageName = \"Auto Article Locator\";\n} \n\tfunction autoRedirectToURL() {\n\t\tvar url = '/retrieve/'+document.getElementById('resultName').value+'?Redirect='+document.getElementById('redirectURL').value+'&key='+document.getElementById("
+}

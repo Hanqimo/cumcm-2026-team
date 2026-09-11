@@ -1,0 +1,1213 @@
+IEEE TRANSACTIONS ON ROBOTICS, VOL. 27, NO. 2, APRIL 2011 313
+On the Time to Search for an Intermittent Signal
+Source Under a Limited Sensing Range
+Dezhen Song, Senior Member, IEEE, Chang-Young Kim, and Jingang Yi, Senior Member, IEEE
+Abstract—A mobile robot with a limited sensing range is de-
+ployed to search for a stationary target that intermittently emits
+short duration signals. The searching mission is accomplished as
+soon as the robot receives a signal from the target. We propose
+the expected searching time (EST) as a primary metric to evaluate
+different robot motion plans under different robot conﬁgurations.
+To illustrate the proposed metric, we present two case studies. In
+the ﬁrst case, we analyze two common motion plans: a slap method
+(SM) and a random walk (RW). The EST analysis shows that the
+SM is asymptotically faster than the RW when the searching space
+size increases. In the second case, we compare a team ofn homoge-
+neous low-cost robots with a super robot that has the sensing range
+equal to that of the summation of then robots. Our analysis shows
+that the low-cost robot team takes Θ(1 /n) time, while the super
+robot takes Θ(1 /√ n) time as n →∞ . Our metrics successfully
+demonstrate their ability in assessing the searching performance.
+The analytical results are also conﬁrmed in simulation and physical
+experiments.
+Index Terms —Coverage, intermittent signal source, mobile
+robots, searching time.
+I. I NTRODUCTION
+M
+OBILE robots are often employed to perform searching
+tasks, such as ﬁnding a black box in a remote area after
+an airplane crash, searching for victims after an earthquake or a
+mine collapse disaster, or locating artifacts on the ocean ﬂoor. In
+many cases, the target can intermittently emit short duration sig-
+nals to assist with the search. For example, an airplane black box
+transmits radio signals periodically. An earthquake victim may
+knock rubble from time to time. The searching task is accom-
+plished once the robot detects the signal emitted by the target.
+However, the robot usually has a limited sensing range. It seems
+straightforward that we can use the traditional coverage-based
+motion plans to guide the robot to cyclically scan the searching
+space to locate the target. However, the time to search for the tar-
+get is inherently random and, hence, remains unknown despite
+its importance in many searching and rescue applications.
+Manuscript received June 10, 2010; revised October 13, 2010; accepted
+December 6, 2010. Date of publication January 20, 2011; date of current ver-
+sion April 7, 2011. This paper was recommended for publication by Associate
+Editor S. Carpin and Editor L. Parker upon evaluation of the reviewers’ com-
+ments. This work was supported in part by the National Science Foundation
+under CAREER Grant IIS-0643298 and Grant MRI-0923203.
+D. Song and C. Kim are with Department of Computer Science and En-
+gineering, Texas A&M University, College Station, TX 77843 USA (e-mail:
+dzsong@cse.tamu.edu; kcyoung@cse.tamu.edu).
+J. Yi is with the Department of Mechanical and Aerospace Engineering, Rut-
+gers University, Piscataway, NJ 08854 USA (e-mail: jgyi@rutgers.edu).
+Color versions of one or more of the ﬁgures in this paper are available online
+at http://ieeexplore.ieee.org.
+Digital Object Identiﬁer 10.1109/TRO.2010.2099391
+To address this new problem, we propose the expected search-
+ing time (EST) as a primary metric to assess the searching ability
+of a robot or a robot team. We model the searching process as
+a delayed renewal reward process [1] and derive the EST as
+a function of the searching space size, the signal transmission
+rate, and the robot sensing range. The resultant closed-form
+solution of the metrics can be used to analyze the searching ef-
+ﬁciency for different robot conﬁgurations and searching plans.
+Since the model components can be obtained from online mea-
+surements and known robot parameters, a great beneﬁt of the
+resulting model is its capability of predicting the EST for an
+ongoing searching process. This characteristic is important for
+time-critical searching and rescue applications. The analytical
+results are conﬁrmed in simulation and physical experiments.
+The rest of the paper is organized as follows. We begin
+with the related work in Section II. We deﬁne the problem in
+Section III. We derive the EST in a closed form in Section IV.
+The two case studies are presented in Section V. The analytical
+results are validated in simulation and physical experiments in
+Section VI before we conclude the paper.
+II. R ELATED WORK
+Searching for an object in physical space is one of the most
+important tasks for robots or humans. When prior information
+such as the spatial distribution of the target is known, this is com-
+parable with the foraging behavior of animals [2]. For this case,
+the searching problem is actually a nonlinear optimization prob-
+lem in operations research [3] with searching time/path length
+as objective functions. If the searching space is a graph, Trum-
+mel and Weisinger show this is an nondeterministic polynomial
+time-hard problem [4].
+However, prior target information is often not available. If
+the target is continuously emitting signals, just simply scanning
+the entire searching space once enables the robot to ﬁnd the tar-
+get. Since the maximum searching time is the time to cover the
+entire searching space, the searching problem becomes a cov-
+erage problem [5]–[7]. For a known environment, a coverage
+problem for a single robot often employs different approaches
+to decompose the searching space and output a continuous path
+that allows the robot to cover the entire searching space. If the
+searching space can be modeled as a set of w-disjoint discrete
+choices, searching for a target with a limited sensing range and
+w-choice is known as aw-lane cow-path problem [8]. For cover-
+age problems over a small region and considering scene topolo-
+gies, the problem can be reduced to the art gallery (AG) problem
+in computational geometry [9], [10]. In Euclidean space, if the
+coverage strategy is to linearly partition the searching space to
+form a connected path, this is known as the slap method (SM)
+1552-3098/$26.00 © 2011 IEEE
+314 IEEE TRANSACTIONS ON ROBOTICS, VOL. 27, NO. 2, APRIL 2011
+or the trapezoid method [11], [12]. Independently, this method
+is regarded as a type of linear search problems in the applied
+math and operations research societies [13].
+While the searching time is well understood for the cover-
+age problems [14], [15], this is not the case when the searching
+process depends on the signal emitted by the target because
+the collocation of the robot and the target does not necessar-
+ily mean that the target is found. Benkoski et al. [16] clas-
+sify searching problems into two categories: stationary tar-
+gets and moving targets. Our problem deals with stationary
+targets. However, Benkoski’s classiﬁcation does not include
+cases that the target emits transmit signals, which is different
+from the one-sided search on which Benkoski’s classiﬁcation is
+based.
+Another set of related work is robot exploration and mapping
+problems, where the environment is not previously known [17].
+The task is not only to cover the entire space but to output the
+true representations of the environment as well. Recent advances
+in using a multirobot team to perform exploration and mapping
+tasks mainly focuses on the coordination of the robot/sensor
+team [18]–[21] under various dynamics, communication, sens-
+ing, and energy constraints. Although not directly applicable to
+our problem, researchers have accumulated interesting empir-
+ical results: Using a team of low-cost robots usually performs
+faster and more fault-tolerant [22] than a single expensive robot
+(ASER). This really inspires our problem because we want to
+see if our analytical model can show similar results under similar
+constraints/conditions.
+Our group has built experience in searching for targets that in-
+termittently transmit signals by developing algorithms and sys-
+tems to detect an unknown wireless sensor network [23]–[25].
+In these problems, the robot can accumulate the information
+about the target location over time through the signal strength
+readings and antenna models. The searching problem is less
+difﬁcult because the robot can utilize the information in the
+planning process. However, such information is often not avail-
+able in many searching tasks, which is the focus of this pa-
+per. This paper extends our previous conference paper [26] by
+adding spatiotemporal sensory coverage (SSC) metric analysis
+and physical experiment results.
+III. P ROBLEM DEFINITION
+As illustrated in Fig. 1, a single robot searches for a single
+target in a squared 2-D Euclidean space with a side length ofa.
+Let us deﬁne ds as the maximum sensing distance of the sensor
+on the robot. The robot travels at the constant speed of v.T o
+formulate the problem and focus on the most relevant issues, we
+make the following assumptions.
+1) There is no prior information about possible locations of
+the target. Therefore, the target is assumed to be uniformly
+distributed in the searching space.
+2) The target transmits short duration signals periodically
+according to a Poisson process with a known rate λ.T h e
+signal duration is short due to energy concerns. A Poisson
+process is a good approximation to a general random ar-
+rival process in stochastic modeling [1]. In some cases, the
+Fig. 1. Robot attempts to search for a target (the red dot) that intermittently
+emits short duration signals in a square. The gray circle is the region that the
+robot can sense the signal from the target. The dashed line is a robot trajectory.
+target may be a continuous beacon, but it is very difﬁcult
+to be detected due to environment conditions or unreli-
+able sensing, which can also be modeled as a target with
+intermittent signals.
+3) During the searching process, the target is static. The
+searching space is much larger than the sensing distance:
+a ≫ ds .
+Condition 1 (Sensing condition): The robot cannot sense the
+signal unless an actively transmitting target is within distance
+ds due to the sensing range limit.
+As illustrated in Fig. 1, Condition 1 deﬁnes a circle cen-
+tered at the target with the radius of ds , which is the region
+that robot has a chance to sense the target. We refer to the
+region as “the circle” in the rest of the paper. Due to the
+fact that the robot does not know the location of the target,
+the actual position of the circle in the searching space is also
+unknown.
+Condition 2 (Termination condition): The searching task is
+accomplished as soon as the robot senses a signal sent by the
+target.
+Condition 2 implies that the robot cannot ﬁnd an inactive
+target even it is collocated with the target. For example, an
+airplane is not be able to notice the survivor on an island if the
+person does not send a signal (e.g., ﬁre or smoke). However,
+only one signal reception is needed in the searching process.
+Conditions 1 and 2 establish a new type of searching problem
+as oppose to a regular coverage problem. Let us deﬁneTs as the
+searching time for the robot to ﬁnd the target. Therefore, our
+problem is deﬁned as follows.
+Problem Statement 1 (EST computation): Given λ, ds , and
+a, calculate the EST E(Ts), where E(·) denotes the expected
+value function.
+IV . MODELING
+One immediate question about Problem Statement 1 is
+whether we can obtain the EST without referring to or being
+limited to a particular motion plan. To address this dependency,
+we ﬁrst characterize the motion plans based on their outcomes
+before modeling the EST.
+SONG et al.: ON THE TIME TO SEARCH FOR AN INTERMITTENT SIGNAL SOURCE UNDER A LIMITED SENSING RANGE 315
+A. Renewal Process and Characterizing Planners
+Periodically, the robot trajectory planner outputs a motion
+plan and the robot executes the plan during the searching pro-
+cess. The system is naturally a repetitive scanning process dur-
+ing which the robot enters and leaves the circle until Condition
+1 is satisﬁed. During the probabilistic nature, the process is a
+random process with a stopping time.
+The repetitiveness in coverage can be modeled as a re-
+newal process [1]. Letting interarrival time Xm denote the
+time between the (m − 1)st and mth event, a renewal pro-
+cess can be viewed as a generalization of Poisson process with
+{Xm ,m =1 ,2,... } being independently and identically dis-
+tributed (i.i.d.) random variables. Note that the distributions of
+Xm can be any type but must be i.i.d.
+To facilitate our analysis, we partition the continuous trajec-
+tory of the robot into many repetitive i.i.d. tours.
+Deﬁnition 1: A tour starts or restarts at the moment when the
+robot ﬁrst enters the target circle during the single independent
+scanning.
+The dashed line in Fig. 1 illustrates a tour. Tours may be quite
+different depending upon the planner. For example, tour length
+varies each time if the robot follows a random walk (RW). As
+another example, a deterministic planner usually has a ﬁxed
+tour trajectory. An event happens when each tour starts. The
+tour length are the interarrival time of events.
+Based on Condition 2, we know that the robot does not ac-
+cumulate the knowledge regarding the target location from one
+tour to another tour because no signal has been perceived be-
+fore the moment the searching mission is accomplished. Note
+that a tour can contain multiple intersections with the circle
+in a general case. Tour deﬁnition is a way of partitioning
+the trajectory and does not have to be synchronized exactly
+with how the robot planner works. Hence, each tour length is
+i.i.d. as long as the motion planner does not change its plan-
+ning algorithm. Therefore, the searching process as a renewal
+process.
+During each tour, the robot spends some time inside the circle
+and some time outside the circle, which are deﬁned as τIN and
+τOUT , respectively. Hence, τIN + τOUT is the overall duration
+for the tour.
+The characteristics of renewal process allows us to compute
+its limiting properties by focusing on individual periods. For
+example, we immediately know that the long run probability of
+being inside the circle is τIN /(τIN + τOUT ) from the property
+of renewal processes.
+If the trajectory only intersects the circle once in each period,
+when a tour begins, the robot ﬁrst spends τIN inside the cir-
+cle followed τOUT outside the circle. This yields an alternating
+renewal process. If there are many intersections between the
+circle and the tour, then τIN and τOUT are not two continuous
+time segments but a summation of many fragmented segments,
+which can be computed by conditioning on the number of inter-
+sections. For simplicity of analysis and due to the limited space,
+we will focus on the single intersection case in the rest of paper.
+Readers can follow our methods to analyze multiple intersection
+cases.
+B. Modeling the EST
+Without loss of generality, we assume the robot starts the
+searching process from the origin which is on the boundaries
+of the searching space. It takes some time to reach the circle
+where the ﬁrst tour starts. Let us deﬁne the time as delay D.
+From Conditions 1 and 2, we know that the robot cannot ﬁnd
+the target in D. The searching process is a delayed alternating
+renewal process. DeﬁneTc
+s as the time to ﬁnd the target after the
+robot enters the repetitive tours. Hence, the EST is as follows:
+E(Ts)= E(D)+ E(Tc
+s ). (1)
+Deﬁne N as the number of signal transmissions during τIN
+in a tour. Since the arrival process of the signal transmission is
+Poisson, N conforms to a Poisson distribution
+P(N = k)= e−λτIN (λτIN )k
+k! ,k =0 ,1,2,..., ∞ . (2)
+We know that eventN> 0 means that at least one signal trans-
+mission happens during τIN . This means the target is found.
+Therefore, we can compute E(Tc
+s ) by conditioning on N
+E(Tc
+s )= E(Tc
+s |N> 0)P(N> 0) +E(Tc
+s |N =0 )P(N =0 )
+(3)
+where P(N> 0) = 1 − e−λτIN and P(N =0 )= e−λτIN ac-
+cording to (2). Note that N< 0 is not possible due to the fact
+that N is a counting variable.
+Now let us compute E(Tc
+s |N> 0). Since event N> 0 is
+equivalent to eventTc
+s ≤ τIN ,w eh a v e
+E(Tc
+s |N> 0) = E(Tc
+s |Tc
+s ≤ τIN )= 1
+λ − τIN e−λτIN
+1 − e−λτIN
+(4)
+because the conditional distribution Tc
+s |Tc
+s ≤ τIN is a truncated
+exponential distribution [1], [27]. It is worth noting that (4) is
+valid only if τIN > 0, which is guaranteed according to Deﬁni-
+tion 1. However, we know
+E(Tc
+s |N =0 )= τIN + τOUT + E(Tc
+s ) (5)
+because the robot cannot ﬁnd the inactive target in the current
+tour and has to start all over again in next tour.
+Plugging (4) and (5) into (3) and (1), we have the following
+result.
+Theorem 1: Given the expected time E(D) for the robot to
+reach the circle, the Poisson arrival rate λ of target signals, the
+traveling timeτIN inside the circle, and the traveling timeτOUT
+outside the circle, then the EST of the target is as follows:
+E(Ts |τIN ,τOUT )= E(D)+ 1
+λ + τOUT
+e−λτIN
+1 − e−λτIN
+. (6)
+This is a conditional expectation becauseτIN and τOUT are often
+random variables. SinceE(D) and λare independent ofτIN and
+τOUT , the unconditional EST can be obtained as follows:
+E(Ts)= E(D)+ 1
+λ + E
+(
+τOUT
+e−λτIN
+1 − e−λτIN
+)
+. (7)
+The formulation of EST given in Theorem 1 has a surpris-
+ingly succinct format revealing the relationship between the
+316 IEEE TRANSACTIONS ON ROBOTICS, VOL. 27, NO. 2, APRIL 2011
+Fig. 2. (a) Sample motion plan for the SM. (b) How a tour (line l) intersects
+the circle of the target.
+EST and the corresponding variables. To further explain (7), let
+us consider the following extreme cases.
+Case 1: When λ →∞ , it means that the target continuously
+transmits signals. The searching time becomes the time that it
+takes for the robot to enter the circle. The problem degenerates
+to the traditional coverage problem, where E(Ts)= E(D).
+Case 2: When τOUT =0 , it means that the signal emitted
+by the target is so powerful that the circle deﬁned by ds can
+cover the entire searching space. In this case,E(D)=0 . Hence,
+E(Ts)=1 /λ, the mean interarrival time of signals. The robot
+ﬁnds the target as soon as the target emits a signal.
+Remark 1: It is worth noting that (7) does not depend on a
+particular motion plan or the shape/dimension of the searching
+space, which makes it widely applicable in practice. Indeed,
+the EST can be also applied to analyze searching tasks carried
+by humans. In many cases, the signal transmission rate λ is
+known; E(D) can be estimated based on observations; τIN can
+be estimated based on ds and v; and τOUT can be measured
+based on observations that how often a robot would revisit a
+region with the same size of the circle. Based on the known
+information and online measurements, we can even predict the
+EST for an ongoing searching process regardless its motion
+plan, which is of great importance in applications, where the
+searching time literally means life or death.
+V. A NALYSIS OF COMMON SEARCHING STRATEGIES
+Theorem 1 can be used to analyze the searching performance
+under different robot motion plans and conﬁgurations. We begin
+with demonstrating how Theorem 1 can reveal the difference
+between two motion plans from common coverage methods:
+the SM and the RW.
+A. Slap Method Versus the Random Walk
+1) Slap Method: Also known as the trapezoidal decomposi-
+tion [11], [12] in robotics research, SM sequentially scans the en-
+tire searching space back and forth. Fig. 2(a) illustrates the robot
+motion plan for the square case. The plan is a set ofy-axis paral-
+lel lines [appears as vertical lines in Fig. 2(a)] that cover the en-
+tire searching space. The vertical lines are interconnected using
+the boundaries of the searching space to formulate a complete
+tour. To guarantee an intersection between the circle and the tour,
+the distance between adjacent vertical lines is set to be 2ds .
+The red “ ⋆” in Fig. 2(a) indicates the starting point of the
+tour. Since tours are exactly the same in the SM, the subsequent
+tours start exactly at the same location. The overall tour length
+is approximately a2/(2ds). Given the robot speed v,i tt a k e s
+τIN + τOUT ≈ a2
+2vds
+(8)
+time for the robot to ﬁnish the tour. Since the target could be
+anywhere in the searching space with equal probabilities, we
+obtain
+E(D) ≈ (τIN + τOUT )
+2 = a2
+4vds
+. (9)
+To use the result in Theorem 1, the remaining undetermined
+variable is τIN . Let us deﬁne DIN as the distance traveled in-
+side the circle. DIN is the length of intersection when the line
+intersects the circle, as illustrated in Fig. 2(b). Here, we ignore
+the boundary effect, where the circle is not a full circle because
+a ≫ ds .L i n el in Fig. 2(b) is a part of the tour. Whenl intersects
+the circle, we deﬁne Dl as the distance between the center of
+the circle and the line. Since the target is uniformly distributed
+in the 2-D space, Dl ∼ U(0,ds) is uniformly distributed. From
+Fig. 2(b), we know
+τIN = DIN
+v = 2
+√
+d2s − D2
+l
+v . (10)
+Plugging (8)–(10) into (7) and conditioning on Dl ,w eh a v e
+E(Ts |Dl) ≈ a2
+4vds
++ 1
+λ +
+(
+a2
+2vds
+− 2
+√
+d2s − D2
+l
+v
+)
+φ(λ,Dl)
+(11)
+where
+φ(λ,Dl)= 1
+e2λ√
+d2s −D2
+l /v − 1
+. (12)
+Since a ≫ ds , τOUT ≫ τIN , and 2
+√
+d2s − D2
+l /v is negligible if
+compared with a2/2vds ,w eh a v e
+E(Ts |Dl) ≈ a2
+4vds
++ 1
+λ + a2
+2vds
+φ(λ,Dl). (13)
+Hence, we have the EST for the SM
+E(Ts)=
+∫ ds
+δ=0
+E(Ts |Dl = δ) 1
+ds
+dδ
+≈ a2
+4vds
++ 1
+λ + a2
+2vds
+g(ds,λ)
+where
+g(ds,λ)= E(φ(λ,Dl)) =
+∫ ds
+δ=0
+1
+ds
+φ(λ,δ)dδ. (15)
+Let δ= ds cos θ, we can transform (15) into
+g(ds,λ)=
+∫ π/2
+θ=0
+1
+e2λds sin θ/v − 1
+sin θdθ. (16)
+Whenλandds/v are very small, (15) can be further simpliﬁed
+g(ds,λ) ≈ πv
+4λds
+− 1. (17)
+Remark 2: Equation (14) suggests that a fast robot (large v)
+with great sensing distance ds reduces the EST. This conclu-
+sion agrees with our intuition that mobility and sensing are the
+SONG et al.: ON THE TIME TO SEARCH FOR AN INTERMITTENT SIGNAL SOURCE UNDER A LIMITED SENSING RANGE 317
+Fig. 3. Robot motion plan based on a 2-D lattice-based RW. Two types of
+tours are illustrated here. (a) Closed tour. (b) Unclosed tour.
+key elements in searching. However, it also takes the target’s
+cooperation to further reduce the EST. When the robot reaches
+its speed and sensing limit, the only way to reduce EST is to
+increase λ. Of course, the target usually has energy constraints
+and cannot arbitrarily increase λ.
+The analysis assumes the distance between vertical lines is
+2ds , which ensures there is only one intersection between the
+circle and the tour. When a smaller spacing is used, the overall
+tour length increases, and so does τIN . The analysis is slightly
+more complicated because it needs to be conditioned on the
+number of intersections between the tour and the circle. The
+results actually share a similar format with (13) and the same
+asymptotic properties with respect toa, v, andλ. Since our focus
+is to compare the asymptotic behavior of the SM with that of
+the RW, we omit the analysis here.
+In the earlier calculation, we ignore the boundary effect on
+the ﬁnal result. When the circle is located at the boundary of the
+square, distance DIN cannot be computed using (10). Since the
+target has to be located within ds distance of the boundary for
+the boundary case, the probability that such an event happens
+is less than 4dsa/a2 =4 ds/a ≪ 1, since ds ≪ a. Hence, its
+impact to the ﬁnal EST is negligible because DIN for such a
+case is not signiﬁcantly different from that of the nonboundary
+case. Therefore, we will ignore boundary effect in the rest of the
+paper.
+2) Random Walk: Another popular motion plan is to employ
+a 2-D RW to traverse the searching space. As illustrated in Fig. 3,
+we partition the entire searching space using a 2-D ﬁnite lattice
+with a spacing of 2ds in each dimension. Denoting Ns as the
+number of lattice nodes, we have Ns = a2/4d2
+s nodes. A ﬁner
+lattice is possible but usually associated with higher energy cost
+because the robot has to make a lot more turns.
+The robot always moves from one lattice node to its neighbor-
+ing node with equal probabilities. The robot does not cross the
+boundaries. According to [28], this is a ﬁnite 2-D lattice with
+reﬂective boundaries. Recall that a tour starts at the moment
+the robot enters the circle. Since the robot might not enter the
+circle at the exactly same location in different tours, each tour
+is not necessarily a completely closed curve as that in the SM
+case. The closed curve tour in Fig. 3(a) only happens with a
+probability of 1/4, whereas the unclosed tour in Fig. 3(b) has a
+probability of 3/4.
+To compute the EST given in (7), we need to computeE(D).
+Recall that the robot always starts at origin. Given the location of
+target (Xt,Yt), computing the mean time that it takes the robot
+to follow the RW to reach a particular location (Xt,Yt) is the
+mean ﬁrst passage time (MFPT) [29], [30] problem in stochastic
+modeling. The exact solution to this problem is expressed in
+the format of pseudo-Green functions and cannot be explicitly
+analyzed. Since a ≫ ds , there are a large number of nodes
+a2/4d2
+s in the 2-D lattice, and each robot move takes 2ds/v
+time. Hence, we can apply the recent results of MFPT using its
+asymptotic format in [31]
+E(D|Xt,Yt) ≈ a2
+2vds
+(
+α0 + α1 ln
+√
+X2
+t + Y 2
+t
+)
+(18)
+where α0 and α1 are constants and can be determined by Monte
+Carlo methods. According to [31], α0 and α1 strikingly do not
+depend on lattice size but on local transitional properties. Hence
+E(D)=
+∫ a
+0
+∫ a
+0
+E(D|Xt = x, Yt = y) 1
+a2 dxdy (19)
+≈ α0a2
+2vds
++ α1
+2vds
+∫ a
+0
+∫ a
+0
+ln
+√
+x2 + y2dxdy. (20)
+Since∫ a
+0
+∫ a
+0
+ln
+√
+x2 + y2dxdy = a2 lna + π+2l n2 − 6
+4 a2
+we have
+E(D) ≈ a2
+2vds
+(
+α0 + α1 lna + α1
+π+2l n2 − 6
+4
+)
+. (21)
+The remaining unknown term in (7) is E(τOUT (e−λτIN )/
+(1 − e−λτIN )). Given the robot speed v, τIN is uniquely deter-
+mined by the distance in the circleDIN , which is independent of
+the overall trajectory. In addition,E(τOUT ) ≈ E(τOUT + τIN ),
+given that a ≫ ds . Hence
+E
+(
+τOUT
+e−λτIN
+1 − e−λτIN
+)
+≈ E(τOUT + τIN )E
+(
+e−λτIN
+1 − e−λτIN
+)
+.
+(22)
+Since the 2-D lattice-based RW is undirected and symmetric
+in transitional probability, from [32], we know that the stationary
+probability of visiting node i is πi = nd(i)/2me , where nd(i)
+is the degrees of freedom of node i and me is the total number
+of edges in the lattice. For a nonboundary node, nd(i)=4 and
+me ≈ 4Ns . Hence
+πi = 1
+Ns
+= 4d2
+s
+a2 .
+Without loss of generality, we assume nodei is the node closest
+to the target. This means that πi is the long run probability
+that the robot intercepts the circle. Let (xi,yi) be the node i’s
+position. Given nodei is the nearest node to the target and recall
+target location is (Xt,Yt), then we know |xi − Xt |≤ ds and
+|yi − Yt |≤ ds based on the lattice deﬁnition. Therefore, the
+conditional probability that the robot is inside the circle, given
+that node i is visited, is the area ratio between the circle and the
+square with a side length of2ds : pc|i = πd2
+s /4d2
+s = π/4 because
+318 IEEE TRANSACTIONS ON ROBOTICS, VOL. 27, NO. 2, APRIL 2011
+Fig. 4. How the robot trajectory in solid line intersects the circle. (a) Scenario
+1) When the nearest lattice point on tour is located outside the circle. (b) Scenario
+2) When the nearest lattice point on tour is located inside the circle. The dashed
+line in the ﬁgure is part of the lattice.
+the target is uniformly distributed in the searching space. Hence,
+the unconditional long run probability that the robot stays inside
+the circle is pc = pc|iπi = πd2
+s /a2 .
+We can obtain the same long run probability using the
+renewal-reward theorem [1] if we view τIN as the reward func-
+tion for each period
+E(τIN )
+E(τOUT + τIN ) = pc = πd2
+s
+a2 . (23)
+Plugging (23) into (22), we have
+E
+(
+τOUT
+e−λτIN
+1 − e−λτIN
+)
+≈ a2
+πd2s
+E(τIN )E
+(
+e−λτIN
+1 − e−λτIN
+)
+.
+(24)
+Now, we focus on the computation ofτIN . Since the lattice has
+a spacing of2ds , two scenarios exist when the tour on the lattice
+intersects the circle: 1) The next lattice point on the tour is inside
+the circle, and 2) the next lattice point on the tour is outside the
+circle, as illustrated in Fig. 4. Let us deﬁne events that scenarios
+1) and 2) happen as events Ei and Eo , respectively. Since the
+circle center is uniformly located in the searching space
+P(Ei)= πd2
+s
+4d2s
+= π
+4 =1 − P(Eo). (25)
+When event Eo happens, we know that the robot trajectory
+intersects the circle as a straight line, as shown in Fig. 4(a).
+Hence, we have
+τIN |Eo = DIN
+v (26)
+where DIN is deﬁned in (10), and the right side of | is the
+condition for the equality to be true. This is a notation convention
+widely used in stochastic modeling [1]
+E(τIN |Eo)= πds
+2v (27)
+E
+(
+e−λτIN
+1 − e−λτIN
+|Eo
+)
+= g(ds,λ). (28)
+When event Ei happens, one lattice point is inside the circle.
+As illustrated in Fig. 4(b), the lattice point inside the circle par-
+titions the lattice edges inside the circle into four parts:l1,l2,l3 ,
+and l4 . When a robot trajectory intersects the circle, the part of
+the trajectory inside the circle can be divided into two segments,
+which are deﬁned as L′ and L′′, respectively. L′ refers to the
+segment that the robot takes to arrive at the lattice node and
+L′′ refers to the segment that the robot takes to leave the circle.
+Hence
+τIN |Ei = L′ + L′′
+v .
+Since L′ and L′′ have equal probabilities to takel1 , l2 , l3 , andl4 ,
+there is a total of24 =1 6 combinations. Conditioning on the 16
+(L′,L ′′) combinations and the circle center location (Xt,Yt),
+we obtain the same results, as shown in (27) and (28). Com-
+bining those results for the Ei and Eo events by conditioning
+on them, we have the unconditional expected values E(τIN )
+and E
+(
+e−λτIN /(1 − e−λτIN )
+)
+coincidentally sharing the same
+formats, as in (27) and (28), respectively. Plugging the two ex-
+pectations, (21) and (24) into (7), we can obtain the EST for the
+RW case
+E(Ts) ≈ a2
+2vds
+(
+α0 + α1 lna + α1
+π+2l n2 − 6
+4
+)
++ 1
+λ + a2
+2dsvg(ds,λ). (29)
+Comparing (29) with (14), we have the following conclusion.
+Corollary 1: With the same square ﬁeld side length a,t h e
+sensing range ds , and the signal transmission rate λ,t h eE S T
+value of the SM is asymptotically smaller than that of the RW
+when a →∞ .
+Proof: It is straightforward because E(Ts)=Θ ( a2) for the
+SM from (14), whileE(Ts)=Θ ( a2 lna) for the RW according
+to (29). ■
+So far, our analysis are limited to cases in open 2-D Euclidean
+space. It is possible to extend the analysis to more general cases
+if certain conditions are satisﬁed.
+Remark 3: For 2-D space with obstacles: The 2-D space
+must be fully connected. The trajectory generated by motion
+planner should ensure the uniform coverage of the searching
+space for the SM. For the RW, the lattice may not be regularly
+shaped as in the paper. To ensure the long run uniform coverage,
+the transitional probability at each node should be symmetric.
+These conditions are common in many search tasks. When the
+conditions are satisﬁed, then both Theorem 1 and Corollary 1
+hold.
+Remark 4: For 3-D cases: The target circle becomes the target
+ball. Theorem 1 can be directly applied to 3-D cases, but the
+analysis of the SM and the RW needs to be modiﬁed. For exam-
+ple, the searching space size should be measured by its volume
+instead of its area. The results for the 3-D SM and the 3-D RW
+are different, but the overall approach should be similar. The ex-
+tension should be straightforward. Since most searching tasks
+are 2-D, we focus on 2-D cases in this paper.
+Note that although slower than that of the SM, RW-based
+methods have memoryless property and do not require complex
+coordination and communication, which results in more and
+cheaper robots. A comparison between cheap robot team and
+ASER is the next goal.
+SONG et al.: ON THE TIME TO SEARCH FOR AN INTERMITTENT SIGNAL SOURCE UNDER A LIMITED SENSING RANGE 319
+B. Analysis of Different Robot Conﬁgurations
+Theorem 1 can also be used to analyze cases under different
+robot conﬁgurations. Here, we compare two conﬁgurations:
+1) Low-cost robot team case: We have n identically con-
+ﬁgured low-cost robots. To coordinate the searching, we
+partition the searching space into n subsquare ﬁelds with
+an area of a2/n each and allocate one robot for each sub-
+square ﬁeld.
+2) A single expensive robot case:We have an expensive robot
+equipped with a highly capable sensor that has a sensing
+area equal to the combination of those of the n low-cost
+robots. If each of the low-cost robot has a sensing range
+of ds , then the area of the combined sensing region for n
+robots isnπd2
+s provided that there is no overlap of sensing
+region between any two robots. Therefore, the sensing dis-
+tance for the expensive robot is set tod′
+s = √nds to ensure
+ASER has the area of sensing coverage that is no less than
+that of low-cost robot team (LCRT) at any given time.
+We are now ready to compare these two robot conﬁgurations.
+Since the SM is asymptotically faster than the RW, we build on
+the SM results in (29). For the LCRT, only one robot actually
+has the target in its subﬁeld. Hence, the rest ofn − 1 robots are
+irrelevant in the searching process. Compared with the original
+EST in (29), we just need to replacea with a/√n. Deﬁning the
+searching time for the LCRT as T ′
+s ,w eh a v e
+E(T ′
+s) ≈ a2
+4vnds
++ 1
+λ + a2
+2vnds
+g(ds,λ). (30)
+Deﬁning the searching time for the ASER as T ′′
+s ,w eh a v e
+E(T ′′
+s ) ≈ a2
+4v√nds
++ 1
+λ + a2
+2v√nds
+g(√nds,λ). (31)
+From (16), it is straightforward to see that
+g(√nds,λ) → 0 as n →∞ . (32)
+Therefore, we have the following conclusion.
+Corollary 2:When traveling at the same velocityv, the LCRT
+can ﬁnd the target asymptotically faster than the ASER does
+when n increases, if 1/λ is not the dominating factor in the
+EST.
+Proof: From (31) and (32), we know E(T ′′
+s ) = Θ(1/√n +
+1/λ). From (30), we knowE(T ′
+s) = Θ(1/n +1 /λ). Hence, the
+conclusion follows. ■
+If we use RW in comparing LCRT and ASER, Corollary 2
+still holds. We skip the analysis because the EST of RW shares
+a similar format of that of the SM and the proof is similar as
+well. Note that the conclusion is established based on the circular
+sensing region, the result would be different if a different sensing
+topology is used.
+Remark 5: This analysis also shows that if there are cost
+functions associated with the number of robots, different sen-
+sor options, or different velocity options available, we can use
+the EST results as an objective function to optimize the robot
+conﬁguration for the task.
+The result in Corollary 2 is actually not very intuitive at the
+ﬁrst sight. We have not expected such a signiﬁcant difference in
+Fig. 5. Linear SSC during a unit time.
+the comparison. This conclusion is rather interesting because it
+shows that an expensive robot with superior sensing capability
+is not as good as a large number of low-cost robots with less
+capable sensors when searching for targets that intermittently
+transmits short duration signals.
+A more intuitive explanation of the result in Corollary 2 is
+that the ability of searching is directly determined by SSC of
+the moving robot.
+Deﬁnition 2: Given the robot travels at a speed of v with a
+sensory radius of ds , SSC is measured by the area of the swept
+region per unit time aSSC .
+For example
+aSSC = πd2
+s +2 dsv (33)
+for a robot travels along a line (see Fig. 5). For a LCRT with the
+SM-based trajectories, SSC is the summation of n nonoverlap-
+ping robots: πnd2
+s +2 ndsv. However, SSC for the correspond-
+ing ASER becomes πnd2
+s +2 √ndsv, which is less than that of
+LCRT. This is consistent with the result in Corollary 2.
+When the robot does not travel along a line during the unitary
+time, its SSC becomes inevitably smaller than that in (33). For
+example, during the RW, the robot makes a lot more turns than
+that of the SM, which decreases SSC over the course of searching
+and results in a longer EST, as shown in Corollary 1.
+The SSC analysis can also be used to predict the behavior
+of two different RW setups for the robot team. In the afore-
+mentioned LCRT setup, we partition the searching space inton
+equally sized subareas, which is deﬁned as LCRT-P-RW with
+P-RW stands for the partition-based RW. As we know, the EST
+of LCRT-P-RW is longer than that of LCRT with the SM, which
+is abbreviated as LCRT-SM. Another possible way of coordinat-
+ing n RW-based robots is that we do not partition the searching
+space but release all n robots at the same origin and let them
+compete. The searching stops when any robot ﬁnds the target.
+We name the method as LCRT-C-RW, where C-RW stands for
+the competition-based RW. For the LCRT-C-RW process, we
+can compute EST using order statistic [33], since the searching
+time is the smallest of n i.i.d. random variables. Although the
+resulting EST can be obtained either analytically or computa-
+tionally [34], it cannot be expressed in a simple closed-form
+format for comparison study. We will not elaborate the pro-
+cess. However, the introduction of SSC can quickly compare
+LCRT-C-RW to LCRT-P-RW:
+Lemma 1: The expected SSC of the LCRT-P-RW is always
+larger than that of the LCRT-C-RW.
+Proof: In the LCRT-C-RW process, there is a nonzero proba-
+bility po that the sensing region between robots overlaps, which
+reduces its effective SSC, whereas the LCRT-P-RW does not
+320 IEEE TRANSACTIONS ON ROBOTICS, VOL. 27, NO. 2, APRIL 2011
+Fig. 6. Simulation results in (a)–(d) for validating Theorem 1 with respect to a, λ, ds ,a n dv, respectively. SM stands for the slap method. RW stands for the
+RW. Model means the model prediction of the EST. Meas. means the measured mean searching time. (e) Simulation results for comparing four different rob ot
+conﬁgurations. Recall that LCRT stands for the low-cost robot team and ASER stands for a single expensive robot.
+allow the overlap to happen. Let us deﬁne aSSC −P and aSSC −C
+as the SSC for LCRT-P-RW and LCRT-C-RW, respectively.
+Denote ϵa as the reduction of SSC caused by the overlap. Con-
+ditioning on the overlapping event E′,w eh a v e
+E(aSSC −C)= E(aSSC −C |E′)(1 − po)+ E(aSSC −C |E′)po
+= E(aSSC −P)(1 − po)+( E(aSSC −P) − E(ϵa))po
+<E (aSSC −P) (34)
+since ϵa is positive. ■
+Remark 6: This result indicates that the searching efﬁciency
+of LCRT-C-RW is not as good as LCRT-P-RW. Actually, the
+combination of EST and SSC analyses can help us to identify
+the most efﬁcient coordination strategy with respect to different
+searching space partition, robot allocation, or robot formation
+methods for the robot team. Two interesting observations can
+be summarized here.
+1) For the robot trajectory, try to search in straight lines to
+maximize the SSC. An optimal control problem can be
+formulated if searching directions are forced to change
+due to searching space constraints.
+2) For the robot team, try to avoid overlapping among search-
+ing regions of robots. Partitioning the searching space is
+a good practice. We could also use a particular formation
+to achieve this.
+VI. E XPERIMENTS
+We test our results using Monte Carlo simulation and physical
+experiments.
+A. Simulation
+Simulation allows us to examine theoretical results across
+complete parameter ranges without the limitation of hardware
+conditions. The simulation results are illustrated in Fig. 6(a)–(e).
+TABLE I
+PARAMETER SETTINGS FOR RESULTS IN SIMULATION
+AND PHYSICAL EXPERIMENTS
+Each data point in those ﬁgures is an average of 10 000 inde-
+pendent trials. At the beginning of each trial, we reset the robot
+position to be at(0,0) and generate the target location according
+to a 2-D uniform distribution. We then run the robot according
+to the selected motion plan and ﬁnish the trial as soon as the
+target is found.
+1) Validating Theorem 1 and Corollary 1: We test Theorem
+1 using both the SM and the RW because Theorem 1 is supposed
+to be independent of motion plans. The simulation is set up with
+different a, λ, ds , and v settings in Table I. In each setting,
+we collect both the model predicted EST and the measured
+mean searching time. The measured mean searching time is
+the average of the searching time over the 10 000 trials [the
+“Meas.” values in Fig. 6(a)–(d)]. The model predicted ESTs,
+which are the “Model” values in Fig. 6, refer to the predicted
+ESTs according to the measured D, λ, τIN , and τOUT values
+in the experiment. In other words, we record their values and
+average them over the 10 000 trials to obtain the estimation of
+1/λ, E(D), andE(τOUT (e−λτIN )/(1 − e−λτIN )). We then feed
+them into (7) to obtain the model prediction of the EST.
+As illustrated in Fig. 6(a)–(d), the model prediction is consis-
+tent with the measured mean searching time under all settings.
+The curve trends with respect to a, λ, ds , and v in Fig. 6(a)–
+(d) are also consistent with our analysis in (14) and (29). The
+SONG et al.: ON THE TIME TO SEARCH FOR AN INTERMITTENT SIGNAL SOURCE UNDER A LIMITED SENSING RANGE 321
+Fig. 7. (a) Mobile robot used in the experiment. (b) Xbee Pro RF module used
+as the signal source, which is the target. (c) RF radiation pattern of the Xbee
+Pro. This plot is from the product speciﬁcation sheet of Digi International Inc.
+This is also the shape of the real-sensing region.
+EST increases as the ﬁeld side length a increases. The EST de-
+creases as λ, ds , and v increase. All ﬁgures show that the RW
+is slower than the SM. In particular, Fig. 6(a) is consistent with
+the asymptotic difference in Corollary 1.
+2) Validating Corollary 2 and Lemma 1: We have also im-
+plemented different LCRT and ASER robot conﬁgurations.
+Again, the parameter settings are in the Table I. The measured
+ESTs for both the conﬁgurations are shown in Fig. 6(e). It is
+clear that the EST for the LCRT-SM is always much smaller than
+that of the ASER-SM. This is consistent with Corollary 2. In
+addition, the EST for the LCRT-P-RW is always much smaller
+than that of the LCRT-C-RW, which is consistent with Lemma
+1. What is interesting is the fact that the EST of the LCRT-P-
+RW is initially bigger than that of the ASER-SM but becomes
+smaller than that of the ASER-SM asn increases. The curves in
+the ﬁgure also show the general trend that the EST decreases as
+the n increases. This is consistent with our analysis. In addition,
+as n becomes large, the curve levels at a nonzero value. This
+indicates that the signal transmission rate dominates the search-
+ing time in this case. Hence, it is not desirable to arbitrarily
+increase n because the marginal beneﬁt would decrease. Actu-
+ally, with an appropriate cost function, readers can extend the
+analysis to ﬁnd an optimal number of robots for a given search-
+ing task. This would be very meaningful in resource-constrained
+searching process.
+B. Physical Experiments
+1) Hardware and Experiment Setup: In the physical experi-
+ment, we use a mobile robot to search for a buried intermittent
+radio beacon (see Fig. 7). This process emulates the search of a
+black box after a plane crash. The robot is custom made in our
+laboratory. The robot measures 50 × 47 × 50 cm3 in size. The
+robot has two front drive wheels and one rear cast wheel and
+uses a typical differential driving structure. During the experi-
+ment, the robot traveling speed is set at 20 cm/s. The maximum
+robot operation time between recharging is 4 h. Buried under the
+Fig. 8. Physical experiment settings for the “accelerated” conﬁguration. (a)
+Shaded area covers the circle. (b) Close-up view of the experiment setup for the
+shaded area and the overhead camera.
+ﬂoor, the target is a Zigbee radio source, which is an XBee Pro
+node [see Fig. 7(b)] with a chip antenna from Digi International
+Inc. (formerly known as MaxStream Inc). We program the radio
+to allow it to transmit one packet every 10 s (λ=0 .1).
+One notable difference between the simulation and the phys-
+ical experiment is the shape of the sensing region. Although the
+radio antennas are omnidirectional, the radiation pattern [see
+Fig. 7(c)] is irregular. The shape of the radiation pattern is the
+shape of the sensing region. Sincea = 100 m in our settings, we
+decrease antenna sensitivity to ensurea ≫ ds . After calibration
+and adjusting antenna sensitivity, we approximate the recep-
+tion region with a circle (ds =0 .2 m). The physical experiment
+parameters are summarized in Table I.
+Since the robot has a slow speed and a small sensing region,
+recall that the ﬁeld size is 104 m2 , it is estimated that it takes
+the robot at least 106 s to ﬁnd the target. However, the robot
+only has 4-h continuous operation time due to our hardware
+limitations. When the robot travels outside the sensing region,
+it cannot receive signals and does not provide information for
+the searching process. Therefore, we setup the experiment in
+an “accelerated” conﬁguration. In this conﬁguration, we do not
+drive the robot according to the motion plan when the robot is
+far away from the signal source. Instead, we fast forward the
+time to the next moment that the robot is close to the signal
+source. Fig. 8 illustrates the setup. The shaded area in Fig. 8(a)
+is the region, which is a square with a side length of 4ds .T h e
+region fully encloses the sensing region as shown in the ﬁgure.
+The robot obtains its location from an overhead camera, as
+illustrated in Fig. 8(b). The overhead camera is an Arecont
+Vision 3100 networked video camera. The camera recognizes
+color markers on the top of the robot, and computes the robot
+position and orientation subsequently. Conﬁgured at a 640 ×
+480-pixel resolution, it is capable of reaching an accuracy of
+±2.0 cm with 16 Hz frame rate.
+We ﬁrst validate Corollary 1 in the physical experiment. The
+results are summarized in Fig. 9. Each entry is an average of
+100 trials. The marker positions indicate the mean value of
+the 100 trials and the vertical bars are the range of ±σ, with
+σ being the standard deviation. The entries with solid vertical
+bars are physical experiment results, whereas the entries with
+dashed vertical bars represent the corresponding simulation re-
+sults. As shown in the ﬁgure, the physical experiment results are
+consistent with those of the simulation despite the signiﬁcant
+322 IEEE TRANSACTIONS ON ROBOTICS, VOL. 27, NO. 2, APRIL 2011
+Fig. 9. Comparing the EST of the SM and the RW. Note that “Phys.” means
+the physical experiment results, while “Simu.” represents simulation results.
+The vertical bars correspond to [−σ, σ] with σ as the standard deviation.
+Fig. 10. Comparing the EST of different LCRT and ASER conﬁgurations.
+difference in sensing region shape. Both results conﬁrmed that
+the SM has a shorter EST than that of the RW. Unlike the simu-
+lation, we cannot repeat the experiments under a large range of
+various parameter settings due to hardware limitations.
+In the second setup, we validate Corollary 2 and Lemma 1
+by comparing different LCRT and ASER conﬁgurations. The
+results are shown in Fig. 10. Again, we follow the same legend
+convention of mean and standard deviation, as in Fig. 9. Each
+entry indicates the mean value and the standard deviation of
+100 trials. The simulation results and the physical experiment
+results are consistent. The results conclude that the increasing
+order of EST of all conﬁgurations is as follows:
+{LCRT-SM, ASER-SM, LCRT-P-RW, LCRT-C-RW,
+ASER-RW}
+with LCRT-SM being the best and ASER-RW being the worst
+searching methods, respectively. This result is consistent with
+Corollary 2 and Lemma 1. In addition, the fact that ASER-
+SM is faster than LCRT-P-RW and ASER-RW is slower than
+LCRT-C-RW is rather interesting and worth further study in the
+future.
+VII. C ONCLUSION AND FUTURE WORK
+We analytically modeled the EST and SSC for a robot with
+a limited sensing range to search for a target that intermittently
+emits short duration signals. We presented the closed-form
+model for the EST. The EST model is motion-plan indepen-
+dent and can be used to analyze different motion plans or robot
+conﬁgurations. We demonstrated the analysis process using two
+case studies. In the ﬁrst case, we analyzed the SM and the RW
+and found that the SM is asymptotically faster than the RW. In
+the second case, our analysis revealed the interesting result that
+a LCRT is always asymptotically faster than an expensive robot
+when the sensory coverage is the same. In both cases, the re-
+sults demonstrated the usefulness and the capability of our EST
+analysis. Our theoretically results were extensively tested using
+simulation and physical experiments. The experimental results
+were consistent with the analytical models.
+This paper will lead to a rich set of exciting future work. As
+an extension, we will analyze cases, where multiple targets are
+needed to be searched. We will also develop the EST metrics
+for the searching of a moving target, an uncooperating target,
+or multiple sensor combinations. Different sensor models will
+also be considered. In addition, we also need to consider cases,
+where obstacles clutter the searching space.
+ACKNOWLEDGMENT
+The authors would like to thank E. Frazzoli, E. Frew, J. Xiao,
+and R. V olz for their insightful discussions. They would also
+like to thank Y . Xu, J. Zhang, A. Aghamohammadi, and W.
+Li for their input and contributions to the Networked Robots
+Laboratory, Texas A&M University.
+REFERENCES
+[1] S. Ross, Introduction to Probability Models , 9th ed. ed. New York:
+Academic, 2007.
+[2] E. Gelenbe, N. Schmajuk, J. Staddon, and J. Reif, “Autonomous search
+by robots and animals: A survey,” Robot. Auton. Syst. , vol. 22, no. 1,
+pp. 23–34, 1997.
+[3] L. Stone Ed., Theory of Optimal Search , 2nd ed. ed. Alexandria, V A:
+Military Applications Section, Oper. Res. Soc. Amer., 1989.
+[4] K. Trummel and J. Weisinger, “The complexity of the optimal searcher
+path problem,” Oper. Res., vol. 34, no. 2, pp. 324–327, Mar./Apr. 1986.
+[5] H. Choset, “Coverage for robotics—A survey of recent results,” Ann.
+Math. Artif. Intell., vol. 31, no. 1–4, pp. 113–126, Oct. 2001.
+[6] S. Martinez, J. Cortes, and F. Bullo, “Motion coordination with distributed
+information,” IEEE Control Syst. Mag., vol. 27, no. 4, pp. 75–88, Aug.
+2007.
+[7] M. Schwager, D. Rus, and J. Slotine, “Decentralized, adaptive control
+for coverage with networked robots,” Int. J. Robot. Res. , vol. 28, no. 3,
+pp. 357–375, Mar. 2009.
+[8] M. Kao, J. Reif, and S. Tate, “Searching in an unknown environment: An
+optimal randomized algorithm for the cow-path problem,” Inf. Comput.,
+vol. 131, no. 1, pp. 63–79, Nov. 1996.
+[9] M. de Berg, M. van Kreveld, M. Overmars, and O. Schwarzkopf, Compu-
+tational Geometry, Algorithms and Applications. New York: Springer-
+Verlag, 1991.
+[10] S. Eidenbenz, C. Stamm, and P. Widmayer, “Inapproximability results for
+guarding polygons and terrains,” Algorithmica, vol. 31, no. 1, pp. 79–113,
+2001.
+[11] F. Preparata and M. Shamos, Computational Geometry: An Introduction.
+Berlin, Germany: Springer-Verlag, 1985.
+[12] J. Latombe, Robot Motion Planning. Boston, MA: Kluwer, 1991.
+[13] A. Beck and M. Beck, “Son of the linear search problem,” Israel J. Math.,
+vol. 48, no. 2–3, pp. 109–122, 1984.
+[14] A. L ´opez-Ortiz and S. Schuierer, “Online parallel heuristics and robot
+searching under the competitive framework,” in Proc. SWAT , 2002,
+pp. 260–269.
+[15] R. Baeza-Yates, J. Culberson, and J. Rawlins, “Searching in the plane,”
+Inf. Comput., vol. 106, no. 2, pp. 234–252, Oct. 1993.
+SONG et al.: ON THE TIME TO SEARCH FOR AN INTERMITTENT SIGNAL SOURCE UNDER A LIMITED SENSING RANGE 323
+[16] S. Benkoski, M. Monticino, and J. Weisinger, “A survey of the search
+theory literature,” Naval Res. Logistics, vol. 38, no. 4, pp. 469–494, Aug.
+1991.
+[17] S. Thrun, W. Burgard, and D. Fox, Probabilistic Robotics. Cambridge,
+MA: MIT Press, 2005.
+[18] K. Laventall and J. Cortes, “Coverage control by multi-robot networks
+with limited-range anisotropic sensory,” Int. J. Control, vol. 82, no. 6,
+pp. 1113–1121, Jun. 2009.
+[19] P. Brass, “Bounds on coverage and target detection capabilities for models
+of networks of mobile sensors,”ACM Trans. Sens. Netw., vol. 3, no. 2, art.
+9, Jun. 2007.
+[20] M. Batalin and G. Sukhatme, “The design and analysis of an efﬁcient
+local algorithm for coverage and exploration based on sensor network
+deployment,” IEEE Trans. Robot. , vol. 23, no. 4, pp. 661–675, Aug.
+2007.
+[21] D. Fox, J. Ko, K. Konolige, B. Limketkai, D. Schulz, and B. Stewart,
+“Distributed multirobot exploration and mapping,” Proc. IEEE, vol. 94,
+no. 7, pp. 1325–1339, Jul. 2006.
+[22] W. Burgard, M. Moors, C. Stachniss, and F. Schneider, “Collaborative
+multi-robot exploration,” IEEE Trans. Robot. , vol. 21, no. 3, pp. 376–
+386, Jun. 2005.
+[23] D. Song, J. Yi, and Z. Goodwin, “Localization of unknown networked
+radio sources using a mobile robot with a directional antenna,” in Proc.
+Amer. Control Conf., New York, Jul. 2007, pp. 5952–5957.
+[24] D. Song, C. Kim, and J. Yi, “Simultaneous localization of multiple un-
+known CSMA-based wireless sensor network nodes using a mobile robot
+with a directional antenna,” J. Intell. Serv. Robots, vol. 2, no. 4, pp. 219–
+233, Oct. 2009.
+[25] D. Song, C. Kim, and J. Yi, “Monte carlo simultaneous localization of
+multiple unknown transient radio sources using a mobile robot with a
+directional antenna,” inProc. IEEE Int. Conf. Robot. Autom., Kobe, Japan,
+May 2009, pp. 3154–3159.
+[26] D. Song, C. Kim, and J. Yi, “Stochastic modeling of the expected time
+to search for an intermittent signal source under a limited sensing range,”
+presented at the Robot.: Sci. Syst. Conf., Zaragoza, Spain, Jun. 2010.
+[27] F. Al-Athari, “Estimation of the mean of truncated exponential distribu-
+tion,” J. Math. Statist., vol. 4, no. 4, pp. 284–288, 2008.
+[28] M. Brummelhuis and H. J. Hilhorst, “How a random walk covers a ﬁnite
+lattice,” Physica A: Statist. Mech. Appl. , vol. 185, no. 1–4, pp. 35–44,
+Jun. 1992.
+[29] S. Condamin, O. B ´enichou, and M. Moreau, “First-passage times for
+random walks in bounded domains,” Phys. Rev. Lett. , vol. 95, no. 26,
+pp. 260601-1–260601-4, Dec. 2005.
+[30] J. D. Noh and H. Rieger, “Random walks on complex networks,” Phys.
+Rev. Lett., vol. 92, no. 11, pp. 118701-1–118701-4, Mar. 2004.
+[31] S. Condamin, O. Benichou, V . Tejedor, R. V oituriez, and J. Klafter, “First-
+passage times in complex scale-invarant media,”Nature, vol. 450, pp. 77–
+80, Nov. 2007.
+[32] L. Lovasz, “Random walks on graphs: A survey,” in Combinatorics:
+Paul Erdos is Eighty. vol. 2, D. Miklos and V . T. Sos, Eds. Budapest,
+Hungary: Janos Bolyai Math. Soc., 1993, pp. 1–46.
+[33] N. Balakrishnan and A. Cohen, Order Statistics & Inference: Estimation
+Methods. New York: Academic, 1991.
+[34] C. Rose and M. Smith, “Computational order statistics,” Mathematica J,
+vol. 9, no. 4, pp. 790–802, 2005.
+Dezhen Song (S’02–M’04–SM’09) received the
+B.S. and M.S. degrees from Zhejiang University,
+Hangzhou, China, in 1995 and 1998, respectively,
+and the Ph.D. degree from the University of Califor-
+nia, Berkeley, in 2004.
+He is currently an Associate Professor with Texas
+A&M University, College Station. His research in-
+terests include networked robotics, distributed sens-
+ing, computer vision, surveillance, and stochastic
+modeling.
+Dr. Song was the recipient at the Kayamori Best
+Paper Award at the 2005 IEEE International Conference on Robotics and Au-
+tomation (with J. Yi and S. Ding). He was also the recipient of the National
+Science Foundation Faculty Early Career Development (CAREER) Award in
+2007. From 2007 to 2009, he was a Co-Chair of IEEE Robotics and Automa-
+tion Society Technical Committee on Networked Robots. He is an Associate
+Editor of IEEE TRANSACTIONS ON ROBOTICS and the IEEE TRANSACTIONS ON
+AUTOMATION SCIENCE AND ENGINEERING.
+Chang-Young Kimreceived the B.S. degree in elec-
+trical engineering from Korea University, Seoul, Ko-
+rea, in 2005. He is currently working toward the Ph.D.
+degree with the Department of Computer Science
+and Engineering, Texas A&M University, College
+Station.
+He was with GIT Co., Ltd, Seoul, where he was en-
+gaged in the ﬁelds of automotive and embedded sys-
+tems. His current research interests include mobile
+robots, networked robots, radio localization, robot
+navigation, sensor networks, and surveillance.
+Jingang Yi (S’99–M’02–SM’07) received the B.S.
+degree in electrical engineering from Zhejiang Uni-
+versity, Hangzhou, China, in 1993, the M.Eng. de-
+gree in precision instruments from Tsinghua Univer-
+sity, Beijing, China, in 1996, and the M.A. degree
+in mathematics and the Ph.D. degree in mechanical
+engineering from the University of California, Berke-
+ley, in 2001 and 2002, respectively.
+He is currently an Assistant Professor of mechani-
+cal engineering with Rutgers University, Piscataway,
+NJ. His research interests include autonomous robotic
+systems, dynamic systems and control, and automation science and engineering,
+with applications to biomedical systems, civil infrastructural and transportation
+systems, and semiconductor manufacturing.
+Prof. Yi is the recipient of the 2010 National Science Foundation Fac-
+ulty Early Career Development (CAREER) Award. He has coauthored papers
+that have received the Kayamori Best Paper Award at the 2005 IEEE Interna-
+tional Conference on Robotics and Automation. He is currently an Associate
+E d i t o ro ft h eASME Dynamic Systems and Control Division and the IEEE
+Robotics and Automation Society Conference Editorial Boards. He was also
+the Guest Editor for the IEEE T RANSACTIONS ON AUTOMATION SCIENCE AND
+ENGINEERING.
