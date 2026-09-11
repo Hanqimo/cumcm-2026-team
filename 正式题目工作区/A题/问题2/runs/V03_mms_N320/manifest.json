@@ -1,0 +1,57 @@
+{
+  "model": "Q2-M01-v01",
+  "algorithm": "A01-FV-implicit-midpoint-coupled-Picard",
+  "data": "D01",
+  "config": {
+    "name": "V03_mms_N320",
+    "N": 320,
+    "s": 16,
+    "tol": 1e-12,
+    "mode": "mms",
+    "end": 1000.0,
+    "budget": 600,
+    "method": "midpoint",
+    "schedule": 0
+  },
+  "source_sha256": "f6dca91bb18b10f232a9c21f0c4c82923ab1e8626d9298c5b321f9bc642c1ad4",
+  "environment_sha256": "bcd0b42f65c2277c20e65de2a2be149555d4c3e52df562970903411c22d93b77",
+  "compile_command": [
+    "clang++",
+    "-O3",
+    "-std=c++17",
+    "/Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/正式题目工作区/A题/问题2/runs/V03_mms_N320/solver_snapshot.cpp",
+    "-o",
+    "/Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/正式题目工作区/A题/问题2/runs/V03_mms_N320/solver"
+  ],
+  "command": [
+    "/Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/正式题目工作区/A题/问题2/runs/V03_mms_N320/solver",
+    "/Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/正式题目工作区/A题/问题2/inputs/environment.csv",
+    "/Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/正式题目工作区/A题/问题2/runs/V03_mms_N320/solution",
+    "320",
+    "16",
+    "1e-12",
+    "mms",
+    "1000.0",
+    "600",
+    "midpoint",
+    "0"
+  ],
+  "cwd": "/Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/正式题目工作区/A题/问题2",
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "random_seed": null,
+  "git_head": "a48afb816965566edac3c861b0129e45ff7343f0",
+  "git_status": "?? \"\\346\\255\\243\\345\\274\\217\\351\\242\\230\\347\\233\\256\\345\\267\\245\\344\\275\\234\\345\\214\\272/A\\351\\242\\230/\\351\\227\\256\\351\\242\\2302/\"\n",
+  "code_uncommitted": true,
+  "started_utc": "2026-09-11T09:00:01.342365+00:00",
+  "validation_status": "checked; see verification/checks.json for coverage and physical limitations",
+  "finished_utc": "2026-09-11T09:00:01.956252+00:00",
+  "wall_seconds": 0.6135655000107363,
+  "returncode": 0,
+  "outputs_sha256": {
+    "solution_diagnostics.csv": "b8a3b5700b8d239249d001f7f3429413866f5c107e984ab81847c65aa2fa1575",
+    "solution_final.csv": "dffeb6abe74946150c42ee3d4b10a98dcf9fed22fe57ac2c986d6d0dbeb538d0",
+    "solution_samples.csv": "e899b304886af73961a10128acfa7da2fe6220649c9919f28c8a82a89159bcde",
+    "solution_stats.json": "c280d24578e68b32d7d5e4f578bde945e8b3e39808c8338740a6bb5ce1c36a6f"
+  }
+}

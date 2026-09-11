@@ -1,0 +1,57 @@
+{
+  "model": "Q2-M01-v01",
+  "algorithm": "A01-FV-implicit-midpoint-coupled-Picard",
+  "data": "D01",
+  "config": {
+    "name": "R010_N6400_s1024",
+    "N": 6400,
+    "s": 1024,
+    "tol": 1e-12,
+    "mode": "real",
+    "end": 10800,
+    "budget": 600,
+    "method": "midpoint",
+    "schedule": 1
+  },
+  "source_sha256": "f6dca91bb18b10f232a9c21f0c4c82923ab1e8626d9298c5b321f9bc642c1ad4",
+  "environment_sha256": "bcd0b42f65c2277c20e65de2a2be149555d4c3e52df562970903411c22d93b77",
+  "compile_command": [
+    "clang++",
+    "-O3",
+    "-std=c++17",
+    "/Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/正式题目工作区/A题/问题2/runs/R010_N6400_s1024/solver_snapshot.cpp",
+    "-o",
+    "/Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/正式题目工作区/A题/问题2/runs/R010_N6400_s1024/solver"
+  ],
+  "command": [
+    "/Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/正式题目工作区/A题/问题2/runs/R010_N6400_s1024/solver",
+    "/Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/正式题目工作区/A题/问题2/inputs/environment.csv",
+    "/Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/正式题目工作区/A题/问题2/runs/R010_N6400_s1024/solution",
+    "6400",
+    "1024",
+    "1e-12",
+    "real",
+    "10800",
+    "600",
+    "midpoint",
+    "1"
+  ],
+  "cwd": "/Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/正式题目工作区/A题/问题2",
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "random_seed": null,
+  "git_head": "a48afb816965566edac3c861b0129e45ff7343f0",
+  "git_status": "?? \"\\346\\255\\243\\345\\274\\217\\351\\242\\230\\347\\233\\256\\345\\267\\245\\344\\275\\234\\345\\214\\272/A\\351\\242\\230/\\351\\227\\256\\351\\242\\2302/\"\n",
+  "code_uncommitted": true,
+  "started_utc": "2026-09-11T09:32:14.328849+00:00",
+  "validation_status": "checked; see verification/checks.json for coverage and physical limitations",
+  "finished_utc": "2026-09-11T09:34:43.087347+00:00",
+  "wall_seconds": 119.64754529198399,
+  "returncode": 0,
+  "outputs_sha256": {
+    "solution_diagnostics.csv": "4fbd2ddd7300903a297b38b1bd449a12db2591f47bcc17010154582859110476",
+    "solution_final.csv": "e0ce63ee483211a31d30da432b81c413f2ceaf5fe9eb47fd1a62ee14981169bc",
+    "solution_samples.csv": "b64721af307222ea08fcb9cb0a263ed28e0d7ed1ebf271ef94d70809c46b3e20",
+    "solution_stats.json": "13f75133e2ea6abaaff25b0b5a1522b2bfd4acde489a7d51217d794b74865122"
+  }
+}
