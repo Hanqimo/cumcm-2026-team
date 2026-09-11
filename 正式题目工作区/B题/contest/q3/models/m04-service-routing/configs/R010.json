@@ -1,0 +1,32 @@
+{
+  "v3": {
+    "_class": "v3"
+  },
+  "fusion": {
+    "service_route": true,
+    "cover_trials": 6,
+    "transit_probes": true
+  },
+  "warm": {
+    "warm_cover": true,
+    "service_route": true,
+    "cover_trials": 6,
+    "transit_probes": true
+  },
+  "v4_fused": {
+    "projection": true,
+    "merge_stations": true,
+    "cost_action": true,
+    "cost_risk": 1.0,
+    "exact_reception": true,
+    "service_route": true,
+    "cover_trials": 6,
+    "transit_probes": true
+  },
+  "warm_centroid": {
+    "warm_cover": true,
+    "target_estimator": "centroid",
+    "cover_trials": 6,
+    "transit_probes": true
+  }
+}

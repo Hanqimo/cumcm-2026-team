@@ -1,0 +1,572 @@
+{
+  "status": "passed",
+  "checks": [
+    "All research Markdown links resolve",
+    "Current source hashes match selected run snapshots",
+    "Seven literature PDF hashes match catalog",
+    "Original inputs copied without changes"
+  ],
+  "save_level": "local_only_uncommitted_unpushed",
+  "files": [
+    {
+      "path": "RESEARCH_Q12_V1.md",
+      "bytes": 4409,
+      "sha256": "ac0f52ed93210fdc8aee48e7655e4bd0e471c48df9a427decdcdb97dfeeef4a6"
+    },
+    {
+      "path": "contest/global/assumptions.md",
+      "bytes": 1286,
+      "sha256": "1d3d7341651f1ca7f9be9a665f47f83eec56b502f273fdfa584b5e687ec193ce"
+    },
+    {
+      "path": "contest/global/dependencies.md",
+      "bytes": 1225,
+      "sha256": "02a2f4fe95e05bb92e2269e629884ff7d479c0df3382c89a5bbf4edc133be56b"
+    },
+    {
+      "path": "contest/global/problem/B-v1/B题.pdf",
+      "bytes": 514825,
+      "sha256": "81c992a9bee5376308c4768b58719b177f17d6ee1f9861577a851924c5a838ca"
+    },
+    {
+      "path": "contest/global/problem/B-v1/附件/附件1.docx",
+      "bytes": 33675,
+      "sha256": "20a27603ea81efa8f11658b3fa5b859a69aa3ff88fb3664d2abb80d740b47553"
+    },
+    {
+      "path": "contest/global/problem/B-v1/附件/附件2.docx",
+      "bytes": 57179,
+      "sha256": "c882513d5b7e0ec50f3068570ea55fdc1b5c4a5fa2d6e9e54e79b33cf0858cb2"
+    },
+    {
+      "path": "contest/global/symbols.md",
+      "bytes": 1319,
+      "sha256": "a2fb4fe783553b9cd59f58d143cdf16371835ca9b6c94eb9c14674b06169f5c5"
+    },
+    {
+      "path": "contest/paper/bibliography/q12-v1.bib",
+      "bytes": 2495,
+      "sha256": "bb856f9fb66df5714c8dd19142b166837b700bf8d1e68a91a9e3aa3c22fe973d"
+    },
+    {
+      "path": "contest/paper/notes/build_q12_v1_record.py",
+      "bytes": 5759,
+      "sha256": "c2dbf1b26be129466ed273e6d3cd1f3964f63186e27fe7562f8f736b5985e39e"
+    },
+    {
+      "path": "contest/paper/notes/q12-v1-ai-record.md",
+      "bytes": 1323,
+      "sha256": "b6f23075bb691a4957b54ec693e68389aef91c8015130ccc52f76f1a3bcecb46"
+    },
+    {
+      "path": "contest/paper/notes/q12-v1-literature.md",
+      "bytes": 4045,
+      "sha256": "4d77741c1c15136f22b73d6c3747925c63b91f3c67d80594014c0f85fc1ae438"
+    },
+    {
+      "path": "contest/paper/notes/q12-v1-provenance.json",
+      "bytes": 5542,
+      "sha256": "39869cd6d1f2c19260798c1f58599e71ef9e0622de9af19576a4c89e4751ef0b"
+    },
+    {
+      "path": "contest/paper/notes/q12-v1-result-index.json",
+      "bytes": 1726,
+      "sha256": "25652c7c0680c00a5b2a353757b4c7787110f1d4f0f026d1a337374f4625e23a"
+    },
+    {
+      "path": "contest/paper/notes/q12-v1-writing-handoff.md",
+      "bytes": 2301,
+      "sha256": "e1177f35cfd91a229c474b4acbb71b564c4eeb98d844e9920f1ec4a6fabfb16a"
+    },
+    {
+      "path": "contest/paper/tables/q12-v1-results.md",
+      "bytes": 636,
+      "sha256": "64b6ca7047facb6031f3dc84baa59a953619bfd392ea30f393439e3481733d6c"
+    },
+    {
+      "path": "contest/q1/common/v1-handoff.md",
+      "bytes": 1746,
+      "sha256": "3131e527eb3f395cd399071cdddf3281cb5fa5d2ce9a1a48216b11a1282a1aad"
+    },
+    {
+      "path": "contest/q1/comparison.md",
+      "bytes": 760,
+      "sha256": "f8d78e82f3adcc520ed816b0fd9393700f2124b773c6aade92a32c3f21924f57"
+    },
+    {
+      "path": "contest/q1/decisions.md",
+      "bytes": 877,
+      "sha256": "9bdcab886a280566bdbf5f2bbdd047d851aa6d890b9501124ecc556e5ff7a628"
+    },
+    {
+      "path": "contest/q1/models/m01-bounded-bearing/README.md",
+      "bytes": 1101,
+      "sha256": "0e96a0c16707a66a8d6772150b38de9cad0325863ea9205338e05bc50d2cc69c"
+    },
+    {
+      "path": "contest/q1/models/m01-bounded-bearing/formulations/v01.md",
+      "bytes": 9920,
+      "sha256": "9858b5819c1fd995b9267680d1ee93ff27806e60df8e771988fa736d5494fc5c"
+    },
+    {
+      "path": "contest/q1/models/m01-bounded-bearing/runs/R001/counterexample.json",
+      "bytes": 1058,
+      "sha256": "f4159124aae035876ed3b29b2be6f3394d507d1fc1c0c03188410664a088e117"
+    },
+    {
+      "path": "contest/q1/models/m01-bounded-bearing/runs/R001/failure.json",
+      "bytes": 655,
+      "sha256": "1e4851ce5fff9cc065131a3e171b1d678340eafa5a00efc08b528963f5d646d5"
+    },
+    {
+      "path": "contest/q1/models/m01-bounded-bearing/runs/R001/orthogonal_example.json",
+      "bytes": 691,
+      "sha256": "7957ac85ca9ef138de7453ef4cb48f67639d19ec99cab714260e7f93aec8d8af"
+    },
+    {
+      "path": "contest/q1/models/m01-bounded-bearing/runs/R002/counterexample.json",
+      "bytes": 1058,
+      "sha256": "f4159124aae035876ed3b29b2be6f3394d507d1fc1c0c03188410664a088e117"
+    },
+    {
+      "path": "contest/q1/models/m01-bounded-bearing/runs/R002/manifest.json",
+      "bytes": 884,
+      "sha256": "bd6d3d3b0546c07c953169bd3c763fe05fb4d6dc94c42b635491ea1e71c3496e"
+    },
+    {
+      "path": "contest/q1/models/m01-bounded-bearing/runs/R002/manifest.yaml",
+      "bytes": 939,
+      "sha256": "d38a54cc91a338ed61408c8d9ba467258e5ef1e429a0ec46d5175718ff549cd8"
+    },
+    {
+      "path": "contest/q1/models/m01-bounded-bearing/runs/R002/orthogonal_example.json",
+      "bytes": 691,
+      "sha256": "7957ac85ca9ef138de7453ef4cb48f67639d19ec99cab714260e7f93aec8d8af"
+    },
+    {
+      "path": "contest/q1/models/m01-bounded-bearing/runs/R002/q1_geometry.png",
+      "bytes": 167224,
+      "sha256": "90b4e38db7191527e8046d3af6e6f8ba19746ea5fdb7e949b53f5fca82973ea3"
+    },
+    {
+      "path": "contest/q1/models/m01-bounded-bearing/runs/R002/q1_geometry.svg",
+      "bytes": 55137,
+      "sha256": "1363bffb0a0cb0ef404254cee1200cb8425c648be1572b0bc883a86b91ba5ade"
+    },
+    {
+      "path": "contest/q1/models/m01-bounded-bearing/runs/R002/source_snapshot/bearing_geometry.py",
+      "bytes": 7757,
+      "sha256": "c0c5f9bb24d8285b255776469758876102410864beafbbfe9aec311e37a7c1cb"
+    },
+    {
+      "path": "contest/q1/models/m01-bounded-bearing/runs/R002/source_snapshot/verify_q1.py",
+      "bytes": 9993,
+      "sha256": "261e24d046df564cc1b192b7ca36a3ad881a135c725d6c39a886973544310350"
+    },
+    {
+      "path": "contest/q1/models/m01-bounded-bearing/runs/R002/verification.json",
+      "bytes": 30995,
+      "sha256": "fabd3cfae5f186daceec85c0e3e78ca218127bfc4a8fa470323334f4d7d29375"
+    },
+    {
+      "path": "contest/q1/models/m01-bounded-bearing/runs/R003/counterexample.json",
+      "bytes": 1058,
+      "sha256": "f4159124aae035876ed3b29b2be6f3394d507d1fc1c0c03188410664a088e117"
+    },
+    {
+      "path": "contest/q1/models/m01-bounded-bearing/runs/R003/manifest.json",
+      "bytes": 884,
+      "sha256": "ec948e68972d643c810e577bb78bddc657425775bc6771daa82667f8781e71e4"
+    },
+    {
+      "path": "contest/q1/models/m01-bounded-bearing/runs/R003/manifest.yaml",
+      "bytes": 939,
+      "sha256": "8659747daab64529751340abfc23fc6c13c19e3dc9600efc00d200cd8550e14d"
+    },
+    {
+      "path": "contest/q1/models/m01-bounded-bearing/runs/R003/orthogonal_example.json",
+      "bytes": 691,
+      "sha256": "7957ac85ca9ef138de7453ef4cb48f67639d19ec99cab714260e7f93aec8d8af"
+    },
+    {
+      "path": "contest/q1/models/m01-bounded-bearing/runs/R003/q1_geometry.png",
+      "bytes": 162747,
+      "sha256": "a4c00e2e0598a2197974c49350fe4be49fddfd55b814731aef8e15e86dd065f2"
+    },
+    {
+      "path": "contest/q1/models/m01-bounded-bearing/runs/R003/q1_geometry.svg",
+      "bytes": 55952,
+      "sha256": "734f4396cdc09997143adcbfa5ea44b401ed2905421ab24aa156ac1bbe9314ae"
+    },
+    {
+      "path": "contest/q1/models/m01-bounded-bearing/runs/R003/source_snapshot/bearing_geometry.py",
+      "bytes": 7757,
+      "sha256": "c0c5f9bb24d8285b255776469758876102410864beafbbfe9aec311e37a7c1cb"
+    },
+    {
+      "path": "contest/q1/models/m01-bounded-bearing/runs/R003/source_snapshot/verify_q1.py",
+      "bytes": 9994,
+      "sha256": "47856d0fd6b82ca19979b2f565cf6203577090173a3f07f933367f70f994cceb"
+    },
+    {
+      "path": "contest/q1/models/m01-bounded-bearing/runs/R003/verification.json",
+      "bytes": 30995,
+      "sha256": "265383326985233bb6d7a2a88ce243d8bbf377edc9bc5d7da62b9c9f00164763"
+    },
+    {
+      "path": "contest/q1/models/m01-bounded-bearing/src/bearing_geometry.py",
+      "bytes": 7757,
+      "sha256": "c0c5f9bb24d8285b255776469758876102410864beafbbfe9aec311e37a7c1cb"
+    },
+    {
+      "path": "contest/q1/models/m01-bounded-bearing/verification/verify_q1.py",
+      "bytes": 9994,
+      "sha256": "47856d0fd6b82ca19979b2f565cf6203577090173a3f07f933367f70f994cceb"
+    },
+    {
+      "path": "contest/q1/research-log.md",
+      "bytes": 939,
+      "sha256": "3daad21202436a63bcd6f0afbfbb63b34e9f773ddc961ffded3903c5b99c29fe"
+    },
+    {
+      "path": "contest/q1/state.md",
+      "bytes": 1238,
+      "sha256": "8d91855d01984e6f4d255c4aa76a4880079284cbda42ffea5548b8499092fa7c"
+    },
+    {
+      "path": "contest/q2/common/v1-handoff.md",
+      "bytes": 2481,
+      "sha256": "8dfe43eb7abe1c5feacbf54bfb045a0a30fb34679406f57de50a0b739ef1b492"
+    },
+    {
+      "path": "contest/q2/comparison.md",
+      "bytes": 1209,
+      "sha256": "56dc4bbce22bf6d36dac460e217795d57fd2e558d0753c0b1b9f748201770777"
+    },
+    {
+      "path": "contest/q2/decisions.md",
+      "bytes": 1033,
+      "sha256": "85b275e2a1154507c1f2503ec61c1ad68e40da86125e836ac0a3100c359cd40d"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/README.md",
+      "bytes": 1520,
+      "sha256": "9f96d48aef71c74b3704ec029a0930b7b8e5e13e0c252fa3630ed94f82fd7808"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/formulations/v01.md",
+      "bytes": 14651,
+      "sha256": "eaf9e73e786b1c935d91f941c9f3875ec03f8b34376383f7f7ae0b823a4d4dc7"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R001/baselines.csv",
+      "bytes": 872,
+      "sha256": "146cf18db5d6b8ead9049cf24fe52d8296d54b4c82f253f5f674d03d8bba7126"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R001/coarse_candidates.csv",
+      "bytes": 12873,
+      "sha256": "3f47820540cf79f73b63f80790bcc80b3c66cf7b056989502b5ebcbc77a1995b"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R001/context_checks.json",
+      "bytes": 623,
+      "sha256": "688d6a379765756fb44768937c4902906c36187cb5d9e8ce978ec5d545d044ef"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R001/manifest.json",
+      "bytes": 1216,
+      "sha256": "66fa76d3d02e8f13182c56810348b94e441277e9c8ac4bee440ac19996af38d8"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R001/manifest.yaml",
+      "bytes": 1271,
+      "sha256": "0d1f9776d5f9b091b9e79f157249464887524b7acdf0e3194ac1a2208319dd22"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R001/q2_candidate_and_tradeoff.png",
+      "bytes": 172968,
+      "sha256": "67aff9229d160a1742f997c9e46d08be20d5b8d8e7a337a77f94f9fe98135ea5"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R001/q2_candidate_and_tradeoff.svg",
+      "bytes": 119892,
+      "sha256": "8291ba246ef4d7b2dc65819a80ac52083735f4be93b18d4381109985cd43e47e"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R001/q2_range_stress.png",
+      "bytes": 104057,
+      "sha256": "4c3ac90e725add703d3b59754a1056d20ac4e056c403312d884da7d657ba8982"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R001/q2_range_stress.svg",
+      "bytes": 47745,
+      "sha256": "183d35825edf7cc479615cdece90c212746a6ddb16f9700687da0e3c2a3b2920"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R001/refined_candidates.csv",
+      "bytes": 12079,
+      "sha256": "b6e4a92abe5a05b0641f6610b46c2a18bcc61dac1062e86cac5cc071d1917bc5"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R001/selected_points.csv",
+      "bytes": 1041,
+      "sha256": "481322cb65858cc7bcfddea286786070b1c0d223c0e3f83d68827c54bd6da60f"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R001/sensitivity.csv",
+      "bytes": 417,
+      "sha256": "3303e8cf719ee424b693cb56a8d28e7e907cf5c7cec3ccda8db6e09d09be6d6d"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R001/source_snapshot/bearing_geometry.py",
+      "bytes": 7757,
+      "sha256": "c0c5f9bb24d8285b255776469758876102410864beafbbfe9aec311e37a7c1cb"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R001/source_snapshot/run_q2.py",
+      "bytes": 13876,
+      "sha256": "f7b3bfd0bf75832ea24c925c1107022a8124cfd7316ce1a0c6e3e6b8dea17b8c"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R001/source_snapshot/second_point.py",
+      "bytes": 4321,
+      "sha256": "d7bd9029de4e980396237ce6dedf775b3cff2fedd49b11242864b121a26ce8e5"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R001/stress_cases.csv",
+      "bytes": 68080,
+      "sha256": "5d1e77f4e519156bcd160f0955ae372a60a4141380531f4c45d33e2d5f072968"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R001/verification.json",
+      "bytes": 137785,
+      "sha256": "7e07d0b2aa2d90224c66967c9045700fbcd0128fb0bab3d68e0ef8f86a76e99f"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R001/worst_enclosure_B1000.json",
+      "bytes": 452,
+      "sha256": "445fc7decea7a478c596cfb8106b3563f628134ae6cfb86724d9515606caaf2e"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R001/worst_enclosure_B250.json",
+      "bytes": 519,
+      "sha256": "9511f8f56c96679d6103de82d374da6a036ee1e9895e6595bd9a292b458d974c"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R001/worst_enclosure_B500.json",
+      "bytes": 522,
+      "sha256": "03fc719cf65c523920319604e74204f9ca16ea9c345ae9d9b43e26b63dae56c1"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R001/worst_enclosure_B750.json",
+      "bytes": 448,
+      "sha256": "3f3e164f74fdabde4fd674bb3794a5e93dc9e2f50c3057f68de504bc09a8c68a"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R002/baselines.csv",
+      "bytes": 872,
+      "sha256": "146cf18db5d6b8ead9049cf24fe52d8296d54b4c82f253f5f674d03d8bba7126"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R002/coarse_candidates.csv",
+      "bytes": 12873,
+      "sha256": "3f47820540cf79f73b63f80790bcc80b3c66cf7b056989502b5ebcbc77a1995b"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R002/context_checks.json",
+      "bytes": 619,
+      "sha256": "d7f3f6ef84185893010982e55b9bdddd4d78c98896b1e55fa87ba5c49a69b1b8"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R002/manifest.json",
+      "bytes": 1216,
+      "sha256": "1328cf3d62d93e7bf668af70d0e41719efef7f03b99277702dac224eb15450f5"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R002/manifest.yaml",
+      "bytes": 1271,
+      "sha256": "eef07bf4ce95223e0cba77d7ba264e594b5aaa77a299f7ce814ee01634858633"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R002/q2_candidate_and_tradeoff.png",
+      "bytes": 172914,
+      "sha256": "2fb1c98d668370d8eb4a8a74a73323c4181953592070260c3028fa3ca1c690bb"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R002/q2_candidate_and_tradeoff.svg",
+      "bytes": 119893,
+      "sha256": "c57ed717900441793f88f36866fa88e357d5c6496acbbe4cbc75c655f49c0908"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R002/q2_range_stress.png",
+      "bytes": 103727,
+      "sha256": "f9569c298a17243b87f95dff182221337e94a8a55a24e8be85da12fe36b2c676"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R002/q2_range_stress.svg",
+      "bytes": 47747,
+      "sha256": "73fd04377a4c2623072222e5d20da872fb9d1b64c6557bbac8340829b28e2944"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R002/refined_candidates.csv",
+      "bytes": 11170,
+      "sha256": "003e9af903c5d1225a73430e4686672452ac7098bec1f543391ea4a71131ba69"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R002/selected_points.csv",
+      "bytes": 1009,
+      "sha256": "1263399ac9b4f87ea0d67d07d01ffdc55c0ff0ebbee34ac3b053f9b42b607358"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R002/sensitivity.csv",
+      "bytes": 417,
+      "sha256": "04ac8903b0198044e7559583994866c5804e7b8634b9e5aad76b7af85b5dc592"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R002/source_snapshot/bearing_geometry.py",
+      "bytes": 7757,
+      "sha256": "c0c5f9bb24d8285b255776469758876102410864beafbbfe9aec311e37a7c1cb"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R002/source_snapshot/run_q2.py",
+      "bytes": 14525,
+      "sha256": "d1f5ca76589012946f2057d9b53779fe7097b0a959ddaf7ed9bffec6ca32bc5a"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R002/source_snapshot/second_point.py",
+      "bytes": 4321,
+      "sha256": "d7bd9029de4e980396237ce6dedf775b3cff2fedd49b11242864b121a26ce8e5"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R002/stress_cases.csv",
+      "bytes": 68129,
+      "sha256": "fb60a805a33ad0bc3aabc8f0c971ce5078ce8e619d451d0e5b1dc800f0c5ee6f"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R002/verification.json",
+      "bytes": 137784,
+      "sha256": "6c69c31262c5db304aef85046b81405fbce63b089330782349840b39465df293"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R002/worst_enclosure_B1000.json",
+      "bytes": 451,
+      "sha256": "acfa357cd412254c7d85c0d185d8560dee70d40ce88547c72f63d979643b1b73"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R002/worst_enclosure_B250.json",
+      "bytes": 519,
+      "sha256": "9511f8f56c96679d6103de82d374da6a036ee1e9895e6595bd9a292b458d974c"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R002/worst_enclosure_B500.json",
+      "bytes": 519,
+      "sha256": "3363382bc2a04f4f0149d7d1dc803d7e4ef8d02c52041044bfd20fdbacd59b22"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/runs/R002/worst_enclosure_B750.json",
+      "bytes": 451,
+      "sha256": "864a263ddd80a71171fe38dd12eeefc6689f7a6bd8e1d68cfab1dfa9c2cae6ef"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/src/planner.py",
+      "bytes": 2465,
+      "sha256": "8e0e1e6a2762401bf09d6171243aa4da03f5694faa99f720a043b3fe2754eb4e"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/src/run_q2.py",
+      "bytes": 14525,
+      "sha256": "d1f5ca76589012946f2057d9b53779fe7097b0a959ddaf7ed9bffec6ca32bc5a"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/src/second_point.py",
+      "bytes": 4321,
+      "sha256": "d7bd9029de4e980396237ce6dedf775b3cff2fedd49b11242864b121a26ce8e5"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/verification/V02/manifest.json",
+      "bytes": 820,
+      "sha256": "ad01b6561fa5f2a08392979a939fc0d140da1368c500620ec19515c468d8ddc3"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/verification/V02/manifest.yaml",
+      "bytes": 875,
+      "sha256": "c8066b1ad1c2164994e5a22e7f25a95708b0f976126162ce5f9e20275bf52978"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/verification/V02/result.json",
+      "bytes": 416,
+      "sha256": "bc9aeb321880595a018d63175947568de255620b4bfe07fce12c03f6b52e72c6"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/verification/V02/source_snapshot/bearing_geometry.py",
+      "bytes": 7757,
+      "sha256": "c0c5f9bb24d8285b255776469758876102410864beafbbfe9aec311e37a7c1cb"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/verification/V02/source_snapshot/independent_check.py",
+      "bytes": 4508,
+      "sha256": "82421bf30f4b81de2e0186d23666618ad17a15798fe125b44f82fae40842bb06"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/verification/V02/source_snapshot/second_point.py",
+      "bytes": 4321,
+      "sha256": "d7bd9029de4e980396237ce6dedf775b3cff2fedd49b11242864b121a26ce8e5"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/verification/V03/manifest.json",
+      "bytes": 889,
+      "sha256": "a2dd8ec950bc41d2655ddeb19eb394925b740afeb115362d39a5cd16808ae2fa"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/verification/V03/manifest.yaml",
+      "bytes": 944,
+      "sha256": "b452e59b759268ae3dc8cb449f7b46939d93fa21b7b496514a61a2ddba22b106"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/verification/V03/results.json",
+      "bytes": 4961,
+      "sha256": "f2b9e9745c314bc4c756dbcf271349f29a0972b977ad4bf00b5b489c4210b077"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/verification/V03/source_snapshot/bearing_geometry.py",
+      "bytes": 7757,
+      "sha256": "c0c5f9bb24d8285b255776469758876102410864beafbbfe9aec311e37a7c1cb"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/verification/V03/source_snapshot/check_planner.py",
+      "bytes": 2007,
+      "sha256": "d3d58ad878e768798f0b16406ec256946e40f9476f3ef8d3ddd14e3fc419422a"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/verification/V03/source_snapshot/planner.py",
+      "bytes": 2465,
+      "sha256": "8e0e1e6a2762401bf09d6171243aa4da03f5694faa99f720a043b3fe2754eb4e"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/verification/V03/source_snapshot/second_point.py",
+      "bytes": 4321,
+      "sha256": "d7bd9029de4e980396237ce6dedf775b3cff2fedd49b11242864b121a26ce8e5"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/verification/check_planner.py",
+      "bytes": 2007,
+      "sha256": "d3d58ad878e768798f0b16406ec256946e40f9476f3ef8d3ddd14e3fc419422a"
+    },
+    {
+      "path": "contest/q2/models/m01-reception-minimax/verification/independent_check.py",
+      "bytes": 4508,
+      "sha256": "82421bf30f4b81de2e0186d23666618ad17a15798fe125b44f82fae40842bb06"
+    },
+    {
+      "path": "contest/q2/research-log.md",
+      "bytes": 1110,
+      "sha256": "1e53f7602e93e4899e3a1f37c5025d330acc1e78aa070145d48f75964d477321"
+    },
+    {
+      "path": "contest/q2/state.md",
+      "bytes": 1443,
+      "sha256": "fc955f9c76de51319e76b74b14ef8e32e1b521a415a13fecbe0a273971fa1d54"
+    }
+  ]
+}

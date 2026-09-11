@@ -1,0 +1,44 @@
+{
+  "v3": {
+    "_class": "v3"
+  },
+  "v4": {
+    "_class": "v4",
+    "cost_action": true,
+    "cost_risk": 1.0,
+    "exact_reception": true,
+    "cover_sweeps": 3
+  },
+  "route3": {
+    "route_restarts": 3
+  },
+  "route12": {
+    "route_restarts": 12
+  },
+  "rotate_service": {
+    "cover_trials": 6,
+    "service_route": true
+  },
+  "multicover": {
+    "cover_trials": 3,
+    "cover_radii": [
+      1150,
+      1350,
+      1500
+    ]
+  },
+  "initial": {
+    "initial_design": true
+  },
+  "all_new": {
+    "initial_design": true,
+    "cover_trials": 3,
+    "cover_radii": [
+      1150,
+      1350,
+      1500
+    ],
+    "service_route": true,
+    "transit_probes": true
+  }
+}

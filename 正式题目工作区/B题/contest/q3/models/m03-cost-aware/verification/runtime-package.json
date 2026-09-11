@@ -1,0 +1,25 @@
+{
+  "runtime_path": "D:\\math modeling\\正式题目工作区\\B-simulator\\p3-cost-aware-research",
+  "source_path": "D:\\math modeling\\正式题目工作区\\B题建模第一版\\contest\\q3\\models\\m03-cost-aware\\src",
+  "files_sha256": {
+    "api_client.py": "6ce270ffb316142e5d22da27e67eeab87f22797bd22f27ea984ab55deeec8203",
+    "bearing_geometry.py": "c0c5f9bb24d8285b255776469758876102410864beafbbfe9aec311e37a7c1cb",
+    "clearance_geometry.py": "579998fa4e0fd4c75b1597522cd65a4164598b2601c84feb2811613b29ea5d93",
+    "combined_cost_cover.py": "9791230d2ee44c06805735c697fbf27655445100ec0c5fe4b0d3d7216e437a48",
+    "convex_cover.py": "6903f2441a2beb5cece4362be75307cd5e2eb9f5e7fff4c6ca543691ae8e2f3c",
+    "cost_aware.py": "6374702d1f7ca18afdca12c06ae9c75ab5285333f02b99a9afc77689174904c7",
+    "exact_coverage.py": "ce6ab1e744d01d848edb479821cb5b66d944a5afb20d59d4b70ebb4ef14a591b",
+    "joint_strategies.py": "9457d5e9a9c39c41976143b65c1aa2f5d8bec18c6d4daadfb22ced9c00c7828e",
+    "legacy_strategy.py": "064a03e8fb1b6e40640747b2e4a0441c7952e766304f27f1b12be68945f6238f",
+    "merged_cover.py": "08e26e150e5f07283fccb8d58ed4120116a00306eb8630dd7b756e49d4787fec",
+    "policies.json": "5fde3510b213b6a744114bad7373dd2ed8b508adf1877069f0379f282c89a6d8",
+    "reception_region.py": "a7fc840075c9665ae3a53febffd90de2dc47250348211aaacb7dd5e7567c89ad",
+    "requirements.txt": "4b81b6b6a549771115529e6900b9589835cdbfff0c6acf179aef53d283b744d5",
+    "run_practice.cmd": "60774cb2a4795d5a63f750d363e4968df600131dd9c553eab9c0e80da2e11b57",
+    "run_robot.py": "51f82df1bd5cb3ab559d642f0bcafdaafb967b40903b43793b85068d1ce8021b",
+    "strategy.py": "3fd2fe807683cbfb98ef9827ed9da28ca6cbe4fea5b7d115f376a9b410325c26",
+    "使用说明.md": "95b5d723f7c0fa60e794d3326e9fefa0b24e21bee9d44e1445648b2257c3ee65"
+  },
+  "official_network_calls": false,
+  "old_runtime_untouched": true
+}

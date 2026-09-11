@@ -1,0 +1,19 @@
+{
+  "verified_source_files": 3665,
+  "archives": 17,
+  "max_file_bytes": 33548402,
+  "report_summary_reproduced": true,
+  "readme_links_valid": true,
+  "byte_exact_sources": true,
+  "validation_destination": "temporary local restored checkout; not part of publication",
+  "q3_frozen": {
+    "cases": 60,
+    "baseline": 234.0297574044325,
+    "candidate": 232.6014136448729
+  },
+  "q4_frozen": {
+    "cases": 40,
+    "baseline": 696.7794300560541,
+    "candidate": 515.627184733953
+  }
+}

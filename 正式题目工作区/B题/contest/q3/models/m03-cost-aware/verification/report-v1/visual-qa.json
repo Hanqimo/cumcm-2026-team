@@ -1,0 +1,9 @@
+{
+  "visual_inspection": "paired-audit.png visually inspected; labels readable, no clipping; both regressions and improvements visible",
+  "formats": [
+    "PNG",
+    "PDF"
+  ],
+  "data": "all 100 paired scenes; no exclusions",
+  "notes": "Research figure, no journal-specific compliance claim"
+}

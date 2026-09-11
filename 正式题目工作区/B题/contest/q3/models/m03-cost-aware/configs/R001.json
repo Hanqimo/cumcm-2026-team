@@ -1,0 +1,13 @@
+{
+  "projection": {},
+  "cost": {
+    "cost_action": true
+  },
+  "shared": {
+    "intermediate_known": true
+  },
+  "mid_search": {
+    "intermediate_known": true,
+    "intermediate_gain": 0.18
+  }
+}

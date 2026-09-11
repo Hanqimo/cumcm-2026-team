@@ -1,0 +1,201 @@
+[
+  {
+    "input": {
+      "sensor": [
+        0.0,
+        0.0
+      ],
+      "theta": 0.0,
+      "budget": 500.0
+    },
+    "output": {
+      "status": "recommended_finite_grid",
+      "point": [
+        250.00000000000006,
+        -433.0127018922193
+      ],
+      "local_displacement": [
+        250.00000000000006,
+        -433.0127018922193
+      ],
+      "radius_upper_m": 124.11303514521138,
+      "travel_m": 500.0,
+      "movement_and_measure_s": 105.0,
+      "constraint_margins_m": {
+        "travel_m": 0.0,
+        "origin_disk_m": 500.0,
+        "endpoint_disks_m": 125.248389682155,
+        "lateral_separation_m": 408.5836503510561
+      },
+      "prediction": {
+        "radius_upper_m": 124.11303514521138,
+        "worst_bin_center_deg": 21.20519287436231,
+        "bin_width_deg": 0.04998487709774224,
+        "n_bins": 2080,
+        "worst_enclosure": [
+          [
+            1499.3579228615108,
+            26.171389894185122
+          ],
+          [
+            1367.8891841083446,
+            23.876594523217726
+          ],
+          [
+            1255.8351634119258,
+            -21.920684316493904
+          ],
+          [
+            1363.3995174818804,
+            -23.798227100746747
+          ]
+        ]
+      },
+      "number_of_coarse_candidates": 84,
+      "limitations": [
+        "omnidirectional source only",
+        "not continuous global optimal",
+        "not total clearance-time optimal"
+      ]
+    }
+  },
+  {
+    "input": {
+      "sensor": [
+        1600.0,
+        0.0
+      ],
+      "theta": 0.0,
+      "budget": 500.0
+    },
+    "output": {
+      "status": "recommended_finite_grid",
+      "point": [
+        1741.4213562373095,
+        -141.4213562373095
+      ],
+      "local_displacement": [
+        141.4213562373095,
+        -141.4213562373095
+      ],
+      "radius_upper_m": 5.42437575928829,
+      "travel_m": 200.0,
+      "movement_and_measure_s": 45.0,
+      "constraint_margins_m": {
+        "travel_m": 300.0,
+        "origin_disk_m": 800.0,
+        "endpoint_disks_m": 126.99561752737964,
+        "lateral_separation_m": 118.93167409179947
+      },
+      "prediction": {
+        "radius_upper_m": 5.42437575928829,
+        "worst_bin_center_deg": 69.01250706379282,
+        "bin_width_deg": 0.049972020094173786,
+        "n_bins": 1401,
+        "worst_enclosure": [
+          [
+            1800.0,
+            3.4910129856435077
+          ],
+          [
+            1794.0198659672317,
+            3.386629357822093
+          ],
+          [
+            1791.5751198013565,
+            -3.343956154763737
+          ],
+          [
+            1797.20351422686,
+            -3.4422001449025186
+          ],
+          [
+            1800.0,
+            3.475007093199827
+          ]
+        ]
+      },
+      "number_of_coarse_candidates": 84,
+      "limitations": [
+        "omnidirectional source only",
+        "not continuous global optimal",
+        "not total clearance-time optimal"
+      ]
+    }
+  },
+  {
+    "input": {
+      "sensor": [
+        0.0,
+        1600.0
+      ],
+      "theta": 45.0,
+      "budget": 250.0
+    },
+    "output": {
+      "status": "recommended_finite_grid",
+      "point": [
+        249.04867452293638,
+        1621.7889356869146
+      ],
+      "local_displacement": [
+        191.5111107797445,
+        -160.6969024216348
+      ],
+      "radius_upper_m": 6.970459170540873,
+      "travel_m": 250.0,
+      "movement_and_measure_s": 55.0,
+      "constraint_margins_m": {
+        "travel_m": 0.0,
+        "origin_disk_m": 750.0,
+        "endpoint_disks_m": 172.26501228435802,
+        "lateral_separation_m": 137.33009776245933
+      },
+      "prediction": {
+        "radius_upper_m": 6.970459170540873,
+        "worst_bin_center_deg": 112.13415422274903,
+        "bin_width_deg": 0.04999380424857236,
+        "n_bins": 1589,
+        "worst_enclosure": [
+          [
+            183.9307062469984,
+            1790.4658219556743
+          ],
+          [
+            179.05548077191062,
+            1785.4173781896568
+          ],
+          [
+            182.84105420912678,
+            1776.5675536236456
+          ],
+          [
+            187.54317631484898,
+            1781.1083401589137
+          ]
+        ]
+      },
+      "number_of_coarse_candidates": 84,
+      "limitations": [
+        "omnidirectional source only",
+        "not continuous global optimal",
+        "not total clearance-time optimal"
+      ]
+    }
+  },
+  {
+    "input": {
+      "sensor": [
+        0.0,
+        0.0
+      ],
+      "theta": 0.0,
+      "budget": 1.0
+    },
+    "output": {
+      "status": "empty_candidate_grid",
+      "point": null,
+      "reason": "No grid point satisfies the travel, reception and lateral constraints; this does not prove the continuous set empty"
+    }
+  }
+]

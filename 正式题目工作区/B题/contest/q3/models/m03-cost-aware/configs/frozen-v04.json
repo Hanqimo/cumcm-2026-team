@@ -1,0 +1,9 @@
+{
+  "combined": {
+    "_class": "combined",
+    "cost_action": true,
+    "cost_risk": 1.0,
+    "exact_reception": true,
+    "cover_sweeps": 3
+  }
+}
