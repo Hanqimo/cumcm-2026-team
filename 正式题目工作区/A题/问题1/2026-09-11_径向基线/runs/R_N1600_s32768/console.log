@@ -1,0 +1,7 @@
+time 300 steps 257024 wall 18.5759
+time 600 steps 322560 wall 23.7994
+time 900 steps 360960 wall 26.7938
+time 1200 steps 399360 wall 29.7729
+time 1500 steps 437760 wall 32.7375
+time 1800 steps 476160 wall 35.6775
+done /Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/正式题目工作区/A题/问题1/2026-09-11_径向基线/runs/R_N1600_s32768/solution wall 35.6815 complete 1

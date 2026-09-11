@@ -1,0 +1,3 @@
+{
+"completed":false,"reason":"nonlinear_rejected","N":200,"base_dt":0.25,"schedule":0,"end_time":0,"mode":"onepicard","tolerance":9.9999999999999998e-13,"steps":0,"total_picard":0,"max_picard":0,"rejected_steps":1,"max_scaled_nonlinear_residual":9.1525506208046886e-07,"max_residual_ratio":257818.32734661089,"max_linear_backward_error":0,"max_update":0,"max_heat_balance":0,"max_water_balance":0,"sum_heat_balance":0,"sum_water_balance":0,"sum_abs_heat_balance":0,"sum_abs_water_balance":0,"min_T":9.9999999999999997e+98,"max_T":-9.9999999999999997e+98,"min_C":9.9999999999999997e+98,"max_C":-9.9999999999999997e+98,"exact_max_error_T":0,"exact_max_error_C":0,"wall_seconds":0.00041929199999999998
+}

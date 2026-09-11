@@ -1,0 +1,29 @@
+{
+  "created": "2026-09-11T10:33:21.113371+08:00",
+  "git_head": "e11d6d7be0966f593a1b448ad7e5b4c8f13981b9",
+  "branch": "q1/solve-m01-20260911",
+  "files": [
+    {
+      "source": "/Users/hanqimo/University/Junior/数学建模/CUMCM2026Problems/A题/A题.pdf",
+      "snapshot": "inputs/A题.pdf",
+      "sha256": "19d5c5eb3666e679f69192d41eb9d1bef4f0abd5c00d36cfee61ac041f6faf90"
+    },
+    {
+      "source": "/Users/hanqimo/University/Junior/数学建模/CUMCM2026Problems/A题/附件/附件1.xlsx",
+      "snapshot": "inputs/附件1.xlsx",
+      "sha256": "7ef32870abeef420b89560b2530ff60dfe4255917805151d89988d0311af9dd7"
+    },
+    {
+      "source": "/Users/hanqimo/University/Junior/数学建模/CUMCM2026Problems/A题/附件/附件3/result1.xlsx",
+      "snapshot": "inputs/result1_template.xlsx",
+      "sha256": "23b261b295c1b787d000eebbca6521c37075107b6fcf78724f8d395ce1798ff4"
+    },
+    {
+      "source": "/Users/hanqimo/University/Junior/数学建模/A题第一问建模审查资料/A题第一问_模型与求解算法.tex",
+      "snapshot": "model/模型与算法_审查版本.tex",
+      "sha256": "a7a10831a289d10eac547ead3237e93be5edcc63fb546220423d884c363f3e65"
+    }
+  ],
+  "data_rows": 241,
+  "input_policy": "linear interpolation; Ce equals attachment ambient water concentration as effective modeling convention"
+}

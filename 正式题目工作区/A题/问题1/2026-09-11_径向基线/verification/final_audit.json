@@ -1,0 +1,20 @@
+{
+  "date": "2026-09-11T10:53:15.199011+08:00",
+  "scope": "A question 1, M01-v01, local candidate results",
+  "input_originals_and_snapshots_match": true,
+  "full_output_refinement_passes": true,
+  "tightened_iteration_tolerance_passes": true,
+  "xlsx_all_75600_values_checked": true,
+  "xlsx_two_sheets_visually_reviewed": true,
+  "render_reviews": [
+    "xlsx_温度_early.png",
+    "xlsx_温度_late.png",
+    "xlsx_水分浓度_early.png",
+    "xlsx_水分浓度_late.png"
+  ],
+  "visual_findings": "Headers and values legible; no clipping or formula errors observed.",
+  "rounding_caveat_retained": true,
+  "team_adopted": false,
+  "commit_or_push_performed": false,
+  "reproduce_script_status": "Shell and Python syntax checked. Numerical cases actually run through run_case.py; full all-in-one replay wrapper not rerun."
+}

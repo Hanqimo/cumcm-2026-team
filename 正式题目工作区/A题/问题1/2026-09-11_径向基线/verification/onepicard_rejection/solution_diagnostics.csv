@@ -1,0 +1,2 @@
+time_s,steps,total_picard,max_picard,max_scaled_nonlinear_residual,max_residual_ratio,max_linear_backward_error,cumulative_heat_balance,cumulative_water_balance,min_T,max_T,min_C,max_C
+0,0,0,0,0,0,0,0,0,28,28,2.5499999999999998,2.5499999999999998
