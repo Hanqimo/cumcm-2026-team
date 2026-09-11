@@ -1,0 +1,62 @@
+{
+  "trial40_mec": {
+    "scan_gain": 0.18,
+    "info_distance": 250,
+    "initial_baseline": 250,
+    "initial_force": false,
+    "initial_rotation": 90,
+    "anchor_radius": 1200.0,
+    "trial_radius": 40,
+    "trial_estimator": "mec"
+  },
+  "trial40_wls": {
+    "scan_gain": 0.18,
+    "info_distance": 250,
+    "initial_baseline": 250,
+    "initial_force": false,
+    "initial_rotation": 90,
+    "anchor_radius": 1200.0,
+    "trial_radius": 40,
+    "trial_estimator": "wls"
+  },
+  "trial80_mec": {
+    "scan_gain": 0.18,
+    "info_distance": 250,
+    "initial_baseline": 250,
+    "initial_force": false,
+    "initial_rotation": 90,
+    "anchor_radius": 1200.0,
+    "trial_radius": 80,
+    "trial_estimator": "mec"
+  },
+  "trial80_wls": {
+    "scan_gain": 0.18,
+    "info_distance": 250,
+    "initial_baseline": 250,
+    "initial_force": false,
+    "initial_rotation": 90,
+    "anchor_radius": 1200.0,
+    "trial_radius": 80,
+    "trial_estimator": "wls"
+  },
+  "trial150_mec": {
+    "scan_gain": 0.18,
+    "info_distance": 250,
+    "initial_baseline": 250,
+    "initial_force": false,
+    "initial_rotation": 90,
+    "anchor_radius": 1200.0,
+    "trial_radius": 150,
+    "trial_estimator": "mec"
+  },
+  "trial150_wls": {
+    "scan_gain": 0.18,
+    "info_distance": 250,
+    "initial_baseline": 250,
+    "initial_force": false,
+    "initial_rotation": 90,
+    "anchor_radius": 1200.0,
+    "trial_radius": 150,
+    "trial_estimator": "wls"
+  }
+}

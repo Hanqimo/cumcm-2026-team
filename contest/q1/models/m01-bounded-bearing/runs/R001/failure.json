@@ -1,0 +1,10 @@
+{
+  "status": "failed_before_completion",
+  "model": "Q1-M01-v01",
+  "run": "R001",
+  "command": "python contest/q1/models/m01-bounded-bearing/verification/verify_q1.py --run-id R001",
+  "reason": "Independent SLSQP verification stopped with Positive directional derivative for linesearch using squared-distance constraints",
+  "resolution": "Use the convex norm epigraph formulation; rerun as R002",
+  "validity": "Partial counterexample and orthogonal-case outputs only; not a completed verification run",
+  "provenance_limit": "This failed pilot did not reach the source-snapshot/manifest writing step; do not cite it as reproducible final evidence"
+}

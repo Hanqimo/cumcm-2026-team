@@ -1,0 +1,19 @@
+{
+  "mean": {
+    "cost_action": true,
+    "cost_risk": 0
+  },
+  "max": {
+    "cost_action": true,
+    "cost_risk": 1
+  },
+  "exact": {
+    "cost_action": true,
+    "exact_reception": true
+  },
+  "exit": {
+    "cost_action": true,
+    "exact_reception": true,
+    "exit_cost": true
+  }
+}

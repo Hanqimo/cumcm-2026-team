@@ -1,0 +1,62 @@
+{
+  "ordered_g0.04_b0": {
+    "_class": "ordered",
+    "scan_gain": 0.04,
+    "info_distance": 150,
+    "initial_baseline": 0,
+    "initial_force": false,
+    "anchor_radius": 1200.0,
+    "one_step": true,
+    "probe_length": 100
+  },
+  "ordered_g0.04_b400": {
+    "_class": "ordered",
+    "scan_gain": 0.04,
+    "info_distance": 150,
+    "initial_baseline": 400,
+    "initial_force": false,
+    "anchor_radius": 1200.0,
+    "one_step": true,
+    "probe_length": 100
+  },
+  "ordered_g0.12_b0": {
+    "_class": "ordered",
+    "scan_gain": 0.12,
+    "info_distance": 150,
+    "initial_baseline": 0,
+    "initial_force": false,
+    "anchor_radius": 1200.0,
+    "one_step": true,
+    "probe_length": 100
+  },
+  "ordered_g0.12_b400": {
+    "_class": "ordered",
+    "scan_gain": 0.12,
+    "info_distance": 150,
+    "initial_baseline": 400,
+    "initial_force": false,
+    "anchor_radius": 1200.0,
+    "one_step": true,
+    "probe_length": 100
+  },
+  "ordered_g0.3_b0": {
+    "_class": "ordered",
+    "scan_gain": 0.3,
+    "info_distance": 150,
+    "initial_baseline": 0,
+    "initial_force": false,
+    "anchor_radius": 1200.0,
+    "one_step": true,
+    "probe_length": 100
+  },
+  "ordered_g0.3_b400": {
+    "_class": "ordered",
+    "scan_gain": 0.3,
+    "info_distance": 150,
+    "initial_baseline": 400,
+    "initial_force": false,
+    "anchor_radius": 1200.0,
+    "one_step": true,
+    "probe_length": 100
+  }
+}

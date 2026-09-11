@@ -1,0 +1,16 @@
+{
+  "fusion": {
+    "service_route": true,
+    "cover_trials": 6,
+    "transit_probes": true
+  },
+  "stop_fusion": {
+    "service_route": true,
+    "cover_trials": 6,
+    "transit_probes": true,
+    "continuous_stop": true
+  },
+  "v3": {
+    "_class": "v3"
+  }
+}

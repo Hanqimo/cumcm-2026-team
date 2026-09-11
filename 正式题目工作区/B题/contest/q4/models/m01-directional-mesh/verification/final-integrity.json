@@ -1,0 +1,17 @@
+{
+  "frozen_and_runtime_files_match": 7,
+  "syntax": "pass",
+  "navigation_links": "pass",
+  "offline_runtime_selfcheck": "pass",
+  "runtime_factory_replay": [
+    {
+      "seed": 25000,
+      "matches_frozen_result": true
+    },
+    {
+      "seed": 25003,
+      "matches_frozen_result": true
+    }
+  ],
+  "official_api_called": false
+}

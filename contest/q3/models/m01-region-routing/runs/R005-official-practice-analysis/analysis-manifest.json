@@ -1,0 +1,27 @@
+{
+  "command": [
+    "contest/q3/models/m01-region-routing/verification/analyze_saved_run.py",
+    "--run",
+    "D:\\math modeling\\正式题目工作区\\B-simulator\\improved-p3\\runs\\20260911-002124-7b080d",
+    "--official",
+    "D:\\math modeling\\正式题目工作区\\B-simulator\\Jammers-simulator-full-win64\\Jammers-simulator-full\\JammersSimulatorData\\behavior-logs\\practice-p3-7781971365707298437-JCEK-BMVS-WD8Z-WF6J.result.json",
+    "--old-runs",
+    "D:\\math modeling\\正式题目工作区\\B-simulator\\simple-strategy\\runs",
+    "--output",
+    "D:\\math modeling\\正式题目工作区\\B-simulator\\improved-p3\\runs\\20260911-002124-7b080d\\analysis-v1"
+  ],
+  "source_run": "D:\\math modeling\\正式题目工作区\\B-simulator\\improved-p3\\runs\\20260911-002124-7b080d",
+  "official_result_source": "D:\\math modeling\\正式题目工作区\\B-simulator\\Jammers-simulator-full-win64\\Jammers-simulator-full\\JammersSimulatorData\\behavior-logs\\practice-p3-7781971365707298437-JCEK-BMVS-WD8Z-WF6J.result.json",
+  "data_type": "actual_practice_API_responses_and_official_result_metadata",
+  "no_new_simulator_requests": true,
+  "source_hashes": {
+    "D:\\math modeling\\正式题目工作区\\B-simulator\\improved-p3\\runs\\20260911-002124-7b080d\\summary.json": "e3309a29804eaca6ea4763f33f56f8d9c71b63d9ec0da6ff57e36d4cf312cb0a",
+    "D:\\math modeling\\正式题目工作区\\B-simulator\\improved-p3\\runs\\20260911-002124-7b080d\\manifest.json": "1bd833f8e1bb426c4c79d5ede2aa091afa46e3f5205b0b8f3c0fa7176b304ee2",
+    "D:\\math modeling\\正式题目工作区\\B-simulator\\improved-p3\\runs\\20260911-002124-7b080d\\actions.jsonl": "55454f657a7d71ba019d88f0865c8421f1f3199860128f4140d0cda5bb9692fd",
+    "D:\\math modeling\\正式题目工作区\\B-simulator\\Jammers-simulator-full-win64\\Jammers-simulator-full\\JammersSimulatorData\\behavior-logs\\practice-p3-7781971365707298437-JCEK-BMVS-WD8Z-WF6J.result.json": "e411030fd3f2a882c2c13a32cb7d37e5e029acf94cb14be8bb9e9d0ba4ef09e0",
+    "D:\\math modeling\\正式题目工作区\\B-simulator\\Jammers-simulator-full-win64\\Jammers-simulator-full\\JammersSimulatorData\\behavior-logs\\practice-p3-7781971365707298437-JCEK-BMVS-WD8Z-WF6J.jlog": "8c512264f046ff9b7a3256aeca99f1c30c62da20a8386c483348d1af717b03ac",
+    "D:\\math modeling\\正式题目工作区\\B-simulator\\Jammers-simulator-full-win64\\Jammers-simulator-full\\JammersSimulatorData\\behavior-logs\\practice-p3-7781971365707298437-JCEK-BMVS-WD8Z-WF6J.psum": "ddfcca0ac3d818b8ca23b9d3749cae82aa8f7e5ab5e6709221e7b40ca49270a4"
+  },
+  "analyzer_sha256": "80d4e1f926c0c87e45801e479c4064e0b091bec90e04e2e5406d8a02da5e2736",
+  "python": "3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]"
+}

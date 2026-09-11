@@ -1,0 +1,93 @@
+{
+  "command": [
+    "contest/q3/models/m04-service-routing/verification/benchmark.py",
+    "--output",
+    "contest/q3/models/m04-service-routing/runs/R006-estimation-fusion",
+    "--config",
+    "contest/q3/models/m04-service-routing/configs/R006.json",
+    "--start",
+    "10000",
+    "--count",
+    "12",
+    "--variants",
+    "v3,centroid,wls,centroid_fusion,merge_fusion,fast_fusion"
+  ],
+  "python": "3.10.11",
+  "start": 1789101041.046913,
+  "end": 1789101110.682694,
+  "source_sha256": {
+    "api_client.py": "6ce270ffb316142e5d22da27e67eeab87f22797bd22f27ea984ab55deeec8203",
+    "base-v3.json": "65ef2dc6250e45bd61e5342324b51a9469ce6f0947595e78ee265a2788e07e2a",
+    "bearing_geometry.py": "c0c5f9bb24d8285b255776469758876102410864beafbbfe9aec311e37a7c1cb",
+    "benchmark.py": "84e8175798bf7533bd1138a3c3623f4c63cd7e3dfa9403114acf6a3b30b80eaf",
+    "clearance_geometry.py": "579998fa4e0fd4c75b1597522cd65a4164598b2601c84feb2811613b29ea5d93",
+    "combined_cost_cover.py": "9791230d2ee44c06805735c697fbf27655445100ec0c5fe4b0d3d7216e437a48",
+    "config.json": "ad07bf91205650723ac647e9278e7d63c6a66679c2a678062d811bd50cbb2c8d",
+    "convex_cover.py": "6903f2441a2beb5cece4362be75307cd5e2eb9f5e7fff4c6ca543691ae8e2f3c",
+    "cost_aware.py": "6374702d1f7ca18afdca12c06ae9c75ab5285333f02b99a9afc77689174904c7",
+    "exact_coverage.py": "ce6ab1e744d01d848edb479821cb5b66d944a5afb20d59d4b70ebb4ef14a591b",
+    "flexible_cover.py": "21b2488d7712847940dd526f724fad5870b8d6861f590a2b33caf9250bf3f38f",
+    "joint_strategies.py": "9457d5e9a9c39c41976143b65c1aa2f5d8bec18c6d4daadfb22ced9c00c7828e",
+    "legacy_strategy.py": "064a03e8fb1b6e40640747b2e4a0441c7952e766304f27f1b12be68945f6238f",
+    "merged_cover.py": "08e26e150e5f07283fccb8d58ed4120116a00306eb8630dd7b756e49d4787fec",
+    "reception_region.py": "a7fc840075c9665ae3a53febffd90de2dc47250348211aaacb7dd5e7567c89ad",
+    "run_robot.py": "51f82df1bd5cb3ab559d642f0bcafdaafb967b40903b43793b85068d1ce8021b",
+    "service_routing.py": "b54b98b4ac0fd1cd3076f03b9aa605730de5cb86794af01abe3c359c0396c2b7",
+    "strategy.py": "3fd2fe807683cbfb98ef9827ed9da28ca6cbe4fea5b7d115f376a9b410325c26",
+    "trace_world.py": "88f77993f7e4758d17f5bd5a28efd0b80a58d01d03c2ce3ba3838e5bc7b833c3",
+    "verify.py": "f6c0c707ce33a75e26375bce8f5e86a701651bb6986dc16d7c653975ceaae7fe"
+  },
+  "summary": {
+    "v3": {
+      "cases": 12,
+      "full": 12,
+      "mean_s": 233.9824884177451,
+      "mean_distance_m": 11152.610137764043,
+      "mean_measures": 120.83333333333333,
+      "max_compute_s": 0.2773505000004661
+    },
+    "centroid": {
+      "cases": 12,
+      "full": 12,
+      "mean_s": 231.82366974842054,
+      "mean_distance_m": 11015.879761599614,
+      "mean_measures": 119.83333333333333,
+      "max_compute_s": 0.30515290000039386
+    },
+    "wls": {
+      "cases": 12,
+      "full": 12,
+      "mean_s": 232.44771434602106,
+      "mean_distance_m": 11053.073208794258,
+      "mean_measures": 120.41666666666667,
+      "max_compute_s": 0.3183843999995588
+    },
+    "centroid_fusion": {
+      "cases": 12,
+      "full": 12,
+      "mean_s": 226.98535693162458,
+      "mean_distance_m": 10634.211945340896,
+      "mean_measures": 121.91666666666667,
+      "max_compute_s": 1.7122715000004973
+    },
+    "merge_fusion": {
+      "cases": 12,
+      "full": 12,
+      "mean_s": 229.747113968156,
+      "mean_distance_m": 10881.55463771038,
+      "mean_measures": 120.66666666666667,
+      "max_compute_s": 3.0905796000006376
+    },
+    "fast_fusion": {
+      "cases": 12,
+      "full": 12,
+      "mean_s": 229.78308057238084,
+      "mean_distance_m": 10739.74024817076,
+      "mean_measures": 125.16666666666667,
+      "max_compute_s": 1.4224577000004501
+    }
+  },
+  "error_model": "sin",
+  "layout": "uniform area",
+  "dirty_worktree": true
+}

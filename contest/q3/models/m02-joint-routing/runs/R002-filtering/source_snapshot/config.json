@@ -1,0 +1,58 @@
+{
+  "g0.04_i150": {
+    "scan_gain": 0.04,
+    "info_distance": 150
+  },
+  "g0.04_i350": {
+    "scan_gain": 0.04,
+    "info_distance": 350
+  },
+  "g0.04_i600": {
+    "scan_gain": 0.04,
+    "info_distance": 600
+  },
+  "g0.08_i150": {
+    "scan_gain": 0.08,
+    "info_distance": 150
+  },
+  "g0.08_i350": {
+    "scan_gain": 0.08,
+    "info_distance": 350
+  },
+  "g0.08_i600": {
+    "scan_gain": 0.08,
+    "info_distance": 600
+  },
+  "g0.12_i150": {
+    "scan_gain": 0.12,
+    "info_distance": 150
+  },
+  "g0.12_i350": {
+    "scan_gain": 0.12,
+    "info_distance": 350
+  },
+  "g0.12_i600": {
+    "scan_gain": 0.12,
+    "info_distance": 600
+  },
+  "g0.18_i150": {
+    "scan_gain": 0.18,
+    "info_distance": 150
+  },
+  "g0.18_i350": {
+    "scan_gain": 0.18,
+    "info_distance": 350
+  },
+  "g0.18_i600": {
+    "scan_gain": 0.18,
+    "info_distance": 600
+  },
+  "noinfo0.08": {
+    "scan_gain": 0.08,
+    "info_maxobs": 0
+  },
+  "noinfo0.12": {
+    "scan_gain": 0.12,
+    "info_maxobs": 0
+  }
+}

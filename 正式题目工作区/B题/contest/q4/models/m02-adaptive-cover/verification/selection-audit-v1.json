@@ -1,0 +1,105 @@
+{
+  "passed": true,
+  "records": [
+    {
+      "file": "contest\\q4\\models\\m02-adaptive-cover\\runs\\R005-selection\\25000-polar22.json",
+      "actions": 296,
+      "checked_cells": 10672,
+      "max_cost_difference_s": 0.0,
+      "max_hull_violation_m": 2.842170943040401e-14,
+      "uncovered_partition_area_m2": 0.0
+    },
+    {
+      "file": "contest\\q4\\models\\m02-adaptive-cover\\runs\\R005-selection\\25001-polar22.json",
+      "actions": 290,
+      "checked_cells": 10672,
+      "max_cost_difference_s": 0.0,
+      "max_hull_violation_m": 2.842170943040401e-14,
+      "uncovered_partition_area_m2": 0.0
+    },
+    {
+      "file": "contest\\q4\\models\\m02-adaptive-cover\\runs\\R005-selection\\25002-polar22.json",
+      "actions": 329,
+      "checked_cells": 10672,
+      "max_cost_difference_s": 0.0,
+      "max_hull_violation_m": 2.842170943040401e-14,
+      "uncovered_partition_area_m2": 0.0
+    },
+    {
+      "file": "contest\\q4\\models\\m02-adaptive-cover\\runs\\R005-selection\\25003-polar22.json",
+      "actions": 237,
+      "checked_cells": 0,
+      "max_cost_difference_s": 0.0,
+      "max_hull_violation_m": 0.0,
+      "uncovered_partition_area_m2": 0.0
+    },
+    {
+      "file": "contest\\q4\\models\\m02-adaptive-cover\\runs\\R005-selection\\25004-polar22.json",
+      "actions": 249,
+      "checked_cells": 6670,
+      "max_cost_difference_s": 0.0,
+      "max_hull_violation_m": 2.842170943040401e-14,
+      "uncovered_partition_area_m2": 0.0
+    },
+    {
+      "file": "contest\\q4\\models\\m02-adaptive-cover\\runs\\R005-selection\\25005-polar22.json",
+      "actions": 320,
+      "checked_cells": 13340,
+      "max_cost_difference_s": 0.0,
+      "max_hull_violation_m": 2.842170943040401e-14,
+      "uncovered_partition_area_m2": 0.0
+    },
+    {
+      "file": "contest\\q4\\models\\m02-adaptive-cover\\runs\\R005-selection\\25006-polar22.json",
+      "actions": 273,
+      "checked_cells": 9338,
+      "max_cost_difference_s": 0.0,
+      "max_hull_violation_m": 2.842170943040401e-14,
+      "uncovered_partition_area_m2": 0.0
+    },
+    {
+      "file": "contest\\q4\\models\\m02-adaptive-cover\\runs\\R005-selection\\25007-polar22.json",
+      "actions": 286,
+      "checked_cells": 10672,
+      "max_cost_difference_s": 0.0,
+      "max_hull_violation_m": 2.842170943040401e-14,
+      "uncovered_partition_area_m2": 0.0
+    },
+    {
+      "file": "contest\\q4\\models\\m02-adaptive-cover\\runs\\R005-selection\\25008-polar22.json",
+      "actions": 260,
+      "checked_cells": 9338,
+      "max_cost_difference_s": 0.0,
+      "max_hull_violation_m": 2.842170943040401e-14,
+      "uncovered_partition_area_m2": 0.0
+    },
+    {
+      "file": "contest\\q4\\models\\m02-adaptive-cover\\runs\\R005-selection\\25009-polar22.json",
+      "actions": 203,
+      "checked_cells": 0,
+      "max_cost_difference_s": 0.0,
+      "max_hull_violation_m": 0.0,
+      "uncovered_partition_area_m2": 0.0
+    },
+    {
+      "file": "contest\\q4\\models\\m02-adaptive-cover\\runs\\R005-selection\\25010-polar22.json",
+      "actions": 252,
+      "checked_cells": 6670,
+      "max_cost_difference_s": 0.0,
+      "max_hull_violation_m": 2.842170943040401e-14,
+      "uncovered_partition_area_m2": 0.0
+    },
+    {
+      "file": "contest\\q4\\models\\m02-adaptive-cover\\runs\\R005-selection\\25011-polar22.json",
+      "actions": 270,
+      "checked_cells": 12006,
+      "max_cost_difference_s": 0.0,
+      "max_hull_violation_m": 2.842170943040401e-14,
+      "uncovered_partition_area_m2": 0.0
+    }
+  ],
+  "executions": 12,
+  "actions": 3265,
+  "cell_checks": 100050,
+  "method": "Replay physical costs and check directional certificates by a second geometry.\n\nPlanner uses triangle cross products and packed corner masks. Auditor uses a\nconvex-hull halfspace representation of all eligible actual negative stations,\nplus direct distances and a polygon-union check of the arena partition.\n"
+}

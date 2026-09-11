@@ -1,0 +1,38 @@
+{
+  "v3": {
+    "_class": "v3"
+  },
+  "v4": {
+    "_class": "v4",
+    "cost_action": true,
+    "cost_risk": 1.0,
+    "exact_reception": true,
+    "cover_sweeps": 3
+  },
+  "entry": {
+    "cover_target_entry": true
+  },
+  "entry_route": {
+    "cover_target_entry": true,
+    "service_route": true
+  },
+  "entry_fusion": {
+    "cover_target_entry": true,
+    "service_route": true,
+    "cover_trials": 6,
+    "transit_probes": true
+  },
+  "fusion_cost": {
+    "service_route": true,
+    "cover_trials": 6,
+    "transit_probes": true,
+    "cost_action": true,
+    "cost_risk": 1.0,
+    "exact_reception": true
+  },
+  "fusion_route12": {
+    "cover_trials": 6,
+    "transit_probes": true,
+    "route_restarts": 12
+  }
+}

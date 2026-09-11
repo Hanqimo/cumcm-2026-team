@@ -1,0 +1,83 @@
+{
+  "command": [
+    "contest/q3/models/m02-joint-routing/verification/benchmark.py",
+    "--output",
+    "contest/q3/models/m02-joint-routing/runs/R023-coverage-time-value",
+    "--count",
+    "20",
+    "--config",
+    "contest/q3/models/m02-joint-routing/configs/R023-grid.json",
+    "--variants",
+    "covervalue0_b0,covervalue0_b250,covervalue20_b0,covervalue20_b250,covervalue60_b0,covervalue60_b250"
+  ],
+  "started_epoch": 1789094057.6833396,
+  "ended_epoch": 1789094074.5802858,
+  "data": "synthetic uniform disk, fixed bounded spatial sine errors",
+  "source_sha256": {
+    "api_client.py": "6ce270ffb316142e5d22da27e67eeab87f22797bd22f27ea984ab55deeec8203",
+    "bearing_geometry.py": "c0c5f9bb24d8285b255776469758876102410864beafbbfe9aec311e37a7c1cb",
+    "benchmark.py": "95ed668ea11ca9a0f0afa4c02ba90d7560aa3877f2ecaf8fdc5b78d9d9222ba5",
+    "config.json": "8402ffd7eaab42b1704493fd84241537e3889ecd3ee601ae8f4db044cb2a5641",
+    "exact_coverage.py": "ce6ab1e744d01d848edb479821cb5b66d944a5afb20d59d4b70ebb4ef14a591b",
+    "joint_strategies.py": "91eb85a370b1a2205b470e98eb295d3f992063036652825430342b8416a07fe4",
+    "legacy_strategy.py": "064a03e8fb1b6e40640747b2e4a0441c7952e766304f27f1b12be68945f6238f",
+    "verify.py": "f6c0c707ce33a75e26375bce8f5e86a701651bb6986dc16d7c653975ceaae7fe"
+  },
+  "dirty_worktree": true,
+  "summary": {
+    "covervalue0_b0": {
+      "cases": 20,
+      "full": 20,
+      "mean_per_source_s": 256.83845627004087,
+      "median_per_source_s": 249.82941979026793,
+      "mean_distance_m": 12114.514406498893,
+      "mean_measures": 116.0,
+      "max_elapsed_s": 0.17232280000462197
+    },
+    "covervalue0_b250": {
+      "cases": 20,
+      "full": 20,
+      "mean_per_source_s": 249.30860932985152,
+      "median_per_source_s": 243.61482537802783,
+      "mean_distance_m": 11529.84684163103,
+      "mean_measures": 118.6,
+      "max_elapsed_s": 0.17396670000744052
+    },
+    "covervalue20_b0": {
+      "cases": 20,
+      "full": 20,
+      "mean_per_source_s": 254.84764815295185,
+      "median_per_source_s": 253.09604358235265,
+      "mean_distance_m": 12067.261947638788,
+      "mean_measures": 113.95,
+      "max_elapsed_s": 0.1637228000035975
+    },
+    "covervalue20_b250": {
+      "cases": 20,
+      "full": 20,
+      "mean_per_source_s": 246.90763556798498,
+      "median_per_source_s": 242.17686673880297,
+      "mean_distance_m": 11511.12029087964,
+      "mean_measures": 115.15,
+      "max_elapsed_s": 0.17260069999611005
+    },
+    "covervalue60_b0": {
+      "cases": 20,
+      "full": 20,
+      "mean_per_source_s": 253.94701628781672,
+      "median_per_source_s": 247.65498465162105,
+      "mean_distance_m": 12079.168386996575,
+      "mean_measures": 111.65,
+      "max_elapsed_s": 0.1652098000049591
+    },
+    "covervalue60_b250": {
+      "cases": 20,
+      "full": 20,
+      "mean_per_source_s": 247.19088802773382,
+      "median_per_source_s": 240.67246938251765,
+      "mean_distance_m": 11597.402412074302,
+      "mean_measures": 113.25,
+      "max_elapsed_s": 0.1748204000032274
+    }
+  }
+}

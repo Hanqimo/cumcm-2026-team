@@ -1,0 +1,25 @@
+{
+  "run": "contest\\q4\\models\\m02-adaptive-cover\\runs\\R006-frozen-audit",
+  "cases": 40,
+  "baseline": "directional_v1",
+  "candidate": "polar22",
+  "baseline_s": 696.7794300560541,
+  "candidate_s": 515.627184733953,
+  "saving_s": 181.15224532210104,
+  "improvement_percent": 25.99850648684158,
+  "ci95_s": [
+    151.77527996214042,
+    210.52921068206166
+  ],
+  "improved": 39,
+  "worse": 1,
+  "unchanged": 0,
+  "worst_seed": 26011,
+  "worst_saving_s": -145.79036824102417,
+  "baseline_distance_m": 36537.130190829266,
+  "candidate_distance_m": 26611.700090738846,
+  "baseline_measures": 312.425,
+  "candidate_measures": 249.95,
+  "candidate_failures": 15.4,
+  "max_compute_s": 0.9312974000004033
+}

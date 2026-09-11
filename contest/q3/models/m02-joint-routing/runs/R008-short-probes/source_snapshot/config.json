@@ -1,0 +1,74 @@
+{
+  "probe100_bias0": {
+    "scan_gain": 0.18,
+    "info_distance": 150,
+    "initial_baseline": 0,
+    "anchor_radius": 1200.0,
+    "probe_length": 100,
+    "route_bias": 0,
+    "one_step": true
+  },
+  "probe100_bias0.3": {
+    "scan_gain": 0.18,
+    "info_distance": 150,
+    "initial_baseline": 0,
+    "anchor_radius": 1200.0,
+    "probe_length": 100,
+    "route_bias": 0.3,
+    "one_step": true
+  },
+  "probe200_bias0": {
+    "scan_gain": 0.18,
+    "info_distance": 150,
+    "initial_baseline": 0,
+    "anchor_radius": 1200.0,
+    "probe_length": 200,
+    "route_bias": 0,
+    "one_step": true
+  },
+  "probe200_bias0.3": {
+    "scan_gain": 0.18,
+    "info_distance": 150,
+    "initial_baseline": 0,
+    "anchor_radius": 1200.0,
+    "probe_length": 200,
+    "route_bias": 0.3,
+    "one_step": true
+  },
+  "probe350_bias0": {
+    "scan_gain": 0.18,
+    "info_distance": 150,
+    "initial_baseline": 0,
+    "anchor_radius": 1200.0,
+    "probe_length": 350,
+    "route_bias": 0,
+    "one_step": true
+  },
+  "probe350_bias0.3": {
+    "scan_gain": 0.18,
+    "info_distance": 150,
+    "initial_baseline": 0,
+    "anchor_radius": 1200.0,
+    "probe_length": 350,
+    "route_bias": 0.3,
+    "one_step": true
+  },
+  "probe500_bias0": {
+    "scan_gain": 0.18,
+    "info_distance": 150,
+    "initial_baseline": 0,
+    "anchor_radius": 1200.0,
+    "probe_length": 500,
+    "route_bias": 0,
+    "one_step": true
+  },
+  "probe500_bias0.3": {
+    "scan_gain": 0.18,
+    "info_distance": 150,
+    "initial_baseline": 0,
+    "anchor_radius": 1200.0,
+    "probe_length": 500,
+    "route_bias": 0.3,
+    "one_step": true
+  }
+}

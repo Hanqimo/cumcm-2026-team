@@ -1,0 +1,7 @@
+{
+  "status": "verification representation conflict; not a policy failure",
+  "check": "Union of rotated adjacent squares",
+  "reported_gap_area_m2": 2.5272228010321567,
+  "diagnostic": "GEOS overlay at coincident floating point edges; 1e-7 m buffering removes gap; same cell centres with inscribed 19.49 m disks also cover the whole region",
+  "resolution": "V002 uses union of inscribed radius-19.49 m disks, strictly within the physical 20 m radius; independent of cell orientation reconstruction"
+}

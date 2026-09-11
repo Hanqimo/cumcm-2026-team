@@ -1,0 +1,9 @@
+{
+  "merged": {
+    "_class": "merge"
+  },
+  "merged3": {
+    "_class": "merge",
+    "cover_sweeps": 3
+  }
+}

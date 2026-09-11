@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "scenes": 60,
+  "failed_disks_per_scene": 2,
+  "positive_update_after_failures": true,
+  "direct_feasible_point_checks": 1411,
+  "seed": 15002
+}

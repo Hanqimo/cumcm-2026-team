@@ -1,0 +1,125 @@
+{
+  "seed": 120712,
+  "cases": [
+    {
+      "case": 0,
+      "enumerated_optimum": 534.0509942654016,
+      "milp_cost": 534.0509942654016,
+      "reported_gap": 0.0
+    },
+    {
+      "case": 1,
+      "enumerated_optimum": 797.2805862691998,
+      "milp_cost": 797.2805862691998,
+      "reported_gap": 0.0
+    },
+    {
+      "case": 2,
+      "enumerated_optimum": 329.59924600850763,
+      "milp_cost": 329.59924600850763,
+      "reported_gap": 0.0
+    },
+    {
+      "case": 3,
+      "enumerated_optimum": 699.0718544763956,
+      "milp_cost": 699.0718544763956,
+      "reported_gap": 0.007211048333512796
+    },
+    {
+      "case": 4,
+      "enumerated_optimum": 311.1369509265388,
+      "milp_cost": 311.1369509265388,
+      "reported_gap": 0.0
+    },
+    {
+      "case": 5,
+      "enumerated_optimum": 596.3476849606818,
+      "milp_cost": 596.3476849606818,
+      "reported_gap": 0.0040631501208663835
+    },
+    {
+      "case": 6,
+      "enumerated_optimum": 419.1018427638672,
+      "milp_cost": 419.1018427638672,
+      "reported_gap": 0.0
+    },
+    {
+      "case": 7,
+      "enumerated_optimum": 459.692913278118,
+      "milp_cost": 459.692913278118,
+      "reported_gap": 0.0
+    },
+    {
+      "case": 8,
+      "enumerated_optimum": 380.70417035273397,
+      "milp_cost": 380.70417035273397,
+      "reported_gap": 0.0
+    },
+    {
+      "case": 9,
+      "enumerated_optimum": 705.5254948101897,
+      "milp_cost": 705.5254948101897,
+      "reported_gap": 0.004428695200685266
+    },
+    {
+      "case": 10,
+      "enumerated_optimum": 583.5485333641324,
+      "milp_cost": 583.5485333641324,
+      "reported_gap": 0.0
+    },
+    {
+      "case": 11,
+      "enumerated_optimum": 240.01719059800797,
+      "milp_cost": 240.01719059800797,
+      "reported_gap": 0.0
+    },
+    {
+      "case": 12,
+      "enumerated_optimum": 372.4994509417445,
+      "milp_cost": 372.4994509417445,
+      "reported_gap": 0.0
+    },
+    {
+      "case": 13,
+      "enumerated_optimum": 474.1708890370634,
+      "milp_cost": 474.1708890370634,
+      "reported_gap": 0.0
+    },
+    {
+      "case": 14,
+      "enumerated_optimum": 398.085090282378,
+      "milp_cost": 398.085090282378,
+      "reported_gap": 0.0
+    },
+    {
+      "case": 15,
+      "enumerated_optimum": 238.1810650739278,
+      "milp_cost": 238.1810650739278,
+      "reported_gap": 0.0
+    },
+    {
+      "case": 16,
+      "enumerated_optimum": 334.9164164085417,
+      "milp_cost": 334.9164164085417,
+      "reported_gap": 0.0
+    },
+    {
+      "case": 17,
+      "enumerated_optimum": 434.9191171588469,
+      "milp_cost": 434.9191171588469,
+      "reported_gap": 0.0
+    },
+    {
+      "case": 18,
+      "enumerated_optimum": 390.1755899305789,
+      "milp_cost": 390.1755899305789,
+      "reported_gap": 0.0
+    },
+    {
+      "case": 19,
+      "enumerated_optimum": 288.1443280836983,
+      "milp_cost": 288.1443280836983,
+      "reported_gap": 0.0
+    }
+  ]
+}

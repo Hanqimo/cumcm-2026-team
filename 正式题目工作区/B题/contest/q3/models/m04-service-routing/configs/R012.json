@@ -1,0 +1,15 @@
+{
+  "v3": {
+    "_class": "v3"
+  },
+  "milp1": {
+    "_class": "milp",
+    "milp_seconds": 1.0
+  },
+  "milp_fusion": {
+    "_class": "milp",
+    "milp_seconds": 1.0,
+    "cover_trials": 3,
+    "transit_probes": true
+  }
+}

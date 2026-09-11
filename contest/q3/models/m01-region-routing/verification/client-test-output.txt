@@ -1,0 +1,10 @@
+test_full_cli_against_independent_http_world (__main__.ClientTests) ... ok
+test_lost_reply_same_bytes_rejection_keeps_clock_position (__main__.ClientTests) ... ok
+  清除频道  8；累计 1 个；虚拟时间 11.0 秒
+test_malformed_reply_retry_then_clear_keeps_measurement_channel (__main__.ClientTests) ... ok
+test_permanent_uncertainty_blocks_exit_and_new_actions (__main__.ClientTests) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 5.617s
+
+OK

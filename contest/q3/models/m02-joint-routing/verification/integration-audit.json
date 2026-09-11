@@ -1,0 +1,48 @@
+{
+  "factory_checks": [
+    {
+      "policy": "route_guard",
+      "per_source_s": 192.7264629059601,
+      "region_checks": 44,
+      "clear_checks": 14,
+      "log_events": 59,
+      "matches_benchmark": true
+    },
+    {
+      "policy": "region_coupled",
+      "per_source_s": 192.09345539311263,
+      "region_checks": 44,
+      "clear_checks": 14,
+      "log_events": 59,
+      "matches_benchmark": true
+    },
+    {
+      "policy": "continuous_cover",
+      "per_source_s": 187.81341656260383,
+      "region_checks": 45,
+      "clear_checks": 14,
+      "log_events": 60,
+      "matches_benchmark": true
+    },
+    {
+      "policy": "combined_cover",
+      "per_source_s": 187.86778266065144,
+      "region_checks": 45,
+      "clear_checks": 14,
+      "log_events": 60,
+      "matches_benchmark": true
+    }
+  ],
+  "negative_hull_cases": 184,
+  "feasible_points_checked": 386629,
+  "ring10_lower_bound": {
+    "radius_m": 1800,
+    "clear_radius_m": 20,
+    "min_pair_spacing_m": 1112.4611797498105,
+    "movement_lower_bound_m": 11432.150617748295,
+    "time_lower_bound_s": 2336.430123549659,
+    "per_source_lower_bound_s": 233.64301235496592,
+    "interpretation": "Even with exact positions, and without sensing/search costs; worst-case counterexample, not an average-distribution lower bound."
+  },
+  "scope": "Finite implementation audits plus documented geometric arguments; no universal completion/runtime theorem."
+}

@@ -1,0 +1,99 @@
+{
+  "started_at": "2026-09-11T07:01:20.246608+00:00",
+  "command": [
+    "contest/q4/models/m02-adaptive-cover/verification/benchmark.py",
+    "--output",
+    "contest/q4/models/m02-adaptive-cover/runs/R003-convex-combinations",
+    "--start",
+    "24002",
+    "--count",
+    "4",
+    "--policies",
+    "directional_v1,adaptive_v2,adaptive_share,adaptive_offer,adaptive_both"
+  ],
+  "python": "3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]",
+  "numpy": "2.2.6",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "sources_sha256": {
+    "adaptive_cover.py": "d20a415c4975e8542297076ff41575add0e2fcda257a1e31b049f97ca5982bb1",
+    "api_client.py": "6ce270ffb316142e5d22da27e67eeab87f22797bd22f27ea984ab55deeec8203",
+    "baseline_strategy.py": "68cd89b3c6821e8627f988954df2227be3d2aa23f39138bf201fc5fde859b2d5",
+    "bearing_geometry.py": "c0c5f9bb24d8285b255776469758876102410864beafbbfe9aec311e37a7c1cb",
+    "clearance_geometry.py": "579998fa4e0fd4c75b1597522cd65a4164598b2601c84feb2811613b29ea5d93",
+    "directional_geometry.py": "5da881b13f53e5c96e1f59bc7cfe3cc6e8826a3a5edcf2abb3e3ad9218f22927",
+    "run_robot.py": "cd6b92ed73965d982cf61a6091b43c64f0f93ea6e0c332a52827f2adcaf27568",
+    "strategy.py": "1847c03ce2865b57ae10e40f3f5ef2697bbfed9eccb7256b7c85a3a3f9069eb7",
+    "policies.json": "978ec077ce3b87030fe7cf1cda66a5f921f6d29878002f4d277c57c16763ac2a",
+    "benchmark.py": "5d21fbfe8561f896df37772cefea0e9f4f2c3c19a0bcc1621e28d5ce9d4d9730"
+  },
+  "policies": {
+    "directional_v1": {
+      "mesh_spacing_m": 990.0,
+      "visibility_planning": true,
+      "joint_routing": true,
+      "max_local_measurements": 10,
+      "max_consecutive_losses": 3
+    },
+    "mesh_chase_baseline": {
+      "mesh_spacing_m": 990.0,
+      "visibility_planning": false,
+      "joint_routing": false,
+      "max_local_measurements": 10,
+      "max_consecutive_losses": 3
+    },
+    "adaptive_v2": {
+      "mesh_spacing_m": 990.0,
+      "visibility_planning": true,
+      "joint_routing": true,
+      "max_local_measurements": 10,
+      "max_consecutive_losses": 3,
+      "adaptive_cover": true,
+      "cell_depth": 2
+    },
+    "adaptive_fine": {
+      "mesh_spacing_m": 990.0,
+      "visibility_planning": true,
+      "joint_routing": true,
+      "max_local_measurements": 10,
+      "max_consecutive_losses": 3,
+      "adaptive_cover": true,
+      "cell_depth": 3
+    },
+    "adaptive_share": {
+      "mesh_spacing_m": 990.0,
+      "visibility_planning": true,
+      "joint_routing": true,
+      "max_local_measurements": 10,
+      "max_consecutive_losses": 3,
+      "adaptive_cover": true,
+      "cell_depth": 2,
+      "clear_scans": true
+    },
+    "adaptive_offer": {
+      "mesh_spacing_m": 990.0,
+      "visibility_planning": true,
+      "joint_routing": true,
+      "max_local_measurements": 10,
+      "max_consecutive_losses": 3,
+      "adaptive_cover": true,
+      "cell_depth": 2,
+      "target_offers": true
+    },
+    "adaptive_both": {
+      "mesh_spacing_m": 990.0,
+      "visibility_planning": true,
+      "joint_routing": true,
+      "max_local_measurements": 10,
+      "max_consecutive_losses": 3,
+      "adaptive_cover": true,
+      "cell_depth": 2,
+      "clear_scans": true,
+      "target_offers": true
+    }
+  },
+  "official_simulator": false,
+  "error_mode": "smooth",
+  "fixtures": "uniform disk/range/orientation unless labelled stress",
+  "completed_at": "2026-09-11T07:01:33.930492+00:00",
+  "executions": 20
+}

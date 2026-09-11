@@ -1,0 +1,1374 @@
+{
+  "checks": [
+    {
+      "name": "realizable_triangle_diameter",
+      "passed": true,
+      "details": {
+        "status": "polygon",
+        "vertices": [
+          [
+            -5.047136064194729e-13,
+            -0.0
+          ],
+          [
+            37.99999999999981,
+            -0.0
+          ],
+          [
+            18.999999999999655,
+            32.908965343808916
+          ]
+        ],
+        "diameter_m": 38.00000000000031,
+        "diameter_pair": [
+          0,
+          1
+        ],
+        "cover_center": [
+          18.999999999999652,
+          10.969655114602967
+        ],
+        "cover_radius_m": 21.939310229205955,
+        "support_indices": [
+          0,
+          1,
+          2
+        ],
+        "diameter_disk_covers": false,
+        "guaranteed_clear_possible": false,
+        "max_halfplane_residual_m": 7.105427357601002e-15,
+        "observations": [
+          {
+            "position": [
+              -1000.0,
+              0.0
+            ],
+            "bearing_deg": 1.0
+          },
+          {
+            "position": [
+              538.0,
+              -866.0254037844386
+            ],
+            "bearing_deg": 121.00000000000001
+          },
+          {
+            "position": [
+              519.0,
+              898.9343691282472
+            ],
+            "bearing_deg": 241.0
+          }
+        ],
+        "true_target_for_consistency": [
+          19.0,
+          10.969655114602888
+        ]
+      }
+    },
+    {
+      "name": "realizable_triangle_radius",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "triangle_direct_angle_consistency",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "triangle_physical_reception",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "triangle_direct_angle_consistency",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "triangle_physical_reception",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "triangle_direct_angle_consistency",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "triangle_physical_reception",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_38_not_clearable",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "orthogonal_tangent_construction",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "single_wedge_unbounded",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "incompatible_wedges_empty",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "segment_classification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "point_classification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "atan2_vs_halfplanes_3500_points",
+      "passed": true,
+      "details": 0
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "random_bounded_region",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent_circle_solver_status",
+      "passed": true,
+      "details": "Optimization terminated successfully"
+    },
+    {
+      "name": "circle_vertex_coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "diameter_circle_bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LP_support_vs_vertex_enumeration",
+      "passed": true,
+      "details": 4.547473508864641e-13
+    },
+    {
+      "name": "convex_optimization_vs_support_circle",
+      "passed": true,
+      "details": 5.950564485601717e-10
+    },
+    {
+      "name": "true_target_containment",
+      "passed": true,
+      "details": 0.0
+    },
+    {
+      "name": "rotation_translation_invariance",
+      "passed": true,
+      "details": 6.266986929404084e-12
+    },
+    {
+      "name": "information_monotonicity",
+      "passed": true,
+      "details": null
+    }
+  ],
+  "count": 260,
+  "passed": true,
+  "independent_validation": {
+    "support_max_error_m": 4.547473508864641e-13,
+    "circle_max_error_m": 5.950564485601717e-10,
+    "equivariance_error_m": 6.266986929404084e-12
+  },
+  "synthetic_only": true,
+  "elapsed_s": 1.3078870000026654
+}

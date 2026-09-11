@@ -1,0 +1,83 @@
+{
+  "command": [
+    "contest/q3/models/m02-joint-routing/verification/benchmark.py",
+    "--output",
+    "contest/q3/models/m02-joint-routing/runs/R021-exploration-value",
+    "--count",
+    "20",
+    "--config",
+    "contest/q3/models/m02-joint-routing/configs/R021-grid.json",
+    "--variants",
+    "explore100_count10,explore100_count14,explore300_count10,explore300_count14,explore700_count10,explore700_count14"
+  ],
+  "started_epoch": 1789093754.645566,
+  "ended_epoch": 1789093767.7635558,
+  "data": "synthetic uniform disk, fixed bounded spatial sine errors",
+  "source_sha256": {
+    "api_client.py": "6ce270ffb316142e5d22da27e67eeab87f22797bd22f27ea984ab55deeec8203",
+    "bearing_geometry.py": "c0c5f9bb24d8285b255776469758876102410864beafbbfe9aec311e37a7c1cb",
+    "benchmark.py": "e3e418d0aa41db28a41eac3b8fa0eb4025dac7c4a47c8427e778a95c244ed206",
+    "config.json": "9abf51edcc7a33ba54362daf06f31c4fd0979fda910d45c8f507e9fbbfc76596",
+    "exact_coverage.py": "ce6ab1e744d01d848edb479821cb5b66d944a5afb20d59d4b70ebb4ef14a591b",
+    "joint_strategies.py": "93acf8ca12e1a7abc87d20ce6048f56ffca5bf7fc25f7f17ee3642f8326a1353",
+    "legacy_strategy.py": "064a03e8fb1b6e40640747b2e4a0441c7952e766304f27f1b12be68945f6238f",
+    "verify.py": "f6c0c707ce33a75e26375bce8f5e86a701651bb6986dc16d7c653975ceaae7fe"
+  },
+  "dirty_worktree": true,
+  "summary": {
+    "explore100_count10": {
+      "cases": 20,
+      "full": 20,
+      "mean_per_source_s": 250.11090889324691,
+      "median_per_source_s": 244.00744666114207,
+      "mean_distance_m": 11808.22387879351,
+      "mean_measures": 111.8,
+      "max_elapsed_s": 0.12959859998954926
+    },
+    "explore100_count14": {
+      "cases": 20,
+      "full": 20,
+      "mean_per_source_s": 263.10395889058645,
+      "median_per_source_s": 267.8646074068651,
+      "mean_distance_m": 12595.058929149865,
+      "mean_measures": 112.8,
+      "max_elapsed_s": 0.12867520000145305
+    },
+    "explore300_count10": {
+      "cases": 20,
+      "full": 20,
+      "mean_per_source_s": 262.7066505877492,
+      "median_per_source_s": 255.7189679280598,
+      "mean_distance_m": 12558.308929209114,
+      "mean_measures": 112.95,
+      "max_elapsed_s": 0.1291957000066759
+    },
+    "explore300_count14": {
+      "cases": 20,
+      "full": 20,
+      "mean_per_source_s": 295.3544008715904,
+      "median_per_source_s": 281.91909117979264,
+      "mean_distance_m": 14502.673938797892,
+      "mean_measures": 112.75,
+      "max_elapsed_s": 0.13832139999431092
+    },
+    "explore700_count10": {
+      "cases": 20,
+      "full": 20,
+      "mean_per_source_s": 286.2038514570931,
+      "median_per_source_s": 273.85770713060253,
+      "mean_distance_m": 13968.658651510192,
+      "mean_measures": 112.65,
+      "max_elapsed_s": 0.13341369999398012
+    },
+    "explore700_count14": {
+      "cases": 20,
+      "full": 20,
+      "mean_per_source_s": 307.8664484830741,
+      "median_per_source_s": 299.2540105396491,
+      "mean_distance_m": 15301.466127982314,
+      "mean_measures": 112.85,
+      "max_elapsed_s": 0.14653630000248086
+    }
+  }
+}

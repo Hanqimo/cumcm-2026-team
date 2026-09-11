@@ -1,0 +1,32 @@
+{
+  "source_base_commit": "40b4b022179519d0ad8000d9eab58aad3b3919e8",
+  "dirty_worktree": true,
+  "git_save_level": "local_only_not_committed_not_pushed",
+  "q1_source": "D:\\math modeling\\正式题目工作区\\B题建模第一版\\contest\\q1\\models\\m01-bounded-bearing\\src\\bearing_geometry.py",
+  "q1_source_sha256": "c0c5f9bb24d8285b255776469758876102410864beafbbfe9aec311e37a7c1cb",
+  "upstream_q2": "contest/q2/models/m01-reception-minimax/formulations/v01.md",
+  "python": "3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]",
+  "numpy": "2.2.6",
+  "scipy": "1.15.3",
+  "matplotlib": "3.10.8",
+  "files_sha256": {
+    "src\\api_client.py": "6ce270ffb316142e5d22da27e67eeab87f22797bd22f27ea984ab55deeec8203",
+    "src\\bearing_geometry.py": "c0c5f9bb24d8285b255776469758876102410864beafbbfe9aec311e37a7c1cb",
+    "src\\check_setup.cmd": "76c754666d539d284d44ffe96bf346898388033788c1422159784c1de3d22fb8",
+    "src\\requirements.txt": "4b81b6b6a549771115529e6900b9589835cdbfff0c6acf179aef53d283b744d5",
+    "src\\run_practice.cmd": "60774cb2a4795d5a63f750d363e4968df600131dd9c553eab9c0e80da2e11b57",
+    "src\\run_robot.py": "e07a19fdd861114be7e0a2e23338d7c13b5e98ab20ca53ff4cade440ef037d96",
+    "src\\strategy.py": "064a03e8fb1b6e40640747b2e4a0441c7952e766304f27f1b12be68945f6238f",
+    "src\\使用说明.md": "859bd0af478557d77e8401ddcbf108d2b6ce1b3992cbde6b9e17c9ccc2aaf653",
+    "verification\\build_report.py": "76165bbbc385c42780cfd003575f4780d9aa993c08dea9f4d5c85eaefd50e518",
+    "verification\\client-test-output.txt": "a4a0aedd0645bfa51a6c6297ac4b3c5c76871e4327e65eb3e32a428670e21c06",
+    "verification\\delivery-manifest.json": "6451ac3122d7def63a9aa824765a35b7dbdc74fb7f8165c296cca0fe5c82d196",
+    "verification\\holdout-comparison.png": "13188d757371a1212909f66e3291e60750fa54fec485f810508776ffa1bde83e",
+    "verification\\holdout-comparison.svg": "9365b8136fec8e2412f7ba583570d52a4475038ecc1e95c070e1be278c005140",
+    "verification\\paired-summary.csv": "dbbd5c58f074223ea2dc5ace0a74158f37f04425b1fe67e70f264b6f8d7794a2",
+    "verification\\report.md": "bec72459c7d6ab95de60731238364a7f6e87cf2df25c126658d749a5eb2d2ab3",
+    "verification\\test_client.py": "4fc144a12fa0aebded3f49fe7cffd3764b8d4cab1b100e03fc6c987d0ee2824d",
+    "verification\\verify.py": "f6c0c707ce33a75e26375bce8f5e86a701651bb6986dc16d7c653975ceaae7fe",
+    "formulations\\v02.md": "9dfe7f32d035b95b9fcc40edad227f0c2d3709b34ed45c979fa77ac7058b5b5f"
+  }
+}

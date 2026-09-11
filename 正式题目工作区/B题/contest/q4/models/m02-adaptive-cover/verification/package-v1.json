@@ -1,0 +1,22 @@
+{
+  "path": "D:\\math modeling\\\u6b63\u5f0f\u9898\u76ee\u5de5\u4f5c\u533a\\B-simulator\\p4-adaptive-cover-research",
+  "source": "D:\\math modeling\\\u6b63\u5f0f\u9898\u76ee\u5de5\u4f5c\u533a\\B\u9898\u5efa\u6a21\u7b2c\u4e00\u7248\\contest\\q4\\models\\m02-adaptive-cover\\src",
+  "sha256": {
+    "adaptive_cover.py": "23e3277393d261972d1385231f47b611c2f8081621945b6ea37a6ac123261e50",
+    "api_client.py": "6ce270ffb316142e5d22da27e67eeab87f22797bd22f27ea984ab55deeec8203",
+    "baseline_strategy.py": "68cd89b3c6821e8627f988954df2227be3d2aa23f39138bf201fc5fde859b2d5",
+    "bearing_geometry.py": "c0c5f9bb24d8285b255776469758876102410864beafbbfe9aec311e37a7c1cb",
+    "clearance_geometry.py": "579998fa4e0fd4c75b1597522cd65a4164598b2601c84feb2811613b29ea5d93",
+    "directional_geometry.py": "5da881b13f53e5c96e1f59bc7cfe3cc6e8826a3a5edcf2abb3e3ad9218f22927",
+    "polar22.json": "2bbfa994577526a2f4cb86ee551a75d78b2b59593a855b8cc01283a6ff721860",
+    "polar25.json": "c6fdbd2737b3c5f598cfed4ce41118a0034e123e31fdd9720f1122108e1c9e47",
+    "policies.json": "e8b673d7bc1b43dd9cce4d22ba24cd5e2c01732ad0831681f70a26937934947d",
+    "requirements.txt": "fe8b20573f80aac0a8ba0d12d002b2d0173d8ef9ee35b9f6b8edec3b6dbdf10c",
+    "run_practice.cmd": "60774cb2a4795d5a63f750d363e4968df600131dd9c553eab9c0e80da2e11b57",
+    "run_robot.py": "d5b24c02d33e257fcc7073d02b50283b1f9f430451f499216347709cbabebbeb",
+    "strategy.py": "59528b36dcb3051b8b0ec3187eaf3ff657b0a37a50ce49e9391cb8392554edaf",
+    "\u4f7f\u7528\u8bf4\u660e.md": "6ea8e69a80d637238f7ced26b44e1907b505c6497472bb17e43667b2b5505be9"
+  },
+  "config_copied_locally": true,
+  "official_called": false
+}
