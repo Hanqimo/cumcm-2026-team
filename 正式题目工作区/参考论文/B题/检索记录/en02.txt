@@ -1,0 +1,2337 @@
+Cautious Greedy Strategy for Bearing-only Active
+Localization: Analysis and Field Experiments ∗
+••••••••••••••••••••••••••••••••••••
+Joshua Vander Hook, Pratap Tokekar, and Volkan Isler
+Department of Computer Science, University of Minnesota, Minneapolis, Minnesota 55455
+e-mail: jvander@cs.umn.edu, tokekar@cs.umn.edu, isler@cs.umn.edu
+Received 8 March 2013; accepted 18 November 2013
+We study the problem of optimally choosing bearing measurement locations for localizing a stationary target
+in minimum time. The targets are transmitting radio tags, and bearing measurements are acquired from radio
+signal strength by a robot carrying a direction-sensitive radio antenna. Actively localizing radio tags has many
+applications in surveillance, search and rescue, and environmental monitoring. Our work is motivated by the
+task of monitoring radio-tagged invasive ﬁsh using autonomous vehicles. An active localization algorithm is
+provided in order to locate a target up to the desired uncertainty . The time required to locate the target includes
+time spent traveling as well as taking measurements. Since bearing measurements inferred from radio signals
+have an inherent ambiguity associated with them, the proposed algorithm chooses measurements to minimize
+the effect of ambiguous measurements on the target estimate. We present a closed-form bound on the time
+required to locate a target using the presented active localization strategy . We also present the ﬁrst known lower
+bound on the time required by any active localization algorithm (including the unknown optimal). Finally , we
+bound the ratio of the upper and lower bounds, showing that the expected cost of our algorithm is within a
+constant factor of the expected cost of the optimal solution. Robust initialization strategies that are motivated by
+practical sensing limitations are also provided. Our algorithm is shown to reliably locate radio tags to a desired
+uncertainty in simulations and multiple ﬁeld experiments. C⃝ 2014 Wiley Periodicals, Inc.
+1. INTRODUCTION
+In this paper, we study the problem of deploying a mobile
+robot to locate a transmitting radio source. The robot may
+take measurements of the bearing to the source, but each
+measurement takes time and is assumed to be corrupted by
+probabilistic noise. This problem is challenging because the
+measurement locations must be computed without knowl-
+edge of the true location of the source. In addition, radio-
+source localization is particularly challenging because of
+the unusual measurement model: depending on the en-
+vironment, the radio signal strength indicator (RSSI) may
+vary signiﬁcantly and be unreliable when used for range
+information. Instead, a viable alternative is to use bear-
+ing measurements obtained by rotating a direction-sensitive
+antenna. For radially symmetric direction-sensitive anten-
+nas, instead of returning the bearing toward the source (or
+“target”), the returned result is a line that passes through
+the target and sensor. These “ambiguous” measurements
+further complicate the source-estimation problem (see
+∗Preliminary versions of this work were presented at Vander Hook
+et al. (2012a) and Vander Hook, Tokekar, and Isler (2012b). This
+work combines the two results and presents improved theoretical
+results and additional ﬁeld experiments.
+Direct correspondence to: Joshua Vander Hook, e-mail:
+jvander@cs.umn.edu
+Figure 1). In Section 2, we discuss the bearing measure-
+ment process and quantify our assumptions and measure-
+ment models. This is followed by a brief discussion on
+related work and preliminaries in Sections 3 and 4, respec-
+tively . In Section 5, we show why radio signal strength mea-
+surements often require complicated ﬁlters to estimate the
+source. As a primary contribution, we then discuss how to
+move the sensor after each measurement to deal with these
+problems.
+This work is motivated by locating stationary groups
+of radio-tagged invasive ﬁsh using robots (Tokekar, Bran-
+son, Vander Hook, & Isler, 2013). Locating transmitting ra-
+dio sources has other applications, most notably search and
+rescue using distress beacons. In these settings, it is often
+desirable to locate the transmitting source as quickly as pos-
+sible. In these settings, using an ofﬂine strategy that per-
+forms a complete search of the environment can be pro-
+hibitively expensive. Rather, an active localization algorithm,
+which actively chooses measurement locations so as to bet-
+ter localize the transmitting source, is desirable. Active lo-
+calization is an online problem since the decision on where
+to move must be made based on the available measure-
+ments.
+In this work, our primary contribution is both an on-
+line algorithm to locate a radio source, and a cost analysis
+of the algorithm that applies to any measurement sequence.
+Journal of Field Robotics 31(2), 296–318 (2014) C⃝ 2014 Wiley Periodicals, Inc.
+View this article online at wileyonlinelibrary.com • DOI: 10.1002/rob.21499
+Vander Hook et al.: Cautious Greedy Strategy for Bearing-only Active Localization • 297
+Figure 1. (a) Problem setup. A robot, without knowledge of the true target location x⋆ but with an initial hypothesis of the target
+location, ˆx(0), must ﬁnd measurement locations to shrink the uncertainty about x⋆. Measurements taken far from x⋆, for example,
+near ˆx(0), will ultimately provide little information about x⋆ and are thus wasteful. Shown is an example of a “double wedge”
+or ambiguous measurement cone: From just one measurement, it is not clear if the target is near ˆ x(0) or x⋆. (b) The notation and
+problem formulation. A sensor location at time i, denoted s(i), is described by ( r(i),α (i)). Here r(i) is the range from the sensor to
+the current hypothesis, ˆx(i), and α(i) denotes the orientation with respect to the line formed by the major axis of the covariance
+ellipse, /Sigma1(i), with eigenvalues σx (i)a n dσy (i) and orientation θ(i) with respect to a global frame.
+In particular, we are able to bound the cost of executing
+the algorithm even in the worst case, as well as provide an
+expected-case analysis. To preserve generality , we include
+system parameters such as the cost per measurement, cost
+to relocate the robot, and sensor noise, making the closed-
+form solution useful for many different systems or appli-
+cation domains. We present the details of the algorithm in
+Section 6.1. We further discuss a robust initialization proce-
+dure in Section 6.2. The cost of our algorithm is derived in
+Section 7.
+To show the robustness of our algorithm to various
+starting conditions, we provide a direct comparison of the
+performance of our algorithm to that of the (unknown) op-
+timal algorithm. We ﬁnd that the gap between the two is
+small and bounded by a constant. We provide an analyti-
+cal proof of this bound in Section 8. A novel result of our
+analysis is a general lower bound on the cost of any active
+localization algorithm that uses bearing sensors, presented
+in Section 8.1.
+Finally , the algorithm is experimentally validated in
+simulation (Section 9) and using a mobile robot deployed
+on frozen lakes in Minnesota, as shown in Section 10. We
+present a series of ﬁeld deployments in which a mobile
+rover can initialize a consistent hypothesis, and we choose
+a small, bounded number of measurement locations to lo-
+cate multiple radio tags with good accuracy , all with close
+adherence to the theoretical results.
+2. PROBLEM STATEMENT
+Our problem setup is illustrated in Figure 1. We will esti-
+mate the target’s position at time t as a two-dimensional
+Gaussian distribution with mean ˆx(t) and covariance /Sigma1(t),
+with eigenvalues σ2
+x and σ2
+y . Our objective is to deﬁne a
+sequence of sensor positions S ={ s(1),s (2),...,s (N )} such
+that the posterior covariance after incorporating all N mea-
+surements is reduced below a threshold. That is,σx (N ) ≤ γ ·
+σx (0),σ y (N ) ≤ γ · σy (0) with 0 <γ < 1. Our metric of sys-
+tem cost is captured by the time required to execute the mea-
+surement sequence S.L e tD(S) = ∑N− 1
+i=0 ∥s(i + 1) − s(i)∥2 be
+the distance traveled over the tour of the N measurement
+locations. Note that the distance between measurements
+may not be equal. The cost is the sum of the N measure-
+ment times and D(S)
+v , for robot velocity v. We will assume
+for simplicity the robot travels with constant velocity and
+can turn in a negligible amount of time. Let tm be the time
+required to gather one bearing measurement. Then we state
+our optimization problem as
+minimize
+S={s(1),...,s(N)} T (S) = N · tm + D(S)
+v (1)
+subject to
+σx (N ) ≤ γ · σx (0),
+σy (N ) ≤ γ · σy (0),
+N ≥ 1.
+For simplicity of notation, we will assume the robot has
+unit velocity and drop the v term from the cost function.
+This optimization problem is challenging for the following
+reasons:
+1. N is unknown. The objective function requires minimiz-
+ing the size of the measurement sequence, as well as the
+displacement between measurements. This is especially
+crucial when the measurement time tm is non-negligible.
+As we will see in the next section, previous literature
+often assumes a ﬁxed N , corresponding to a ﬁxed time
+horizon.
+2. We wish to ﬁnd or approximate the global optimal so-
+lution. A gradient-based search may ﬁnd a local mini-
+mum that satisﬁes the constraints but cannot make any
+Journal of Field Robotics DOI 10.1002/rob
+298 • Journal of Field Robotics—2014
+statements about convergence relative to global optimal-
+ity . Asearch for the global optimal strategy is exponential
+in N , and therefore infeasible.
+3. We cannot assume a constant time interval between mea-
+surements. In the next section, we show that this assump-
+tion is commonly used but is not valid for the problem
+of choosing discrete measurement locations.
+4. Each bearing measurement is ambiguous. The bimodal
+nature of the radio bearing measurements complicates
+the ﬁltering process. In the worst case, an exponential
+number of hypotheses must be maintained.
+We now review the literature for approaches to solve
+related problems.
+3. RELATED WORK
+In active localization, the objective is to decide where to take
+measurements to maximize the performance of a given esti-
+mator. Conversely , tracking and estimation literature takes
+a passive approach: the task is to design an estimator that
+is robust when given arbitrary measurements. In particular,
+the problem of estimating a track for a maneuvering target
+using bearing-only measurements has been well studied
+(e.g., Li & Jilkov , 2001,2003,2005). However, designing an
+estimator does not address the problem of choosing good
+measurement locations. Thus, work on improved ﬁlter de-
+sign would be orthogonal, but easily incorporated into our
+active localization algorithm.
+For estimating a target state with ambiguous bearing
+measurements, Derenick, Fink, and Kumar (2011) consid-
+ered radio-based measurements in the context of coop-
+erative localization for teams of mobile robots. A multi-
+hypothesis extended Kalman ﬁlter was used, and it was
+shown that the robots’ motion could disambiguate the hy-
+potheses. However, noactive motion strategy was provided.
+Forney , Manii, Farris, Moline, and Lowe (2012) recently de-
+signed a particle ﬁlter-based estimator for disambiguating
+the sign of the bearing measurement toward a transmitting
+tag embedded on leopard sharks. Similarly , active localiza-
+tion was not considered.
+Disregarding the discrete bearing measurement model,
+several works exist in optimizing the robot trajectory while
+assuming bearing measurements are obtained continuously
+in time. Hoffmann and Tomlin (2010) explored such an ob-
+jective, though their main contribution was a distributed
+approximation for the mutual information between the sen-
+sors and target, which is not applicable to this work, since a
+single robot will visit all measurement locations. Martinez
+and Bullo (2006) produced an algorithm to route bearing
+sensors that were constrained to travel in predeﬁned geo-
+metric areas but could not produce general strategies for
+one or more robots. Frew (2009) provided a ﬁxed-horizon
+optimization for the so-called Fixed Information, Minimum
+Time problem. Frew (2003) provided an action-space search
+over possible sensor trajectories to minimize the determi-
+nant of the posterior covariance. A similar result was pro-
+duced by Zhou and Roumeliotis (2011), who routed robots
+to minimize the trace of the posterior covariance. In these
+works, no global optimality conditions were explored and
+no time bounds were given for the algorithms. Addition-
+ally , we relax the constraint of ﬁxed travel time (or constant
+distance) between measurements.
+In Tokekar et al. (2013) and Tokekar, Vander Hook, and
+Isler (2011), we investigated three algorithms to ﬁnd mea-
+surement locations, each based on a search over the dis-
+cretized space around the robot. Discretization and search
+over state space was computationally demanding, and the
+results were limited to a ﬁxed-sized displacement between
+measurements because of the discretization size. Further-
+more, there was no systematic approach for dealing with
+the ambiguity of measurements.
+Other results exist that use simpliﬁed noise models but
+cannot be directly applied to real-world deployments. Re-
+garding the ambiguous sensing model, the inﬁnite-line sen-
+sor was considered by Bopardikar (2010), in the context of
+pursuit-evasion games. A ﬁnite-time capture strategy was
+provided by using pairs of measurements to resolve the
+ambiguity . Sensor noise was not considered, making local-
+ization of a static target trivial under the assumptions and
+sensing model proposed. More recently , Borri, Bopardikar,
+Hespanha, and Di Benedetto (2011) considered the problem
+of locating a stationary target using a ﬁxed, small number
+of stationary half-plane sensors deployed. The goal, simi-
+lar to ours, was to minimize the number of sensor queries
+and the length of the tour between them. However, the tar-
+get was restricted to a discrete set of locations, and sensor
+positions were known ap r i o r i, resulting in a divide-and-
+search strategy that does not generalize to our setting. In
+this work, we use noise models calibrated from real-world
+data and conﬁrm our ﬁndings with ﬁeld deployments. We
+also require no discrete constraints on the environment
+or target location to solve a more general version of the
+problem.
+Similar to ambiguous bearing measurements, range-
+only measurements can lead to multiple hypotheses about
+the target location. Merino, Caballero, and Ollero (2010)
+studied the problem of active localization using range-only
+measurements from radio sensors. They represent multiple
+hypotheses with a Gaussian mixture model (GMM). The
+robot’s direction is greedily chosen from a discretized set
+that maximizes the change in the entropy of the GMM.
+Zhou and Roumeliotis (2008) studied the problem of track-
+ing a single moving target with multiple robots measuring
+the range to the target. They show that the problem of de-
+termining the sensing locations for all robots minimizing
+the trace of the target’s posterior covariance for the next
+time step is NP-Hard, and they present two heuristics to
+solve the problem. Morbidi and Mariottini (2012) studied
+the single and multitarget active tracking problem with a
+Journal of Field Robotics DOI 10.1002/rob
+Vander Hook et al.: Cautious Greedy Strategy for Bearing-only Active Localization • 299
+team of robots with 3D range sensors. The authors present a
+gradient-based controller for controlling the team of robots
+to (locally) minimize the uncertainty in estimating the tar-
+get’s location. Scerri, Glinton, Owens, Scerri, and Sycara
+(2007) used radio signal strength to estimate the range to
+radio sources and a grid-based Bayesian ﬁlter to estimate
+the location of each radio source. A path-search algorithm
+based on Rapidly Exploring Random Trees was proposed
+but lacked any theoretical guarantees. Due to the differences
+in sensing model, these results for range-only sensors can-
+not be directly applied for bearing sensors. Furthermore,
+unlike these works, we consider the case in which each
+measurement takes nonzero time and the objective is to
+minimize the travel and measurement time to localize the
+target to a desired uncertainty bound.
+We also present a bound on the optimal bearings-only
+localization algorithm. Previous results in this direction in-
+clude Hammel, Liu, Hilliard, & Gong, 1989, who numeri-
+cally calculated an optimal trajectory using the determinant
+of the Fischer information matrix (FIM) evaluated at the true
+target location. In this work, no closed-form solution was
+provided, and the bounds presented in this paper general-
+ize the result by optimizing the number and spacing of the
+measurements. Bishop and Pathirana (2008) directly evalu-
+ated the determinant of the FIM to ﬁnd sufﬁcient conditions
+for an optimal placement of sensors, whereas we solve for
+the placement uniquely and minimize the cost of traveling
+between sensor locations.
+In our previous work, we deﬁned a search algorithm
+that guaranteed that the robot would ﬁnd a position from
+which it can detect a tagged ﬁsh in predeﬁned regions of the
+lake (Tokekar et al., 2013). Song, Member, Kim, and Yi (2011)
+and Song, Kim, and Yi (2012) considered a similar problem
+of searching for and localizing multiple radio sources. The
+objective was to ﬁnd a location that corresponds to the max-
+imum signal strength of the transmitting source. A “Ridge
+Walking Algorithm” was proposed to repeatedly traverse
+the area around each radio source, making the ﬁnal uncer-
+tainty a function of the signal strength. The main results
+apply to radio sources that are infrequently transmitting,
+and so the time-to-locate a source is an unbounded ran-
+dom variable. These works are complementary , since we
+assume the robot begins in detection range and use bear-
+ing measurements to reduce the uncertainty . Furthermore,
+we allow the ﬁnal required precision to be speciﬁed and
+provide explicit, absolute bounds on localization time.
+A greedy algorithm is presented in this work that pro-
+vides the next measurement location in closed form, remov-
+ing the need for any state-space search. It is shown how to
+select measurement locations to limit the effect of ambiguity
+and bound the time spent by the robot during the localiza-
+tion, while providing a guarantee of posterior covariance.
+Finally , we show that no other bearing-based algorithm can
+perform signiﬁcantly better than ours by providing a lower
+bound on the optimal cost directly .
+4. PRELIMINARIES
+In this section, we brieﬂy review the necessary background
+and deﬁne our notation. We have had success in ﬁeld ex-
+periments using the extended Kalman ﬁlter (EKF) for this
+application, and hence base our algorithm with respect to
+this common ﬁltering technique. The closed-form represen-
+tation for the EKF allows us to make guarantees about al-
+gorithm execution time and completeness as elaborated in
+the next sections. We leave the generalization to other tech-
+niques to future work, but we provide a direct comparison
+in Section 9.
+Consider Figure 1(b). We begin with the robot at lo-
+cation Gs(0), according to a global coordinate frame {G}.
+The true target location, Gx⋆, is unknown, but we may take
+bearing measurements from any location, s(i), of the form
+z(i) = h
+(Gx⋆,G s(i)
+)
+= tan− 1
+(Gsy (i)−Gx⋆y
+Gsx (i)−Gx⋆x
+)
+. However, the bear-
+ing is actually the orientation of a line that passes through
+the sensor and target. Since it is not clear if the measured
+bearing points toward or away from the target, we call it an
+ambiguous measurement.
+A sequence of measurements is denoted S =
+{s(1),...,s (N )}. We assume an initial two-dimensional
+Gaussian hypothesis in a world frame {G}, with mean G ˆx
+and covariance /Sigma1(i)[ i . e . ,x⋆ ∼ N (G ˆx(i),/Sigma1(i))]. For conve-
+nience of analysis and notation, we will describe sensor
+locations in polar coordinates with respect to the target hy-
+pothesis, i.e., s(i) = (α(i),r (i)). The local frame about ˆ x is
+oriented with respect to the covariance ellipse, with the x
+axis corresponding to the major axis (eigenvector with the
+larger eigenvalue) at each time step. We denote a series of
+sensor locations as S ={ s(1),...,s (N )}, with measurements
+Z ={ z(1),...,z (N )}.
+We employ an EKF to merge the measurements ac-
+quired. The EKF requires that the measurement noise is
+Gaussian. The equations that describe the EKF updates are
+(Bar-Shalom, Li, & Kirubarajan, 2001)
+ˆx(i + 1) = ˆx(i) + Kiy(i), (2)
+/Sigma1(i + 1) = /Sigma1(i) − /Sigma1(i)
+(
+HT
+i S− 1
+i Hi
+)
+/Sigma1(i), (3)
+with
+Hi =∇ ˆx(i)h(ˆx(i),s (i)) = 1
+r(i) [ − sin α(i)c o sα(i) ], (4)
+Si = Hi/Sigma1(i)HT
+i + σ2
+s , (5)
+Ki = /Sigma1i− 1HT
+i S− 1
+i ,
+yi = zi − h(ˆx(i),s (i)).
+As noted by Thrun et al. (2005), the covariance update
+step from the EKF [Eq. (3)] can be rearranged to a more
+convenient form, known as the extended information ﬁlter.
+Journal of Field Robotics DOI 10.1002/rob
+300 • Journal of Field Robotics—2014
+Figure 2. (a) Ambiguous measurements produce two possible bearings ( z and z′). (b) The EKF approximates the measurement
+probability as a Gaussian with mean zero and variance Si . (c) The PDF of the target hypothesis after updating the Gaussian shown
+in (a) with measurements z′ and z.
+= /Sigma1− 1(i) + 1
+r2σ2
+s
+[
+sin2 α(i) − sin α(i) · cos α(i)
+− sin α(i) · cos α(i)c o s 2 α(i)
+]
+.
+(6)
+Equation (6) follows because of the form of h(·) for bearing-
+only tracking. For bearings constructed with a directional
+radio antenna, a double-wedge sensing model is used. A
+signiﬁcant consequence of this sensing model is the am-
+biguity regarding which side of the robot the measure-
+ment originated from. So, before applying the EKF update
+equations, we must resolve this ambiguity as discussed
+next.
+5. ADDRESSING AMBIGUITY
+In this section, we show how to structure a measurement se-
+quence to minimize the impact of ambiguous bearing mea-
+surements. To see the effect of ambiguous measurements,
+consider the situation shown in Figure 2. In Figure 2(a), a
+mobile robot arrives at position s(i) and takes a measure-
+ment, as shown by the line z–s(i)–z′. Notice that the line
+can be separated into two rays, which we deﬁne as s(i)–
+z and s(i)–z′ with the angles 0 ≤| z| < |z′|≤ π. Note that
+z′ = z + π,a n d z is the “forward-facing” part of the mea-
+surement, or the part of the line segment that passes closer
+to the point ˆx(i). Both rays represent a deviation from the
+expected measurement [the line s(i)– ˆx(i), corresponding to
+angle 0]. After performing a Bayesian update of the target
+hypothesis using the ambiguous measurement, the target
+probability density function (PDF) will also be bimodal, as
+shown in Figure 2(c).
+Analytically , we can see this as follows. Let p[ˆx(i + 1)]
+represent the posterior PDF of the target,Z ={ z}∪{ z′} be an
+ambiguous measurement that we decompose as described
+into two rays, s(i) be the sensor location, and x(i) the prior
+hypothesis,
+p(x(i + 1)|x(i),s (i),Z )
+∝ p(x(i + 1)|x(i),s (i),z ) · p(z|x(i),s (i))
++ p(x(i + 1)|x(i),s (i),z ′) · p(z′|x(i),s (i)). (7)
+This PDF is well approximated by a mixture of two Gaus-
+sians, one for each peak in the PDF given the new mea-
+surement [see Figure 2(c)]. A reasonable practice is to use
+two Gaussian hypotheses, weighted as shown. However,
+splitting the PDF with each measurement will lead to an
+exponential number of hypotheses over multiple measure-
+ments. To address this problem, it is common to discard or
+combine hypotheses with low relative weights (see Black-
+man, 2004; Cox & Hingorani, 1996; Reid, 1979). However, if
+the robot takes a measurement from a location very close to
+the peak of the prior hypothesis, the weights p(z|x(i),s (i))
+and p(z′|x(i),s (i)) may be equal and no hypothesis can be
+discarded.
+The key observation that motivates our choice of
+measurement locations is the following: The likelihood
+p(z′|x(i),s (i)) is highly dependent on the sensor location
+relative to the target hypothesis. As we will show below,
+one can always choose measurement locations such that
+p(z|x(i),s (i)) is much higher than p(z′|x(i),s (i)). In this way ,
+only one Gaussian hypothesis will have a high weight after
+each measurement.
+Speciﬁcally , we choose measurement locations such
+that p(z′|x(i)) ≪ p(z|x(i)) for any value of z. This is chal-
+lenging because the measurement value ( z) is only given as
+the approximate distributionp(z|x(i)). To proceed, letβ be a
+parameter describing the maximum acceptable probability
+that the target is in fact “behind” the sensor (correspond-
+ing to z′ being the correct bearing). We can choose locations
+such that p(z′|x(i)) is always less than β using the following
+lemma (a proof of which is delayed until Appendix 1).
+Lemma 1. Let /Phi1(a) be the Gaussian Cumulative Distribution
+such that/Phi1(a) = p(x ≤ a) when x ∼ N (0, 1). Deﬁne a threshold
+parameter β and true measurementz⋆. Deﬁne sensing locations in
+radial coordinates (α(i),r (i)) centered around the current target
+Journal of Field Robotics DOI 10.1002/rob
+Vander Hook et al.: Cautious Greedy Strategy for Bearing-only Active Localization • 301
+hypothesis. Then any sensing location satisfying
+r(i) ≥
+√
+σ2
+x (i)s i n2 α(i) + σ2
+y (i)c o s2 α(i)
+σ2
+β − σ2
+s
+with constant: σβ = π
+2 · /Phi1− 1 (
+1 − β
+2
+) (8)
+will also satisfy p(z′|x(i),s (i)) ≤ β.
+Lemma 1 deﬁnes an “ellipse of closest approach” around
+the target hypothesis, with principal axes deﬁned as a func-
+tion of the uncertainty in the estimate. Effectively , we have
+deﬁned a strategy that truncates part of the PDF by discard-
+ing the possibility that the target is behind the sensor. The
+amount of discarded probability mass is approximated by
+the β parameter. As β → 0, none of the PDF is truncated,
+but the measurement locations become inﬁnitely far away .
+Perhaps intuitively , in the following sections we show that
+the parameter β captures the tradeoff between time spent
+localizing a target and the accuracy of the ﬁnal estimate. In
+particular, the time required to locate a target will follow
+directly in closed form in Section 7 as a function of β.I n
+the rest of the paper, we formalize this intuition. First, we
+specify our algorithm.
+6. THE β-CAUTIOUS ALGORITHM
+Algorithm 1: β-CautiousStrategy (s0, ˆx0,/Sigma10,β,γ,σ 2
+s )
+1: σβ ← π
+2·/Phi1− 1 (1− β
+2 )
+2: σ2
+x (0),σ 2
+y (0) ← eigenvalues(/Sigma10)
+3: i ← 1
+4: while σx (i) ≥ γ · σx (0) or σy (i) ≥ γ · σy (i) do
+5: Polar frame at ˆ x(i − 1) aligned with σx (i − 1)
+6: r(i) ← σx (i− 1)√
+σ2
+β−σ2s
+7: Let s(i) be the closer of ( r(i), π
+2 )o r( −r(i), π
+2 ).
+8: Collect measurement z(i)f r o ms(i)
+9: ˆ x(i),/Sigma1(i) ← ekf_update (z(i),σs, ˆx(i − 1),/Sigma1i− 1)
+10: σ2
+x (i),σ 2
+y (i) ← eigenvalues [/Sigma1(i)]
+11: i ← i + 1
+12: end while
+We now introduce our main algorithm. In essence, we
+present a greedy algorithm that outputs a measurement lo-
+cation based on the current hypothesis. At each time step,
+it will output a measurement location that can minimize
+the maximum eigenvalue of the covariance matrix. Such
+an algorithm is often called E-Optimal in the literature
+(Pukelsheim, 2006).
+6.1. Algorithm Description
+Each measurement location is subject to the constraint given
+in Lemma 1. Speciﬁcally , ﬁxα = π
+2 with respect to the larger
+eigenvalue/eigenvector pair at every time step ( σx in this
+notation). Thus, Eq. (8) simpliﬁes to
+r ≥ σx
+√
+σ2
+β − σ2
+s
+. (9)
+As σx → 0, r strictly decreases, and thus the range (relative
+to the hypothesis) between measurements decreases as well.
+Since the algorithm produces measurement locations that
+begin far away from the hypothesis (as a function of β)
+and only approach when the variance decreases, we call the
+algorithm β-Cautious.
+Algorithm 1 presents the detailed implementation of
+our algorithm. At each time step, the robot moves to a
+position perpendicular to the eigenvector with the largest
+eigenvalue. The robot chooses the smallest range satisfying
+Eq. (9). Figure 3 shows a pair of measurements and the path
+of the robot. In general, there are two such locations, so it is
+easiest to choose the closer of the two. This process repeats
+until both eigenvalues are below the desired threshold.
+Figure 4 shows a full simulated execution of the algorithm.
+As the uncertainty ( σx ) decreases, the measurement loca-
+tions are chosen closer to the hypothesis [see Eq. (9)].
+Since the algorithm reduces the largest eigenvalue at
+every measurement step, it is guaranteed to satisfy the con-
+straint/Sigma1(N ) ≤ γ · /Sigma1(0) in ﬁnite time. We use the EKF update
+routine [Eqs. (2) and (3)] as a subroutine. Since all operations
+are available in closed form, and the size of the covariance is
+small and ﬁxed, Algorithm 1 has a constant computational
+complexity . While a greedy , multitarget extension is possi-
+ble, we focus on the analysis of the single-target algorithm
+in this work.
+6.2. Initialization of Prior Estimates
+So far, we have assumed that an initial estimate
+N (ˆx(0),/Sigma1(0)) is available. However, during a search opera-
+tion on a frozen lake, such an initial estimate is not usually
+available. Commonly , the robot follows a predeﬁned search
+path [see Tokekar et al. (2013) for more details] until it moves
+into sensing range of a target. To proceed with bearing-only
+localization, we must construct an initial estimate of the
+target location.
+This initialization problem was challenging because the
+sensing ranges of individual radio tags may vary based on
+the depth of the tag, the age of the tag, and other environ-
+mental factors, and hence the signal strength cannot directly
+be used. A straightforward technique might be to use a small
+number of bearing measurements to initialize the prior es-
+timate. This is undesirable for RSSI-based bearings because
+of the signiﬁcant time required, the high sensor noise, and
+the ambiguity .
+Instead, for completeness we present the relevant de-
+tails of a bounded-time strategy that forms a consistent ini-
+tial estimate by exploiting the limited sensing range of the
+sensor. We assume that each tag has an isotropic sensing
+Journal of Field Robotics DOI 10.1002/rob
+302 • Journal of Field Robotics—2014
+Figure 3. One measurement step of the cautious strategy presented in Algorithm 1. Shown is a covariance ellipse and target
+hypothesis (circle) along with the true target location (star). (a) The robot moves to a location perpendicular to the direction of
+highest uncertainty . (b) A bearing measurement is collected, and the hypothesis is updated. The “backward facing” cone (dashed
+lines) is discarded. (c) The now-reshaped covariance ellipse has a new direction of highest uncertainty , and the process repeats.
+Figure 4. A simulated execution of the cautious strategy . This ﬁgure is best viewed in color. (a) The full run. (b) Detail of the boxed
+region in the ﬁrst ﬁgure. A red ellipse denotes the ﬁnal target covariance, the black circle is the desired uncertainty , blue is the prior
+estimate, and green is the robot path and measurement locations. The robot travels in a roughly zigzag path toward the target,
+while the target hypothesis shifts rectilinearly toward the true target.
+range, and so the detected tag X is at the center of a sensing
+circle CX of radius r.T h ec i r c l eCX is used to initialize the
+three-sigma bounds of a Gaussian prior estimate. In prac-
+tice, we do not expect the sensing area to be circular. The
+circle is only used as a conservative prior estimate and in-
+put into the localization algorithm discussed in the previous
+section.
+Note that bothX (the origin ofCx )a n dr are initially un-
+known. Our objective is to estimate both of these quantities.
+By ﬁnding three points (or more) on the perimeter ofCX ,w e
+can solve for X and r. To ﬁnd these points, the local search
+proceeds as follows. First, from the point of ﬁrst detection
+(O), the robot moves in a ﬁxed direction with respect to the
+global frame (e.g., North or angle α). Then, when the robot
+can no longer detect the target X (position A in Figure 5) it
+reverses direction and returns to O. The line segment tra-
+versed in these two steps is referred to as a search path. A full
+execution of four search paths is shown in Figure 5. We then
+ﬁt a circle to these four points, which estimates the sensing
+circle CX . The localization strategy requires a 2D Gaussian
+distribution, which we construct as follows: We use the cen-
+ter of the circle as the mean of the distribution [ ˆ x(0)], and
+the radius of the circle as the 3- σ of the covariance in both
+the x and y directions.
+We can establish the cost as follows (refer to
+Figure 5). Let angle AOX be θ. By design, the angle AOB
+is π
+2 .T h ed i s t a n c e|AB| is 2r and segment OA has length
+2r cos θ while OB has length 2 r sin θ. Each of the four
+search paths ( OA,..., OD) must be covered twice. With
+velocity v,
+Tinit = 4r
+v cos θ+ 4r
+v sin θ+ 4 · ϵ, (10)
+Journal of Field Robotics DOI 10.1002/rob
+Vander Hook et al.: Cautious Greedy Strategy for Bearing-only Active Localization • 303
+Figure 5. Search-based initialization. (a) The robot continues along an arbitrary but ﬁxed direction until it cannot detect the signal
+from X (at position A). The robot then returns to O and repeats the same strategy along a perpendicular line ( B). In general, the O
+can lie in the interior of the sensing circle, hence the robot also searches along C and D. (b) A second search from the center of the
+ﬁrst circle will reveal all nearby tags, provided the sensing range is larger than the spacing between targets.
+where ϵ is the time taken to recognize that the robot has
+left CX , turned around, and reentered CX . Note that θis un-
+known and can take any value between 0 and 2π, depending
+on the relative orientation of the target position with respect
+to the ﬁrst search direction. To obtain the worst-case cost, we
+maximize the cost function with respect to θ. A straightfor-
+ward derivation shows the cost is maximum when θ= 45◦
+for a maximum cost of
+max
+θ
+Tinit = 2
+5
+2
+r
+v + 4 · ϵ. (11)
+The expected search time, assuming θ is uniform in the
+range [0 , 2π], is E [Tinit] = 2r
+v + 4ϵ. The sensing range of
+the antennas in our system is typically less than 100 m.
+Hence, the time taken by the described initialization proce-
+dure is no more than taking four bearing measurements per
+tag. Furthermore, a strategy that relies on a small num-
+ber of bearing measurements for initialization may lead
+to an inconsistent estimate if the (small number of) ini-
+tial bearing measurements contain signiﬁcant noise. Ad-
+ditionally , our search-based initialization becomes even
+more cost-effective as the number of nearby tags (with
+overlapping sensing circles) increases (Vander Hook et al.,
+2012a).
+7. BOUNDING THE COST OF THE β-CAUTIOUS
+ALGORITHM
+To bound the time required to execute the algorithm on
+a real system, we ﬁrst consider the number of measure-
+ments required to achieve the requested covariance reduc-
+tion. We begin by showing that a β-Cautious measurement
+sequence decreases covariance (increases information) by
+a constant factor at each time step. From this there fol-
+lows a bound on the number of measurements required
+to reach the desired covariance in Lemma 3. Because the
+measurement values are unknown (random) variables, the
+state of the target is unknown for each time step. There-
+fore, it is necessary to ﬁnd a worst-case change in hy-
+pothesis location for each measurement, and bound the
+time required to shift the measurement location to com-
+pensate. The results derived here are conﬁrmed in simu-
+lations (see Section 9) and ﬁeld experiments (Section 10).
+The proofs, which are omitted for brevity , are included in
+Appendixes B–E.
+We begin by deriving the exact covariance reduction
+from a β-Cautious measurement strategy .
+Lemma 2. If a pair of measurements is taken fromα(i) = π
+2 with
+range constraint (from Lemma 1) r(i) = σx (i)√
+σ2
+β−σ2s
+, the variance in
+both the x and y directions is decreased by a constant factor,
+σ2
+x (i + 2) =
+σ2
+β
+σ2
+s
+σ2
+x (i) with σβ >σs (see Lemma 1). (12)
+In addition, the alignment of the major and minor axes of the
+posterior covariance does not rotate from the prior.
+The above lemma guarantees that after each pair of mea-
+surements, the covariance decreases by a factor of
+σ2
+β
+σ2s
+.A
+straightforward derivation shows an upper bound on the
+number of measurements required to reduce the eigenval-
+ues of the covariance by a factor of γ to achieve the desired
+bounds.
+Lemma 3. Let the time-stamped range for each measurement
+be r(i), and the corresponding maximum variance be σ2
+x (i)
+[covariance /Sigma1(i)], at time-step i. While constraining the range
+Journal of Field Robotics DOI 10.1002/rob
+304 • Journal of Field Robotics—2014
+Figure 6. The measurement sequenceS ={ s0 ...s 4}. (a) The target hypothesis shifts vertically because of the measurement received
+at s1. (b) The next measurement location ( s2) must be shifted by the same amount to satisfy the range constraint.
+as deﬁned in Lemma 1, such that r ≥ σx√
+σ2
+β−σ2s
+, the number
+of measurements required to satisfy the uncertainty objective,
+σx (N ) ≤ γ · σx (0) with 0 <γ ≤ 1,i s
+N = 4 log(
+σ2
+β
+σ2s
+)
+( 1
+γ
+)
+.
+Using the number of measurements for a problem in-
+stance, it is possible to estimate the distance traveled over a
+tour of the measurement locations. Note that the measure-
+ment locations are speciﬁed as (r(i),α (i)) pairs with respect
+to ˆx(i), the hypothesis at each time-step. An example of a
+measurement sequence with N = 4 is shown in Figure 10.
+Because the hypothesis may move after new measurements,
+it is not trivial to solve for the distance traveled. The general
+form of the distance traveled is
+D(Salg) ≤
+N− 1∑
+i=1
+∥s(i + 1) − s(i)∥+∥ ˆx(i + 1) − ˆx(i)∥.
+The ﬁrst quantity is the total distance traveled by the robotin
+the target’s frameﬁxed at each step [Figure 10(a)]. The second
+quantity is the shift between the hypothesis, i.e., the shift
+in the target’s local frame after each measurement [Figure
+10(b)]. Both quantities admit upper bound, as follows.
+Since the covariance does not rotate, in the local frame
+of the target hypothesis the measurement sequence simply
+alternates between both principal axes [as shown in Figure
+10(a)]. Each measurement takes place at a ﬁxed range,r(i) =
+σ(i)√
+σ2
+β−σ2s
+, in the corresponding local frame. Intuitively , this
+allows an upper bound on the worst-case travel distance of
+the robot in the local frame in terms of the covariance at
+each step.
+Lemma 4. The total displacement between sensor locations in
+the local frame of the hypothesis (i.e., disregarding hypothesis
+displacement) satisﬁes
+N− 1∑
+i=1
+∥s(i + 1) − s(i)∥≤
+N− 1∑
+i=1
+√
+2√
+σ2
+β − σ2
+s
+σx (i).
+Using the EKF update equations, we can compute the
+maximum displacement between the target hypothesis for
+any measurement that can be obtained in terms of the co-
+variance at that step [Figure 10(b)]. This allows us to bound
+the total shift in the local frame centered at the hypothesis
+at each measurement step.
+Lemma 5. The total shift in the target hypothesis from a mea-
+surement sequence of size N is bounded above as
+N− 1∑
+i=1
+∥ ˆx(i + 1) − ˆx(i)∥≤
+N− 1∑
+i=1
+σx (i)
+π
+√
+σ2
+β − σ2
+s
+σ2
+β
+.
+We add the target displacement at each step to the dis-
+tance traveled between each measurement, which preserves
+the upper bound by the triangle inequality [cf. Figure 6(b)].
+The above three lemmas together give a bound on the num-
+ber of measurements and distance traveled by the robot. We
+can now fully bound the time required to localize a target.
+Theorem 1. The total time taken by the β-Cautious strategy is
+given as
+T (Sβ) ≤ σx (0) ·
+⎛
+⎝
+√
+2√
+σ2
+β − σ2
+s
++
+π
+√
+σ2
+β − σ2
+s
+σ2
+β
+⎞
+⎠ ·
+[
+1 − √ γ
+1 − σs
+σβ
+]
++ 4tm log(
+σ2
+β
+σ2s
+)
+( 1
+γ
+)
++ D(s0,s 1). (13)
+Proof: The time spent localizing a target consists of travel
+time and measurement time. The time spent measuring is
+simply N · tm,w h e r eN follows from Lemma 3. To bound
+Journal of Field Robotics DOI 10.1002/rob
+Vander Hook et al.: Cautious Greedy Strategy for Bearing-only Active Localization • 305
+the time spent traveling, we use the distance bounds from
+Lemmas 4 and 5. Note that we have assumed unit velocity;
+otherwise, the following must be scaled by the velocity of
+the robot:
+D(Salg) ≤
+N− 1∑
+i=1
+σx (i)
+√
+2√
+σ2
+β − σ2
+s
++
+N− 1∑
+i=1
+σx (i)
+π
+√
+σ2
+β − σ2
+s
+σ2
+β
+.
+Note that the two series can be combined. Factoring out and
+grouping all constants yields
+D(Salg) ≤
+⎛
+⎝
+√
+2√
+σ2
+β − σ2
+s
++
+π
+√
+σ2
+β − σ2
+s
+σ2
+β
+⎞
+⎠ .
+N− 1∑
+i=1
+σx (i).
+To proceed, note that σx (i) =
+(
+σs
+σβ
+)i
+σx (0) [see Eq. (12)]. Then
+the summation on the right is a geometric series, with the
+following solution:
+σx (0) ·
+[ N− 1∑
+i=1
+( σs
+σβ
+)i ]
+≤ σx (0) ·
+[ N∑
+i=1
+( σs
+σβ
+)i ]
+= σx (0) ·
+[
+1 − √ γ
+1 − σs
+σβ
+]
+.
+The desired result follows. Note that we have added
+D(s0,s 1), the time to travel between the initial sensor lo-
+cation and the ﬁrst measurement location. □
+From here we would like to point out some intuitive
+results of this upper bound. First, as γ → 1, the algorithm
+requires no time to execute. This is because the difference
+between the ﬁnal (requested) covariance and the initial co-
+variance becomes small. Essentially , this shows the adaptiv-
+ity of the algorithm: A good initial estimate or less restrictive
+desired uncertainty will lower execution time.
+Notice also that as σs
+σβ
+→ 1, the work required ap-
+proaches inﬁnity . Intuitively , constraining the variance, with
+caution, to a value comparable to the noise in the sensor re-
+sults in measurements taken from very distant locations [see
+Eq. (9)], which provide small information gains [see Eq. (6)].
+The effect of σβ as a function of β is further explored using
+simulations studies in Section 9.
+8. BOUNDS ON THE OPTIMAL COST
+The previous section established an upper bound on the
+worst-case cost of using the β-Cautious strategy to locate a
+stationary target. In this section, we establish lower bounds
+on the cost of the optimal measurement sequence. Using
+these bounds, we then show that no other algorithm can
+localize a stationary target signiﬁcantly faster, as a function
+of the system parameters and desired ﬁnal uncertainty .
+In the following section, we present a general lower
+bound on the cost of any bearing-only active localization
+sequence, even one that does not suffer from ambiguous
+measurements. We compare this to the cost of the proposed
+algorithm in Section 8.2. Beginning in Section 8.3, we con-
+sider the worst-case execution time for the proposed algo-
+rithm, compared to that of any other online algorithm. We
+specify both costs as a function of the same true target lo-
+cation and hypothesis. This allows a direct comparison of
+both algorithms against a common, uncontrollable adver-
+sary (e.g., Nature) in Section 8.4.
+8.1. Lower Bound for an Ofﬂine Algorithm
+We begin by deriving a lower bound on the time required to
+execute the optimal measurement sequence that is planned
+ofﬂine—in other words, with respect to the true target loca-
+tion. This lower bound is a function of the system param-
+eters, and therefore is general and applies to any mobile
+bearing sensor and any reasonable method of fusing the
+measurements. This result is presented in Theorem 2.
+Our proof makes use of the Cramer-Rao lower bound
+(CRLB, or C) [Van Trees (1971)] as follows. Continue to as-
+sume the measurements are distributed around the true
+target without bias, given the probability density function
+Z ∼ f (S; x). C(S, x) is deﬁned as the inverse of the Fisher
+information matrix (FIM, or F) and gives the minimum co-
+variance about a random vector x given a series of observa-
+tions S.T h eF I Mh a se a c h(i, j) element given with respect
+to the ith element of x as follows:
+F(i, j) = E
+[ ∂
+∂x(i) ln [f (S; x)] ∂
+∂x(j ) ln [f (S; x)]
+]
+. (14)
+The matrix F tells us several important things. First,
+if F is rank-deﬁcient, then no efﬁcient estimator exists with
+ﬁnite variance for the given observation sequence and tar-
+get x. That is, it is impossible to achieve the objective,
+/Sigma1N ⪯ γ2 · /Sigma10.S e c o n d ,F contains all the information about
+the sensor locations and true target location. Thus, for
+a possible location ˆx, the information gain is as follows:
+f (S, x)∼ N (h(x,s (i)),S (i)) and so ∂
+∂x(i) ln f (S; x) = Hi [see
+Eq. (4)]. Then F reduces to [which is of the same form as
+Eq. (6)]
+F(S) =
+N∑
+i=1
+1
+σs
+HT H. (15)
+We can now explore the structure of the CRLB for an
+optimal measurement sequence. Let an optimal trajectory be
+denoted S ={ s(0),s (1),...s (k)} with cost T (S) as follows:
+T (S) = k · tm + D(S)
+= k · tm +
+k∑
+i=1
+∥s(i) − s(i − 1)∥2.
+We make no assumptions about the algorithm used to
+localize the target, other than a nonzero time requirement
+for each measurement. Notice in this case the number of
+Journal of Field Robotics DOI 10.1002/rob
+306 • Journal of Field Robotics—2014
+Figure 7. An illustration of the sequence S′. An arbitrary tra-
+jectory (left) is lower-bounded by a well-structured trajectory
+S′ (right), according to Lemmas 6 through 7.
+measurements k, and the corresponding measurement lo-
+cations are both unknown. Also, note that the optimal algo-
+rithm must be a function of the measurement cost. At one
+extreme, tm → 0, the total cost to localize a target is domi-
+nated by travel time, and the optimal strategy will not travel
+far and will take many measurements. At the other extreme
+for high tm, the optimal strategy can afford to pay for large
+displacements to gain a minimal number of maximally in-
+formative measurements.
+By constraining the ﬁnal covariance and treating the
+prior covariance /Sigma1(0) as an “observation” of the target
+state, the information gain from the sequence of measure-
+ments described by S is given by Eq. (15) as /Sigma1(k)− 1 =
+F(S) + /Sigma1(0)− 1. Taking the trace of this equation provides
+the following relationship, where each α(i)a n dr(i)o f S are
+unknown:
+1
+σ2
+x (k) + 1
+σ2
+y (k) = 1
+σ2
+x (0) + 1
+σ2
+y (0)
++
+k∑
+i=1
+1
+r2(i)σ2
+s
+[sin2 α(i) + cos2 α(i)]. (16)
+The trace shows the net information gain about both
+eigenvalues. By applying the net measurement gain directly
+to one eigenvalue, we can lower-bound the amount of work
+required to reduce both eigenvalues. The previous relation-
+ship becomes
+1
+σ2
+x (k) = 1
+σ2
+x (0) +
+k∑
+i=1
+1
+r2(i)σ2
+s
+. (17)
+Note this is equivalent to setting eachα(i)t o π
+2 as shown
+in Figure 7 (left). The resulting straight-line trajectory is
+labeled S′. Now we can explore the structure given by S′.
+The next lemma shows that S′ can be structured such
+that all measurements are taken from the same location
+without decreasing the information gain given by Eq. (17).
+Lemma 6. The sequence S′ takes all measurements from one
+location.
+Proof: To ﬁnd a contradiction, assume that S′ contains
+measurements from more than one location from various
+ranges given as r(i). Let rmin be the minimum of all these
+ranges. The information gain [Eq. (17)] will be 1
+r2 (i) ≤ 1
+r2min
+.
+Since the sequence already pays to travel to rmin, the closest
+position, we could move all measurements to the closest
+location (at rmin) without incurring extra cost but gaining
+extra information. This contradicts the assumption that S′
+is optimal. □
+Lemma 7. Assume the sequence S′ takes k⋆ measurements. Then
+the optimal range fromx⋆ for taking all measurements is given by
+ropt =
+√
+k⋆ · σx (0)
+σs
+√
+γ2
+1 − γ2
+incurring a total time cost of
+T (S′) = k⋆ · tm + r⋆ −
+√
+k · σx (0)
+σs
+√
+γ2
+1 − γ2 , (18)
+where r⋆ is the distance from the starting robot location to x⋆.
+Proof: Returning to Eq. (17), it is clear that all r(i)a r ee q u a l
+from Lemma 7. Since the trajectory S satisﬁes the objective
+of reducing uncertainty ,σ2
+x (k) is upper-bounded by γ2σ2
+x (0).
+Substituting this inequality into Eq. (17) produces the fol-
+lowing relationship:
+r(k) =
+√
+k σx (0)
+σs
+√
+1 − γ2
+γ2 . (19)
+By assuming k = k⋆, the result follows. □
+The result of the previous lemmas is the trajectory
+shown in Figure 7 (right). Notice that the range ropt is pro-
+portional to the square root of the number of measurements
+taken. Since k ≥ 1, it is tempting to simply lower-bound
+the time requirement by substituting k = 1i n t oE q .( 1 8 ) .
+However, this would unfairly restrict the optimal strategy
+to travel to a position from which a single measurement
+would be sufﬁcient. Instead, we must ﬁnd the tradeoff be-
+tween ropt and k as a function of the system parameters,
+tm, γ,a n d σx (0), which determine the optimal number of
+measurements.
+Theorem 2. Let S⋆
+OFF be the optimal ofﬂine, bearing-only (not-
+necessarily-ambiguous) measurement sequence. If S⋆
+OFF requires
+T (S⋆
+OFF ) time to reduce σx and σy by the constant γ,w h e n
+centered at the true target location, then T (S′) is a lower bound
+on T (S⋆
+OFF ) as follows:
+T (S⋆
+OFF ) ≥ T (S′) = max
+[
+r⋆ − σ2(0)
+2 · tmσ2
+s
+( γ2
+1 − γ2
+)
+, 0
+]
++ tm.
+Proof: Notice that Eq. (18) is a function of k, the un-
+known number of measurements, and the known problem
+Journal of Field Robotics DOI 10.1002/rob
+Vander Hook et al.: Cautious Greedy Strategy for Bearing-only Active Localization • 307
+parameters, γ, σx (0), and σs .L e tσ2
+0 be the larger of the two
+eigenvalues of /Sigma1(0). We can minimize the cost with respect
+to k. Taking the derivative of Eq. (18) and setting it equal to
+zero yields
+k = σ2(0)
+4t2
+mσ2
+s
+( γ2
+1 − γ2
+)
+. (20)
+Substituting this results in a distance traveled of
+D(S′) = r⋆ − σ2(0)
+2 · tmσ2
+s
+( γ2
+1 − γ2
+)
+.
+Now observe that in general the starting range to the true
+target may be less than r⋆, requiring no movement. Then
+from the optimal location, take k ≥ 1 measurements to ﬁnd
+the desired result. □
+The closed-form expression for k in Eq. (20) follows
+intuition: As the prior uncertainty [ σ(0)2]i n c r e a s e s ,m o r e
+measurements are required. As the measurement time tm
+increases, the optimal strategy reduces k (and subsequently
+moves closer). As the sensor noise σs increases, the optimal
+strategy takes fewer measurements from closer positions.
+Based on this lower bound, we compare the cost of our pro-
+posed algorithm with that of an optimal ofﬂine algorithm.
+8.2. Comparison with the β-Cautious Strategy
+In this section, we show that the proposed algorithm pro-
+duces a measurement sequence that is, on average, within a
+constant factor of the optimal ofﬂine cost. In what follows,
+it is convenient to make use of the following constants:
+N = 4 log(
+σ2
+β
+σ2s
+)
+( 1
+γ
+)
+(Lemma 3),
+Cdist =
+⎛
+⎝
+√
+2√
+σ2
+β − σ2
+s
++
+π
+√
+σ2
+β − σ2
+s
+σ2
+β
+⎞
+⎠ ·
+[
+1 − √ γ
+1 − σs
+σβ
+]
+(Theorem 1),
+C3 = 1
+2σ2
+s tm
+γ2
+1 − γ2 (Theorem 2).
+We consider the case in which the hypothesis is not
+very close to the starting location of the robot, given by
+ˆr(0) >C 3σ(0)2. This assumption is not too restrictive. For
+example, in our application C3 ≈ 6 × 10− 4 since tm ≈ 120,
+σs ≈ π
+12 ,a n d γ ≈ 0.1 (as stated in Section 10). In ﬁeld tri-
+als, ˆr(0) ≈ σ(0) ≈ 100 m. In subsequent analysis we also use
+ˆr(0) instead of ∥s(0) − s(1)∥ in the upper bound, since the
+range to the hypothesis is always greater than the distance
+between the starting location and the ﬁrst measurement.
+The robot begins with an estimate of x⋆ as ˆx, a two-
+dimensional Gaussian, but the optimal ofﬂine algorithm has
+access to x⋆. Thus, a direct comparison of the two could pro-
+duce arbitrarily bad results. One such example is x⋆ ≈ s(0)
+and ˆr(0) →∞ : the β-Cautious strategy travels toward the
+hypothesis, while the ofﬂine algorithm does not. However,
+such cases occur with very small probability , and it is rea-
+sonable to expect that on average the costs will be similar.
+Therefore, we take a weighted average (expectation) over
+possible conﬁgurations of the robot and true target, condi-
+tioned on the prior hypothesis.
+As before, let T (S) be the time cost of a sequence as
+given by Eq. (1). Let the true target location be x⋆. Given the
+β-Cautious measurement sequence, Sβ with cost T (Sβ(x⋆)),
+we would like to compare to the unknown optimal solution,
+S⋆
+OFF , with cost T (S⋆
+OFF (x⋆)). We will deﬁne the expected
+performance ratio as
+Ex⋆ [T (Sβ(x⋆))]
+Ex⋆ [T (S⋆
+OFF (x⋆ ))] . We derive a bound next.
+Theorem 3. Let x⋆ be the true target location given a prior es-
+timate ∼ N (ˆx(0),/Sigma1(0)).L e tˆr(0) >C 3σ(0)2 and ˆr(0) > ∥s(0) −
+s(1)∥. In expectation overx⋆, the time taken by theβ-Cautious al-
+gorithm is less than a constant times the optimal algorithm:
+Ex⋆ [T (Sβ(x⋆))]
+Ex⋆ [T (S⋆
+OFF (x⋆))] ≤ C
+with
+C = N · tm + Cdistσ(0) + ˆr(0)
+tm + ˆr(0) − C3σ(0)2 . (21)
+Proof: Since T (S′) ≤ T (S⋆
+OFF ) (Theorem 2), and S′ does not
+change as a function of Z, it sufﬁces to show that
+Ex⋆ [T (Sβ(x⋆))]
+Ex⋆ [T (S′(x⋆))] = Ex⋆ [N · tm +Cdistσ(0)+∥s(0)− s(1)∥]
+Ex⋆ [max(r⋆(0) − C3σ(0)2, 0) + tm] ≤ C,
+(22)
+where C does not depend on x⋆.
+To establish a constant bound, we would like to remove
+all variables that involve the true target location (a random
+variable), or the measurement values. Note that the upper
+bound established in Theorem 1 is not a function of the true
+target location. It remains to ﬁnd the lower expected bounds.
+Observe that the denominator contains the maximum
+of two convex functions, which is a convex function. Since
+the norm r⋆(0) =∥ s(0) − x⋆∥ is a convex function, the mean
+distance to the target is less than the distance to the mean of
+the prior. Finally , by Jensen’s inequality , E[f (x)] ≥ f (E[x])
+if the function f (x) is convex. Since we again consider the
+case of ˆr(0) >C 3σ(0)2, this provides a lower bound as
+Equation(22) ≤ N · tm + Cdistσ(0) + ˆr(0)
+Ex⋆ [r⋆(0) − C3σ(0)2] + Ex⋆ [tm]
+≤ N · tm + Cdistσ(0) + ˆr(0)
+tm + ˆr(0) − C3σ(0)2 .
+In expectation over the true target location and measure-
+ment noise, theβ-Cautious costs only a constant factor more
+than the optimal algorithm, which knows the true target lo-
+cation. □
+Journal of Field Robotics DOI 10.1002/rob
+308 • Journal of Field Robotics—2014
+8.3. Worst-case Online Cost
+We now consider the case of an optimal algorithm operating
+without the access to the true target location. Such an algo-
+rithm executes with the same restrictions as the β-Cautious
+algorithm: it begins with a prior estimate and must react to
+the value of each measurement, i.e., iteratively update the
+hypothesis using the EKF and plan measurement locations.
+As before, we assume the measurement sequence Z is cho-
+sen by an independent adversary , similar to the analysis in
+Section 7, and we present a lower bound on the cost of an
+optimal online algorithm in the worst case.
+As seen in Section 7, the hypothesis may shift as a result
+of a measurement. To connect this result to the previous the-
+orem, we ﬁrst show that there always exists a measurement
+sequence in which the hypothesis does not shift.
+Lemma 8. If s(i) is the sensing location from where the ith
+measurement is obtained and N (ˆx(i − 1),/Sigma1(i − 1)) is the prior
+target hypothesis, then there exists a measurement z(i) such that
+∥ ˆx(i − 1) − s(i)∥=∥ ˆx(i) − s(i)∥,
+where N (ˆx(i),/Sigma1(i)) is the posterior target hypothesis obtained
+using EKF update.
+Proof: The proof follows directly from the EKF update
+equations given in Eq. (2) when the residual is zero [i.e.,
+y(i) = 0]. □
+The above lemma suggests that for every instance, any
+algorithm, including the online optimal algorithm, can re-
+ceive a valid set of measurements where the mean of the
+hypothesis does not change with the EKF update (the co-
+variance, however, changes). If the adversary can increase
+the cost by choosing other measurements, then Eq. (23) is a
+lower bound on the worst-case cost. Otherwise, it is exactly
+the worst-case cost.
+Theorem 4. Let S⋆
+ONL be the optimal online, bearing-only (not-
+necessarily-ambiguous) measurement sequence. LetS⋆
+ONL require
+time T (S⋆
+ONL (Z)) to reduce σx and σy by the constant γ using
+EKF updates. Then T (S′) is also a lower bound on the maximum
+time required by S⋆
+ONL as follows:
+max
+Z
+T (S⋆
+ONL (Z)) ≥ T (S′)
+= max
+[
+ˆr(0) − σ2(0)
+2 · tmσ2
+s
+( γ2
+1 − γ2
+)
+, 0
+]
++ tm. (23)
+Proof: First, by Lemma 8, there exists a measurement se-
+quence such that the hypothesis does not shift position.
+In this case, we are examining the case of a measurement
+sequence gathering information about a ﬁxed point, ˆ x(0).
+Then the covariance after all measurements are collected is
+exactly the same form as that of the FIM, given in Eq. (15).
+The full analysis is similar to that of Theorem 2. However, in
+this case, substitute ˆx(0) for x⋆ to arrive at the desired value
+for T (S′). □
+The presented bound is similar to Theorem 2, except the
+dependence is on initial hypothesis ˆr(0) instead of the true
+target location x⋆.T h es e q u e n c eS′, when executed with
+respect to the true target location, deﬁnes a global mini-
+mum cost for any algorithm. When executed with respect
+to the prior hypothesis, it deﬁnes a lower bound on the time
+taken by any online algorithm that uses an EKF or similar
+estimators.
+8.4. Comparison of Worst-case Online
+Performance
+In this section, we deﬁne the performance ratio as the ra-
+tio of the worst-case execution times of two measurement
+sequences. Using the result of Section 7 and the previ-
+ous section, we show that the performance ratio of the β-
+Cautious strategy and any other online strategy is bounded
+above by a constant.
+Theorem 5. Given a prior estimate of a target location
+∼ N (ˆx(0),/Sigma1(0)),l e t Z be the measurements received by an
+active localization algorithm. Let ˆr(0) >C 3σ(0)2 and ˆr(0) >
+∥s(0) − s(1)∥. For any true target location, the time taken by the
+β-Cautious algorithm for any system parametersβ, tm, γ,a n dσs
+is less than a constant times worst-case cost of the optimal online
+algorithm employing an EKF. Furthermore, for our known system
+values, the time required by the β-Cautious algorithm satisﬁes
+maxZ T (Sβ(Z))
+maxZ T (S⋆
+ONL (Z)) ≤ 5.439. (24)
+Proof: maxZ T (Sβ(Z)) was presented in closed form in The-
+orem 1, where we again let ˆr(0) > ∥s(0) − s(1)∥.S i n c eS′ is a
+lower bound on the worst-case online algorithm, as shown
+i nT h e o r e m4 ,w eh a v et h a tT (S′) ≤ maxZ T (S⋆
+ONL (Z)).
+Then it sufﬁces to show that
+maxZ T (Sβ(Z))
+maxZ T (S⋆
+ONL (Z)) ≤ N · tm + Cdistσ(0) + ˆr(0)
+ˆr(0) − C3σ(0)2 + tm
+≤ 5.439. (25)
+The values for the remainder of the terms ( σs , γ,a n d
+tm), which determine N , C3 and Cdist, will be constant, but
+depend on the speciﬁc system used. We use the known
+system values from Section 10, initial hypothesis uncer-
+tainty and range from Section 6.2, andβ = 0.1. For reference,
+ˆr(0) ≈ σ(0) ≈ 100, tm ≈ 120, σs ≈ π
+12 ,a n dγ ≈ 0.1. □
+The results presented in Theorem 3 show that the
+β-Cautious algorithm is within a constant of the optimal
+ofﬂine strategy on average. Theorem 5 shows that no other
+algorithm will have a signiﬁcantly lower worst-case per-
+formance. However, the constants established in Eqs. (21)
+and (24) still depend on system noise, measurement time,
+Journal of Field Robotics DOI 10.1002/rob
+Vander Hook et al.: Cautious Greedy Strategy for Bearing-only Active Localization • 309
+Table I. Simulation Parameters.
+Range [r(0)] Measurement time ( tm) Desired precision ( γ) β
+Value 220 m 120 s 0.1 0.1
+Evaluated in Figure 11(a) Figure 11(d) Figures 10(a),10(b),10(c),11(c) Figures 10(d),11(b)
+and other nonrandom factors. In the next section, we eval-
+uate the effect of these parameters on the comparisons in
+simulation.
+9. SIMULATIONS
+In this section, we conduct numerical studies of the main re-
+sults presented. First studied is the effect of Lemma 1, which
+shows that the β-Cautious strategy chooses measurement
+locations to minimize the effect of keeping only a single hy-
+pothesis. Second, we illustrate the upper bound presented
+in Theorem 1 as a function of the system parameters and
+starting conditions. Finally , we illustrate Theorem 2 and
+Theorem 3 to show how the performance ratio (time re-
+quired divided by optimal time) changes with the starting
+conditions.
+Our simulated setup was as follows. The β-Cautious
+strategy was implemented as described in Section 6. An
+initial hypothesis was given as ˆ x(0) ∼ N (02×1,σ 2(0) · I2×2),
+with σ(0) = 100. The sensor is initially placed 220 m away
+from ˆx, measurement time was assumed to be 120, and sen-
+sor noiseσs was set to 15 degrees. The true target location,x⋆,
+was repeatedly drawn with replacement from the prior for
+N = 1000 trials. For each suchx⋆, the algorithm was run, and
+all measurement locations and values were recorded. Some
+of the parameters were individually varied to illustrate their
+effect, as shown in Table I. As discussed in Section 10, these
+parameters closely match our ﬁeld implementation.
+The ﬁrst results (Figures 8 and 9) evaluate the asser-
+tions of Section 5, namely that by carefully choosing mea-
+surement locations for an EKF, we can closely approxi-
+mate the bimodal measurement PDF. For this evaluation,
+we compared the performance of the β-Cautious strategy
+with a multiple hypotheses ﬁlter. There are two predomi-
+nant methods for producing a target estimate from multiple
+hypotheses, both of which we implemented for comparison.
+First, the output could be the most likely of the hypotheses
+[the target estimate ˆxi with the highest p(ˆxi|Z), for measure-
+ment sequence Z]. A multiple hypothesis extended Kalman
+ﬁlter (MH-EKF) (Reid, 1979) captures this approach. An-
+other interpretation of the hypotheses is available through
+a Gaussian sum ﬁlter [(GSF, proposed in Alspach and Soren-
+son (1972), but also realized in interacting mixture model-
+based ﬁlters (Bar-Shalom & Tse, 1975; Bar-Shalom et al.,
+2001)]. Using the GSF and similar methods, the output is the
+weighted average of all hypotheses. In both cases, we did
+not implement measurement gating or hypothesis merg-
+ing, since these are alternative methods of truncating the
+PDF (see Blackman, 2004; Cox & Hingorani, 1996; Reid,
+1979), and instead we maintained all the hypotheses for
+comparison.
+Figure 8. (a) The observed probability that the MH-EKF tracks a different hypothesis than the β-Cautious strategy . Note that
+for small β,t h e β-Cautious strategy causes the EKF to track the correct hypothesis more often. (b) The normalized error of the
+ﬁnal estimate [ ∥ ˆx(n) − x⋆∥/∥ ˆx(0) − x⋆∥] as a function of the β parameter. The median error is shown for the Gaussian Sum Filter,
+MH-EKF, andβ-Cautious strategy using an EKF. Note that increasing β results in more error, but at less cost as shown in Figure 10.
+Journal of Field Robotics DOI 10.1002/rob
+310 • Journal of Field Robotics—2014
+Figure 9. Two examples of the effect of the parameter β, comparing the difference in ﬁnal estimates using an EKF, MH-EKF,
+and Gaussian sum ﬁlter. Shown is the median error over 1,000 trials, after each measurement, for all three ﬁlters, as well as an
+“omniscient” EKF that was given the correct, unambiguous measurements. (a) With β = 0.01, we notice agreement and small ﬁnal
+error. (b) With β> 0.2, we notice reduced performance in all ﬁlters. These observations suggest that the measurement locations
+corresponding to low values of β are useful for mitigating the effect of ambiguous measurements, as suggested by Lemma 1.
+As implied by Lemma 1, we expect that decreas-
+ing β would reduce the necessity for tracking multiple
+hypotheses. This can be checked by verifying that a
+multiple-hypotheses ﬁlter does not produce signiﬁcantly
+different output when β is small. The β-Cautious strat-
+egy was run as designed (using an EKF to estimate the
+target state). Depending on the speciﬁc setting for β, the
+algorithm chose an adaptive sequence of measurement lo-
+cations, of length k ∈ [4, 12]. Using the measurement loca-
+tions and values, the set of 2 k hypotheses was then created
+using Eq. (7) (during execution, the algorithm did not have
+access to these other hypotheses). The 2 k individual hy-
+potheses correspond to all combinations of “forward” or
+“backward” measurements for each measurement location.
+The β-Cautious strategy , by employing an EKF, tracks one of
+the 2k hypotheses directly—corresponding to all “forward”
+measurements—and discards the rest. Conversely , the MH-
+EKF will evaluate all the hypotheses, and output the highest
+weighted hypothesis as the target estimate. According to
+Lemma 1, we would expect that small β would correspond
+to similar output between both algorithms. In Figure 8(a),
+we plot the observed probability that the β-Cautious strat-
+egy tracks a hypothesis different from the MH-EKF as a func-
+tion of β. We see that for small values of β, this occurs with
+very small probability . Also shown is the output of an EKF
+that has the correct, unambiguous bearings as input. As
+expected, with small β, the unambiguous EKF has nearly
+identical output. These observations conﬁrm the idea that
+β captures the risk from ambiguous measurements, i.e., of
+tracking the “wrong” hypothesis.
+Another meaningful comparison is the error of the ﬁ-
+nal estimates using all three methods (GSF, MH-EKF, and
+β-Cautious), which is presented in Figure 8(b) and Figure
+9. In all simulations, the ﬁnal covariance was equal, but
+the error of the estimate was observed to vary with β. Fig-
+ure 8(b) shows the median error of the ﬁnal estimate for
+β ∈ [0.01, 0.45]. Note that increasing the caution require-
+ment (β → 0) produces less error in the estimate of the target
+location, even though the covariance does not change. In-
+terestingly ,all ﬁlter output was less accurate as β increased,
+suggesting that the β-Cautious measurement locations are
+valuable for other ﬁltering techniques, not just the EKF.
+Figure 9 shows the error after each measurement, for two
+values of β and all three ﬁltering techniques. In Figure 9(b),
+the median decrease (posterior error over prior error) was
+40% at best, while it was less than 3% in Figure 9(a).
+As shown in Section 7, the parameterβ has a signiﬁcant
+effect on the time required to localize the target, but so do
+the other system parameters and starting conditions. The
+focus of the next simulations is to evaluate the effect of
+these parameters on the maximum time required to localize
+a target. For each different simulation, one parameter was
+varied (see Table I). Equation (13) is plotted, along with
+the aggregate observed values for the time to localize the
+target. In all cases, the theoretical bounds held as shown in
+Figure 10.
+The ﬁnal simulations (Figure 11) examine the relation-
+ship between the β-Cautious strategy and the optimal algo-
+rithm. The distance traveled and number of measurements
+required was recorded. Shown is the theoretical constant,
+derived in Section 8.2. Below this is the mean observed time
+T (Sβ) divided by the mean of the lower bound on the opti-
+mal time, TS′ , from Eq. (23).
+From these trials, and the theoretical results already
+presented, we conclude that the β parameter captures a
+tradeoff between the accuracy of the ﬁnal estimate and
+Journal of Field Robotics DOI 10.1002/rob
+Vander Hook et al.: Cautious Greedy Strategy for Bearing-only Active Localization • 311
+Figure 10. Simulation studies of the possible conﬁgurations and the resulting upper bound. We vary the ﬁnal required uncertainty
+(γ) and evaluate the costs as shown in Theorem 1. (a) The distance traveled as γ decreases (corresponding to a more precise ﬁnal
+estimate). (b) The number of measurements taken. (c) The total execution time as γ decreases. Part (d) shows the tradeoff between
+increasing the parameter β and the resulting time required to localize the target. Note that the target can be localized more quickly
+by increasing risk. The discrete drops in time correspond to removing a measurement from the sequence, and the remaining
+reduction in time is from placing the measurements closer together. Both will cause more error in the ﬁnal estimate, as shown in
+Figure 8(b).
+the time spent localizing a target. Small β leads to better
+accuracy for all ﬁlters examined, at the cost of increased
+time spent traveling and taking measurements. Crucially , it
+was observed that using an extended Kalman ﬁlter is suf-
+ﬁcient to produce ﬁnal estimates that are consistent and
+accurate, for small values of β.
+The time bound in Theorem 1 was predicated on the
+use of the EKF, through Lemma 1 [however, the results in
+Section 8.1 apply to any unbiased ﬁlter (Van Trees, 1971)]. An
+interesting future result would be to bound the shift in the
+hypothesis location for other ﬁltering techniques, allowing
+similar upper bounds to be established when measurements
+are planned against the corresponding output. In this work,
+we have observed that when using the β-Cautious strategy ,
+the EKF performs as good as more “expressive” ﬁlters so
+long as β is small, thus allowing a closed-form guarantee of
+the time required to localize the target. In the next section,
+we will show that our assumptions and results hold during
+ﬁeld deployments.
+10. FIELD EXPERIMENTS
+After establishing the upper bound in closed form and in
+simulation and evaluating the consistency of the algorithm,
+we deployed our system for ﬁeld trials. Before presenting
+the results, we give the details of our ﬁeld implementation.
+Our platform, shown in Figure 12, is composed of a
+mobile robot and directional antenna mounted on a servo
+motor. Our goal is to provide this system as a drop-in aug-
+mentation for humans tracking the radio-tagged ﬁsh. An
+onboard laptop computer controls the majority of the high-
+level planning. Our software architecture is based on the
+Journal of Field Robotics DOI 10.1002/rob
+312 • Journal of Field Robotics—2014
+Figure 11. The theoretical performance ratio [Eq. (21)] and observed performance ratio ( E[T (Sβ)]/E[T (S′)]) as a function of (a) the
+starting range to the hypothesis, ˆr(0), (b) the desired risk (increasing β), and (c) the measurement time (increasing tm). Note that in
+some cases the theoretical bounds are quite loose. This results from our analysis: we provide an upper bound on the worst case. In
+practice, the worst case is rarely if ever encountered.
+Robot Operating System (2012) and is modular enough to
+allow us to redeploy on a robotic boat during the summer
+months (Tokekar et al., 2013). During winter, the chassis is
+a Clearpath Robotics Husky A100 (2012). The Husky has a
+maximum velocity of less than 2 m/s. Typically , we operate
+at 1 m/s.
+The antenna and an example tag are shown in Figure 12
+and were provided by Advanced Telemetry Systems (2012).
+The radio tags operate in the 48–50 MHz range and emit
+an uncoded pulse at approximately 1.1 Hz. These trans-
+missions are detectable from approximately 100 m. Thus,
+it is possible to determine if a target is nearby simply by
+sampling a nonzero signal strength indicator.
+To ﬁnd the bearing to the target, we rotate the antenna
+to ﬁnd the orientation that corresponds to the maximum
+signal strength. We typically sample every 15 ◦.T oﬁ n da
+bearing with maximum signal strength that does not lie
+directly on a sampled orientation, we ﬁt a polynomial to
+the samples and solve for the bearing of maximum signal
+strength as shown in Tokekar et al. (2011). We have estab-
+lished from ﬁeld trials that the process of taking a bear-
+ing measurement requires approximately 1–2 min. We have
+calibrated the bearing measurements using radio transmit-
+ters deployed in known locations, and we established that
+the measurements have approximately a Gaussian error of
+σs ≈ 15◦. Since the antenna is symmetric, the true bearing is
+unknown. Instead, the inferred bearing could point toward
+or away from the target.
+The total system weighs less than 40 kg and is rou-
+tinely operated on lakes with only a few inches of ice cover.
+Battery life is currently limited to 3–4 h of continuous oper-
+ation. The robot can be remotely operated, including taking
+bearing measurements automatically or manually , direct ve-
+locity control, or point-to-point navigation. In our ﬁeld de-
+ployments, the robot operated entirely autonomously .
+We conducted two types of experiments. In the ﬁrst
+set of trials, we evaluated the sensing model and the upper
+bound directly . For these experiments, a transmitting radio
+Journal of Field Robotics DOI 10.1002/rob
+Vander Hook et al.: Cautious Greedy Strategy for Bearing-only Active Localization • 313
+Figure 12. (a) The robotics platform employed in ﬁeld tests. Notice the octagonal antenna used to detect nearby radio transmitters,
+and the servomotor used to rotate the antenna. The robot has been tested on multiple lakes in Minnesota, including Lakes Gervais,
+Staring, Keller, and Phalen. (b) The antenna used to gather bearing measurements. The antenna is radially symmetric, producing
+ambiguous bearing measurements. The antenna is approximately 56 cm (22 in) in diameter and is mounted on a servomotor attached
+to the robotic chassis. (c) A radio transmitter that is surgically implanted in invasive ﬁsh. Each transmitter (or “tag”) has a unique
+frequency and transmits an uncoded pulse at approximately 1.1 Hz. The tags are nearly 7.5 cm (3 in.) long.
+Figure 13. Two single-target ﬁeld trials. Parameters were σ2
+β = 1a n dσ2
+s =
+(π
+8
+)2
+. In both cases, the time for the system to localize
+the target adhered to the theoretical bounds. (a) The two σ uncertainty ellipses are shown for the prior and ﬁnal estimates. The
+ﬁnal error was less than 5 m after only four measurements. The total experiment area was approximately 70 m by 64 m. (b) At Lake
+Gervais, MN. With no prior information, the initial estimate was constructed using the routine described in Section 6.2, producing
+the large red circle shown. The measurement locations narrowed the uncertainty to the ﬁnal circle given as a dashed line. The true
+target location is labeled as a black x.
+tag was placed in a ﬁeld measuring approximately 64 by
+70 m [Figure 13(a)]. We provided a prior target estimate for
+each trial, and we evaluated the cost to localize the target to
+the desired bounds and the accuracy of the ﬁnal estimate.
+The second set of trials was used to verify the intended
+application, including the transition from a search phase to
+a completed localization, including initializing consistent
+hypotheses for each nearby target [Figures 13(b) and 14].
+We present one example from the ﬁrst set and two from the
+second set.
+In the ﬁrst example, shown in Figure 13(a), the input
+was a starting hypothesis that encompassed the experi-
+ment area (2- σ bounds was 70 m, with a starting error of
+30 m). The goal of these trials was to establish the correct-
+ness of the upper bound and verify that a small number
+of measurements is sufﬁcient to localize a static target. Us-
+ing these starting parameters and the system data reported
+in Section 10, we can derive the expected time using Eq.
+(13). Constructing bearing measurements takes less than
+2 min and the chassis velocity is approximately 1 m per
+Journal of Field Robotics DOI 10.1002/rob
+314 • Journal of Field Robotics—2014
+Figure 14. A successful experiment demonstrating the localization of two nearby targets concurrently . For this trial, no prior
+information was available. After detecting a nearby target, the algorithm proceeds in three steps: (a) searching for the boundaries of
+the ﬁrst detected target, (b) searching for the boundaries of the remaining targets, and (c) using bearing measurements to reduce the
+uncertainty in the target estimates. (d) The initial and ﬁnal uncertainty shown on a map. The experiment area was approximately
+300 m across, and the ﬁnal error of the estimates was less than 15 m.
+second (tm ≈ 120). To achieve a desired ﬁnal covariance of
+less than one-tenth the original, we expect a travel dis-
+tance of less than 350 m, and four measurements [based on
+Eq. (13)]. We found that the experimental results agreed with
+the theoretical analysis. Speciﬁcally , the ﬁnal covariance
+was less than 6 m, one sigma bound, four measurements
+were required, and the robot traveled less than 70 m in the
+given example. The ﬁnal error of the estimate was less than
+4m .
+The next experiments [see one example in Figure 13(b)
+conducted on a frozen lake in Minnesota] were to verify the
+algorithm and system in the intended operating environ-
+ment, as well as the initialization procedure described. We
+deployed radio tags in known locations and attempted to
+localize them using no prior estimate. The robot was started
+from inside the sensing circle of a single tag. The robot con-
+structed an initial estimate using the initialization routine
+discussed in Section 6.2, then localized the target by choos-
+ing measurement locations as shown.
+Finally , in Figure 14 we test the full algorithm, from
+no prior estimates to initialization and localization of two
+nearby targets. Two tags were deployed and their GPS coor-
+dinates recorded. The robot was sent along a path that inter-
+sected the sensing radius of one of the tags. From a position
+from which it could detect the nearby tag [Figure 14(a), with
+frequency 48341 detected], it ﬁrst searched for the bound-
+aries of the sensing circle. Then, it returned to the center of
+this circle and searched for other nearby tags [detecting the
+sensing circle corresponding to tag 48931 in Figure 14(b)].
+Finally , it began the iterative process of enumerating can-
+didate measurement locations and taking measurements of
+either tag. The ﬁnal measurement locations and the corre-
+sponding frequency for each are displayed in Figure 14(c),
+with the ﬁnal estimates shown in Figure 14(d) compared
+Journal of Field Robotics DOI 10.1002/rob
+Vander Hook et al.: Cautious Greedy Strategy for Bearing-only Active Localization • 315
+with the initial estimates and the recorded GPS locations of
+the tags. The GPS locations are accurate to within 5 m.
+The ﬁnal covariance for 48341 had eigenvalues 56 and
+168 m2 (corresponding to an error ellipse with radii 7 and
+12 m), starting from an initial covariance with eigenvalues
+1,380 m 2. The ﬁnal covariance for 48931 had eigenvalues
+49 and 127 m 2 (radii 7 and 11 m), starting from an initial
+covariance with eigenvalues 1,758 m 2. The ﬁnal errors for
+48341 and 48931 were 27 and 2 3 m, respectively .
+We found that in all cases in all experiments, the num-
+ber of measurements matched the predicted upper bounds,
+and the distance traveled was less than the theoretical limit.
+This leads us to believe that the theoretical bounds are a
+good prediction of the performance of the system and pro-
+duce reliable estimates of the time required to localize one
+or more nearby targets.
+11. CONCLUSION
+In this work, we examined the problem of using a mobile
+robot to locate a radio transmitter using a directional an-
+tenna. We presented an active localization algorithm suit-
+able for systems that have nonzero measurement time. The
+bearing measurement model was discussed, along with a
+potential application domain and its challenges. The prob-
+lem was formulated as a minimum-time, active localization
+problem with high measurement cost. We showed that, in
+the case of using RSSI-based bearing measurements, am-
+biguity can be mitigated by structuring the measurement
+sequence carefully . The algorithm was analyzed to show an
+upper bound on the time cost as a function of the system
+parameters (sensing noise, measurement time, chassis ve-
+locity) and tracking objective (initial uncertainty versus ﬁnal
+requested uncertainty). The resulting closed-form analysis
+is amenable to engineering tradeoffs and comparisons with
+other bearing-only active localization algorithms.
+We also presented the ﬁrst lower bound on the op-
+timal cost of bearing-only localization of static targets. The
+lower bound will be useful to algorithm and system design-
+ers as a base-line comparison. To compare the performance
+of the β-Cautious algorithm directly to the unknown opti-
+mal algorithm, we presented simulations and closed-form
+analysis. We also presented a comparison to the optimal
+cost of an online, EKF-based algorithm, which allowed us
+to present a worst-case bound. Thus, we have shown that
+our presented algorithm is near optimal when used in the
+application described.
+Finally , we discussed a robust initialization procedure.
+The combination of initialization and localization ensures
+that a target can be localized in bounded time. In ﬁeld exper-
+iments, a mobile robot was able to locate two transmitting
+radio tags to within a desired uncertainty in predictable,
+bounded time.
+One extension we have identiﬁed for these algorithms
+is to accommodate cooperating robots. A major challenge
+when designing a ﬁeld system for cooperative tracking with
+multiple robots is communication. The communication con-
+straint complicates the optimal algorithm design: When and
+where should the robots meet to communicate? Does the
+optimal multirobot algorithm enforce communication con-
+straints at all or should the robots proceed independently?
+Finally , we are working to extend the results to a moving
+target.
+ACKNOWLEDGMENTS
+The authors would like to thank Stergios Roumeliotis for
+useful discussions and suggestions and Przemek Bajer for
+providing ﬁsh-tracking domain expertise. This work is sup-
+ported by NSF Awards No. 1111638, No. 0916209, No.
+0917676, and No. 0936710.
+Appendix A: Proof of Lemma 1
+Essentially , we want the probability mass of the target dis-
+tribution outside the±π
+2 window to be less thanβ, as shown
+in Figure 2(b). Recall that the innovation, (z − ˆz), is assumed
+to be normally distributed with variance given by S from
+Eq. (5). This implies z− ˆz√
+S ∼ N (0, 1). Thus,
+p
+(
+z − ˆz ≥ π
+2
+)
+= p
+(z − ˆz√
+S
+≥ π
+2
+√
+S
+)
+= 1 − /Phi1
+( π
+2
+√
+S
+)
+(A.1)
+with the function /Phi1representing the standard Gaussian
+CDF. We want this probability to be less than β
+2 ,
+1 − /Phi1
+( π
+2
+√
+S
+)
+≤ β
+2 ↔
+√
+S ≤ π
+2 · /Phi1− 1 (
+1 − β
+2
+). (A.2)
+We call the right-hand sideσβ in the remainder of the paper,
+which makes the variance constraint in Eq. (A.2) S ≤ σ2
+β .
+From this relationship we can derive a constraint on the
+measurement locations as follows. We begin by substituting
+the value of S from the EKF formulation,
+S = H/Sigma1HT + R,
+S =
+[ − sin α
+r
+cosα
+r
+][σ2
+x 0
+0 σ2
+y
+]
+⎡
+⎢⎣
+− sin α
+r
+cosα
+r
+⎤
+⎥⎦ + σ2
+s ,
+S = 1
+r2
+(
+σ2
+x sin2 α + σ2
+y cos2 α
+)
++ σ2
+s .
+Notice that all values of the previous equation are known,
+except for the position of the sensor [r(i)a n dα(i)]. Applying
+the maximum variance constraint S ≤ σ2
+β allows us to ﬁnd
+Journal of Field Robotics DOI 10.1002/rob
+316 • Journal of Field Robotics—2014
+a range constraint for measurement locations,
+r ≥
+√
+σ2
+x sin2 α + σ2
+y cos2 α
+σ2
+β − σ2
+s
+. (A.3)
+Appendix B: Proof of Lemma 2
+Consider the information form of the covariance update
+given in Eq. (6). Substituting the value of H and R gives a
+one-step closed-form recursion as follows:
+/Sigma1(i + 1)− 1 = /Sigma1(i)− 1
++ 1
+σ2
+s
+⎡
+⎢⎢⎣
+− sin α(i)
+r(i)
+cos α(i)
+r(i)
+⎤
+⎥⎥⎦
+[ − sinα(i)
+r(i)
+cos α(i)
+r(i)
+]
+.
+Note that α alternates between π
+2 and 0 to ﬁnd the following
+recursion for each pair of measurements:
+/Sigma1(i + 2)− 1 = /Sigma1(i)− 1 +
+⎡
+⎣
+1
+σ2
+s r(i)2 0
+00
+⎤
+⎦ +
+⎡
+⎣
+00
+0 1
+σ2
+s r(i + 1)2
+⎤
+⎦.
+Substitute the value for r(i) from (9) and expand /Sigma1to ﬁnd
+/Sigma1(i + 2)− 1 =
+⎡
+⎢⎢⎣
+1
+σ2
+x (i) 0
+0 1
+σ2
+y (i)
+⎤
+⎥⎥⎦ +
+⎡
+⎢⎢⎢⎣
+σ2
+β − σ2
+s
+σ2
+s σ2
+x (i) 0
+0
+σ2
+β − σ2
+s
+σ2
+s σ2
+y (i)
+⎤
+⎥⎥⎥⎦
+=
+⎡
+⎢⎢⎢⎢⎣
+1
+σ2
+x (i)
+(
+1+
+σ2
+β − σ2
+s
+σ2
+s
+)
+0
+0 1
+σ2
+y (i)
+(
+1+
+σ2
+β − σ2
+s
+σ2
+s
+)
+⎤
+⎥⎥⎥⎥⎦
+.
+Since 1 +
+σ2
+β − σ2s
+σ2s
+=
+(
+σ2
+β
+σ2s
+)
+, the above factors to
+/Sigma1(i + 2)− 1 =
+(
+σ2
+β
+σ2
+s
+)
+· /Sigma1(i)− 1. (B.1)
+Thus each pair of measurements is a constant-factor increase
+in information, or a decrease in prior uncertainty .
+Appendix C: Proof of Lemma 3
+Suppose the measurement sequence takesN measurements.
+The covariance at the end of the measurement sequence is
+required to be
+/Sigma1(N ) =
+[γ2 · σ2
+x (0) 0
+0 γ2 · σ2
+y (0)
+]
+= γ2 · /Sigma1(0).
+Since each pair of measurements reduces the uncertainty in
+both the x and y directions by a constant factor, we have
+from Eq. (12),
+/Sigma1(i + 2)− 1 =
+(
+σ2
+β
+σ2
+s
+)
+· /Sigma1(i)− 1.
+The above shows
+1
+γ2 /Sigma1(0)− 1 =
+(
+σ2
+β
+σ2
+s
+)N
+2
+· /Sigma1(0)− 1 ↔ N = 4 log(
+σ2
+β
+σ2s
+)
+(
+1
+γ
+)
+.
+Appendix D: Proof of Lemma 4
+In the local frame of the target hypothesis, measurements
+are taken along the x and y axis at ﬁxed, decreasing ranges.
+To derive an upper bound, we can solve a circular case
+with both starting variances equal to the maximum, i.e.,
+σx (0) = σy (0) = max(σx,σy ).
+First, note that each sensor location is along a principal
+axis of the local coordinate frame, with ˆx at the origin. Note
+also that there are N
+2 movements from the x axis to the y axis
+and N
+2 − 1 movements from the y axis to the x axis. Each
+measurement takes place at a ﬁxed range, r(i) = σ(i)√
+σ2
+β−σ2s
+and
+r(i + 1) ≤ r(i). Thus, we have the following relationship:
+N− 1∑
+i=1
+∥s(i + 1) − s(i)∥=
+N
+2∑
+i=1
+∥s(2i − 1) − s(2i)∥
++
+N
+2 − 1∑
+i=1
+∥s(2i) − s(2i + 1)∥
+≤
+N
+2∑
+i=1
+√
+2 · r(2i − 1) +
+N
+2 − 1∑
+i=1
+√
+2 · r(2i)
+≤
+N
+2∑
+i=1
+√
+2√
+σ2
+β − σ2
+s
+σx (2i − 1)
++
+N
+2 − 1∑
+i=1
+√
+2√
+σ2
+β − σ2
+s
+σy (2i).
+Note that σx (0) = σy (0), and after a pair of measurements,
+the variances are again equal [i.e., σx (i) = σy (i + 1)]. The
+desired result follows.
+Appendix E: Proof of Lemma 5
+To examine ∥ ˆx(i + 1) − ˆx(i)∥ (the shift from a single mea-
+surement), observe that the difference between two hy-
+pothesis locations is given in closed form by the EKF as
+ˆx(i + 1) = ˆx(i) + K(i + 1) [z(i) − ˆz(i)]. We can ﬁnd the max-
+imum shift as follows (we drop the current time indices i
+Journal of Field Robotics DOI 10.1002/rob
+Vander Hook et al.: Cautious Greedy Strategy for Bearing-only Active Localization • 317
+for clarity):
+ˆx(i + 1) − ˆx = K [z − ˆz]
+= /Sigma1HT [
+H/Sigma1HT + σ2
+s
+]− 1
+[z − ˆz]
+=
+[σ2
+x 0
+0 σ2
+y
+]
+⎡
+⎢⎢⎣
+− 1
+r sinα
+1
+r cos α
+⎤
+⎥⎥⎦
+×
+[ 1
+r2
+(
+σ2
+x sin2 α + σ2
+y cos2 α
+)
++ σ2
+s
+]− 1
+[z − ˆz] .
+Observe that α takes the value π
+2 and 0 over a pair of mea-
+surements. The two possible values of ˆx(i + 1) − ˆx are
+ˆx(i + 1) − ˆx =
+⎡
+⎣
+−σ2
+x
+1
+r σ2
+x + r · σ2
+s
+0
+⎤
+⎦|z − ˆz| if α = π
+2 ,
+ˆx(i + 1) − ˆx =
+⎡
+⎢⎣
+0
+σ2
+y
+1
+r σ2
+y + r · σ2
+s
+⎤
+⎥⎦|z − ˆz| if α = 0,
+from which we can see that when the sensor is at a location
+perpendicular to the direction of σx (σy ), the target hypoth-
+esis will shift only in the ±x (±y) direction. We can proceed
+with measurements corresponding to α = π
+2 , as the other
+direction is similar. By including the constraint on range,
+r = σx√
+σ2
+β−σ2s
+,
+∥ ˆx(i + 1) − ˆx∥=| z − ˆz|·
+⎛
+⎝
+σx
+√
+σ2
+β − σ2
+s
+σ2
+β
+⎞
+⎠ .
+Finally , notice that the innovation, z − ˆz, cannot be more
+than π in a bearing-only setting. This gives a ﬁnal upper
+bound on the displacement of the hypothesis along the per-
+pendicular axis as
+∥ ˆx(i + 1) − ˆx∥≤ σx ·
+π
+√
+σ2
+β − σ2
+s
+σ2
+β
+.
+REFERENCES
+Advanced telemetry systems, http://atstrack.com. Accessed
+November, 2012.
+Alspach, D., & Sorenson, H. (1972). Nonlinear Bayesian estima-
+tion using Gaussian sum approximations. IEEE Transac-
+tions on Automatic Control, 17(4), 439–448.
+Bar-Shalom, Y ., Li, X.-R., & Kirubarajan, T. (2001). Estimation
+with applications to tracking and navigation. New York:
+John Wiley & Sons.
+Bar-Shalom, Y ., & Tse, E. (1975). Tracking in a cluttered envi-
+ronment with probabilistic data association. Automatica,
+11, 451–460.
+Bishop, A., & Pathirana, P . (2008). Optimal trajectories for hom-
+ing navigation with bearing measurements. In Proceed-
+ings of the 2008 International Federation of Automatic
+Control Congress. Seoul, Korea (pp. 12117–12123).
+Blackman, S. (2004). Multiple hypothesis tracking for multiple
+target tracking. IEEE AE Systems Magazine, 19(1), 5–18.
+Bopardikar, S.D. (2010). Pursuit strategies for autonomous
+vehicles. Ph.D. thesis, University of California, Santa
+Barbara.
+Borri, A., Bopardikar, S.D., Hespanha, J., & Di Benedetto, M.D.
+(2011). Hide-and-seek with directional sensing. In World
+Congress (vol. 18, pp. 9343–9348).
+Clearpath robotics, http://clearpathrobotics.com. Accessed
+November, 2012.
+Cox, I., & Hingorani, S. (1996). An efﬁcient implementation of
+Reid’s multiple hypothesis tracking algorithm and its eval-
+uation for the purpose of visual tracking. IEEE Transac-
+tions on Pattern Analysis and Machine Intelligence, 18(2),
+138–150.
+Derenick, J., Fink, J., & Kumar, V . (2011). Localization using
+ambiguous bearings from radio signal strength. In Pro-
+ceedings of the IEEE/RSJ International Conference on In-
+telligent Robots and Systems. IEEE.
+Forney, C., Manii, E., Farris, M., Moline, M., & Lowe, C. (2012).
+Tracking of a tagged leopard shark with an AUV: Sen-
+sor calibration and state estimation. Proceedings of the
+2012 International Conference on Robotics and Automa-
+tion (ICRA). Saint Paul, MN (pp. 5315–5321).
+Frew, E. (2009). Providing quality of service of information
+through mobility. In Proceedings of the American Control
+Conference. St. Louis, Missouri, USA (pp. 2160–2165).
+Frew, E.W. (2003). Observer trajectory generation for target-
+motion estimation using monocular vision. Ph.D. thesis,
+Stanford University.
+Hammel, S.E., Liu, P .T., Hilliard, E.J., & Gong, K.F. (1989). Opti-
+mal observer motion for localization with bearing mea-
+surements. Computers and Mathematics with Applica-
+tions, 18(1–3), 171–180.
+Hoffmann, G., & Tomlin, C. (2010). Mobile sensor network con-
+trol using mutual information methods and particle ﬁlters.
+IEEE Transactions on Control, 55(1), 32–47.
+Li, X.R., & Jilkov, V .P . (2001). Survey of maneuvering target
+tracking: III. Measurement models. Proceedings of SPIE,
+4473(August), 423–446.
+Li, X.R., & Jilkov, V .P . (2003). Survey of maneuvering tar-
+get tracking: I: Dynamic models. IEEE Transactions on
+Aerospace and Electronic Systems, 39(4), 1333–1364.
+Li, X.R., & Jilkov, V .P . (2005). Survey of maneuvering target
+tracking: V: Multiple-model methods. IEEE Transactions
+on Aerospace and Electronic Systems, 41(4), 1255–1321.
+Martinez, S., & Bullo, F. (2006). Optimal sensor placement and
+motion coordination for target tracking. Automatica, 42(4),
+661–668.
+Merino, L., Caballero, F., & Ollero, A. (2010). Active sensing
+for range-only mapping using multiple hypothesis. In
+Intelligent Robots and Systems (IROS), 2010 IEEE/RSJ In-
+ternational Conference (pp. 37–42). IEEE.
+Journal of Field Robotics DOI 10.1002/rob
+318 • Journal of Field Robotics—2014
+Morbidi, F., & Mariottini, G.L. (2012). Active target tracking
+and cooperative localization for teams of aerial vehicles.
+Control Systems Technology , IEEE Transactions, PP(99),
+1–1.
+Pukelsheim, F. (2006). Optimal Design of Experiments.
+Philadelphia, PA: Society for Industrial and Applied Math-
+ematics.
+Reid, D. (1979). An algorithm for tracking multiple targets. IEEE
+Transactions on Automatic Control, ac-24(6), 843–854.
+Robot operating system, http://ros.org. Accessed November,
+2012.
+Scerri, P ., Glinton, R., Owens, S., Scerri, D., & Sycara, K.
+(2007). Geolocation of rf emitters by many UA Vs. In AIAA
+Infotech@Aerospace 2007 Conference and Exhibit. Rohn-
+ert Park, California.
+Song, D., Kim, C., and Yi, J. (2012). Simultaneous localization
+of multiple unknown and transient radio sources using a
+mobile robot. IEEE Transactions on Robotics, 28(3), 668–
+680.
+Song, D., Member, S., Kim, C.-Y ., & Yi, J. (2011). On the time
+to search for an intermittent signal source under a limited
+sensing range. IEEE Transactions on Robotics, 27(2), 313–
+323.
+Thrun, S., Burgard, W., Fox, D., et al. (2005). Probabilistic
+robotics (vol. 1). Cambridge, MA: MIT Press.
+Tokekar, P ., Branson, E., Vander Hook, J., & Isler, V . (2013). Cov-
+erage and active localization for monitoring invasive ﬁsh
+with an autonomous boat. IEEE Robotics and Automation
+Magazine, 20(3), 33–41.
+Tokekar, P ., Vander Hook, J., & Isler, V . (2011). Active target
+localization for bearing based robotic telemetry . In Pro-
+ceedings of the IEEE/RSJ International Conference on In-
+telligent Robots and Systems. San Francisco, CA, USA.
+Van Trees, H. (1971). Detection, estimation, and modulation the-
+ory: Nonlinear modulation theory . Wiley Classics Library .
+Hoboken, NJ, USA: John Wiley & Sons, Inc.
+Vander Hook, J., Tokekar, P ., Branson, E., Bajer, P . G., Sorensen,
+P . W., & Isler, V . (2012a). Local-search strategy for active
+localization of multiple invasive ﬁsh. In Siciliano, B., &
+Khatib, O. (eds.), 13th International Symposium on Ex-
+perimental Robotics, page to appear. Springer Tracts in
+Advanced Robotics.
+Vander Hook, J., Tokekar, P ., & Isler, V . (2012b). Cautious greedy
+strategy for bearing-based active localization: Experiments
+and theoretical analysis. In Proceedings of the IEEE Inter-
+national Conference on Robotics and Automation. Saint
+Paul, MN, USA.
+Zhou, K., & Roumeliotis, S. (2011). Multirobot active target
+tracking with combinations of relative observations. IEEE
+Transactions on Robotics, 27(4), 678–695.
+Zhou, K., & Roumeliotis, S.I. (2008). Optimal motion
+strategies for range-only constrained multisensor tar-
+get tracking. IEEE Transactions on Robotics, 24(5),
+1168–1185.
+Journal of Field Robotics DOI 10.1002/rob

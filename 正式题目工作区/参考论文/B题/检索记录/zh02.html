@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="keywords" content="" />
+<meta name="HW.ad-path" content="https://www.sys-ele.com/CN/abstract/abstract2264.shtml" />
+<meta name="HW.identifier" content="https://www.sys-ele.com/CN/abstract/abstract2264.shtml" />
+<meta name="DC.Format" content="text/html" />
+<meta name="DC.Language" content="cn" />
+<meta name="DC.Title" content="存在系统误差下交叉定位系统最优交会角研究" />
+<meta name="DC.Identifier" content="10.3969/j.issn.1001-506X.2016.07.06" />
+<meta name="DC.Date" content="2010-01-03" />
+<meta name="citation_journal_title" content="系统工程与电子技术" />
+<meta name="citation_journal_abbrev" content="系统工程与电子技术" />
+<meta name="citation_issn" content="1001-506X" />
+<meta name="citation_authors" xml:lang="cn" content="盛丹, 王国宏, 孙殿星" />
+<meta name="citation_title" xml:lang="cn" content="存在系统误差下交叉定位系统最优交会角研究" />
+<meta name="DC.Keywords" xml:lang="cn" content=""/>
+<meta name="citation_date" content="2010-01-03" />
+<meta name="citation_volume" content="38" />
+<meta name="citation_issue" content="7" />
+<meta name="citation_firstpage" content="1516" />
+<meta name="citation_lastpage" content="1523" />
+<meta name="citation_id" content="38/7/1516" />
+<meta name="citation_doi" content="10.3969/j.issn.1001-506X.2016.07.06" />
+<meta name="citation_authors" xml:lang="en" content="SHENG Dan, WANG Guo-hong, SUN Dian-xing" />
+<meta name="citation_title" xml:lang="en" content="Optimal cut angle in triangulation with system errors" />
+<meta name="DC.Keywords" xml:lang="en" content=""/>
+<meta name="citation_abstract_html_url" content="https://www.sys-ele.com/CN/abstract/abstract2264.shtml" />
+<meta name="citation_pdf_url" content="https://www.sys-ele.com/CN/article/downloadArticleFile.do?attachType=PDF&id=2264" />
+<meta name="citation_public_url" content="https://www.sys-ele.com/CN/abstract/abstract2264.shtml" />
+<meta name="robots" content="noarchive" />
+ 
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>存在系统误差下交叉定位系统最优交会角研究</title>
+<!--css必引 -->
+	<link rel="stylesheet" href="https://www.sys-ele.com/images/1001-506X/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://www.sys-ele.com/images/1001-506X/font-awesome-4.7.0/css/font-awesome.css">
+
+<!-- jQuery必引-->
+	<script src="https://www.sys-ele.com/js/jquery/jquery.min.js"></script>
+	
+	
+<!--原摘要中的js -->
+	<!--图片弹出窗口 必须放在jquery.min.js后-->
+	<link rel="stylesheet" href="https://www.sys-ele.com/js/colorbox/colorbox.css">
+	<script src="https://www.sys-ele.com/js/colorbox/jquery.colorbox.js"></script>
+	<script type="text/javascript">
+	//等比缩放图片
+function DrawImage(ImgD,FitWidth,FitHeight){
+	var image=new Image();
+	image.src=ImgD.src;
+	if(image.width>0 && image.height>0){
+		if(image.width/image.height>= FitWidth/FitHeight){
+			if(image.width>FitWidth){
+				ImgD.width=FitWidth;
+				ImgD.height=(image.height*FitWidth)/image.width;
+			}else{
+				ImgD.width=image.width;
+				ImgD.height=image.height;
+			}
+		} else{
+			if(image.height>FitHeight){
+				ImgD.height=FitHeight;
+				ImgD.width=(image.width*FitHeight)/image.height;
+			}else{
+				ImgD.width=image.width;
+				ImgD.height=image.height;
+			}
+		}enm
+	}
+}
+	window.onload=function(){
+		$(".figureClass").colorbox({rel:'figureClass', inline:true, width:"80%"});
+		$(".inline").colorbox({rel:'inline',inline:true, width:"80%"});
+		
+	}
+	</script>
+	<!--图片弹出窗口结束-->
+	
+	<!--原摘要中js end -->
+<script language="javascript" src="https://www.sys-ele.com/js/modelDialog1.js"></script>
+<script language="javascript" src="https://www.sys-ele.com/js/layer2.1/layer.js"></script>
+<script language="javascript" src="https://www.sys-ele.com/js/drag.js"></script>
+<script language="javascript" src="https://www.sys-ele.com/js/store.js"></script>
+<script language="javascript" src="https://www.sys-ele.com/js/download.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+	MathJax.Hub.Config({
+		extensions: ["tex2jax.js"],
+		jax: ["input/TeX", "output/HTML-CSS"], 
+		tex2jax: {inlineMath: [ ['$','$'], ["\\(","\\)"] ],displayMath: [ ['$$','$$'], ["\\[","\\]"] ],processEscapes: true},
+		"HTML-CSS": { availableFonts: ["TeX"] },
+		TeX: {equationNumbers: {autoNumber: ["AMS"], useLabelIds: true}},
+        "HTML-CSS": {linebreaks: {automatic: true}},
+        SVG: {linebreaks: {automatic: true}}
+		});
+</script>
+
+
+
+
+
+<script type="text/javascript">
+jQuery(function() {
+	jQuery.ajax({
+		url: "https://www.sys-ele.com/CN/user/validateCollectArticle.do?articleId=2264",
+		success: function(res) {
+			collectCount();
+			if (res == "true") {
+				jQuery("#collectArticle").append("已收藏");
+			}
+			if (res == "false") {
+				jQuery("#collectArticle").append("<a href='javascript:;' onclick=\"collectArticle('2264')\">收藏文章</a>");
+			}
+		}
+	});
+});
+
+function collectCount() {
+	jQuery.ajax({
+		url: "https://www.sys-ele.com/CN/user/articleCollectionTimes.do?articleId=2264",
+		success: function(res) {
+			jQuery("#collectCount").html("");
+			jQuery("#collectCount").append(res);
+		}
+	});
+}
+
+function collectArticle(id) {
+	var url = window.location.href;
+	jQuery.ajax({
+		url: "https://www.sys-ele.com/CN/user/addCollectArticle.do",
+		data: {
+			"articleId": id,
+			"url": url
+		},
+		type: "post",
+		success: function(res) {
+			if (res == "true") {
+				document.getElementById("collectArticle").innerHTML = "已收藏";
+				collectCount();
+				alert("收藏成功！");
+			} else if (res == "false") {
+				alert("您已经收藏过该篇文章啦！");
+				window.location.reload();
+			} else if (res.length > 5) {
+				window.location.href = "https://www.sys-ele.com/CN/user/userInfo_cn.jsp?url=" + res;
+			} else {
+				alert("收藏失败！");
+				window.location.reload();
+			}
+		},
+		error: function() {
+			alert("收藏失败！");
+		}
+	});
+}
+
+
+//可视化开始
+$(document).ready(function(){
+    jQuery.getJSON("https://www.sys-ele.com/CN/lexeme/existsCnctstInArticle.do?articleID=2264", null, function(json){
+        if(json.result){
+            $("#knowledge_map_count").html(json.count);
+            $("#knowledge_map_div").show();
+        }
+    });
+});
+function changeKnowledgeMapImg(flag){
+    if(flag==1){
+        document.getElementById("knowledge_map_img").src="../../images/knowledge_map1.png";
+    }else{
+        document.getElementById("knowledge_map_img").src="../../images/knowledge_map2.png";
+    }
+}
+//可视化结束
+<!--
+//点赞开始
+jQuery(function() {
+    jQuery.ajax({
+        url: 'https://www.sys-ele.com/CN/article/showArticleLikedNum.do',
+        data: {
+            articleId: 2264
+        },
+        type: 'post',
+        dataType: 'json',
+        success:function(data){  //成功的回调函数
+            $("#articleLikedNum").text(data);
+        },
+        error:function (XMLHttpRequest, textStatus, errorThrown) {
+            console.log("错误");
+            // 状态码
+            console.log(XMLHttpRequest.status);
+            // 状态
+            console.log(XMLHttpRequest.readyState);
+            // 错误信息
+            console.log(textStatus);
+        }
+    });
+});
+
+function addArticleLikedNum(id){
+    jQuery.ajax({
+        url: 'https://www.sys-ele.com/CN/article/addArticleLikedNum.do',
+        data: {
+            articleId: id
+        },
+        type: 'post',
+        dataType: 'json',
+        success:function(data){  //成功的回调函数
+            if(data==-1){
+                alert('今日已点赞！！');
+            }else{
+                $("#articleLikedNum").text(data);
+            }
+        },
+        error:function (XMLHttpRequest, textStatus, errorThrown) {
+            console.log("错误");
+            // 状态码
+            console.log(XMLHttpRequest.status);
+            // 状态
+            console.log(XMLHttpRequest.readyState);
+            // 错误信息
+            console.log(textStatus);
+        }
+    });
+}
+//点赞结束
+ -->
+
+function lsdy2(attachType,articleId,qiKanWangZhi,nian,issn){
+	var pars = "attachType="+attachType+"&id="+articleId;
+		if(attachType == "RICH_HTML"){
+			jQuery.post(qiKanWangZhi+"/CN/article/downloadArticleFileFee.do?" + new Date(), pars, function(data){
+				window.location.href = qiKanWangZhi+"/article/"+nian+"/"+issn+"/"+articleId;
+			});			
+		}else{
+			window.location.href = qiKanWangZhi+"/CN/article/downloadArticleFile.do?attachType="+attachType+"&id="+articleId;	
+		}	
+					$('.layui-layer').hide();
+	$('.layui-layer-shade').hide();
+}
+function submitLogin(login_id, remote_password){
+	var login_id = document.getElementById(login_id).value;
+	var remote_password = document.getElementById(remote_password).value;
+	var pars = "login_id="+login_id+"&remote_password="+remote_password;
+	jQuery.post("https://www.sys-ele.com/CN/user/login.do?" + new Date(), pars, function(data){
+		window.subwin = new SubWindow("下载文件",data,null,null,null,null,'620px','310px',null,null,"#dddddd","true",null,null,"true",null);
+		subwin.show();
+	});
+}
+
+function close(){
+		subwin.close();
+	}
+ 
+function showArticleFile(url,attachType,articleId){
+	var viewAttach = url+"/CN/article/showArticleFile.do?attachType="+attachType+"&id="+articleId;
+	window.open(viewAttach,"下载文件","toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizeable=no,copyhistory=no,width=520,height=200,left=88,top=88");
+}                      
+function searchKeyword(url,id,keyword){
+	var form = document.refForm;
+	form.searchSQL.value="(("+keyword+"[Keyword]) AND "+id+"[Journal])";
+	form.action = url+"/CN/article/advancedSearchResult.do";
+	form.submit();
+}		
+function searchEnKeyword(url,id,keyword){
+	var form = document.refForm;
+	form.searchSQL.value="(("+keyword+"[Keyword]) AND "+id+"[Journal])";
+	form.action = url+"/EN/article/advancedSearchResult.do";
+	form.submit();
+}		
+	
+function searchAuthor(url,id,author){
+	var form = document.refForm;
+	form.searchSQL.value="(("+author+"[Author]) AND "+id+"[Journal])";
+	form.action = url+"/CN/article/searchArticleResult.do";
+	form.submit();
+}
+	
+function addtobookshelf(url,articleId){
+	var addbookshelf = "";
+	addbookshelf = url+"/CN/article/addBookShelf.do?id="+articleId;
+	window.open(addbookshelf,"添加到书架","");
+}	
+	
+function showTxtFile(url,articleId){
+	var showtxtfile = "";
+	showtxtfile = url+"/CN/article/showTxtFile.do?id="+articleId;
+	window.open(showtxtfile,"引用管理器","");
+}
+
+function addComment(url,articleId){
+	var addComment = "";
+	addComment = url+"/CN/comment/addComment.do?id="+articleId;
+	window.open(addComment,"文章反馈","toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizeable=no,copyhistory=no,width=520,height=300,left=88,top=88");
+}
+
+
+
+function findPassword(email){
+	var emailReg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/
+	var email = document.getElementById(email).value;
+	var matchemail = emailReg.test(email);
+	var pars = "email="+email;
+	if(email == '' || email == null){
+		alert("Email不能为空！");
+		return false;
+	} else {
+		if(matchemail){
+			jQuery.post("https://www.sys-ele.com/CN/user/findPassword.do?" + new Date(), pars, function(data){
+				subwin.close();
+			});
+		}else{
+			alert("Email格式不正确");		
+		}
+	}
+}
+function chakan(shifoukaifang,id,url){
+	var url2 = "https://www.sys-ele.com/fileup/1001-506X/SUPPL/"+url;
+	window.location.href = "https://www.sys-ele.com/CN/suppl/validateVideo.do?url="+url2+"&id="+id+"&shifoukaifang="+shifoukaifang;
+}
+
+//编辑推荐 
+$(document).ready(function(){
+    $("#recommendedArticles-list").load("https://www.sys-ele.com/CN/article/recommendedArticles.do?id=2264",null,function(){
+    	$("#recommendedArticlesCount").html($("#recommendedArticlesCount1").val());
+    });
+});
+
+</script>
+
+	
+	<script src="https://www.sys-ele.com/images/1001-506X/js/bootstrap.min.js"></script>
+	<script src="https://www.sys-ele.com/images/1001-506X/js/jquery.pin.js"></script>
+	<script src="https://www.sys-ele.com/images/1001-506X/js/abstract.js"></script>
+	<!--[if lt IE 9]>
+	<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	
+	<style>
+		#bsBox{
+			width:560px !important;
+			height:420px !important;
+		}
+		.bFind-wrapper-top{
+			height:25px !important;
+		}
+		#bsWXBox{
+			height: 257px !important;
+			width: 232px !important;
+		}
+	</style>
+	
+<link href="https://www.sys-ele.com/images/1001-506X/css/bootstrap.min.css" rel="stylesheet">
+
+
+<script src="https://www.sys-ele.com/images/1001-506X/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://www.sys-ele.com/images/1001-506X/fonts/font-awesome.min.css">
+
+<!--兼容性问题-->
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body id="goTop">
+<link href="https://www.sys-ele.com/images/1001-506X/css/css.css" rel="stylesheet">
+
+<!--头部-->
+<div class="header">
+	
+	<div class="banner">
+			<div class="zuoc"><img src="https://www.sys-ele.com/images/1001-506X/banner.png"></div>
+			<div class="youc">
+				<div class="logotop"><img src="https://www.sys-ele.com/images/1001-506X/logo.png"></div>
+				<div class="js_1">
+					<IFRAME id="UserInfo" border=0 src="https://www.sys-ele.com/CN/article/quickSearch.do" width=100% height=45 scrolling=no frameborder=0 allowtransparency="true" ></IFRAME>
+				</div>
+			</div>
+	</div>
+		
+	<div class="daohang">
+		<div id="nav">
+					 <ul id="navMenu">
+						<li><a href="https://www.sys-ele.com/CN/1001-506X/home.shtml">首 页</a></li>
+						<li><a href="#" rel="dropmenu1">关于本刊<span class="downward"></span></a></li>
+						<li><a href="#" rel="dropmenu2">在线期刊<span class="downward"></span></a></li>
+						<li><a href="#" rel="dropmenu3">投稿攻略<span class="downward"></span></a></li>
+						<li><a href="https://www.sys-ele.com/CN/column/column9.shtml">联系我们</a></li>
+						<li style="width:250px;text-align: center;line-height: 42px;">
+					<script language="JavaScript" type="text/javascript">today=new Date();
+					function initArray(){
+					this.length=initArray.arguments.length
+					for(var i=0;i<this.length;i++)
+					this[i+1]=initArray.arguments[i]  }
+					var d=new initArray(
+					" 星期日",
+					" 星期一",
+					" 星期二",
+					" 星期三",
+					" 星期四",
+					" 星期五",
+					" 星期六");
+					document.write(
+					"<font color=ffffff style='font-size:14px;'> ",
+					today.getFullYear(),"年",
+					today.getMonth()+1,"月",
+					today.getDate(),"日",
+					d[today.getDay()+1],
+					"</font>" );
+				   </script>
+				</li>
+					</ul>
+		 </div>
+
+		  <script type='text/javascript' src='https://www.sys-ele.com/images/1001-506X/js/dropdown.js'></script>
+			<ul id="dropmenu1" class="dropMenu">
+				<li><a href="https://www.sys-ele.com/CN/column/column1.shtml">期刊简介</a></li>
+				<li><a href="https://www.sys-ele.com/CN/column/column2.shtml">编委会</a></li>
+				<li><a href="https://www.sys-ele.com/CN/column/column5.shtml">期刊订阅</a></li>
+				<li><a href="https://www.sys-ele.com/CN/alert/showAlertInfo.do">E-mail Alert</a></li>
+			</ul>
+			<ul id="dropmenu2" class="dropMenu">
+						<li><a href="https://www.sys-ele.com/CN/1001-506X/current.shtml">当期目录</a></li>
+						<li><a href="https://www.sys-ele.com/CN/article/showChannelList.do">按栏目浏览</a></li>
+						<li><a href="https://www.sys-ele.com/CN/article/showOldVolumn.do">过刊浏览</a></li>
+						<!--<li><a href="https://www.sys-ele.com/CN/article/advancedSearch.do">高级检索</a></li>-->
+						<li><a href="https://www.sys-ele.com/CN/article/showBrowseTopList.do">摘要点击排行</a></li>
+						<li><a href="https://www.sys-ele.com/CN/article/showDownloadTopList.do">全文下载排行</a></li>
+			</ul>
+			<ul id="dropmenu3" class="dropMenu">
+						<li><a href="https://www.sys-ele.com/CN/column/column3.shtml">投稿须知</a></li>
+						<li><a href="https://www.sys-ele.com/CN/column/column23.shtml">投稿声明</a></li>
+						<li><a href="https://www.sys-ele.com/CN/column/column11.shtml">处理流程</a></li>
+						<li><a href="https://www.sys-ele.com/CN/column/column10.shtml">写作模板</a></li>
+						<li><a href="https://www.sys-ele.com/CN/column/column29.shtml">版权转让协议</a></li>
+						
+						<li><a href="https://www.sys-ele.com/CN/column/column30.shtml">保密审查单</a></li>
+			</ul>
+			<script type="text/javascript">cssdropdown.startchrome("navMenu")</script>
+	</div>
+	
+</div>
+<!--头部 end-->
+
+<div class="container whitebg" style="width:1110px;">
+<div class="abs-con">
+  <div class="row">
+  <div class="col-md-12">
+       <p style="margin-top:10px;">
+           <span><a href="https://www.sys-ele.com">系统工程与电子技术</a></span>
+        </p>
+	<p>
+			</p>
+    <p class="clearfix">
+      <span class="pull-left">• 电子技术 •</span>
+      <span class="pull-right"><a href="https://www.sys-ele.com/CN/abstract/abstract3678.shtml"><i class="glyphicon glyphicon-chevron-left"></i> 上一篇</a> &nbsp;&nbsp;&nbsp;<a href="https://www.sys-ele.com/CN/abstract/abstract3679.shtml">下一篇 <i class="glyphicon glyphicon-chevron-right"></i></a></span>
+    </p>
+    <!--中文-->
+    
+            <h3 class="abs-tit">
+         存在系统误差下交叉定位系统最优交会角研究    
+       </h3>
+         <p data-toggle="collapse" data-target="#divPanel">
+        <span>
+               		盛丹, 王国宏, 孙殿星
+                &nbsp;&nbsp;
+        <span data-placement="right"  type="button">
+        <i class="glyphicon glyphicon-menu-down" style="cursor:pointer;"></i>
+        </span>
+        </span>
+    </p>
+    <div id="divPanel" class="collapse bs-callout">
+        <address class="address">
+            <ol class="list-unstyled">
+            	                <li>海军航空工程学院信息融合研究所, 山东 烟台 264001</li>
+                            </ol>
+            
+        </address>
+        <ul class="list-unstyled code-style" style="overflow: hidden;">
+            <li>
+				<span>
+									</span>
+				<span>
+									</span>
+				<span>
+									</span>
+				<span>
+											<code>出版日期:</code>2016-06-24
+									</span>
+				<span>
+											<code>发布日期:</code>2010-01-03
+									</span>
+			</li>
+            <li>			</li>
+            <li>			</li>
+            <li>            
+            			</li>
+           
+        </ul>
+    </div>
+    <!--中文end-->
+    <!------------------------------------英文---------------------------------------------------------------------->
+        <h3 class="abs-tit">        
+	       Optimal cut angle in triangulation with system errors	   
+    </h3>
+        <p data-toggle="collapse" data-target="#divPanelEn">
+        <span>
+               		SHENG Dan, WANG Guo-hong, SUN Dian-xing
+			&nbsp;&nbsp;
+			<span data-placement="right"  type="button">
+			<i class="glyphicon glyphicon-menu-down" style="cursor:pointer;"></i>
+			</span>
+                
+        </span>
+    </p>    
+    
+    <div id="divPanelEn" class="collapse bs-callout">
+        <address class="address">
+             <ol class="list-unstyled">
+            	                <li>Institute of Information Fusion, Naval Aeronautical and Astronautical University, Yantai 264001, China</li>
+                            </ol>
+        </address>
+         <ul class="list-unstyled code-style" style="overflow: hidden;">
+            <li>
+				<span>
+									</span>
+				<span>
+									</span>
+				<span>
+									</span>
+				<span>
+											<code>Online:</code>2016-06-24
+									</span>
+				<span>
+											<code>Published:</code>2010-01-03
+									</span>
+			</li>
+            <li>			</li>
+            <li>			</li>
+            <li>            
+            			</li>           
+        </ul>
+    </div>
+    
+    <!--英文end-->
+    <!-------------------------6大块组----------------------------------------------->
+    <div class="group clearfix">
+        <div class="row diyihangdg">
+                                  <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2 margin-bottom-10">
+	            <span class="change-section">
+	                <a href="#1" onClick="lsdy1('PDF','2264','https://www.sys-ele.com','2016','91');return false;" class="black-bg btn-menu">
+	                    <i class="fa fa-file-pdf-o text-danger"></i>
+	                    <h2>PDF (PC)</h2>
+	                    <span class="badge">
+
+
+
+
+	
+<span id="mag-getXiaZaiShu-2264"></span>
+<script>
+$("#mag-getXiaZaiShu-2264").load('/CN/article/getXiaZaiShu.jsp?articleid=2264&ajax=true');
+</script>
+	
+
+
+</span>
+	                </a>
+	            </span>
+            </div>
+                                  <!--
+            <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2 margin-bottom-10">
+                <span class="change-section">
+                    <a href="javascript:void(0);" class="black-bg btn-menu" id="likedNum" onclick="addArticleLikedNum(2264)">
+                        <i class="fa fa-thumbs-up"></i>
+                        <h2>赞</h2>
+                        <span id="articleLikedNum" class="badge"></span>
+                    </a>
+                </span>
+            </div>
+             -->
+                                    <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2 margin-bottom-10" id="knowledge_map_div" style="display:none;">
+                            <span class="change-section" onmouseover="changeKnowledgeMapImg(2)" onmouseout="changeKnowledgeMapImg(1)">
+                                <a href="../lexeme/showArticleByLexeme.do?articleID=2264" class="black-bg btn-menu">
+                                    <i class="fa text-muted"><img src="../../images/knowledge_map1.png" height="40" style="margin:0px;" width="36" id="knowledge_map_img"></i>
+                                    <h2>可视化</h2>
+                                    <span class="badge" id="knowledge_map_count">0</span>
+                                </a>
+                            </span>
+            </div>
+			
+        </div>
+        
+        <!--<div class="jumbotron" id="showPdf2">
+            <ul class="list-unstyled">
+                <li><a href="">1. 探讨2016版国际胰瘘研究小组定义和分级系统对胰腺术后患者胰瘘分级的影响.PDF<span>(500KB)</span></a></li>
+            </ul>
+        </div>-->
+        
+    </div>
+    <!--6大块组------------------->
+    </div>
+    </div>
+    </div>
+    <div class="row" id="pin">
+        <div class="col-lg-10 col-md-10 col-sm-12 col-sm-12">
+            <!--折叠面板begin-->
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="zhaiyao" onClick="xianshi(this)" style="cursor: pointer;">
+                        <h4 class="panel-title">
+                            <a id="abstract">
+                               	 摘要/Abstract
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne" name="#abstract" style="display:block;">
+                        <div class="panel-body line-height text-justify">
+                                                        <p><strong>摘要： </strong><p align="justify">研究了存在系统误差下被动传感器测向交叉定位系统中的最优交会角问题。考虑实际应用中传感器不可避免地存在系统误差,传感器的测量误差设定为非零均值高斯分布,在不同的准则下,计算了两部传感器测量误差不同情况下的最优交会角,讨论了系统误差和测角精度对最优交会角的影响,得到的相关结论在指导多传感器的优化配置和提高定位精度方面具有一定的实际意义。</p></p>
+                                                        <form name="refForm" action="showCorrelativeArticle.do" method=post target=_blank>
+							<input type="hidden" name="searchSQL" value="" />
+                            <input type=hidden name="keyword" value="" id="keyword">
+							<input type=hidden name="author" value="" id="author">
+                            
+                                                                                    <p><strong>Abstract: </strong><p align="justify">The optimal cut angle is studied in passive sensor triangulation when system errors exist. Since system errors cannot be avoided in practical application, the measure errors of the sensor can be assumed as Guass distribution with non-zero average. Then the optimal angles with different measure errors of two sensors are calculated under different criteria, and the influence of the system errors and measure precision on the optimal cut angle is discussed. The obtained results can be used to reference the deployment of passive sensors and improve the location accuracy.</p></p>
+                                                                                     </form>
+                            <!--分类号-->
+                                                        <!--分类号end-->
+                            <div class="row hidden-xs hidden-sm">
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 margin-bottom-10 text-center" style="padding:0;">
+                                    <div class="text-primary btn-menu">
+                                        <h4>引用本文</h4>
+
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 margin-bottom-10">
+                                    <div class="primary-border">
+                                        															<p>盛丹, 王国宏, 孙殿星. 存在系统误差下交叉定位系统最优交会角研究[J]. 系统工程与电子技术, <a href="https://doi.org/10.3969/j.issn.1001-506X.2016.07.06" target="_blank">doi: 10.3969/j.issn.1001-506X.2016.07.06</a>.</p>
+																																									     												                                                                                                        	                                                           															<p>SHENG Dan, WANG Guo-hong, SUN Dian-xing. Optimal cut angle in triangulation with system errors[J]. Systems Engineering and Electronics, <a href="https://doi.org/10.3969/j.issn.1001-506X.2016.07.06" target="_blank">doi: 10.3969/j.issn.1001-506X.2016.07.06</a>.</p>
+                                                        	                                                                                            </div>
+
+                                </div>
+                            </div>
+                            <div class="row hidden-xs hidden-sm">
+                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 margin-bottom-10 text-center" style="padding:0;">
+
+                                    <div class="btn-menu bs-callout-warning">
+                                        <h4>使用本文</h4>
+                                    </div>
+
+                                </div>
+                                <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 margin-bottom-10">
+
+                                    <div class="primary-border">
+                                        <p>
+                                            <b>
+                                                <form name=mail action="https://www.sys-ele.com/CN/article/sendMail.jsp" method=post target=_blank> 
+												
+                                                 &nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;
+                                                <a href="#" id="collectArticle" class="shouc"></a> <span id="collectCount"></span> /&nbsp;&nbsp;                                              
+													<a onclick="mail.submit()" href="javascript:void(null)" class="tuij">推荐</a>
+													<input type="hidden" value='我在《系统工程与电子技术》上发现了关于“存在系统误差下交叉定位系统最优交会角研究”的文章，特向您推荐。请打开下面的网址：https://www.sys-ele.com/CN/abstract/abstract2264.shtml' name="neirong">
+													<input type="hidden" name="thishref" value="https://www.sys-ele.com/CN/abstract/abstract2264.shtml">
+													<input type="hidden" name="jname" value="系统工程与电子技术">
+													<input type="hidden" name="title" value='存在系统误差下交叉定位系统最优交会角研究'>
+												<form>
+                                            </b>
+                                        </p>
+                                        <p><b>导出引用管理器</b> <span class="daochu"><a href="https://www.sys-ele.com/CN/article/getTxtFile.do?fileType=EndNote&id=2264" id="ris_export">EndNote</a>|<a href="https://www.sys-ele.com/CN/article/getTxtFile.do?fileType=Ris&id=2264">Reference Manager</a>|<a href="https://www.sys-ele.com/CN/article/getTxtFile.do?fileType=ProCite&id=2264">ProCite</a>|<a id="bibtex_export" href="https://www.sys-ele.com/CN/article/getTxtFile.do?fileType=BibTeX&id=2264">BibTeX</a>|<a href="https://www.sys-ele.com/CN/article/getTxtFile.do?fileType=RefWorks&id=2264">RefWorks</a></span>
+										</p>
+										<p><strong>链接本文:</strong>
+										<a href="https://www.sys-ele.com/CN/10.3969/j.issn.1001-506X.2016.07.06" class="txt_zhaiyao1">https://www.sys-ele.com/CN/10.3969/j.issn.1001-506X.2016.07.06</a>
+										</p>
+										<p>
+										<strong>&nbsp;</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+											<a href="https://www.sys-ele.com/CN/Y2016/V38/I7/1516" class="txt_zhaiyao1">
+										https://www.sys-ele.com/CN/Y2016/V38/I7/1516</a>										</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                                                <div class="panel panel-default" >
+                    <div class="panel-heading" role="tab" id="cankaowenxian" onClick="xianshi(this)">
+						<a name="reference"></a>
+                        <h4 class="panel-title">
+                            <a id="reference" class="collapsed"  href="javascript:;">
+                                参考文献                             </a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree" style="display: none;">
+                        <div class="panel-body">
+                            <!---->
+                            <table width="98%" border="0" align="center" cellpadding="0" cellspacing="8">
+																  <tr>
+									<td class="J_author"> </td>
+								  </tr>
+															</table>
+                            <!--end--> 
+                        </div>
+                      </div>         
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="xiangguanwenzhang" onClick="xianshi(this)">
+                        <h4 class="panel-title">
+                            <a id="relatedArticles" class="collapsed"  href="javascript:;">
+                                相关文章 <span class="badge badge-info">0</span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour" style="display: none;">
+                        <div class="panel-body">
+                        
+                        
+                           <table width="100%" border="0" height='25'>
+																																																																<tr>
+																	<td colspan='2' align='center'><strong>No related articles found!</strong></td>
+																</tr>
+																							</table>
+							
+							
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="tuijianwenzhang" onClick="xianshi(this)">
+                        <h4 class="panel-title">
+                            <a id="recommendedArticles" class="collapsed"  href="javascript:;">
+                                编辑推荐 <span class="badge badge-info" id="recommendedArticlesCount"></span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour" style="display: none;">
+                        <div class="panel-body" id="recommendedArticles-list">
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="panel panel-default" >
+                    <div class="panel-heading" role="tab" id="Metrics" onClick="xianshi(this)">
+                        <h4 class="panel-title">
+                            <a class="collapsed"  href="javascript:;" >
+                                Metrics 
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive" style="display: none;">
+                        <div class="panel-body">
+                           <table width="98%" border="0" cellspacing="0" cellpadding="0">
+											    	<tr>
+											        	<td width="24" height="32"></td>
+											        	<td colspan="2" bgcolor="#E0EEF7"><span class="STYLE1">阅读次数</span></td>
+											        </tr>
+													<tr>
+											        	<td width="24" height="5"></td>
+											        	<td colspan="2" bgcolor="#FFFFFF"></td>
+											        </tr>
+											      	<tr>
+												        <td height="153"></td>
+												        <td width="110" valign="top" bgcolor="#EFEFEF" style="line-height:150%">
+												        	<strong>全文</strong><br />
+												          	<span class="STYLE2"><div id="FullText"></div></span>
+												        </td>
+											        	<td valign="top">
+												        	<table width="63%" border="0" cellspacing="0" cellpadding="0">
+													          	<tr>
+														            <td><div id="HtmlPdfVersion"></div></td>
+													            </tr>
+												        	</table>
+												        	<br />
+												        	<table width="63%" border="0" cellspacing="0" cellpadding="0">
+												        		<tr>
+														            <td colspan="3"><div id="FromHtmlPdf"></div></td>
+													            </tr>
+												        	</table>
+												          	<br />
+												          	<div id="DownloadDistribution"></div>
+												          	<div id="DownloadCountryDistribution"></div>
+														</td>
+													</tr>
+													<tr>
+												        <td></td>
+												        <td colspan="2" height=5></td>
+													</tr>
+													<tr>
+												        <td height="158"></td>
+												        <td valign="top" bgcolor="#efefef" style="line-height:150%">
+												        	<strong>摘要</strong><br>
+												          	<span class="STYLE2"><div id="AbstractCount"></div></span>
+														</td>
+												        <td valign="top">
+															<table width="40%" height="52" border="0" cellpadding="0" cellspacing="0">
+													          	<tr>
+													            	<td><div id="AbstractVersion"></div></td>
+													            </tr>
+													            <tr>
+													            	<td><div id="FromAbstract"></div></td>
+													            </tr>
+												        	</table>
+															<br />
+															<div id="AbstractDistribution"></div>
+															<div id="AbstractCountryDistribution"></div>
+												        </td>
+													</tr>
+													<tr>
+												        <td></td>
+												        <td colspan="2" height=5></td>
+													</tr>
+													<!--
+													<tr>
+												        <td height="30"></td>
+												        <td bgcolor="#E0EEF7"><p><strong>Cited</strong></p></td>
+												        <td>
+												        	<div id="citations"></div>
+												        </td>
+													</tr>
+													<tr>
+												        <td height="8"></td>
+												        <td height="8"></td>
+												        <td height="8"></td>
+													</tr>
+													<tr>
+													    <td height="31">&nbsp;</td>
+													    <td bgcolor="#E0EEF7"><strong>Shared</strong></td>
+													    <td><strong>&nbsp;&nbsp;<a class="shareCount"></a></strong></td>
+												  	</tr>
+												  	-->
+												  	<tr>
+													    <td height="5"></td>
+													    <td></td>
+													    <td></td>
+											  		</tr>
+											</table>
+											
+                        </div>
+                    </div>
+                </div>
+				<div class="panel panel-default" >
+                    <div class="panel-heading" role="tab" id="benwenpingjia" onClick="xianshi(this)">
+                        <h4 class="panel-title">
+                            <a id="pingjia" class="collapsed"  href="javascript:;" >
+                                本文评价 
+                            </a>
+                        </h4>
+                    </div>
+					<div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix" style="display: none;">
+                        <div class="panel-body">
+							<div id="ArticleEstimate">
+								<div id="Estimate"></div>
+								<div id="Comment"></div>
+							</div>
+                        </div>
+                    </div>
+                </div>
+				<!-- <div class="panel panel-default" >
+                    <div class="panel-heading" role="tab" id="tuijianyuedu" onClick="xianshi(this)">
+                        <h4 class="panel-title">
+                            <a id="relatedArticles" class="collapsed"  href="javascript:;" >
+                                推荐阅读 <span class="badge badge-info">0</span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven" style="display: none;">
+                        <div class="panel-body">
+							<table width="98%" border="0" align="center" cellpadding="0" cellspacing="8" valign='top' height='auto'>
+								<tr>
+									<td valign='top'>
+										<table width="100%" border="0" height='25'>
+																																													<tr>
+													<td colspan='2' align='center'><strong>No Suggested Reading articles found!</strong></td>
+												</tr>
+																					</table>
+									</td>
+								</tr>
+							</table>
+                        </div>
+                    </div>
+
+                </div> -->
+            </div>
+			
+            <!--折叠面板end-->
+        </div>
+        <div class="col-lg-2 col-md-2 hidden-print hidden-xs hidden-sm">
+            <!--右快速导航-->
+            <div id="plane" class="pinned">
+                <ul class="plane-bd list-unstyled">
+                    <li>
+                        <a href="javascript:;"  onclick="zhaiyao('#zhaiyao');">
+							<span>摘要</span>
+                            <i class="glyphicon glyphicon-text-color"></i>
+                        </a>
+                    </li>
+				                    <li >
+                        <a href="javascript:;"  onclick="zhaiyao('#cankaowenxian');">
+                            <span>参考文献</span>
+                            <i class="glyphicon glyphicon-equalizer"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"  onclick="zhaiyao('#xiangguanwenzhang');">
+                            <span>相关文章</span>
+                            <i class="glyphicon glyphicon-list-alt"></i>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="javascript:;"  onclick="zhaiyao('#tuijianwenzhang');">
+                            <span>编辑推荐</span>
+                            <i class="glyphicon glyphicon-list-alt"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"  onclick="zhaiyao('#Metrics');">
+                            <span>Metrics</span>
+                            <i class="glyphicon glyphicon-stats"></i>
+                        </a>
+                    </li>
+					<li>
+                        <a href="javascript:;" onclick="zhaiyao('#benwenpingjia');">
+                            <span>本文评价</span>
+                            <i class="glyphicon glyphicon-stats"></i>
+                        </a>
+                    </li>
+					<!-- <li style="width:100px;">
+                        <a href="javascript:;" onclick="zhaiyao('#tuijianyuedu');">
+                            <span>推荐阅读</span>
+                            <i class="glyphicon glyphicon-list-alt"></i>
+                        </a>
+                    </li> -->
+                </ul>
+                <div class="plane-ft">
+                    <a href="#goTop" target="_self"  title="回顶部" style="color:#ff6600;" class="text-center">回顶部</a>
+                </div>
+            </div>
+            <!--右快速导航-->
+         </div> 
+    </div>
+</div>
+<div class="footer">
+<div class="banquan">
+<a href="https://beian.miit.gov.cn" target="_blank" style="color:#fff;">京ICP备11035014号-5</a><br>
+版权所有 &copy; 2019 北京航天情报与信息研究所《系统工程与电子技术》编辑部<br>
+通讯地址：北京市142信箱32分箱《系统工程与电子技术》编辑部(100854)<br>
+电　话：(010)68388406/68386014 &nbsp;&nbsp; E-mail：xtgcydzjs@126.com(系统工程与电子技术)/jseeoffice@126.com(JSEE) <br>
+本系统由<a href="http://www.magtech.com.cn" target="_blank" class="baise">北京玛格泰克科技发展有限公司</a>设计开发
+</div>
+</div>
+
+
+<iframe src="https://www.sys-ele.com/EN/article/updateBrowseNum.jsp?articleid=2264" height=0 scrolling=no border=0 frameborder=0 allowtransparency="true"></iframe>
+
+</body>
+</html>
+
+<script type="text/javascript">
+	var hash = window.location.hash;
+	loadMetricsTabc();
+	loadArticleEstimate();
+	$(function() {
+    	$('#container').tabs(1);
+    });
+    $("#MetricsTabC").click(function(){
+		loadMetricsTabc();
+	});
+	 $("#ArticleEstimateTab").click(function(){
+		loadArticleEstimate();
+	});
+	function loadArticleEstimate(){
+		$("#Estimate").empty();
+		$("#Estimate").append("<iframe src=\"https://www.sys-ele.com/include/showEstimate.do?articleId=2264\" width=\"1000\" height=\"85\"  scrolling=no frameborder=0 allowtransparency=\"true\" style=\"padding: 20\"></iframe>");
+		$("#Comment").empty();
+		$("#Comment").append("<iframe src=\"https://www.sys-ele.com/CN/comment/showCommentList.do?type=article&typeId=2264\" width=\"1000\" style=\"min-height:700px; width:100%;\"   scrolling=no frameborder=0 allowtransparency=\"true\" style=\"padding: 20\" id=\"ifr-comment\"></iframe>");
+	}
+	$(function(){
+		$('.tabs-nav').children('li').eq(0).addClass('tabs-selected');
+		$('.tabs-nav').children('li').last().removeClass('tabs-selected');
+		$('#AbstractTab').removeClass('tabs-hide');
+		$('#MetricsTab').addClass('tabs-hide');
+	})
+	function loadMetricsTabc(){
+		$("#FullText").load("https://www.sys-ele.com/CN/matrix/matrix.do?articleId=2264&type=FullText");
+		$("#HtmlPdfVersion").load("https://www.sys-ele.com/CN/matrix/matrix.do?articleId=2264&type=HtmlPdfVersion");
+		$("#FromHtmlPdf").load("https://www.sys-ele.com/CN/matrix/matrix.do?articleId=2264&type=FromHtmlPdf");
+		$("#AbstractVersion").load("https://www.sys-ele.com/CN/matrix/matrix.do?articleId=2264&type=AbstractVersion");
+		$("#AbstractCount").load("https://www.sys-ele.com/CN/matrix/matrix.do?articleId=2264&type=AbstractCount");
+		$("#FromAbstract").load("https://www.sys-ele.com/CN/matrix/matrix.do?articleId=2264&type=FromAbstract");
+		//$("#citations").load("https://www.sys-ele.com/CN/matrix/matrix.do?articleId=2264&type=citations");
+		$("#DownloadDistribution").empty();
+		$("#DownloadDistribution").append("<iframe src=\"https://www.sys-ele.com/CN/matrix/matrix.do?articleId=2264&type=DownloadDistribution\" width=\"600\" height=\"300\"  scrolling=no frameborder=0 allowtransparency=\"true\" style=\"padding: 20\"></iframe>");
+		$("#DownloadCountryDistribution").empty();
+		$("#DownloadCountryDistribution").append("<iframe src=\"https://www.sys-ele.com/CN/matrix/matrix.do?articleId=2264&type=DownloadCountryDistribution\" width=\"550\" height=\"300\"  scrolling=no frameborder=0 allowtransparency=\"true\"></iframe>");
+		$("#AbstractDistribution").empty();
+		$("#AbstractDistribution").append("<iframe src=\"https://www.sys-ele.com/CN/matrix/matrix.do?articleId=2264&type=AbstractDistribution\" width=\"600\" height=\"300\"  scrolling=no frameborder=0 allowtransparency=\"true\" style=\"padding: 20\"></iframe>");
+		$("#AbstractCountryDistribution").empty();
+		$("#AbstractCountryDistribution").append("<iframe src=\"https://www.sys-ele.com/CN/matrix/matrix.do?articleId=2264&type=AbstractCountryDistribution\" width=\"550\" height=\"300\"  scrolling=no frameborder=0 allowtransparency=\"true\" style=\"padding: 20\"></iframe>");
+	}
+	
+</script>
+
+    <!--css必引 -->	
+	<link rel="stylesheet" href="https://www.sys-ele.com/images/1001-506X/css/abstract.css">

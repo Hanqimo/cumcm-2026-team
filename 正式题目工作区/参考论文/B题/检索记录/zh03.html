@@ -1,0 +1,2349 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- 使用 https 可周用些设置，实现http的兼容
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+ -->
+<title>测向交叉定位体制下平台航迹最优规划算法</title>
+
+<!-- develop 必引内容，不可删除，不可改动 -->
+
+
+
+
+
+
+
+
+
+
+<link href="/js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/develop/static/common/css/css.css">
+<link rel="stylesheet" href="/js/jqpagination/jqpagination.css" />
+<script src="/js/jquery/jquery.min.js"></script>
+<script src="/js/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/jquery/jquery.qrcode.min.js"></script>
+<script src="/develop/static/common/js/common_cn.js"></script>
+<script src="/develop/static/common/js/component_cn.js"></script>
+<script language="javascript" src="/js/store.js"></script>
+<script language="javascript" src="/develop/static/common/js/download_cn.js"></script>
+<script language="javascript" src="/js/My97DatePicker/WdatePicker.js"></script>
+<script language="javascript" src="/develop/static/common/js/xss/xss.js"></script>
+<link rel="stylesheet" href="/develop/static/common/bootstrap/js/font-awesome.min.css">
+<script language="javascript" src="/develop/static/common/js/xss/mag-xss.js"></script>
+
+<script>
+	$(document).ready(function(){
+		$("title").text($("title").text().replace(/<\/?[^>]*>/g,""));
+	});
+</script>
+
+<style>
+      svg.markmap {
+        width: 100%;
+        height:100%;
+      }
+      .markmap {
+        width: 100%;
+        height:400px;
+      }
+.circle-border {
+	background-color: #CCCCCC; /* 可选，如果想要看到背景 */
+	border: 2px solid #fff; /* 边框宽度和颜色 */
+	border-radius: 50%; /* 将四个角设置为50%，形成圆形 */
+	padding:3px 8px;
+}
+#soin-summary-div img {
+    max-width: 100%;
+}
+</style>
+
+
+
+
+
+<!--基本信息-->
+<link rel="canonical" href="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2018.04.010"/><!--文章url-->	
+<link rel="alternate" hreflang="en" href="https://www.zhkzyfz.cn/EN/10.3969/j.issn.1673-3819.2018.04.010" /><!--文章英文页面地址-->
+
+<meta name="DOI" content="10.3969/j.issn.1673-3819.2018.04.010"/><!--文章doi-->
+
+
+<meta name="description" content="单站被动雷达由于可观测性较弱,对其进行航迹优化可以提高系统可观测性。给出无限制条件下的最优航路算法,以最小化克劳美劳下界的迹即精度几何散布作为航路优化的性能指标,针对实际环境,又研究只采取180&amp;#x000b0;转弯条件下的时长已知和未知两种环境下的最优航迹规划算法,给出了最优的航路规划,同时给出不同情景下的跟踪误差。"/>
+
+<meta name="authors" content="张志虎, 赵佳旻, 刘梅"/><!--文章中文作者列表，用逗号分隔-->
+
+<meta name="keywords" content="可观测性,最优航路算法,精度几何散布,最优航迹规划"/><!--文章关键词列表，用逗号分隔。去掉HTML标签-->
+
+<meta charset="UTF-8"/>
+<meta name="robots" content="index"/><!--搜索引擎-->
+<meta name="renderer" content="webkit"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><!--优先使用 IE 最新版本和 Chrome-->
+
+<!--移动端访问-->
+<!-- 
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=10, user-scalable=0"/>
+ --><!--H5设备控制-->
+<meta name="format-detection" content="telephone=no"/><!--页面手机号验证-->
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-title" content="测向交叉定位体制下平台航迹最优规划算法"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="screen-orientation" content="portrait"/>
+<meta name="x5-orientation" content="portrait"/>
+<meta name="full-screen" content="yes">
+<meta name="x5-fullscreen" content="true">
+<meta name="browsermode" content="application">
+<meta name="x5-page-mode" content="app">
+<meta name="msapplication-tap-highlight" content="no">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Expires" content="0">
+
+<!--DC元数据-->
+<meta name="dc.relation.is" content="指挥控制与仿真"/><!-- 中文刊名 -->
+
+<meta name="dc.citation.volume" content="40"/>
+
+
+<meta name="dc.citation.issue" content="4"/>
+
+<meta name="dc.citation.spage" content="45"/><!--起始页-->
+<meta name="dc.citation.epage" content="51"/><!--结束页-->
+<meta name="dc.title" content="测向交叉定位体制下平台航迹最优规划算法"/><!--完整中文题目-->
+<meta name="dc.source" content="指挥控制与仿真"/><!--完整刊名-->
+<meta name="dc.format" content="text/html"/>
+<meta name="dc.publisher" content=""/><!--编辑部名称-->
+
+
+
+<meta name="dc.date" content="2018-08-10"/><!--正式出版：刊出日期；最新录用：录用日期-->
+
+<meta name="dc.type" content=""/><!--文章类型-->
+<meta name="dc.language" content="Cn"/><!--语种-->
+<meta name="dc.copyright" content=""/><!--年 编辑部名称-->
+<meta name="dc.description" content="单站被动雷达由于可观测性较弱,对其进行航迹优化可以提高系统可观测性。给出无限制条件下的最优航路算法,以最小化克劳美劳下界的迹即精度几何散布作为航路优化的性能指标,针对实际环境,又研究只采取180&amp;#x000b0;转弯条件下的时长已知和未知两种环境下的最优航迹规划算法,给出了最优的航路规划,同时给出不同情景下的跟踪误差。"/><!--完整中文摘要-->
+
+<meta name="dc.identifier" content="doi:10.3969/j.issn.1673-3819.2018.04.010"/><!--文章doi：必须带“doi:”-->
+
+<meta name="dc.relation.ispartof" content="指挥控制与仿真"/>
+
+<!--以下为作者-->
+
+<meta name="dc.creator" content="张志虎"/>
+
+<meta name="dc.creator" content="赵佳旻"/>
+
+<meta name="dc.creator" content="刘梅"/>
+
+
+
+<!--以下为文章关键词-->
+
+<meta name="dc.subject" content="可观测性"/>
+
+<meta name="dc.subject" content="最优航路算法"/>
+
+<meta name="dc.subject" content="精度几何散布"/>
+
+<meta name="dc.subject" content="最优航迹规划"/>
+
+
+
+<meta name="prism.issn" content="1673-3819"/><!--期刊印刷版ISSN-->
+
+
+
+<meta name="prism.publicationDate" content="2018-08-10"/><!--正式出版：刊出日期；最新录用：录用日期-->
+
+<meta name="prism.section" content=""/><!--文章类型-->
+
+<meta name="prism.volume" content="40">
+
+
+<meta name="prism.number" content="4"><!--期-->
+
+<meta name="prism.startingPage" content="45"/><!--起始页-->
+<meta name="prism.endingPage" content="51"/><!--结束页-->
+<meta name="prism.copyright" content=""/><!--年 编辑部名称-->
+<meta name="prism.url" content="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2018.04.010"/><!--文章URL-->
+
+<meta name="prism.doi" content="doi:10.3969/j.issn.1673-3819.2018.04.010"/><!--文章doi：必须带“doi:”-->
+
+
+<!--引用管理器-->
+<meta name="citation_pdf_url" content="https://www.zhkzyfz.cn/CN/PDF/10.3969/j.issn.1673-3819.2018.04.010"/>
+<meta name="citation_abstract_html_url" content="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2018.04.010" />
+<meta name="citation_fulltext_html_url" content="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2018.04.010"/><!--文章HTML页面地址-->
+<meta name="citation_journal_title" content="指挥控制与仿真" /><!--完整刊名-->
+<meta name="citation_publisher" content=""/><!--出版社名称-->
+<meta name="citation_issn" content="1673-3819"/><!--期刊ISSN-->
+<meta name="citation_title" content="测向交叉定位体制下平台航迹最优规划算法"/><!--文章题目-->
+<meta name="citation_authors" content="张志虎, 赵佳旻, 刘梅" />
+
+<meta name="citation_volume" content="40"/>
+
+
+<meta name="citation_issue" content="4"/>
+
+
+
+
+<meta name="citation_publication_date" content="2018/08/10"/><!--正式出版：刊出日期；最新录用：录用日期-->
+
+
+
+
+
+<meta name="citation_online_date" content="2018/08/10"/><!--正式出版：刊出日期；最新录用：录用日期-->
+
+<meta name="citation_firstpage" content="45"/>
+<meta name="citation_lastpage" content="51"/>
+<meta name="citation_article_type" content=""/><!--文章类型-->
+<meta name="citation_language" content="zh"/>
+<meta name="citation_doi" content="10.3969/j.issn.1673-3819.2018.04.010"/>
+<meta name="citation_abstract" content="单站被动雷达由于可观测性较弱,对其进行航迹优化可以提高系统可观测性。给出无限制条件下的最优航路算法,以最小化克劳美劳下界的迹即精度几何散布作为航路优化的性能指标,针对实际环境,又研究只采取180&amp;#x000b0;转弯条件下的时长已知和未知两种环境下的最优航迹规划算法,给出了最优的航路规划,同时给出不同情景下的跟踪误差。"/><!--完整中文摘要-->
+<!--以下为文章关键词-->
+
+<meta name="citation_keywords" content="可观测性"/>
+
+<meta name="citation_keywords" content="最优航路算法"/>
+
+<meta name="citation_keywords" content="精度几何散布"/>
+
+<meta name="citation_keywords" content="最优航迹规划"/>
+
+
+
+
+
+
+<meta name="citation_date" content="2018/08/10"/><!--正式出版：刊出日期；最新录用：录用日期-->
+
+
+
+
+<meta name="citation_author" content="张志虎"/>
+
+
+<meta name="citation_author" content="赵佳旻"/>
+
+
+<meta name="citation_author" content="刘梅"/>
+
+
+
+
+
+<!--开放图谱协议-->
+<meta property="og:url" content="https://www.zhkzyfz.cn/CN/10.3969/j.issn.1673-3819.2018.04.010"/><!--文章HTML页面地址-->
+<meta property="og:type" content="Article"/><!--固定为 Article-->
+<meta property="og:site_name" content="指挥控制与仿真"/><!--刊名-->
+<meta property="og:title" content="测向交叉定位体制下平台航迹最优规划算法"/><!--文章题目-->
+<meta property="og:description" content="单站被动雷达由于可观测性较弱,对其进行航迹优化可以提高系统可观测性。给出无限制条件下的最优航路算法,以最小化克劳美劳下界的迹即精度几何散布作为航路优化的性能指标,针对实际环境,又研究只采取180&amp;#x000b0;转弯条件下的时长已知和未知两种环境下的最优航迹规划算法,给出了最优的航路规划,同时给出不同情景下的跟踪误差。"/><!--摘要-->
+
+
+
+
+
+<meta name="article_references" content="张志虎, 赵佳旻, 刘梅. 测向交叉定位体制下平台航迹最优规划算法. 指挥控制与仿真. 2018, 40 (4): 45-51. https://doi.org/10.3969/j.issn.1673-3819.2018.04.010" />
+
+
+<link rel="stylesheet" href="/custom/jsp/CN/article/showArticle_jsp/showArticle_cn.css" />
+<script type="text/javascript" src="/js/jquery/jquery.nicescroll.js"></script>
+<script type="text/javascript" src="/js/jquery/jquery.webui-popover.js"></script>
+<script src="/develop/static/common/js/mag-vue/mag-vue.js"></script>
+<script type="text/javascript" src="/develop/jsp/CN/article/showArticle_jsp/showArticle_cn.js"></script>
+<script type="text/javascript" src="/develop/static/common/js/rich_html_lexemeCnctst.js"></script>
+<script type="text/javascript" src="/develop/static/common/echarts/echarts.min.js"></script>
+<script src="/develop/static/common/js/remarkable/remarkable_2.0.1.js" async></script>
+<script src="/develop/static/common/js/markmap/markmap-autoloader.js"></script>
+
+<style>
+template{
+	display:none;
+}
+.mag-rich-xref-fn {
+    cursor: pointer;
+}
+
+/*AI */
+.button-AI {
+  display: inline-block;
+  font-size: 1.2em;
+  margin: .5em 0;
+  padding: .5em 0;
+  border-radius: 5px;
+  transition: all .5s;
+  filter: hue-rotate(0deg);
+  color: #fff;
+  text-decoration: none;
+}
+
+.b-1, .b-1:before {
+background: rgba(73,155,234,1);
+background: -moz-linear-gradient(45deg, rgba(73,155,234,1) 0%, rgba(26,188,156,1) 100%);
+background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(73,155,234,1)), color-stop(100%, rgba(26,188,156,1)));
+background: -webkit-linear-gradient(45deg, rgba(73,155,234,1) 0%, rgba(26,188,156,1) 100%);
+background: -o-linear-gradient(45deg, rgba(73,155,234,1) 0%, rgba(26,188,156,1) 100%);
+background: -ms-linear-gradient(45deg, rgba(73,155,234,1) 0%, rgba(26,188,156,1) 100%);
+background: linear-gradient(45deg, rgba(73,155,234,1) 0%, rgba(26,188,156,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#1abc9c', GradientType=1 );
+float: left;width: 47%;
+}
+
+.b-2, .b-2:before {
+background: rgba(162,29,165,1);
+background: -moz-linear-gradient(45deg, rgba(162,29,165,1) 0%, rgba(75,26,188,1) 100%);
+background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(162,29,165,1)), color-stop(100%, rgba(75,26,188,1)));
+background: -webkit-linear-gradient(45deg, rgba(162,29,165,1) 0%, rgba(75,26,188,1) 100%);
+background: -o-linear-gradient(45deg, rgba(162,29,165,1) 0%, rgba(75,26,188,1) 100%);
+background: -ms-linear-gradient(45deg, rgba(162,29,165,1) 0%, rgba(75,26,188,1) 100%);
+background: linear-gradient(45deg, rgba(162,29,165,1) 0%, rgba(75,26,188,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e748ea', endColorstr='#4b1abc', GradientType=1 );
+float: right;width: 47%;
+}
+ 
+.h-135:hover {
+  filter: hue-rotate(265deg);
+  text-decoration: none;
+  color:#fff;
+}
+
+.circle-border {
+	background-color: #CCCCCC; /* 可选，如果想要看到背景 */
+	border: 2px solid #fff; /* 边框宽度和颜色 */
+	border-radius: 50%; /* 将四个角设置为50%，形成圆形 */
+	padding:3px 8px;
+}
+
+#showArticle_quickread_content_cn img {
+    max-width: 100%;
+}
+
+</style>
+<style>
+      svg.markmap {
+        width: 100%;
+        height:100%;
+      }
+      .markmap {
+        width: 100%;
+        height:400px;
+      }
+</style>
+
+<script type="text/javascript">
+	//长视频
+	$(document).ready(function(){
+		if($("#showLongArticleVideo") && $("#showLongArticleVideo").length && $("#showLongArticleVideo").length>0){
+			mag_ajax_update({
+				ele_id:'showLongArticleVideo',
+				url:mag_currentQikanUrl() + "/CN/article/showLongArticleVideo.do?id="+$("#articleId").val()
+			});
+		}
+	});
+	
+	//可视化图谱
+	$(document).ready(function(){
+		if($("#showArticle_knowledgeMap") && $("#showArticle_knowledgeMap").length && $("#showArticle_knowledgeMap").length>0){
+			jQuery.getJSON("/CN/lexeme/existsCnctstInArticle.do?articleID="+$("#articleId").val(), null, function(json){
+				if(json.result){
+					$("#showArticle_knowledgeMap").show();
+				}
+			});
+		}
+	});
+	
+	//索云AI
+	$(document).ready(function(){
+		if($("#AiSummaryBt") && $("#AiSummaryBt").length && $("#AiSummaryBt").length>0){
+			jQuery.getJSON("/CN/article/showSointechAiInfo.do?articleID="+$("#articleId").val(), null, function(json){
+				if(json.summaryCn){
+					$("#AiSummaryBt").show();
+					window._aiSummaryCn = json.summaryCn;
+					if(json.summaryEn){
+						window._aiSummaryEn = json.summaryEn;
+					}
+				}
+				if(json.mindMapCn){
+					$("#AiMindMapBt").show();
+					window._aiMindMapCn = json.mindMapCn;
+					if(json.mindMapEn){
+						window._aiMindMapEn = json.mindMapEn;
+					}
+				}
+			});
+		}
+	});
+
+	$(document).ready(function(){
+		var metaDataStr = $.trim($("#article_metaJson").val());
+		if(metaDataStr!=''){
+			eval("window.metaData="+metaDataStr);
+		}
+		
+		if(window.metaData && (!window.metaData.authorNotesCommon_cn && !window.metaData.authorNotesCorresp_cn && window.metaData.authorNotes_cn)){
+			window.metaData.authorNotesCommon_cn = window.metaData.authorNotes_cn;
+		}
+		if(window.metaData && (!window.metaData.authorNotesCommon_en && !window.metaData.authorNotesCorresp_en && window.metaData.authorNotes_en)){
+			window.metaData.authorNotesCommon_en = window.metaData.authorNotes_en;
+		}
+		
+		if($.trim($("#article_nlmdtdXml").val())==''){
+			window.metaData.authorList = null;
+			window.metaData.authorList_cn = null;
+			window.metaData.authorList_en = null;
+		}
+		
+		var _nlmdtdXml = $("#article_nlmdtdXml").val();
+		var magDir = _nlmdtdXml.replace(/\/[^\/]+$/,'');
+		window.metaData.magDir = magDir;
+		new mag_vue({
+			  el: '#metaVue',
+			  //dataUrl: mag_currentQikanUrl() + '/EN/article/getRichHtmlJson.do?articleId='+$("#articleId").val(),
+			  data:window.metaData,
+			  loading:true,
+			  doTextFun:function(text){
+				  return doDataJsonText(text);
+			  },
+			  doAfterFun:function(selector,jsonData){doMagVueAfter(selector,jsonData);}
+		});
+		
+		//参考文献可视化
+		richRefCharts(window.metaDatas);
+		
+		var pars = {attachType:'PDF',id:$("#articleId").val(),json:true};
+		jQuery.post($("#mag-common-contextPath").val()+"/CN/article/showArticleFile.do?" + new Date().getTime(), pars, function(data){
+			var json=null;
+			if(data.match(/^\[json\].*/g)){
+				json=eval("("+data.replace(/^\[json\]/g,"")+")");
+			}
+			if(json && json.status == 1){
+				//有权限
+			}else{
+				//无权限
+				$("#no-access-div").show();
+			}
+		});
+		mag_ajax({
+			url:mag_currentQikanUrl() + '/CN/article/getRichHtmlJson.do',
+			data:{articleId:$("#articleId").val(),token:'9298c19b5a054eccbe9f22806c07fdf3',referer:document.referrer},
+			dataType:"json",
+			async:"false",
+			success:function(json){
+				if(json.richHtmlJson && json.richHtmlJson.article){
+					if(json.trans){
+						var _nlmdtdXmlCN = $("#article_nlmdtdXmlCN").val();
+						var magDirCN = _nlmdtdXmlCN.replace(/\/[^\/]+$/,'');
+						json.richHtmlJson.magDir=magDirCN;
+					}else{
+						json.richHtmlJson.magDir=magDir;
+					}
+					new mag_vue({
+						  el: '#bodyVue',
+						  data:json.richHtmlJson,
+						  doTextFun:function(text){
+							  return doDataJsonText(text);
+						  },
+						  doAfterFun:function(selector,jsonData){doMagVueAfter(selector,jsonData);}
+					});
+				}
+			}
+		});
+		
+		//altmetric
+		if($.trim($("#article_doi").val())!=''){
+			$.ajax({
+				url:'https://api.altmetric.com/v1/doi/'+$.trim($("#article_doi").val())+'?callback=altmetric_callback',
+				//url:'https://api.altmetric.com/v1/doi/10.1007/s13238-016-0264-7?callback=altmetric_callback',
+				dataType:'jsonp'
+			});
+		}
+		
+		mag_rich_menu(jQuery);
+		
+		$(function(){
+			 $('#autoMenu').autoMenu();
+		})
+		$("#autoMenu").niceScroll({
+			cursorcolor: "#ccc", //滚动条的颜色
+			cursoropacitymax: 0, //滚动条的透明度，从0-1   
+			touchbehavior: false, //使光标拖动滚动像在台式电脑触摸设备 true滚动条拖动不可用  
+			cursorwidth: "6px", //滚动条的宽度  单位默认px 
+			cursorborder: "0", // 游标边框css定义    
+			cursorborderradius: "3px", //滚动条两头的圆角   
+			autohidemode: true, //是否隐藏滚动条  true的时候默认不显示滚动条，当鼠标经过的时候显示滚动条   
+			zindex: "auto", //给滚动条设置z-index值    
+			railvalign:'defaul',
+			railpadding: {
+				top: 0,
+				right: -6,
+				left: 0,
+				bottom: 0
+			}, //滚动条的位置
+		});
+		window.autoMenuFlag=true;
+		
+		$("#relatedArticles").niceScroll({
+			cursorcolor: "#ccc", //滚动条的颜色
+			cursoropacitymax: 0, //滚动条的透明度，从0-1   
+			touchbehavior: false, //使光标拖动滚动像在台式电脑触摸设备 true滚动条拖动不可用  
+			cursorwidth: "6px", //滚动条的宽度  单位默认px 
+			cursorborder: "0", // 游标边框css定义    
+			cursorborderradius: "3px", //滚动条两头的圆角   
+			autohidemode: true, //是否隐藏滚动条  true的时候默认不显示滚动条，当鼠标经过的时候显示滚动条   
+			zindex: "auto", //给滚动条设置z-index值    
+			railvalign:'defaul',
+			railpadding: {
+				top: 0,
+				right: -6,
+				left: 0,
+				bottom: 0
+			}, //滚动条的位置
+		});
+		
+		//公式序号 居右
+		jQuery(".mag-xml-disp-formula").each(function() {
+			var _this = jQuery(this);
+			var _label= _this.children("label");
+			if(typeof(_label.html())!="undefined"){
+				_this.children("label").remove();
+				_this.wrap("<div style='overflow:hidden;text-align: center;align-items:center;display:-webkit-flex;'><div style='float:left;text-align:center;width:90%;'></div></div>");
+				_this.parent().parent().append("<span style='width:10%;text-align:right;'>"+_label.html()+"</span>");
+			}
+		});
+		
+		$('body').click(function(){
+			$('.daochu_div').hide();
+			$('.qipao').hide();
+		})
+		$('.qipao').click(function(event){
+			event.stopPropagation();
+		})
+		
+		/*参考文献显示隐藏*/
+		$('.biaotijiantoush1').click(function(event){
+			if($(this).attr('class')=='glyphicon glyphicon-triangle-top biaotijiantoush biaotijiantoush1'){
+				$(this).parents('.mag_main_zhengwen_left_div_ckwx_table_benwenyiny').next('.mag_main_zhengwen_left_div_ckwx_table_ckwx_xiangqing').stop().slideUp();
+				$(this).attr('class','glyphicon glyphicon-triangle-bottom biaotijiantoush biaotijiantoush1');
+			}else if($(this).attr('class')=='glyphicon glyphicon-triangle-bottom biaotijiantoush biaotijiantoush1'){
+				$(this).parents('.mag_main_zhengwen_left_div_ckwx_table_benwenyiny').next('.mag_main_zhengwen_left_div_ckwx_table_ckwx_xiangqing').stop().slideDown();
+				$(this).attr('class','glyphicon glyphicon-triangle-top biaotijiantoush biaotijiantoush1');
+			}
+			event.stopPropagation();
+		});
+		
+		//加载补充材料
+		mag_ajax_update({
+			ele_id:'showArticle_suppls',
+			url:mag_currentQikanUrl() + '/CN/article/showArticleSuppls.do',
+			data:{articleId:$("#articleId").val()}
+		});
+		
+		//加载专题
+		mag_ajax_update({
+			ele_id:'showArticle_subjects',
+			url:mag_currentQikanUrl() + '/CN/subject/showSubjectListByArticle.do',
+			data:{articleId:$("#articleId").val(),forwardJsp:'showArticle'}
+		});
+		
+		//知识标引(规范词标引)
+		mag_rich_lexemeCnctst($("#articleId").val(),'CN',document.getElementById('bodyVue'));
+		
+		//渲染公式
+		mag_mathJax();
+		
+	});
+	
+	function altmetric_callback(json){
+		if(json && json.score){
+			if(json.score - parseInt(json.score) > 0){
+				$("#altmetric-score").html(parseInt(json.score)+1);
+			}else{
+				$("#altmetric-score").html(parseInt(json.score));
+			}
+			$(".main_content_center_right_duoweidu_div").css("width","25%");
+			$("#altmetric-a").show();
+			$("#altmetric-a").attr("href",json.details_url);
+		}
+	}
+	
+	function richClickAuthor(name){
+		var searchSQL = "((("+mag_advSearchValReplace(name)+"[Author]) AND 1J[Journal]) AND year[Order])";
+		mag_request({url:mag_currentQikanUrl() + '/CN/searchresult',data:{searchSQL:searchSQL}});
+	}
+	
+	function richClickKeyword(keyword){
+		var searchSQL = "((("+mag_advSearchValReplace(keyword)+"[Keyword]) AND 1J[Journal]) AND year[Order])";
+		mag_request({url:mag_currentQikanUrl() + '/CN/searchresult',data:{searchSQL:searchSQL}});
+	}
+	
+	function mag_share(){
+		$("#bShare_more_a").click();
+	}
+	
+	function loadRelatedArticles(){
+		if($("#showRelatedArticles") && $("#showRelatedArticles").length>0){
+			//加载过了
+		}else{
+			mag_loading();
+			mag_ajax_update({
+				ele_id:'relatedArticles-content',
+				url:mag_currentQikanUrl() + '/CN/article/relatedArticle.do',
+				data:{id:$("#articleId").val(), forwardJsp:'showArticle'},
+				complete:function(){
+					mag_layer_close();
+				}
+			});
+		}
+	}
+	
+	function showMetrics(){
+		mag_window_location(mag_currentQikanUrl() + '/CN/metrics/'+$("#articleId").val());
+	}
+	
+	function piaofuFn(a,fnId){
+		var content='<div>'+$("#mag-rich-fn-"+fnId).html()+'</div>';
+		piaofu(a,content);
+	}
+	
+	function piaofuCnctst(a,cnctst_id){
+		if($("#mag_rich_cnctst_info_"+cnctst_id) && $("#mag_rich_cnctst_info_"+cnctst_id).length && $("#mag_rich_cnctst_info_"+cnctst_id).length>0){
+			var content='<div>'+$("#mag_rich_cnctst_info_"+cnctst_id).html()+'</div>';
+    		piaofu(a,content);
+        }else{
+            var div=document.createElement("div");
+            div.style.display='none';
+            div.id="mag_rich_cnctst_info_"+cnctst_id;
+            document.body.appendChild(div);
+            
+            mag_ajax_update({
+            	selector:"#mag_rich_cnctst_info_"+cnctst_id,
+            	url:mag_currentQikanUrl() + "/CN/lexeme/showCnctstOnRich.do",
+            	data:{cnctst_id:cnctst_id,articleId:$("#articleId").val(),Count:5},
+            	success:function(){
+            		var content='<div>'+$("#mag_rich_cnctst_info_"+cnctst_id).html()+'</div>';
+            		piaofu(a,content);
+            	}
+            });
+        }
+	}
+	
+	function clickFigXref(a,figId){
+		if(figId!=''){
+			$("[mag-fig-id='"+figId+"']")[0].scrollIntoView();
+		}
+	}
+	
+	function clickTabXref(a,tabId){
+		if(tabId!=''){
+			document.getElementById(tabId).scrollIntoView();
+		}
+	}
+	
+	function huoqukuanduimg(){
+		//
+	}
+	
+	function doDataJsonText(text){
+		var str = text;
+		//var _nlmdtdXml = $("#article_nlmdtdXml").val();
+		//var magDir = _nlmdtdXml.replace(/\/[^\/]+$/,'');
+		
+		str = str.replace(/<img src="\/images\/email.png"/g, "<img src=\"" + mag_currentQikanUrl() + "/images/email.png\"");
+		str = str.replace(/<img src="\/images\/orcid.png"/g, "<img src=\"" + mag_currentQikanUrl() + "/images/orcid.png\"");
+		str = str.replace(/ src="\/fileup\/inline_graphic\//g, " src=\"" + mag_currentQikanUrl() + "/fileup/inline_graphic/");
+		
+		return str;
+	}
+	
+	function doMagVueAfter(selector,jsonData){
+		//var _nlmdtdXml = $("#article_nlmdtdXml").val();
+		//var magDir = _nlmdtdXml.replace(/\/[^\/]+$/,'');
+		var magDir = jsonData.magDir;
+		//处理fig
+		$(selector + " .mag-rich-fig[magid]").each(function(){
+			var magId = $(this).attr("magid");
+			for(var j=0;j<jsonData.figList.length;j++){
+				var fig = jsonData.figList[j];
+				if(fig.magId == magId){
+					$(this).html("");
+					$(this).attr("mag-fig-id",fig.id);
+					$(this).attr("class","mag_fig_div main_content_center_left_zhengwen_bao_fig");
+					var ss = "";
+					ss += "<div class='mag_fig_img main_content_center_left_zhengwen_bao_fig_img_bap' id='mag_fig_img_"+magId+"'>";
+					ss += "<img src='"+mag_currentQikanUrl()+"/"+magDir+"/"+fig.thumbnailUrl+"' onmouseover='huoqukuanduimg(this)' onclick='showimg(this)' class='main_content_center_left_zhengwen_bao_fig_img'/>";
+					ss += "</div>";
+					
+					var shuomingTitle = "";
+					var shuomingContent = '';
+					if(fig.titleCn && fig.titleCn!=''){
+						shuomingTitle = fig.titleCn;
+						if(fig.titleContentCn && fig.titleContentCn!=''){
+							shuomingContent += fig.titleContentCn;
+						}
+					}
+					if(shuomingTitle==''){
+						if(fig.titleEn && fig.titleEn!=''){
+							shuomingTitle = fig.titleEn;
+						}
+						if(fig.titleContentEn && fig.titleContentEn!=''){
+							shuomingContent += fig.titleContentEn;
+						}
+					}else{
+						if(fig.titleEn && fig.titleEn!=''){
+							shuomingContent += "<p>"+fig.titleEn+"</p>";
+						}
+						if(fig.titleContentEn && fig.titleContentEn!=''){
+							shuomingContent += fig.titleContentEn;
+						}
+					}
+					ss += '<div class="mag_main_zhengwen_left_div_img_shuoming main_content_center_left_zhengwen_bao_fig_shuoming"><table class="mag-rich-fig-shuoming-table"><tbody><tr class="mag-rich-fig-shuoming-tr"><td class="mag-rich-fig-shuoming-td"><h5 class="mag_nav_daohang cas_nav_daohang"><strong>'+shuomingTitle+'</strong></h5>';
+					if(shuomingContent!=''){
+						ss += shuomingContent;
+					}
+					ss += '</td></tr></tbody></table></div>';
+					
+					ss += '<p class="new_full_rich_table_shuoming_caozuo"><a href="'+mag_currentQikanUrl()+"/"+magDir+"/"+fig.figUrl+'" target="_blank">Full size</a><span style="color: #c5c6c7;padding: 0px 10px;">|</span><a href="'+mag_currentQikanUrl()+"/"+magDir+"/"+fig.pptUrl+'">PPT slide</a></p>';
+					
+					$(this).html(ss);
+					
+					break;
+				}
+			}
+		});
+		
+		//处理表格
+		$(selector + " .mag_main_table[magid]").each(function(){
+			var magId = $(this).attr("magid");
+			for(var i=0;i<jsonData.tabList.length;i++){
+				var tab = jsonData.tabList[i];
+				if(tab.magId == magId){
+					$(this).html("");
+					var ss = '<div class="mag_main_table_title">';
+					
+					ss += '<table class="mag-rich-table-title-tab"><tbody><tr class="mag-rich-table-title-tr"><td class="mag-rich-table-title-td">';
+					
+					var shuomingTitle = "";
+					var shuomingContent = '';
+					if(tab.titleCn && tab.titleCn!=''){
+						shuomingTitle = tab.titleCn;
+						if(tab.titleContentCn && tab.titleContentCn!=''){
+							shuomingContent += fig.titleContentCn;
+						}
+					}
+					if(shuomingTitle==''){
+						if(tab.titleEn && tab.titleEn!=''){
+							shuomingTitle = tab.titleEn;
+						}
+						if(tab.titleContentEn && tab.titleContentEn!=''){
+							shuomingContent += tab.titleContentEn;
+						}
+					}else{
+						if(tab.titleEn && tab.titleEn!=''){
+							shuomingContent += "<p>"+tab.titleEn+"</p>";
+						}
+						if(tab.titleContentEn && tab.titleContentEn!=''){
+							shuomingContent += tab.titleContentEn;
+						}
+					}
+					
+					ss += '<h6 class="mag_nav_daohang" id="25"><strong>'+shuomingTitle+'</strong></h6>';
+					if(shuomingContent!=''){
+						ss += shuomingContent;
+					}
+					ss += '</td></tr></tbody></table>';
+					
+					ss += '</div>';
+					
+					if(tab.table != ''){
+						ss += '<div class="table-responsive mag_table_div">';
+						ss += tab.table;
+						ss += '</div>';
+					}
+					
+					if(tab.footFnList && tab.footFnList.length>0){
+						ss += '<div class="mag_main_zhengwen_left_div_tab_shuoming"><table class="mag-rich-table-fn-tab">';
+						for(var j=0;j<tab.footFnList.length;j++){
+							var fn = tab.footFnList[j];
+							ss += '<tr><td valign="top">';
+							if(fn.label && fn.label!=''){
+								ss += fn.label;
+							}
+							ss += '</td>';
+							ss += '<td valign="top">';
+							if(fn.pList && fn.pList.length>0){
+								for(var k=0;k<fn.pList.length;k++){
+									ss += fn.pList[k];
+								}
+							}
+							ss += '</td>';
+							ss += '</tr>';
+						}
+						ss += '</table></div>';
+					}
+					
+					$(this).html(ss);
+					
+					break;
+				}
+			}
+		});
+		
+		//img .mag_rich_graphic
+		$(selector + " img.mag_rich_graphic").each(function(){
+			var src = $(this).attr("src");
+			if(src && (!src.startsWith(mag_currentQikanUrl()) && !src.toLowerCase().startsWith("http"))){
+				$(this).attr("src",mag_currentQikanUrl()+"/"+magDir+"/"+src);
+			}
+		});
+		
+		//video .mag_shipin
+		$(selector + " video.mag_shipin").each(function(){
+			var src = $(this).attr("src");
+			if(src && !src.startsWith(mag_currentQikanUrl()) && !src.toLowerCase().startsWith("http")){
+				$(this).attr("src",mag_currentQikanUrl()+"/"+magDir+"/"+src);
+			}
+			
+			var poster = $(this).attr("poster");
+			if(poster && !poster.startsWith(mag_currentQikanUrl()) && !poster.toLowerCase().startsWith("http")){
+				$(this).attr("poster",mag_currentQikanUrl()+"/"+magDir+"/"+poster);
+			}
+		});
+		
+		//a .mag_body_media_a
+		$(selector + " a.mag_body_media_a").each(function(){
+			var href = $(this).attr("href");
+			if(href && !href.startsWith(mag_currentQikanUrl()) && !href.toLowerCase().startsWith("http")){
+				$(this).attr("href",mag_currentQikanUrl()+"/"+magDir+"/"+href);
+			}
+		});
+		
+	}
+	
+	function showKnowledgeMap(id){
+		mag_loading();
+		mag_request({url:mag_currentQikanUrl()+'/CN/lexeme/showArticleByLexeme.do?articleID='+id});
+	}
+	
+	function richRefCharts(metaData){
+		var xData = new Array();
+		var yData = new Array();
+		
+		var typeData = new Array();
+		
+		var sourceData = new Array();
+		var otherSourceCount = 0;
+		
+		var authorData = new Array();
+		
+		if(window.metaData && window.metaData.referenceList && window.metaData.referenceList.length>0){
+			for(var i=0;i<window.metaData.referenceList.length;i++){
+				
+				//年度分布
+				var nian = window.metaData.referenceList[i].nian;
+				if(nian!=undefined && nian>1000){
+					if(xData.length>0){
+						for(var ii=0;ii<xData.length;ii++){
+							if(nian < xData[ii]){
+								//插入
+								var l = xData.length;
+								for(var iii=l-1;iii>=ii;iii--){
+									xData[iii+1] = xData[iii];
+									yData[iii+1] = yData[iii];
+								}
+								xData[ii] = nian;
+								yData[ii] = 1;
+								break;
+							}else if(nian == xData[ii]){
+								//已存在
+								yData[ii] = yData[ii]+1;
+								break;
+							}else{
+								if(ii==xData.length-1){
+									//已是最后一个，插入
+									xData[ii+1] = nian;
+									yData[ii+1] = 1;
+									break;
+								}else{
+									//继续下一个对比
+								}
+							}
+						}
+					}else{
+						xData[0] = nian;
+						yData[0] = 1;
+					}
+				}
+				
+				//文献类型分布
+				var pubType = window.metaData.referenceList[i].publicationType;
+				if(pubType==undefined || pubType==null || $.trim(pubType)==''){
+					pubType = 'Other';
+				}
+				if(pubType!=undefined && pubType!=null && $.trim(pubType)!=''){
+					pubType = $.trim(pubType);
+					if(typeData.length>0){
+						for(var ii=0;ii<typeData.length;ii++){
+							if(typeData[ii].name.toLowerCase() == pubType.toLowerCase()){
+								//同一个，+1
+								typeData[ii].value = typeData[ii].value + 1;
+								break;
+							}else{
+								if(ii<typeData.length-1){
+									//继续对比下一个
+								}else{
+									//最后一个,插入
+									typeData[ii+1] = {name:pubType,value:1};
+									break;
+								}
+							}
+						}
+					}else{
+						typeData[0] = {name:pubType,value:1};
+					}
+				}
+				
+				//被引期刊分布
+				var sourceCn = window.metaData.referenceList[i].sourceCn;
+				var sourceEn = window.metaData.referenceList[i].sourceEn;
+				if((sourceCn!=undefined && sourceCn!=null && $.trim(sourceCn)!='') || 
+						(sourceEn!=undefined && sourceEn!=null && $.trim(sourceEn)!='')){
+					if(sourceData.length>0){
+						for(var ii=0;ii<sourceData.length;ii++){
+							var sourceDa = sourceData[ii];
+							if( (sourceCn!=undefined && sourceCn!=null && $.trim(sourceCn)!='' && ($.trim(sourceCn)==sourceDa.sourceCn || $.trim(sourceCn)==sourceDa.sourceEn)) 
+									|| (sourceEn!=undefined && sourceEn!=null && $.trim(sourceEn)!='' && ($.trim(sourceEn)==sourceDa.sourceCn || $.trim(sourceEn)==sourceDa.sourceEn))){
+								//同一个期刊，+1
+								if(sourceCn!=undefined && sourceCn!=null && $.trim(sourceCn)!=''){
+									if(sourceDa.sourceCn==undefined || sourceDa.sourceCn==null || sourceDa.sourceCn==''){
+										sourceDa.sourceCn = $.trim(sourceCn);
+									}
+								}
+								if(sourceEn!=undefined && sourceEn!=null && $.trim(sourceEn)!=''){
+									if(sourceDa.sourceEn==undefined || sourceDa.sourceEn==null || sourceDa.sourceEn==''){
+										sourceDa.sourceEn = $.trim(sourceEn);
+									}
+								}
+								sourceDa.count = sourceDa.count + 1;
+								
+								break;
+							}else{
+								if(ii<sourceData.length-1){
+									//继续
+								}else{
+									//最后一个，插入
+									sourceData[ii+1] = {count:1};
+									if(sourceCn!=undefined && sourceCn!=null && $.trim(sourceCn)!=''){
+										sourceData[ii+1].sourceCn = $.trim(sourceCn);
+									}
+									if(sourceEn!=undefined && sourceEn!=null && $.trim(sourceEn)!=''){
+										sourceData[ii+1].sourceEn = $.trim(sourceEn);
+									}
+									break;
+								}
+							}
+						}
+					}else{
+						sourceData[0] = {count:1};
+						if(sourceCn!=undefined && sourceCn!=null && $.trim(sourceCn)!=''){
+							sourceData[0].sourceCn = $.trim(sourceCn);
+						}
+						if(sourceEn!=undefined && sourceEn!=null && $.trim(sourceEn)!=''){
+							sourceData[0].sourceEn = $.trim(sourceEn);
+						}
+					}
+				}else{
+					otherSourceCount = otherSourceCount + 1;
+				}
+				sourceData.sort(function(a,b){
+					return b.count-a.count;
+				});
+				
+				//被引用学者
+				var citationList = window.metaData.referenceList[i].citationList;
+				if(citationList!=null && citationList.length>0){
+					var citation = null;
+					for(var citationIndex=0;citationIndex<citationList.length;citationIndex++){
+						var personChinese = false;
+						if(citationList[citationIndex].personList && citationList[citationIndex].personList.length>0){
+							if(citation == null){
+								citation = citationList[citationIndex];
+							}
+							for(var personIndex=0;personIndex<citationList[citationIndex].personList.length;personIndex++){
+								var person = citationList[citationIndex].personList[personIndex];
+								if(person.name && person.name.match(/.*[\u4e00-\u9fa5].*/g)){
+									personChinese = true;
+									break;
+								}
+							}
+						}
+						if(personChinese){
+							citation = citationList[citationIndex];
+							break;
+						}
+					}
+					if(citation!=null && citation.personList && citation.personList.length && citation.personList.length>0){
+						citation.personList.forEach(function(person,index){
+							if(person.name!=undefined && person.name!=null && $.trim(person.name)!=''){
+								if(authorData.length>0){
+									for(var authorDataIndex=0;authorDataIndex<authorData.length;authorDataIndex++){
+										if(authorData[authorDataIndex].name==$.trim(person.name)){
+											authorData[authorDataIndex].count += 1;
+											break;
+										}else{
+											if(authorDataIndex==authorData.length-1){
+												authorData[authorDataIndex+1] = {name:$.trim(person.name),count:1};
+												break;
+											}
+										}
+									}
+								}else{
+									authorData[0] = {name:$.trim(person.name),count:1};
+								}
+							}
+						});
+					}
+				}
+				
+			}
+		}
+		
+		if($("#mag_rich_ref_charts_nian_count") && $("#mag_rich_ref_charts_nian_count").length && $("#mag_rich_ref_charts_nian_count").length>0 
+				&& xData.length>0){
+			$("#mag_rich_ref_charts_nian_count_container").show();
+			
+			var dom = document.getElementById("mag_rich_ref_charts_nian_count");
+			var myChart = echarts.init(dom);
+			var app = {};
+			var option;
+			option = {
+			    tooltip: {
+			    	trigger: 'axis',
+			        axisPointer: {
+			          type: 'shadow'
+			        }
+			    },
+			    xAxis: {
+			        data: xData
+			    },
+			    yAxis: {
+			    	type: 'value'
+			    },
+			    series: [{
+			        //name: '文献',
+			        type: 'bar',
+			        stack: 'browse',
+			        color: '#f07d2d',
+			        label:{
+			        	show:true,
+			        	position:'top',
+			        	color:'#000'
+			        },
+			        barWidth: '60%',
+			        data: yData
+			    }]
+			};
+			if (option && typeof option === 'object') {
+			    myChart.setOption(option);
+			}
+		}
+		
+		if($("#mag_rich_ref_charts_publication_type") && $("#mag_rich_ref_charts_publication_type").length && $("#mag_rich_ref_charts_publication_type").length>0 
+				&& typeData.length>0){
+			$("#mag_rich_ref_charts_publication_type_container").show();
+			
+			if(typeData!=null && typeData.length>0){
+				typeData.sort(function(a,b){
+					return b.value-a.value;
+				});
+				
+				var l = window.metaData.referenceList.length;
+				for(var i=0;i<typeData.length;i++){
+					var count = typeData[i].value;
+					var par = ((count*100)/l).toFixed(2);
+					typeData[i].name = typeData[i].name + ' ' + par + '%';
+				}
+			}
+			
+			var dom = document.getElementById("mag_rich_ref_charts_publication_type");
+			var myChart = echarts.init(dom);
+			var app = {};
+			var option;
+			option = {
+				tooltip: {
+    				trigger: 'item'
+				},
+				series: [
+    			{
+        			type: 'pie',
+        			radius: '70%',
+        			data: typeData,
+        			emphasis: {
+            			itemStyle: {
+                			shadowBlur: 10,
+                			shadowOffsetX: 0,
+                			shadowColor: 'rgba(0, 0, 0, 0.5)'
+            			}
+        			}
+    			}
+				]
+			};
+
+			if (option && typeof option === 'object') {
+				myChart.setOption(option);
+			}
+		}
+		
+		if($("#mag_rich_ref_charts_source") && $("#mag_rich_ref_charts_source").length && $("#mag_rich_ref_charts_source").length>0){
+			$("#mag_rich_ref_charts_source_container").show();
+			
+			var ySourceData = new Array();
+			var xSourceData = new Array();
+			if(sourceData.length>0){
+				for(var i=0;i<sourceData.length;i++){
+					if(ySourceData.length<15){
+						if(sourceData[i].sourceCn!=undefined && sourceData[i].sourceCn!=null && sourceData[i].sourceCn!=''){
+							ySourceData[ySourceData.length] = sourceData[i].sourceCn;
+							xSourceData[xSourceData.length] = sourceData[i].count;
+						}else{
+							ySourceData[ySourceData.length] = sourceData[i].sourceEn;
+							xSourceData[xSourceData.length] = sourceData[i].count;
+						}
+					}else{
+						otherSourceCount = otherSourceCount + sourceData[i].count;
+					}
+				}
+			}
+			if(otherSourceCount>0){
+				ySourceData[ySourceData.length] = 'Other';
+				xSourceData[xSourceData.length] = otherSourceCount;
+			}
+			
+			$("#mag_rich_ref_charts_source").height(ySourceData.length*25+50);
+			
+			var dom = document.getElementById("mag_rich_ref_charts_source");
+			var myChart = echarts.init(dom);
+			var app = {};
+			var option;
+			option = {
+			    tooltip: {
+			    	trigger: 'axis',
+			        axisPointer: {
+			          type: 'shadow'
+			        }
+			    },
+			    legend:{
+			    	
+			    },
+			    grid: {
+			        top: 10,
+			        bottom: 20,
+			        left: 150,
+			        right: 30
+			      },
+			    xAxis: {
+			        type: 'value',
+			        position: 'bottom',
+			        show: true
+			    },
+			    yAxis: {
+			    	type: 'category',
+			    	data: ySourceData,
+			    	inverse: true,
+			    	axisLabel: {
+			    	    formatter: function (value) {
+			    	    	var l = 20;
+			    	    	if(value.match(/.*[\u4e00-\u9fa5]+.*/g)){
+			    	    		l = 10;
+			    	    	}
+			    	    	if(value.length>l){
+			    	    		return value.substr(0,l)+"...";
+			    	    	}else{
+			    	    		return value;
+			    	    	}
+			    	    }
+			    	}
+			    },
+			    series: [{
+			        type: 'bar',
+			        stack: 'browse',
+			        color: 'blue',
+			        label:{
+			        	show:true,
+			        	position:'right',
+			        	color:'#000'
+			        },
+			        barWidth: '60%',
+			        data: xSourceData
+			    }]
+			};
+			if (option && typeof option === 'object') {
+			    myChart.setOption(option);
+			}
+		}
+		
+		if($("#mag_rich_ref_charts_author") && $("#mag_rich_ref_charts_author").length && $("#mag_rich_ref_charts_author").length>0 
+				&& authorData.length>0){
+			$("#mag_rich_ref_charts_author_container").show();
+			
+			var nodes = new Array();
+			if(authorData && authorData.length>0){
+				authorData.sort(function(a,b){
+					return b.count-a.count;
+				});
+				for(var authorDataIndex=0;authorDataIndex<authorData.length;authorDataIndex++){
+					if(authorDataIndex<50){
+						var colorList = [
+						                 '#ff7f50', '#87cefa', '#da70d6', '#32cd32', '#6495ed',
+						                 '#ff69b4', '#ba55d3', '#cd5c5c', '#ffa500', '#40e0d0',
+						                 '#1e90ff', '#ff6347', '#7b68ee', '#d0648a', '#ffd700',
+						                 '#6b8e23', '#4ea397', '#3cb371', '#b8860b', '#7bd9a5'
+						                ];
+						var color = colorList[authorDataIndex%colorList.length];
+						nodes[authorDataIndex] = {
+								id:'node'+authorDataIndex,
+								name:authorData[authorDataIndex].name,
+								value:authorData[authorDataIndex].count,
+								symbolSize:function(){
+									var size = 20+authorData[authorDataIndex].count*10;
+									if(size>50){
+										return 50;
+									}else{
+										return size;
+									}
+								}(),
+								draggable:true,
+								itemStyle:{
+									normal:{
+										//shadowBlur:10,
+										shadowColor:color,
+										color:color
+									}
+								}
+						};
+					}
+				}
+				
+				if(nodes.length>0){
+					nodes.sort(function(a,b){
+						return a.value-b.value;
+					});
+				}
+				
+				var dom = document.getElementById("mag_rich_ref_charts_author");
+			    var myChart = echarts.init(dom, null, {
+			      renderer: 'canvas',
+			      useDirtyRect: false
+			    });
+			    var app = {};
+				var option;
+				option = {
+					    backgroundColor: '#fff',
+					    tooltip: {},
+					    animationDurationUpdate: function(idx) {
+					        // 越往后的数据延迟越大
+					        return idx * 100;
+					    },
+					    animationEasingUpdate: 'bounceIn',
+					    color: ['#fff', '#fff', '#fff'],
+					    series:{
+					        type: 'graph',
+					        layout: 'force',
+					        force: {
+					            repulsion: 30,
+					            edgeLength: 3
+					        },
+					        gravity: 1.1,
+				            scaling: 1.1,
+					        roam: true,
+					        label: {
+					            normal: {
+					                show: true
+					            }
+					        },
+					        data:nodes
+					    }
+				}
+				
+				if (option && typeof option === 'object') {
+				      myChart.setOption(option);
+				}
+			}
+			
+		}
+		
+		$("#mag_rich_ref_charts").hide();
+		
+	}
+	
+	function showQuickread(lang){
+		$("#showArticle_quickread").show();
+		$(".main_content_center_right").hide();
+		if(lang=='EN'){
+			var md = new remarkable.Remarkable({html:true});
+		    $("#showArticle_quickread_content_cn").html(md.render(window._aiSummaryEn));
+		    $("#showArticle_quickread_en").hide();
+		    if(window._aiSummaryCn){
+		    	$("#showArticle_quickread_cn").show();
+		    }
+		}else{
+			var md = new remarkable.Remarkable({html:true});
+		    $("#showArticle_quickread_content_cn").html(md.render(window._aiSummaryCn));
+		    $("#showArticle_quickread_cn").hide();
+		    if(window._aiSummaryEn){
+			    $("#showArticle_quickread_en").show();
+		    }
+		}
+	}
+	function closeQuickread(){
+		$("#showArticle_quickread").hide();
+		$(".main_content_center_right").show();
+	}
+	function showOutline(lang){
+		if(lang=='EN'){
+			var changeCn = '';
+			if(window._aiMindMapCn){
+				changeCn = '<div style="text-align:right"><span class="circle-border" style="cursor: pointer;" onclick="showOutline(\'CN\')">中</span></div>';
+			}
+			mag_layer({
+				type:4,
+				title:'<img src="/develop/static/common/images/ai_outline.png" style="width:30px;height:30px;"/> AI Mindmap<div style="margin-left:30px;color:#ccc;font-size:14px;">温馨提示：以下内容由AI自动生成，内容仅供参考。对于因使用本网站以下内容产生的相关后果，本网站不承担任何商业和法律责任。</div>',
+				content:changeCn+"<div class=\"markmap\"><script type=\"text/template\">        "+window._aiMindMapEn+"</"+"script"+"></div>",
+				width:'85%'
+			});
+			magReader();
+		}else{
+			var changeEng = '';
+			if(window._aiMindMapEn){
+				changeEng = '<div style="text-align:right"><span class="circle-border" style="cursor: pointer;" onclick="showOutline(\'EN\')">Eng</span></div>';
+			}
+			mag_layer({
+				type:4,
+				title:'<img src="/develop/static/common/images/ai_outline.png" style="width:30px;height:30px;"/> AI Mindmap<div style="margin-left:30px;color:#ccc;font-size:14px;">温馨提示：以下内容由AI自动生成，内容仅供参考。对于因使用本网站以下内容产生的相关后果，本网站不承担任何商业和法律责任。</div>',
+				content:changeEng+"<div class=\"markmap\"><script type=\"text/template\">        "+window._aiMindMapCn+"</"+"script"+"></div>",
+				width:'85%'
+			});
+			magReader();
+		}
+	}
+	function magReader(){
+    	if(markmap.autoLoader.renderAll==undefined){
+    		setTimeout(function(){
+    			magReader();
+    	    }, 100);
+    	}else{
+    		//$("#markmap-div").show();
+    		setTimeout(function(){
+    			var h = mag_layer_height_can_be_added();
+    			if(h>0){
+    				$(".markmap").height($(".markmap").height()+h);
+    			}
+    			markmap.autoLoader.renderAll();
+                //$("#markmap-loading").hide();
+    		},200);
+    	}
+    }
+	
+</script>
+
+<!-- develop end -->
+
+<!--custom 必引内容，网站设计维护的js、css等，不可删除，不可改动-->
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--顶部快速导航下拉导航菜单特效css-->
+<!--<link rel="stylesheet" href="https://www.zhkzyfz.cn/images/1673-3819/css/bootsnav.css">-->
+<!--网站css-->
+<link rel="stylesheet" href="https://www.zhkzyfz.cn/images/1673-3819/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.zhkzyfz.cn/images/1673-3819/css/css.css">
+<script src="https://www.zhkzyfz.cn/images/1673-3819/js/indexjs.js"></script>
+
+
+</head>
+<body id="metaVue">
+
+<!-- develop 必引内容，不可删除，不可改动 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<input type="hidden" id="mag-common-contextPath" value=""/>
+
+<div id="mag-component-store-div" style="display:none;"></div>
+			
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="magModal" tabindex="-1" role="dialog" data-keyboard=false data-backdrop='static' aria-labelledby="magModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button buttonGroup="0" type="button"  class="close"  aria-hidden="true" onclick="mag_layer_close();">
+					&times;
+				</button>
+				<h4 class="modal-title" id="magModalLabel">
+					模态框（Modal）标题
+				</h4>
+			</div>
+			<div class="modal-body" id="mag-modal-body" style="overflow:auto;">
+				在这里添加一些文本
+			</div>
+			<div id="mag-layer-button-div" class="modal-footer">
+				<button buttonGroup="1" type="button"  class="btn btn-default"  onclick="mag_layer_close();">关闭
+				</button>
+				<button buttonGroup="2" type="button"  class="btn btn-default"  onclick="mag_layer_close();">关闭
+				</button>
+				<button buttonGroup="2" type="button" class="btn btn-primary" onclick="mag_submit()" id="mag_layer_submit_button_2">
+					提交更改
+				</button>
+				<button buttonGroup="3" type="button"  class="btn btn-default"  onclick="mag_layer_close();">取消
+				</button>
+				<button buttonGroup="3" type="button" class="btn btn-primary" onclick="mag_submit()" id="mag_layer_submit_button_3">
+					确定并提交
+				</button>
+				
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+
+<div id="magModal_2" style="display:none;position:fixed;left:0px;top:0px;right:0px;bottom:0px;z-index:1060">
+	<div class="modal-dialog" style="margin-top:60px;">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button buttonGroup="0" type="button" id="mag-madal-close_bt_2"  class="close"  aria-hidden="true" onclick="mag_layer_close_2();">
+					&times;
+				</button>
+				<h4 class="modal-title" id="magModalLabel_2">
+					模态框（Modal）标题
+				</h4>
+			</div>
+			<div id="modal-body_2" class="modal-body"></div>
+		</div>
+	</div>
+</div>
+
+<!-- 模态框-Tab -->
+<div class="modal fade" id="magTabModal" tabindex="-1" role="dialog" data-keyboard=false data-backdrop='static' aria-labelledby="magTabModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header" style="border-bottom:0px;padding:15px 0px;">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="padding-right:15px;">
+					&times;
+				</button>
+				
+<ul id="magTab" class="nav nav-tabs">
+
+</ul>
+			</div>
+			<div class="modal-body">
+				
+<div id="magTabContent" class="tab-content">
+
+</div>
+			</div>
+			<div id="mag-tablayer-button-div" class="modal-footer">
+				
+			</div>
+			
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+
+
+
+<div style="display:none;">
+	<iframe id="mag_sendLongReq_iframe" name="mag_sendLongReq_iframe"></iframe>
+	<iframe id="mag_cma_sso_login_iframe" name="mag_cma_sso_login_iframe"></iframe>
+</div>
+<input type="hidden" id="mag_cma_sso_authorizeUrl" value=""/>
+		
+
+<div style="display:none;">
+<iframe src="https://www.zhkzyfz.cn/EN/article/updateBrowsCishu.do?articleid=726&token=b67318d9b0b14b9da4c5d0f8e83c7fd1&refererToken=&referer=" height=0 scrolling=no border=0 frameborder=0 allowtransparency="true"></iframe>
+<iframe src="https://www.zhkzyfz.cn/CN/article/getArticlePlumxInfo.do?articleId=726" height=0 scrolling=no border=0 frameborder=0 allowtransparency="true"></iframe>
+</div>
+
+<input type="hidden" id="article_nlmdtdXml" value="article/2018/1673-3819/726/1673-3819-40-4-45.mag.xml"/>
+<input type="hidden" id="article_nlmdtdXmlCN" value=""/>
+<input type="hidden" id="articleId" value="726"/>
+<input type="hidden" id="article_doi" value="10.3969/j.issn.1673-3819.2018.04.010"/>
+<input type="hidden" id="article_metaJson" value="{&quot;authorList_cn&quot;:[{&quot;deceased&quot;:false,&quot;xref&quot;:&quot;&lt;sup&gt;1&lt;/sup&gt;&quot;,&quot;name_cn&quot;:&quot;张志虎&quot;,&quot;xref_en&quot;:&quot;&lt;sup&gt;1&lt;/sup&gt;&quot;,&quot;name_en&quot;:&quot;ZHANG Zhi-hu&quot;},{&quot;deceased&quot;:false,&quot;xref&quot;:&quot;&lt;sup&gt;2&lt;/sup&gt;&quot;,&quot;name_cn&quot;:&quot;赵佳旻&quot;,&quot;xref_en&quot;:&quot;&lt;sup&gt;2&lt;/sup&gt;&quot;,&quot;name_en&quot;:&quot;ZHAO Jia-min&quot;},{&quot;deceased&quot;:false,&quot;xref&quot;:&quot;&lt;sup&gt;2&lt;/sup&gt;&quot;,&quot;name_cn&quot;:&quot;刘梅&quot;,&quot;xref_en&quot;:&quot;&lt;sup&gt;2&lt;/sup&gt;&quot;,&quot;name_en&quot;:&quot;LIU Mei&quot;}],&quot;referenceList&quot;:[{&quot;bodyP_ids&quot;:[&quot;mag_rich_body_p_1&quot;],&quot;id&quot;:&quot;b1&quot;,&quot;label&quot;:&quot;[1]&quot;,&quot;nian&quot;:2010,&quot;citedCount&quot;:1,&quot;citationList&quot;:[{&quot;content&quot;:&quot;石章松. 纯方位目标跟踪中的观测器机动优化研究[J]. &lt;span class=\&quot;sourceStyle\&quot;&gt;计算机仿真&lt;/span&gt;, &lt;span class=\&quot;yearStyle\&quot;&gt;2010&lt;/span&gt;, &lt;span class=\&quot;volStyele\&quot;&gt;27&lt;/span&gt;(1):334-337.&quot;}]},{&quot;bodyP_ids&quot;:[&quot;mag_rich_body_p_6&quot;],&quot;id&quot;:&quot;b2&quot;,&quot;label&quot;:&quot;[2]&quot;,&quot;nian&quot;:2009,&quot;citedCount&quot;:1,&quot;citationList&quot;:[{&quot;content&quot;:&quot;石章松. 水下纯方位目标跟踪中的观测器机动航路对定位精度影响分析[J]. &lt;span class=\&quot;sourceStyle\&quot;&gt;电光与控制&lt;/span&gt;, &lt;span class=\&quot;yearStyle\&quot;&gt;2009&lt;/span&gt;, &lt;span class=\&quot;volStyele\&quot;&gt;16&lt;/span&gt;(6):5-8.&quot;}]},{&quot;bodyP_ids&quot;:[&quot;mag_rich_body_p_34&quot;],&quot;id&quot;:&quot;b3&quot;,&quot;label&quot;:&quot;[3]&quot;,&quot;nian&quot;:2010,&quot;citedCount&quot;:1,&quot;citationList&quot;:[{&quot;content&quot;:&quot;权宏伟, 彭冬亮, 薛安克. 纯方位角定位的单步最优观测轨迹算法[J]. &lt;span class=\&quot;sourceStyle\&quot;&gt;探测与控制学报&lt;/span&gt;, &lt;span class=\&quot;yearStyle\&quot;&gt;2010&lt;/span&gt;, &lt;span class=\&quot;volStyele\&quot;&gt;32&lt;/span&gt;(3):18-21.&quot;}]},{&quot;bodyP_ids&quot;:[&quot;mag_rich_body_p_52&quot;],&quot;id&quot;:&quot;b4&quot;,&quot;label&quot;:&quot;[4]&quot;,&quot;nian&quot;:2002,&quot;citedCount&quot;:1,&quot;citationList&quot;:[{&quot;content&quot;:&quot;许志刚. 纯方位系统定位与跟踪的观测器最优机动轨迹[J]. &lt;span class=\&quot;sourceStyle\&quot;&gt;淮海工学院学报&amp;#x000b7;自然科学版&lt;/span&gt;, &lt;span class=\&quot;yearStyle\&quot;&gt;2002&lt;/span&gt;, &lt;span class=\&quot;volStyele\&quot;&gt;15&lt;/span&gt;(1):1-4.&quot;}]},{&quot;bodyP_ids&quot;:[&quot;mag_rich_body_p_53&quot;],&quot;id&quot;:&quot;b5&quot;,&quot;label&quot;:&quot;[5]&quot;,&quot;nian&quot;:2005,&quot;citedCount&quot;:1,&quot;citationList&quot;:[{&quot;content&quot;:&quot;&lt;name&gt;&lt;surname&gt;Ghassemi&lt;/surname&gt; &lt;given-names&gt;F&lt;/given-names&gt;&lt;/name&gt;, &lt;name&gt;&lt;surname&gt;Krishnamurthy&lt;/surname&gt; &lt;given-names&gt;V&lt;/given-names&gt;&lt;/name&gt;. A method for constructing the observer trajectory in bearings-only tracking of targets with a Markovian model[C]. &lt;span class=\&quot;sourceStyle\&quot;&gt;Information Acquisition&lt;/span&gt;, &lt;span class=\&quot;yearStyle\&quot;&gt;2005&lt;/span&gt; IEEE International Conference on. IEEE, 2005.&quot;}]},{&quot;bodyP_ids&quot;:[&quot;mag_rich_body_p_56&quot;],&quot;id&quot;:&quot;b6&quot;,&quot;label&quot;:&quot;[6]&quot;,&quot;nian&quot;:2009,&quot;citedCount&quot;:1,&quot;citationList&quot;:[{&quot;content&quot;:&quot;&lt;name&gt;&lt;surname&gt;M.&lt;/surname&gt; &lt;given-names&gt;Zamirian&lt;/given-names&gt;&lt;/name&gt;, &lt;name&gt;&lt;surname&gt;A.V.&lt;/surname&gt; &lt;given-names&gt;Kamyad&lt;/given-names&gt;&lt;/name&gt;, &lt;name&gt;&lt;surname&gt;M.H.&lt;/surname&gt; &lt;given-names&gt;Farahi&lt;/given-names&gt;&lt;/name&gt;. A novel algorithm for solving optimal path planning problems based on parametrization method and fuzzy aggregation[J]. &lt;span class=\&quot;sourceStyle\&quot;&gt;Physics Letters A&lt;/span&gt;, &lt;span class=\&quot;yearStyle\&quot;&gt;2009&lt;/span&gt;: 3439-3449.&quot;}]},{&quot;bodyP_ids&quot;:[&quot;mag_rich_body_p_56&quot;],&quot;id&quot;:&quot;b7&quot;,&quot;label&quot;:&quot;[7]&quot;,&quot;nian&quot;:2006,&quot;citedCount&quot;:1,&quot;citationList&quot;:[{&quot;content&quot;:&quot;&lt;name&gt;&lt;surname&gt;A.V.&lt;/surname&gt; &lt;given-names&gt;Kamyad&lt;/given-names&gt;&lt;/name&gt;, &lt;name&gt;&lt;surname&gt;M.&lt;/surname&gt; &lt;given-names&gt;Keyanpour&lt;/given-names&gt;&lt;/name&gt;, &lt;name&gt;&lt;surname&gt;M.H.&lt;/surname&gt; &lt;given-names&gt;Farahi&lt;/given-names&gt;&lt;/name&gt;. A new approach for solving of optimal nonlinear control problems[J]. &lt;span class=\&quot;sourceStyle\&quot;&gt;Applied Mathematics and Computation&lt;/span&gt;, &lt;span class=\&quot;yearStyle\&quot;&gt;2006&lt;/span&gt;(2): 1461-1471.&quot;}]},{&quot;bodyP_ids&quot;:[&quot;mag_rich_body_p_56&quot;],&quot;id&quot;:&quot;b8&quot;,&quot;label&quot;:&quot;[8]&quot;,&quot;nian&quot;:2000,&quot;citedCount&quot;:1,&quot;citationList&quot;:[{&quot;content&quot;:&quot;董志荣. 纯方位系统定位与跟踪的本载体最优轨线[J]. &lt;span class=\&quot;sourceStyle\&quot;&gt;情报指挥控制系统与仿真技术&lt;/span&gt;, &lt;span class=\&quot;yearStyle\&quot;&gt;2000&lt;/span&gt;, &lt;span class=\&quot;volStyele\&quot;&gt;22&lt;/span&gt;(3):25.&quot;}]}],&quot;journal&quot;:{&quot;issn&quot;:&quot;1673-3819&quot;,&quot;qiKanWangZhi&quot;:&quot;http://journal28.magtechjournal.com/Jwk3_zhkzyfz&quot;,&quot;qiKanMingCheng_CN&quot;:&quot;指挥控制与仿真&quot;,&quot;id&quot;:1,&quot;qiKanMingCheng_EN&quot;:&quot;Command Control and Simulation&quot;},&quot;authorList&quot;:[{&quot;deceased&quot;:false,&quot;xref&quot;:&quot;&lt;sup&gt;1&lt;/sup&gt;&quot;,&quot;name_cn&quot;:&quot;张志虎&quot;,&quot;xref_en&quot;:&quot;&lt;sup&gt;1&lt;/sup&gt;&quot;,&quot;name_en&quot;:&quot;ZHANG Zhi-hu&quot;},{&quot;deceased&quot;:false,&quot;xref&quot;:&quot;&lt;sup&gt;2&lt;/sup&gt;&quot;,&quot;name_cn&quot;:&quot;赵佳旻&quot;,&quot;xref_en&quot;:&quot;&lt;sup&gt;2&lt;/sup&gt;&quot;,&quot;name_en&quot;:&quot;ZHAO Jia-min&quot;},{&quot;deceased&quot;:false,&quot;xref&quot;:&quot;&lt;sup&gt;2&lt;/sup&gt;&quot;,&quot;name_cn&quot;:&quot;刘梅&quot;,&quot;xref_en&quot;:&quot;&lt;sup&gt;2&lt;/sup&gt;&quot;,&quot;name_en&quot;:&quot;LIU Mei&quot;}],&quot;bioList_cn&quot;:[{&quot;content&quot;:&quot;&lt;p id=\&quot;com1\&quot;&gt;作者简介: 张志虎(1978-),男,四川阆中人,硕士,高级工程师,研究方向为电子对抗总体技术。&lt;/p&gt;&quot;},{&quot;content&quot;:&quot;&lt;p id=\&quot;p00500\&quot;&gt;赵佳旻(1996-),男,硕士。&lt;/p&gt;&quot;}],&quot;affList_en&quot;:[&quot;1. Southwest China Research Institute of Electronic Equipment, Chengdu 610000&quot;,&quot;2. School of Electronics and Information Engineering HIT, Harbin 150000, China&quot;],&quot;affList_cn&quot;:[&quot;1.中国电子科技集团公司第二十九研究所, 四川 成都 610000&quot;,&quot;2.哈尔滨工业大学电子与信息工程学院, 黑龙江 哈尔滨 150000&quot;],&quot;figList&quot;:[{&quot;captionCn&quot;:&quot;&lt;title&gt;观测平台与目标位置关系&lt;/title&gt;&quot;,&quot;magId&quot;:&quot;a232a1d1-3743-4b8a-91e5-6c08d06455cc&quot;,&quot;labelCn&quot;:&quot;图1&quot;,&quot;pptUrl&quot;:&quot;1673-3819-40-4-45/img_1.png.ppt&quot;,&quot;figUrl&quot;:&quot;1673-3819-40-4-45/img_1.png&quot;,&quot;titleCn&quot;:&quot;图1 观测平台与目标位置关系&quot;,&quot;id&quot;:&quot;F1&quot;,&quot;thumbnailUrl&quot;:&quot;1673-3819-40-4-45/thumbnail/img_1.png&quot;},{&quot;captionCn&quot;:&quot;&lt;title&gt;等间隔搜索法示意图&lt;/title&gt;&quot;,&quot;magId&quot;:&quot;87d9ba92-853b-4c58-ad40-fcd9eb2644b4&quot;,&quot;labelCn&quot;:&quot;图2&quot;,&quot;pptUrl&quot;:&quot;1673-3819-40-4-45/img_2.png.ppt&quot;,&quot;figUrl&quot;:&quot;1673-3819-40-4-45/img_2.png&quot;,&quot;titleCn&quot;:&quot;图2 等间隔搜索法示意图&quot;,&quot;id&quot;:&quot;F2&quot;,&quot;thumbnailUrl&quot;:&quot;1673-3819-40-4-45/thumbnail/img_2.png&quot;},{&quot;captionCn&quot;:&quot;&lt;title&gt;GDOP最小轨迹优化算法流程&lt;/title&gt;&quot;,&quot;magId&quot;:&quot;b7b5107c-58d8-4494-b184-b54e5ce00c06&quot;,&quot;labelCn&quot;:&quot;图3&quot;,&quot;pptUrl&quot;:&quot;1673-3819-40-4-45/img_3.png.ppt&quot;,&quot;figUrl&quot;:&quot;1673-3819-40-4-45/img_3.png&quot;,&quot;titleCn&quot;:&quot;图3 GDOP最小轨迹优化算法流程&quot;,&quot;id&quot;:&quot;F3&quot;,&quot;thumbnailUrl&quot;:&quot;1673-3819-40-4-45/thumbnail/img_3.png&quot;},{&quot;captionCn&quot;:&quot;&lt;title&gt;目标和雷达运动状态示意图&lt;/title&gt;&quot;,&quot;magId&quot;:&quot;66413163-9d6e-4d99-9549-690bf057a322&quot;,&quot;labelCn&quot;:&quot;图4&quot;,&quot;pptUrl&quot;:&quot;1673-3819-40-4-45/img_4.png.ppt&quot;,&quot;figUrl&quot;:&quot;1673-3819-40-4-45/img_4.png&quot;,&quot;titleCn&quot;:&quot;图4 目标和雷达运动状态示意图&quot;,&quot;id&quot;:&quot;F4&quot;,&quot;thumbnailUrl&quot;:&quot;1673-3819-40-4-45/thumbnail/img_4.png&quot;},{&quot;captionCn&quot;:&quot;&lt;title&gt;目标和雷达运动状态示意图&lt;/title&gt;&quot;,&quot;magId&quot;:&quot;6859bdf9-4d2d-4882-b334-345370e15cad&quot;,&quot;labelCn&quot;:&quot;图5&quot;,&quot;pptUrl&quot;:&quot;1673-3819-40-4-45/img_5.png.ppt&quot;,&quot;figUrl&quot;:&quot;1673-3819-40-4-45/img_5.png&quot;,&quot;titleCn&quot;:&quot;图5 目标和雷达运动状态示意图&quot;,&quot;id&quot;:&quot;F5&quot;,&quot;thumbnailUrl&quot;:&quot;1673-3819-40-4-45/thumbnail/img_5.png&quot;},{&quot;captionCn&quot;:&quot;&lt;title&gt;证明示图&lt;/title&gt;&quot;,&quot;magId&quot;:&quot;d377389b-4290-4e76-a1a7-a8c7edee32b7&quot;,&quot;labelCn&quot;:&quot;图6&quot;,&quot;pptUrl&quot;:&quot;1673-3819-40-4-45/img_6.png.ppt&quot;,&quot;figUrl&quot;:&quot;1673-3819-40-4-45/img_6.png&quot;,&quot;titleCn&quot;:&quot;图6 证明示图&quot;,&quot;id&quot;:&quot;F6&quot;,&quot;thumbnailUrl&quot;:&quot;1673-3819-40-4-45/thumbnail/img_6.png&quot;},{&quot;captionCn&quot;:&quot;&lt;title&gt;场景设置&lt;/title&gt;&quot;,&quot;magId&quot;:&quot;47ba9cd1-e4ca-486a-81f6-047c5be7eae6&quot;,&quot;labelCn&quot;:&quot;图7&quot;,&quot;pptUrl&quot;:&quot;1673-3819-40-4-45/img_7.png.ppt&quot;,&quot;figUrl&quot;:&quot;1673-3819-40-4-45/img_7.png&quot;,&quot;titleCn&quot;:&quot;图7 场景设置&quot;,&quot;id&quot;:&quot;F7&quot;,&quot;thumbnailUrl&quot;:&quot;1673-3819-40-4-45/thumbnail/img_7.png&quot;},{&quot;captionCn&quot;:&quot;&lt;title&gt;跟踪结果对比(左:未优化 右:优化后)&lt;/title&gt;&quot;,&quot;magId&quot;:&quot;195a3015-a1d3-4ef4-8e5b-65c59c09a6d7&quot;,&quot;labelCn&quot;:&quot;图8&quot;,&quot;pptUrl&quot;:&quot;1673-3819-40-4-45/img_8.png.ppt&quot;,&quot;figUrl&quot;:&quot;1673-3819-40-4-45/img_8.png&quot;,&quot;titleCn&quot;:&quot;图8 跟踪结果对比(左:未优化 右:优化后)&quot;,&quot;id&quot;:&quot;F8&quot;,&quot;thumbnailUrl&quot;:&quot;1673-3819-40-4-45/thumbnail/img_8.png&quot;},{&quot;captionCn&quot;:&quot;&lt;title&gt;生成场景及跟踪航迹&lt;/title&gt;&quot;,&quot;magId&quot;:&quot;4f01f978-809c-43de-8cb3-d0d5e89fed5a&quot;,&quot;labelCn&quot;:&quot;图9&quot;,&quot;pptUrl&quot;:&quot;1673-3819-40-4-45/img_9.png.ppt&quot;,&quot;figUrl&quot;:&quot;1673-3819-40-4-45/img_9.png&quot;,&quot;titleCn&quot;:&quot;图9 生成场景及跟踪航迹&quot;,&quot;id&quot;:&quot;F9&quot;,&quot;thumbnailUrl&quot;:&quot;1673-3819-40-4-45/thumbnail/img_9.png&quot;},{&quot;captionCn&quot;:&quot;&lt;title&gt;场景各项参数&lt;/title&gt;&quot;,&quot;magId&quot;:&quot;664e319c-9438-45e7-93d3-28952edba9df&quot;,&quot;labelCn&quot;:&quot;图10&quot;,&quot;pptUrl&quot;:&quot;1673-3819-40-4-45/img_10.png.ppt&quot;,&quot;figUrl&quot;:&quot;1673-3819-40-4-45/img_10.png&quot;,&quot;titleCn&quot;:&quot;图10 场景各项参数&quot;,&quot;id&quot;:&quot;F10&quot;,&quot;thumbnailUrl&quot;:&quot;1673-3819-40-4-45/thumbnail/img_10.png&quot;},{&quot;captionCn&quot;:&quot;&lt;title&gt;场景跟踪误差&lt;/title&gt;&quot;,&quot;magId&quot;:&quot;2de0097f-7101-40ce-ab1a-a5e0b68ba21c&quot;,&quot;labelCn&quot;:&quot;图11&quot;,&quot;pptUrl&quot;:&quot;1673-3819-40-4-45/img_11.png.ppt&quot;,&quot;figUrl&quot;:&quot;1673-3819-40-4-45/img_11.png&quot;,&quot;titleCn&quot;:&quot;图11 场景跟踪误差&quot;,&quot;id&quot;:&quot;F11&quot;,&quot;thumbnailUrl&quot;:&quot;1673-3819-40-4-45/thumbnail/img_11.png&quot;},{&quot;captionCn&quot;:&quot;&lt;title&gt;平台跟踪航迹&lt;/title&gt;&quot;,&quot;magId&quot;:&quot;c310cc3a-2ed2-40a0-bc32-1b8056c0df33&quot;,&quot;labelCn&quot;:&quot;图12&quot;,&quot;pptUrl&quot;:&quot;1673-3819-40-4-45/img_12.png.ppt&quot;,&quot;figUrl&quot;:&quot;1673-3819-40-4-45/img_12.png&quot;,&quot;titleCn&quot;:&quot;图12 平台跟踪航迹&quot;,&quot;id&quot;:&quot;F12&quot;,&quot;thumbnailUrl&quot;:&quot;1673-3819-40-4-45/thumbnail/img_12.png&quot;},{&quot;captionCn&quot;:&quot;&lt;title&gt;平台跟踪误差&lt;/title&gt;&quot;,&quot;magId&quot;:&quot;c4e6d188-7757-4d08-8e03-3d364b0ba934&quot;,&quot;labelCn&quot;:&quot;图13&quot;,&quot;pptUrl&quot;:&quot;1673-3819-40-4-45/img_13.png.ppt&quot;,&quot;figUrl&quot;:&quot;1673-3819-40-4-45/img_13.png&quot;,&quot;titleCn&quot;:&quot;图13 平台跟踪误差&quot;,&quot;id&quot;:&quot;F13&quot;,&quot;thumbnailUrl&quot;:&quot;1673-3819-40-4-45/thumbnail/img_13.png&quot;}],&quot;article&quot;:{&quot;keywordList_cn&quot;:[&quot;可观测性&quot;,&quot;最优航路算法&quot;,&quot;精度几何散布&quot;,&quot;最优航迹规划&quot;],&quot;juan&quot;:&quot;40&quot;,&quot;zhaiyao_cn&quot;:&quot;&lt;p id=\&quot;p00005\&quot;&gt;单站被动雷达由于可观测性较弱,对其进行航迹优化可以提高系统可观测性。给出无限制条件下的最优航路算法,以最小化克劳美劳下界的迹即精度几何散布作为航路优化的性能指标,针对实际环境,又研究只采取180&amp;#x000b0;转弯条件下的时长已知和未知两种环境下的最优航迹规划算法,给出了最优的航路规划,同时给出不同情景下的跟踪误差。&lt;/p&gt;&quot;,&quot;endNoteUrl_en&quot;:&quot;http://journal28.magtechjournal.com/Jwk3_zhkzyfz/EN/article/getTxtFile.do?fileType=EndNote&amp;id=726&quot;,&quot;bibtexUrl_cn&quot;:&quot;http://journal28.magtechjournal.com/Jwk3_zhkzyfz/CN/article/getTxtFile.do?fileType=BibTeX&amp;id=726&quot;,&quot;articleType&quot;:&quot;A&quot;,&quot;abstractUrl_en&quot;:&quot;http://journal28.magtechjournal.com/Jwk3_zhkzyfz/EN/10.3969/j.issn.1673-3819.2018.04.010&quot;,&quot;qi&quot;:&quot;4&quot;,&quot;id&quot;:726,&quot;nian&quot;:2018,&quot;bianHao&quot;:&quot;1652940847353-213883010&quot;,&quot;juanUrl_en&quot;:&quot;http://journal28.magtechjournal.com/Jwk3_zhkzyfz/EN/Y2018&quot;,&quot;shouCiFaBuRiQi&quot;:&quot;2022-05-19&quot;,&quot;qiShiYe&quot;:&quot;45&quot;,&quot;received&quot;:&quot;2018-05-21&quot;,&quot;qiUrl_cn&quot;:&quot;http://journal28.magtechjournal.com/Jwk3_zhkzyfz/CN/Y2018/V40/I4&quot;,&quot;lanMu_cn&quot;:&quot;&lt;subject&gt;理论研究&lt;/subject&gt;&quot;,&quot;pdfSize&quot;:&quot;1463KB&quot;,&quot;risUrl_cn&quot;:&quot;http://journal28.magtechjournal.com/Jwk3_zhkzyfz/CN/article/getTxtFile.do?fileType=Ris&amp;id=726&quot;,&quot;title_cn&quot;:&quot;测向交叉定位体制下平台航迹最优规划算法&quot;,&quot;doi&quot;:&quot;10.3969/j.issn.1673-3819.2018.04.010&quot;,&quot;jieShuYe&quot;:&quot;51&quot;,&quot;keywordList_en&quot;:[&quot;observability&quot;,&quot;optimal route algorithm&quot;,&quot;geometric dilution of precision&quot;,&quot;optimal path planning&quot;],&quot;endNoteUrl_cn&quot;:&quot;http://journal28.magtechjournal.com/Jwk3_zhkzyfz/CN/article/getTxtFile.do?fileType=EndNote&amp;id=726&quot;,&quot;zhaiyao_en&quot;:&quot;&lt;p id=\&quot;p00010\&quot;&gt;Due to the weak observability of the single station passive radar, the optimization of its track can improve the observability of the system. This paper presents an optimal path algorithm under unconstrained conditions to minimize the trace of the lower boundary of Crow Melo, the precision geometric dispersion, as the performance index of the route optimization. In view of the actual environment, it also studies the duration of only 180 degrees of turning conditions. The optimal path planning algorithm under both the known and unknown environments, gives the optimal route planning, and gives the tracking error under different scenarios.&lt;/p&gt;&quot;,&quot;bibtexUrl_en&quot;:&quot;http://journal28.magtechjournal.com/Jwk3_zhkzyfz/EN/article/getTxtFile.do?fileType=BibTeX&amp;id=726&quot;,&quot;abstractUrl_cn&quot;:&quot;http://journal28.magtechjournal.com/Jwk3_zhkzyfz/CN/10.3969/j.issn.1673-3819.2018.04.010&quot;,&quot;juanUrl_cn&quot;:&quot;http://journal28.magtechjournal.com/Jwk3_zhkzyfz/CN/Y2018&quot;,&quot;lanMu_en&quot;:&quot;&lt;subject&gt;Theory &amp;#x00026; Research&lt;/subject&gt;&quot;,&quot;qiUrl_en&quot;:&quot;http://journal28.magtechjournal.com/Jwk3_zhkzyfz/EN/Y2018/V40/I4&quot;,&quot;risUrl_en&quot;:&quot;http://journal28.magtechjournal.com/Jwk3_zhkzyfz/EN/article/getTxtFile.do?fileType=Ris&amp;id=726&quot;,&quot;title_en&quot;:&quot;Optimal Path Planning Algorithm for Platform Under Cross Direction Po sitioning System&quot;,&quot;revised&quot;:&quot;2018-06-12&quot;,&quot;hasPdf&quot;:&quot;true&quot;},&quot;authorList_en&quot;:[{&quot;deceased&quot;:false,&quot;xref&quot;:&quot;&lt;sup&gt;1&lt;/sup&gt;&quot;,&quot;name_cn&quot;:&quot;张志虎&quot;,&quot;xref_en&quot;:&quot;&lt;sup&gt;1&lt;/sup&gt;&quot;,&quot;name_en&quot;:&quot;ZHANG Zhi-hu&quot;},{&quot;deceased&quot;:false,&quot;xref&quot;:&quot;&lt;sup&gt;2&lt;/sup&gt;&quot;,&quot;name_cn&quot;:&quot;赵佳旻&quot;,&quot;xref_en&quot;:&quot;&lt;sup&gt;2&lt;/sup&gt;&quot;,&quot;name_en&quot;:&quot;ZHAO Jia-min&quot;},{&quot;deceased&quot;:false,&quot;xref&quot;:&quot;&lt;sup&gt;2&lt;/sup&gt;&quot;,&quot;name_cn&quot;:&quot;刘梅&quot;,&quot;xref_en&quot;:&quot;&lt;sup&gt;2&lt;/sup&gt;&quot;,&quot;name_en&quot;:&quot;LIU Mei&quot;}]}"/>
+
+<div class="qipao">
+			<img src="/develop/static/common/images/1.png" class="jiantou" alt="">
+			<div class="qipao-content">
+				
+		</div>
+</div>
+
+<!--Export弹出-->
+
+
+
+
+
+
+
+<div id="export-citation-div" class="" style="display:none;">
+	<form id="export-citation-form" action="/CN/article/exportCitation.do" target="_blank">
+	<input type="hidden" id="export-citation-form-ids" name="articleIds" />
+	<div class="panel panel-warning" style="color:gray;">
+		下载引用文件后，可以用常见的文献管理软件打开和编辑，包括: BibTex, EndNote, ProCite, RefWorks, and Reference Manager.
+	</div>
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			<h4 class="panel-title">选择文件类型/文献管理软件名称</h4>
+		</div>
+		<div class="panel-body">
+			<div class="radio">
+				<label> <input type="radio" value="Ris" checked="checked" name="fileType">
+					RIS (ProCite, Reference Manager, EndNote)
+				</label>
+			</div>
+			<!-- 
+			<div class="radio">
+				<label> <input type="radio" value="Ris_en" checked="checked" name="fileType">
+					RIS (ProCite, Reference Manager, EndNote) (导英文)
+				</label>
+			</div>
+			 -->
+			<div class="radio">
+				<label> <input type="radio" value="BibTex" name="fileType">
+					BibTeX
+				</label>
+			</div>
+			<!-- 
+			<div class="radio">
+				<label> <input type="radio" value="BibTex_en" checked="checked" name="fileType">
+					BibTeX (导英文)
+				</label>
+			</div>
+			 -->
+		</div>
+	</div>
+	<div class="panel panel-warning">
+		<div class="panel-heading">
+			<h4 class="panel-title">选择包含的内容</h4>
+		</div>
+		<div class="panel-body">
+			<div class="radio">
+				<label> <input type="radio" value="md" checked="checked" name="contentType">
+					仅文章引用信息
+				</label>
+			</div>
+			<div class="radio">
+				<label> <input type="radio" value="ab" name="contentType">
+					引用信息及摘要
+				</label>
+			</div>
+		</div>
+	</div>
+	
+	<button type="button" class="btn btn-lg btn-primary modal-button" style="width:50%;margin:0 auto;display: block;padding: 7px;"
+		onclick="downloadCitations()">导出</button>
+	</form>
+</div>
+<script type="text/javascript">
+document.getElementById("export-citation-form-ids").value='726';
+</script>
+<!--Export弹出end-->
+<!-- develop end -->
+
+
+		<div class="yicangdsjk">
+			<div class="yicangdsjk_div">
+				<div class="yicangdsjk_div_left">
+					<p class="yicangdsjk_div_left_title">测向交叉定位体制下平台航迹最优规划算法</p>
+					<p class="yicangdsjk_div_left_authe">
+						张志虎, 赵佳旻, 刘梅
+					</p>
+				</div>
+				<div class="yicangdsjk_div_right">
+				
+					
+					<div class="main_content_center_right_pdf" style="width: 90%;float: left;">
+						<img src="/develop/static/common/images/pdf.png" class="main_content_center_right_pdf_img">
+						<b class="main_content_center_right_pdf_b">
+							PDF(1463 KB) 
+						</b>
+						<i class="glyphicon glyphicon-save main_content_center_right_pdf_i" onclick="lsdy1('PDF',726)"></i>
+					</div>
+					
+					
+					<i class="glyphicon glyphicon-remove yicangdsjk_div_right_i" onclick="closedk()"></i>
+				</div>
+			</div>
+		</div>
+		<div class="main_top_cm">
+			
+
+<script language="javascript">
+	function tabChange(obj, id) {
+		var arrayli = obj.parentNode.getElementsByTagName("li"); //获取li数组
+		var arrayul = document.getElementById(id).getElementsByTagName("ul"); //获取ul数组
+		for (i = 0; i < arrayul.length; i++) {
+			if (obj == arrayli[i]) {
+				arrayli[i].className = "cli";
+				arrayul[i].className = "";
+			} else {
+				arrayli[i].className = "";
+				arrayul[i].className = "hidden";
+			}
+		}
+	}
+</script>
+<style type="text/css">
+.tabbox {
+	width: 400px;
+	margin-top: 5px;
+	margin-bottom: 5px
+}
+
+.tabmenu {
+	width: 400px;
+	height: 28px;
+	border-left: 1px solid #CCC;
+	border-top: 1px solid #ccc;
+}
+
+.tabmenu ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.tabmenu li {
+	text-align: center;
+	float: left;
+	display: block;
+	width: 99px;
+	overflow: hidden;
+	background-color: #f1f1f1;
+	line-height: 27px;
+	border-right: #ccc 1px solid;
+	border-bottom: #ccc 1px solid;
+	display: inline;
+}
+
+.tabmenu .cli {
+	text-align: center;
+	float: left;
+	display: block;
+	width: 99px;
+	overflow: hidden;
+	background-color: #fff;
+	line-height: 27px;
+	border-right: #ccc 1px solid;
+	border-bottom: #fff 1px solid;
+	display: inline;
+	cursor: pointer;
+	color: #c30000;
+	font-weight: bold
+}
+
+#tabcontent {
+	width: 399px;
+	background-color: #fff;
+	border-left: #CCC 1px solid;
+	border-right: #CCC 1px solid;
+	border-bottom: #CCC 1px solid;
+	height: 65px;
+}
+
+#tabcontent ul {
+	margin: 0;
+	padding: 5px;
+	list-style-type: none;
+}
+
+#tabcontent .hidden {
+	display: none;
+}
+
+img[src*='.traceImg']{
+	width:44px;
+	height:22px;
+}
+</style>
+<div class="wrap">
+    <div class="container">
+        <div class="top_line_main">
+               中国科技核心期刊
+                &nbsp;&nbsp;<img src="https://www.zhkzyfz.cn/images/1673-3819/images/topline.jpg">&nbsp;&nbsp;
+                中国指挥与控制学会会刊&nbsp;&nbsp;<img src="https://www.zhkzyfz.cn/images/1673-3819/images/topline.jpg">&nbsp;&nbsp;
+                军事装备类重点期刊
+		</div>
+	</div>
+</div>
+<div class="journal-head">
+<div class="container">
+
+    <div class="col-md-8 logo">
+		<h1><a href="https://www.zhkzyfz.cn/CN/home"><img src="https://www.zhkzyfz.cn/images/1673-3819/images/logo.png" class="img-responsive" alt=""></a></h1>
+    </div>
+	
+    
+
+</div>
+
+</div>
+
+<!--导航-->
+
+<!--导航-->
+<div class="navbar site-nav whitebg">
+<div class="container">
+<div class="row">
+
+
+    <div class="navbar-header">
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">导航切换</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand visible-xs" href="">指挥控制与仿真</a> </div>
+    <div class="navbar-collapse collapse" role="navigation">
+		<ul class="nav navbar-nav">
+      	
+        <li><a href="https://www.zhkzyfz.cn/CN/home">首页</a></li>
+                                    
+                        <li><a href="https://www.zhkzyfz.cn/CN/column/column1.shtml">期刊介绍</a></li>
+			           
+                                                
+                        <li><a href="https://www.zhkzyfz.cn/CN/column/column3.shtml">编委会</a></li>
+			           
+                                                
+                        <li><a href="https://www.zhkzyfz.cn/CN/column/column6.shtml">政策指南</a></li>
+			           
+                                                
+                        <li><a href="https://www.zhkzyfz.cn/CN/column/column8.shtml">期刊订阅</a></li>
+			           
+                                                
+                        <li><a href="https://www.zhkzyfz.cn/CN/column/column15.shtml">广告合作</a></li>
+			           
+                                                
+                        <li><a href="https://www.zhkzyfz.cn/CN/column/column12.shtml">联系我们</a></li>
+			           
+                                    <li><a href="https://www.zhkzyfz.cn/EN/home">English</a></li>
+			<!--<li><a href="http://g.zhkzyfz.cn/">旧系统入口</a></li>-->
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+<!--导航 End-->
+
+<!--导航 End-->
+<div class="container" style="height: 20px"></div>
+<script src='https://tongji.journalreport.cn/mstatistics.service.js'></script><script>recordAdd('e13bbb6cfb7a4af6bf3a1c5a5d62bd3f')</script>
+<!--头部 End-->
+
+		</div>
+		<div class="main_content">
+			<div class="main_content_top">
+				<div class="main_content_top_div">
+					<a href="https://www.zhkzyfz.cn" class="main_content_top_div_a">指挥控制与仿真</a>
+					<span class="main_content_top_div_span">››</span>
+					<a href="https://www.zhkzyfz.cn/CN/archive/2018" class="main_content_top_div_a">2018, Vol. 40</a>
+					
+					<span class="main_content_top_div_span">››</span>
+					<a href="https://www.zhkzyfz.cn/CN/Y2018/V40/I4" class="main_content_top_div_a">Issue (4)</a>
+					<span class="main_content_top_div_span">: 45-51.</span>
+					
+					
+					
+					<span class="main_content_top_div_span">DOI:</span>
+					<a href="https://doi.org/10.3969/j.issn.1673-3819.2018.04.010" class="main_content_top_div_a">10.3969/j.issn.1673-3819.2018.04.010</a>
+					
+					
+				</div>
+				
+				
+				<div class="main_content_top_btn">
+					<a class="main_content_top_btn_anniu"><subject>理论研究</subject></a>
+				</div>
+				
+				
+				<p class="main_content_top_title">测向交叉定位体制下平台航迹最优规划算法</p>
+				<div class="main_content_top_btn">
+					<ul class="main_content_top_btn_ul">
+					{{javascript:window.custom_author_cn_index=0;}}
+					<template m-if="{{authorList}} && {{authorList.length}}>0" m-for-array="{{authorList}}" m-for-val="custom_author" m-for-index="custom_index">
+						<li m-if="{{custom_author.name_cn}} && {{custom_author.name_cn}}!=''">
+							<span m-if="window.custom_author_cn_index>0">,&nbsp;</span>
+							<a href="javascript:;" onclick="richClickAuthor('{{custom_author.name_cn}}')">{{custom_author.name_cn}}</a>
+							{{custom_author.xref}}
+							<sup m-if="{{custom_author.email}} && {{custom_author.email}}!=''"><a href="mailto:{{custom_author.email}}"><i class="glyphicon glyphicon-envelope main_content_top_btn_ul_i"></i></a></sup>
+							{{javascript:window.custom_author_cn_index++;}}
+						</li>
+					</template>
+						<li m-if="!{{authorList}} || {{authorList.length}}==0">{{article.zuoZhe_CN}}</li>
+					</ul>
+				</div>
+				<div class="Author_contribution">
+					<b>作者信息</b>
+					<span class="Author_contribution_i" onclick="slide_up(this)">+</span>
+				</div>
+				<div class="Author_contribution_content" style="display: none;">
+				
+				<template m-for-array="{{affList_cn}}" m-for-val="custom_zuoZheDiZhi">
+					<div style="margin-bottom:10px;">{{custom_zuoZheDiZhi}}</div>
+				</template>
+				
+				<div m-if="({{authorNotesCommon_cn}} && {{authorNotesCommon_cn.length>0}}) || ({{bioList_cn}} && {{bioList_cn.length>0}})" style="margin-bottom:10px;">
+					<strong>作者简介:</strong>
+				</div>
+				
+				<template m-for-array="{{authorNotesCommon_cn}}" m-for-val="custom_authorNodes">
+					<div style="margin-bottom:10px;">{{custom_authorNodes}}</div>
+				</template>
+				
+				<!-- 作者简历资料 -->
+				<template m-for-val="custom_bio" m-for-array="{{bioList_cn}}">
+					<div m-not-empty="{{custom_bio.imgUrl}}" class="row" style="margin-bottom:10px;margin-top:10px;">
+						<div class="col-md-2 col-sm-2 col-xs-12" style="max-width:150px;">
+							<img src="/{{magDir}}/{{custom_bio.imgUrl}}" class="img-responsive img-rounded"/>
+						</div>
+						<div class="col-md-10 col-sm-10 col-xs-12">
+							{{custom_bio.content}}
+						</div>
+					</div>
+					<div m-empty="{{custom_bio.imgUrl}}" style="margin-bottom:10px;margin-top:10px;">
+						{{custom_bio.content}}
+					</div>
+				</template>
+				
+				<div m-if="{{authorNotes_cn}} && {{authorNotes_cn.length>0}}" style="margin-bottom:10px;">
+					<strong>通信作者:</strong>
+				</div>
+				<template m-for-array="{{authorNotes_cn}}" m-for-val="custom_authorNodes">
+					<div style="margin-bottom:10px;">{{custom_authorNodes}}</div>
+				</template>
+				
+				
+				
+				<div style="margin-bottom:10px;" m-if="{{scientificEditorList_cn}} && {{scientificEditorList_cn}}.length>0">
+					<b>编委：</b>
+					<template m-for-val="custom_scientificEditor" m-for-array="{{scientificEditorList_cn}}" m-for-index="custom_scientificEditorIndex">
+						<span m-if="{{custom_scientificEditorIndex>0}}">, </span>
+						<span class="mag_main_dw_div_none_p">{{custom_scientificEditor}}</span>
+					</template>
+				</div>
+				
+				<div style="margin-bottom:10px;" m-if="{{chiefEditorList_cn}} && {{chiefEditorList_cn}}.length>0">
+					<b>主编：</b>
+					<template m-for-val="custom_chiefEditor" m-for-array="{{chiefEditorList_cn}}" m-for-index="custom_chiefEditorIndex">
+						<span m-if="{{custom_chiefEditorIndex}}>0">, </span>
+						<span class="mag_main_dw_div_none_p">{{custom_chiefEditor}}</span>
+					</template>
+				</div>
+				
+				<div style="margin-bottom:10px;" m-if="{{leadEditorList_cn}} && {{leadEditorList_cn}}.length>0">
+					<b>责任编辑：</b>
+					<template m-for-val="custom_leadEditor" m-for-array="{{leadEditorList_cn}}" m-for-index="custom_leadEditorIndex">
+						<span m-if="{{custom_leadEditorIndex}}>0">, </span>
+						<span class="mag_main_dw_div_none_p">{{custom_leadEditor}}</span>
+					</template>
+				</div>
+				
+				<div style="margin-bottom:10px;" m-if="{{editorList_cn}} && {{editorList_cn}}.length>0">
+					编辑:
+					<template m-for-val="custom_editor" m-for-array="{{editorList_cn}}" m-for-index="custom_editorIndex">
+						<span m-if="{{custom_editorIndex}}>0">, </span>
+						<span class="mag_main_dw_div_none_p">{{custom_editor}}</span>
+					</template>
+				</div>
+
+				
+					<div class="Put_it_away" onclick="Author_details_put_away(this)">
+						折叠
+					</div>
+				</div>
+				
+				
+				
+				<p class="main_content_top_title">Optimal Path Planning Algorithm for Platform Under Cross Direction Po sitioning System</p>
+				<div class="main_content_top_btn">
+					<ul class="main_content_top_btn_ul">
+					{{javascript:window.custom_author_en_index=0;}}
+					<template m-if="{{authorList}} && {{authorList.length}}>0" m-for-array="{{authorList}}" m-for-val="custom_author" m-for-index="custom_index">
+						<li m-if="{{custom_author.name_en}} && {{custom_author.name_en}}!=''">
+							<span m-if="window.custom_author_en_index>0">,&nbsp;</span>
+							<a href="javascript:;" onclick="richClickAuthor('{{custom_author.name_en}}')">{{custom_author.name_en}}</a>
+							{{custom_author.xref}}
+							<sup m-if="{{custom_author.email}} && {{custom_author.email}}!=''"><a href="mailto:{{custom_author.email}}"><i class="glyphicon glyphicon-envelope main_content_top_btn_ul_i"></i></a></sup>
+							{{javascript:window.custom_author_en_index++;}}
+						</li>
+					</template>
+						<li m-if="!{{authorList}} || {{authorList.length}}==0">{{article.zuoZhe_EN}}</li>
+					</ul>
+				</div>
+				<div class="Author_contribution">
+					<b>Author information</b>
+					<span class="Author_contribution_i" onclick="slide_up(this)">+</span>
+				</div>
+				<div class="Author_contribution_content" style="display: none;">
+				
+				<template m-for-array="{{affList_en}}" m-for-val="custom_zuoZheDiZhi">
+					<div style="margin-bottom:10px;">{{custom_zuoZheDiZhi}}</div>
+				</template>
+				
+				<div m-if="({{authorNotesCommon_en}} && {{authorNotesCommon_en.length>0}}) || ({{bioList_en}} && {{bioList_en.length>0}})" style="margin-bottom:10px;">
+					<strong>Aboat authors:</strong>
+				</div>
+				
+				<template m-for-array="{{authorNotesCommon_en}}" m-for-val="custom_authorNodes">
+					<div style="margin-bottom:10px;">{{custom_authorNodes}}</div>
+				</template>
+				
+				<!-- 作者简历资料 -->
+				<template m-for-val="custom_bio" m-for-array="{{bioList_en}}">
+					<div m-not-empty="{{custom_bio.imgUrl}}" class="row" style="margin-bottom:10px;margin-top:10px;">
+						<div class="col-md-2 col-sm-2 col-xs-12" style="max-width:150px;">
+							<img src="/{{magDir}}/{{custom_bio.imgUrl}}" class="img-responsive img-rounded"/>
+						</div>
+						<div class="col-md-10 col-sm-10 col-xs-12">
+							{{custom_bio.content}}
+						</div>
+					</div>
+					<div m-empty="{{custom_bio.imgUrl}}" style="margin-bottom:10px;margin-top:10px;">
+						{{custom_bio.content}}
+					</div>
+				</template>
+				
+					<div class="Put_it_away" onclick="Author_details_put_away(this)">
+						Collapse
+					</div>
+				</div>
+				
+				
+				
+				<div class="Author_contribution">
+					<b>History</b>
+					<span class="Author_contribution_i" onclick="slide_up(this)">+</span>
+				</div>
+				<div class="Author_contribution_content" style="display: none;padding: 0px;background: none;">
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<table class="new_full_Article_history" style="width: 60%;">
+						<thead>
+							<tr>
+								<th>Received</th>
+								<th>Revised</th>
+								
+								<th>Published</th>
+								
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>2018-05-21</td>
+								<td>2018-06-12</td>
+								
+								<td>2018-08-10</td>
+								
+							</tr>
+						
+							<tr>
+								
+								
+								<th>Online</th>
+								<th colspan="2">&nbsp;</th>
+							</tr>
+						
+							<tr>
+								
+								
+								<td>2022-05-19</td>
+								<td colspan="2">&nbsp;</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			
+			<div class="main_content_center">
+				<div class="main_content_center_left">
+				
+					<div m-if="{{article.keyPoints_cn}} && {{article.keyPoints_cn}}!=''" class="main_content_center_left_one_title yijibiaotidkk">
+						<h3 class="cas_nav_daohang"><b>本文亮点</b></h3>
+						<i class="glyphicon glyphicon-minus main_content_center_left_one_title_i" onclick="zhaiyaozhan(this)"></i>
+					</div>
+					<div m-if="{{article.keyPoints_cn}} && {{article.keyPoints_cn}}!=''" class="zhaiyaojs">
+						<div style="margin-bottom:10px;" class="main_content_center_left_zhengwen">
+							{{article.keyPoints_cn}}
+						</div>
+					</div>
+					
+					<div m-if="{{article.keyPoints_en}} && {{article.keyPoints_en}}!=''" class="main_content_center_left_one_title yijibiaotidkk">
+						<h3 class="cas_nav_daohang"><b>HeighLight</b></h3>
+						<i class="glyphicon glyphicon-minus main_content_center_left_one_title_i" onclick="zhaiyaozhan(this)"></i>
+					</div>
+					<div m-if="{{article.keyPoints_en}} && {{article.keyPoints_en}}!=''" class="zhaiyaojs">
+						<div style="margin-bottom:10px;" class="main_content_center_left_zhengwen">
+							{{article.keyPoints_en}}
+						</div>
+					</div>
+				
+					<div class="main_content_center_left_one_title yijibiaotidkk">
+						<h3 class="cas_nav_daohang"><b>摘要</b></h3>
+						<i class="glyphicon glyphicon-minus main_content_center_left_one_title_i" onclick="zhaiyaozhan(this)"></i>
+					</div>
+					<div class="zhaiyaojs">
+						<div style="margin-bottom:10px;" class="main_content_center_left_zhengwen">
+							{{article.zhaiyao_cn}}
+						</div>
+						
+						<div m-if="{{article.zhaiyao_en}} && {{article.zhaiyao_en}}!=''" class="main_content_center_left_one_title yijibiaotidkk" style="border-bottom:none; padding-bottom:0px;margin-top:15px;">
+							<h3 class="cas_nav_daohang"><b>Abstract</b></h3>
+						</div>
+						<div m-if="{{article.zhaiyao_en}} && {{article.zhaiyao_en}}!=''" style="margin-bottom:10px;" class="main_content_center_left_zhengwen">
+							{{article.zhaiyao_en}}
+						</div>
+					
+					
+					
+					<div m-if="{{article.keywordList_cn}} && {{article.keywordList_cn.length}}>0" class="main_content_center_left_one_title yijibiaotidkk" style="border-bottom:none; padding-bottom:0px;margin-top:15px;">
+						<h3 class="cas_nav_daohang"><b>关键词</b></h3>
+					</div>
+					<p m-if="{{article.keywordList_cn}} && {{article.keywordList_cn.length}}>0" class="main_content_center_left_zhengwen" style="margin-top:5px;margin-bottom:15px;">
+						<template m-for-array="{{article.keywordList_cn}}" m-for-val="custom_keyword" m-for-index="custom_index">
+							<a href="javascript:;" onclick="richClickKeyword('{{custom_keyword}}')">{{custom_keyword}}</a><span m-if="{{custom_index}}!={{article.keywordList_cn.length}}-1" class="main_content_center_left_zhengwen_pie">；</span>
+						</template>
+					</p>
+					
+					<div m-if="{{article.keywordList_en}} && {{article.keywordList_en.length}}>0" class="main_content_center_left_one_title yijibiaotidkk" style="border-bottom:none; padding-bottom:0px;margin-top:15px;">
+						<h3 class="cas_nav_daohang"><b>Key words</b></h3>
+					</div>
+					<p m-if="{{article.keywordList_en}} && {{article.keywordList_en.length}}>0" class="main_content_center_left_zhengwen" style="margin-top:5px;margin-bottom:15px;">
+						<template m-for-array="{{article.keywordList_en}}" m-for-val="custom_keyword" m-for-index="custom_index">
+							<a href="javascript:;" onclick="richClickKeyword('{{custom_keyword}}')">{{custom_keyword}}</a><span m-if="{{custom_index}}!={{article.keywordList_en.length}}-1" class="main_content_center_left_zhengwen_pie">; </span>
+						</template>
+					</p>
+					
+					</div>
+					
+					<div class="main_content_center_left_one_title yijibiaotidkk">
+						<h3 class="cas_nav_daohang"><b>引用本文</b></h3>
+						
+						<div class="daochu_div">
+							<p>
+								<a href="https://www.zhkzyfz.cn/CN/article/getTxtFile.do?fileType=EndNote&id=726">EndNote</a>
+							</p>
+							<p>
+								<a href="https://www.zhkzyfz.cn/CN/article/getTxtFile.do?fileType=Ris&id=726">Ris (Procite)</a>
+							</p>
+							<p>
+								<a href="https://www.zhkzyfz.cn/CN/article/getTxtFile.do?fileType=BibTeX&id=726">Bibtex</a>
+							</p>
+						</div>
+						<div class="main_content_center_left_one_title_div" onclick="exportCitations()">
+							<span class="main_content_center_left_one_title_div_one">导出引用</span>
+						</div>
+						
+					</div> 
+					
+					<div class="main_content_center_left_yinyong">
+						<div class="main_content_center_left_yinyong_bao">
+							<div class="main_content_center_left_yinyong_div">
+								<div>
+									<template m-if="{{authorList_cn}} && {{authorList_cn.length}}>0" m-for-array="{{authorList_cn}}" m-for-val="custom_author" m-for-index="custom_index" ><span m-if="{{custom_index}}>0">, </span>{{custom_author.name_cn}}<span m-if="{{custom_index}}=={{authorList_cn.length}}-1">. </span></template><span m-if="!{{authorList_cn}} || {{authorList_cn.length}}==0">{{article.zuoZheCn_L}}. </span>{{article.title_cn}}[J]. {{journal.qiKanMingCheng_CN}}. 2018, 40(4): 45-51 https://doi.org/10.3969/j.issn.1673-3819.2018.04.010
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					
+					<div class="main_content_center_left_yinyong">
+						<div class="main_content_center_left_yinyong_bao">
+							<div class="main_content_center_left_yinyong_div">
+								<div>
+									<template m-if="{{authorList_en}} && {{authorList_en.length}}>0" m-for-array="{{authorList_en}}" m-for-val="custom_author" m-for-index="custom_index" ><span m-if="{{custom_index}}>0">, </span>{{custom_author.name_en}}<span m-if="{{custom_index}}=={{authorList_en.length}}-1">. </span></template><span m-if="!{{authorList_en}} || {{authorList_en.length}}==0">{{article.zuoZheEn_L}}. </span>{{article.title_en}}[J]. {{journal.qiKanMingCheng_EN}}. 2018, 40(4): 45-51 https://doi.org/10.3969/j.issn.1673-3819.2018.04.010
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					
+					<div class="main_content_center_left_caozuo">
+						<span mag-component-type="previousArticle" mag-articleId="726"></span>
+						<span mag-component-type="nextArticle" mag-articleId="726"></span>
+					</div>
+					<div class="main_content_center_left_zhengwen_bao">
+						
+						<!-- 正文 -->
+						<div id="bodyVue" m-workspace  m-if="{{body}} && {{body.secList.length}}>0" class="main_content_center_left_zhengwen_bao_zw">
+							<template id="template_secL" m-for-array="{{body.secList}}" m-for-val="custom_sec">
+								<div m-if="{{custom_sec.type}}=='sec' && {{custom_sec.level}}==1" class="main_content_center_left_one_title zhengwem_title yijibiaotidkk">
+									<h3 class="cas_nav_daohang mag_rich_body_title" level="{{custom_sec.level}}"><b><span class="body_sec_title">{{custom_sec.title}}</span></b></h3>
+								</div>
+								<div m-if="{{custom_sec.type}}=='sec' && {{custom_sec.level}}>=2" class="main_content_center_left_zhengwen_bao_erji_title main_content_center_left_one_title" style="font-size: 16px;">
+									<h4 class="cas_nav_daohang mag_rich_body_title" level="{{custom_sec.level}}" style="font-size: 16px;"><b><span class="body_sec_title">{{custom_sec.title}}</span></b></h4>
+								</div>
+								<template m-if="{{custom_sec.type}}=='sec'" m-for-array="{{custom_sec.secList}}" m-for-val="custom_sec" m-for-template-ref="template_secL">
+								</template>
+								{{custom_sec.content}}
+							</template>
+						</div>
+						<!-- 正文-END -->
+						
+						<!-- 参考文献 -->
+						<div m-if="{{referenceList}} && {{referenceList.length}}>0" class="main_content_center_left_one_title zhengwem_title" style="border-bottom: 1px solid #ccc;">
+							<h3 class="cas_nav_daohang"><b>参考文献</b></h3>
+							<div class="References_div">
+								<a href="javascript:;" class="References_div_a" onclick="referenceOrderByType(1)">原文顺序</a>
+								<span class="References_div_span">|</span>
+								<a href="javascript:;" class="References_div_a" onclick="referenceOrderByType(2)">文献年度倒序</a>
+								<span class="References_div_span">|</span>
+								<a href="javascript:;" class="References_div_a" onclick="referenceOrderByType(3)">文中引用次数倒序</a>
+							</div>
+						</div>
+						<div m-if="{{referenceList}} && {{referenceList.length}}>0" class="main_content_center_left_one_cankaowenxian">
+							<div id="mag_rich_ref_tab" class="main_content_center_left_one_cankaowenxian_tab">
+							<template m-for-array="{{referenceList}}" m-for-val="custom_ref" m-for-index="custom_index">
+							<table class="mag_rich_ref_table main_content_center_left_one_cankaowenxian_tab" id="mag_rich_ref_{{custom_ref.id}}" order-1-num="{{custom_index}}" order-2-num="{{custom_ref.nian}}" order-3-num="{{custom_ref.citedCount}}">
+								<tr style="border-bottom:1px dashed #d9d9d9;" class="mag_rich_ref_tr">
+									<td class="main_content_center_left_one_cankaowenxian_tab_td" valign="top" width="7%" nowrap>{{custom_ref.label}}</td>
+									<td width="93%">
+									<template m-for-array="{{custom_ref.citationList}}" m-for-val="custom_citation" m-for-index="custom_citationIndex">
+										<div class="new_full_rich_cankaowenxian_zuozhe">{{custom_citation.content}}</div>
+										<div m-if="{{custom_citation.doi}} && {{custom_citation.doi}}!=''" class="new_full_rich_cankaowenxian_zuozhe new_full_rich_cankaowenxian_lianjie"><a href="https://doi.org/{{custom_citation.doi}}" target="_blank">https://doi.org/{{custom_citation.doi}}</a></div>
+										<div m-if="{{custom_citation.pmid}} && {{custom_citation.pmid}}!=''" class="new_full_rich_cankaowenxian_zuozhe new_full_rich_cankaowenxian_lianjie"><a href="https://www.ncbi.nlm.nih.gov/pubmed/{{custom_citation.pmid}}">https://www.ncbi.nlm.nih.gov/pubmed/{{custom_citation.pmid}}</a></div>
+										<div m-if="{{custom_citation.url}} && {{custom_citation.url}}!=''" class="new_full_rich_cankaowenxian_zuozhe new_full_rich_cankaowenxian_lianjie"><a href="{{custom_citation.url}}">{{custom_citation.url}}</a></div>
+										<div m-if="({{custom_citationIndex}}=={{custom_ref.citationList}}.length-1) || ({{custom_citation.annotation}} && {{custom_citation.annotation}}!='')" class="mag_main_zhengwen_left_div_ckwx_table_benwenyiny mag_rich_ref_abstract">
+											
+											<a m-if="{{custom_ref.citedCount>0}} && {{custom_citationIndex}}=={{custom_ref.citationList}}.length-1" href="javascript:;" class="cas-main_ry_a" style="color: #5079b7;margin-right:15px;" onclick="piaofuRefCited(this,'{{custom_ref.id}}')">本文引用 [{{custom_ref.citedCount}}]</a>
+											<template m-if="{{custom_citationIndex}}=={{custom_ref.citationList}}.length-1" m-for-val="custom_bodyP_id" m-for-array="{{custom_ref.bodyP_ids}}">
+												<input type="hidden" name="mag_rich_ref_bodyP_ids_{{custom_ref.id}}" value="{{custom_bodyP_id}}">
+											</template>
+											
+											<span m-if="{{custom_citation.annotation}} && {{custom_citation.annotation}}!=''" style="color: #666;">摘要</span>
+											<i m-if="{{custom_citation.annotation}} && {{custom_citation.annotation}}!=''" class="glyphicon glyphicon-triangle-bottom biaotijiantoush biaotijiantoush1" onclick="ckwx_show_hide(this)"></i>
+										</div>
+										<div m-if="{{custom_citation.annotation}} && {{custom_citation.annotation}}!=''" class="mag_main_zhengwen_left_div_ckwx_table_ckwx_xiangqing">
+											{{custom_citation.annotation}}
+										</div>
+									</template>
+									</td>
+								</tr>
+							</table>
+							</template>
+							</div>
+						</div>
+						
+						<div m-if="!{{referenceList}} || {{referenceList.length}}==0" class="main_content_center_left_one_title zhengwem_title" style="border-bottom: 1px solid #ccc;">
+							<h3 class="cas_nav_daohang"><b>参考文献</b></h3>
+						</div>
+						<div m-if="!{{referenceList}} || {{referenceList.length}}==0" class="main_content_center_left_one_cankaowenxian">
+							{{article.reference}}
+						</div>
+						
+						<!-- 致谢 -->
+						<div m-if="{{ackList}} && {{ackList.length>0}}" class="main_content_center_left_zhengwen_bao_zw">
+							<template m-for-array="{{ackList}}" m-for-val="custom_ack">
+								<div m-if="{{custom_ack.title_cn}} && {{custom_ack.title_cn.length>0}}" class="main_content_center_left_one_title zhengwem_title yijibiaotidkk">
+									<h3 class="cas_nav_daohang mag_rich_body_title"><b>{{custom_ack.title_cn}}</b></h3>
+								</div>
+								{{custom_ack.content}}
+							</template>
+						</div>
+						
+						<!-- 基金 -->
+						<div m-if="{{fundList_cn}} && {{fundList_cn.length>0}}" class="main_content_center_left_zhengwen_bao_zw">
+							<div class="main_content_center_left_one_title zhengwem_title yijibiaotidkk">
+								<h3 class="cas_nav_daohang"><b>基金</b></h3>
+							</div>
+							<template m-for-array="{{fundList_cn}}" m-for-val="custom_fund">
+								<div class="main_content_center_left_zhengwen_bao_zhengwen nozuish">{{custom_fund}}</div>
+							</template>
+						</div>
+						
+						<!-- 版权声明 -->
+						<div m-if="({{article.copyrightStatement_cn}} && {{article.copyrightStatement_cn!=''}}) || ({{article.copyrightLicense_cn}} && {{article.copyrightLicense_cn!=''}})" class="main_content_center_left_zhengwen_bao_zw">
+							<div class="main_content_center_left_one_title zhengwem_title yijibiaotidkk">
+								<h3 class="cas_nav_daohang"><b>版权</b></h3>
+							</div>
+							<div m-if="{{article.copyrightStatement_cn}} && {{article.copyrightStatement_cn!=''}}" class="main_content_center_left_zhengwen_bao_zhengwen nozuish">{{article.copyrightStatement_cn}}</div>
+							<div m-if="{{article.copyrightLicense_cn}} && {{article.copyrightLicense_cn!=''}}" class="main_content_center_left_zhengwen_bao_zhengwen nozuish">{{article.copyrightLicense_cn}}</div>
+						</div>
+						
+					</div>
+				</div>
+			
+				
+				<div style="width:32%;float: left;margin-left: 3%;margin-top: 10px;">
+					<div id="showArticle_quickread" style="display:none;padding: 10px;margin-bottom: 15px;position: relative;z-index: 9;background: rgb(255, 255, 255);box-shadow: 1px 1px 8px #ccc;">
+						<img src="/develop/static/common/images/ai_quickread.gif" style="width:30px;height:30px;"> <strong>AI Summary </strong>
+						<span style="float:right;padding-right:15px;">
+							<sup style="margin-right:5px;">
+								<span id="showArticle_quickread_cn" style="cursor: pointer;font-size:12px;display:none;" onclick="showQuickread('CN');" class="circle-border">中</span>
+								<span id="showArticle_quickread_en" style="cursor: pointer;font-size:12px;display:none;" onclick="showQuickread('EN');" class="circle-border">Eng</span>
+							</sup>
+							<span style="font-size:25px;cursor: pointer;" onclick="closeQuickread();">×</span>
+						</span>
+						<div style="color:#cccccc;margin:10px;">
+							温馨提示：以下内容由AI自动生成，内容仅供参考。对于因使用本网站以下内容产生的相关后果，本网站不承担任何商业和法律责任。
+						</div>
+						<div id="showArticle_quickread_content_cn" style="margin:10px;"></div>
+					</div>
+				</div>
+				
+				<div class="main_content_center_right shoujihadhjsdj">
+				
+					<div style="text-align: center;overflow:hidden;">
+						<a id="AiSummaryBt" style="display:none;" href="javascript:void(0);" class="button-AI b-1 h-135" onclick="showQuickread();"><svg class="icon" style="vertical-align: middle; overflow: hidden;margin-top: -3px;" viewBox="0 0 1059 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#fff" width="30px" height="30px"><path d="M153.888993 231.917215l-24.082784 104.760113-44.793979-8.91063 29.140169-124.989652L535.360301 0l419.522107 202.777046L1059.642521 657.941675 770.649106 1023.759172H301.275635L11.318909 655.05174l17.82126-72.248353 44.553152 11.318908-11.078081 52.741299 264.91063 330.174976h423.857009l263.224835-332.342427-93.200376-412.778928-385.324553-185.196613z m337.158984 147.145814v111.503293h-111.74412v-111.503293z m-22.156161 22.39699h-67.190969v66.950141h66.950141z m267.318908 157.260583v111.503293h-111.503292V558.720602z m-22.156161 22.39699h-66.950142v66.950141h66.950142z m-111.984949 21.19285v178.453434h-178.212606v-178.453434z m-22.156162 156.056444v-133.900282h-133.659454v133.900282zM847.714017 289.956726v223.006585h-223.006585v-223.006585z m-22.156162 22.156162h-178.453434v178.453434h178.453434z m-423.857008 222.524929v111.503293h-111.503293V534.637817z m-22.39699 89.106303v-65.023518H313.076199v66.950141zM313.076199 401.460019v66.950141h-67.672624v-66.950141z m-22.156161 44.553151v-22.156162h-22.39699v22.156162z m-157.019756-66.950141v44.793979H89.347131v-44.793979z m-89.106303 66.950141v44.553152H0v-44.553152z m111.503293 22.39699v44.553151H111.503293v-44.553151z m111.503292 22.156162v68.15428H200.850423v-68.15428z m-22.396989 22.396989h-22.156162v21.674506h22.156162z"></path></svg> AI Summary</a>
+						<a id="AiMindMapBt" style="display:none;" href="javascript:void(0);" class="button-AI b-2 h-135" onclick="showOutline();"><svg class="icon" style="vertical-align: middle; overflow: hidden;margin-top: -3px;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#fff" width="30px" height="30px"><path d="M669.866667 729.6c-8.533333 0-14.933333 2.133333-21.333334 6.4L616.533333 704v-72.533333l85.333334-42.666667v-145.066667l-85.333334-42.666666v-74.666667l29.866667-29.866667c6.4 4.266667 12.8 6.4 21.333333 6.4 23.466667 0 42.666667-19.2 42.666667-42.666666s-19.2-42.666667-42.666667-42.666667-42.666667 19.2-42.666666 42.666667c0 8.533333 2.133333 14.933333 6.4 21.333333l-36.266667 36.266667v100.266666l85.333333 42.666667v117.333333l-85.333333 42.666667v98.133333l38.4 38.4c-4.266667 6.4-6.4 12.8-6.4 21.333334 0 23.466667 19.2 42.666667 42.666667 42.666666s42.666667-19.2 42.666666-42.666666c0-27.733333-19.2-49.066667-42.666666-49.066667zM667.733333 234.666667c12.8 0 21.333333 8.533333 21.333334 21.333333s-8.533333 21.333333-21.333334 21.333333-21.333333-8.533333-21.333333-21.333333 10.666667-21.333333 21.333333-21.333333z m2.133334 558.933333c-12.8 0-21.333333-8.533333-21.333334-21.333333s8.533333-21.333333 21.333334-21.333334 21.333333 8.533333 21.333333 21.333334-8.533333 21.333333-21.333333 21.333333z m-298.666667-57.6c-6.4-4.266667-12.8-6.4-21.333333-6.4-23.466667 0-42.666667 19.2-42.666667 42.666667s19.2 42.666667 42.666667 42.666666 42.666667-19.2 42.666666-42.666666c0-8.533333-2.133333-14.933333-6.4-21.333334l38.4-38.4v-98.133333l-85.333333-42.666667v-117.333333l85.333333-42.666667v-100.266666l-36.266666-36.266667c4.266667-6.4 6.4-14.933333 6.4-21.333333 0-23.466667-19.2-42.666667-42.666667-42.666667s-42.666667 19.2-42.666667 42.666667 19.2 42.666667 42.666667 42.666666c8.533333 0 14.933333-2.133333 21.333333-6.4l29.866667 29.866667v74.666667l-85.333333 42.666666v145.066667l85.333333 42.666667v72.533333l-32 38.4z m-21.333333 57.6c-12.8 0-21.333333-8.533333-21.333334-21.333333s8.533333-21.333333 21.333334-21.333334 21.333333 8.533333 21.333333 21.333334-8.533333 21.333333-21.333333 21.333333z m2.133333-516.266667c-12.8 0-21.333333-8.533333-21.333333-21.333333s8.533333-21.333333 21.333333-21.333333 21.333333 8.533333 21.333333 21.333333-10.666667 21.333333-21.333333 21.333333z m573.866667 55.466667l-113.066667-64c-6.4-4.266667-12.8-12.8-14.933333-19.2L768 160c-4.266667-17.066667-21.333333-34.133333-38.4-40.533333l-194.133333-70.4c-8.533333-6.4-17.066667-6.4-25.6-6.4-6.4 0-17.066667 0-27.733334 4.266666l-194.133333 70.4c-17.066667 6.4-34.133333 23.466667-40.533333 40.533334l-29.866667 87.466666c-2.133333 6.4-10.666667 14.933333-14.933333 19.2l-113.066667 64C76.8 343.466667 64 364.8 64 384v236.8c0 19.2 10.666667 40.533333 25.6 51.2l115.2 81.066667c6.4 4.266667 14.933333 14.933333 17.066667 21.333333l29.866666 87.466667c6.4 17.066667 23.466667 34.133333 40.533334 40.533333l194.133333 70.4c8.533333 8.533333 17.066667 8.533333 25.6 8.533333 6.4 0 17.066667 0 27.733333-4.266666l194.133334-70.4c17.066667-6.4 34.133333-23.466667 40.533333-40.533334l29.866667-87.466666c2.133333-6.4 10.666667-17.066667 17.066666-21.333334l115.2-81.066666c12.8-14.933333 23.466667-36.266667 23.466667-55.466667V384c-4.266667-19.2-17.066667-40.533333-34.133333-51.2zM488.533333 936.533333l-185.6-68.266666c-4.266667-2.133333-12.8-8.533333-12.8-14.933334l-29.866666-87.466666c-4.266667-14.933333-19.2-34.133333-32-42.666667l-115.2-81.066667c-2.133333-8.533333-6.4-17.066667-6.4-21.333333V512h66.133333c4.266667 19.2 21.333333 32 40.533333 32 23.466667 0 42.666667-19.2 42.666667-42.666667s-19.2-42.666667-42.666667-42.666666c-19.2 0-36.266667 12.8-40.533333 32H106.666667v-106.666667c0-4.266667 4.266667-10.666667 8.533333-12.8l113.066667-64c14.933333-8.533333 29.866667-25.6 34.133333-42.666667l29.866667-87.466666c0-6.4 6.4-14.933333 10.666666-17.066667l185.6-68.266667v844.8zM192 501.333333c0-12.8 8.533333-21.333333 21.333333-21.333333s21.333333 8.533333 21.333334 21.333333-8.533333 21.333333-21.333334 21.333334c-12.8 2.133333-21.333333-6.4-21.333333-21.333334z m721.066667-10.666666h-66.133334c-4.266667-19.2-21.333333-32-40.533333-32-23.466667 0-42.666667 19.2-42.666667 42.666666s19.2 42.666667 42.666667 42.666667c19.2 0 36.266667-12.8 40.533333-32h66.133334v108.8c0 4.266667-4.266667 12.8-8.533334 17.066667L789.333333 721.066667c-12.8 8.533333-27.733333 27.733333-32 42.666666l-29.866666 87.466667c-2.133333 4.266667-8.533333 12.8-12.8 14.933333l-185.6 68.266667V89.6l185.6 68.266667c4.266667 2.133333 12.8 8.533333 12.8 14.933333l29.866666 87.466667c6.4 17.066667 19.2 34.133333 34.133334 42.666666l113.066666 64c4.266667 2.133333 8.533333 8.533333 8.533334 12.8V490.666667z m-85.333334 10.666666c0 12.8-8.533333 21.333333-21.333333 21.333334s-21.333333-8.533333-21.333333-21.333334 8.533333-21.333333 21.333333-21.333333 21.333333 8.533333 21.333333 21.333333z"></path></svg> AI Mindmap</a>
+					</div>
+				
+
+				<!-- 分享 -->
+				
+					
+					<div  class="main_content_center_right_pdf">
+						<img src="/develop/static/common/images/pdf.png" class="main_content_center_right_pdf_img">
+						<b class="main_content_center_right_pdf_b">
+							PDF(1463 KB) 
+						</b>
+						<i class="glyphicon glyphicon-save main_content_center_right_pdf_i" onclick="lsdy1('PDF',726)"></i>
+					</div>
+					
+					
+					<!-- 补充材料 -->
+					<div id="showArticle_suppls"></div>
+					
+					<!-- 专题 -->
+					<div id="showArticle_subjects"></div>
+					
+					<div class="main_content_center_right_duoweidu" >
+						<div class="main_content_center_right_duoweidu_div">
+							<p class="main_content_center_right_duoweidu_div_shu" style="height: 26px;"><span mag-component-type="articleAccessesCount" mag-articleId="726"></span></p>
+							<p class="main_content_center_right_duoweidu_div_shu_shuo">Accesses</p>
+						</div>
+						<div class="main_content_center_right_duoweidu_div">
+							<p class="main_content_center_right_duoweidu_div_shu" style="height: 26px;"><span mag-component-type="articleCitedCount" mag-articleId="726"></span></p>
+							<p class="main_content_center_right_duoweidu_div_shu_shuo">Citation</p>
+						</div>
+						<a id="altmetric-a" target="_blank" style="display:none;">
+						<div class="main_content_center_right_duoweidu_div">
+							<p class="main_content_center_right_duoweidu_div_shu" style="height: 26px;"><span id="altmetric-score"></span></p>
+							<p class="main_content_center_right_duoweidu_div_shu_shuo">Altmetric</p>
+						</div>
+						</a>
+						<a href="javascript:;" onclick="showMetrics()">
+							<div class="main_content_center_right_duoweidu_div">
+								<p class="main_content_center_right_duoweidu_div_shu">
+									<img src="/develop/static/common/images/juxing.png">
+								</p>
+								<p class="main_content_center_right_duoweidu_div_shu_shuo">Detail</p>
+							</div>
+						</a>
+					</div>
+					<div class="huoquoffset"></div>
+					<div class="main_content_center_right_div_tab" id="huoqudndkk">
+						<div class="main_content_center_right_div_tab_top">
+							<div class="main_content_center_right_div_tab_top_div" style="background: #fff;border-top: 2px solid #0d6797;color: #0d6797;"  onclick="zuihoutab(this,'#autoMenu')">
+								段落导航
+							</div>
+							<div class="main_content_center_right_div_tab_top_div"  onclick="loadRelatedArticles();zuihoutab(this,'#relatedArticles');">
+								相关文章
+							</div>
+						</div>
+						<div class="main_content_center_right_div_tab_con"  id="autoMenu">
+							
+						</div>
+						<div class="main_content_center_right_div_tab_con" style="display: none;" id="relatedArticles">
+							<div id="relatedArticles-content"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="main_content_bottom">
+			
+
+
+<footer class="footer">
+<div class="container">
+	<div class="row">
+			<div class="footer-info">
+				<p>
+				<a href="https://beian.miit.gov.cn" target="_blank">苏ICP备10211333号-1</a><br>	                  网站版权所有 &copy; 《指挥控制与仿真》编辑部<br>
+					地址：江苏省连云港市圣湖路18号　<br class="visible-xs">邮编：222061<br>					电话：0518-85823166　<br class="visible-xs">传真：0518-85823716　<br class="visible-xs">E-mail：info716@vip.163.com<br>					本系统由<a href="https://www.magtech.com.cn/" target="_blank">北京玛格泰克科技发展有限公司</a>设计开发
+
+				</p>
+			</div>
+
+	</div>
+</div>
+</footer>
+<!--返回顶部-->
+<div class="top_web" id="backtop" style="display:block;"> <span class="glyphicon glyphicon-menu-up"></span></div>
+<!--返回顶部end--> 
+
+		</div>
+		<div class="new_full_rich_motaikuang" onclick="guanbiann();"></div>
+		<div class="new_full_rich_model">
+			<i class="glyphicon glyphicon-remove-circle full_guanbi" onclick="guanbiann();"></i>
+			<p class="cas_biaotitupiana">
+				<span class="yige"></span>/<span class="zongdea"></span>	
+			</p>
+			<div class="cas_imgaesa">
+				<table class="cas_haoshi">
+					<tbody>
+						<tr>
+							<td onclick="shang();" class="zuo" width="5%">
+								〈
+							</td>
+							<td class="zhong">
+								<img src="" class="tp">
+							</td>
+							<td onclick="xia();" class="you" width="5%">
+									〉
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="neirong">
+				<p class="cas_model_shuoming"></p>
+				<p class="cas_model_shuoming"></p>
+			</div>
+		</div>
+		<div class="newefunrich_right">
+			<div class="newefunrich_right_right_top" title="回到顶部" onclick="fanhuidingbu();" onmouseover="shu_fanhuidinfgbu(this)" onmouseout="u_shu_fanhuidinfgbu(this);" style="font-size: 14px; line-height: 40px;"><i class="glyphicon glyphicon-arrow-up"></i></div>
+			<div class="newefunrich_right_right_top" title="折叠右侧" onclick="zhedieyouce();" onmouseover="shu_zedieyouce(this)" onmouseout="u_shu_zedieyouce(this);" style="font-size: 14px; line-height: 40px;"><i class="glyphicon glyphicon-transfer"></i></div>
+		</div>
+		<script src="https://static.contrimetric.com/widget_online/1935235321614594464/1935235368180161269/contrimetric_widget.min.js" defer></script>
+	</body>
+	
+</html>

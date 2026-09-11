@@ -1,0 +1,2622 @@
+文章编号 ： 1003 - 0530 （ 2025 ） 04 - 0668 - 15
+第  41  卷  第  4  期
+2025  年  4  月
+信 号 处 理
+Journal of Signal Processing
+Vol .  41  No .  4
+Apr .  2025
+面向未知定向辐射源组合定位的无人机群
+优化部署
+赵倩倩
+1 ， 2
+ 熊 刚
+1 ， 2
+ 王李军
+2 ， 3
+ 尤明懿
+* 2 ， 3
+（ 1 .  上海交通大学感知科学与工程学院 ， 上海  200240 ； 2 .  中国电子科技集团公司第三十六研究所 ， 浙江嘉兴  314001 ；
+3 .  电磁空间安全全国重点实验室 ， 浙江嘉兴  314001 ）
+摘  要 ： 未来的无人机集群技术趋势是通过部署大量低成本无人机 ， 依靠协同感知 、 信息共享和分工协调来完成
+各种复杂任务 。 这些集群具备高度的智能和自主性 ， 已经逐渐成为无人机集群技术的未来发展方向 。 高精度定位
+技术在维持集群稳定 、 避免相互碰撞和实现目标引导方面发挥着至关重要的作用 。 其中 ， 无人机群利用物联网技
+术结合先进的定位算法 ， 使得无人机群能够在空中实现精准的定位和相互配合 ， 但与此同时 ， 产生了复杂环境下的
+联合无人机部署和资源分配问题 （ joint UA V deployment and resource allocation ，  JUDRA ） 。 本文针对优化 JUDRA 算法
+从而提高无人机群定位精度的问题 ， 提出了适应性更强的 TDOA+AOA 联合定位体制 、 无人机群之间通信弱约束等
+更贴近实际的应用场景 。 通过将复杂的无人机群资源优化及部署问题简化为带有约束条件的非凸非凹 min-max 优
+化问题 ， 再拆分为主从问题 ， 对主问题采用改进的吉布斯采样算法 ， 对从问题采用粒子滤波算法 。 本文提出的方法
+可以有效地处理多个变量之间的复杂关系 ， 在不同层次上实现优化 。 为了验证提出方法的有效性和实用性 ， 我们
+针对不同的定位体制 ， 无人机之间通信强弱约束 ， 通过实验验证本文所提出方法在定位模型和约束条件对定位性
+能的有效性 。 同时 ， 通过考虑不同的无人机群数量和目标不确定半径 ， 进一步验证算法鲁棒性 ， 表明该方法在实际
+应用中具有广泛的适用性和可靠性 。
+关键词 ： 资源优化 ； 无人机协同定位 ； 天线增益 ； 到达时间差与到达角联合定位方法 ； 非凸非凹 min-max 优化
+问题
+中图分类号 ： TN 92    文献标识码 ： A   DOI ： 10 . 12466 /xhcl . 2025 . 04 . 008
+引用格式 ： 赵倩倩 ,  熊刚 ,  王李军 ,  等 .  面向未知定向辐射源组合定位的无人机群优化部署 [ J ].  信号处理 ,  2025 ,  41
+( 4 ):  668 - 682 .  DOI :  10 . 12466 /xhcl . 2025 . 04 . 008 .
+Reference format :  ZHAO Qianqian ,  XIONG Gang ,  WANG Lijun ,  et al .  Optimization and deployment of an unmanned 
+aerial vehicle swarm for unknown directional radiation source combination positioning [ J ].  Journal of Signal Processing ,   
+2025 ,  41 ( 4 ):  668 - 682 .  DOI :  10 . 12466 /xhcl . 2025 . 04 . 008 .
+Optimization and Deployment of an Unmanned Aerial Vehicle Swarm 
+for Unknown Directional Radiation Source Combination Positioning
+ZHAO Qianqian
+1 ， 2
+ XIONG  Gang
+1 ， 2
+ WANG Lijun
+2 ， 3
+ YOU Mingyi
+* 2 ， 3
+（ 1 .  School of Sensing Science and Engineering ，  Shanghai Jiaotong University ，  Shanghai 200240 ，  China ；  
+2 .  No . 36  Research Institute of China Electronics Technology Group Corporation ，  Jiaxing ，  Zhejiang 314001 ，  China ；  
+3 .  National Key Laboratory of Electromagnetic Space Security ，  Jiaxing ，  Zhejiang 314001 ，  China ）
+收稿日期 ： 2024 - 06 - 12 ； 修回日期 ： 2024 - 09 - 14
+* 通信作者 ： 尤明懿    youmingyi@ 126 . com       *Corresponding Author ： YOU Mingyi ，  youmingyi@ 126 . com
+基金项目 ： 国家自然科学基金重点项目 （ U 20 B 2038 ， 62231010 ， U 21 B 2001 ） ； 国家自然科学基金面上项目 （ 61971278 ）
+Foundation Items ： The State Key Program of National Natural Science Foundation of China （ U 20 B 2038 ，  62231010 ，  U 21 B 2001 ） ；  The 
+National Natural Science Foundation of China （ 61971278 ）
+第  4  期 赵倩倩  等 ：  面向未知定向辐射源组合定位的无人机群优化部署
+Abstract :  The future trend of unmanned aerial vehicle （ UA V ）  swarm technology involves deploying a large number of low-
+cost UA Vs to accomplish various complex tasks through collaborative sensing ，  information sharing ，  and a coordinated divi ‐
+sion of labor .  These swarms possessed high intelligence and autonomy ，  and they gradually emerged as the future direction of 
+UA V swarm technology .  High-precision positioning technology played a crucial role in the maintenance of swarm stability ，  
+avoidance of collisions ，  and achievement of target guidance .  Among these technologies ，  UA V swarms utilized IoT technol ‐
+ogy combined with advanced positioning algorithms to achieve precise positioning and coordination in the air .  However ，  this 
+also led to the emergence of complex joint UA V deployment and resource allocation problems （ JUDRA ） .  Hence ，  this study 
+addressed the problem of optimizing UA V swarm positioning by proposing a more adaptable TDOA+AOA joint positioning 
+framework as well as weak communication constraints between UA V swarms that were more closely aligned with practical ap ‐
+plication scenarios .  By simplifying the complex UA V swarm resource optimization and deployment problem into a non-
+convex ，  non-concave min-max optimization problem with constraints and then decomposing it into master-slave problems ，  
+we used an improved Gibbs sampling algorithm for the master problem and a particle filtering algorithm for the slave prob ‐
+lem .  The proposed method effectively dealt with the complex relationships between multiple variables and achieved optimiza ‐
+tion at different levels .  To validate the effectiveness and practicality of the proposed method ，  we experimentally verified its ef ‐
+fectiveness in positioning performance under different positioning frameworks and communication constraints between UA Vs .  
+Moreover ，  by considering different numbers of UA V swarms and target uncertainty radii ，  we further verified the robustness 
+of the algorithm ，  thereby demonstrating its wide applicability and reliability in practical use .
+Key words :  resource optimization ； UAV collaborative positioning ； antenna gain ； time difference of arrival and angle of 
+arrival joint positioning ； non-convex ，  non-concave min-max optimization problems
+1 　引言
+在数字技术的迅速发展中 ， 移动通信技术已成
+为业界瞩目的焦点 。 通过更高的带宽和更快的响应
+速度 ， 促进物联网 （ Internet of Things ，  IoT ） 的发展 ， 实
+现数十亿个设备的连接 ， 并支持大规模数据传输和
+实时通信 。 物联网技术可以实现无人机之间的实时
+通信和数据共享 ， 使得无人机能够协同工作 ， 共同完
+成复杂的任务 。 无人机作为一种灵活 、 高效的航空
+工具 ， 与物联网的结合为各行各业带来了无限的可
+能性 。 例如 ， 多个无人机可以共同合作 ， 更灵活地部
+署到偏远地区 ， 通过高空视角和先进地感知技术 ， 对
+目标进行全方位地感知和监测 ， 不仅可以应用在灾
+害应急救援 、 边境监控与安全 、 搜寻救援与失踪人员
+找寻 ， 农业监测与管理等领域 ， 还可以在各种挑战性
+环境下发挥重要作用 。 因此 ， 在无人机群协同感知
+定位中 ， 如何对资源优化实现更高的定位精度 ， 是一
+个亟须解决的关键问题 。
+现有关于定位的无人机群资源优化问题中 ，
+文献 ［ 1 ］ 提出了一种基于多无人机协同作业的目标定
+位方案 ， 通过最小化资源利用和最大化目标定位准确
+性来实现资源的优化分配 ， 研究结果表明 ， 采用多无
+人机协同作业可以显著提高目标定位的效果 ， 并减少
+资源浪费 。 文献 ［ 2 ］ 提出了一种基于深度学习和无人
+机协同定位的方法 ， 用于实现复杂环境下的目标定
+位 。 通过在无人机上搭载深度学习模型 ， 结合多个无
+人机的数据 ， 可以实现对目标的高精度定位 。 研究结
+果表明 ， 该方法在目标定位准确性和资源利用方面具
+有显著优势 。 文献 ［ 3 ］ 提出了一种基于无人机网络的
+分布式目标定位算法 ， 通过无人机之间的通信和协
+作 ， 实现对目标的高精度定位 。 文献 ［ 4 ］ 探讨了无人
+机在城市环境下的目标定位资源优化问题 ， 提出了一
+种基于遗传算法的优化方法 。 目前针对定位的无人
+机群资源优化问题 ， 已存在传统解决方法和基于深度
+学习的方法 。 尽管如此 ， 它们都存在一个共同的问
+题 ， 即对场景的简化程度不足以满足实际应用的需
+求 。 传统方法可能忽略了现实世界中的复杂环境因
+素 ， 而深度学习方法则可能受限于数据样本的质量和
+多样性 。 因此 ， 有必要对现有方法进行进一步的改
+进 ， 以更好地适应实际应用场景并提高解决问题的准
+确性和鲁棒性 。 文献 ［ 5 ］ 通过引入最大可行角和最优
+分离角来建立等效的和更直观的约束 ， 讨论了基于到
+达角度定位 （ Angle of Arrival ，  AOA ） 定位网络无人
+机的部署位置对于提高定位精度的影响 。 文献 ［ 6 ］ 针
+对固定辐射源的定位问题 ， 提出了一种基于无人机平
+台和定向天线的到达时间差定位 （ Time Difference of 
+Arrival ，  TDOA ） 和到达频率差定位 （ Frequency Dif ‐
+ference of Arrival ，  FDOA ） 相结合的协同定位方法 ，
+有效提高了定位效率 ， 减小了定位点误差 。 当前研究
+中 ， 无人机群定位体制多是单独采用 TDOA 或者
+AOA 定位方式 ， 单一的定位方式 ， 可能会受到地形 、
+信号遮挡等因素的影响 ， 特别是在复杂的环境中 ，
+669
+信 号 处 理 第  41  卷
+单一定位方式的可靠性和稳定性有限 ， 而且无法充分
+利用多源信息 ， 限制定位系统的性能和精度 。 而
+文献 ［ 6 ］ 提出的组合定位体制为本文提供了新思路 ，
+采用组合定位体制 ， 可以弥补单一定位方法在定位中
+的不足 ， 提高适应性 。 文献 ［ 7 ］ 在针对多无人机目标
+识别系统问题中 ， 将系统资源分配建模为考虑无人机
+空间配置 、 发射功率和频带分配的约束多目标优化问
+题 （ Multi-objective optimization ，  MOP ） ， 采用多目标粒
+子群优化 （ Multi-objective particle swarm optimization ，  
+MOPSO ） 方法进行求解 ， 在兼顾观测角度 、 分辨率和
+图像质量多样性的前提下 ， 获得满意的成像性能 。
+文献 ［ 8 ］ 无人机辅助地面节点定位与通信集成框架
+中 ， 引入天线方位角对天线增益的影响 ， 在定位方面
+获得约 50 % 的性能提升 。 对于目标的天线增益 ， 当前
+研究多将其理想为对所有方向天线增益相同的情况 ，
+是不符合实际情况的 ， 在实际应用中导致误差累积加
+剧 ， 系统性能下降 ， 无法适应复杂环境 。 而在这两篇
+文献中 ， 均考虑天线方位角对定位模型的影响 ， 受此
+启发 ， 本文将天线方位角加入系统模型的考量中 。
+综上所述 ， 在本文针对无人机群定位资源优化
+问题所存在的不足 ， 提出三点改进 ： （ 1 ） 采用 TDOA+
+AOA 联合定位的定位体制 ， 增强定位模型的灵活性
+和鲁棒性 ； （ 2 ） 建立了考虑目标天线增益的定位系统
+模型 ， 使得模型更加符合实际场景 ， 提高系统的实用
+性 ； （ 3 ） 提出了无人机群之间通信距离弱约束 ， 增强
+无人机群的灵活性 ， 扩大了活动范围 。
+2 　系统建模
+2 . 1 　系统模型
+如图 1 所示 ， M 架无人机群对目标进行感知定
+位功能 ， 通过接收目标发出的信号对其进行无源定
+位 。 各无人机均装备一个各向同性均匀圆阵
+［ 9 ］
+（ Uni ‐
+form  Circular Array ，  UCA ） ， 将无人机群部署于同一
+合适避障高度 H 。 在无人机群接收目标信号时 ， 采
+用联合定位的方式 ， 考虑到目标天线方向性导致的
+信号强度非均匀分布 、 TDOA 、 AOA 带来的定位误
+差 ， 以及目标位置不确定性引起的定位误差 。
+本文考虑在三维坐标系中 ， 假设待定位目标的
+位置为 q
+t
+= [ ]x
+t
+ y
+t
+ 0
+T
+为中心 ， 半径为 ∆ q
+t
+的不确定
+区域 。 同时假定 Q  [ q
+1
+ q
+2
+ …  q
+m ] ϵ R
+3 ´ M
+为无人机
+群的位置集合 ， 其中第 m 个无人机的位置为 q
+m
+=
+[ ]x
+m
+ y
+m
+ H
+T
+。 为避免目标发现无人机群的情况 ， 规
+定了无人机群可飞行的安全区域 ， 保证无人机飞行
+的安全性和隐蔽性 。
+2 . 2 　联合定位方法
+TDOA
+［ 10 ］
+定位算法的原理是辐射源信号到达
+M ( M ≥ 3 ) 个空间分开的观测站之间存在着 M ( M -
+1 ) / 2 组时间差 ， 每组时间差可以绘制一条经过辐射
+源位置的双曲线 ， M ( M - 1 ) / 2 条时差线的交点就是
+辐射源的计算位置 。 采用的观测站越多 ， 则形成多
+组时差线 ， 定位精度将更高 。 AOA
+［ 11 ］
+定位算法是一
+种典型的基于测距的定位算法 ， 通过某些硬件设备
+感知发射节点信号的到达方向 ， 计算接收节点和锚
+节点之间的相对方位或角度 ， 随后再利用三角测量
+法或其他方式计算出未知节点的位置 。 AOA 定位
+算法需要 2 个及以上的接收端参与定位 。
+基于图 2 多无人机的 TDOA 简化二维定位场景
+为 例 。 假 设 有 无 人 机 群 坐 标 为 q
+1
+= [ x
+1
+ y
+1
+]
+T
+， q
+2
+=
+[ x
+2
+ y
+2
+]
+T
+， ⋯ ， q
+M
+= [ x
+M
+ y
+M
+]
+T
+对 某 固 定 的 目 标 辐 射 源
+q
+t
+= [ x
+t
+ y
+t
+]
+T
+进行观测 。 第 m 个无人机的位置坐标为
+q
+m
+= [ x
+m
+ y
+m
+]
+T
+， r
+m
+是辐射源到无人机 m 的距离 ，
+图 1 　多无人机协同定位场景图
+Fig . 1 　 Multi-UAV collaborative localization scene map
+图 2 　 TDOA+AOA 联合定位示意图
+Fig . 2 　 Schematic of TDOA+AOA joint positioning
+670
+第  4  期 赵倩倩  等 ：  面向未知定向辐射源组合定位的无人机群优化部署
+r
+m
+=  q
+t
+- q
+m
+= ( )q
+t
+- q
+m
+T
+( )q
+t
+- q
+m
+（ 1 ）
+其中 ， m = 1  ⋯  M 。 设无人机 1 与无人机 m 接收辐
+射源信号的时间延迟为 τ
+m 1
+， 则存在以下关系式 ：
+τ
+m 1
+=
+1
+c
+r
+m 1
+=
+1
+c
+( r
+m
+- r
+1 ) ， m = 2  …  M （ 2 ）
+其中 ， c 为光速 ， r
+m 1
+为无人机 m 与无人机 1 的距离 。
+以图 2 描绘基于多无人机的 AOA 简化二维定位
+场景 。 该无人机测得信号的到达角度为 ϕ
+m
+。 到达角
+与无人机群坐标位置以及目标的坐标位置关系为 ：
+ϕ
+m
+= t a n
+- 1
+ 
+y
+t
+- y
+1
+x
+t
+- x
+1
+ m = 1  ⋯  M （ 3 ）
+所以 M 架无人机对目标进行 TDOA+AOA 联合
+定位的观测方程组可表示为 ：
+é
+ë
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+êê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ù
+û
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+úú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+~
+τ
+2 1
+
+~
+τ
+M 1
+~
+ϕ
+1
+
+~
+ϕ
+M
+=
+é
+ë
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ù
+û
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú( )x
+2
+- x
+t
+2
++ ( )y
+2
+- y
+t
+2
+- ( )x
+1
+- x
+t
+2
++ ( )y
+1
+- y
+t
+2
+c
+
+( )x
+M
+- x
+t
+2
++ ( )y
+M
+- y
+t
+2
+- ( )x
+1
+- x
+t
+2
++ ( )y
+1
+- y
+t
+2
+c
+t a n
+- 1
+ 
+y
+t
+- y
+1
+x
+t
+- x
+1
+
+t a n
+- 1
+ 
+y
+t
+- y
+M
+x
+t
+- x
+M
++
+é
+ë
+ê
+ê
+ê
+ê
+ê
+ê
+êê
+ê
+ê
+ê
+ê
+ê
+ê
+ù
+û
+ú
+ú
+ú
+ú
+ú
+ú
+úú
+ú
+ú
+ú
+ú
+ú
+ú
+e
+τ 2
+
+e
+τ M
+e
+ϕ 1
+
+e
+ϕ M
+（ 4 ）
+即为 ：
+z = h ( q
+t
+ q
+0 ) + ξ （ 5 ）
+其中 ， 观测量 z = [
+~
+τ
+2 1
+ ⋯ 
+~
+τ
+M 1
+
+~
+ϕ
+1
+ ⋯
+~
+ ϕ
+M ]
+T
+（ 观测量也
+可以是 z
+τ
+= [
+~
+τ
+1 2
+⋯ 
+~
+τ
+M 2
+
+~
+ϕ
+1
+ ⋯
+~
+ ϕ
+M ]
+T
+等其他组合 ） ， 无
+人 机 群 的 位 置 为 q
+0
+= [ q
+1
+   q
+M ]
+T
+， ξ = [ e
+τ 2
+   e
+τ M
+  
+]e
+ϕ 1
+   e
+ϕ M
+T
+为观测噪声 ， 假设 E ( ξ ) = 0 ， 协方差矩阵
+为 ∑
+ξ
+= E ( )ξ ξ
+T
+。 e
+τ m
+为 无 人 机 m 的 TDOA 测 量 误
+差 ， 其概率分布服从零均值高斯分布 e
+τ m
+~ N ( 0  σ
+2
+τ m ) ，
+e
+ϕ m
+为无人机 m 的 AOA 测量误差 ， 其概率服从零均
+值高斯分布 e
+ϕ m
+~ N ( 0  σ
+2
+ϕ m ) 。 所以 ξ 的协方差矩阵为
+R = d i a g [ σ
+2
+τ 2
+   σ
+2
+τ M
+ σ
+2
+ϕ 1
+ ⋯  σ
+2
+ϕ M ] 。 测 量 方 差 σ
+2
+τ m
+、 σ
+2
+ϕ m
+与无人机 m 和目标间的距离 、 信噪比有关 ， 关系如
+下引理所示 ：
+引理 1
+［ 12 ］
+ 采用互相关法对于不同的无人机间
+的信号进行时差测量 ， 针对本文的 TDOA 场景 ， 以
+第一个无人机作为参考站 ， 通过计算剩余无人机对
+无人机 1 的时差来计算目标的位置 。 对于常规信号
+如相位键移信号 （ Phase Shift Keying ，  PSK ） ， 当信噪
+比分别为 γ
+m ( m = 2  3  ⋯  M ) 和 γ
+1
+时 ， 对其进行匹配
+宽带滤波后时差测量误差的方差 σ
+2
+τ m
+约为 ：
+σ
+2
+τ m
+=
+0 . 3 0 2 5
+B
+3
+T γ
+τ m
+   m = 2  3  ⋯  M （ 6 ）
+其 中 ， B 为 通 信 系 统 的 带 宽 ， T 为 累 计 时 长 ， γ
+τ m
+=
+2 γ
+1
+γ
+m
+/ ( 1 + γ
+1
++ γ
+m
+) 。
+在计算不同无人机接收到信号的信噪比 γ
+i
+时 ，
+假定辐射源发射信号功率为 p
+t
+， 辐射源天线增益为
+G ( α
+m ) ， 无 人 机 群 中 各 无 人 机 的 接 收 天 线 增 益 为
+G
+r
+， 接收机所用波长 λ ， r
+m
+是辐射源到无人机 m 的距
+离 ， 每 架 无 人 机 m 接 收 到 辐 射 源 辐 射 的 功
+率 P
+r m
+［ 13 ］
+为 ：
+P
+r m
+=
+p
+t
+G ( )α
+m
+G
+r
+λ
+2
+( )4 π r
+m
+2
+   m = 2  3  ⋯  M （ 7 ）
+天线和接收机之间通信热噪声公式为 ：
+N = k T
+°
+B （ 8 ）
+其中 ， k 为玻尔兹曼常数 1 . 3 8 ´ 1 0
+- 2 3
+ J / K ， T
+°
+为系统的
+开尔文温度 ， B 为通信系统的带宽 （ Hz ） ， 则不同无
+人机接收信号的信噪比 γ
+m
+为 ：
+γ
+m
+=
+P
+r m
+N
+=
+p
+t
+G ( )α
+m
+G
+r
+λ
+2
+k T
+°
+B ( )4 π r
+m
+2
+= β G ( )α
+m
+1
+r
+2
+m
+
+m = 2  3    M （ 9 ）
+其中 ， β = p
+t
+G
+r
+λ
+2
+/ ( 4 π )
+2
+k T
+°
+B ， 信噪比与辐射源到无
+人机的距离平方成反比 。
+引理 2
+［ 11 ］
+ 采用最小二乘法估计多无人机对目
+标方位角的测量误差 ， 在基于 N 元均匀圆阵的多无
+人机利用两路时分测量中 ， 测量误差的方差 σ
+2
+ϕ m
+可
+表示如下 ：
+σ
+2
+ϕ m
+=
+σ
+2
+δ
+N
+é
+ë
+ê
+êê
+ê ù
+û
+ú
+úú
+ú
+( )
+2 π r
+λ
+s i n  θ
+2
+c o s
+- 2
+φ
+m
+     m = 1  2  ⋯  M   （ 10 ）
+其 中 ， φ
+i
+为 无 人 机 i 与 目 标 之 间 的 俯 仰 角 ， 通 过
+671
+信 号 处 理 第  41  卷
+计算 ：
+c o s
+- 2
+φ
+m
+=
+r
+2
+m
++ H
+2
+r
+2
+m
+， m = 1  2  ⋯  M （ 11 ）
+所以测量误差 σ
+2
+ϕ m
+表示为 ：
+σ
+2
+ϕ m
+= α
+r
+2
+m
++ H
+2
+r
+2
+m
+， m = 1  2  ⋯  M （ 12 ）
+其中 ， α = σ
+2
+δ
+/ N [ ( 2 π r / λ ) s i n  θ ]
+2
+， σ
+δ
+为均匀圆阵接收信
+号的相位误差 ， r 为均匀圆阵的半径 ， θ 为均匀圆阵天
+线的波束宽度 ， 因为本文不考虑无人机接收天线的
+波束宽度所以取值 90 ° ， λ 为接收信号的波长 。
+2 . 3 　目标天线增益不确定性及位置不确定性
+考虑目标天线的方向图
+［ 11 ］
+近似为高斯型 ， 即 ：
+G ( α
+m ) = G · e x p
+(
+-
+α
+2
+b
+2
+)
+，   m = 2  3  ⋯  M （ 13 ）
+G ( α
+m ) 为来波方向与天线电轴指向夹角为 α
+m
+时
+的接收信号幅度 ， G 是天线增益 ， b 是天线波束宽度 。
+无人机群与目标辐射源天线电轴的夹角为 ：
+é
+ë
+ê
+ê
+ê
+êê
+ê
+ê
+ê
+ù
+û
+ú
+ú
+ú
+úú
+ú
+ú
+ú
+α
+1
+α
+2
+
+α
+M
+=
+é
+ë
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+êê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ù
+û
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+úú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+úa r c c o s
+( )
+      
+q
+1
+- t a r · a
+ 
+      
+q
+1
+- t a r
+a r c c o s
+( )
+      
+q
+2
+- t a r · a
+ 
+      
+q
+2
+- t a r
+
+a r c c o s
+( )
+       
+q
+M
+- t a r · a
+ 
+       
+q
+M
+- t a r
+（ 14 ）
+其 中 ， α
+m
+为 无 人 机 m 与 目 标 天 线 电 轴 的 夹 角 ，
+q
+1
+ q
+2
+ ⋯ ， q
+M
+为各个无人机的位置坐标 ， t a r 为目标的
+位置坐标 ， a 为目标天线电轴方向单位矢量 。 在计
+算目标对各个无人机的信号幅度时 ， 通过无人机群
+的坐标与目标天线电轴方向来计算 。
+在目标定位中 ， 首先基于某些先前观测或推断
+得出先验的目标位置信息 ， 但由于传感器误差 、 环
+境变化 、 目标动态性等因素 ， 导致目标先验信息的
+不确定性 。 本文将这种不确定性考虑进系统模型
+中 ， 通过仿真不同的不确定范围来模拟环境的变
+化 。 然而 ， 无人系统可以通过相机或合成孔径雷达
+估计目标的大致位置 。 在此 ， 采用边界误差模型来
+衡量目标的实际位置和预估位置之间的关系 ， 具体
+如下所示 ：
+q
+t
+=
+~
+q
+t
++ ∆ q
+t
+（ 15 ）
+A
+t
+ { ∆ q
+t
+= [ ∆ x
+t
+ ∆ y
+t
+  0 ]
+T
+Î R
+3 ´ 1
+：  ∆ q
+t
+2
+≤ ε
+2
+t }    （ 16 ）
+其中 ， q
+t
+表示目标的实际位置 ；
+~
+q
+t
+表示目标估计位置 ；
+∆ q
+t
+表示估计误差 ， 其误差区域为 A
+t
+、 误差半径为 ε
+t
+。
+3 　无人机群优化部署问题建模与分析
+3 . 1 　定位误差模型构建
+克拉美罗下界 （ Cramér-Rao Lower Bound ， CRLB ）
+是条件费舍尔信息矩阵 （ Conditional Fisher Informa ‐
+tion Matrix ） 的下界
+［ 14 ］
+， 用于衡量估计参数精度的理
+论下限 ， 也被称为最小方差界 。 对于定位系统中给
+定的概率分布 ， 如果有多个未知参数需要估计 ，
+CRLB 的计算给出了这些参数的精确度下限 ， 即在
+此定位系统下任何一种无偏估计方法中 ， 方差不低
+于 CRLB ， 也 就 是 此 定 位 系 统 的 最 优 定 位 精 度 。
+CRLB 的计算通常需要先求出条件费舍尔信息矩
+阵 ， 然后取其逆矩阵 。
+引理 3
+［ 10 ］
+ 假设 z 是关于辐射源真实位置 q
+t
+的
+m 维测量矢量 ， 表示为 z = h ( q
+t ) + ξ ， z 的概率密度函
+数为 p ( z | q
+t ) ， 并且 ¶ l n [ p ( z | x ) ] / ¶ q
+T
+t
+和 ¶
+2
+l n [ p ( z | x ) ] /  
+¶ q
+t
+¶ q
+T
+t
+存在 ， ξ ~ N
+m ( 0  􀰑
+ξ ) ， 􀰑
+ξ
+> 0 ， 则关于未知参量 q
+t
+的 Fisher 信息矩阵 I ( q
+t ) 为 ：
+I ( q
+t ) =
+(
+¶ h
+¶ q
+T
+t
+)
+T
+􀰑
+- 1
+ξ
+¶ h
+¶ q
+T
+t
+（ 17 ）
+其中 ， 雅可比矩阵
+¶ h
+¶ q
+T
+t
+=
+é
+ë
+ê
+ê
+ê
+ê
+êê
+ê
+ê
+ê
+ê ù
+û
+ú
+ú
+ú
+ú
+úú
+ú
+ú
+ú
+ú¶ h
+1
+¶ x
+t
+¶ h
+2
+¶ x
+t
+¶ h
+1
+¶ y
+t
+¶ h
+2
+¶ y
+t
+   ⋯
+¶ h
+m
+¶ x
+t
+    ⋯
+¶ h
+m
+¶ y
+t
+T
+。
+根据公式 （ 4 ） 以及公式 （ 17 ） ， 计算本文定位系
+统对于辐射源定位的 Fisher 信息矩阵 。 经过计算与
+化简 ， 结果为 ：
+¶ h
+¶ q
+T
+t
+=
+é
+ë
+ù
+û
+A B
+C D
+（ 18 ）
+其 中 ， A =
+é
+ë
+ê
+êê
+ê 1
+c (
+x
+t
+- x
+1
+r
+1
+-
+x
+t
+- x
+2
+r
+2
+)
+ ⋯ 
+1
+c (
+x
+t
+- x
+1
+r
+1
+-
+x
+t
+- x
+M
+r
+M
+)
+ù
+û
+ú
+úú
+ú
+T
+， B =
+é
+ë
+ê
+êê
+ê 1
+c (
+y
+t
+- y
+1
+r
+1
+-
+y
+t
+- y
+2
+r
+2
+)
+ ⋯ 
+1
+c (
+y
+t
+- y
+1
+r
+1
+-
+y
+t
+- y
+M
+r
+M
+)
+ù
+û
+ú
+úú
+ú
+T
+ C =
+é
+ë
+ê
+êê
+ê ù
+û
+ú
+úú
+úy
+1
+- y
+t
+r
+2
+1
+ ⋯ 
+y
+M
+- y
+t
+r
+2
+M
+T
+ D =
+é
+ë
+ê
+êê
+ê x
+t
+- x
+1
+r
+2
+1
+ ⋯ 
+ù
+û
+ú
+úú
+úx
+t
+- x
+M
+r
+2
+1
+T
+。
+将 􀰑
+ξ
+化简为四部分 ，
+􀰑
+ξ
+=
+é
+ë
+ê
+êê
+ê ù
+û
+ú
+úú
+ú
+E 0
+0 F
+（ 19 ）
+672
+第  4  期 赵倩倩  等 ：  面向未知定向辐射源组合定位的无人机群优化部署
+其中 ， E =
+é
+ë
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê ù
+û
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+0 . 3 0 2 5
+B
+3
+T γ
+τ 2
+0 0
+0  0
+0 0
+0 . 3 0 2 5
+B
+3
+T γ
+τ M
+， F =
+é
+ë
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê
+ê ù
+û
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+ú
+α
+r
+2
+1
++ H
+2
+r
+2
+1
+0 0
+0  0
+0 0 α
+r
+2
+M
++ H
+2
+r
+2
+M
+， 则
+I ( )q
+t
+=
+é
+ë
+êêêê ù
+û
+úúúú
+A
+T
+C
+T
+B
+T
+D
+T
+é
+ë
+êêêê ù
+û
+úúúú
+E
+- 1
+0
+0 F
+- 1
+é
+ë
+êêêê ù
+û
+úúúú
+A B
+C D
+（ 20 ）
+经过计算和分析 ， I ( q
+t ) 的结果由四部分组成 ：
+I ( )q
+t
+=
+é
+ë
+ê
+êê
+ê ù
+û
+ú
+úú
+ú
+I
+1 1
+I
+1 2
+I
+2 1
+I
+2 2
+（ 21 ）
+其中 ，
+ì
+í
+î
+ï
+ï
+ï
+ïï
+ï
+ï
+ï
+ï
+ï
+ï
+ï
+ï
+ï
+ï
+ï
+ï
+ï
+I
+1 1
+= ∑
+m = 2
+M
+B
+3
+T γ
+τ m
+0 . 3 0 2 5 c
+2
+( )
+x
+t
+- x
+1
+r
+1
+-
+x
+t
+- x
+m
+r
+m
+2
++ ∑
+m = 1
+M
+( )y
+m
+- y
+t
+2
+α r
+2
+m ( )r
+2
+m
++ H
+2
+I
+1 2
+= I
+2 1
+= ∑
+m = 2
+M
+B
+3
+T γ
+τ m
+0 . 3 0 2 5 c
+2
+( )
+x
+t
+- x
+1
+r
+1
+-
+x
+t
+- x
+m
+r
+m
+( )
+y
+t
+- y
+1
+r
+1
+-
+y
+t
+- y
+m
+r
+m
++ ∑
+m = 1
+M
+( )x
+t
+- x
+m ( )y
+m
+- y
+t
+α r
+2
+m ( )r
+2
+m
++ H
+2
+I
+2 2
+= ∑
+m = 2
+M
+B
+3
+T γ
+τ m
+0 . 3 0 2 5 c
+2
+( )
+y
+t
+- y
+1
+r
+1
+-
+y
+t
+- y
+m
+r
+m
+2
++ ∑
+m = 1
+M
+( )x
+t
+- x
+m
+2
+α r
+2
+m ( )r
+2
+m
++ H
+2
+  （ 22 ）
+定义 χ ( m ) =
+B
+3
+T γ
+τ m
+0 . 3 0 2 5 c
+2
+， η ( m ) =
+1
+α r
+2
+m ( )r
+2
+m
++ H
+2
+， G
+1 ( m ) =
+x
+t
+- x
+1
+r
+1
+-
+x
+t
+- x
+m
+r
+m
+， G
+2 ( m ) =
+y
+t
+- y
+1
+r
+1
+-
+y
+t
+- y
+m
+r
+m
+， G
+3 ( m ) =  
+y
+m
+- y
+t
+， G
+4 ( m ) = x
+t
+- x
+m
+。
+ì
+í
+î
+ï
+ï
+ï
+ï
+ï
+ï
+ï
+ï
+ï
+ï
+ï
+ïï
+ï
+ï
+ï
+I
+1 1
+= ∑
+m = 2
+M
+χ ( )m G
+1
+2
+( )m + ∑
+m = 1
+M
+η ( )m G
+3
+2
+( )m
+I
+1 2
+= I
+2 1
+= ∑
+m = 2
+M
+χ ( )m G
+1 ( )m G
+2 ( )m + ∑
+m = 1
+M
+η ( )m G
+3 ( )m G
+4 ( )m
+I
+2 2
+= ∑
+m = 2
+M
+χ ( )m G
+2
+2
+( )m + ∑
+m = 1
+M
+η ( )m G
+4
+2
+( )m
+（ 23 ）
+对应的 CRLB 计算如下 ：
+C R L B ( )q
+t
+= I
+- 1
+( )q
+t
+=
+1
+d e t ( )I ( )q
+t
+é
+ë
+ù
+û
+I
+2 2
+- I
+1 2
+- I
+2 1
+I
+1 1
+  （ 24 ）
+其中 ， d e t ( )I ( )q
+t
+= ∑
+m = 2
+M
+χ ( )m G
+1
+2
+( )m + ∑
+m = 1
+M
+η ( )m  
+G
+3
+2
+( )m + ∑
+m = 2
+M
+χ ( )m G
+2
+2
+( )m + ∑
+m = 1
+M
+η ( )m G
+4
+2
+( m ) -
+( ∑
+m = 2
+M
+χ ( m ) G
+1 ( )m G
+2 ( m ) + ∑
+m = 1
+M
+η ( )m G
+3 ( )m G
+4 ( )m
+)
+2
+。
+为了更加直观分析系统的定位性能 ， 计算出基
+于均匀圆阵的多无人机 TDOA+AOA 定位系统的均
+方 定 位 误 差 界 （ Squared Position Error Bound ，  
+SPEB ） 为 ：
+S P E B ( q
+t ) = t r ( C R L B ( q
+t ) ) =
+∑
+m = 2
+M
+χ ( )m G
+1
+2
+( )m + ∑
+m = 1
+M
+η ( )m G
+3
+2
+( )m +
+∑
+m = 2
+M
+χ ( )m G
+1
+2
+( )m + ∑
+m = 1
+M
+η ( )m G
+3 ( )m + ∑
+m = 2
+M
+χ ( )m G
+2
+2
+( )m +
+∑
+m = 2
+M
+χ ( )m G
+2
+2
+( )m + ∑
+m = 1
+M
+η ( )m G
+4
+2
+( )m
+∑
+m = 1
+M
+η ( )m G
+4
+2
+( )m -
+( )∑
+m = 2
+M
+χ ( )m G
+1 ( )m G
+3 ( )m + ∑
+m = 1
+M
+η ( )m G
+3 ( )m G
+4 ( )m
+2
+（ 25 ）
+3 . 2 　问题建模
+本文旨在研究复杂定位场景目标位置定位精
+度不高时 ， 如何通过设计无人机群部署位置来提高
+对目标的定位精度 。 具体来说 ， 本文研究问题是在
+满足无人机群的通信 、 安全条件的部署约束下 ， 通
+过优化机群的部署位置 Q （ 其中第 m 架无人机为
+q
+m
+） ， 从而最小化目标的测量结果 ， 即最差均方定位
+误差界 t r ( C R L B ( q
+t ) ) 。 该问题可建模如下 ：
+m i n
+Q
+ m a x
+q
+t
+ t r ( C R L B ( q
+t
+ Q ) ) （ 26 a ）
+ s . t .       q
+t
+Î A
+t
+（ 26 b ）
+q
+m
+Î D             " m （ 26 c ）
+673
+信 号 处 理 第  41  卷
+ q
+m
+-
+~
+q
+t
+2
+≥ S
+l
++ ε
+t
+           " m （ 26 d ）
+ q
+m
+-
+~
+q
+t
+2
+≤ S
+h
+- ε
+t
+          " m （ 26 e ）
+ q
+m
+- q
+j
+2
+≥ R
+l
+           " m ¹ j （ 26 f ）
+ q
+m
+- q
+j
+2
+≤ R
+h
+    " m $ j ¹ m （ 26 g ）
+其中 ， 式 ( 2 6 b ) 为无人机的部署区域约束 ， 所有无人
+机只能部署在同一区域 D 中 ； 为了有效收到辐射源
+目标的信号且不被感知 ， 公式 ( 2 6 d ) 和公式 ( 2 6 e ) 限
+制了无人机与目标不确定中心的最小距离 S
+l
+以及
+最大距离 S
+h
+； 公式 ( 2 6 f ) 表示不同无人机之间的碰
+撞约束 ； 公式 ( 2 6 g ) 保证了无人机群之间的有效通
+信 ， 对于每个无人机都要保证 R
+h
+距离内有一架无人
+机可以接收中转信号 。
+经过本文问题建模成待解决的数学模型后 ， 发现
+其为一种非线性 min-max 结构
+［ 15 ］
+， 且 tr（ CRLB （ q
+t
+， Q ） ）
+函数对变量 Q 非凸 ， 对变量 q
+t
+非凹 。 对于此种非凸
+非 凹 min-max 优 化 问 题 ， 并 没 有 一 个 通 用 的 方
+法
+［ 16 ］
+。 针对本文中提出的资源优化部署问题 ， 将其
+等价为两个子问题分别进行求解 。
+4 　算法设计
+为解决提出的非凸非凹 min-max 优化问题 ， 本
+文将问题分解为主问题和从问题 ， 多次迭代求解主
+问题后 ， 穿插一次从问题的解决以更新目标位置 ，
+使得定位模型更具有鲁棒性 。 在主问题中通过优
+化无人机群的部署位置 ， 从而最小化均方定位误差
+界目标函数式 （ 24 ） ； 在从问题中通过求解给定无人
+机群部署的不确定区域下的最大目标函数 ， 来更新
+目标位置 。 对主问题的优化选择吉布斯采样
+［ 17 ］
+， 对
+从问题的优化选择粒子滤波法
+［ 18 ］
+。
+主问题 ： 在从问题解决完更新目标位置 q
+t
+后 ，
+求解满足无人机群部署约束下 ， 最小化均方定位误
+差的机群位置 Q 。 即为 ：
+m i n
+Q
+ t r ( C R L B ( q
+t
+ Q ) ) （ 27 a ）
+s . t .       q
+i
+Î D     " m （ 27 b ）
+ q
+m
+-
+~
+q
+t
+2
+≥ S
+l
++ ε
+t
+        " m （ 27 c ）
+ q
+m
+-
+~
+q
+t
+2
+≤ S
+h
+- ε
+t
+       " m （ 27 d ）
+ q
+m
+- q
+j
+2
+≥ R
+l
+         " m ¹ j （ 27 e ）
+ q
+m
+- q
+j
+2
+≤ R
+h
+    " m $ j ¹ m （ 27 f ）
+主问题优化 ： 对于主问题 ， 无人机群可部署位
+置多 ， 若采用暴力搜索算法对所有可部署区域进行
+穷搜 ， 可获得该问题解 ， 但每一步穷搜均需对从问
+题求解 ， 且搜索空间巨大 ， 导致耗费的计算开销过
+于庞大 。 为解决问题 ， 本文采用吉布斯采样 ， 通过
+生成一系列样本来构成马尔可夫链 ， 通过随机采样
+不断更新模型及其在各条输入序列中出现的位置 ，
+优化目标函数 ， 当满足一定迭代终止条件或者达到
+最大迭代次数时得到最优部署策略 。 本文采用一
+种改进的吉布斯采样算法 ， 通过减少子迭代中单个
+无人机的搜索空间 ， 从而减小了算法的计算复杂
+度 。 具体而言 ， 该算法每次将其他无人机固定 ， 通
+过定义转移概率来依次交替更新单个无人机的部
+署 位 置 ， 从 原 先 的 整 个 空 间 T 在 部 署 约 束 满 足
+（ 27 b ） -（ 27 f ） 的条件下 ， 缩小至两个子空间 ， X
+l ( t ) 和
+Y
+l ( t ) 。 其中 ， X
+l ( t ) 空间 ， 包括无人机在当前位置及
+上 下 左 右 四 个 相 邻 位 置 ； Y
+l ( t ) 空 间 ， 包 括 了 在
+T   ∖ X
+l ( t ) 外随机产生的 τ  | T | 个位置 。 显然 ， X
+l ( t )
+空间的作用是在当前位置的邻域内快速搜索更优
+的位置 ， Y
+l ( t ) 空间的作用是在剩余空间内随机搜索
+以避免算法陷入局部最优 。 通过比较在指定空间
+位置的定位误差直至算法收敛 。 具体流程
+［ 19 ］
+如下 ：
+主问题收敛性分析 ： 在基于吉布斯采样的主问
+题优化算法中 ， 第三点 ， 通过与前一步的定位误差
+进行比较 ， 若是误差小于前一步 ， 才会更新 ， 故本算
+法可收敛 ； 但本算法只能算得相应最优解 ， 在最大
+迭代次数 N 中 ， 或误差下降小于设定阈值 ， 所以本
+算法可得到一定范围内的最优解 。
+从问题 ： 在无人机群的部署位置给定的条件
+下 ， 求解面对不确定区域下的此问题的最大均方定
+位误差 。 即为 ：
+m a x
+q
+t
+ t r ( C R L B ( q
+t
+ Q ) ) （ 28 a ）
+s . t .       q
+t
+Î A
+t
+（ 28 b ）
+其中 ， q
+t
+在不确定区域中 。 为方便主问题叙述 ， 将从
+问题的最优结果记为 g ( Q ) 。
+从问题优化 ： 对于从问题 ， 问题的观测空间是非
+线性的 ， 所要处理的问题是非线性以及非高斯分布的
+Algorithm 1   基于吉布斯采样的主问题式 ( 27 a ) ~ ( 27 f ) 优化
+  1 .  初始化无人机群的位置 Q ( t ) ， 令 t = 1 。 设置最大迭
+代次数 N 及迭代终止条件 ；
+  2 .  repeat
+  3 .  固定其他无人机 ， 依次在可选区域 X
+l ( t ) È Y
+l ( t ) 中计
+算当前部署最大均方定位误差 ， 轮流更新各无人机的位置 ：
+t r ( C R L B ( q
+t
+ Q ) ) ；
+  4 .  更新无人机群 Q ( t ) ；
+  5 .  until 达到最大迭代次数 N ， 或目标达到收敛条件 。
+674
+第  4  期 赵倩倩  等 ：  面向未知定向辐射源组合定位的无人机群优化部署
+情况 ， 针对这类问题 ， 利用粒子滤波算法 ， 通过一组随
+机采样的粒子来表示系统状态的后验分布 ， 并根据观
+测均方定位误差界来更新这些粒子的权重 ， 从而逼近
+系统的后验分布 ， 可以更灵活地处理这些不确定性 ，
+并提供对结果的较好估计 。 具体流程
+［ 19 ］
+如下 ：
+1 .  初 始 化 ： 在 预 测 空 间 内 随 机 选 取 sam ‐
+pling_number 个 粒 子 q
+i
+t
+， 并 分 配 权 重 w
+i
+：  w
+i
+=
+1 / s a m p l i n g _ n u m b e r ， 其中 i = 1  ⋯  s a m p l i n g _ n u m b e r ，
+设置迭代次数 n = 1 ；
+2 .  迭代 ： 根据目标函数计算每个粒子的权重  w
+i
+；
+3 .  重采样 ： 根据粒子的权重进行重采样过程 ，
+以便保留高权重粒子 ， 丢弃低权重粒子 ， 重采样后
+粒子为 q
+t ( n ) ；
+4 .  循环 ： 迭代次数 n = n + 1 ， 重复步骤 2 ~ 4 ， 直到
+算法收敛 。
+从问题收敛性分析 ： 在基于粒子滤波算法的从
+问题优化算法中 ， 第三点 ， 通过计算各粒子权重 ， 取
+得权重最大的粒子 ， 故本算法可收敛 ； 但算法进行
+中 ， 无法取得最优解 ， 在权重差无法小于阈值或者达
+到最大收敛次数时 ， 会停止收敛 ， 取得相对最优解 。
+5 　仿真与实验
+5 . 1 　仿真场景
+仿真场景为无人机群对目标无源定位的感知
+网络部署场景 ， 由 M 架无人机和 1 个目标组成 。 假
+设 无 人 机 的 水 平 二 维 部 署 区 域 D 为 一 个 1 8 0 0 ´
+4 0 0 0  m
+2
+的二维空间 ， 将其均匀划分为若干个大小
+为 5 ´ 5  m
+2
+的矩形区域 。 目标的预估中心位置为
+~
+q
+t
+=
+( 1 0 0 0  1 0 0 0  0 )  m ， 假定目标辐射源天线电轴方向为
+水平向左 ， 公式 （ 13 ） 中天线增益 G 取值为 1 ， 天线波
+束宽度 b 取值 0 . 5236 弧度 （ 角度为 30 ° ） ， 公式 （ 14 ） 中
+a = ( - 1  0  0 ) 。 目 标 辐 射 源 发 射 信 号 功 率 p
+t
+取 值
+0 . 1  W 。 无人机均装备均匀圆阵 ， 天线阵元数 N 为
+5 ， 天线阵半径 r 取值 0 . 5  m 。 无人机部署于同一高
+度 H = 1 0 0  m ， 接收信号波长 λ 取值 0 . 1  m ， 各无人机
+的接收天线增益 G
+r
+取值 1 。 采用 TDOA+AOA 联合
+定 位方式对目标进行定位 。 假定目标预估中心与无
+人 机 的 最 小 和 最 大 距 离 分 别 为 S
+l
+= 2 0 0 0  m 和 S
+h
+=
+3 0 0 0  m ， 同时假定不同无人机间最小和最大距离分
+别为 R
+l
+= 1 0  m 和 R
+h
+= 2 0 0 0  m 。 公式 （ 6 ） 中通信系统的
+带宽 B 取值 1  MHz 累计时长 T 取值 15  ms ， 公式 （ 12 ）
+中 参 数 α 取 值 1 . 2 3 4 ´ 1 0
+- 6
+， 公 式 （ 9 ） 中 参 数 β 取 值
+6 . 1 5 ´ 1 0
+9
+。 （ 公式 （ 12 ） 中参数 α = σ
+2
+δ
+/ N [ ( 2 π r / λ ) s i n  θ ]
+2
+，
+均匀圆阵接收信号的相位误差 σ
+δ
+取值 10 ° ， 0 . 1745
+弧度 ； 公式 （ 9 ） 中参数 β = p
+t
+G
+r
+λ
+2
+/ ( 4 π )
+2
+k T
+°
+B ， 系统开
+尔文温度 T
+°
+取值 298 . 15  K （ 摄氏温度为 25 ℃ 。 ） ）
+为了验证本文提出的无人机群通信弱约束 （ 记
+作 “ Weak constrain ” ） ， 提出一组基准方案 （ “ Strong 
+constrain ” ） 进行比较 ：
+Weak constrain ： 对于每一架无人机 ， 在其最大
+通信距离内有一架无人机即可保持通信 ；
+Strong constrain ： 所有无人机之间的距离小于
+最大通信距离 。
+为了验证面对不确定目标且考虑目标天线增
+益 特 性 的 多 无 人 机 鲁 棒 部 署 方 案 （ 记 作 “ Robust 
+scheme ” ） 性 能 ， 提 出 三 组 基 准 方 案 （ “ Baseline 
+scheme 1 ” ， “ Baseline scheme 2 ” ， “ Independ scheme ” ）
+进行性能比较 ：
+Robust scheme ： 在该方案中 ， 考 虑了辐射源的
+天线增益特性 ； 考虑了目标位置信息的不确定性 ；
+以及无人机群对目标的 TDOA+AOA 定位误差与距
+离有关 。
+Baseline scheme 1 ： 在该方案中 ， 考虑了目标位
+置 信 息 的 不 确 定 性 ； 以 及 无 人 机 群 对 目 标 的
+TDOA+AOA 定位误差与距离有关 ； 不考虑辐射源
+的天线增益特性 。
+Baseline scheme 2 ： 在该方案中 ， 考虑了辐射源
+的天线增益特性 ； 考虑无人机群对目标的 TDOA+
+AOA 定位误差与距离有关 ； 不考虑目标位置信息的
+不确定性 。
+Independ scheme ： 在该方案中 ， 考虑了辐射源
+的天线增益特性 ； 考虑了目标位置信息的不确定
+性 ； 不考虑无人机群对目标的 TDOA+AOA 定位误
+差与 距离有关 。
+5 . 2 　不同约束及定位体制下性能分析及部署结果
+分析
+图 3 展示了无人机群数量 M = 3 ， 考虑了辐射源
+的天线增益特性 、 考虑了目标位置信息的不确定性
+（ 400  m ， 500  m ） 以 及 无 人 机 群 对 目 标 的 TDOA+
+AOA 定位误差与距离有关方案下 ， 不同的无人机之
+间通信约束下的对比实验无人机部署图 。 可以观
+察出 ， 在不同的目标不确定度条件下 ， 在 Strong con ‐
+Algorithm 2   基于粒子滤波算法的从问题式 ( 28 a ) ~ ( 28 b ) 优化
+1 .  初始化 q
+t
+， 令 n = 1 。 设置最大迭代次数 N 及迭代终止条件 ；
+2 .  repeat
+3 .  计算粒子权重 ：
+w
+i
+= t r ( C R L B ( q
+i
+t ) ) ；
+4 .  更新粒子 q
+t ( n ) ；
+5 .  until 达到最大迭代次数 N ， 或目标函数达到收敛条件 。
+675
+信 号 处 理 第  41  卷
+strain 下 ， 无人机群的部署更加集中 ， Weak constrain
+下的无人机群部署更加分散 ， 且无人机 1 - 目标 - 无人
+机 2 夹角与无人机 2 - 目标 - 无人机 3 夹角约为 60 °（ 无
+人机群从上到下依次为无人机 1 、 无人机 2 、 无人机 3 ）
+符合文献 ［ 21 ］ 给出的结论 。 图 4 展示了 Strong con ‐
+strain 和 Weak constrain 的定位性能 ， 可见本文提出
+的 Weak  constrain 的定位误差更小 ， 定位更精确 。
+图 5 展 示了无人机群数量 M = 3 ， 考虑了辐射源
+的天线增益特性 、 考虑了目标位置信息的不确定性
+（ 400  m ， 500  m ） 条 件 下 不 同 定 位 体 制 （ AOA ，
+TDOA ， TDOA+AOA ） 三种定位体制下的对比实验
+无人机群部署图 。 对于 AOA 定位 ， 想获取更多的
+角度信息 ， 所以三架无人机的部署并不是对称的 ，
+图 5 实验结果符合其定位原理 ； 对于 TDOA 定位 ， 想
+获得更多的时间差信息 ， 所以三架无人机相隔距离
+较 远 ， 图 5 无 人 机 群 部 署 也 符 合 这 个 原 理 。 而
+TDOA+AOA 定位体制结合了这两种体制的优点 ，
+从图 6 可以看出 ， 在组合定位体制下的定位误差最
+小 ， 定位性能最佳 。
+5 . 3 　不同条件下收敛性 、 性能及部署结果分析
+图 7 展示了四种方案的收敛结果 ， 定位性能结
+果最差的 Baseline scheme 1 收敛速度最快 ， 其次是
+Independ scheme ， Baseline scheme 2 ， 收敛速度最慢
+的是 Robust scheme ， 其设计考虑了更多的稳健性和
+鲁棒性 ， 导致在迭代优化过程中收敛速度较慢 ， 但最
+终可能会获得更稳定和可靠的结果 。 由于 Independ 
+scheme ， Baseline scheme 2 ， Baseline scheme 1 收 敛
+速度较为接近 ， 图 8 展示了三种方案收敛速度的局
+部放大图 。
+图 9 展示了无人机群数量 M = 3 针对目标不同
+不确定半径 （ 200  m ， 300  m ， 400  m ， 500  m ） 四种方案
+的 TDOA+AOA 联合定位无人机群部署结果 。 其
+中 ， Uncertain region 区域表示目标的不确定区域 ，
+Minimum UAV-target distance 线为无人机目标最小
+距离所构成的边界线 。 对于三架无人机且目标不
+确定区域较小时 （ ε
+t
+= 200  m ） 的情况 ， Robust scheme 、
+Independ sc heme 和 Baseline scheme 2 部 署 结 果 相
+近 ， 且此时无人机 1 - 目标 - 无人机 2 夹角与无人机 2 -
+目标 - 无人机 3 夹角约为 60 °（ 无人机群从上到下依
+次为无人机 1 、 无人机 2 、 无人机 3 ） 符合文献 ［ 21 ］ 给
+出的结论 。 根据图 9 观察到 ： Ro bust scheme 和 Base ‐
+图 3 　不同约束下无人机群部署图 （ M = 3 ，  ε
+t
+= 400 ， 500  m ）
+Fig . 3 　 Deployment diagram of a drone swarm under different constraints （ M = 3 ，  ε
+t
+= 400 ， 500  m ）
+图 4 　不同约束下无人机群定位误差 （ M = 3 ，  ε
+t
+= 400 ， 500  m ）
+Fig . 4 　 Positioning error of a drone swarm under different 
+constraints （ M = 3 ，  ε
+t
+= 400 ， 500  m ）
+676
+第  4  期 赵倩倩  等 ：  面向未知定向辐射源组合定位的无人机群优化部署
+line scheme 2 部 署 结 果 做 比 较 时 ， 因 为 Baseline 
+scheme 2 不考虑目标不确定度对部署结果的影响 ，
+所以 Robust scheme 的部署结果会更为扩散以考虑
+到目标在不确定范围内的情况 ， 且无论目标不确定
+范围是多少 ， Baseline scheme 2 的定位目标始终是
+同一点 ， 所以对于 ε
+t
+= 200 、 300 、 400 、 500  m ， Baseline 
+scheme 2 的 部 署 结 果 都 一 致 ； Robust scheme 和
+Baseline scheme 1 部署结果做比较时 ， 因为 Baseline 
+scheme 1 不考虑目标天线增益 ， 假设目标对所有方
+向发射信号幅度相同 ， 而 Robust scheme 中目标对水
+平向左方向附近信号幅度较高 ， 所以 Robust scheme
+部署结果也是靠近水平向左方向 。
+图 10 展示了 无人机群数量 M = 3 针对目标不同不
+确定半径 （ 200  m ， 300  m ， 400  m ， 500  m ） 四种方案的
+图 5 　不同定位体制下无人机群部署图 （ M = 3 ，  ε
+t
+= 400 ， 500  m ）
+Fig . 5 　 Deployment diagram of a drone swarm under different positioning systems （ M = 3 ，  ε
+t
+= 400 ， 500  m ）
+图 7 　所提方案的收敛曲线图  （ M = 3 ， ε
+t
+= 200  m ）
+Fig . 7 　 Convergence curve of the proposed schemes （ M = 3 ， ε
+t
+= 200  m ）
+图 8 　收敛曲线局部放大图  （ M = 3 ， ε
+t
+= 200  m ）
+Fig . 8 　 Locally enlarged convergence curve （ M = 3 ， ε
+t
+= 200  m ）
+图 6 　不同定位体制下无人机群定位误差
+（ M = 3 ，  ε
+t
+= 400 ， 500  m ）
+Fig . 6 　 Positioning error of a drone swarm under different 
+positioning systems （ M = 3 ，  ε
+t
+= 400 ， 500  m ）
+677
+信 号 处 理 第  41  卷
+TDOA+AOA 联合定位无人机群的定位性能 。 可以观
+察到 ， 随着目标不确定度的增加 ， 最小均方定位误差
+界逐渐增加 ， 即无人机群对目标的定位性能逐渐减
+弱 。 并且 ， 在每一种不确定度的调价下 ， Robust scheme
+的定位性能都是最佳的 ， 验证了本文提出的 Robust 
+scheme 在实际定位场景中部署无人机的有效性 。
+图 11 展示了目标不 确定半径为 500  m 下 ， 不同无
+人 机 群 数 量 （ M = 3 、 4 、 5 、 6 ） 下 四 种 方 案 （ Robust 
+scheme 、 Baseline scheme 1 、 Baseline scheme 2 、 Independ  
+scheme ） 的 TDOA+AOA 联合定位无人机群部署结
+果 。 可以观察出 ， 不同无人机群数量下 ， 无人机群
+部署结果都符合上述结论 ， 进一步验证了上述结论
+的正确性 。 图 12 展 示了目标不确定半径为 500  m
+下 ， 不同无人机群数量 （ M = 3 、 4 、 5 、 6 ） 下四种方案的
+TDOA+AOA 联合定位无人机群的定位性能 。 可以
+图 10 　不同不确定半径下无人机群感知性能图
+Fig . 10 　 Perception performance diagram of a drone swarm 
+under different uncertainty radii
+图 9 　不同不确定半径下感知网络部署图  （ ε
+t
+= 200 ，  300 ，  400 ，  500  m ）
+Fig . 9 　 Deployment diagram of a perception network under different uncertainty radii （ ε
+t
+= 200 ，  300 ，  400 ，  500  m ）
+678
+第  4  期 赵倩倩  等 ：  面向未知定向辐射源组合定位的无人机群优化部署
+观察出 ， 随着无人机数量的增加 ， 各方案的定位性
+能 都 逐 渐 增 加 ， 且 不 同 无 人 机 数 量 下 ， Robust 
+scheme 的定位性能都是最佳 。 进而验证了本文提
+出的 Robust scheme 的有效性 。
+5 . 4 　不同目标天线方向角下性能分析及部署结果
+分析
+上述实验中考虑了目标天线方向角为 30 ° 的情
+况 ， 在实际应用中 ， 由于天线架设位置的微调 、 目标
+位置的变化或环境因素的影响 ， 目标天线的方向角
+可能会发生变化 。 在本节中考虑了目标天线方向
+角为 10 ° 的情况 ， 如图 13 所示 ， 相比于方向角为 30 °
+的情况下 ， 方向角为 10 ° 的一组无人机群部署结果
+会更加聚拢 ， 符合预期原理 ， 同时也验证了本文所
+提算法的鲁棒性 ， 适用于多种复杂环境下 。 图 14 给
+图 11 　不同无人机数目下的感知网络部署图  （ M  = 3 ，  4 ，  5 ，  6 ）
+Fig . 11 　 Deployment diagram of a perception network under different numbers of drones （ M  = 3 ，  4 ，  5 ，  6 ）
+图 12 　不同无人机数目下的感知性能图
+Fig . 12 　 Perception performance under different numbers of drones
+679
+信 号 处 理 第  41  卷
+出了两种情况下的定位性能 ， 在本文场景中 ， 天线
+角度为 30 ° 的定位性能更优 ， 更适合本文的场景 。
+5 . 5 　不同天线增益参数敏感性分析
+为验证本文所提算法在不同参数下的敏感性 、
+鲁棒性 。 本小节增加了天线增益为 0 . 1 ， 10 ， 100 下目
+标天线方向角为 30 ° ， 目标不确定半径为 500  m 下三
+架无人机 Robust scheme 下的部署 优化结果 ， 模拟目
+标的不同发射功率 。 实验结果如图 15 所示 ， 在不同
+的天线增益下 ， 本文提出的优化算法均可给出相应
+无人机部署方案 ， 可验证本文的算法的鲁棒性 。
+5 . 6 　城市环境 、 山林区域实际应用场景仿真
+上述实验中场景都是不设有障碍物 ， 且默认可
+行区域是一整块区域 ， 不符合实际应用场景 。 比如
+城市环境 ： 城市环境多由道路交叉纵横组成 ， 由于高
+楼等因素 ， 无人机可飞行区域集中在可行道路上空 ；
+山林区域 ： 因山林区域有圆形区域山体海拔较高 ， 阻
+碍无人机飞行 ， 所以无人机在山林中要考虑不可飞
+行区域 。 为验证本文提出算法对于实际应用场景中
+的可行性 ， 本文模拟了城市及山林环境下三架无人
+机 ， 目标天线方向角为 30 ° ， 目标不确定半径 为 500  m
+下三架无人机 Robust scheme 下的部署 优化结果 ， 如
+图 14 　不同目标天线方向角下无人机群感知性能图
+（ M = 3 ，  ε
+t
+= 400 ， 500  m ）
+Fig . 14 　 Perception performance diagram of a drone swarm 
+under different target antenna directional angles （ M = 3 ，  ε
+t
+=
+400 ， 500  m ）
+图 15 　不同天线增益下无人机群部署图 （ M = 3 ，  ε
+t
+= 500  m ）
+Fig . 15 　 Deployment diagram of a drone swarm under 
+different antenna gains （ M = 3 ，  ε
+t
+= 500  m ）
+图 13 　不同目标天线方向角下无人机群部署图 （ M = 3 ，  ε
+t
+= 400 ， 500  m ）
+Fig . 13 　 Deployment diagram of a drone swarm under different target antenna directions （ M = 3 ，  ε
+t
+= 400 ， 500  m ）
+680
+第  4  期 赵倩倩  等 ：  面向未知定向辐射源组合定位的无人机群优化部署
+图 16 及图 17 所示 ， 可见无人机在实际应用场景可以
+有效避开障碍物 ， 在可飞行区域飞行 。
+6 　结论
+本文提出了一种更符合实际应用场景的无人
+机群定位模型以及针对此问题改进的主从优化算
+法 。 该定位模型采用 TDOA+AOA 联合定位体制 ，
+考虑目标天线增益作为目标不确定性一部分 ， 提出
+无人机群之间通信弱约束增强无人机群灵活性 。
+并且采用改进的吉布斯采样算法以及粒子滤波算
+法分别解决主从问题 ， 最终在不同的无人机群个
+数 、 不同的目标不确定半径 、 不同参数设置 、 不同仿
+真场景下得到验证 ， 表明此定位模型的灵活性和鲁
+棒性以及此优化算法的有效性 。
+参考文献
+［ 1 ］ WU Jianing ，  ZHANG Chunxiang ，  YU Zhiwen ，  et al .  
+Multi-UAV cooperative localization in GPS-denied envi ‐
+ronments ：  A review ［ J ］ .  IEEE Access ，  2020 ，  8 （ 1 ） ：  
+73965 - 73975 .
+［ 2 ］ HU Jingzhi ，  ZHANG Hongliang ，  SONG Lingyang ，  et al .  
+Cooperative Internet of UA Vs ：  Distributed trajectory design  
+by multi-agent deep reinforcement learning ［ J ］ .  IEEE Trans ‐
+actions  on Communications ，  2020 ，  68 （ 11 ） ：  6807 - 6821 .
+［ 3 ］ REN Yi ，  GUO Qinghua ，  CHEN Jiming .  Distributed tar ‐
+get localization via aerial acoustic communication net ‐
+works ［ J ］ .  IEEE Transactions on Aerospace and Elec ‐
+tronic Systems ，  2017 ，  53 （ 3 ） ：  1181 - 1196 .
+［ 4 ］ WYMEERSCH H ，  SOHAIL M Z ，  MAHFUZ M ，  et al .  
+Resource optimization for UAV-based target localization 
+in urban environments using genetic algorithm ［ J ］ .  IEEE 
+Transactions on Vehicular Technology ，  2020 ，  69 （ 2 ） ：  
+2166 - 2179 .
+［ 5 ］ FANG Xinpeng ，  LI Junbing ，  ZHANG Shouxu ，  et al .  
+Optimal AOA sensor-source geometry with deployment 
+region constraints ［ J ］ .  IEEE Communications Letters ，  
+2022 ，  26 （ 4 ） ：  793 - 797 .
+［ 6 ］ LIANG Tianhao ，  ZHANG Tingting ，  WU Qingqing ，  et 
+al .  Age of information based scheduling for UAV aided 
+localization and communication ［ J ］ .  IEEE Transactions 
+on Wireless Communications ，  2024 ，  23 （ 5 ） ：  4610 - 4626 .
+［ 7 ］ ZHANG Lu ，  YANG Jianbo ，  ZHANG Ziyan ，  et al .  A 
+cooperative localization algorithm based on UAV plat ‐
+form ［ C ］ // 2021  International Conference on Advanced 
+Computing and Endogenous Security .  Nanjing ，  China .  
+IEEE ，  2022 ：  1 - 5 .
+［ 8 ］ GUAN Zi ，  SUN Zhichao ，  WU Junjie ，  et al .  Resource 
+allocation and optimization of multi-UAV SAR system
+［ C ］ // 2023  IEEE Radar Conference （ RadarConf 23 ） .  
+San Antonio ，  TX ，  USA .  IEEE ，  2023 ：  1 - 5 .
+［ 9 ］ GUO Zhigui ，  YANG Guomin .  Radial uniform circular 
+antenna array for dual-mode OAM communication ［ J ］ .  
+IEEE Antennas and Wireless Propagation Letters ，  
+2016 ，  16 ：  404 - 407 .
+［ 10 ］ 陆安南 ， 尤明懿 ， 江斌 ， 等 . 无线电定位理论与工程实
+践 ［ M ］ .  北京 ：  电子工业出版社 ，  2023 .
+LU Annan ，  YOU Mingyi ，  JIANG Bin ，  et al .  Radio Lo ‐
+calization Theory and Engineering Practice ［ M ］ .  Bei ‐
+jing ：  Publishing House of Electronics Industry ，  2023 .
+（ in Chinese ）
+图 16 　模拟城市环境无人机群部署图 （ M = 3 ，  ε
+t
+= 500  m ）
+Fig . 16 　 Deployment diagram of a simulated urban 
+environment drone swarm （ M = 3 ，  ε
+t
+= 500  m ）
+图 17 　模拟山林环境无人机群部署图 （ M = 3 ，  ε
+t
+= 500  m ）
+Fig . 17 　 Deployment diagram of a simulated forest 
+environment drone swarm （ M = 3 ，  ε
+t
+= 500  m ）
+681
+信 号 处 理 第  41  卷
+［ 11 ］ 陆安南 ，  尤明懿 ， 江斌 ， 等 .  无线电测向理论与工程实
+践 ［ M ］ .  北京 ：  电子工业出版社 ，  2020 .
+LU Annan ，  YOU Mingyi ，  JIANG Bin ，  et al .  Radio Di ‐
+rection Finding Theory and Engineering Practice ［ M ］ .  
+Beijing ：  Publishing House of Electronics Industry ，  
+2020 .（ in Chinese ）
+［ 12 ］ ZHANG Yuyang ，  HE Yingzhe ，  LIAO Tianxing ，  et al .  
+A joint position error calibration algorithm in TDOA lo ‐
+calization system ［ C ］ // 2023  6 th International Confer ‐
+ence on Information Communication and Signal Process ‐
+ing （ ICICSP ） .  Xi ’ an ，  China .  IEEE ，  2023 ：  724 - 729 .
+［ 13 ］ 丁鹭飞 ， 耿富禄 ， 陈建春 . 雷达原理 ［ M ］ . 6 版 . 北京 ： 电
+子工业出版社 ， 2020 .
+DING Lufei ，  GENG Fulu ，  CHEN Jianchun .  Radar Prin ‐
+ciple ［ M ］ .  6 th ed .  Beijing ：  Publishing House of Elec ‐
+tronics Industry ，  2020 .  （ in Chinese ）
+［ 14 ］ YIN Jihao ，  WAN Qun ，  YANG Shiwen ，  et al .  A simple 
+and accurate TDOA-AOA localization method using 
+two stations ［ J ］ .  IEEE Signal Processing Letters ，  2016 ，  
+23 （ 1 ） ：  144 - 148 .
+［ 15 ］ OSTROVSKII D M ，  BARAZANDEH B ，  RAZA VIY AYN  
+M .  Nonconvex-nonconcave Min-max optimization with 
+a small maximization domain ［ EB/OL ］ .  2021 ：  2110 . 03950 .
+https ： //arxiv . org/abs/ 2110 . 03950 v 1
+［ 16 ］ RAZAVIYAYN M ，  HUANG Tianjian ，  LU Songtao ，  et 
+al .  Nonconvex Min-max optimization ：  Applications ，  
+challenges ，  and recent theoretical advances ［ J ］ .  IEEE 
+Signal Processing Magazine ，  2020 ，  37 （ 5 ） ：  55 - 66 .
+［ 17 ］ LU Zhang ，  WANG Xiaoli .  Improved portfolio optimiza ‐
+tion with non-convex and non-concave cost using ge ‐
+netic algorithms ［ C ］ //Proceedings 2013  International 
+Conference on Mechatronic Sciences ，  Electric Engi neer ‐
+ing and Computer （ MEC ） .  Shenyang ，  China .  IEEE ，  
+2013 ：  2567 - 2570 .
+［ 18 ］ DOUCET A ，  DE FREITAS N ，  GORDON N .  Sequen ‐
+tial Monte Carlo Methods in Practice ［ M ］ .  New York ，  
+NY ：  Springer ，  2001 .
+［ 19 ］ SHANG Shaojun ，  WANG Rui ，  CAO Rui .  Algorithmic 
+study of Gibbs sampling selection based on information 
+criterion ［ C ］ // 2023  IEEE 2 nd International Conference 
+on Electrical Engineering ，  Big Data and Algorithms 
+（ EEBDA ） .  Changchun ，  China .  IEEE ，  2023 ：  1849 - 1854 .
+［ 20 ］ DOUCET A ，  DE FREITAS N ，  GORDON N .  Sequen ‐
+tial Monte Carlo methods in practice ［ J ］ .  Journal of the 
+Royal Statistical Society ，  2001 ，  Series B ，  64 （ 3 ）：  
+297 - 319 .
+［ 21 ］ SADEGHI M ，  BEHNIA F ，  AMIRI R .  Optimal sensor 
+placement for 2 -D range-only target localization in con ‐
+strained sensor geometry ［ J ］ .  IEEE Transactions on Sig ‐
+nal Processing ，  2020 ，  68 ：  2316 - 2327 .
+作者简介
+赵倩倩  女 ， 2001 年 生 ， 山 西 临 汾
+人 。 上海交通大学在读硕士 ， 主要研究方
+向为面向未知辐射源定位无人机群资源
+优化 、 雷达信号分类与识别 。
+E-mail ： zhaoqianqian@sjtu . edu . cn
+熊 刚  男 ， 1977 年生 ， 湖北天门人 。
+上海交通大学硕博导师 ， 主要研究方向为雷
+达目标探测 、 引信侦察识别 、 分形信号处理 。
+E-mail ： gxiong@sjtu . edu . cn
+王李军  男 ， 1978 年 生 ， 河 南 济 源
+人 。 主要研究方向为卫星导航技术 、 信号
+与信息处理 。
+E-mail ： nj_wlj@ 126 . com
+尤明懿  男 ， 1984 年生 ， 上海人 。 电
+磁空间安全全国重点实验室研究员 ， 主要
+研究方向为协同态势感知技术 、 无线电测
+向与定位技术 。
+E-mail ： youmingyi@ 126 . com
+（ 责任编辑 ： 刘建新 ）
+682

@@ -1,0 +1,10 @@
+{
+  "id": "zh17",
+  "url": "https://chinatransducers.seu.edu.cn/ch/reader/create_pdf.aspx?file_no=cg08100129&flag=1&year_id=2009&quarter_id=5",
+  "final_url": "https://chinatransducers.seu.edu.cn/ch/reader/create_pdf.aspx?file_no=cg08100129&flag=1&year_id=2009&quarter_id=5",
+  "content_type": "text/html; charset=utf-8",
+  "status": "html",
+  "links": [],
+  "metadata": [],
+  "snippet": "    无法将类型为“System.DBNull”的对象强制转换为类型“System.Byte[]”。    \r\n"
+}

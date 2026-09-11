@@ -1,0 +1,6 @@
+{
+  "id": "authors01",
+  "url": "https://rsn.umn.edu/all-publications",
+  "status": "error",
+  "error": "HTTP Error 403: Forbidden"
+}

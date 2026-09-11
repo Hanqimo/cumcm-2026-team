@@ -1,0 +1,1133 @@
+058 Engineering  Volume 1 · Issue 1 · March 2015  www.engineering.org.cn
+Engineering 2015, 1(1): 58–65
+DOI  10.15302/J-ENG-2015010
+Decentralized Searching of Multiple Unknown and 
+Transient Radio Sources with Paired Robots
+Chang-Young Kim
+1
+, Dezhen Song
+2*, Jingang Yi
+3
+, Xinyu Wu
+4
+1
+ Kespry, Inc., Menlo Park, CA 94025, USA; 
+2
+ CSE Department, Texas A&M University, College Station, TX 77843, USA; 
+3
+ MAE Department, Rutgers University, 
+Piscataway, NJ 08854, USA; 
+4
+ Shenzhen Institute of Advanced Technology, Chinese Academy of Science, Shenzhen 518055, China
+* Correspondence author. E-mail: dzsong@cse.tamu.edu
+Received 9 March 2015; received in revised form 20 March 2015; accepted 25 March 2015
+© The Author(s) 2015. Published by Engineering Sciences Press. This is an open access article under the CC BY license (http://creativecommons.org/licenses/by/4.0/)
+Research
+Robotics—Article
+ABSTRACT In this paper, we  develop a decentralized 
+algorithm to coord inate a group of mobile robots to search 
+for unknown and transient radio sources. In addition to 
+limited mobility and ranges of communication and sensing, 
+the robot team has to deal with challenges from signal 
+source anonymity, short transmission duration, and variable 
+transmission power. We propose a two-step approach: First, 
+we decentralize belief functions that robots use to track 
+source locations using checkpoint-based synchronization, 
+and second, we propose a decentralized planning strategy 
+to coordinate robots to ensure the existence of checkpoints. 
+We analyze memory usage, data amount in communication, 
+and searching time for the proposed algorithm. We have 
+implemented the proposed algorithm and compared it 
+with two heuristics. The experimental results show that our 
+algorithm successfully trades a modest amount of memory 
+for the fastest searching time among the three methods.
+KEYWORDS wireless localization, networked robots, transient 
+targets
+1 Introduction
+The fast development of wireless sensor network (WSN) 
+technology provides excellent tools to collect information. 
+However, WSNs can also be a signiﬁ  cant threat to our secu-
+rity and privacy (e.g., an enemy may deploy a sensor field 
+to detect troop movements). The large number of miniature 
+sensors in a large ﬁ  eld makes it difﬁ  cult to manually search 
+and neutralize the sensors. We are developing algorithms to 
+enable a team of mobile robots to perform the task. In this 
+“robot network” vs. “sensor network” setup, each party has 
+its own advantages and limitations. Robots have mobility 
+while sensors do not. Robots know their own locations and 
+received signal strength (RSS) readings. However, robots 
+cannot decode the protocol of the sensor network and have 
+to treat sensors as plain radio sources. Therefore, signal ano-
+nymity, short transmission duration, variable transmission 
+power, and the unknown source number challenge robots, in 
+addition to communication and sensing range constraints.
+Building on our prior work, we propose a two-step ap-
+proach: First, we decentralize belief functions that robots use 
+to track source locations using checkpoint-based synchro-
+nization; and second, we propose a decentralized planning 
+strategy to coordinate robots to ensure the existence of check-
+points.
+We formally show that our planning algorithm ensures the 
+decentralized belief functions to be synchronized periodi-
+cally with explicit analysis on memory and communication 
+requirements. Furthermore, the expected searching time of 
+our algorithm is insensitive to the number of radio sources. 
+We have implemented the proposed algorithm and compared 
+it with two heuristics in a simulation based on real sensory 
+data. The experimental results show that our algorithm suc-
+cessfully trades a modest amount of memory for the fastest 
+searching time among the three methods.
+2 Related work
+Searching for multiple transient radio sources relates to radio 
+frequency (RF)-based localization and multi-robot motion 
+estimation and planning.
+The recent development of RF-based localization can be 
+viewed as the localization of “friendly” radio sources, because 
+researchers either assume that an individual radio source 
+continuously transmits radio signals (similar to a lighthouse) 
+[1, 2], or assume that robots/receivers are a part of the net-
+work and understand the detailed packet information [3, 4]. 
+However, such information is not always available for an 
+unknown network. When signal sources are not cooperative, 
+RSS readings are the primary information for localization 
+because RSS attenuates over distance. When signal transmis-
+sion power at the source is not available, ratios between RSS 
+readings from dislocated listeners [5, 6] or an antenna array [7] 
+059www.engineering.org.cn  Volume 1 · Issue 1 · March 2015  Engineering
+ResearchRobotics—Article
+have been proven to be effective in obtaining bearing and/or 
+range readings.
+In the area of multi-robot research, decentralized esti-
+mation of robot positions and poses has recently gained 
+considerable attention. Durrant-Whyte [8] developed the de-
+centralized estimation technology based on the distributed 
+Kalman filter framework. Leung et al. [9] also tackled the 
+decentralized multi-robot localization problem by a concept 
+of checkpoints, which represent delayed synchronization 
+of observation after exchanges of observations between ro-
+bots. Researchers extend the concept to the decentralized 
+information transfer scheme [10] based on communication 
+constraints. Our problem is similar in the way that we can 
+beneﬁ  t from the range and heading sensory models, but it is 
+different in that we focus on estimating the positions of the 
+positions of transient targets instead of the positions of ro-
+bots themselves.
+Also in multi-robot research, Pereira et al. [11] proposed 
+decentralized planning under sensing and communication 
+constraints while keeping connectivity with neighbors. By 
+using decentralized multi-robots, Bhadauria et al. [12] ad-
+dressed the data gathering problem (DGP) in which multiple 
+robots gather information from deployed sensor networks. In 
+this work, they formulated the DGP as traveling salesperson 
+problem (TSP) instances, and proposed two sub tour plans. 
+One tour is a counterclockwise tour, and the other is a clock-
+wise tour, to ensure that the two tours cover all deployed 
+sensor nodes. Another aspect of decentralized planning is 
+synchronization. Martinez et al. [13, 14] analyzed the motion 
+synchronization of decentralized multi-robots, introducing 
+a network of locally connected agents on the tour using the 
+agree-and-pursue algorithm. These works on communication 
+and sensing constraints inspire our work. Unlike the popular 
+pursuit-evasion game, the radio sources in our problem do 
+not move. However, the stationary nodes do not make the 
+problem simpler, because the radio sources are transient and 
+can vary transmission power, which leads to a different type 
+of problem.
+Our group studies the transient radio source searching 
+problem under different setups and constraints [15, 16]. The 
+most relevant prior work is the Bayesian localization scheme 
+proposed in Refs. [17, 18] for using a single robot and its 
+extension to multiple robots [19, 20]. This paper builds on a 
+previous conference version [21], and differs from existing 
+searching methods by decentralizing belief functions and 
+proposing a new decentralized planning algorithm.
+3 Problem deﬁ  nition
+Our problem setup and assumptions are:
+(1) Robots and radio sources reside in an open 2D space.
+(2) Each robot has a limited communication range and a 
+limited sensing range.
+(3) Each robot knows its position using the global position-
+ing system (GPS). GPS clocks also provide accurate time 
+for the purpose of synchronization.
+(4) Transmission powers of radio sources are unknown to 
+robots and may change from time to time. However, lo-
+cations of radio sources do not change.
+For the new decentralized approach, we will follow the 
+same problem definition in the corresponding centralized 
+versions [17–20], where the searching problem is partitioned 
+into two sub problems:
+Definition 1 (sensing problem): Given the RSS readings 
+and corresponding locations from robots, update robot belief 
+functions for radio source locations.
+Deﬁ  nition 2 (planning problem): Given the belief functions, 
+plan robot trajectories to increase searching efficiency. We 
+will concretely deﬁ  ne the belief functions in detail later in the 
+paper. This is a Monte Carlo type algorithmic approach, with 
+the following stopping time for radio source detection, and 
+searching condition: A radio source is considered as found if 
+the belief function is bigger than a preset threshold p
+t. 
+Now let us begin with the sensing problem.
+4 Decentralized belief functions
+Belief functions track the radio source distribution based on 
+RSS readings and robot locations. They are usually built on a 
+Bayesian framework and antenna models to allow incremen-
+tal update. In our previous work [17, 19, 20] on the centralized 
+localization of transient and unknown radio sources, we pro-
+posed a spatial temporal occupancy grid (SPOG) as the ro-
+bots’ common belief functions. Let us review it ﬁ  rst and then 
+we will decentralize SPOG.
+4.1 A brief review of SPOG
+SPOG partitions the searching region into small and equal-
+sized grid cells. Deﬁ  ne i ∈ N as the cell index variable where  
+N: = {1, ..., n} is the grid cell index set and n is the total num-
+ber of cells. SPOG tracks two types of probabilistic events: C
+i 
+represents the event that cell i  contains a radio source, and 
+Ci
+1
+ represents the event that cell i is the active source when 
+a transmission is detected. C i
+1
+ actually reflects the relative 
+transmission rates among multiple sources, which is a tem-
+poral dimension signature. Deﬁ  ne P(C) as the probability for 
+event C. P(Ci) and P (Ci
+1
+) characterize spatiotemporal behav-
+iors of transient radio sources.
+Let l ∈ M: = {1, ..., m }  be the robot index variable, where 
+m is the total number of robots and M  is the robot index 
+set. Note that m  is always an even number since we will 
+pair robots up later. Discrete time k , or the corresponding 
+continuous time  t
+k, refers to each moment when a transmis-
+sion is detected by robots. Let xl
+k
+: = [ xl
+k
+, yl
+k
+]
+T
+ be the location 
+of robot l at time k and X
+k
+: = [ x1
+k
+, ..., xm
+k
+]
+T
+ be a set of all robot 
+locations at time k . Let the discrete random variable Z ~
+l
+k
+ be 
+the RSS reading of the l -th robot at time k . Deﬁ  ne Z~k
+: = [Z~
+1
+k
+, ..., 
+Z~
+m
+k
+]
+T
+ as a discrete random vector of all the RSS readings at 
+time k and let z~k
+: = [z~
+1
+k
+, ..., z~
+m
+k
+]
+T
+ be corresponding values. As a 
+convention, we use lower cases of random variables or vec-
+tors to denote their values. Deﬁ  ne 
+Z
+1:k
+: = [z~1
+, ..., z~k
+]
+T
+ as the set 
+of all RSSs sensed from the beginning of the searching to t
+k
+. 
+D e ﬁ n e  P(Ci|Z
+1:k
+) as the conditional probability that cell i con-
+tains at least one radio source, given Z
+1:k
+. Similarly, we deﬁ  ne 
+P(Ci|Z
+1:k–1
+), P(Ci
+1
+|Z
+1:k
+), and P (Ci
+1
+|Z
+1:k–1
+). At time k , event Z~ k
+ = 
+z~k
+ is perceived by robots. The posterior probability P (Ci|Z
+1:k
+) 
+over the grid needs to be updated. According to Ref. [17] this 
+is actually a nested multivariate Bayesian process. As more 
+060 Engineering  Volume 1 · Issue 1 · March 2015  www.engineering.org.cn
+Research Robotics—Article
+RSS readings enter the system over time, P (Ci|Z
+1:k
+) converges 
+until  P (Ci|Z
+1:k
+)  > pt, which means that the searching condi-
+tion in Section 3 is satisﬁ  ed.
+4.2 Decentralized SPOG (D-SPOG)
+In the decentralized system, each robot has to maintain its 
+own local SPOG by accumulating RSS readings internally 
+and exchanging information with other robots whenever 
+other robots move into its communication range. However, 
+the centralized SPOG in Ref. [17] depends on the strict order 
+of complete observation set Z
+~1:k
+. Robots cannot arbitrarily use 
+their partial receptions to generate a local SPOG. Further-
+more, robots cannot keep their readings forever for future 
+information exchange due to limited onboard memory space.
+Before we address this problem, let us take a close look at 
+the decentralized system. There are three types of discrete 
+events in the decentralized system: detection events , referring 
+to moments when a transmission is detected by robots; ren-
+dezvous events, describing moments when a robot moves into 
+another robot’s communication range; and planning events, de-
+scribing moments when a robot starts a new path planning. 
+Recall that k is the time index variable for the detection event. 
+Denote j and k  as the rendezvous event and the planning 
+event, respectively. Deﬁ  ne t
+k
+j:k
+ to describe the three events in 
+the continuous time domain, as a convention in this paper. 
+To reduce cluttering, we may also use a reduced version such 
+as t
+k
+ and t
+j
+ for the corresponding event time. t k indicates the 
+beginning of the k -th planning period.
+An effective coordination plan should allow robots to ex-
+change information among each other so that all robots have 
+the same set of observations Z
+1:k
+ at time  j, t
+j
+t
+k
+. This is the 
+time at which all robots can update their SPOG up to time k . 
+In such a way, the centralized SPOG can be decentralized and 
+synchronized among all robots. The “ delayed synchroniza-
+tion” concept was proposed as a checkpoint by Leung et al. [9]. 
+Let us denote Y(t
+k
+, t
+j
+) as the checkpoint. Note that each check-
+point for a robot always has two time variables: It begins with 
+an early detection event time and ends with a future rendez-
+vous event time, because information is always generated by 
+detection events and synchronized by rendezvous events.
+Figure 1 shows an information ﬂ  ow graph to illustrate the 
+checkpoint concept and how information is passed around 
+the distributed robot pairs in D-SPOG. Note that robots 
+have been paired up in this graph because it takes two ro-
+bots to obtain a signal ratio for radio sources with unknown 
+and variable transmission powers. We ignore the intra-
+pair communication because a pair can always talk to each 
+other according to planning. Following the arc arrows in 
+vertical directions, we can see that both Y (t
+k
+j, k+1
+, tk
+j+2, k+3
+) and 
+Y(tk
+j, k+2
+, tk
+j+3, k+4
+) are checkpoints.
+To build a D-SPOG, the remaining question is how each 
+robot stores and exchanges information. Say that  Yl(t
+k–1
+, 
+t
+k–1, j–1
+) is the last checkpoint for robot l . After the update at 
+t
+j–1
+, D-SPOG for the robot l  is synchronized up to t
+k–1
+ with 
+the ﬁ  ctitious centralized SPOG according to the checkpoint 
+property. Robot l  only needs to store its own locations and 
+RSS readings after t
+k–1
+, which results in signiﬁ  cant saving in 
+memory. Due to the fact that robots without detection may 
+not know the time of the radio transmission, each robot has 
+to keep track of its trajectory in addition to RSS readings. Let 
+Wl
+k–1, t
+ be the measurement set internally generated by robot l 
+between t
+k–1
+ and current time t , t>t
+k–1
+:
+                            Wl
+k–1, t
+ = {Xl((t
+k–1
+, t)), zl((t
+k–1
+, t))}  (1)
+where xl(.) is the robot trajectory and z l(.) is the RSS reading 
+set for the duration. Similarly, we deﬁ  ne Wl
+k–1, j
+ and Wl
+k–1, k
+ by 
+replacing t with t
+j
+ and t
+k
+, respect ively.
+Let us deﬁ  ne the measurement set of robot l at rendezvous 
+time t
+j
+ as Γ l
+k–1, j
+, which contains information from both its 
+onboard sensors and other robots. To describe the moment 
+right before robot l encounters another robot, we introduce a 
+(.)
+–
+ notation. It is clear that W l
+k–1, j ⊆ (Γl
+k–1, j
+)
+–
+. At t
+j
+, robot l meets 
+robot p, which has measurement set (Γ l
+k'–1, j
+)
+–
+ prior to the in-
+formation exchange, where t
+k'–1
+ is the detection event time 
+of the last checkpoint that robot p has. Note that t
+k'–1
+ and t
+k–1
+ 
+are not necessarily the same. The two robots first compare 
+the two times, because a newer time means a more recent D-
+SPOG. The other robot should synchronize its SPOG to the 
+more recent one. After synchronizing their SPOGs, they need 
+to synchronize the measurement set. Note that we have (Γ
+l
+k–1, j
+)
+–
+ 
+for robot l and (Γ p
+k'–1, j
+)
+–
+ for robot p before the synchronization. 
+Without loss of generality, we assume t
+k–1
+t
+k'–1
+, and the syn-
+chronization process is:
+                 Γ l
+k–1, j
+ = Γp
+k–1, j
+ = (Γl
+k–1, j
+)
+–
+(Γ p
+k–1, j
+)
+– 
+(2)
+where ( Γp
+k–1, j
+)
+–
+ = (Γ p
+k'–1, j
+)
+–
+\Γp
+k'–1, k–1
+ is obtained by discarding the 
+measurement between t
+k'–1
+ and t
+k–1
+, a reduction in memory 
+usage.
+After the rendezvous event, each robot needs to search if 
+a more recent checkpoint can be established. For robot l , it 
+checks Γ l
+k–1, j
+ to see if the measurement set contains informa-
+tion from all other robots for detection events that happened 
+after the ( k–1)-th detection event by searching for the maxi-
+mum δ, subject to δ∈Z∩[–1, ∞) and t
+k+δ
+t, 
+                    δ = arg max  δ[∏
+m
+p = 1(Wl
+k–1, k+δ
+
+Γl
+k–1, j
+)] (3) 
+Figure 1. A sample information flow graph for four robot pairs.  Gray 
+rectangles represent robot rendezvous events. Arc arrows in the vertical 
+direction indicate information exchange between robots in communication 
+range. Black and white circles represent events for robots with and without 
+detection of active radio transmissions, respectively.
+061www.engineering.org.cn  Volume 1 · Issue 1 · March 2015  Engineering
+ResearchRobotics—Article
+where (Wl
+k–1, k+δ
+
+Γl
+k–1, j
+) is a logic opera-
+tion that returns 0 if the relationship 
+is not satisfied and 1 otherwise. Only 
+the existence of a nonnegative solution 
+indicates that a new checkpoint Y l(t
+k+δ
+, 
+t
+j
+) can be established and hence the D-
+SPOG can be updated. After the update, 
+it is clear that D-SPOG is equivalent to 
+the centralized SPOG update with a 
+delay of t – t
+k+δ
+. We have the following 
+lemma:
+Lemma 1: To ensure proper update 
+of D-SPOG at checkpoints, both the 
+amount of information that every robot 
+stores onboard and the amount of in-
+formation exchange during the rendez-
+vous event between two robots are O (n 
++ m(t – t
+k–1
+)), where t is current time and 
+t
+k–1
+ is the detection event time of the lat-
+est checkpoint.
+Proof: Each robot has to store a D-
+SPOG that takes O (n) memory space. 
+In the worst case scenario, Γ p
+k–1, t
+ may 
+contain (m – 1) robots’ trajectories and 
+RSS reading sets from t
+k–1
+ to t. Since the 
+trajectory storage using a fixed period 
+and the mean number of transmissions 
+is linear to the time duration, hence the 
+overall amount of information stored 
+on each robot is O(n + m(t – t
+k–1
+)). Since 
+both D-SPOG and their measurement 
+sets need to be synchronized during the 
+rendezvous of robots, the lemma holds.
+However, if just one robot is geogra-
+phically isolated from the others, which 
+results in no communication to others, 
+no checkpoint can be established. t – t
+k–1
+ 
+becomes unbounded and the robot may 
+quickly run out of memory, which leads 
+to failure. To address this problem, we 
+propose a decentralized planning that 
+guarantees periodic checkpoint existence.
+5 Decentralized planning
+The decentralized planning strategy 
+needs to take checkpoint existence, 
+communication range limit, synchro-
+nization, and searching time into con-
+sideration. We build the new planning 
+strategy by decentralizing our existing 
+ridge walking algorithm (RWA) in Refs. 
+[17, 18].
+5.1 A brief review of RWA and pairwise RWA 
+(PRWA)
+In SPOG or D-SPOG, P (C
+i|Z
+1:k
+) is the 
+conditional probability that cell i  con-
+tains a radio source. RWA plans a path 
+for a single robot by building on this spatial distribution of radio sources. We gen-
+erate a level set L(p), p∈(0, 1] by using a plane parallel to the ground plane to inter-
+sect the mountain-like distribution P (Ci|Z
+1:k
+) at height p. The intersection generates 
+L(p), which contains all cells with P (Ci|Z
+1:k
+) above the plane. L(p) usually consists of 
+several disconnected components. The irregular contours in Figure 2(a) are an ex-
+ample of L(0.1). For each component, we deﬁ  ne its ridge as the longest line segment 
+along its dominating direction [18]. We know each ridge has a very high probabil-
+ity of being close to a potential signal source. We generate a traveling salesperson 
+problem (TSP) tour that contains all ridges. For off-ridge segments, the robot moves 
+at its fastest speed. The solid red and dashed blue lines in Figure 2(a) represent 
+on-ridge and off-ridge movements, respectively. For on-ridge segments, the robot 
+spends the time proportional to the summation of posterior conditional probability 
+P(C
+i|Z
+1:k
+) over the corresponding isolated level set on each ridge. This allows the ro-
+bot to spend most of its time on ridges; then the intuition yields the RWA in Ref. [18]. 
+RWA has shown superior convergence performance and scalability in searching for 
+multiple signal sources.
+Figure 2. Sample results for decentralized planning using 4 robot pairs.  (a) Sample robot trajectories 
+of DPRWA, with the solid red and dashed blue lines represent the on-ridge and off-ridge movements, 
+respectively; (b) an example of the intra-ring movements on the time ring; (c) changes of robot pair directions 
+corresponding to the intra-ring movements; (d) sample interring movements using time ring space instead of 
+Euclidean space.
+PRWA extends RWA to plan trajectories for a team of robots to handle unknown 
+and changing transmission power in Refs. [19, 20]. First, PRWA expands SPOG by 
+developing a pairwise sensing model based on RSS ratios from robot pairs instead 
+of assuming known absolute source transmission power. Second, PRWA coordi-
+nates robots in pairs by minimizing information entropy so that a robot pair can 
+be viewed as a super-robot in planning. We will inherit the pairwise sensing model 
+and coordinate robots in pairs in this decentralized version.
+5.2 Decentralized PRWA (DPRWA)
+Similar to RWA, DPRWA coordinates robot pairs to patrol on TSP tours that link 
+all ridges. We generate a TSP tour in each planning period. In fact, each planning 
+period is divided into two parts: short inter-ring movements for transition between 
+TSP tours in adjacent planning periods, followed by long intra-ring movements for 
+the time allocated for robots to patrol the TSP tour.
+(1) Inter-ring and intra-ring movements: Let us begin with inter-ring move-
+062 Engineering  Volume 1 · Issue 1 · March 2015  www.engineering.org.cn
+Research Robotics—Article
+ments. Before the planning period starts, each robot pair 
+computes the TSP tour. All robot pairs actually share the 
+same TSP tour from the synchronized D-SPOG. Inter-ring 
+movements allow robots to move from the current TSP tour 
+to the next. Each robot has a pre-allocated beginning posi-
+tion on the TSP tour (detailed later as initial positions for 
+intra-ring movements). Therefore, the amount of travel time 
+for inter-ring movement can be predicted as soon as the TSP 
+tour for the planning period is established. Deﬁ  ne D
+u, k as the 
+inter-ring travel time of the u -th robot pair. To synchronize 
+the starting time of intra-ring movements of all robot pairs, 
+every robot pair waits until all other robot pairs reach their 
+initial positions. Define D
+k
+max
+ as the maximum travel time: 
+Dk
+max
+ = argmax u Du, k. For those robots that arrive early due to 
+short traveling distance, they need to wait w u
+k
+ = D k
+max
+ – D u, k 
+before the synchronized intra-ring movements start. Syn-
+chronization will be detailed later in Section 5.2(3). To save 
+time, robots move at their fastest speed to shorten inter-ring 
+movement time.
+Now let us introduce intra-ring movements. Since the TSP 
+tour is a continuous loop, it can be mapped to a circular ring 
+in time with its circumference being the time for a single pair 
+of robots to traverse the entire TSP tour, which is deﬁ  ned as τ
+0. 
+The mapping is one-to-one if we ﬁ  x a point correspondence in 
+the mapping. For example, the leftmost point (the smallest in 
+lexicographic order) on the TSP tour corresponds to the 9 clock 
+position on the time ring as the green stars shown in Figures 
+2(a) and 2(b). All robots share this mapping rule to synchronize 
+their positions on the time ring. The introduction of the time 
+ring can facilitate our planning. Under the time ring, the inter-
+ring movements can also be simpliﬁ  ed as shown in Figure 2(d).
+As illustrated i n Figure 2(b), each pair of robots are evenly 
+distributed on the time ring. Deﬁ  ne ϕ
+u, k and ϕ'u, k
+ 
+as the posi-
+tion and speed of the u -th robot pair on the time ring, respec-
+tively. Robots’ speeds on the time ring are unitary based on 
+the definition of the time ring. Odd and even pairs are ini-
+tially assigned to move counterclockwise and clockwise on 
+the time ring, which are represented as 1 and –1, respectively. 
+Recall that there are m robots and hence m /2 pairs. We have
+             
+ϕu, k = and ϕ'u, k = 1
+−1
+if u is odd,
+otherwise
+m
+2τ0(u − 1)
+  (4)
+as the initial positions and speeds for robot pair s. Figure 2(b) 
+illustrates the initial positions and directions (represented b y 
+the heading direction of each robot) of four robot pairs. When 
+two robot pairs rendezvous on the time ring, they exchange 
+information and then reverse their moving directions. There-
+fore, each robot pair oscillates on the time ring centered at its 
+initial position as shown i n Figure 2(c).
+D e ﬁ n e  T as the time of the intra-ring movements. The robot 
+pairs have to execute the intra-ring movements long enough 
+to ensure the existence of the checkpoint.
+Lemma 2: Each robot pair has at least one checkpoint if the 
+intra-ring movement time T  is
+                          τ
+0
+m
+τ0
+2
+τ0
+2
+m
+2if      is even,
+{
+T =
++ otherwise  (5)
+Proof: Starting from its initial position, robot pair u meets 
+its two neighbors u – 1 and u + 1 and returns to the initial 
+position with a period of 2 τ0/m. The furthest point is a half 
+circle away, τ0/2. The two rendezvous bring information from 
+further both downstream (from u + 1 at the lower half circle) 
+and upstream (from u – 1 at the upper half circle). Imagine 
+the information is sent out from the furthest robot pair from 
+both upstream and downstream directions. When the infor-
+mation reaches robot pair u , it contains information from all 
+robot pairs. There are two cases: even and odd numbers of 
+robot pairs. For the even case, due to the unitary speed, τ
+0/2 
+is the exact time when robot pair u  gathers the information. 
+Eq. (3) has a nonnegative solution and a new checkpoint is 
+established. For the odd case, the proof is similar except that 
+there needs to be an additional half period for meeting the 
+additional pair.
+Figure 1 illustrates the information flow and checkpoint 
+existent for the four-robot-pair case in Figures 2(b) and 2(c) 
+under the oscillating intra-ring movements.
+(2) Memory usage and expected searching time: DPRWA 
+ensures periodical checkpoint existence, which leads to guar-
+anteed performance. To measure the algorithm performance, 
+we employ two metrics: memory usage for each robot and the 
+expected searching time for each radio source.
+For the memory usage, following Lemma 2, we have
+Theorem 1: DPRWA guarantees that D-SPOG has a time 
+delay less than D
+k
+max
+ + T  if comparing the D-SPOG to the 
+centralized SPOG. To achieve that, each robot requires 
+O(n + m(Dk
+max
+ + T)) memory space.
+The expected searching time for a radio source has to de-
+pend on the source transmission rate. Assume a radio source 
+i transmits signals according to a Poisson process with a rate 
+of λ
+i. In Ref. [16], we have introduced the expected searching 
+time (EST) for a single-robot-single-target case. Let us extend 
+this analysis to DPRWA. Denote T S as the searching time. 
+Similar to the EST analysis of RWA in Ref.  [18], we tighten the 
+convergence condition from the probability threshold p t to the 
+condition of signal saturation. Radio source i  is considered to 
+be found if the robot pairs hear the transmission within the 
+distance da of the radio source. d a is set to be small, such that 
+if the transmission is heard, the probability threshold p t must 
+be reached. This deﬁ  nes a sensing circle  with its center at the 
+radio source i  and a radius of d a. Deﬁ  ne τIN and τ OUT as por-
+tions of the time when traveling within and outside distance 
+da of radio source i, respectively. Hence
+                                Dk
+max
+ + T = τIN + τOUT  (6)
+We have the following theorem:
+Theorem 2: The expected searching time E (Ts) of radio 
+source i has the following upper bound:
+           
+E(Ts ) ≤ Dk
+max + (Dk
+max + T)E( )+ +
+τ0
+m
+1
+λi
+e–λiτIN
+1 – e–λiτIN
+Proof: From Theorem 1 in Ref. [16], the expected searching 
+time E(Ts) of transient radio source i is
+                      
+E(Ts ) = E(D) E( )τOUT+ +1
+λi
+e–λiτIN
+1 – e–λiτIN
+ (7)
+063www.engineering.org.cn  Volume 1 · Issue 1 · March 2015  Engineering
+ResearchRobotics—Article
+where D is the amount of time from the beginning of the 
+search to the moment when the robot is within distance d a of 
+the radio source i for the ﬁ  rst time. The theorem is built on 
+the general case that the searching process can be modeled 
+as a delayed alternative renewal reward process [22]. In our 
+case, the renewal period starts at the ﬁ  rst entry to the sens-
+ing circle by the robot team at each planning period. It is not 
+exactly the same as the planning period but will share the 
+same expected period length with the planning period. Since 
+the search begins with the inter-ring movements in the ﬁ  rst 
+planning period, let us deﬁ  ne probability event B as the event 
+if the robot team meets the radio source during inter-ring 
+movements. Therefore,
+E(D) = E(D|B)P(B) + E(D|B
+-
+)(1 – P(B)) (8)
+Event B is a small probability event given the large search-
+ing field size. Hence P (B) << 1 – P (B) ≈ 1. Since the point of 
+the ﬁ  rst entry to the sensing circle could be anywhere on the 
+time ring, it is uniformly distributed on the time ring. Also, 
+we have m/2 pairs of robots evenly distributed on the time 
+ring,
+ 
+(9)              
+E(D|B) = D
+k
+max + = Dk
+max + ≥E(D)
+τ0
+m/2
+τ0
+m
+1
+2
+Since the search region is usually much larger than the 
+sensing region τ IN << Dk
+max
+ + T, we have
+                                 E(τOUT) ≈ Dk
+max
+ + T  (10)
+from Eq. (6). Since each renewal period is independent and 
+identically distributed (i.i.d.), it allows us to apply Theorem 1 
+in Ref. [16]. Since Dmax + T is independent of τ IN, plugging Eqs. 
+(9) and (10) into Eq. (7), we have the result in Eq. (11).
+Theorem 3: The expected searching time E (Ts) of radio 
+source i has the following upper bound, where v avg is the 
+average traveling speed of the robot and will be defined in 
+detail later.
+        E(Ts) ≤ ( )( ){ }E+++ 1
+λi
+4 3
+vavg
+e–λiτIN
+1 – e–λiτIN
+τ0
+1 – e–λiτ0
+2
+m
+1
+2  (11)
+Remark 1: An important result given by Theorem 2 is the 
+fact that E(Ts) entries are not sensitive to the number of radio 
+sources, which means excellent scalability.
+(3) Algorithm: We summarize our DPRWA in Algorithm 1. 
+The algorithm runs on each robot pair, which skips details of 
+intra-pair coordination.
+Synchronization: The algorithm runs at t k, the beginning 
+of planning period k . The algorithm relies on the D-SPOG at 
+tk–1, which is the synchronized belief function across all ro-
+bots. Therefore, all robots will have the same TSP tour, which 
+ensures their motions are synchronized given the same plan, 
+accurate clocks from GPS, and the same mapping rule be-
+tween the time ring and the Euclidean space.
+Virtual ridges: One point that we have yet to explain is the 
+virtual ridge mentioned in line 2 of Algorithm 1. Deﬁ  ne s
+max 
+as the maximum number of ridges. If there are not enough 
+ridges generated from the D-SPOG, we employ virtual ridges 
+to ensure that there are s
+max ridges. Virtual ridges are genera-
+ted uniformly random in the searching region and also re-
+freshed at every planning period. The introduction of virtual 
+ridges can be simply viewed as a sampling approach to cover 
+regions with low probabilities. The virtual ridge sets are syn-
+chronized in the same way as D-SPOG.
+Sparse sensor fields: The DPWRA in Algorithm 1 forces 
+all robots to share a single TSP tour. This is efﬁ  cient when 
+radio sources are relatively dense (i.e., the distances be-
+tween disconnected components in the level set are less 
+than the communication range). However, sharing a TSP 
+tour might not be efﬁ  cient when the radio source are sparse-
+ly distributed in the searching region, because robots have 
+to waste considerable time on off-ridge movements running 
+between radio sources.
+Since the communication range is much larger than the 
+sensing range, given that robots have more power and bet-
+ter antenna than radio sources, the sensing processes in 
+D-SPOG are independent across distant groups, which al-
+lows us to partition D-SPOG spatially into disjoint distant 
+groups. Each group is treated as a separated problem with 
+no requirement to merge D-SPOG during the partition. 
+We can regroup periodically should inter-group distances 
+change. At the moment of regrouping, we can merge D-
+SPOG across groups. Robot pairs will be proportionally dis-
+patched to different groups according to the total P (C
+i|Z
+1:k
+) 
+of each group. We may have to merge some close groups 
+when there is an insufﬁ  cient number of robot pairs. For each 
+group, we apply Algorithm 1.
+6 Experiments
+To validate the algorithm, we have implemented the algorithm 
+and a simulation platform. The hardware-driven simulation 
+builds on real robot and radio source parameters measured 
+in physical experiments (Figure 3 (a)). The radio sources are 
+XBee Pro with ZigBeeT radio frequency modules produced 
+by Digi International Inc. We use the RSS readings from XBee 
+Pro to drive the simulation experiments (Figure 3 (b)). We 
+simulate iRobot Create in the process, which has a maximum 
+speed of 40 cm .s
+–1
+. The grid is a square with 50 50 cells. 
+Each grid cell has a size of 50 50 cm
+2
+. Each radio source 
+generates radio transmission signals according to an i.i.d. 
+Poisson process with a rate of λ = 0.05 packets per second. The 
+input : D-SPOG at tk–1
+Apply the level set
+Compute ridges and merge them with pre-generated 
+virtual ridges O(s
+max)
+Compute the TSP tour from the merged ridge set
+// Inter Ring Movements
+Compute D
+u,k and Dk
+max
+Move to initial positions
+Wait w
+u
+k
+// Intra Ring Movements
+while t≤t
+k + Dk
+max + T do
+        Patrolling along the TSP tour
+        if ϕ
+u,k = ϕj,k 
+                Update гu,k
+        end
+end
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+O(n)
+O((s
+max–1)!)
+O(1)
+O(1)
+O(Dk
+max)
+O(T)
+O(1)
+O(1)
+O(1)
+  u-1,k
+j,k
+j,k   u+1,k
+j,kor   ϕu,k = ϕj,k
+ u,k
+j,kϕ'u,k = –ϕ'j,k
+then 
+Algorithm 1: DPRWA
+064 Engineering  Volume 1 · Issue 1 · March 2015  www.engineering.org.cn
+Research Robotics—Article
+7 Conclusions
+We developed a decentralized algo-
+rithm to coordinate a group of mobile 
+robots to search for unknown and 
+transient radio sources in an open ﬁ  eld 
+under mobility, communication range, 
+and sensing constraints. We proposed a 
+two-step approach: First we decentral-
+ized belief functions that robots use to 
+track source locations using checkpoint-
+based synchronization, and second 
+we proposed a decentralized planning 
+strategy to coordinate robots to ensure 
+the existence of checkpoints and coordi-
+nated searching. We formally analyzed 
+memory usage, data amount in com-
+munication, and searching time for the 
+proposed algorithm. We implemented 
+the proposed algorithm and compared 
+it with two heuristics in a simulation 
+based on real sensory data.
+Acknowledgements
+We would like to thank M. Hielsberg, 
+J. Lee, C. Chou, H. Cheng, X. Wang, 
+M. Treat, R. Liu and B. Chen for their 
+inputs on this work and contributions 
+to the Networked Robots Lab at Texas 
+A&M Un iversit y.
+This work was supported in part 
+by the National Science Foundation 
+(IIS1318638 and IIS1426752), and by the 
+Shenzhen Science and Technology Proj-
+ect (ZDS Y20120617113312191).
+Compliance with ethics 
+guidelines
+Chang-Young Kim, Dezhen Song, Jin-
+gang Yi, and Xinyu Wu declare that 
+they have no conflict of interest or fi-
+Figure 3. Hardware used to drive the simulation. 
+Figure 4. Experiment results when comparing the DPRWA, the pairwise random walk, and the pairwise ﬁ  xed-route patrol. (a) The maximum memory space 
+usage using number of detection events stored on-board; searching time comparison while changing: (b) number of robots, or (c) number of radio sources. 
+We compare the DPRWA algorithm to two heuristics including a pairwise 
+random walk and a pairwise patrol. In both heuristics, robots are paired just as 
+DPRWA does. In the former, each pair is treated as a super robot to perform a 
+random walk together. In the latter, robot pairs follow a linear formation with an 
+equal inter-pair distance to be the maximum communication distance. Since global 
+connectivity is maintained, it becomes centralized planning.
+Figure 4 illustrates the simulation results by using memory usage and searching 
+time as metrics while changing communication range, number of robots, and num-
+ber of radio sources. Each data point is an average of 20 independent trials. There 
+are 6 radio sources to be searched in Figures 4(a) and 4(b). In Figures 4(a) and 4(c), 8 
+robots are employed. The communication range is set to be 6 m i n Figures 4(b) and 
+4(c). Since the pairwise patrol maintains global connectivity, it requires the least 
+amount of memory for synchronization purpose. The pairwise random walk is the 
+opposite because the time between checkpoints for robots can be very long. Our 
+DPWRA requires more memory than that of the patrol but still much less than that 
+of the random wa lk (Figure 4(a)). When it comes to the searching time, DPRWA is 
+signiﬁ  cantly faster than its counterparts (Figures 4(b) and 4(c)). The advantage is 
+even greater when the number of robots is limited, which happens when the search 
+is constrained by resou rces. Figure 4(b) also compares DPRWA with the centralized 
+PRWA (CPRWA) in Refs. [19, 20]. It is surprising that DPRWA EST is about the same 
+as CPRWA despite the advantage that CPRWA has in coordination and synchroni-
+zation. Figure 4(c) further conﬁ  rms Theorem 3: the EST of DPRWA is insensitive to 
+the number of radio sources.
+radio sources also dynamically vary their transmission power using one of 5 power 
+settings in XBee Pro, which results in a varying sensing range from 1.67 m to 3.45 m. 
+We set τ = 500 s in the simulation. We choose the probability convergence threshold 
+as pt = 0.9. During each trial, we randomly generate radio source locations in the 
+grid.
+065www.engineering.org.cn  Volume 1 · Issue 1 · March 2015  Engineering
+ResearchRobotics—Article
+nancial conﬂ  icts to disclose.
+References
+1. G. Mao, B. Fidan, B. Anderson. Wireless sensor network localization 
+techniques. Comput. Netw. , 2007, 51(10): 2529–2553
+2. E. D. Nerurkar, S. I. Roumeliotis, A. Martinelli. Distributed maximum a 
+posteriori estimation for multi-robot cooperative localization. In: ICR A’09. 
+IEEE International Conference on Robotics and Automation , 2009: 1402–1409
+3. D. Koutsonikolas , S. Das, Y. Hu. Path planning of mobile landmarks for 
+localization in wireless sensor networks.  Comput. Commun. , 2007, 30(13): 
+2577–2592
+4. T. Sit, Z. Liu, M. Jr Ang , W. Seah . Multi-robot mobility enhanced hop-
+count based localization in ad hoc networks.  Robot. Auton. Syst., 2007, 55(3): 
+244–252 
+5. B. C. Liu, K. H. Lin, J. C. Wu. Analysis of hyperbolic and circular position-
+ing algorithms using stationary signal-strength-difference measurements 
+in wireless communications. IEEE Trans. Vehicular Technology , 2006, 55(2): 
+499–509
+6. Y. Sun, J. Xiao, F. Cabrera-Mora . Robot localization and energy-efﬁ  cient 
+wireless communications by multiple antennas . In: IEEE/RSJ International 
+Conference on Intelligent Robots and Systems . St. Louis: IEEE, 2009: 377–381 
+7. M. Kim , N. Y. Chong . Direction sensing RFID reader for mobile robot 
+navigation.  IEEE Trans. Autom. Sci. Eng., 2009, 6(1): 44–54 
+8. F. H. Durrant-Whyte. Data fusion in sensor networks. In: IEEE International 
+Conference on Video and Signal Based Surveillance , 2006: 39
+9. K. Y. K. Leung, T. D. Barfoot, H. Liu. Decentralized localization of sparse-
+ly-communicating robot networks: A centralized-equivalent approach.  
+IEEE Trans. on Robot., 2010, 26(1): 62–77
+10. E. D. Nerurkar, S. I. Roumeliotis . Asynchronous multi-centralized cooper-
+ative localization. In: IEEE/RSJ International Conference on Intelligent Robots 
+and Systems (IROS), 2010: 4352–4359
+11. G. A. S. Pereira, A. K. Das, V. Kumar, M. F. M. Campos. Decentralized mo-
+tion planning for multiple robots subject to sensing and communication 
+constraints. In: Proceedings of the Second MultiRobot Systems Workshop . Klu-
+wer Academic Press, 2003:  267–278
+12. D. Bhadauria , O. Tekdas, V. Isler. Robotic data mules for collecting data 
+over sparse sensor ﬁ  elds. J. Field Robot., 2011, 28(3): 388–404
+13. S. Martinez , F. Bullo, J. Cortes , E. Fazzoli . On synchronous robotic net-
+works part I: Models, tasks, and complexity. IEEE Trans. Automatic Control , 
+2007, 52(12): 2199–2213
+14. S. Martinez , F. Bullo, J. Cortes , E. Fazzoli . On synchronous robotic net-
+works part II: Time complexity of rendezvous and deployment algorithms. 
+IEEE Trans. Automatic Control , 2007, 52(12): 2214–2226
+15. D. Song, C. Kim, J. Yi. Stochastic modeling of the expected time to search 
+for an intermittent signal source under a limited sensing range. In: Robot-
+ics: Science and Systems (RSS) Conference , Zaragoza, 2010
+16. D. Song , C. Kim , J. Yi. On the time to search for an intermittent signal 
+source under a limited sensing range.  IEEE Trans. Robot. , 2011, 27(2): 313–
+323 
+17. D. Song, C. Kim, J. Yi. Monte Carlo simultaneous localization of multiple 
+unknown transient radio sources using a mobile robot with a directional 
+antenna. In: IEEE International Conference on Robotics and Automation . Kobe, 
+2009: 3154–3159
+18. D. Song, C. Kim, J. Yi. Simultaneous localization of multiple unknown and 
+transient radio sources using a mobile robot. IEEE Trans. Robot., 2012, 28(3): 
+668–680 
+19. C. 
+Kim, D. Song, Y. Xu, J. Yi. Localization of multiple unknown transient 
+radio sources using multiple paired mobile robots with limited sensing 
+ranges. In: IEEE International Conference on Robotics and Automation (ICRA). 
+Shanghai, 2011
+20. C. Kim, D. Song, Y. Xu, J. Yi, X. Wu . Cooperative search of multiple un-
+known transient radio sources using multiple paired mobile robots. IEEE 
+Trans. Robot., 2014, 30(5): 1161–1173
+21. C. Kim, D. Song, J. Yi. Decentralized searching of multiple unknown and 
+transient radio sources. In: IEEE International Conference on Robotics and 
+Automation (ICRA). Karlsruhe, 2013: 927–932
+22. S. M. Ross. Introduction to Probability Models . 9th ed. Academic Press, 2007

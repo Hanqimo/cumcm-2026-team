@@ -1,0 +1,38 @@
+{
+  "id": "zh15page",
+  "url": "https://hkxb.buaa.edu.cn/CN/abstract/abstract8781.shtml",
+  "final_url": "https://hkxb.buaa.edu.cn/CN/abstract/abstract8781.shtml",
+  "content_type": "text/html;charset=UTF-8",
+  "status": "html",
+  "links": [
+    "https://hkxb.buaa.edu.cn/js/download.js"
+  ],
+  "metadata": [
+    "<meta name=\"DC.Format\" content=\"text/html\" />",
+    "<meta name=\"DC.Language\" content=\"cn\" />",
+    "<meta name=\"DC.Title\" content=\"测向交叉定位系统中的最优交会角研究\" />",
+    "<meta name=\"DC.Identifier\" content=\"\" />",
+    "<meta name=\"DC.Contributor\" content=\"白晶\" />",
+    "<meta name=\"DC.Contributor\" content=\"王国宏\" />",
+    "<meta name=\"DC.Contributor\" content=\"王娜\" />",
+    "<meta name=\"DC.Contributor\" content=\"徐海全\" />",
+    "<meta name=\"DC.Date\" content=\"2009-02-15\" />",
+    "<meta name=\"citation_journal_title\" content=\"航空学报\" />",
+    "<meta name=\"citation_journal_abbrev\" content=\"航空学报\" />",
+    "<meta name=\"citation_issn\" content=\"1000-6893\" />",
+    "<meta name=\"citation_authors\" xml:lang=\"cn\" content=\"白晶;王国宏;王娜;徐海全\" />",
+    "<meta name=\"citation_title\" xml:lang=\"cn\" content=\"测向交叉定位系统中的最优交会角研究\" />",
+    "<meta name=\"DC.Keywords\" xml:lang=\"cn\" content=\"传感器,概率,拉格朗日乘子,导数,计算机仿真,最优交会角,\"/>",
+    "<meta name=\"citation_date\" content=\"2009-02-15\" />",
+    "<meta name=\"citation_volume\" content=\"30\" />",
+    "<meta name=\"citation_issue\" content=\"2\" />",
+    "<meta name=\"citation_firstpage\" content=\"298\" />",
+    "<meta name=\"citation_lastpage\" content=\"304\" />",
+    "<meta name=\"citation_id\" content=\"30/2/298\" />",
+    "<meta name=\"citation_doi\" content=\"\" />",
+    "<meta name=\"citation_authors\" xml:lang=\"en\" content=\"Bai Jing;Wang Guohong;Wang Na;Xu Haiquan\" />",
+    "<meta name=\"citation_title\" xml:lang=\"en\" content=\"Study on Optimum Cut Angles in Bearing-only Location Systems\" />",
+    "<meta name=\"DC.Keywords\" xml:lang=\"en\" content=\"sensor,probability,Lagrange multipliers,derivatives,computer simulation,optimum cut angle,\"/>"
+  ],
+  "snippet": ""
+}
