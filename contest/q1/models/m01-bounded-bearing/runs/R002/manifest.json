@@ -1,0 +1,22 @@
+{
+  "model": "Q1-M01-v01",
+  "algorithm": "A01-pairwise-halfplanes-and-support-disks",
+  "data": "D01-synthetic-geometries",
+  "run": "R002",
+  "seed": 20260910,
+  "utc": "2026-09-10T15:27:33.719838+00:00",
+  "command": "python contest\\q1\\models\\m01-bounded-bearing\\verification\\verify_q1.py --run-id R002",
+  "base_git_commit": "40b4b022179519d0ad8000d9eab58aad3b3919e8",
+  "uncommitted_source": true,
+  "source_sha256": {
+    "contest\\q1\\models\\m01-bounded-bearing\\verification\\verify_q1.py": "261e24d046df564cc1b192b7ca36a3ad881a135c725d6c39a886973544310350",
+    "contest\\q1\\models\\m01-bounded-bearing\\src\\bearing_geometry.py": "c0c5f9bb24d8285b255776469758876102410864beafbbfe9aec311e37a7c1cb"
+  },
+  "versions": {
+    "python": "3.10.11",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "matplotlib": "3.10.8"
+  },
+  "validation": "passed"
+}

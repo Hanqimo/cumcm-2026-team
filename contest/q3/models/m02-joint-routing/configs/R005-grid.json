@@ -1,0 +1,56 @@
+{
+  "ad_w0.5_b0": {
+    "family": "adaptive",
+    "scan_gain": 0.18,
+    "info_distance": 250,
+    "initial_baseline": 0,
+    "initial_force": false,
+    "anchor_radius": 1200.0,
+    "cover_move_weight": 0.5
+  },
+  "ad_w0.5_b400": {
+    "family": "adaptive",
+    "scan_gain": 0.18,
+    "info_distance": 250,
+    "initial_baseline": 400,
+    "initial_force": false,
+    "anchor_radius": 1200.0,
+    "cover_move_weight": 0.5
+  },
+  "ad_w1_b0": {
+    "family": "adaptive",
+    "scan_gain": 0.18,
+    "info_distance": 250,
+    "initial_baseline": 0,
+    "initial_force": false,
+    "anchor_radius": 1200.0,
+    "cover_move_weight": 1
+  },
+  "ad_w1_b400": {
+    "family": "adaptive",
+    "scan_gain": 0.18,
+    "info_distance": 250,
+    "initial_baseline": 400,
+    "initial_force": false,
+    "anchor_radius": 1200.0,
+    "cover_move_weight": 1
+  },
+  "ad_w2_b0": {
+    "family": "adaptive",
+    "scan_gain": 0.18,
+    "info_distance": 250,
+    "initial_baseline": 0,
+    "initial_force": false,
+    "anchor_radius": 1200.0,
+    "cover_move_weight": 2
+  },
+  "ad_w2_b400": {
+    "family": "adaptive",
+    "scan_gain": 0.18,
+    "info_distance": 250,
+    "initial_baseline": 400,
+    "initial_force": false,
+    "anchor_radius": 1200.0,
+    "cover_move_weight": 2
+  }
+}

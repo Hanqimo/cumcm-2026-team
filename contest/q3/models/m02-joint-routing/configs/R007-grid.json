@@ -1,0 +1,82 @@
+{
+  "step_joint_b0_i2": {
+    "family": "joint",
+    "scan_gain": 0.18,
+    "info_distance": 150,
+    "info_maxobs": 2,
+    "initial_baseline": 0,
+    "initial_force": false,
+    "anchor_radius": 1200.0,
+    "one_step": true
+  },
+  "step_joint_b0_i3": {
+    "family": "joint",
+    "scan_gain": 0.18,
+    "info_distance": 150,
+    "info_maxobs": 3,
+    "initial_baseline": 0,
+    "initial_force": false,
+    "anchor_radius": 1200.0,
+    "one_step": true
+  },
+  "step_joint_b400_i2": {
+    "family": "joint",
+    "scan_gain": 0.18,
+    "info_distance": 150,
+    "info_maxobs": 2,
+    "initial_baseline": 400,
+    "initial_force": false,
+    "anchor_radius": 1200.0,
+    "one_step": true
+  },
+  "step_joint_b400_i3": {
+    "family": "joint",
+    "scan_gain": 0.18,
+    "info_distance": 150,
+    "info_maxobs": 3,
+    "initial_baseline": 400,
+    "initial_force": false,
+    "anchor_radius": 1200.0,
+    "one_step": true
+  },
+  "step_adaptive_b0_i2": {
+    "family": "adaptive",
+    "scan_gain": 0.18,
+    "info_distance": 150,
+    "info_maxobs": 2,
+    "initial_baseline": 0,
+    "initial_force": false,
+    "anchor_radius": 1200.0,
+    "one_step": true
+  },
+  "step_adaptive_b0_i3": {
+    "family": "adaptive",
+    "scan_gain": 0.18,
+    "info_distance": 150,
+    "info_maxobs": 3,
+    "initial_baseline": 0,
+    "initial_force": false,
+    "anchor_radius": 1200.0,
+    "one_step": true
+  },
+  "step_adaptive_b400_i2": {
+    "family": "adaptive",
+    "scan_gain": 0.18,
+    "info_distance": 150,
+    "info_maxobs": 2,
+    "initial_baseline": 400,
+    "initial_force": false,
+    "anchor_radius": 1200.0,
+    "one_step": true
+  },
+  "step_adaptive_b400_i3": {
+    "family": "adaptive",
+    "scan_gain": 0.18,
+    "info_distance": 150,
+    "info_maxobs": 3,
+    "initial_baseline": 400,
+    "initial_force": false,
+    "anchor_radius": 1200.0,
+    "one_step": true
+  }
+}

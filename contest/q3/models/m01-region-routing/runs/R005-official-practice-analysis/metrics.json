@@ -1,0 +1,163 @@
+{
+  "counts": {
+    "request": 115,
+    "response": 115,
+    "region": 39,
+    "clear_certificate": 14,
+    "completion_certificate": 1
+  },
+  "unique_actions": 115,
+  "source_hash_verified": {
+    "api_client.py": true,
+    "bearing_geometry.py": true,
+    "run_robot.py": true,
+    "strategy.py": true
+  },
+  "virtual_time_s": 3854.083567,
+  "cost_s": {
+    "movement": 3204.0835642241414,
+    "measurement": 495,
+    "switching": 85,
+    "clear_success": 70,
+    "clear_failure": 0
+  },
+  "cleared_count": 14,
+  "distance_m": 16020.417821120707,
+  "scan_count": 74,
+  "tracking_count": 25,
+  "measure_results": {
+    "no_signal": 60,
+    "direction": 37,
+    "near": 2
+  },
+  "max_accounting_error_s": 4.86614027295218e-07,
+  "last_clear_time_s": 3292.187536,
+  "tail_s": 561.8960310000002,
+  "phases": [
+    {
+      "phase": 1,
+      "point": [
+        0.0,
+        0.0
+      ],
+      "distance_m": 5219.686783018691,
+      "time_s": 1248.937358,
+      "scan_measures": 20,
+      "tracking_measures": 10,
+      "cleared": [
+        14,
+        13,
+        4,
+        8,
+        15,
+        18
+      ]
+    },
+    {
+      "phase": 2,
+      "point": [
+        -674.9999999999997,
+        1169.1342951089923
+      ],
+      "distance_m": 2222.5666156897723,
+      "time_s": 582.513324,
+      "scan_measures": 14,
+      "tracking_measures": 6,
+      "cleared": [
+        9,
+        17,
+        12,
+        11
+      ]
+    },
+    {
+      "phase": 3,
+      "point": [
+        675.0000000000001,
+        1169.134295108992
+      ],
+      "distance_m": 1607.2365777322052,
+      "time_s": 397.447316,
+      "scan_measures": 10,
+      "tracking_measures": 2,
+      "cleared": [
+        16
+      ]
+    },
+    {
+      "phase": 4,
+      "point": [
+        1350.0,
+        0.0
+      ],
+      "distance_m": 888.4145646704313,
+      "time_s": 231.6829130000001,
+      "scan_measures": 9,
+      "tracking_measures": 0,
+      "cleared": []
+    },
+    {
+      "phase": 5,
+      "point": [
+        675.0000000000001,
+        -1169.134295108992
+      ],
+      "distance_m": 3628.0331267586807,
+      "time_s": 831.6066249999999,
+      "scan_measures": 9,
+      "tracking_measures": 7,
+      "cleared": [
+        1,
+        10,
+        3
+      ]
+    },
+    {
+      "phase": 6,
+      "point": [
+        -675.0000000000006,
+        -1169.1342951089919
+      ],
+      "distance_m": 1104.4801532509255,
+      "time_s": 256.8960310000002,
+      "scan_measures": 6,
+      "tracking_measures": 0,
+      "cleared": []
+    },
+    {
+      "phase": 7,
+      "point": [
+        -1350.0,
+        1.6532731788489268e-13
+      ],
+      "distance_m": 1349.9999999999995,
+      "time_s": 305.0,
+      "scan_measures": 6,
+      "tracking_measures": 0,
+      "cleared": []
+    }
+  ],
+  "independent_lp_checks": 624,
+  "max_lp_support_error_m": 1.2278178473934531e-11,
+  "clear_certificates_checked": 14,
+  "absent_coverage_margin_m": {
+    "2": 60.62080670060891,
+    "5": 60.62080670060891,
+    "6": 60.62080670060891,
+    "7": 60.62080670060891,
+    "19": 60.62080670060891,
+    "20": 60.62080670060891
+  },
+  "official_result": {
+    "version": 2,
+    "problem_no": 3,
+    "practice_run_no": 7781971365707298437,
+    "case_code": "JCEK-BMVS-WD8Z-WF6J",
+    "package_sha256": "8c512264f046ff9b7a3256aeca99f1c30c62da20a8386c483348d1af717b03ac",
+    "window_started_at_utc": "2026-09-10T16:21:22.535Z",
+    "ended_at_utc": "2026-09-10T16:21:25.567Z",
+    "jammer_count": 14,
+    "omnidirectional_jammer_count": 14,
+    "directional_jammer_count": 0
+  }
+}

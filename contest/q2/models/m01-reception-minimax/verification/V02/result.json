@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "random_seed": 20260911,
+  "posterior_cases": 40,
+  "support_max_difference_m": 2.4158453015843406e-13,
+  "radius_max_difference_m": 2.1316282072803006e-13,
+  "reading_bin_max_violation_deg": 0.0,
+  "reflection_difference_m": 2.4442670110147446e-12,
+  "scope": "Independent representations for construction; analytical proof, not samples, supports continuous reception guarantee"
+}
