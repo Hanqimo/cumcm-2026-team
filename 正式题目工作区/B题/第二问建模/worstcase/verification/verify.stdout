@@ -1,0 +1,46 @@
+{
+  "comparison": {
+    "worst_radius_reduction_m_estimate": 1.3419590102986731,
+    "worst_radius_reduction_percent_estimate": 2.663764159829422,
+    "expected_radius_increase_m": 0.393539310583801,
+    "expected_radius_increase_percent": 1.5694037111562706,
+    "candidate_distance_m": 97.82125399972713,
+    "uniform_prior_is_evaluation_reference_not_minimax_assumption": true
+  },
+  "independent_cases": 52,
+  "max_sample_outside_m": 3.765876499528531e-13,
+  "convergence": [
+    {
+      "name": "minimax",
+      "expected_radius_level5": 25.4692612414353,
+      "expected_radius_level6": 25.4692612415494,
+      "expected_radius_difference": 1.1409895250835689e-10,
+      "probability_total_error": 3.1086244689504383e-15,
+      "worst_radius_gap_m": 8.064129929152841e-06
+    },
+    {
+      "name": "expected",
+      "expected_radius_level5": 25.075721946345,
+      "expected_radius_level6": 25.0757219309656,
+      "expected_radius_difference": 1.537939908757835e-08,
+      "probability_total_error": 1.9984014443252818e-15,
+      "worst_radius_gap_m": 8.945077247801692e-06
+    },
+    {
+      "name": "minimax_rounded_2dp",
+      "expected_radius_level5": 25.4692646955713,
+      "expected_radius_level6": 25.4692646954506,
+      "expected_radius_difference": 1.2069989452356822e-10,
+      "probability_total_error": 2.9976021664879227e-15,
+      "worst_radius_gap_m": 8.064563274956527e-06
+    },
+    {
+      "name": "minimax_rounded_1dp_tangent",
+      "expected_radius_level5": 25.4685410153345,
+      "expected_radius_level6": 25.4685410073357,
+      "expected_radius_difference": 7.998803397413212e-09,
+      "probability_total_error": 2.9976021664879227e-15,
+      "worst_radius_gap_m": 8.065293876313717e-06
+    }
+  ]
+}

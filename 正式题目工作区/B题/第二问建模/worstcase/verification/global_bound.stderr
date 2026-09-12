@@ -1,0 +1,6 @@
+global cells=20001 active=4756 lower=48.6461
+global cells=40001 active=9317 lower=48.9415
+global cells=60001 active=12904 lower=48.9945
+global cells=80001 active=14029 lower=49.013
+global cells=100001 active=10223 lower=49.0214
+global cells=120001 active=1089 lower=49.026

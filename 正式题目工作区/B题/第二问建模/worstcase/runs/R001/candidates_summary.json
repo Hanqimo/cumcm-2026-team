@@ -1,0 +1,25 @@
+{
+  "relative_tolerance": 0.01,
+  "threshold_m": 49.52569509409362,
+  "threshold_based_on_global_lower_bound": true,
+  "evaluated_grid_box": [
+    600,
+    1150,
+    250,
+    850
+  ],
+  "step_m": 5,
+  "evaluated_grid_points": 13431,
+  "accepted_points_north": 37,
+  "boundary_ambiguous_points": [],
+  "x_range": [
+    920.0,
+    1005.0
+  ],
+  "y_range": [
+    430.0,
+    575.0
+  ],
+  "note": "A conservative subset of the true 1 percent near-optimal region; bounding rectangle is not the region, and this grid is not a proof of exhaustive region coverage.",
+  "cell_property_check_count": 249
+}

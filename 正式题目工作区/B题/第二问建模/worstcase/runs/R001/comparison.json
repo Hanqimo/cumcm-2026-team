@@ -1,0 +1,240 @@
+{
+  "results": {
+    "minimax": {
+      "q": [
+        969.3503213017304,
+        497.7312515719848
+      ],
+      "strict_worst": {
+        "x": 969.3503213017304,
+        "y": 497.7312515719848,
+        "worst_lower": 49.03633360025683,
+        "worst_upper": 49.03634166438676,
+        "normal_lower": 49.03633359983154,
+        "no_signal_upper": 49.03633400025684,
+        "worst_theta": 5.486509593902402,
+        "safe_margin": -85.26323232414256,
+        "calls": 643.0,
+        "interval_splits": 127.0,
+        "angle_bound_complete": 1.0
+      },
+      "uniform_prior_expectation": {
+        "x": 969.35032130173,
+        "y": 497.731251571985,
+        "J": 2167.28647719715,
+        "J_lower": 2167.28647719715,
+        "P_H": 0.0,
+        "P_N": 0.00038779337618987,
+        "P_A": 0.999612206623807,
+        "P_loc": 0.0,
+        "E_radius_loss": 25.4692612415494,
+        "safe_margin": -85.2632323241426,
+        "angle_calls": 6678.0
+      },
+      "independent_controlling_pairs": {
+        "normal": {
+          "theta": 5.486509593902402,
+          "points": [
+            [
+              1499.771542734587,
+              -26.178609655925268
+            ],
+            [
+              1415.9380226140063,
+              24.7152901190595
+            ]
+          ],
+          "radius": 49.036333799831546,
+          "center": [
+            1457.8547826742965,
+            -0.731659768432884
+          ]
+        },
+        "no_signal": {
+          "points": [
+            [
+              4.999238475781956,
+              0.08726203218641757
+            ],
+            [
+              103.05376851768379,
+              -1.7988102205736758
+            ]
+          ],
+          "radius": 49.036333800256884,
+          "center": [
+            54.02650349673287,
+            -0.8557740941936292
+          ]
+        }
+      },
+      "reflection": {
+        "x": 969.3503213017304,
+        "y": -497.7312515719848,
+        "worst_lower": 49.03633360025683,
+        "worst_upper": 49.03634166438695,
+        "normal_lower": 49.03633359983174,
+        "no_signal_upper": 49.03633400025684,
+        "worst_theta": 0.7966757132771841,
+        "safe_margin": -85.26323232414256,
+        "calls": 643.0,
+        "interval_splits": 127.0,
+        "angle_bound_complete": 1.0
+      }
+    },
+    "expected": {
+      "q": [
+        906.618820480172,
+        572.789605795575
+      ],
+      "strict_worst": {
+        "x": 906.618820480172,
+        "y": 572.789605795575,
+        "worst_lower": 50.37829217008184,
+        "worst_upper": 50.37830111515909,
+        "normal_lower": 50.37829217008184,
+        "no_signal_upper": 41.50421300916201,
+        "worst_theta": 5.475455615437049,
+        "safe_margin": -68.22552691176475,
+        "calls": 683.0,
+        "interval_splits": 137.0,
+        "angle_bound_complete": 1.0
+      },
+      "uniform_prior_expectation": {
+        "x": 906.618820480172,
+        "y": 572.789605795575,
+        "J": 2118.15022026671,
+        "J_lower": 2118.15022026671,
+        "P_H": 0.0,
+        "P_N": 0.000226374096173972,
+        "P_A": 0.999773625903828,
+        "P_loc": 0.0,
+        "E_radius_loss": 25.0757219309656,
+        "safe_margin": -68.2255269117647,
+        "angle_calls": 7686.0
+      },
+      "independent_controlling_pairs": {
+        "normal": {
+          "theta": 5.475455615437049,
+          "points": [
+            [
+              1499.771542734587,
+              -26.178609655925268
+            ],
+            [
+              1412.7812793498358,
+              24.66018896042169
+            ]
+          ],
+          "radius": 50.378292370082036,
+          "center": [
+            1456.2764110422113,
+            -0.7592103477517895
+          ]
+        },
+        "no_signal": {
+          "points": [
+            [
+              4.999238475781956,
+              0.08726203218641757
+            ],
+            [
+              87.99179272421966,
+              -1.5359024551515177
+            ]
+          ],
+          "radius": 41.50421280916201,
+          "center": [
+            46.49551560000081,
+            -0.7243202114825501
+          ]
+        }
+      },
+      "reflection": {
+        "x": 906.618820480172,
+        "y": -572.789605795575,
+        "worst_lower": 50.37829217008215,
+        "worst_upper": 50.3783011151589,
+        "normal_lower": 50.37829217008215,
+        "no_signal_upper": 41.50421300916201,
+        "worst_theta": 0.8077296917425367,
+        "safe_margin": -68.22552691176475,
+        "calls": 683.0,
+        "interval_splits": 137.0,
+        "angle_bound_complete": 1.0
+      }
+    },
+    "minimax_rounded_2dp": {
+      "q": [
+        969.35,
+        497.73
+      ],
+      "strict_worst": {
+        "x": 969.35,
+        "y": 497.73,
+        "worst_lower": 49.0364016031531,
+        "worst_upper": 49.03640966771638,
+        "normal_lower": 49.0364016031531,
+        "no_signal_upper": 49.03580712319123,
+        "worst_theta": 5.486511091117171,
+        "safe_margin": -85.26237271434138,
+        "calls": 643.0,
+        "interval_splits": 127.0,
+        "angle_bound_complete": 1.0
+      },
+      "uniform_prior_expectation": {
+        "x": 969.35,
+        "y": 497.73,
+        "J": 2167.28771341843,
+        "J_lower": 2167.28771341842,
+        "P_H": 0.0,
+        "P_N": 0.000387781746661964,
+        "P_A": 0.999612218253335,
+        "P_loc": 0.0,
+        "E_radius_loss": 25.4692646954506,
+        "safe_margin": -85.2623727143414,
+        "angle_calls": 6678.0
+      }
+    },
+    "minimax_rounded_1dp_tangent": {
+      "q": [
+        969.3,
+        497.8
+      ],
+      "strict_worst": {
+        "x": 969.3,
+        "y": 497.8,
+        "worst_lower": 49.03702998373424,
+        "worst_upper": 49.03703804902812,
+        "normal_lower": 49.03702998373424,
+        "no_signal_upper": 49.0309411763013,
+        "worst_theta": 5.486491421634228,
+        "safe_margin": -85.2500561483946,
+        "calls": 643.0,
+        "interval_splits": 127.0,
+        "angle_bound_complete": 1.0
+      },
+      "uniform_prior_expectation": {
+        "x": 969.3,
+        "y": 497.8,
+        "J": 2167.16517462284,
+        "J_lower": 2167.16517462284,
+        "P_H": 0.0,
+        "P_N": 0.000387651880462983,
+        "P_A": 0.999612348119534,
+        "P_loc": 0.0,
+        "E_radius_loss": 25.4685410073357,
+        "safe_margin": -85.2500561483946,
+        "angle_calls": 6678.0
+      }
+    }
+  },
+  "comparison": {
+    "worst_radius_reduction_m_estimate": 1.3419590102986731,
+    "worst_radius_reduction_percent_estimate": 2.663764159829422,
+    "expected_radius_increase_m": 0.393539310583801,
+    "expected_radius_increase_percent": 1.5694037111562706,
+    "candidate_distance_m": 97.82125399972713,
+    "uniform_prior_is_evaluation_reference_not_minimax_assumption": true
+  }
+}

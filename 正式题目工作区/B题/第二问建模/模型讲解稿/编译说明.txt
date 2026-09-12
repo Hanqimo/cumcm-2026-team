@@ -1,5 +1,0 @@
-在本文件夹中运行：
-latexmk -xelatex -interaction=nonstopmode -halt-on-error -outdir=build 第二问模型讲解.tex
-cp build/第二问模型讲解.pdf 第二问模型讲解.pdf
-
-依赖：XeLaTeX、latexmk、ctex、PGFPlots；中文字体使用 macOS 自带的 Songti SC、Heiti SC；西文及公式使用 Latin Modern 默认字体系列。
