@@ -1,0 +1,223 @@
+\section{问题二的模型建立与求解}
+
+\subsection{已知量与评价标准}
+
+第一次检测点 $s$ 与其有效示向度 $\theta$ 已知；真实源位置 $g$、真实距离 $r=\lVert g-s\rVert$ 及接收半径 $R$ 均未知。由题意，全向源的 $R$ 满足 $1000\le R\le1500$ 米。首次返回有效示向度说明 $5<r\le R$（间距不超过 5 米时应返回过强信号而非示向度），并给出方向误差界 $\varepsilon=1^\circ$。若首次已经返回近距标记，则已直接满足 20 米清除条件，不属于本问必须继续选测向点的情形。
+
+记 $\Omega=\overline{B}(0,1800)$ 为源所在区域。精确的首次状态可行集为
+\begin{equation}
+  \mathcal{Z}_1=\{(g,R):\ g\in\Omega\cap W(s,\theta),\ 5<\lVert g-s\rVert\le R,\ 1000\le R\le1500\}.
+  \label{eq:Z1}
+\end{equation}
+式 \eqref{eq:Z1} 特别说明距离与接收半径并非相互独立：已经测到距离 $r$ 的源，必然满足 $R\ge r$。不能一边假设目标远在 1500 米，一边又把它的接收半径固定为 1000 米。
+
+后续计算采用保守凸外包
+\begin{equation}
+  P_1=\Omega\cap W(s,\theta)\cap\overline{B}(s,1500).
+  \label{eq:P1}
+\end{equation}
+它省略了半径 5 米的内孔，但不会删除真实目标。该外包有意保持凸性，所得定位半径是保守评价，不宣称等于利用全部近距离逻辑所能得到的最紧物理可行域。
+
+关于"较好的定位效果"，题目未给出唯一数值指标。本文优先最小化\textbf{第二次观测后可行域的最坏最小包围圆半径}，并给出随移动预算变化的精度曲线。选择包围圆半径而非仅用面积，是因为后两问关心的是"能否由 20 米清除圆覆盖全部可能位置"——一个面积很小但狭长的区域仍然可能无法清除。区域直径可作为辅助指标。
+
+本文不使用概率先验；所有平均数仅为指定合成场景的描述性统计。
+
+\subsection{保证接收的第二点候选区域}
+
+先忽略 $\Omega$ 对方向扇区的进一步裁剪，推导一个适用于任意合法首次位置和方向的通用充分区域。令 $R_0=1000$ 米，$u=u(\theta)$，$v=(-u_y,u_x)$，第二检测点写为 $q=s+au+bv$。考虑三个闭圆盘之交
+\begin{equation}
+  K=\overline{B}(s,R_0)
+  \cap\overline{B}\bigl(s+R_0u(\theta-\varepsilon),R_0\bigr)
+  \cap\overline{B}\bigl(s+R_0u(\theta+\varepsilon),R_0\bigr).
+  \label{eq:K}
+\end{equation}
+在局部坐标下其表达式为
+\begin{equation}
+  \boxed{\ a^2+b^2\le R_0^2,\qquad a^2+b^2\le 2R_0\bigl(a\cos\varepsilon-\lvert b\rvert\sin\varepsilon\bigr).\ }
+  \label{eq:K-local}
+\end{equation}
+$K$ 关于首次示向度轴对称，无需知道真实目标距离或朝向，也不要求 $q$ 落在目标圆域内。原点 $q=s$ 属于 $K$，但会在后续几何条件中被排除。$K$ 是通用充分区域，本文不声称它是考虑 $\Omega$ 与 5 米内孔之后的最大可行区域。
+
+\subsubsection{保证接收的证明}
+
+作平移与旋转，令 $s=0$、$\theta=0$。设真实源 $g=ru(\phi)$，$\lvert\phi\rvert\le\varepsilon$。首次接收说明 $R\ge\max(R_0,r)$。由式 \eqref{eq:K} 的三个圆盘约束得 $\lVert q\rVert\le R_0$，且
+\begin{equation}
+  \lVert q\rVert^2\le2R_0\,q\cdot u(\phi),\qquad \lvert\phi\rvert\le\varepsilon .
+  \label{eq:key-ineq}
+\end{equation}
+
+\textbf{为什么只需检查扇区端点？} 当 $q\ne0$ 时，式 \eqref{eq:K-local} 保证 $a>0$，又因推导中两个端点的投影均为正，函数 $a\cos\phi+b\sin\phi$ 在此小角区间上的最小值出现在端点，等于 $a\cos\varepsilon-\lvert b\rvert\sin\varepsilon$；区间内部的驻点只会给出更大的投影值。故式 \eqref{eq:key-ineq} 对区间内所有 $\phi$ 成立。
+
+分两种情形。
+
+\textbf{情形一：$0\le r\le R_0$。} 此时 $g$ 位于 $0$ 与 $R_0u(\phi)$ 的线段上，而这两个端点到 $q$ 的距离都不超过 $R_0$。由范数的凸性，$\lVert q-g\rVert\le R_0\le R$，故第二点必能收到信号。
+
+\textbf{情形二：$R_0\le r\le1500$。} 此时
+\begin{equation}
+  \lVert q-ru(\phi)\rVert^2-r^2
+  =\lVert q\rVert^2-2r\,q\cdot u(\phi)
+  \le\lVert q\rVert^2-2R_0\,q\cdot u(\phi)\le0 ,
+\end{equation}
+其中第二步用了 $r\ge R_0$ 与 $q\cdot u(\phi)\ge0$，第三步用了式 \eqref{eq:key-ineq}。故 $\lVert q-g\rVert\le r\le R$，同样保证接收。
+
+两种情形均保证第二点收到信号。$\square$
+
+上述证明依赖两个前提：源为全向源，且第一次已经接收到信号。该结论不得直接用于第四问的定向源。
+
+\subsubsection{单纯横移为什么不可靠}
+
+设 $s=(0,0)$、首次读数 $0^\circ$、真实源 $g=(1000,0)$，接收半径 $R=1000$ 米。若直接横移至 $q=(0,500)$，则距离变为 $\sqrt{1250000}\approx1118.03$ 米，第二次将收不到信号。此时即使画出的交会几何看起来很理想，也拿不到第二个示向度。
+
+反过来，若一律要求 $q$ 到 $P_1$ 所有点的距离都不超过 1000 米，又会忽略 $R\ge r$ 这一已知关系而过度保守。式 \eqref{eq:K} 正是利用该关系给出了更有用的通用安全区域。
+
+\subsection{从安全区域中排除退化观测}
+
+沿示向度轴移动可能仍与目标共线。特别是目标距离未知时，不能保证走到"目标侧面"。设 $B$ 为本次移动预算，$h>0$ 为到整个首次角域的横向分离阈值，定义
+\begin{equation}
+  \mathcal{C}(B,h)=\Bigl\{s+au+bv:\ (a,b)\in K,\ a^2+b^2\le B^2,\ \lvert b\rvert\cos\varepsilon-a\sin\varepsilon\ge h\Bigr\}.
+  \label{eq:C-Bh}
+\end{equation}
+其上下两个分支位于首次角域的两侧。对扇区内任意单位方向 $u(\phi)$，有 $\lvert[u(\phi),q-s]\rvert\ge h$。设两条真实视线的交会角为 $\beta$、第二次观测时目标距离为 $r_2$，则
+\begin{equation}
+  \lvert\sin\beta\rvert=\frac{\lvert[u(\phi),q-s]\rvert}{r_2}\ge\frac{h}{1500}.
+  \label{eq:sin-beta}
+\end{equation}
+因此任意可能目标都不会与两个检测点完全共线。
+
+本文取 $h=20$ 米。该值用于避免几何退化，虽然数值与清除半径一致，但二者机制不同；四个推荐点的横向分离均大于 200 米，故在固定候选点上把 $h$ 在 5 至 100 米之间调整不影响其可行性。当 $h$ 过大或 $B$ 过小时候选域可能为空，此时程序应报告诊断，而不是输出违反条件的点。
+
+一个容易手算与执行的基线是
+\begin{equation}
+  q_{45}=s+\frac{B}{\sqrt2}(u\pm v).
+  \label{eq:q45}
+\end{equation}
+当 $\varepsilon=1^\circ$、$B\le1000$ 米时它满足式 \eqref{eq:K}；再检验 $B(\cos\varepsilon-\sin\varepsilon)/\sqrt2\ge h$ 即属于 $\mathcal{C}(B,h)$。该基线不需要目标距离信息，可作为无暇运行数值搜索时的可解释替代方案。
+
+\subsection{第二次观测之前的决策模型}
+
+对候选点 $q$ 和可能的第二次读数 $\psi$，更新保守区域
+\begin{equation}
+  P_2(q,\psi)=P_1\cap W(q,\psi).
+  \label{eq:P2}
+\end{equation}
+记可行读数集合 $\Psi(q)=\{\psi:\ P_2(q,\psi)\ne\varnothing\}$。由于 $\mathcal{C}$ 保证接收且 $h>5$，本模型不出现无信号分支与近距分支。对闭凸外包 $P_1$，定义保证型评价
+\begin{equation}
+  F(q)=\sup_{\psi\in\Psi(q)}\varrho\bigl(P_2(q,\psi)\bigr),\qquad
+  q_B^*\in\arg\min_{q\in\mathcal{C}(B,h)}F(q),
+  \label{eq:F-model}
+\end{equation}
+其中 $\varrho(\cdot)$ 为式 \eqref{eq:mincircle} 定义的最小包围圆半径。这是对未知真实目标和未知第二次读数误差的\textbf{最坏情形}评价，不需要假设它们服从何种概率分布。忽略内孔等信息会使其偏保守。目标函数对应一步观测后的剩余不确定性，不等于后两问的最短总清除时间。
+
+若已有可接受的精度要求 $\eta$，也可给出质量候选子区域
+\begin{equation}
+  \mathcal{C}_\eta(B,h)=\{q\in\mathcal{C}(B,h):\ F(q)\le\eta\}.
+  \label{eq:C-eta}
+\end{equation}
+实际求解中，每个离散候选点都有可核查的保守分值 $U(q)$，$U(q)\le\eta$ 是该点通过精度要求的充分条件；候选网格中满足条件的点集不是整个连续子区域的精确边界。
+
+题目未指定移动成本与精度之间的权重，本文不编造权重强行宣布唯一最优点，而是给出 $B=250,500,750,1000$ 米的策略族。新增一次同频道测向的虚拟时间为 $\lVert q-s\rVert/5+5$ 秒；若从其他频道切回则另加 1 秒，此额外切换属于后续调度问题，当前不涉及。
+
+\subsection{几何直觉与线性近似的使用边界}
+
+在已知名义目标位置、误差很小且交会不退化的局部条件下，两个线性化误差带可写为 $\lvert n_i^{T}\delta g\rvert\le r_i\varepsilon$，其平行四边形的最大中心偏差为
+\begin{equation}
+  \varrho_{\text{lin}}=\frac{\varepsilon\sqrt{r_1^2+r_2^2+2r_1r_2\lvert\cos\beta\rvert}}{\lvert\sin\beta\rvert}.
+  \label{eq:linear-approx}
+\end{equation}
+推导可取第一法向量为 $(1,0)$、第二法向量为 $(\cos\beta,\sin\beta)$，在两个误差带的四个角点求最大范数。固定 $r_1,r_2$ 时，$\beta=90^\circ$ 使该近似最小；但移动 $q$ 会同时改变 $r_2$ 与 $\beta$，而 $r_1$ 原本未知，因此\textbf{不能}由此推出"绕真目标 $90^\circ$"是当前问题的可执行最优策略。文献 \cite{Bai2009,Sheng2016} 亦指出最优交会角依赖误差模型与评价准则，不存在无条件的 $90^\circ$ 结论。
+
+式 \eqref{eq:linear-approx} 仅用于解释与筛选，不承担最坏误差保证。最终分值使用实际角域交集与最小包围圆，尤其在近平行或远距离情形下不以线性近似替代。
+
+\subsection{可实施的数值算法及保证层次}
+
+\subsubsection{圆域的保守外包}
+
+将半径 $\rho$ 的圆盘替换为由 $N$ 条切线围成的外接正 $N$ 边形：边界法向方向为 $2\pi k/N$，对应半平面为 $u_k\cdot(x-c)\le\rho$。该外包的单圆最大径向差为 $\rho(\sec(\pi/N)-1)$，$N=360$、$\rho=1500$ 米时约 0.0571 米，$\rho=1800$ 米时约 0.0685 米。每个圆盘被外包，其交集自然也被外包。需注意单圆偏差不是交集定位半径的误差上界，尤其在几何病态时不能直接传播；本文用 180、360、720 三种边数作分辨率敏感性检查。
+
+\subsubsection{读数分箱必须扩大角域}
+
+不能只抽样有限个 $\psi$ 就把最大值称为连续最坏值。把所有可能读数覆盖为区间 $I_j=[l_j,r_j]$，其中点 $m_j$、半宽 $\delta_j$。若 $\psi\in I_j$，则有包含关系
+\begin{equation}
+  W(q,\psi;\varepsilon)\subseteq W(q,m_j;\varepsilon+\delta_j).
+\end{equation}
+因此构造
+\begin{equation}
+  \overline{P}_{2j}=\overline{P}_1\cap W(q,m_j;\varepsilon+\delta_j),\qquad
+  U(q)=\max_j\varrho(\overline{P}_{2j})\ge F(q).
+  \label{eq:U-bound}
+\end{equation}
+这一外包关系是"连续读数保证"的依据：首次区域的顶点方位给出整个凸区域在 $q$ 看来的角度范围，再向两端各扩大 $\varepsilon$ 以覆盖所有可能读数。处理时需注意角度跨界；若 $q$ 位于区域内部或检测到不安全的角度展开，则保守地采用整个 $360^\circ$。本模型的正常候选点在角域之外，不触发该全圆情形。
+
+程序输出的是保守包围圆，而不是原目标位置网格的外接圆。浮点求交仍需容差检查；所谓"连续保证"指上述数学外包关系成立，不表示已实现机器区间算术证书。
+
+\subsubsection{第二点搜索流程}
+
+\begin{enumerate}[label=(\arabic*),leftmargin=2.2em]
+  \item 构建首次外包区域，枚举局部极坐标候选点，用式 \eqref{eq:C-Bh} 的原始圆盘距离条件筛选。
+  \item 初筛使用 $0.5^\circ$ 读数箱宽，粗网格共 166 个可行点。
+  \item 在各预算的较优候选点附近加密长度与角度网格，采用 $0.2^\circ$ 箱宽。
+  \item 对入围的六个点及 $45^\circ$ 基线用 $0.05^\circ$ 箱宽重新比较，再选 $U$ 最小者。不能只把粗网格最优点的数值算精细而不重新排序。
+  \item 输出第二点坐标、候选域余量、最坏读数包络、$U$、移动与检测耗时、敏感性及验证记录。
+  \item 若模型输入不一致、候选域为空或数值过程失效，返回诊断，不悄悄退回到可能失去信号的点。
+\end{enumerate}
+
+该算法求得的是有限候选集上的推荐点，既没有证明连续空间全局最优，也没有对未入围粗点的最终精度分值全部求解。式 \eqref{eq:F-model} 是模型，式 \eqref{eq:U-bound} 与有限搜索是第一版求解方法，两者的差距在本文中明确保留。
+
+若候选点数为 $M$、读数箱数为 $J$、后验顶点数为 $H$，包围圆枚举的保守最坏复杂度约为 $O(MJH^4)$；实际中大部分区域由直径圆即可覆盖，耗时远小于该上界。小试中单点 $0.5^\circ$ 分箱约需 0.012 秒，当前完整搜索、基线、1100 条场景及绘图约 17 秒，均属本机实测，不能外推到模拟器在线多目标循环。
+
+\subsection{数值结果}
+
+数据版本 D01 为人为设计的核验条件：首次检测点 $(0,0)$，读数 $0^\circ$，$\varepsilon=1^\circ$，目标圆域半径 1800 米，接收半径范围 1000 至 1500 米。它没有假设官方案例的随机生成分布。上下镜像在该对称场景下等价；靠近圆域边界时必须重新评价，不能机械旋转同一组数值。
+
+当前采用的运行为 Q2-R002。表 \ref{tab:q2-results} 给出四个移动预算下的推荐点及其最坏后验半径外包上界 $U$（准确数值以运行目录的 \texttt{selected\_points.csv} 为准）。
+
+\begin{table}[H]
+  \centering
+  \caption{问题二的第二检测点推荐结果（运行 Q2-R002，首次点 $(0,0)$、读数 $0^\circ$）}
+  \label{tab:q2-results}
+  \begingroup
+  \renewcommand{\arraystretch}{1.4}
+  \begin{tabularx}{\textwidth}{C{0.10\textwidth}C{0.13\textwidth}C{0.13\textwidth}C{0.14\textwidth}C{0.15\textwidth}C{0.12\textwidth}}
+    \toprule[1.2pt]
+    {\heifont\bfseries $B$/米} & {\heifont\bfseries $a$/米} & {\heifont\bfseries $b$/米} & {\heifont\bfseries $U$/米} & {\heifont\bfseries 场景最大半径/米} & {\heifont\bfseries $45^\circ$基线 $U$/米} \\
+    \midrule[0.5pt]
+    250  & 89.592  & 233.395 & 220.005 & 218.915 & 243.307 \\
+    500  & 257.519 & 428.584 & 123.928 & 122.983 & 128.678 \\
+    750  & 539.505 & 520.994 & 81.437  & 80.884  & 81.479  \\
+    1000 & 848.048 & 529.919 & 56.207  & 55.849  & 58.454  \\
+    \bottomrule[1.2pt]
+  \end{tabularx}
+  \endgroup
+\end{table}
+
+图 \ref{fig:q2-candidate} 左图为式 \eqref{eq:K} 给出的保证接收候选区域（式 \eqref{eq:K-local} 的两条边界曲线之间）以及四个预算下的推荐点；右图为最坏后验半径随移动预算的变化，并与式 \eqref{eq:q45} 的 $45^\circ$ 基线比较。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.94\textwidth]{q2-candidate-tradeoff.png}
+  \caption{问题二的候选区域与精度—预算权衡。左：保证接收的三圆盘交集候选区域与四个预算下的推荐点；右：最坏后验包围圆半径 $U$ 随移动预算 $B$ 的变化，并与 $45^\circ$ 基线比较}
+  \label{fig:q2-candidate}
+\end{figure}
+
+表 \ref{tab:q2-results} 展示的是"较多移动换取较低最坏不确定性"，并不意味着总任务越走越远越好。各预算下 $45^\circ$ 基线的上界依次约为 243.307、128.678、81.479、58.454 米；在 750 米预算下改进极小，因此不能夸大复杂优化相对简单几何规则的优势。
+
+沿首次示向度前进的基线在未知距离下可能共线，残余半径明显较大；它仍可能对很近目标的抵近清除有价值，但本文只比较第二次测向的定位效果。纯横移基线没有接收保证，其报告值仅以"已获得第二个方向"为条件，不能与保证接收策略当作完整性能比较。
+
+1100 条合成方向场景覆盖 11 种真实距离、5 种首次误差对应方向和 5 种第二次误差，每预算 275 条。所有推荐点均未失去信号，真实目标被后验包围圆包含，场景半径不超过连续分箱外包上界。需要说明：样本均值或可清除场景比例不代表官方环境中的期望性能。
+
+图 \ref{fig:q2-range-stress} 给出真实距离变化下的场景压力检查。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.86\textwidth]{q2-range-stress.png}
+  \caption{问题二在真实距离变化下的压力检查。合成场景下后验半径随真实距离的变化及其与连续分箱外包上界的关系，该分布为本地设定，非官方概率分布}
+  \label{fig:q2-range-stress}
+\end{figure}
+
+在最远距离条件下存在半径超过 20 米的实际合成后验，这不仅是上界松弛大于 20 米，而是确实存在无法由单个 20 米清除圆覆盖的后验区域。因此，这组具体策略不能普遍保证"只增加一次观测就可以清除"。但该事实不构成"所有可能的第二点策略都不可能做到"的全局不可能性证明。
+
+\subsection{向后续问题提供的部件与改进方向}
+
+可复用的部件包括：首次可行域、通用全向接收安全区域、按给定预算筛选第二点、观测后更新多边形外包、输出包围圆与清除充分条件。第三问可根据当前位置与其他目标选择 $B$，并在一个点复用多个频道的观测收益；本文未实现这些调度，也未将该一步精度目标冒充为总时间最优策略。第四问可复用角域更新、最小包围圆与清除判据，但\textbf{不能}复用式 \eqref{eq:K} 的全向接收保证——定向源的未知朝向引入额外的可见性条件，需另行建立。
+
+值得保留的改进方向包括：利用圆域裁剪扩大 $K$；允许近距分支与直接清除，减少保守的横向限制；以"抵近与观测的总成本"替代单步精度；为连续空间搜索给出最优性差距；用更精细或自适应的读数箱降低保守度。这些方向本文尚未完成。
