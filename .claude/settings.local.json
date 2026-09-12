@@ -16,7 +16,11 @@
       "PowerShell(wsl -e bash -lc 'cd ~/cumcm-2026-team && GIT_TERMINAL_PROMPT=0 timeout 60 git push --dry-run origin main; echo EXIT=$?')",
       "PowerShell(wsl -e bash -lc 'cd ~/cumcm-2026-team && echo \"local main : $\\(git rev-parse main\\)\"; echo \"origin/main: $\\(git rev-parse origin/main\\)\"; echo \"remote main: 08d195e0c01030579cf34d3d10d25b24940120d3\"; echo \"--- ahead/behind ---\"; git rev-list --left-right --count origin/main...main')",
       "PowerShell(wsl -e bash -lc 'cd ~/cumcm-2026-team && git rev-list --left-right --count origin/main...main')",
-      "PowerShell(wsl -e bash -lc 'cd ~/cumcm-2026-team && git rev-parse origin/main main')"
+      "PowerShell(wsl -e bash -lc 'cd ~/cumcm-2026-team && git rev-parse origin/main main')",
+      "PowerShell(wsl git -C /home/serena/cumcm-2026-team status; wsl git -C /home/serena/cumcm-2026-team remote -v; wsl git -C /home/serena/cumcm-2026-team branch -vv; wsl git -C /home/serena/cumcm-2026-team log --oneline -5)",
+      "PowerShell(head *)",
+      "PowerShell(wsl bash -c \"find /home/serena/cumcm-2026-team/CUMCM2026Problems -maxdepth 3 | head -100; echo '---- sizes ----'; du -sh /home/serena/cumcm-2026-team/CUMCM2026Problems; echo '---- tracked? settings.local.json ----'; git -C /home/serena/cumcm-2026-team ls-files .claude/settings.local.json\")",
+      "PowerShell(wsl bash -c \"cd /home/serena/cumcm-2026-team && git add -A && git commit -m '添加 CUMCM2026 各题题目与附件' && git log --oneline -3\")"
     ]
   }
 }
