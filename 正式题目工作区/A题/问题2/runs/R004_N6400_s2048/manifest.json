@@ -1,0 +1,57 @@
+{
+  "model": "Q2-M01-v01",
+  "algorithm": "A01-FV-implicit-midpoint-coupled-Picard",
+  "data": "D01",
+  "config": {
+    "name": "R004_N6400_s2048",
+    "N": 6400,
+    "s": 2048,
+    "tol": 1e-12,
+    "mode": "real",
+    "end": 10800,
+    "budget": 600,
+    "method": "midpoint",
+    "schedule": 1
+  },
+  "source_sha256": "f6dca91bb18b10f232a9c21f0c4c82923ab1e8626d9298c5b321f9bc642c1ad4",
+  "environment_sha256": "bcd0b42f65c2277c20e65de2a2be149555d4c3e52df562970903411c22d93b77",
+  "compile_command": [
+    "clang++",
+    "-O3",
+    "-std=c++17",
+    "/Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/正式题目工作区/A题/问题2/runs/R004_N6400_s2048/solver_snapshot.cpp",
+    "-o",
+    "/Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/正式题目工作区/A题/问题2/runs/R004_N6400_s2048/solver"
+  ],
+  "command": [
+    "/Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/正式题目工作区/A题/问题2/runs/R004_N6400_s2048/solver",
+    "/Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/正式题目工作区/A题/问题2/inputs/environment.csv",
+    "/Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/正式题目工作区/A题/问题2/runs/R004_N6400_s2048/solution",
+    "6400",
+    "2048",
+    "1e-12",
+    "real",
+    "10800",
+    "600",
+    "midpoint",
+    "1"
+  ],
+  "cwd": "/Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/正式题目工作区/A题/问题2",
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "random_seed": null,
+  "git_head": "a48afb816965566edac3c861b0129e45ff7343f0",
+  "git_status": "?? \"\\346\\255\\243\\345\\274\\217\\351\\242\\230\\347\\233\\256\\345\\267\\245\\344\\275\\234\\345\\214\\272/A\\351\\242\\230/\\351\\227\\256\\351\\242\\2302/\"\n",
+  "code_uncommitted": true,
+  "started_utc": "2026-09-11T09:00:44.726846+00:00",
+  "validation_status": "incomplete; excluded from final outputs",
+  "finished_utc": "2026-09-11T09:21:08.699973+00:00",
+  "wall_seconds": 150.20083608303685,
+  "returncode": 3,
+  "outputs_sha256": {
+    "solution_diagnostics.csv": "126a85bd2c196597bbd8b29efad5451d5517f0e491e7dec899fe33c9b6b17e31",
+    "solution_final.csv": "81efa3f2968b69f1a0fa24b65dc5faea2ba0a0f7147ed2f37a8d90f21244bbeb",
+    "solution_samples.csv": "480812d00400a1a722de919f1e9fccc0749ac7caf97ece29c63de5ffc4139343",
+    "solution_stats.json": "07c2c010c81fbf844f5568a8ae1c3c4ceedb5d6a5002a8a6bec190e3fbd4d156"
+  }
+}

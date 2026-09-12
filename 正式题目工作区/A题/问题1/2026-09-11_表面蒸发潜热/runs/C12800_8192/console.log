@@ -1,0 +1,7 @@
+time 300 steps 64256 wall 36.5061
+time 600 steps 80640 wall 46.2047
+time 900 steps 90240 wall 53.0151
+time 1200 steps 99840 wall 59.8026
+time 1500 steps 109440 wall 66.5937
+time 1800 steps 119040 wall 73.3923
+done /Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/正式题目工作区/A题/问题1/2026-09-11_表面蒸发潜热/runs/C12800_8192/solution wall 73.406 complete 1

@@ -1,0 +1,66 @@
+{
+  "model_versions": [
+    "Q2-WC-K-v01",
+    "Q2-WC-U-v01"
+  ],
+  "status": "model_formulated_analytically_checked_not_numerically_solved",
+  "created_at": "2026-09-12T10:38:19.990608+08:00",
+  "git_head": "d728a996963dc44c00ca6b47c4155eaca36f5bef",
+  "problem_source": "/Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/正式题目工作区/B题/contest/global/problem/B-v1/B题.pdf",
+  "problem_sha256": "81c992a9bee5376308c4768b58719b177f17d6ee1f9861577a851924c5a838ca",
+  "sources": {
+    "README.md": {
+      "sha256_before": "464000e51809ff526019cd876a9654b6cf4908385523a09f6a7263346d4e74c4",
+      "sha256_after": "a42e0169496578e26987dcfd5a7af94f3e0d0c471b81ec88ffdeac8678f49c70"
+    },
+    "第二问模型.tex": {
+      "sha256_before": "477f565f356aa512255e52e01e6ae5afc16591a3e20e5eea19b7bbdcf12304fc",
+      "sha256_after": "477f565f356aa512255e52e01e6ae5afc16591a3e20e5eea19b7bbdcf12304fc"
+    },
+    "第二问模型.pdf": {
+      "sha256_before": "e31da192ff8be381c706375e62ede5735014b483602e038a37644eec59580779",
+      "sha256_after": "e31da192ff8be381c706375e62ede5735014b483602e038a37644eec59580779"
+    },
+    "模型评估与待定方案.md": {
+      "sha256_before": "261814c9d35f1d7f74187c49e4c48acd3edb9c2a3eee692e1cfb9fef1876a8b3",
+      "sha256_after": "261814c9d35f1d7f74187c49e4c48acd3edb9c2a3eee692e1cfb9fef1876a8b3"
+    },
+    "manifest.yaml": {
+      "sha256_before": "ddc46d2871be0654b2431be75f32a418c63901222e09cf442226d4e45f6b6cbb",
+      "sha256_after": "ddc46d2871be0654b2431be75f32a418c63901222e09cf442226d4e45f6b6cbb"
+    }
+  },
+  "new_model_document": {
+    "path": "备选模型_最坏半径.md",
+    "sha256": "ddadb18e8f937d7b6806b6567c7583a471705f18f1df924e7cebdc4ec9f4ace8"
+  },
+  "preservation_check": {
+    "preexisting_files_checked": 53,
+    "modified": [
+      "README.md"
+    ],
+    "deleted": [],
+    "other_preexisting_files_unchanged": true,
+    "readme_change": "append-only alternative-model entry"
+  },
+  "analytical_checks": [
+    "same-radius elimination for all feedback branches",
+    "normal/strong/no-signal boundaries",
+    "hand-checkable reception counterexamples",
+    "optical terminal condition at q",
+    "support inclusion and loss monotonicity",
+    "same-support equality of known/unknown strict minimax",
+    "radius/area worst-case equivalence",
+    "conditional expectation vs strict supremum distinction"
+  ],
+  "numerical_optimization_run": false,
+  "plots_created": false,
+  "formal_adoption_changed": false,
+  "commit_or_push_performed": false,
+  "limitations": [
+    "No numerical optimal point or certified worst-case bound computed",
+    "Continuous-angle and degenerate-branch checks remain for solver implementation",
+    "Known distributions require specified joint conditional support",
+    "Candidate-region tolerance is an application input"
+  ]
+}

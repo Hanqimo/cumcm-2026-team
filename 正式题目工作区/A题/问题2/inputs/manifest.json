@@ -1,0 +1,23 @@
+{
+  "A题.pdf": {
+    "source": "/Users/hanqimo/University/Junior/数学建模/CUMCM2026Problems/A题/A题.pdf",
+    "sha256": "19d5c5eb3666e679f69192d41eb9d1bef4f0abd5c00d36cfee61ac041f6faf90"
+  },
+  "附件1.xlsx": {
+    "source": "/Users/hanqimo/University/Junior/数学建模/CUMCM2026Problems/A题/附件/附件1.xlsx",
+    "sha256": "7ef32870abeef420b89560b2530ff60dfe4255917805151d89988d0311af9dd7"
+  },
+  "result2_template.xlsx": {
+    "source": "/Users/hanqimo/University/Junior/数学建模/CUMCM2026Problems/A题/附件/附件3/result2.xlsx",
+    "sha256": "23b261b295c1b787d000eebbca6521c37075107b6fcf78724f8d395ce1798ff4"
+  },
+  "environment.csv": {
+    "sha256": "bcd0b42f65c2277c20e65de2a2be149555d4c3e52df562970903411c22d93b77",
+    "rows": 241,
+    "time_range": [
+      0,
+      14400
+    ],
+    "step": 60
+  }
+}

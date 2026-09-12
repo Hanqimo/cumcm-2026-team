@@ -1,0 +1,346 @@
+[
+  {
+    "run": "R001_pilot",
+    "config": {
+      "name": "R001_pilot",
+      "N": 400,
+      "s": 256,
+      "tol": 1e-12,
+      "mode": "real",
+      "end": 10800,
+      "budget": 600,
+      "method": "midpoint",
+      "schedule": 1
+    },
+    "completed": true,
+    "manifest": "runs/R001_pilot/manifest.json"
+  },
+  {
+    "run": "R002_N1600_s2048",
+    "config": {
+      "name": "R002_N1600_s2048",
+      "N": 1600,
+      "s": 2048,
+      "tol": 1e-12,
+      "mode": "real",
+      "end": 10800,
+      "budget": 600,
+      "method": "midpoint",
+      "schedule": 1
+    },
+    "completed": true,
+    "manifest": "runs/R002_N1600_s2048/manifest.json"
+  },
+  {
+    "run": "R003_N3200_s2048",
+    "config": {
+      "name": "R003_N3200_s2048",
+      "N": 3200,
+      "s": 2048,
+      "tol": 1e-12,
+      "mode": "real",
+      "end": 10800,
+      "budget": 600,
+      "method": "midpoint",
+      "schedule": 1
+    },
+    "completed": true,
+    "manifest": "runs/R003_N3200_s2048/manifest.json"
+  },
+  {
+    "run": "R004_N6400_s2048",
+    "config": {
+      "name": "R004_N6400_s2048",
+      "N": 6400,
+      "s": 2048,
+      "tol": 1e-12,
+      "mode": "real",
+      "end": 10800,
+      "budget": 600,
+      "method": "midpoint",
+      "schedule": 1
+    },
+    "completed": false,
+    "manifest": "runs/R004_N6400_s2048/manifest.json"
+  },
+  {
+    "run": "R005_N12800_s2048",
+    "config": {
+      "name": "R005_N12800_s2048",
+      "N": 12800,
+      "s": 2048,
+      "tol": 1e-12,
+      "mode": "real",
+      "end": 10800,
+      "budget": 600,
+      "method": "midpoint",
+      "schedule": 1
+    },
+    "completed": false,
+    "manifest": "runs/R005_N12800_s2048/manifest.json"
+  },
+  {
+    "run": "R006_N12800_s1024",
+    "config": {
+      "name": "R006_N12800_s1024",
+      "N": 12800,
+      "s": 1024,
+      "tol": 1e-12,
+      "mode": "real",
+      "end": 10800,
+      "budget": 600,
+      "method": "midpoint",
+      "schedule": 1
+    },
+    "completed": true,
+    "manifest": "runs/R006_N12800_s1024/manifest.json"
+  },
+  {
+    "run": "R007_N3200_s512",
+    "config": {
+      "name": "R007_N3200_s512",
+      "N": 3200,
+      "s": 512,
+      "tol": 1e-12,
+      "mode": "real",
+      "end": 10800,
+      "budget": 600,
+      "method": "midpoint",
+      "schedule": 1
+    },
+    "completed": true,
+    "manifest": "runs/R007_N3200_s512/manifest.json"
+  },
+  {
+    "run": "R008_N3200_s256",
+    "config": {
+      "name": "R008_N3200_s256",
+      "N": 3200,
+      "s": 256,
+      "tol": 1e-12,
+      "mode": "real",
+      "end": 10800,
+      "budget": 600,
+      "method": "midpoint",
+      "schedule": 1
+    },
+    "completed": true,
+    "manifest": "runs/R008_N3200_s256/manifest.json"
+  },
+  {
+    "run": "R009_N6400_s512",
+    "config": {
+      "name": "R009_N6400_s512",
+      "N": 6400,
+      "s": 512,
+      "tol": 1e-12,
+      "mode": "real",
+      "end": 10800,
+      "budget": 600,
+      "method": "midpoint",
+      "schedule": 1
+    },
+    "completed": true,
+    "manifest": "runs/R009_N6400_s512/manifest.json"
+  },
+  {
+    "run": "R010_N6400_s1024",
+    "config": {
+      "name": "R010_N6400_s1024",
+      "N": 6400,
+      "s": 1024,
+      "tol": 1e-12,
+      "mode": "real",
+      "end": 10800,
+      "budget": 600,
+      "method": "midpoint",
+      "schedule": 1
+    },
+    "completed": true,
+    "manifest": "runs/R010_N6400_s1024/manifest.json"
+  },
+  {
+    "run": "R011_N12800_s1024_tol13",
+    "config": {
+      "name": "R011_N12800_s1024_tol13",
+      "N": 12800,
+      "s": 1024,
+      "tol": 1e-13,
+      "mode": "real",
+      "end": 10800,
+      "budget": 600,
+      "method": "midpoint",
+      "schedule": 1
+    },
+    "completed": true,
+    "manifest": "runs/R011_N12800_s1024_tol13/manifest.json"
+  },
+  {
+    "run": "R012_N12800_s512",
+    "config": {
+      "name": "R012_N12800_s512",
+      "N": 12800,
+      "s": 512,
+      "tol": 1e-12,
+      "mode": "real",
+      "end": 10800,
+      "budget": 600,
+      "method": "midpoint",
+      "schedule": 1
+    },
+    "completed": true,
+    "manifest": "runs/R012_N12800_s512/manifest.json"
+  },
+  {
+    "run": "R013_N12800_s1024_tol5e13",
+    "config": {
+      "name": "R013_N12800_s1024_tol5e13",
+      "N": 12800,
+      "s": 1024,
+      "tol": 5e-13,
+      "mode": "real",
+      "end": 10800,
+      "budget": 600,
+      "method": "midpoint",
+      "schedule": 1
+    },
+    "completed": true,
+    "manifest": "runs/R013_N12800_s1024_tol5e13/manifest.json"
+  },
+  {
+    "run": "V01_equilibrium",
+    "config": {
+      "name": "V01_equilibrium",
+      "N": 200,
+      "s": 1,
+      "tol": 1e-12,
+      "mode": "equilibrium",
+      "end": 600.0,
+      "budget": 600,
+      "method": "midpoint",
+      "schedule": 0
+    },
+    "completed": true,
+    "manifest": "runs/V01_equilibrium/manifest.json"
+  },
+  {
+    "run": "V02_bessel_N160",
+    "config": {
+      "name": "V02_bessel_N160",
+      "N": 160,
+      "s": 32,
+      "tol": 1e-12,
+      "mode": "bessel",
+      "end": 1000.0,
+      "budget": 600,
+      "method": "midpoint",
+      "schedule": 0
+    },
+    "completed": true,
+    "manifest": "runs/V02_bessel_N160/manifest.json"
+  },
+  {
+    "run": "V02_bessel_N320",
+    "config": {
+      "name": "V02_bessel_N320",
+      "N": 320,
+      "s": 32,
+      "tol": 1e-12,
+      "mode": "bessel",
+      "end": 1000.0,
+      "budget": 600,
+      "method": "midpoint",
+      "schedule": 0
+    },
+    "completed": true,
+    "manifest": "runs/V02_bessel_N320/manifest.json"
+  },
+  {
+    "run": "V02_bessel_N640",
+    "config": {
+      "name": "V02_bessel_N640",
+      "N": 640,
+      "s": 32,
+      "tol": 1e-12,
+      "mode": "bessel",
+      "end": 1000.0,
+      "budget": 600,
+      "method": "midpoint",
+      "schedule": 0
+    },
+    "completed": true,
+    "manifest": "runs/V02_bessel_N640/manifest.json"
+  },
+  {
+    "run": "V03_mms_N160",
+    "config": {
+      "name": "V03_mms_N160",
+      "N": 160,
+      "s": 16,
+      "tol": 1e-12,
+      "mode": "mms",
+      "end": 1000.0,
+      "budget": 600,
+      "method": "midpoint",
+      "schedule": 0
+    },
+    "completed": true,
+    "manifest": "runs/V03_mms_N160/manifest.json"
+  },
+  {
+    "run": "V03_mms_N320",
+    "config": {
+      "name": "V03_mms_N320",
+      "N": 320,
+      "s": 16,
+      "tol": 1e-12,
+      "mode": "mms",
+      "end": 1000.0,
+      "budget": 600,
+      "method": "midpoint",
+      "schedule": 0
+    },
+    "completed": true,
+    "manifest": "runs/V03_mms_N320/manifest.json"
+  },
+  {
+    "run": "V03_mms_N640",
+    "config": {
+      "name": "V03_mms_N640",
+      "N": 640,
+      "s": 16,
+      "tol": 1e-12,
+      "mode": "mms",
+      "end": 1000.0,
+      "budget": 600,
+      "method": "midpoint",
+      "schedule": 0
+    },
+    "completed": true,
+    "manifest": "runs/V03_mms_N640/manifest.json"
+  },
+  {
+    "run": "V04_BDF_N1600",
+    "config": {
+      "N": 1600
+    },
+    "completed": true,
+    "manifest": "runs/V04_BDF_N1600/manifest.json"
+  },
+  {
+    "run": "V04_BDF_N400",
+    "config": {
+      "N": 400
+    },
+    "completed": true,
+    "manifest": "runs/V04_BDF_N400/manifest.json"
+  },
+  {
+    "run": "V04_BDF_N800",
+    "config": {
+      "N": 800
+    },
+    "completed": true,
+    "manifest": "runs/V04_BDF_N800/manifest.json"
+  }
+]

@@ -1,0 +1,36 @@
+{
+  "objective": "radius",
+  "objective_definition": "E[(1-T) rho]",
+  "point_north_m": [
+    906.618820480172,
+    572.789605795575
+  ],
+  "point_south_m": [
+    906.618820480172,
+    -572.789605795575
+  ],
+  "expected_area_loss_m2": 2118.15022026671,
+  "expected_radius_loss_m": 25.0757219309656,
+  "strong_probability": 0.0,
+  "no_signal_probability": 0.000226374096173972,
+  "normal_bearing_probability": 0.999773625903828,
+  "immediate_guaranteed_localization_probability": 0.0,
+  "distance_from_S1_m": 1072.401798840485,
+  "azimuth_deg": 32.28414781225776,
+  "distance_to_first_support_m": 556.879687025533,
+  "nearoptimal_grid_step_m": 5,
+  "nearoptimal_grid_count": 788,
+  "nearoptimal_grid_bounds": {
+    "x": [
+      840.0,
+      970.0
+    ],
+    "y": [
+      485.0,
+      670.0
+    ]
+  },
+  "nearoptimal_note": "Bounding box only; use listed CSV points, not every point in the box. Reflections are equivalent. Classification uses level 3 integration.",
+  "verification": "numerical convergence, independent geometry, direct joint-prior rejection Monte Carlo",
+  "optimization_status": "best numerical candidate; no certified continuous global optimum"
+}
