@@ -1,0 +1,78 @@
+{
+  "artifact": "全文模型符号与定义.md",
+  "date": "2026-09-12",
+  "status": "writing reference; 16 core symbols confirmed; local mappings proposed; no model adoption change",
+  "scope": {
+    "main": [
+      "Q1 v01",
+      "Q2 current expectation and worst-case",
+      "root contest/q3 M01-M02"
+    ],
+    "archived_reference": [
+      "Q1 clearance projection",
+      "old Q2 and reception supplement",
+      "archived Q3 M03-M05",
+      "archived Q4 M01-M02"
+    ],
+    "excludes": [
+      "numerical polygon approximations",
+      "quadrature and sampling nodes",
+      "solver state and iteration counts",
+      "engineering tolerances",
+      "plot grids"
+    ]
+  },
+  "checks": {
+    "core_symbols": 16,
+    "core_matches_current_template": true,
+    "local_links_checked": 19,
+    "all_local_links_resolve": true,
+    "table_column_counts_consistent": true,
+    "inline_math_delimiters_balanced": true,
+    "no_dollar_math_delimiters": true,
+    "source_files_checked": 27,
+    "source_files_unchanged_except_append_only_indexes": true,
+    "append_only_indexes": [
+      "contest/paper/README.md",
+      "contest/paper/notes/README.md"
+    ],
+    "numerical_external_region_symbol_not_registered": true,
+    "decision_proxy_models_separated_from_physical_probabilities": true
+  },
+  "reference_sha256": "2c251c366ca6965319c9d21a94df748143bff167cbb8952063bbdd436066c644",
+  "sources_sha256": {
+    "contest/global/problem/B-v1/B题.pdf": "81c992a9bee5376308c4768b58719b177f17d6ee1f9861577a851924c5a838ca",
+    "contest/global/symbols.md": "a2fb4fe783553b9cd59f58d143cdf16371835ca9b6c94eb9c14674b06169f5c5",
+    "contest/q1/models/m01-bounded-bearing/formulations/v01.md": "9858b5819c1fd995b9267680d1ee93ff27806e60df8e771988fa736d5494fc5c",
+    "contest/q2/models/m01-reception-minimax/formulations/v01.md": "eaf9e73e786b1c935d91f941c9f3875ec03f8b34376383f7f7ae0b823a4d4dc7",
+    "contest/q3/models/m01-region-routing/formulations/v02.md": "9dfe7f32d035b95b9fcc40edad227f0c2d3709b34ed45c979fa77ac7058b5b5f",
+    "contest/q3/models/m02-joint-routing/formulations/v01.md": "433988f1870421770ab77350a584a6319174516e39a4f1a94bf38e1a6568d3d0",
+    "contest/q3/models/m02-joint-routing/verification/research-report-v1/研究进展与结果.md": "dafc1b9e45e42a8d1a11ae870a2e69df49c596a80b742c4d0b12e2547fcc8b6f",
+    "contest/q3/state.md": "86922c0d7091cfa49df35c75d03dca8b85ff465c7732617af5fdf1dc5153ee3a",
+    "contest/q4/state.md": "2d6a6358fc445a01d39b785796eb7579d58d25c4cde305f420931129fe82ab01",
+    "templates/论文模版.pdf": "d15633eaafbdff9d768f112676af47599810d75b7cd4d4a6bc10f8aac47b4778",
+    "templates/论文模版.tex": "03a75506754b9e88f3eb84cbf8f3f574032999df55ef0df9371757a3c72a0ad1",
+    "正式题目工作区/B题/contest/q1/models/m01-bounded-bearing/formulations/v01.md": "9858b5819c1fd995b9267680d1ee93ff27806e60df8e771988fa736d5494fc5c",
+    "正式题目工作区/B题/contest/q1/models/m01-bounded-bearing/formulations/v02-clearance-projection.md": "600bfc4f8616f800453f64d1d17c3de1ce93c51e7cab9d534f0700077a1c21fb",
+    "正式题目工作区/B题/contest/q2/models/m01-reception-minimax/formulations/v01.md": "eaf9e73e786b1c935d91f941c9f3875ec03f8b34376383f7f7ae0b823a4d4dc7",
+    "正式题目工作区/B题/contest/q2/models/m01-reception-minimax/formulations/v02-region-reception.md": "87072e5e48daf3c6d3462cf74ad8d5cc99454ecbd3b18b43b3381fbd4e204750",
+    "正式题目工作区/B题/contest/q3/models/m01-region-routing/formulations/v02.md": "9dfe7f32d035b95b9fcc40edad227f0c2d3709b34ed45c979fa77ac7058b5b5f",
+    "正式题目工作区/B题/contest/q3/models/m02-joint-routing/formulations/v01.md": "433988f1870421770ab77350a584a6319174516e39a4f1a94bf38e1a6568d3d0",
+    "正式题目工作区/B题/contest/q3/models/m03-cost-aware/formulations/v01.md": "5420340c28f57116ab5929c30f09229bd115aa1ceee4923c20a907f98b69b763",
+    "正式题目工作区/B题/contest/q3/models/m04-service-routing/formulations/v01.md": "e0d8bffb0b65741b933c2f21ec230a002daf7f5e859c69b0c43f5078e162efdb",
+    "正式题目工作区/B题/contest/q3/models/m05-action-value/formulations/v01.md": "356efc942f843ec4c4657f250e4a49f1df5aad3c28967456241acd845bc210bc",
+    "正式题目工作区/B题/contest/q4/models/m01-directional-mesh/formulations/v01.md": "b4540319afb8d517f0623598ebf0fb54faf9cfa7e36f4a4d2b2ae5b0b17f8f34",
+    "正式题目工作区/B题/contest/q4/models/m02-adaptive-cover/formulations/v01.md": "a5f9e283ae7215264ce57ddab5b49463a8241ec8b28b39b32a23ca6003a5a328",
+    "正式题目工作区/B题/第二问建模/worstcase/结果与对比.md": "340b536f406208e6b507d92db7de69068e2762877e889355540cd2311015aaf3",
+    "正式题目工作区/B题/第二问建模/备选模型_最坏半径.md": "ddadb18e8f937d7b6806b6567c7583a471705f18f1df924e7cebdc4ec9f4ace8",
+    "正式题目工作区/B题/第二问建模/第二问模型.tex": "477f565f356aa512255e52e01e6ae5afc16591a3e20e5eea19b7bbdcf12304fc"
+  },
+  "index_before_sha256": {
+    "contest/paper/README.md": "09dbe48df849200859a0872d1b7457e9db540e2fa7c6864cd656fd699a4f8efe",
+    "contest/paper/notes/README.md": "defbaa2eaed5aed3813b628d168bade5b08b83ed92e386740aea6ff9bb8a9459"
+  },
+  "index_after_sha256": {
+    "contest/paper/README.md": "22c15ac883de8f4392d60272831369c99bcbe7102e5c8fe25cca80021256d8cc",
+    "contest/paper/notes/README.md": "69e4ecbe1429ebeb661d9c4919da43f7b5d2ec86d0a5c2ae41687114dfa3cc05"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "scope": "Model algebra and geometry only; no optimization or general solver validation",
+  "ray_cartesian_membership_samples": 100000,
+  "membership_disagreements": 0,
+  "C1_cross_checks": {
+    "(0, 0)": {
+      "C1_ray": 27633.94349093056,
+      "C1_radius_area": 27633.943490930567,
+      "relative_difference": 2.6329783936090735e-16
+    },
+    "(1500, 0)": {
+      "C1_ray": 1570.492921221405,
+      "C1_radius_area": 1570.4929212214051,
+      "relative_difference": 1.4477854205569983e-16
+    },
+    "(2500, -3.141592653589793)": {
+      "C1_ray": 19081.0601720759,
+      "C1_radius_area": 19081.060172075908,
+      "relative_difference": 3.8131830980918955e-16
+    },
+    "(2500, 0)": {
+      "C1_ray": 0.0,
+      "C1_radius_area": 0.0,
+      "relative_difference": 0
+    },
+    "(3299, -3.141592653589793)": {
+      "C1_ray": 0.03956904267387985,
+      "C1_radius_area": 0.03956904706442396,
+      "relative_difference": 1.109590683055012e-07
+    },
+    "(3300, -3.141592653589793)": {
+      "C1_ray": 0.0,
+      "C1_radius_area": 0.0,
+      "relative_difference": 0
+    },
+    "(1700, 1.2)": {
+      "C1_ray": 989.864016311125,
+      "C1_radius_area": 989.8640163111252,
+      "relative_difference": 1.148509652318577e-16
+    },
+    "(1700, -1.2)": {
+      "C1_ray": 989.8640163111248,
+      "C1_radius_area": 989.8640163111249,
+      "relative_difference": 1.1485096523185771e-16
+    }
+  },
+  "baseline_C1_analytic": 27633.943490930553,
+  "checks_passed": true
+}

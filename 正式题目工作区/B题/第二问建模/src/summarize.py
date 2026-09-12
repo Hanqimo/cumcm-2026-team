@@ -22,6 +22,8 @@ def main():
  (ROOT/'verification/strong_analytic_check.json').write_text(json.dumps({'q':[500,0],'C1_analytic':math.pi/180*((1500**3-1000**3)/(3*500)-25),'P_H_analytic':analytic,'P_H_numerical':float(strong['P_H']),'absolute_error':float(strong['P_H'])-analytic,'strong_branch_radius_m':5,'strong_branch_dmax_m':5,'strong_branch_area_loss':0,'strong_branch_radius_loss':0},indent=2))
  report=f'''# 第二检测点求解结果：修正终止损失，比较面积与半径目标
 
+当前主模型已推广到 S₁=(a,0)、示向度 β；以下数值及计算验证仅针对 a=0、β=0，现有程序仅复现这一基准，不提供一般参数情景的求解结果。
+
 本轮沿用第一点 S₁=(0,0)、第一次正常示向度 0° 的基准情形。模型源文件见 `第二问模型.tex`。源位置在半径1800米圆域内按面积均匀分布；有效接收半径在观测前服从 U[1000,1500]，与源位置独立；不同地点的角误差独立服从 U[-1°,1°]。第一次正常反馈同时更新源位置和固定接收半径，两次检测使用同一个接收半径。
 
 ## 两个目标及本次修正

@@ -176,7 +176,6 @@
 
 \section{符号说明}
 
-% 可继续复制表格行；三栏内容均居中，表格只保留顶部、表头下方和底部三条横线。
 \begin{table}[H]
   \centering
   \begingroup
@@ -185,14 +184,28 @@
     \toprule[1.2pt]
     {\heifont\bfseries 符号} & {\heifont\bfseries 定义} & {\heifont\bfseries 单位} \\
     \midrule[0.5pt]
-    $x_i$ & 第 $i$ 个研究对象对应的变量值 & 请填写 \\
-    $n$ & 样本量 & 个 \\
-    $\theta$ & 请填写参数定义 & -- \\
-    $y$ & 请填写因变量定义 & 请填写 \\
+    \(\Omega\) & 以原点为圆心、半径为 \(1800\,\mathrm{m}\) 的目标圆域 & -- \\
+    \(g\) & 干扰源的位置，固定但未知 & \(\mathrm{m}\) \\
+    \(s_i\) & 第 \(i\) 个检测点的位置 & \(\mathrm{m}\) \\
+    \(q\) & 待选择的检测点或行动位置 & \(\mathrm{m}\) \\
+    \(R\) & 干扰源的固定有效接收半径，取值为 \(1000\)--\(1500\,\mathrm{m}\) & \(\mathrm{m}\) \\
+    \(\theta_i\) & 在检测点 \(s_i\) 获得的正常示向度读数 & \(\mathrm{rad}\) \\
+    \(\alpha\) & 测角误差上界，\(\alpha=\pi/180\) & \(\mathrm{rad}\) \\
+    \(r_{\mathrm{strong}}\) & 强信号距离阈值，取值为 \(5\,\mathrm{m}\) & \(\mathrm{m}\) \\
+    \(r_{\mathrm{opt}}\) & 光学精确定位距离，取值为 \(20\,\mathrm{m}\) & \(\mathrm{m}\) \\
+    \(\mathcal W_i\) & 第 \(i\) 次正常测向对应的正向角域，半角为 \(\alpha\) & -- \\
+    \(P\) & 纯测角交会区域，即各角域 \(\mathcal W_i\) 的交集 & -- \\
+    \(K\) & 综合观测信息与物理条件得到的源位置可行区域 & -- \\
+    \(\operatorname{diam}(K)\) & 区域 \(K\) 的直径 & \(\mathrm{m}\) \\
+    \(c(K)\) & 区域 \(K\) 的最小包围圆圆心 & \(\mathrm{m}\) \\
+    \(\rho(K)\) & 区域 \(K\) 的最小包围圆半径 & \(\mathrm{m}\) \\
+    \(d_{\max}(q;K)\) & 位置 \(q\) 到区域 \(K\) 的最远距离 & \(\mathrm{m}\) \\
     \bottomrule[1.2pt]
   \end{tabularx}
   \endgroup
 \end{table}
+
+上述位置变量均为二维坐标向量；公式推导中的角度统一采用弧度，观测数据与结果展示可采用度并注明单位。多源情形下增加源编号下标，其余局部符号在各问建模时另行定义。
 
 \section{问题分析}
 
