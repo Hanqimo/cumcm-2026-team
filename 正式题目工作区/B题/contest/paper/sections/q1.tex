@@ -1,0 +1,185 @@
+\section{问题一的模型建立与求解}
+
+\subsection{输入输出与对象定义}
+
+输入为同一个静止干扰源的 $n$ 次有效示向度观测：检测点坐标 $s_i=(s_{ix},s_{iy})$ 与读数 $\theta_i$，长度单位为米，角度单位为度，推导中三角函数使用弧度，误差半宽取 $\varepsilon=1^\circ$（弧度制下 $\varepsilon=\pi/180$）。检测点坐标准确；由假设七，同一频道唯一标识一个目标。
+
+输出包括：定位区域的状态（空集、无界、点、线段或二维多边形）、有限区域的顶点及其顺序、直径 $D(P)$ 与最远点对、最小包围圆圆心与半径 $\varrho(P)$，以及"是否存在以 $D(P)$ 为直径的覆盖圆"的判定。
+
+按假设二，问题一所称"多边形定位区域"在本文中解释为各正向测角域的交集 $P$，不附加任何人为的裁剪框。实际应用场合可另建物理区域 $P_{\text{phys}}=P\cap\Omega$（$\Omega$ 为半径 1800 米的目标圆域），但该集合一般含圆弧边，不能再声称与 $P$ 完全相同。
+
+\subsection{单次观测的半平面表示}
+
+记 $u(\alpha)=(\cos\alpha,\sin\alpha)$ 为单位方向向量，叉积 $[a,b]=a_xb_y-a_yb_x$。一次示向度观测对应正向角域
+\begin{equation}
+  W_i=\{x:[u(\theta_i-\varepsilon),\,x-s_i]\ge0,\quad [u(\theta_i+\varepsilon),\,x-s_i]\le0\}.
+  \label{eq:wedge}
+\end{equation}
+其中第一个约束要求目标位于下边界射线的左侧，第二个约束要求目标位于上边界射线的右侧。由于 $0<\varepsilon<\pi/2$，两个半平面之交即为前向角域，已经自动排除了检测点背后的反向扇区。
+
+记 $u_i^-=(\cos(\theta_i-\varepsilon),\sin(\theta_i-\varepsilon))$、$u_i^+$，为避免与正弦符号混淆，实现中直接使用分量。在一次观测对应的两条边界上，标准不等式形式为
+\begin{equation}
+  \begin{bmatrix}u_{iy}^- & -u_{ix}^-\\[2pt] -u_{iy}^+ & u_{ix}^+\end{bmatrix}x
+  \;\le\;
+  \begin{bmatrix}u_{iy}^- & -u_{ix}^-\\[2pt] -u_{iy}^+ & u_{ix}^+\end{bmatrix}s_i .
+  \label{eq:halfplane}
+\end{equation}
+将全部观测叠加得到
+\begin{equation}
+  P=\{x:Ax\le b\}.
+  \label{eq:P}
+\end{equation}
+该表示不使用斜率 $\tan\theta$，因此在 $90^\circ$、$270^\circ$ 以及 $0^\circ/360^\circ$ 跨界附近仍保持一致，这是选择叉积形式而非斜率形式的主要原因。若所有读数均符合题设（即真实目标确实落在每个 $W_i$ 内），则真实位置 $g\in P$。$P$ 是闭凸多面集，但不保证有界。
+
+\subsection{区域状态判定与顶点算法}
+
+算法 A01 的处理步骤如下。
+
+\begin{enumerate}[label=(\arabic*),leftmargin=2.2em]
+  \item 归一化各半平面法向量，求解可行性线性规划。若不可行则返回 empty，不得继续输出伪定位点。
+  \item 在 $P$ 上分别最大化 $x$、$-x$、$y$、$-y$。任一目标无界则 $P$ 无界，直径记为 $+\infty$；四个方向均有有限上界则 $P$ 有界。该判断不依赖任何人工给定的大盒子。
+  \item 取一个可行点作坐标平移，减轻大坐标下的数值相消。
+  \item 枚举不平行的边界直线对，求其交点，仅保留满足全部半平面约束的交点，并按容差去重。
+  \item 对二维区域按极角整理顶点顺序；对点、线段分别保留退化表示。
+  \item 输出原约束的最大残差，并计算直径与最小包围圆，给出状态诊断。
+\end{enumerate}
+
+若共有 $m=2n$ 条约束，交点枚举与可行性检验的复杂度为 $O(m^3)$，顶点存储为 $O(h)$（$h$ 为去重后的顶点数）。对于本题规模，该做法易于审查；观测数量很大时可换用半平面交的 $O(m\log m)$ 算法与旋转卡壳，但这不是本文的重点。
+
+需要指出：空交集提示观测不一致，可能来自频道误关联、角度单位错误、舍入误差或数值问题。在正式策略中不得直接丢弃"最不方便"的观测以恢复非空，而应保留原记录并输出诊断。
+
+\subsection{定位区域直径}
+
+若 $P$ 非空有界，其顶点为 $v_1,\dots,v_h$，则
+\begin{equation}
+  D(P)=\max_{x,y\in P}\lVert x-y\rVert=\max_{i,j}\lVert v_i-v_j\rVert .
+  \label{eq:diameter}
+\end{equation}
+
+\textbf{证明。} 任一 $x\in P$ 可写为顶点凸组合 $x=\sum_i\alpha_iv_i$（$\alpha_i\ge0$，$\sum_i\alpha_i=1$），同理 $y=\sum_j\beta_jv_j$。由三角不等式，
+\begin{equation}
+  \lVert x-y\rVert
+  =\Bigl\lVert\sum_{i,j}\alpha_i\beta_j(v_i-v_j)\Bigr\rVert
+  \le\sum_{i,j}\alpha_i\beta_j\lVert v_i-v_j\rVert
+  \le\max_{i,j}\lVert v_i-v_j\rVert .
+\end{equation}
+又因顶点本身属于 $P$，上界可以取到，故式 \eqref{eq:diameter} 成立。$\square$
+
+算法上枚举 $h(h-1)/2$ 个点对，复杂度 $O(h^2)$。点区域的直径为 0；线段区域的直径为两端点距离；空集返回未定义，不把它冒充精确定位。
+
+\subsection{以直径为直径的圆能否覆盖定位区域}
+
+定义最小包围圆半径
+\begin{equation}
+  \varrho(P)=\min_c\max_{x\in P}\lVert x-c\rVert
+  =\min_c\max_i\lVert v_i-c\rVert .
+  \label{eq:mincircle}
+\end{equation}
+第二个等号与式 \eqref{eq:diameter} 同理，是凸组合与范数凸性的结果。显然任何覆盖 $P$ 的圆都满足 $\varrho\ge D/2$。
+
+\textbf{判定准则。} 存在直径恰为 $D(P)$ 的覆盖圆，当且仅当 $\varrho(P)=D(P)/2$。
+
+\textbf{证明。} 取任意最远点对 $a,b$，$\lVert a-b\rVert=D$。若存在半径 $D/2$ 的圆（圆心 $c$）同时包含 $a$ 与 $b$，则
+\begin{equation}
+  D=\lVert a-b\rVert\le\lVert a-c\rVert+\lVert b-c\rVert\le D .
+\end{equation}
+上式所有不等号必须同时取等，这要求 $c=(a+b)/2$ 且 $a,b$ 都在圆周上。因此只需检查所有顶点到中点 $(a+b)/2$ 的距离是否均不超过 $D/2$；若该检查失败，换任何别的圆心也无法补救，因为上面的推导对任意满足条件的圆心都成立。$\square$
+
+这一准则的优点是不必先算出最小包围圆，只需检验一个候选圆心。
+
+\subsubsection{一个可由本题测向机制实现的等边三角形反例}
+
+仅有抽象的不等式推导不足以说明"以直径为直径的圆不能覆盖"在本题中是真实可能发生的。下面构造一个确实能由三次带 $\pm1^\circ$ 误差的示向度观测产生的区域。
+
+取边长 $L=38$ 米的等边三角形 $T$，顶点为
+\begin{equation}
+  v_1=(0,0),\quad v_2=(38,0),\quad v_3=(19,\,19\sqrt3).
+\end{equation}
+按逆时针方向令 $e_i=(v_{i+1}-v_i)/38$（下标模 3），即三条边的单位方向向量。取三个检测点
+\begin{equation}
+  s_i=v_i-1000\,e_i,
+\end{equation}
+并令示向度读数 $\theta_i=\arg(e_i)+1^\circ$，误差界仍为 $\pm1^\circ$。具体检测点坐标与读数已保存在运行目录的 \texttt{counterexample.json} 中。
+
+如此构造后，每个角域的下边界正好沿三角形的一条边，保留该边内侧；上边界向内旋转 $2^\circ$。第三顶点相对检测点的偏角为
+\begin{equation}
+  \arctan\frac{19\sqrt3}{1019}<2^\circ ,
+\end{equation}
+因此上边界约束对整个 $T$ 是冗余的，而三条下边界半平面的交集恰好就是 $T$。也就是说，这个三角形确实可以由本题的三个测向角域相交得到，并非随意指定一个无法实现的多边形。
+
+取三角形重心为真实源位置，则三次示向度均符合 $\pm1^\circ$ 误差；源到各检测点的距离均小于 1500 米，源位于 1800 米圆域内，故可选取合适的有效接收半径（如 1500 米）使物理条件全部满足。
+
+等边三角形的最小包围圆圆心为其重心，半径为 $L/\sqrt3$。一个直接证明是：三个顶点到任意点 $c$ 的距离平方平均等于 $L^2/3+\lVert c-g\rVert^2$（$g$ 为重心），因此最大距离至少为 $L/\sqrt3$，且在重心处取到。于是
+\begin{equation}
+  D(T)=38\ \text{米},\qquad \varrho(T)=\frac{38}{\sqrt3}\approx21.94\ \text{米}.
+  \label{eq:counterexample}
+\end{equation}
+$\varrho>D/2=19$，故直径 38 米的圆不能覆盖 $T$；事实上直径 40 米的圆同样无法覆盖该区域。这说明"直径不超过 40 米"绝不能作为保证清除的充分条件。
+
+\subsubsection{最小包围圆的计算与理论界}
+
+最小包围圆由其直径的两端点或三个非共线边界点确定（见文献 \cite{Welzl1991} 的支撑点性质）。本文的实现先检查最远点对的直径圆，若不能覆盖全部顶点，再枚举三点外接圆并保留包含全部顶点的最小者，最坏复杂度 $O(h^4)$。对本文的小规模多边形而言足够；需要说明的是，该实现并未冒称为 Welzl 的期望线性时间算法。
+
+平面中还有 $D/2\le\varrho\le D/\sqrt3$ 的界。上界可由支撑结构说明：若圆由两点支撑则 $\varrho=D/2$；若由三点最小支撑，则圆心位于支撑三角形内，其最大角 $A\in[60^\circ,90^\circ]$，最大边 $a\le D$，故 $\varrho=a/(2\sin A)\le D/\sqrt3$。该界仅用于核验与保守判断，不替代实际的最小包围圆计算。
+
+\subsection{向后续两问传递的保证清除判据}
+
+由假设八，光学精确定位与清除只受距离约束。因此，若 $P$ 确实包含真实目标，则从指定位置 $q$ 保证清除的充要条件是
+\begin{equation}
+  \max_i\lVert v_i-q\rVert\le20 .
+  \label{eq:clear-condition}
+\end{equation}
+（对凸多边形，范数的最大值在顶点取得，故只需检查顶点。）
+
+存在至少一个保证清除位置的充要条件是 $\varrho(P)\le20$；所有保证清除位置构成等半径圆盘之交
+\begin{equation}
+  \mathcal{C}(P)=\bigcap_i\overline{B}(v_i,20).
+  \label{eq:clear-set}
+\end{equation}
+当 $\varrho(P)\le20$ 时，最小包围圆圆心是一个合法选择，但不一定是离机器狗当前位置最近的选择。
+
+需要强调三点。其一，$D(P)\le40$ 只是必要条件，不是充分条件，式 \eqref{eq:counterexample} 即为其反例；$D\le20\sqrt3$ 是充分条件，但不如直接计算 $\varrho$ 精确。其二，若 $P$ 是真实可行域的保守外包，则 $\varrho(P)\le20$ 仍然充分；但 $\varrho(P)>20$ 不能据此断言真实可行域中不存在更好的清除点。其三，工程实现中本文取 19.5 米而非 20 米作为判据，留出 0.5 米作为数值与工程余量。
+
+\subsection{求解结果}
+
+按数据版本 D01（人为设计的核验条件）构造观测并求解，当前采用的运行为 Q1-R003。区域状态判定、顶点枚举、直径与最小包围圆的计算结果均记录于该运行的 \texttt{verification.json} 中。
+
+\begin{table}[H]
+  \centering
+  \caption{问题一的主要计算结果（运行 Q1-R003）}
+  \label{tab:q1-results}
+  \begingroup
+  \renewcommand{\arraystretch}{1.4}
+  \begin{tabularx}{\textwidth}{L{0.30\textwidth}ZC{0.20\textwidth}}
+    \toprule[1.2pt]
+    {\heifont\bfseries 项目} & {\heifont\bfseries 取值} & {\heifont\bfseries 说明} \\
+    \midrule[0.5pt]
+    边长为 38 米的等边三角形反例直径 & 38.0000 米 & 可由三个 $2^\circ$ 角域真实形成 \\
+    同三角形的最小包围圆半径 $\varrho$ & 21.9393 米 & 圆心为重心 \\
+    同直径圆能否覆盖 & 否 & $\varrho>D/2=19$ 米 \\
+    直径 40 米圆能否覆盖 & 否 & 反例区域仍不可覆盖 \\
+    保证清除的充要条件 & $\varrho(P)\le20$ 米 & 等价于 $\mathcal{C}(P)\ne\varnothing$ \\
+    独立验证检查项数 & 260 项 & 含 3500 次直接角度判断 \\
+    顶点枚举与 LP 支持函数最大差 & $4.55\times10^{-13}$ 米 & 枚举顶点 vs 独立支持函数 \\
+    最小包围圆半径差 & $5.96\times10^{-10}$ 米 & 支撑圆枚举 vs 凸范数优化 \\
+    \bottomrule[1.2pt]
+  \end{tabularx}
+  \endgroup
+\end{table}
+
+图 \ref{fig:q1-geometry} 给出了反例的几何构造与正交观测条件下的定位区域。左图为等边三角形反例：三条实线为各检测点示向度所指方向，可见区域确实由三个窄角域围成，而其最小包围圆明显大于其外接直径圆。右图为两个正交观测所形成的矩形区域及其最小包围圆。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.92\textwidth]{q1-geometry.png}
+  \caption{问题一的几何结果。左：可由本题三个 $2^\circ$ 测向角域实现的 38 米等边三角形反例，其最小包围圆半径约 21.94 米；右：正交观测下的定位区域与最小包围圆}
+  \label{fig:q1-geometry}
+\end{figure}
+
+\subsection{验证与适用边界}
+
+当前证据入口为运行 Q1-R003 的 \texttt{verification.json}，共 260 项检查，包括 3500 次直接 $\arctan2$ 角度判断、60 组多站随机一致观测、解析特例，以及空集、无界、点、线段四类退化情形，另含平移旋转不变性与"新增观测使区域单调收缩"的检查。
+
+独立计算使用线性规划的支持函数核对枚举顶点（最大支持值差约 $4.55\times10^{-13}$ 米），使用缩放后的凸范数优化核对最小包围圆（半径差约 $5.96\times10^{-10}$ 米）。这些数值是该验证集上的差异，不构成对任意输入的误差上界；浮点求交也不是区间算术意义下的严格证明，对极端病态输入仍须检查状态与残差。
+
+使用时需注意以下边界：半平面法向量归一化后按米衡量残差，当前绝对几何容差约 $10^{-7}$ 米，近似平行判定阈值为 $10^{-12}$；若实际策略叠加圆形先验，应使用精确圆弧或保守外包，内接多边形与丢失真实点的网格不能承担保证；此外，同一位置误差固定意味着重复完全相同的观测只能得到相同约束，不能靠重复次数把 $\varepsilon$ 除以 $\sqrt{N}$。
