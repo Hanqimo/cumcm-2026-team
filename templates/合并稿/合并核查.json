@@ -1,0 +1,27 @@
+{
+  "source_sha256": {
+    "/Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/templates/论文模版.tex": "8551e16d57afa6e0f24678d5785fa227e815396895037d4d0d22aafb806b8521",
+    "/Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/templates/草稿/草稿.tex": "4b6664283ec9ba438909db3128be38368ce166f05ab379ccbebe926b984205be"
+  },
+  "sources_unchanged": true,
+  "symbol_table_identical_to_base": true,
+  "q2_identical_to_base": true,
+  "labels": 21,
+  "references": 5,
+  "q1_subsections_preserved": [
+    "单次观测的半平面表示",
+    "区域状态判定与顶点算法",
+    "定位区域直径",
+    "定位区域的覆盖",
+    "保证清除判据",
+    "最近的保证清除位置",
+    "求解结果"
+  ],
+  "output": "/Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/templates/合并稿/合并稿.tex",
+  "final_tex_sha256": "eda9088730d14e5f6c86aa991828c60f73a457d65d22a9dc843af8e827334280",
+  "all_original_q1_labels_preserved": true,
+  "all_citations_resolved": true,
+  "pdf_pages": 11,
+  "visual_review": "all 11 pages inspected",
+  "remaining_typesetting_notice": "one mild Underfull hbox"
+}

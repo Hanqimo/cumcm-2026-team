@@ -1,0 +1,10 @@
+{
+  "q1_unchanged": true,
+  "global_symbol_table_unchanged": true,
+  "distance_cases_checked": 1066,
+  "weight_max_difference": 1.1102230246251565e-16,
+  "strict_inequalities_preserved": true,
+  "references_resolve": true,
+  "compile_warnings_or_errors": 0,
+  "tex_sha256": "eb1cce2cead3e4185ff2da0f76d174e86d1e4b96c02dbabb01e019a6b9c1ede8"
+}

@@ -24,7 +24,6 @@
 \newcommand{\E}{\mathbb E}
 \newcommand{\Prob}{\mathbb P}
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
-\newcommand{\wrap}{\operatorname{wrap}}
 \newcommand{\supp}{\operatorname{supp}}
 \newcommand{\dist}{\operatorname{dist}}
 \newcommand{\cl}{\operatorname{cl}}
@@ -54,7 +53,7 @@
 \(a,\beta\) & 已知情景参数；\(S_1=(a,0)\)、\(\theta_1=\beta\)。\\
 \(q=(q_x,q_y)\) & 第二检测点；两个坐标是优化变量。\\
 \(d_1(g),d_2(g;q)\) & \(\sqrt{(g_x-a)^2+g_y^2}\)、\(\norm{g-q}\)，即候选源到两点的距离。\\
-\(\phi_s(g)\) & \(\arg(g-s)\)，从检测点 \(s\) 指向 \(g\) 的真实方位角。\\
+\(\mathcal F_1,\mathcal F_2(q,\theta)\) & 第一次、第二次正常示向度对应的扇形区域。\\
 \(E_1,E_2\) & 两个不同检测点处的角误差。\\
 \(\mathcal I_1\) & 已知信息“第一点返回正常示向度 \(\theta_1\)”。\\
 \(Z\) & 第二次反馈：强信号 \(H\)、无信号 \(N\)，或正常角度 \(\theta\)。\\
@@ -62,7 +61,12 @@
 \(\rho_z(q),L_z(q),J(q)\) & 反馈后的包围圆半径、定位损失，以及布站前的期望损失。\\
 \end{longtable}
 
-比较方向时使用圆周角差 \(\wrap(t)=((t+\pi)\bmod2\pi)-\pi\)，它将角差转换到 \([-\pi,\pi)\)。例如，\(1^\circ\) 与 \(359^\circ\) 的最短夹角为 \(2^\circ\)。因此，\(|\wrap(\theta-\phi)|\le\alpha\) 表示测得方向与真实方向的最短夹角在误差范围内。
+\subsection{扇形区域的统一记号}
+记 \(e(\vartheta)=(\cos\vartheta,\sin\vartheta)\)。对检测点 \(s\) 和正常示向度 \(\vartheta\)，将对应的扇形区域统一记为
+\begin{equation}\label{eq:sector}
+\mathcal F(s,\vartheta)=\{s+t\,e(\vartheta+\delta):5<t<1500,\ -\alpha\le\delta\le\alpha\}.
+\end{equation}
+它以 \(s\) 为顶点，以 \(\vartheta\) 为中心方向，张角为 \(2\alpha\)，源距在 \(5\) 与 \(1500\) 米之间，严格说是一个扇环。定义 \(\mathcal F_1=\mathcal F((a,0),\beta)\) 和 \(\mathcal F_2(q,\theta)=\mathcal F(q,\theta)\)，分别表示两次正常示向度的扇形。角度增加 \(2\pi\) 不改变方向或扇形，后文角度关系均按这一周期理解。
 
 \subsection{观测前的分布设定}
 位置按面积均匀分布，接收半径在 \([1000,1500]\) 上均匀分布，二者在观测前独立。这三项均匀设定及不同地点误差独立性是采用的概率假设；题目给出的区域、接收范围和误差界限定了取值范围。位置均匀表达同面积区域等可能，半径均匀表达在已知区间内采用常密度，角误差均匀表达误差界内采用常密度。相应密度为 \(p_G(g)=\ind_D(g)/|D|\) 和 \(h(r)=\ind_{[1000,1500]}(r)/500\)，其中 \(|D|=\pi1800^2\)。符号 \(\ind_A\) 是指示函数：条件 \(A\) 成立时取 \(1\)，其余情况取 \(0\)。
@@ -78,18 +82,15 @@ p(x\mid y)=\frac{p(x)\ell(y\mid x)}{\int p(u)\ell(y\mid u)\dd u}.
 
 \section{第一次正常示向度后的联合更新}
 \subsection{将方向条件与接收条件写进似然}
-用 \(a_1(g;a,\beta)\) 记录候选位置的方向条件，定义 \(a_1(g)=\ind_{\{|\wrap(\beta-\phi_{(a,0)}(g))|\le\alpha\}}\)。它在候选源位于第一次方向扇形内时取 \(1\)。角误差均匀，因此方向条件满足时，观测到 \(\theta_1\) 的角度似然密度为 \(1/(2\alpha)\)。
-
-正常示向度还需要距离大于 \(5\) 米，并且位于该源的接收范围内。于是，给定 \(G=g,R=r\) 的完整似然密度为
+第一次正常示向度要求候选源位于 \(\mathcal F_1\)，并且满足 \(d_1(g)\le r\)。角误差均匀，方向相容时的角度似然密度为 \(1/(2\alpha)\)，因此似然密度可写为
 \begin{equation}\label{eq:likelihood1}
-\ell_1(g,r)=\frac{1}{2\alpha}\,a_1(g)\,\ind_{\{5<d_1(g)\le r\}}.
+\ell_1(g,r)=\frac{1}{2\alpha}\,\ind_{\mathcal F_1}(g)\,\ind_{\{d_1(g)\le r\}}.
 \end{equation}
-右侧三项分别表达均匀角密度、方向相容性和正常接收条件。
+其中扇形 \(\mathcal F_1\) 已统一包含方向误差界与正常源距范围。
 
 将目标圆域、角度范围和最大接收距离合并，得到第一次观测的正权重区域
 \begin{equation}\label{eq:omega-ab}
-\Omega_1(a,\beta)=\left\{g:\norm{g}\le1800,\quad 5<\norm{g-(a,0)}<1500,\quad
-|\wrap(\beta-\arg(g-(a,0)))|\le\alpha\right\}.
+\Omega_1(a,\beta)=D\cap\mathcal F_1.
 \end{equation}
 因此，圆外第一点产生的方向扇形也始终要与 \(D\) 取交。定义 \(w(d)=\Prob(R\ge d)=\int_{1000}^{1500}\ind_{\{r\ge d\}}h(r)\dd r\)，它表示观测前对一个距离为 \(d\) 的候选源能够接收的概率。直接计算区间长度，得到
 \begin{equation}\label{eq:tail}
@@ -185,7 +186,7 @@ R\mid G=g,\mathcal I_1
 
 \textbf{无信号 \(N\)。} 第一次接收与第二次未接收对应 \(d_1\le R<d_2\)。观测前满足这组条件的半径概率为 \(w(d_1)-w(m)\)，再除以第一次接收的概率 \(w(d_1)\)，得到 \(\Prob(N\mid g,q,\mathcal I_1)=[w(d_1)-w(m)]/w(d_1)\)。
 
-\textbf{正常示向度 \(\theta\)。} 两次都接收需要同一个半径满足 \(R\ge m\)，所以给定第一次接收后，再次接收的概率为 \(w(m)/w(d_1)\)。正常反馈还需 \(d_2>5\)，以及方向误差落入 \(\pm\alpha\)。令 \(a_2(g;q,\theta)=\ind_{\{|\wrap(\theta-\phi_q(g))|\le\alpha\}}\)，则正常角度的条件密度为 \(\ind_{\{d_2>5\}}a_2(g;q,\theta)w(m)/(2\alpha w(d_1))\)。
+\textbf{正常示向度 \(\theta\)。} 两次都接收需要同一个半径满足 \(R\ge m\)，所以给定第一次接收后，再次接收的概率为 \(w(m)/w(d_1)\)。正常示向度 \(\theta\) 对应扇形 \(\mathcal F_2(q,\theta)\)，因此它的条件密度为 \(\ind_{\mathcal F_2(q,\theta)}(g)w(m)/(2\alpha w(d_1))\)。
 
 以上判断均使用第一次观测后仍有正密度的位置，因而 \(w(d_1)>0\)。三个反馈条件完整描述一次检测的结果。
 
@@ -195,8 +196,7 @@ R\mid G=g,\mathcal I_1
 \begin{aligned}
 b_H(g;q)&=\ind_{\Omega_1}(g)\ind_{\{d_2\le5\}}w(d_1),\\
 b_N(g;q)&=\ind_{\Omega_1}(g)\bigl[w(d_1)-w(m)\bigr],\\
-b_\theta(g;q)&=\frac{\ind_{\Omega_1}(g)\ind_{\{d_2>5\}}}{2\alpha}
- a_2(g;q,\theta)w(m).
+b_\theta(g;q)&=\frac{\ind_{\Omega_1\cap\mathcal F_2(q,\theta)}(g)}{2\alpha}\,w(m).
 \end{aligned}
 \end{equation}
 
@@ -228,7 +228,7 @@ p_2(g\mid z,q,\mathcal I_1)=\frac{b_z(g;q)}{M_z(q)},\qquad M_z(q)>0.
 \begin{aligned}
 K_H(q)&=\cl\{g\in\Omega_1:d_2(g;q)<5\},\\
 K_N(q)&=\cl\{g\in\Omega_1:d_2(g;q)>\max\{1000,d_1(g)\}\},\\
-K_\theta(q)&=\cl\{g\in\Omega_1:5<d_2(g;q)<1500,\ a_2(g;q,\theta)=1\}.
+K_\theta(q)&=\cl\bigl(\Omega_1\cap\mathcal F_2(q,\theta)\bigr).
 \end{aligned}
 \end{equation}
 
@@ -342,7 +342,7 @@ q_k^*(a,\beta)&\in\underset{q\in\mathcal C(a,\beta)}{\arg\min}\,J_k(q;a,\beta)
 还可以用同一预测分布报告原地精确定位的成功概率 \(P_{\rm loc}(q;a,\beta)=P_H+P_NT_N+\int_0^{2\pi}f_\Theta(\theta;q)T_\theta(q)\dd\theta\)。它将各个终止分支的概率相加，反映第二次反馈后能够原地精确定位的可能性；将其最大化或作为约束，属于另行比较的目标方案。
 
 \subsection{对称性与坐标还原}
-记关于 \(x\) 轴的反射为 \(F(x,y)=(x,-y)\)，则模型满足 \(J_k(Fq;a,\wrap(-\beta))=J_k(q;a,\beta)\)。这是两个镜像情景之间的对应关系；只有情景自身关于该轴对称时，才能直接在同一情景内配对上下两个候选点。\(a=0,\beta=0\) 正是这样的基准情景。
+记关于 \(x\) 轴的反射为 \(F(x,y)=(x,-y)\)，则模型满足 \(J_k(Fq;a,-\beta)=J_k(q;a,\beta)\)。这是两个镜像情景之间的对应关系；只有情景自身关于该轴对称时，才能直接在同一情景内配对上下两个候选点。\(a=0,\beta=0\) 正是这样的基准情景。
 
-若实际坐标中第一点为 \(\widetilde S_1=a(\cos\gamma,\sin\gamma)\)，正常示向度为 \(\widetilde\theta_1\)，则输入 \(\beta=\wrap(\widetilde\theta_1-\gamma)\)，求得标准坐标中的 \(q_k^*(a,\beta)\) 后，将它绕圆心旋转 \(\gamma\) 即得到实际第二点。\(a=0\) 时可取 \(\gamma=\widetilde\theta_1\)、\(\beta=0\)。整个坐标变换始终保留大圆圆心为原点。
+若实际坐标中第一点为 \(\widetilde S_1=a(\cos\gamma,\sin\gamma)\)，正常示向度为 \(\widetilde\theta_1\)，则取满足 \(\beta\equiv\widetilde\theta_1-\gamma\pmod{2\pi}\) 的角度代表 \(\beta\in[-\pi,\pi)\)，求得标准坐标中的 \(q_k^*(a,\beta)\) 后，将它绕圆心旋转 \(\gamma\) 即得到实际第二点。\(a=0\) 时可取 \(\gamma=\widetilde\theta_1\)、\(\beta=0\)。整个坐标变换始终保留大圆圆心为原点。
 \end{document}

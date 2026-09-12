@@ -1,0 +1,27 @@
+{
+  "version": "Q2-paper-final-20260912",
+  "files": {
+    "templates/论文模版.tex": "f2eb204fddffcd4ccd74601a12e046d8f87121ea71f101281ba88fc8766acf46",
+    "templates/论文模版.pdf": "9132e8ac88fc5a3cfd7becf7bde368caeccc8e22838e927b9ebd81949bfdbc6f",
+    "正式题目工作区/B题/第二问建模/论文定稿版/第二问正文.tex": "36970ec3d0b3f197c7e0efc2dd15ec4a5a370afee51eaf2fdc4bd9f625951bc0",
+    "正式题目工作区/B题/第二问建模/论文定稿版/第二问模型.tex": "0e3303886cac4f1a4919b18814bf83a6db8cc697cb61f5f6792971c6830335ab",
+    "正式题目工作区/B题/第二问建模/论文定稿版/第二问模型.pdf": "80d4ee890e869de1e441d84b9181bd9516f74738cb7c4e8c44a6ec081a0372c7"
+  },
+  "checks": {
+    "body_matches_paper": true,
+    "mathcal_removed": true,
+    "greek_variants_removed": true,
+    "mathbb_preserved": true,
+    "feedback_set_F_random_feedback_Z": true,
+    "cross_references_valid": true,
+    "paper_pages": 11,
+    "model_pages": 3,
+    "compilation_errors": 0,
+    "paper_layout_warnings": 0,
+    "model_layout_warning": "one Underfull hbox (badness 1082); rendered page reviewed, no clipping or overlap",
+    "visual_review": "paper 4,6,8,10; standalone 1-3"
+  },
+  "new_optimization_run": false,
+  "notation_revision": "d_2(g;q) renamed to d(g;q), six occurrences in current paper; final body synchronized with current paper.",
+  "font_revision": "All mathcal letters replaced with ordinary letters, with Z set renamed F; varphi -> phi, varepsilon -> epsilon; mathsf H/N -> mathrm H/N; mathbb retained."
+}

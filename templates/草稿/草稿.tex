@@ -1,0 +1,414 @@
+% !TeX program = xelatex
+% !TeX encoding = UTF-8
+% 编译方法：xelatex 问题1论文.tex（建议连续编译两次以更新交叉引用）
+% 本文件为 B 题问题一的独立论文，采用 templates/论文模版.tex 的格式；
+% 公式与数值的唯一来源见正式题目工作区/B题/contest/q1/ 下 v01/v02 与 Q1-R003 运行记录。
+\documentclass[UTF8,a4paper,zihao=-4,fontset=none]{ctexart}
+
+% 字体采用三级自动选择机制，使模板能够在不同电脑上直接编译。
+\newcommand{\UseWindowsMicrosoftFonts}{
+  \setCJKmainfont{simsun.ttc}[Path={C:/Windows/Fonts/},BoldFont=simhei.ttf]
+  \setCJKsansfont{simhei.ttf}[Path={C:/Windows/Fonts/},BoldFont=simhei.ttf]
+  \setCJKmonofont{simsun.ttc}[Path={C:/Windows/Fonts/}]
+  \setCJKfamilyfont{paperhei}{simhei.ttf}[Path={C:/Windows/Fonts/},BoldFont=simhei.ttf]
+  \PackageInfo{paper-template}{Using Windows SimSun and SimHei}
+}
+\newcommand{\UseOfficeMicrosoftFonts}{
+  \setCJKmainfont{Simsun.ttc}[Path={/Applications/Microsoft Word.app/Contents/Resources/DFonts/},BoldFont=SimHei.ttf]
+  \setCJKsansfont{SimHei.ttf}[Path={/Applications/Microsoft Word.app/Contents/Resources/DFonts/},BoldFont=SimHei.ttf]
+  \setCJKmonofont{Simsun.ttc}[Path={/Applications/Microsoft Word.app/Contents/Resources/DFonts/}]
+  \setCJKfamilyfont{paperhei}{SimHei.ttf}[Path={/Applications/Microsoft Word.app/Contents/Resources/DFonts/},BoldFont=SimHei.ttf]
+  \PackageInfo{paper-template}{Using Microsoft Office SimSun and SimHei}
+}
+\newcommand{\UsePortableFandolFonts}{
+  \setCJKmainfont{FandolSong-Regular.otf}[cmap=UniGB-UTF16-H,BoldFont=FandolHei-Regular.otf]
+  \setCJKsansfont{FandolHei-Regular.otf}[cmap=UniGB-UTF16-H,BoldFont=FandolHei-Regular.otf]
+  \setCJKmonofont{FandolFang-Regular.otf}[cmap=UniGB-UTF16-H]
+  \setCJKfamilyfont{paperhei}{FandolHei-Regular.otf}[cmap=UniGB-UTF16-H,BoldFont=FandolHei-Regular.otf]
+  \PackageWarningNoLine{paper-template}{SimSun and SimHei not found; using portable Fandol fonts}
+}
+\newcommand{\UseOfficeOrPortableFonts}{
+  \IfFileExists{/Applications/Microsoft Word.app/Contents/Resources/DFonts/Simsun.ttc}{
+    \IfFileExists{/Applications/Microsoft Word.app/Contents/Resources/DFonts/SimHei.ttf}{
+      \UseOfficeMicrosoftFonts
+    }{
+      \UsePortableFandolFonts
+    }
+  }{
+    \UsePortableFandolFonts
+  }
+}
+\providecommand{\ForcePortableFonts}{0}
+\ifnum\ForcePortableFonts=1
+  \UsePortableFandolFonts
+\else
+  \IfFileExists{C:/Windows/Fonts/simsun.ttc}{
+    \IfFileExists{C:/Windows/Fonts/simhei.ttf}{
+      \UseWindowsMicrosoftFonts
+    }{
+      \UseOfficeOrPortableFonts
+    }
+  }{
+    \UseOfficeOrPortableFonts
+  }
+\fi
+\newcommand{\heifont}{\CJKfamily{paperhei}}
+
+% 页面、行距与段落。
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,footskip=1.2cm]{geometry}
+\usepackage{setspace}
+\singlespacing
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+
+% 数学公式、表格与插图。
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{graphicx}
+\usepackage{booktabs,tabularx,array,multirow}
+\usepackage[table]{xcolor}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\graphicspath{{./}}
+
+% 标题、页码与交叉引用。
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+
+% 一级标题使用中文序号并居中，下级标题使用阿拉伯数字层级编号并左对齐。
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
+\setcounter{secnumdepth}{3}
+\titleformat{\section}[block]
+  {\centering\heifont\bfseries\zihao{4}}
+  {\chinese{section}、}{0pt}{}
+\titleformat{\subsection}[hang]
+  {\raggedright\heifont\bfseries\zihao{-4}}
+  {\thesubsection}{0.8em}{}
+\titleformat{\subsubsection}[hang]
+  {\raggedright\heifont\bfseries\zihao{-4}}
+  {\thesubsubsection}{0.8em}{}
+\titlespacing*{\section}{0pt}{2.8ex plus 0.5ex minus 0.2ex}{1.7ex}
+\titlespacing*{\subsection}{0pt}{1.6ex plus 0.3ex minus 0.1ex}{0.8ex}
+\titlespacing*{\subsubsection}{0pt}{1.4ex plus 0.2ex minus 0.1ex}{0.7ex}
+
+% 页码从摘要页开始，位于页脚中央。
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\zihao{5}\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% 图表及列表的常用设置。
+\captionsetup{font=small,labelfont=bf,labelsep=quad}
+\setlist[itemize]{itemsep=0.35\baselineskip,topsep=0.8ex,parsep=0pt,partopsep=0pt}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{Z}{>{\centering\arraybackslash}X}
+
+% 请优先修改下面三个字段。
+\newcommand{\papertitle}{无线电干扰源的快速自动定位与清除}
+\newcommand{\paperabstract}{}
+\newcommand{\paperkeywords}{}
+
+\hypersetup{
+  pdftitle={\papertitle},
+  pdfauthor={}
+}
+
+\begin{document}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\thispagestyle{fancy}
+
+% 第一页：标题、摘要与关键词。
+\begin{center}
+  \vspace*{0.3cm}
+  {\heifont\bfseries\zihao{3}\papertitle\par}
+  \vspace{1.5\baselineskip}
+  {\heifont\bfseries\zihao{4}摘要\par}
+\end{center}
+
+\paperabstract\par
+\vspace{0.5\baselineskip}
+\noindent{\heifont\bfseries 关键词：}\paperkeywords
+
+\newpage
+
+\section{问题背景与重述}
+
+\subsection{问题背景}
+
+无线电干扰源的定位与清除是无线电频谱管理的重要任务。实际排查通常经历初步监测、区域性排查和精准定位三个阶段，其中前两个阶段确定干扰源的分布区域，而具体位置仍需进一步查明。受环境遮挡、干扰源发射功率等因素影响，精准定位阶段需要技术人员携带便携式测向设备进入目标区域逐步排查，并在确认位置后完成清除。为了尽快消除干扰，需要尽可能缩短这一过程的耗时。
+
+针对危险环境下的排查需求，某公司拟研发搭载于机器狗的干扰源自动定位清除系统。该系统通过无线电测向获取干扰源的方位信息，并在接近目标后利用光学探测设备实现精确定位和清除。然而，测向结果存在误差，信号接收受到距离和发射方向的限制，移动与各项设备操作也需要耗时。因此，如何在有限观测信息下完成干扰源的搜索与定位，并在确保全部清除的前提下提高作业效率，是本题研究的核心问题。
+
+\subsection{问题重述}
+
+题目已将干扰源的分布范围确定为半径 \(1800\,\mathrm{m}\) 的圆形区域，以圆心为坐标原点，正东方向和正北方向分别为 \(x\) 轴与 \(y\) 轴正向。各干扰源占用互不相同且保持不变的频道，频道编号为 \(1\) 至 \(20\)，不同干扰源的信号互不影响。干扰源分为全向与定向两类，其有效覆盖角度分别为 \(360^\circ\) 和定向方向两侧各 \(90^\circ\)，有效接收半径在 \(1000\,\mathrm{m}\) 至 \(1500\,\mathrm{m}\) 之间。
+
+测向机每次只能检测一个频道，测得的示向度与真实方位角之间的误差在 \([-1^\circ,1^\circ]\) 内，同一地点在一段时间内重复检测不会改变该误差。机器狗以 \(5\,\mathrm{m/s}\) 的速度沿直线移动，且必须停止移动后才能有效检测。频道切换和单次检测分别耗时 \(1\,\mathrm{s}\) 和 \(5\,\mathrm{s}\)；当机器狗与干扰源的距离不超过 \(20\,\mathrm{m}\) 时，可依次进行光学精确定位和清除，两项操作分别耗时 \(3\,\mathrm{s}\) 和 \(2\,\mathrm{s}\)。依据上述条件，需要完成以下四项任务。
+
+\textbf{问题一：}已知若干检测点的坐标及其对同一干扰源测得的示向度，给出采用交会定位法计算多边形定位区域直径的算法，并判断以该直径为直径的圆能否覆盖整个定位区域。
+
+\textbf{问题二：}已知某全向干扰源在一个检测点处的示向度，提出第二个检测点的选择策略，使进一步检测能够取得较好的定位效果，并给出第二个检测点的候选区域。
+
+\textbf{问题三：}目标区域内有 \(10\) 至 \(16\) 个全向干扰源，具体数量未知。机器狗从原点出发，测向机初始频道为 \(1\)，需要自主完成搜索、定位和清除，并在确保所有干扰源被清除的前提下尽可能缩短任务时间。制定相应策略与算法，通过模拟器演练，统计被清除干扰源个数的比例及平均定位清除时间，以检验任务完成情况与作业效率。
+
+\textbf{问题四：}目标区域内同时存在全向和定向干扰源，总数仍为 \(10\) 至 \(16\) 个，但具体数量、定向干扰源的数量及其定向方向均未知。其余条件与问题三相同，在此情形下提出检测与清除策略及算法，并通过模拟器演练检验其有效性。
+
+对问题三和问题四，在充分演练后分别完成三次正式测试，并按题目规定记录测试结果，并将对应日志文件纳入支撑材料。
+
+\section{模型假设}
+
+为使模型可解且与题目条件相符，本文作如下假设，并逐条说明依据与失效影响。
+
+\begin{itemize}[label=\textbullet,leftmargin=2em]
+  \item \textbf{假设一（误差集合而非误差分布）。} 测向误差取有界集合，即真实方位角 $\phi$ 与读数 $\theta$ 满足 $\lvert\phi-\theta\rvert\le\varepsilon$，取 $\varepsilon=1^\circ$ 为主模型，另设 $\varepsilon=1.005^\circ$ 作工程敏感性。\textbf{依据：}题面只给出 $[-1^\circ,1^\circ]$ 的范围，未给出任何概率分布，且指出同一地点误差固定。\textbf{失效影响：}引入独立同分布假设会使可行域随重复测量次数收缩。
+
+  \item \textbf{假设二（圆的保守外包）。} 数值实现中若需处理圆盘约束，一律用外接正多边形代替，以保证不排除真实位置。\textbf{依据：}保持凸性与保守性，便于与半平面统一处理。\textbf{失效影响：}计算量下降但评价结果偏保守；内接多边形或仅取网格中心将失去保证。
+
+  \item \textbf{假设三（同点误差不因重复而减小）。} 在同一位置重复检测同一频道只产生相同约束，不按 $1/\sqrt{N}$ 缩小误差界。\textbf{依据：}题面明确同一地点电磁环境干扰固定。\textbf{失效影响：}若违反，将高估重复测量的信息收益。
+
+\end{itemize}
+
+\section{符号说明}
+
+本文用向量记号表示平面点。为避免与最小包围圆半径混淆，定位区域的\textbf{最小包围圆半径}一律记作 $\varrho(P)$。工程清除半径记作 $\rho_{\mathrm{clr}}$。
+
+\begin{table}[H]
+  \centering
+  \begingroup
+  \renewcommand{\arraystretch}{1.45}
+  \begin{tabularx}{\textwidth}{C{0.16\textwidth}ZC{0.20\textwidth}}
+    \toprule[1.2pt]
+    {\heifont\bfseries 符号} & {\heifont\bfseries 定义} & {\heifont\bfseries 单位} \\
+    \midrule[0.5pt]
+    $\Omega$ & 目标源分布圆域，以原点为心、半径 1800 米的闭圆盘 & 米 \\
+    $g$ & 某个干扰源的真实位置，运行时未知 & 米 \\
+    $s_i$ & 第 $i$ 个检测点坐标 & 米 \\
+    $\theta_i$ & 检测点 $s_i$ 处测得的示向度 & 度 \\
+    $\varepsilon$ & 测向误差半宽，主模型取 $1^\circ$ & 度 \\
+    $u(\alpha)$ & 方向单位向量 $(\cos\alpha,\sin\alpha)$ & -- \\
+    $W_i$ & 第 $i$ 次观测对应的正向测角角域（两个半平面之交） & -- \\
+    $P$ & 多次观测交会得到的定位区域，闭凸多面集 & -- \\
+    $v_i$ & 定位区域 $P$ 的第 $i$ 个顶点 & 米 \\
+    $D(P)$ & 定位区域直径，$\max_{x,y\in P}\lVert x-y\rVert$ & 米 \\
+    $\varrho(P)$ & 定位区域的最小包围圆半径，$\min_c\max_{x\in P}\lVert x-c\rVert$ & 米 \\
+    $\mathcal{C}(P)$ & 保证清除位置集合，$\bigcap_i\overline{B}(v_i,20)$ & -- \\
+    $\rho_{\mathrm{clr}}$ & 工程清除半径，取 19.5 米（物理 20 米留 0.5 米余量） & 米 \\
+    $P_{\text{phys}}$ & 叠加圆域后的物理区域 $P\cap\Omega$，一般含圆弧边 & -- \\
+    \bottomrule[1.2pt]
+  \end{tabularx}
+  \endgroup
+\end{table}
+
+\section{问题分析}
+
+\subsection{问题一分析}
+
+问题一研究使用交会定位法排查干扰源时定位区域的几何性质。根据题意，可将各次观测对应的方向范围表示为多个半平面约束，并将定位区域表示为其交集，进而利用凸多边形的性质，将区域直径的计算转化为顶点间最大距离的求解。对于同直径圆的覆盖问题，可从最远顶点对对圆心位置的限制入手，结合最小包围圆半径与区域直径的关系建立判据，并构造符合测向条件的反例检验其普遍性。
+
+\subsection{问题二分析}
+
+问题二将关注点从已有检测结果转向下一次检测的位置选择。此时仅掌握一个检测点的示向度，干扰源的距离和准确位置仍未知，第二个检测点必须依据当前有限的信息选取。考虑到干扰源定位精度的重要指标是定位区域最小包围圆的半径，本文将这一变量的最小化作为寻找候选点模型的优化目标。
+\section{问题一的模型建立与求解}
+
+\subsection{单次观测的半平面表示}
+
+记 $u(\alpha)=(\cos\alpha,\sin\alpha)$ 为单位方向向量，叉积 $[a,b]=a_xb_y-a_yb_x$。一次示向度观测对应正向角域
+\begin{equation}
+  W_i=\{x:[u(\theta_i-\varepsilon),\,x-s_i]\ge0,\quad [u(\theta_i+\varepsilon),\,x-s_i]\le0\}.
+  \label{eq:wedge}
+\end{equation}
+其中第一个约束要求目标位于下边界射线的左侧，第二个约束要求目标位于上边界射线的右侧。由于 $0<\varepsilon<\pi/2$，两个半平面之交即为前向角域，排除了检测点背后的扇区。
+
+记 $u_i^-=(\cos(\theta_i-\varepsilon),\sin(\theta_i-\varepsilon))$、$u_i^+=(\cos(\theta_i+\varepsilon),\sin(\theta_i+\varepsilon))$。在一次观测对应的两条边界上，
+\begin{equation}
+  \begin{bmatrix}u_{iy}^- & -u_{ix}^-\\[2pt] -u_{iy}^+ & u_{ix}^+\end{bmatrix}x
+  \;\le\;
+  \begin{bmatrix}u_{iy}^- & -u_{ix}^-\\[2pt] -u_{iy}^+ & u_{ix}^+\end{bmatrix}s_i .
+  \label{eq:halfplane}
+\end{equation}
+将全部观测叠加得到
+\begin{equation}
+  P=\{x:Ax\le b\}.
+  \label{eq:P}
+\end{equation}
+该表示在 $90^\circ$、$270^\circ$ 以及 $0^\circ/360^\circ$ 附近均可用，这是选择叉积形式而非斜率形式的主要原因 \cite{Tokekar2013}。若真实目标落在每个 $W_i$ 内，则真实位置 $g\in P$。$P$ 是闭凸多面集，但不保证有界。
+
+\subsection{区域状态判定与顶点算法}
+
+算法的处理步骤如下。
+
+\begin{enumerate}[label=(\arabic*),leftmargin=2.2em]
+  \item 归一化各半平面法向量，求解可行性线性规划。若不可行则返回 empty，不得继续输出伪定位点。
+  \item 在 $P$ 上分别最大化 $x$、$-x$、$y$、$-y$。任一目标无界则 $P$ 无界，直径记为 $+\infty$；四个方向均有有限上界则 $P$ 有界。
+  \item 取一个可行点作坐标平移，减轻大坐标下的数值相消。
+  \item 枚举不平行的边界直线对，求其交点，仅保留满足全部半平面约束的交点，并按容差去重。
+  \item 对二维区域按极角整理顶点顺序；对点、线段分别保留退化表示。
+  \item 输出原约束的最大残差，并计算直径与最小包围圆，给出状态诊断。
+\end{enumerate}
+
+若共有 $m=2n$ 条约束，交点枚举与可行性检验的复杂度为 $O(m^3)$，顶点存储为 $O(h)$（$h$ 为去重后的顶点数）。
+
+若出现空交集，意味着出现了观测不一致的情况，可能来自频道误关联、角度单位错误、舍入误差或数值问题，需保留并输出诊断。
+
+\subsection{定位区域直径}
+
+若 $P$ 非空有界，其顶点为 $v_1,\dots,v_h$，则
+\begin{equation}
+  D(P)=\max_{x,y\in P}\lVert x-y\rVert=\max_{i,j}\lVert v_i-v_j\rVert .
+  \label{eq:diameter}
+\end{equation}
+
+\textbf{证明。} 任一 $x\in P$ 可写为顶点凸组合 $x=\sum_i\alpha_iv_i$（$\alpha_i\ge0$，$\sum_i\alpha_i=1$），同理 $y=\sum_j\beta_jv_j$。由三角不等式，
+\begin{equation}
+  \lVert x-y\rVert
+  =\Bigl\lVert\sum_{i,j}\alpha_i\beta_j(v_i-v_j)\Bigr\rVert
+  \le\sum_{i,j}\alpha_i\beta_j\lVert v_i-v_j\rVert
+  \le\max_{i,j}\lVert v_i-v_j\rVert .
+\end{equation}
+又因顶点本身属于 $P$，上界可以取到，故式 \eqref{eq:diameter} 成立。$\square$ 
+这一“由可行多面体顶点确定最坏位置误差”的结构与文献 \cite{Gholami2015} 的结论一致。算法上枚举 $h(h-1)/2$ 个点对，复杂度 $O(h^2)$。
+
+\subsection{定位区域的覆盖}
+
+定义最小包围圆半径
+\begin{equation}
+  \varrho(P)=\min_c\max_{x\in P}\lVert x-c\rVert
+  =\min_c\max_i\lVert v_i-c\rVert .
+  \label{eq:mincircle}
+\end{equation}
+第二个等号与式 \eqref{eq:diameter} 同理，是凸组合与范数凸性的结果。显然任何覆盖 $P$ 的圆都满足 $\varrho\ge D/2$。
+
+\textbf{判定准则。} 存在直径恰为 $D(P)$ 的覆盖圆，当且仅当 $\varrho(P)=D(P)/2$。
+
+\textbf{证明。} 取任意最远点对 $a,b$，$\lVert a-b\rVert=D$。若存在半径 $D/2$ 的圆（圆心 $c$）同时包含 $a$ 与 $b$，则
+\begin{equation}
+  D=\lVert a-b\rVert\le\lVert a-c\rVert+\lVert b-c\rVert\le D .
+\end{equation}
+上式所有不等号必须同时取等，这要求 $c=(a+b)/2$ 且 $a,b$ 都在圆周上。因此只需检查所有顶点到中点 $(a+b)/2$ 的距离是否均不超过 $D/2$。$\square$
+
+下面构造一个确实能由三次带 $\pm1^\circ$ 误差的示向度观测产生的定位区域。
+
+取边长 $L=38$ 米的等边三角形 $T$，顶点为
+\begin{equation}
+  v_1=(0,0),\quad v_2=(38,0),\quad v_3=(19,\,19\sqrt3).
+  \label{eq:triangle}
+\end{equation}
+按逆时针方向令 $e_i=(v_{i+1}-v_i)/38$，即三条边的单位方向向量。取三个检测点
+\begin{equation}
+  s_i=v_i-1000\,e_i,
+\end{equation}
+并令示向度读数 $\theta_i=\arg(e_i)+1^\circ$，误差界仍为 $\pm1^\circ$。
+
+如此构造，每个角域的下边界方向 $\theta_i-1^\circ=\arg(e_i)$ 沿三角形的一条边，叉积约束 $[u(\theta_i-1^\circ),\,x-s_i]\ge0$ 保留该边内侧；上边界方向 $\theta_i+1^\circ=\arg(e_i)+2^\circ$ 相对下边界向内旋转 $2^\circ$。第三顶点相对检测点的偏角为
+\begin{equation}
+  \arctan\frac{19\sqrt3}{1019}<2^\circ,
+\end{equation}
+因此上边界约束对整个 $T$ 是冗余的，而三条下边界半平面的交集是 $T$。这个三角形可以由本题的三个测向角域相交得到。
+
+取三角形重心为真实源位置，则三次示向度均符合 $\pm1^\circ$ 误差；源到各检测点的距离约 $1019$ 米，落在 $1000$--$1500$ 米的有效接收半径范围内，源也位于 $1800$ 米圆域内。
+
+等边三角形的最小包围圆圆心为其重心，半径为 $L/\sqrt3$：三个顶点到任意点 $c$ 的距离平方之和等于 $3\lVert c-g\rVert^2+L^2$（$g$ 为重心），其平均至少为 $L^2/3$，故最大距离至少为 $L/\sqrt3$，且在重心处恰好取到。于是
+\begin{equation}
+  D(T)=38\ \text{米},\qquad \varrho(T)=\frac{38}{\sqrt3}\approx21.94\ \text{米}.
+  \label{eq:counterexample}
+\end{equation}
+$\varrho(T)>D(T)/2=19$ 米，故直径 $38$ 米的圆不能覆盖 $T$；事实上直径 $40$ 米的圆（半径 $20$ 米）同样无法覆盖。这说明"直径不超过 $40$ 米"不能作为保证清除的充分条件，问题一的正解必须基于最小包围圆半径 $\varrho(P)$。
+
+最小包围圆由其直径的两端点或三个非共线边界点确定 \cite{Welzl1991}。本文的实现先检查最远点对的直径圆，若不能覆盖全部顶点，再枚举三点外接圆并保留包含全部顶点的最小者，最坏复杂度 $O(h^4)$。
+
+平面中还有 $D/2\le\varrho\le D/\sqrt3$。若圆由两点支撑则 $\varrho=D/2$；若由三点最小支撑，则圆心位于支撑三角形内，其最大角 $A\in[60^\circ,90^\circ]$，最大边 $a\le D$，故 $\varrho=a/(2\sin A)\le D/\sqrt3$。
+
+\subsection{保证清除判据}
+
+光学精确定位与清除只受距离约束。因此，若 $P$ 确实包含真实目标，则从指定位置 $q$ 保证清除的充要条件是
+\begin{equation}
+  \max_i\lVert v_i-q\rVert\le20 .
+  \label{eq:clear-condition}
+\end{equation}
+
+对凸多边形，范数的最大值在顶点取得，故只需检查顶点。
+
+存在至少一个保证清除位置的充要条件是 $\varrho(P)\le20$；所有保证清除位置构成等半径圆盘之交
+\begin{equation}
+  \mathcal{C}(P)=\bigcap_i\overline{B}(v_i,20).
+  \label{eq:clear-set}
+\end{equation}
+当 $\varrho(P)\le20$ 时，最小包围圆圆心是一个合法选择，但不一定是离机器狗当前位置最近的选择。
+
+\subsection{最近的保证清除位置}
+
+前面给出了保证清除的充要条件 $\varrho(P)\le20$ 与全部保证清除位置 $\mathcal{C}(P)$。若该条件满足，设机器人当前位置为 $p$，清除半径取 $\rho_{\mathrm{clr}}=19.5$ 米，则全部保证清除位置构成凸集
+\begin{equation}
+  K_{\rho}=\{q:\max_{x\in P}\lVert q-x\rVert\le\rho_{\mathrm{clr}}\}
+  =\bigcap_{i}\overline{B}(v_i,\rho_{\mathrm{clr}}).
+  \label{eq:clear-proj}
+\end{equation}
+$K_{\rho}$ 非空当且仅当 $P$ 的最小包围圆半径不超过 $\rho_{\mathrm{clr}}$。目标是求欧氏投影
+\begin{equation}
+  q^*=\arg\min_{q\in K_{\rho}}\lVert q-p\rVert ,
+\end{equation}
+对应本次清除行动的耗时为 $\lVert q^*-p\rVert/5+5$ 秒。
+
+若 $p\in K_{\rho}$，在原地清除。否则最优点位于边界：若只有一个非重复圆盘约束在该处起作用，投影满足圆弧法向条件，是该圆上朝向 $p$ 的径向投影；若至少两个不同圆约束起作用，该点属于两圆交点。枚举每个顶点圆的径向投影、每对圆的交点，逐一检验全部圆盘约束，取距 $p$ 最近的可行点即可。该枚举给出全局最近点，枚举至多 $O(m^2)$ 个候选、每个检查 $m$ 个距离，简单实现 $O(m^3)$。
+
+\subsection{求解结果}
+
+\begin{table}[H]
+  \centering
+  \caption{问题一的主要计算结果}
+  \label{tab:q1-results}
+  \begingroup
+  \renewcommand{\arraystretch}{1.4}
+  \begin{tabularx}{\textwidth}{L{0.30\textwidth}ZC{0.20\textwidth}}
+    \toprule[1.2pt]
+    {\heifont\bfseries 项目} & {\heifont\bfseries 取值} & {\heifont\bfseries 备注} \\
+    \midrule[0.5pt]
+    边长为 38 米的等边三角形反例直径 & 38.0000 米 & 可由三个 $2^\circ$ 角域真实形成 \\
+    同三角形的最小包围圆半径 $\varrho$ & 21.9393 米 & 圆心为重心 \\
+    同直径圆能否覆盖 & 否 & $\varrho>D/2=19$ 米 \\
+    直径 40 米圆能否覆盖 & 否 & 反例区域仍不可覆盖 \\
+    保证清除的充要条件 & $\varrho(P)\le20$ 米 & 等价于 $\mathcal{C}(P)\ne\varnothing$ \\
+    顶点枚举与 LP 支持函数最大差 & $4.55\times10^{-13}$ 米 & 枚举顶点 vs 独立支持函数 \\
+    最小包围圆半径差 & $5.96\times10^{-10}$ 米 & 支撑圆枚举 vs 凸范数优化 \\
+    \bottomrule[1.2pt]
+  \end{tabularx}
+  \endgroup
+\end{table}
+
+图 \ref{fig:q1-geometry} 给出了反例的几何构造与正交观测条件下的定位区域。左图为等边三角形反例：三条实线为各检测点示向度所指方向，可见区域确实由三个窄角域围成，而其最小包围圆明显大于其外接直径圆。右图为两个正交观测所形成的矩形区域及其最小包围圆。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.92\textwidth]{q1-geometry.png}
+  \caption{问题一的几何结果。左：可由本题三个 $2^\circ$ 测向角域实现的 38 米等边三角形反例，其最小包围圆半径约 21.94 米；右：正交观测下的定位区域与最小包围圆}
+  \label{fig:q1-geometry}
+\end{figure}
+
+\section{模型检验}
+
+\section{模型评价与推广}
+
+\subsection{模型的优点}
+
+\subsection{模型的局限性}
+
+
+\subsection{模型的推广}
+
+
+\begin{thebibliography}{99}
+  \bibitem{Tokekar2013} Tokekar P, Isler V. Sensor placement and selection for bearing sensors with bounded uncertainty[C]. IEEE International Conference on Robotics and Automation (ICRA), 2013. DOI: 10.1109/ICRA.2013.6630920.
+  \bibitem{Gholami2015} Gholami M R, Gezici S, Wymeersch H, et al. Characterizing the worst-case position error in bearing-only target localization[C]. Workshop on Positioning, Navigation and Communication (WPNC), 2015.
+  \bibitem{Welzl1991} Welzl E. Smallest enclosing disks (balls and ellipsoids)[C]. New Results and New Trends in Computer Science, LNCS 555, 1991: 359--370. DOI: 10.1007/BFb0038202.
+\end{thebibliography}
+
+\end{document}

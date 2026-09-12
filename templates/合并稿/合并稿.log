@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.8.1)  12 SEP 2026 22:20
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.8.1)  12 SEP 2026 20:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**论文模版.tex
-(./论文模版.tex
+**合并稿.tex
+(./合并稿.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (/usr/local/texlive/2026/texmf-dist/tex/latex/ctex/ctexart.cls
@@ -932,8 +932,8 @@ LaTeX Info: Redefining \labelcref on input line 2370.
 LaTeX Info: Redefining \labelcpageref on input line 2370.
 )
 ==> First Aid for cleveref.sty applied!
-(./论文模版.aux)
-\openout1 = `论文模版.aux'.
+(./合并稿.aux)
+\openout1 = `合并稿.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 142.
 LaTeX Font Info:    ... okay on input line 142.
@@ -1052,9 +1052,9 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring OFF on input line 142.
-(./论文模版.out) (./论文模版.out)
+(./合并稿.out) (./合并稿.out)
 \@outlinefile=\write3
-\openout3 = `论文模版.out'.
+\openout3 = `合并稿.out'.
 
 
 Package fontspec Info: 
@@ -1094,21 +1094,27 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [4] [5] [6]
 File: q1-geometry.png Graphic file (type bmp)
 <q1-geometry.png>
- [7] [8] [9] [10] [11] (./论文模版.aux)
+ [7] [8] [9]
+Underfull \hbox (badness 1354) in paragraph at lines 511--513
+\TU/Simsun.ttc(0)/m/n/12.045 第 一 项 衡 量 无 信 号 的 预 期 代 价，|  第 二 项 衡 量 正 常 反 馈 的 平
+ 均 定 位 损 失，|  强 信 号
+ []
+
+[10] [11] (./合并稿.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2022/07/14>
  ***********
-Package rerunfilecheck Info: File `论文模版.out' has not changed.
-(rerunfilecheck)             Checksum: B8CE3A71834F39A9B3D58EA815C0A116;3729.
+Package rerunfilecheck Info: File `合并稿.out' has not changed.
+(rerunfilecheck)             Checksum: 810E83D4B5ED29853C0A1F85C8D28FFE;3393.
  ) 
 Here is how much of TeX's memory you used:
- 21691 strings out of 468168
- 466192 string characters out of 5432816
- 949834 words of memory out of 5000000
- 50120 multiletter control sequences out of 15000+600000
- 642976 words of font info for 122 fonts, out of 8000000 for 9000
+ 21713 strings out of 468168
+ 467323 string characters out of 5432816
+ 943832 words of memory out of 5000000
+ 50137 multiletter control sequences out of 15000+600000
+ 643000 words of font info for 125 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 93i,14n,96p,3237b,524s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,14n,96p,3236b,524s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 论文模版.xdv (11 pages, 166240 bytes).
+Output written on 合并稿.pdf (11 pages).
