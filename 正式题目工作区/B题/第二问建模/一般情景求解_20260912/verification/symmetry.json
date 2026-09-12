@@ -1,0 +1,42 @@
+[
+  {
+    "a": 1700,
+    "beta_deg": 90,
+    "objective": "area",
+    "area_difference": 5.002220859751105e-12,
+    "radius_difference": 9.947598300641403e-14
+  },
+  {
+    "a": 1700,
+    "beta_deg": 90,
+    "objective": "radius",
+    "area_difference": 5.002220859751105e-12,
+    "radius_difference": 1.0125233984581428e-13
+  },
+  {
+    "a": 2500,
+    "beta_deg": 150,
+    "objective": "area",
+    "area_difference": 4.001776687800884e-11,
+    "radius_difference": 4.014566457044566e-13
+  },
+  {
+    "a": 2500,
+    "beta_deg": 150,
+    "objective": "radius",
+    "area_difference": 4.001776687800884e-11,
+    "radius_difference": 5.009326287108706e-13
+  },
+  {
+    "type": "inactive disk clipping: origin vs a900,b90",
+    "objective": "area",
+    "area_difference": 0.0,
+    "radius_difference": -9.947598300641403e-14
+  },
+  {
+    "type": "inactive disk clipping: origin vs a900,b90",
+    "objective": "radius",
+    "area_difference": -1.000444171950221e-11,
+    "radius_difference": 0.0
+  }
+]
