@@ -1,0 +1,14 @@
+{
+  "assumptions_preserved": true,
+  "files_identical": true,
+  "pdf_pages_each": 14,
+  "pdf_text_identical": true,
+  "logs_clean": true,
+  "addition": "Q1 numerical handling of disk inclusion constraints",
+  "files": {
+    "templates/论文模版.tex": "51146de7bf36282af924bb7b5bb3bbd074127050a12f8e68d47d69508e300929",
+    "梳理/论文初稿.tex": "51146de7bf36282af924bb7b5bb3bbd074127050a12f8e68d47d69508e300929",
+    "templates/论文模版.pdf": "aa15cb3290b663650382ac9d7b30958043d2670a80a39920bd5981f5ddc90f1d",
+    "梳理/论文初稿.pdf": "c297f668668a65cfd8a3b60e3af0149b8c5ab8b6d81874882c1f1a08aec14268"
+  }
+}
