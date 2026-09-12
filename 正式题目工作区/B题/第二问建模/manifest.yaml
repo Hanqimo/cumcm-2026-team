@@ -6,12 +6,13 @@
     "a_m": 0,
     "beta_rad": 0
   },
-  "solver_scope": "baseline-only; general parameter optimization not implemented",
-  "updated_at": "2026-09-12T15:02:57.395258+08:00",
+  "solver_scope": "parent src/ reproduces baseline; general solver and eight computed scenarios are in 一般情景求解_20260912",
+  "general_results_manifest": "一般情景求解_20260912/manifest.json",
+  "updated_at": "2026-09-12T15:50:20.066279+08:00",
   "source_model": "第二问模型.tex",
-  "model_sha256": "78462f8a42b11fa776f2c90d748580ea81689c6125a61c8e49b00f97d4122b43",
+  "model_sha256": "7e7b48ee4510dafdc74c96051d4b57485908a25ae1de79bb14d1959b97f9fde6",
   "working_directory": "/Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/正式题目工作区/B题/第二问建模",
-  "git_head_at_record": "37a722ef02cf5a8ad736baba88225446840e400d",
+  "git_head_at_record": "6130fe3ede0dc5a6277276ab5219162eabae3817",
   "git_branch": "main",
   "uncommitted_work": true,
   "git_note": "Source hashes identify the consolidated working version. No automatic commit or push.",
@@ -84,16 +85,16 @@
     20260913,
     1729
   ],
-  "validation_status": "Existing convergence, geometry and simulation checks apply only to a=0,beta=0. General-model algebraic checks recorded separately; no general-parameter numerical optimization performed. Baseline continuous global optimum not certified.",
+  "validation_status": "Existing convergence, geometry and simulation checks apply only to a=0,beta=0. General-model algebraic checks recorded separately; eight numerical scenarios and their checks are recorded in the general-results manifest. Baseline continuous global optimum not certified.",
   "deferred": [
     "clearance-success probability and improvements",
-    "general a,beta numerical solution (baseline worst-case work is in worstcase/)",
+    "wider a,beta parameter sweep and continuous global certificates (eight cases solved; baseline worst-case work is in worstcase/)",
     "distribution sensitivity and robustness"
   ],
   "sha256": {
     "src/check_model_geometry.py": "4118325cf92225bb2c577cd8af01f5ee77d7a40b25791b9d4a10876cb6b8dacb",
     "src/reproduce.py": "f1d25ef769ff3930d2db0521d58f9f5bae441e9a204e1873cfad37ad8dcb1487",
-    "src/manifest.py": "da37abed3bc13ebf7c9b07a0dc5d03ec2067b55c658107aaadeae4ef0c37baff",
+    "src/manifest.py": "1fa778515e115ea88812e4f000d5e94398dee44a75619f3c32ef7c29f4300d5c",
     "src/verify_geometry.py": "9f57e8141b4099238067bcf21c732b2911517dddb42bbf0ace0ec24855e30323",
     "src/summarize.py": "6de6241e00009d391e8b1c716c8f6f00f9d1568c09ffa4a665dc471e62ff5907",
     "src/validate.py": "9e38dea28b6acacbee369ba5e59b69f20658937b8d2bf1b1f7e66c07f4f5ae1b",
@@ -124,6 +125,7 @@
     "verification/strong_branches.csv": "1fe8e8ff37999969e5ce48322cac6809ed9a879855f7514363ec73668e8fbd0b",
     "verification/checks.json": "407c4ce3f6147e3f96b7bd93968e9d4ebc67fd520294d922b2b6c25f50cfbc10",
     "verification/independent_geometry.json": "c458bb013904648e6768c82c9e19ad2c1af5ff4c150ed7816f58a118b95ad7c2",
+    "verification/sector_notation_revision.json": "37ef1d88d392e22ec431be234cf0f505db381c3a44cce32ade1a2395486269c1",
     "verification/mc_radius.json": "5026ad2ab8fb58ec89d87c6b10ae8ba0ab8ff3ce06f073826b32df222d1044c9",
     "verification/profile_906.618820480172.csv": "7648de2e7e7ab6cf372fd150d0f762e92b0eea94a6b1951249bf446a2172b217",
     "verification/a_beta_model_checks.json": "8d3e5949ca0a750a5d189fd62d9cd3c49c41081b1cef833d7d04bd0aa160fdc8",
@@ -131,11 +133,11 @@
     "verification/profile_932.613165370033.csv": "b817021cd02008c8266982862bbc1394f12f0844f967d482399dad32b43531de",
     "verification/strong_analytic_check.json": "1bd5979e7cb6a0b1eb75d823efcc9e1382a3e00a9c50b013fc835dcf29739b63",
     "结果汇报.md": "eb911f341bb558e9bc9be9f603707dc8aa4407407d61fe9ab304456085b1e004",
-    "README.md": "48feda2ab9247e2b1223ae6249bdc4802244fe9d179802232501dd5264935ebb",
-    "第二问模型.pdf": "bb2a9d5435db84403a3b5d2df3d6f2998f6c867d65ae26f5b2794da57b43caa5",
-    "模型评估与待定方案.md": "a878063b7e49590da459fabf51a9ce45b8005f7bd3d505ab2357928a31b55778",
+    "README.md": "a02dbaf9dc8c3f4ad32ab8f8e79d44168696aea9f8f7b8a9d958884e611d76cc",
+    "第二问模型.pdf": "6418f3597f4507124f3ea81872ae306c3ba0543294f85944302376b7255ef4de",
+    "模型评估与待定方案.md": "c3753f8d82f9435ce169842866caed2e167edcb5574527ac369b9f90c1f579ae",
     "备选模型_最坏半径.md": "ddadb18e8f937d7b6806b6567c7583a471705f18f1df924e7cebdc4ec9f4ace8",
-    "第二问模型.tex": "78462f8a42b11fa776f2c90d748580ea81689c6125a61c8e49b00f97d4122b43",
+    "第二问模型.tex": "7e7b48ee4510dafdc74c96051d4b57485908a25ae1de79bb14d1959b97f9fde6",
     "论文01与02阅读说明.md": "c2ec648288e6669d04a69b38db2bf8aef7d29b5aed67a67b692ce747383decc2"
   }
 }

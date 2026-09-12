@@ -1,0 +1,12 @@
+{
+  "paper": {
+    "mathcal": 27,
+    "varphi": 4,
+    "varepsilon": 4,
+    "mathsf_H_N_to_mathrm": 17
+  },
+  "standalone_wrapper": {
+    "mathcal": 1,
+    "mathsf_H_N_to_mathrm": 0
+  }
+}

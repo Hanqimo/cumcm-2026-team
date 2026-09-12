@@ -1,0 +1,10 @@
+{
+  "changed_at": "2026-09-12T15:49:49.185723+08:00",
+  "old_model_sha256": "78462f8a42b11fa776f2c90d748580ea81689c6125a61c8e49b00f97d4122b43",
+  "new_model_sha256": "7e7b48ee4510dafdc74c96051d4b57485908a25ae1de79bb14d1959b97f9fde6",
+  "scope": "Equivalent notation revision only; no parameter, posterior measure, support, terminal condition or objective change. No numerical rerun required.",
+  "sector_definition": "F(s,theta)={s+t(cos(theta+delta),sin(theta+delta)):5<t<1500, |delta|<=alpha}",
+  "first_region": "Omega1=D intersect F1",
+  "normal_support": "essential closure(Omega1 intersect F2)",
+  "density_endpoint_note": "The likelihood version differs at d=R=1500 only, a null set under the continuous joint prior. The posterior measure and its essential support are unchanged."
+}
