@@ -1,0 +1,36 @@
+{
+  "id": "B33",
+  "title": "Cautious greedy strategy for bearing-based active localization: Experiments and theoretical analysis",
+  "authors": [
+    "Joshua Vander Hook",
+    "Pratap Tokekar",
+    "Volkan Isler"
+  ],
+  "year": 2012,
+  "venue": "2012 IEEE International Conference on Robotics and Automation (ICRA)",
+  "pages": "1787–1792",
+  "doi": "10.1109/ICRA.2012.6225244",
+  "landing_url": "https://experts.umn.edu/en/publications/cautious-greedy-strategy-for-bearing-based-active-localization-ex/",
+  "source_url": "https://tokekar.com/pubs/vanderhook2012cautious.pdf",
+  "final_url": "https://tokekar.com/pubs/vanderhook2012cautious.pdf",
+  "version": "作者公开会议稿",
+  "pdf": "论文全文/B33_ICRA2012_谨慎贪心主动定位.pdf",
+  "pdf_pages": 6,
+  "sha256": "9c3dc01e4b3280790c66f4799f8b0fc2fc0b49dfe1709d6418cc7d784f3804ac",
+  "bytes": 416407,
+  "checked_date": "2026-09-11",
+  "existing_related_papers": [
+    {
+      "id": "en01",
+      "year": 2013,
+      "doi": "10.1109/ICRA.2013.6630920",
+      "pdf": "../论文全文/01_有界测角误差下的传感器布置与选择.pdf"
+    },
+    {
+      "id": "en02",
+      "year": 2014,
+      "doi": "10.1002/rob.21499",
+      "pdf": "../论文全文/03_兼顾移动与测量耗时的谨慎贪心主动定位.pdf"
+    }
+  ]
+}
