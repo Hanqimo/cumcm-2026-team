@@ -1,0 +1,15 @@
+{
+  "backup": "/Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/templates/修订记录/统一第一至三问_20260912_224857",
+  "tex_files_identical": true,
+  "q1_q2_and_template_public_sections_preserved": true,
+  "q3_transpose_T_preserved": true,
+  "all_references_resolved_in_source": true,
+  "q1_images_identical": true,
+  "tex_sha256": "f85f49902eba5bbf0e214a419dbfe6b2ae4ba15213f6159101d5309774c22251",
+  "q3_model_and_result_numbers_preserved": true,
+  "q3_table_layout_adjusted": true,
+  "pdf_pages_each": 14,
+  "pdf_page_text_identical": true,
+  "both_final_logs_clean": true,
+  "visual_review": "template page 4 and pages 11-14; both documents have identical page text and source/images"
+}
