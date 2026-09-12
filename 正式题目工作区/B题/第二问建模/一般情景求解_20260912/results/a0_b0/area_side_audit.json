@@ -1,0 +1,54 @@
+[
+  {
+    "x": 932.612648703837,
+    "y": -589.965449842234,
+    "J": 2103.78339450495,
+    "J_lower": 2103.78339450494,
+    "P_H": 0.0,
+    "P_N": 0.000672436757908854,
+    "P_A": 0.999327563242091,
+    "P_loc": 0.0,
+    "E_radius_loss": 25.1279543383376,
+    "safe_margin": 0.0,
+    "angle_calls": 3090.0,
+    "x_global": 932.612648703837,
+    "y_global": -589.965449842234,
+    "C1": 27633.9434909301,
+    "case": "a0_b0",
+    "objective": "area",
+    "start_side": -1,
+    "optimizer": {
+      "success": true,
+      "iterations": 24,
+      "simplex_diameter_m": 0.0009503790990988965,
+      "simplex_value_spread": 4.697540134657174e-10
+    },
+    "level": 5
+  },
+  {
+    "x": 932.612799660948,
+    "y": 589.965508010263,
+    "J": 2103.78339450549,
+    "J_lower": 2103.78339450548,
+    "P_H": 0.0,
+    "P_N": 0.000672439864171485,
+    "P_A": 0.99932756013582,
+    "P_loc": 0.0,
+    "E_radius_loss": 25.1279549079318,
+    "safe_margin": 0.0,
+    "angle_calls": 3090.0,
+    "x_global": 932.612799660948,
+    "y_global": 589.965508010263,
+    "C1": 27633.9434909301,
+    "case": "a0_b0",
+    "objective": "area",
+    "start_side": 1,
+    "optimizer": {
+      "success": true,
+      "iterations": 25,
+      "simplex_diameter_m": 0.0011913110865447998,
+      "simplex_value_spread": 8.099050319287926e-10
+    },
+    "level": 5
+  }
+]

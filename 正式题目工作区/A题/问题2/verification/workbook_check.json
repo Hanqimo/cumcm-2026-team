@@ -1,0 +1,21 @@
+{
+  "package_valid": true,
+  "sheets": {
+    "温度": {
+      "time_rows": 10800,
+      "radii": 21,
+      "values_checked": 226800,
+      "maximum_cell_difference": 0,
+      "four_decimal_render_values_agree": true
+    },
+    "水分浓度": {
+      "time_rows": 10800,
+      "radii": 21,
+      "values_checked": 226800,
+      "maximum_cell_difference": 0,
+      "four_decimal_render_values_agree": true
+    }
+  },
+  "sha256": "e094db8ce52c787ff82d47744231be5220080d282aed0a6a0d92fbe1a4835742",
+  "all_cells_pass": true
+}

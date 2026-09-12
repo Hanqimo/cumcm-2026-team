@@ -1,0 +1,16 @@
+{
+  "x": 969.3503213017304,
+  "y": 497.7312515719848,
+  "worst_lower": 49.03633360025689,
+  "worst_upper": 1500.0,
+  "normal_lower": 49.03633359983144,
+  "no_signal_upper": 49.03633400025689,
+  "worst_theta": 5.486509593902402,
+  "safe_margin": -85.26323232414256,
+  "calls": 297.0,
+  "interval_splits": 0.0,
+  "angle_bound_complete": 0.0,
+  "angle_samples_per_interval": 32,
+  "success": true,
+  "nit": 109
+}

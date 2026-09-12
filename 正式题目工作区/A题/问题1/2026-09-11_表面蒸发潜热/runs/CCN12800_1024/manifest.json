@@ -1,0 +1,45 @@
+{
+  "config": {
+    "kind": "CCN",
+    "name": "CCN12800_1024",
+    "n": 12800,
+    "den": 1024,
+    "history": "",
+    "lambda_": 1,
+    "mode": "real",
+    "end": 1800,
+    "tol": 1e-12,
+    "budget": 600
+  },
+  "command": [
+    "/private/tmp/q1_latent_moisture_cn",
+    "/Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/正式题目工作区/A题/问题1/2026-09-11_表面蒸发潜热/inputs/environment.csv",
+    "/Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/正式题目工作区/A题/问题1/2026-09-11_表面蒸发潜热/runs/CCN12800_1024/solution",
+    "12800",
+    "1024",
+    "1e-12",
+    "real",
+    "1800",
+    "600"
+  ],
+  "cwd": "/Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/正式题目工作区/A题/问题1/2026-09-11_表面蒸发潜热",
+  "started": "2026-09-11T11:24:25.969868+08:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "sources": {
+    "moisture_cn.cpp": "38a2b6e42d7de977df6ab76b52a66a5adbb9634ab2190512945ec25ae9cb9069",
+    "fv_core.hpp": "0e9ee533fd132e45d12709eaf8580ce56bcfca71bdf5c846c52f35e132f1006c",
+    "thermal_be.cpp": "0e879755798873522762df14df76a39c5373a2ccf0e0abcc87acfbf5680add51",
+    "moisture.cpp": "ab51b71ebffc209fcb38faf118d82fb5db3025524d3a8578f6a96b6b8ad9d454",
+    "thermal.cpp": "0e879755798873522762df14df76a39c5373a2ccf0e0abcc87acfbf5680add51",
+    "thermal_cn.cpp": "0b8047e9dc9d12f90c3886f25431bdb65309f3d980e06818f264aaf7c0a8955b"
+  },
+  "executable_sha256": "4c0e05ac3c1d1d3c66b6360d15abc1685f346a13ef72f90b3b733be8e3a3db84",
+  "git_head": "12f1ed821e82c1d2453e1df908404e3f7cc43fc1",
+  "uncommitted_sources": true,
+  "inputs": {
+    "environment": "bcd0b42f65c2277c20e65de2a2be149555d4c3e52df562970903411c22d93b77"
+  },
+  "exit_code": 0,
+  "seconds": 9.87961683300091,
+  "finished": "2026-09-11T11:24:35.872277+08:00"
+}

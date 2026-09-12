@@ -1,0 +1,41 @@
+{
+  "model": "M02-v01",
+  "created": "2026-09-11T11:12:42.259552+08:00",
+  "baseline_directory": "/Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/正式题目工作区/A题/问题1/2026-09-11_径向基线",
+  "baseline_git_head": "12f1ed821e82c1d2453e1df908404e3f7cc43fc1",
+  "branch": "q1/surface-latent-20260911",
+  "files": [
+    {
+      "file": "inputs/baseline_full_precision.csv",
+      "sha256": "fa12ddd0dae30fb103c3cc98641443d0f0443eec89e8b656fbb3792e20fcc418"
+    },
+    {
+      "file": "inputs/environment.csv",
+      "sha256": "bcd0b42f65c2277c20e65de2a2be149555d4c3e52df562970903411c22d93b77"
+    },
+    {
+      "file": "inputs/baseline_solver.cpp",
+      "sha256": "5cf0cf302cb00b1243e8df58682440248dd73084c147c53b02cc7acb255a3a55"
+    },
+    {
+      "file": "inputs/result1_template.xlsx",
+      "sha256": "23b261b295c1b787d000eebbca6521c37075107b6fcf78724f8d395ce1798ff4"
+    },
+    {
+      "file": "inputs/baseline_selection.json",
+      "sha256": "37ba5fa2a41dfc88f0038b0f4bc7856301834be35ebbe4993e3f48c2e904bfa6"
+    },
+    {
+      "file": "inputs/题面文本.txt",
+      "sha256": "b190d32dda6064cd3a9c9c0baa4ee6d250928c912b1e1778f293ca4fbe499efb"
+    },
+    {
+      "file": "inputs/A题.pdf",
+      "sha256": "19d5c5eb3666e679f69192d41eb9d1bef4f0abd5c00d36cfee61ac041f6faf90"
+    },
+    {
+      "file": "inputs/附件1.xlsx",
+      "sha256": "7ef32870abeef420b89560b2530ff60dfe4255917805151d89988d0311af9dd7"
+    }
+  ]
+}

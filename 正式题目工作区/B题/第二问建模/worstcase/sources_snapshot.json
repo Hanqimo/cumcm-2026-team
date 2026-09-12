@@ -1,0 +1,10 @@
+{
+  "../src/solver.cpp": "caeefb1a710a29bdd5f6b6f0dfdc902572c86365d114bacf6eb9ec33389bbc0b",
+  "../src/search.py": "21bf20cfe80c227996017cc832a2a00d7782e3a0324c6a948992e7ac10c1d633",
+  "../src/verify_geometry.py": "9f57e8141b4099238067bcf21c732b2911517dddb42bbf0ace0ec24855e30323",
+  "../第二问模型.tex": "477f565f356aa512255e52e01e6ae5afc16591a3e20e5eea19b7bbdcf12304fc",
+  "../第二问模型.pdf": "e31da192ff8be381c706375e62ede5735014b483602e038a37644eec59580779",
+  "../备选模型_最坏半径.md": "ddadb18e8f937d7b6806b6567c7583a471705f18f1df924e7cebdc4ec9f4ace8",
+  "../results/radius/best.json": "a3280fb74b9e731001fe00d13947d19539f273192e99e65f658644c099345e9a",
+  "../manifest.yaml": "ddc46d2871be0654b2431be75f32a418c63901222e09cf442226d4e45f6b6cbb"
+}

@@ -1,0 +1,37 @@
+{
+  "config": {
+    "name": "bessel_N80",
+    "n": 80,
+    "dt": 0.000244140625,
+    "schedule": 0,
+    "end": 10,
+    "tol": 1e-12,
+    "mode": "bessel",
+    "maxit": 50,
+    "budget": 600,
+    "exe": "/private/tmp/a_q1_solver"
+  },
+  "command": [
+    "/private/tmp/a_q1_solver",
+    "/Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/正式题目工作区/A题/问题1/2026-09-11_径向基线/inputs/environment.csv",
+    "/Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/正式题目工作区/A题/问题1/2026-09-11_径向基线/verification/bessel_N80/solution",
+    "80",
+    "0.000244140625",
+    "0",
+    "10",
+    "1e-12",
+    "bessel",
+    "50",
+    "600"
+  ],
+  "started": "2026-09-11T10:39:09.544395+08:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "source_sha256": "5cf0cf302cb00b1243e8df58682440248dd73084c147c53b02cc7acb255a3a55",
+  "executable_sha256": "7f615b40ef178d2f9570b0d1638a5c0a701d9c560359ba3db9911258eadf762f",
+  "environment_sha256": "bcd0b42f65c2277c20e65de2a2be149555d4c3e52df562970903411c22d93b77",
+  "git_head": "e11d6d7be0966f593a1b448ad7e5b4c8f13981b9",
+  "uncommitted_sources": true,
+  "exit_code": 0,
+  "elapsed": 0.13165354199009016,
+  "finished": "2026-09-11T10:39:09.686796+08:00"
+}

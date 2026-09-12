@@ -1,0 +1,3164 @@
+[
+  {
+    "a": 0,
+    "beta_deg": 0,
+    "q_local": [
+      932.612794601461,
+      589.96509802943
+    ],
+    "kind": 1,
+    "theta": 3.69056168333417,
+    "independent_sample_count": 1982,
+    "cpp_arc_count": 1,
+    "radius_upper": 0.0207032487651532,
+    "diameter_lower": 0.02070118375865997,
+    "radius_gap": 2.0650064932320467e-06,
+    "max_sample_outside": 1.96787031114809e-14,
+    "dmax_cpp": 1099.29415788767,
+    "dmax_sample": 1099.2941537571166,
+    "internal_mec_gap": 4.0245584642661925e-16
+  },
+  {
+    "a": 0,
+    "beta_deg": 0,
+    "q_local": [
+      932.612794601461,
+      589.96509802943
+    ],
+    "kind": 1,
+    "theta": 3.69066215133694,
+    "independent_sample_count": 13982,
+    "cpp_arc_count": 1,
+    "radius_upper": 0.146079405395745,
+    "diameter_lower": 0.1460790358059835,
+    "radius_gap": 3.695897614897081e-07,
+    "max_sample_outside": -2.2398749521812533e-14,
+    "dmax_cpp": 1099.36439616139,
+    "dmax_sample": 1099.3643954222102,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 0,
+    "beta_deg": 0,
+    "q_local": [
+      932.612794601461,
+      589.96509802943
+    ],
+    "kind": 1,
+    "theta": 3.71241178831835,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 22.2439490308635,
+    "diameter_lower": 22.243949030863487,
+    "radius_gap": 1.4210854715202004e-14,
+    "max_sample_outside": 4.618527782440651e-14,
+    "dmax_cpp": 1099.37650380678,
+    "dmax_sample": 1099.3765038067768,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 0,
+    "beta_deg": 0,
+    "q_local": [
+      932.612794601461,
+      589.96509802943
+    ],
+    "kind": 1,
+    "theta": 3.72553524704257,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 34.878447443407,
+    "diameter_lower": 34.87844744340703,
+    "radius_gap": -3.552713678800501e-14,
+    "max_sample_outside": 7.815970093361102e-14,
+    "dmax_cpp": 1099.37650380678,
+    "dmax_sample": 1099.3765038067768,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 0,
+    "beta_deg": 0,
+    "q_local": [
+      932.612794601461,
+      589.96509802943
+    ],
+    "kind": 1,
+    "theta": 4.36810117072051,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 0,
+    "radius_upper": 20.4572011083624,
+    "diameter_lower": 20.45720110836244,
+    "radius_gap": -3.907985046680551e-14,
+    "max_sample_outside": 3.979039320256561e-13,
+    "dmax_cpp": 643.940539802745,
+    "dmax_sample": 643.9405398027446,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 0,
+    "beta_deg": 0,
+    "q_local": [
+      932.612794601461,
+      589.96509802943
+    ],
+    "kind": 1,
+    "theta": 5.44332397664475,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 46.5817271484477,
+    "diameter_lower": 46.58172714844787,
+    "radius_gap": -1.7053025658242404e-13,
+    "max_sample_outside": 2.0889956431346945e-12,
+    "dmax_cpp": 837.437827008185,
+    "dmax_sample": 837.4378270081852,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 0,
+    "beta_deg": 0,
+    "q_local": [
+      932.612794601461,
+      589.96509802943
+    ],
+    "kind": 1,
+    "theta": 5.47504828984014,
+    "independent_sample_count": 15564,
+    "cpp_arc_count": 1,
+    "radius_upper": 34.0964816086045,
+    "diameter_lower": 34.09612825374908,
+    "radius_gap": 0.00035335485542020706,
+    "max_sample_outside": -1.8474111129762605e-12,
+    "dmax_cpp": 836.401161460858,
+    "dmax_sample": 836.400454748088,
+    "internal_mec_gap": 9.947598300641403e-14
+  },
+  {
+    "a": 0,
+    "beta_deg": 0,
+    "q_local": [
+      932.612794601461,
+      589.96509802943
+    ],
+    "kind": 1,
+    "theta": 5.48213459755308,
+    "independent_sample_count": 12950,
+    "cpp_arc_count": 1,
+    "radius_upper": 28.5548649456595,
+    "diameter_lower": 28.552941095591045,
+    "radius_gap": 0.0019238500684544135,
+    "max_sample_outside": -2.1600499167107046e-12,
+    "dmax_cpp": 830.217961298107,
+    "dmax_sample": 830.2141134875625,
+    "internal_mec_gap": 9.947598300641403e-14
+  },
+  {
+    "a": 0,
+    "beta_deg": 0,
+    "q_local": [
+      932.612794601461,
+      589.96509802943
+    ],
+    "kind": 1,
+    "theta": 5.51385891074847,
+    "independent_sample_count": 1536,
+    "cpp_arc_count": 1,
+    "radius_upper": 3.48577307524103,
+    "diameter_lower": 3.4851955008835596,
+    "radius_gap": 0.0005775743574703007,
+    "max_sample_outside": 1.8487433806058107e-12,
+    "dmax_cpp": 803.306202597567,
+    "dmax_sample": 803.3050571276896,
+    "internal_mec_gap": 2.9753977059954195e-14
+  },
+  {
+    "a": 0,
+    "beta_deg": 0,
+    "q_local": [
+      932.612794601461,
+      589.96509802943
+    ],
+    "kind": 0,
+    "theta": 0,
+    "independent_sample_count": 0,
+    "cpp_arc_count": 0
+  },
+  {
+    "a": 0,
+    "beta_deg": 0,
+    "q_local": [
+      932.612794601461,
+      589.96509802943
+    ],
+    "kind": 2,
+    "theta": 0,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 2,
+    "radius_upper": 60.9142346707974,
+    "diameter_lower": 60.91423467079732,
+    "radius_gap": 7.815970093361102e-14,
+    "max_sample_outside": -3.552713678800501e-14,
+    "dmax_cpp": 1099.37650380678,
+    "dmax_sample": 1099.3765038067768,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 0,
+    "beta_deg": 0,
+    "q_local": [
+      906.61940693127,
+      -572.792222899373
+    ],
+    "kind": 1,
+    "theta": 0.731499207548753,
+    "independent_sample_count": 1492,
+    "cpp_arc_count": 1,
+    "radius_upper": 3.51651941084602,
+    "diameter_lower": 3.515908068274348,
+    "radius_gap": 0.0006113425716720577,
+    "max_sample_outside": 9.370282327836321e-14,
+    "dmax_cpp": 809.977229548863,
+    "dmax_sample": 809.9760160466169,
+    "internal_mec_gap": 3.019806626980426e-14
+  },
+  {
+    "a": 0,
+    "beta_deg": 0,
+    "q_local": [
+      906.61940693127,
+      -572.792222899373
+    ],
+    "kind": 1,
+    "theta": 0.757679146328668,
+    "independent_sample_count": 10600,
+    "cpp_arc_count": 1,
+    "radius_upper": 24.351159800214,
+    "diameter_lower": 24.34839432261004,
+    "radius_gap": 0.0027654776039582885,
+    "max_sample_outside": 3.3999469906120794e-12,
+    "dmax_cpp": 830.649481401116,
+    "dmax_sample": 830.6472054550692,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 0,
+    "beta_deg": 0,
+    "q_local": [
+      906.61940693127,
+      -572.792222899373
+    ],
+    "kind": 1,
+    "theta": 0.768782042045796,
+    "independent_sample_count": 14550,
+    "cpp_arc_count": 1,
+    "radius_upper": 33.0606106391238,
+    "diameter_lower": 33.05996996354243,
+    "radius_gap": 0.0006406755813728182,
+    "max_sample_outside": -1.1013412404281553e-12,
+    "dmax_cpp": 839.653621524651,
+    "dmax_sample": 839.6523401614176,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 0,
+    "beta_deg": 0,
+    "q_local": [
+      906.61940693127,
+      -572.792222899373
+    ],
+    "kind": 1,
+    "theta": 0.794642401248011,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 44.853998217376,
+    "diameter_lower": 44.85399821737601,
+    "radius_gap": -7.105427357601002e-15,
+    "max_sample_outside": 3.836930773104541e-13,
+    "dmax_cpp": 842.96827606976,
+    "dmax_sample": 842.9682760697603,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 0,
+    "beta_deg": 0,
+    "q_local": [
+      906.61940693127,
+      -572.792222899373
+    ],
+    "kind": 1,
+    "theta": 1.46412180773108,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 0,
+    "radius_upper": 20.6861265346919,
+    "diameter_lower": 20.68612653469192,
+    "radius_gap": -1.7763568394002505e-14,
+    "max_sample_outside": 1.5276668818842154e-13,
+    "dmax_cpp": 594.47592521023,
+    "dmax_sample": 594.4759252102302,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 0,
+    "beta_deg": 0,
+    "q_local": [
+      906.61940693127,
+      -572.792222899373
+    ],
+    "kind": 1,
+    "theta": 2.55812144138942,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 33.9501782087009,
+    "diameter_lower": 33.95017820870087,
+    "radius_gap": 2.842170943040401e-14,
+    "max_sample_outside": 7.105427357601002e-15,
+    "dmax_cpp": 1068.2274254208,
+    "dmax_sample": 1068.2274254208003,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 0,
+    "beta_deg": 0,
+    "q_local": [
+      906.61940693127,
+      -572.792222899373
+    ],
+    "kind": 1,
+    "theta": 2.56258819553832,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 29.8245349697278,
+    "diameter_lower": 29.82453496972783,
+    "radius_gap": -2.842170943040401e-14,
+    "max_sample_outside": 6.039613253960852e-14,
+    "dmax_cpp": 1068.2274254208,
+    "dmax_sample": 1068.2274254208003,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 0,
+    "beta_deg": 0,
+    "q_local": [
+      906.61940693127,
+      -572.792222899373
+    ],
+    "kind": 1,
+    "theta": 2.58866470329932,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 4.56220143760487,
+    "diameter_lower": 4.562201437604852,
+    "radius_gap": 1.7763568394002505e-14,
+    "max_sample_outside": -7.105427357601002e-15,
+    "dmax_cpp": 1068.2274254208,
+    "dmax_sample": 1068.2274254208003,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 0,
+    "beta_deg": 0,
+    "q_local": [
+      906.61940693127,
+      -572.792222899373
+    ],
+    "kind": 1,
+    "theta": 2.59313145744822,
+    "independent_sample_count": 1982,
+    "cpp_arc_count": 1,
+    "radius_upper": 0.0207206341424266,
+    "diameter_lower": 0.020718521509224135,
+    "radius_gap": 2.1126332024647143e-06,
+    "max_sample_outside": -1.4432899320127035e-15,
+    "dmax_cpp": 1068.14514482562,
+    "dmax_sample": 1068.145140599785,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 0,
+    "beta_deg": 0,
+    "q_local": [
+      906.61940693127,
+      -572.792222899373
+    ],
+    "kind": 0,
+    "theta": 0,
+    "independent_sample_count": 0,
+    "cpp_arc_count": 0
+  },
+  {
+    "a": 0,
+    "beta_deg": 0,
+    "q_local": [
+      906.61940693127,
+      -572.792222899373
+    ],
+    "kind": 2,
+    "theta": 0,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 2,
+    "radius_upper": 41.5054392820344,
+    "diameter_lower": 41.50543928203438,
+    "radius_gap": 2.1316282072803006e-14,
+    "max_sample_outside": -1.4210854715202004e-14,
+    "dmax_cpp": 1068.2274254208,
+    "dmax_sample": 1068.2274254208003,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1700,
+    "beta_deg": 0,
+    "q_local": [
+      71.9136723568461,
+      -43.9253686946936
+    ],
+    "kind": 1,
+    "theta": 0.970269183359906,
+    "independent_sample_count": 1844,
+    "cpp_arc_count": 1,
+    "radius_upper": 0.238143686337136,
+    "diameter_lower": 0.23804492768776359,
+    "radius_gap": 9.875864937242129e-05,
+    "max_sample_outside": 1.7763568394002505e-15,
+    "dmax_cpp": 51.0101864405297,
+    "dmax_sample": 51.01005449936679,
+    "internal_mec_gap": 3.9968028886505635e-15
+  },
+  {
+    "a": 1700,
+    "beta_deg": 0,
+    "q_local": [
+      71.9136723568461,
+      -43.9253686946936
+    ],
+    "kind": 1,
+    "theta": 0.996449122139821,
+    "independent_sample_count": 13424,
+    "cpp_arc_count": 1,
+    "radius_upper": 1.70665582540114,
+    "diameter_lower": 1.7063288217711041,
+    "radius_gap": 0.0003270036300357937,
+    "max_sample_outside": -7.549516567451064e-15,
+    "dmax_cpp": 53.1375140013178,
+    "dmax_sample": 53.13737059267066,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1700,
+    "beta_deg": 0,
+    "q_local": [
+      71.9136723568461,
+      -43.9253686946936
+    ],
+    "kind": 1,
+    "theta": 1.00155491597653,
+    "independent_sample_count": 15792,
+    "cpp_arc_count": 1,
+    "radius_upper": 2.0014937786695,
+    "diameter_lower": 2.0013312522506435,
+    "radius_gap": 0.0001625264188565012,
+    "max_sample_outside": 1.7763568394002505e-15,
+    "dmax_cpp": 53.5767757550288,
+    "dmax_sample": 53.5764908002409,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1700,
+    "beta_deg": 0,
+    "q_local": [
+      71.9136723568461,
+      -43.9253686946936
+    ],
+    "kind": 1,
+    "theta": 1.0238170140505,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 2.40298236871592,
+    "diameter_lower": 2.4029823687159597,
+    "radius_gap": -3.952393967665557e-14,
+    "max_sample_outside": 9.015010959956271e-14,
+    "dmax_cpp": 53.6154991803123,
+    "dmax_sample": 53.61549918031235,
+    "internal_mec_gap": 1.021405182655144e-14
+  },
+  {
+    "a": 1700,
+    "beta_deg": 0,
+    "q_local": [
+      71.9136723568461,
+      -43.9253686946936
+    ],
+    "kind": 1,
+    "theta": 1.60144391169391,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 0,
+    "radius_upper": 1.47115114155489,
+    "diameter_lower": 1.4711377989093162,
+    "radius_gap": 1.3342645573732881e-05,
+    "max_sample_outside": 3.552713678800501e-15,
+    "dmax_cpp": 45.194968865336,
+    "dmax_sample": 45.194968865336016,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1700,
+    "beta_deg": 0,
+    "q_local": [
+      71.9136723568461,
+      -43.9253686946936
+    ],
+    "kind": 1,
+    "theta": 2.5425666330973,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 2.59177867113713,
+    "diameter_lower": 2.591778671137131,
+    "radius_gap": -8.881784197001252e-16,
+    "max_sample_outside": 4.440892098500626e-15,
+    "dmax_cpp": 80.0915296715202,
+    "dmax_sample": 80.09152967152025,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1700,
+    "beta_deg": 0,
+    "q_local": [
+      71.9136723568461,
+      -43.9253686946936
+    ],
+    "kind": 1,
+    "theta": 2.54829700211318,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 2.20427401014853,
+    "diameter_lower": 2.2042740101485334,
+    "radius_gap": -3.552713678800501e-15,
+    "max_sample_outside": 6.217248937900877e-15,
+    "dmax_cpp": 80.0915296715202,
+    "dmax_sample": 80.09152967152025,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1700,
+    "beta_deg": 0,
+    "q_local": [
+      71.9136723568461,
+      -43.9253686946936
+    ],
+    "kind": 1,
+    "theta": 2.5731098950072,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 0.452682682931885,
+    "diameter_lower": 0.452682682931886,
+    "radius_gap": -9.992007221626409e-16,
+    "max_sample_outside": 3.83026943495679e-15,
+    "dmax_cpp": 80.0915296715202,
+    "dmax_sample": 80.09152967152025,
+    "internal_mec_gap": 9.992007221626409e-16
+  },
+  {
+    "a": 1700,
+    "beta_deg": 0,
+    "q_local": [
+      71.9136723568461,
+      -43.9253686946936
+    ],
+    "kind": 1,
+    "theta": 2.57884026402308,
+    "independent_sample_count": 1980,
+    "cpp_arc_count": 1,
+    "radius_upper": 0.020223219179402,
+    "diameter_lower": 0.02022261152453742,
+    "radius_gap": 6.076548645823909e-07,
+    "max_sample_outside": 7.112366251504909e-16,
+    "dmax_cpp": 80.0073064574117,
+    "dmax_sample": 80.00730524205699,
+    "internal_mec_gap": 4.0245584642661925e-16
+  },
+  {
+    "a": 1700,
+    "beta_deg": 0,
+    "q_local": [
+      71.9136723568461,
+      -43.9253686946936
+    ],
+    "kind": 0,
+    "theta": 0,
+    "independent_sample_count": 0,
+    "cpp_arc_count": 0
+  },
+  {
+    "a": 1700,
+    "beta_deg": 0,
+    "q_local": [
+      71.9136723568461,
+      -43.9253686946936
+    ],
+    "kind": 2,
+    "theta": 0,
+    "independent_sample_count": 0,
+    "cpp_arc_count": 0
+  },
+  {
+    "a": 1700,
+    "beta_deg": 0,
+    "q_local": [
+      70.0972106606344,
+      41.9598383601912
+    ],
+    "kind": 1,
+    "theta": 3.69597311505529,
+    "independent_sample_count": 1980,
+    "cpp_arc_count": 1,
+    "radius_upper": 0.0204992235162873,
+    "diameter_lower": 0.02049771308395096,
+    "radius_gap": 1.5104323363400451e-06,
+    "max_sample_outside": -6.938893903907228e-18,
+    "dmax_cpp": 77.4133278140914,
+    "dmax_sample": 77.41332479294206,
+    "internal_mec_gap": 4.0245584642661925e-16
+  },
+  {
+    "a": 1700,
+    "beta_deg": 0,
+    "q_local": [
+      70.0972106606344,
+      41.9598383601912
+    ],
+    "kind": 1,
+    "theta": 3.69739364545544,
+    "independent_sample_count": 13978,
+    "cpp_arc_count": 1,
+    "radius_upper": 0.144469159814468,
+    "diameter_lower": 0.14446365988071516,
+    "radius_gap": 5.4999337528449654e-06,
+    "max_sample_outside": -1.0269562977782698e-15,
+    "dmax_cpp": 77.4842342359358,
+    "dmax_sample": 77.48422323559542,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1700,
+    "beta_deg": 0,
+    "q_local": [
+      70.0972106606344,
+      41.9598383601912
+    ],
+    "kind": 1,
+    "theta": 3.7182632408386,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 1.60272702834722,
+    "diameter_lower": 1.602727028347215,
+    "radius_gap": 4.884981308350689e-15,
+    "max_sample_outside": -3.1086244689504383e-15,
+    "dmax_cpp": 77.4964814297172,
+    "dmax_sample": 77.4964814297172,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1700,
+    "beta_deg": 0,
+    "q_local": [
+      70.0972106606344,
+      41.9598383601912
+    ],
+    "kind": 1,
+    "theta": 3.73182672036194,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 2.51209388570366,
+    "diameter_lower": 2.5120938857036625,
+    "radius_gap": -2.6645352591003757e-15,
+    "max_sample_outside": 3.552713678800501e-15,
+    "dmax_cpp": 77.4964814297172,
+    "dmax_sample": 77.4964814297172,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1700,
+    "beta_deg": 0,
+    "q_local": [
+      70.0972106606344,
+      41.9598383601912
+    ],
+    "kind": 1,
+    "theta": 4.31844537091203,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 0,
+    "radius_upper": 1.54382913329086,
+    "diameter_lower": 1.5438291332908542,
+    "radius_gap": 5.773159728050814e-15,
+    "max_sample_outside": -2.886579864025407e-15,
+    "dmax_cpp": 46.7583854483392,
+    "dmax_sample": 46.75838544833924,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1700,
+    "beta_deg": 0,
+    "q_local": [
+      70.0972106606344,
+      41.9598383601912
+    ],
+    "kind": 1,
+    "theta": 5.29932266962537,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 2.67292566161519,
+    "diameter_lower": 2.6729256616148684,
+    "radius_gap": 3.2152058793144533e-13,
+    "max_sample_outside": 4.1744385725905886e-14,
+    "dmax_cpp": 52.9554725589643,
+    "dmax_sample": 52.9554725589634,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1700,
+    "beta_deg": 0,
+    "q_local": [
+      70.0972106606344,
+      41.9598383601912
+    ],
+    "kind": 1,
+    "theta": 5.33042082223572,
+    "independent_sample_count": 15764,
+    "cpp_arc_count": 1,
+    "radius_upper": 2.05963048413793,
+    "diameter_lower": 2.05962508141816,
+    "radius_gap": 5.402719770231101e-06,
+    "max_sample_outside": -1.021405182655144e-14,
+    "dmax_cpp": 52.9126542573455,
+    "dmax_sample": 52.91264345189976,
+    "internal_mec_gap": 1.021405182655144e-14
+  },
+  {
+    "a": 1700,
+    "beta_deg": 0,
+    "q_local": [
+      70.0972106606344,
+      41.9598383601912
+    ],
+    "kind": 1,
+    "theta": 5.33375016643842,
+    "independent_sample_count": 14344,
+    "cpp_arc_count": 1,
+    "radius_upper": 1.87824689084218,
+    "diameter_lower": 1.8781926083627862,
+    "radius_gap": 5.428247939387454e-05,
+    "max_sample_outside": 9.992007221626409e-15,
+    "dmax_cpp": 52.6574760785087,
+    "dmax_sample": 52.657445016706134,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1700,
+    "beta_deg": 0,
+    "q_local": [
+      70.0972106606344,
+      41.9598383601912
+    ],
+    "kind": 1,
+    "theta": 5.36484831904877,
+    "independent_sample_count": 1692,
+    "cpp_arc_count": 1,
+    "radius_upper": 0.226330998051353,
+    "diameter_lower": 0.22619085066962405,
+    "radius_gap": 0.00014014738172896113,
+    "max_sample_outside": 6.145084441300241e-14,
+    "dmax_cpp": 50.4098974922872,
+    "dmax_sample": 50.40967943120097,
+    "internal_mec_gap": 9.992007221626409e-16
+  },
+  {
+    "a": 1700,
+    "beta_deg": 0,
+    "q_local": [
+      70.0972106606344,
+      41.9598383601912
+    ],
+    "kind": 0,
+    "theta": 0,
+    "independent_sample_count": 0,
+    "cpp_arc_count": 0
+  },
+  {
+    "a": 1700,
+    "beta_deg": 0,
+    "q_local": [
+      70.0972106606344,
+      41.9598383601912
+    ],
+    "kind": 2,
+    "theta": 0,
+    "independent_sample_count": 0,
+    "cpp_arc_count": 0
+  },
+  {
+    "a": 1700,
+    "beta_deg": 90,
+    "q_local": [
+      418.319280465036,
+      254.994951525921
+    ],
+    "kind": 1,
+    "theta": 3.6768092618732,
+    "independent_sample_count": 1982,
+    "cpp_arc_count": 1,
+    "radius_upper": 0.0211856860985579,
+    "diameter_lower": 0.021182558773470733,
+    "radius_gap": 3.127325087167593e-06,
+    "max_sample_outside": -6.036837696399289e-15,
+    "dmax_cpp": 485.615208473125,
+    "dmax_sample": 485.61520221718644,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1700,
+    "beta_deg": 90,
+    "q_local": [
+      418.319280465036,
+      254.994951525921
+    ],
+    "kind": 1,
+    "theta": 3.67703864228855,
+    "independent_sample_count": 13982,
+    "cpp_arc_count": 1,
+    "radius_upper": 0.149424651182475,
+    "diameter_lower": 0.14942310033021255,
+    "radius_gap": 1.5508522624441134e-06,
+    "max_sample_outside": 1.2212453270876722e-15,
+    "dmax_cpp": 485.6839285736,
+    "dmax_sample": 485.68392547185533,
+    "internal_mec_gap": 9.992007221626409e-16
+  },
+  {
+    "a": 1700,
+    "beta_deg": 90,
+    "q_local": [
+      418.319280465036,
+      254.994951525921
+    ],
+    "kind": 1,
+    "theta": 3.69870233766158,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 10.0722350922392,
+    "diameter_lower": 10.072235092239222,
+    "radius_gap": -2.1316282072803006e-14,
+    "max_sample_outside": 2.3092638912203256e-14,
+    "dmax_cpp": 485.695782134972,
+    "dmax_sample": 485.6957821349725,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1700,
+    "beta_deg": 90,
+    "q_local": [
+      418.319280465036,
+      254.994951525921
+    ],
+    "kind": 1,
+    "theta": 3.71186876718998,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 15.7836012135583,
+    "diameter_lower": 15.783601213558315,
+    "radius_gap": -1.4210854715202004e-14,
+    "max_sample_outside": 5.5067062021407764e-14,
+    "dmax_cpp": 485.695782134972,
+    "dmax_sample": 485.6957821349725,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1700,
+    "beta_deg": 90,
+    "q_local": [
+      418.319280465036,
+      254.994951525921
+    ],
+    "kind": 1,
+    "theta": 4.26766302124132,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 0,
+    "radius_upper": 9.46999511348236,
+    "diameter_lower": 9.469995113482314,
+    "radius_gap": 4.618527782440651e-14,
+    "max_sample_outside": 1.438849039914203e-13,
+    "dmax_cpp": 290.515659132378,
+    "dmax_sample": 290.51565913237835,
+    "internal_mec_gap": 1.9539925233402755e-14
+  },
+  {
+    "a": 1700,
+    "beta_deg": 90,
+    "q_local": [
+      418.319280465036,
+      254.994951525921
+    ],
+    "kind": 1,
+    "theta": 5.19815895077742,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 14.247200078277,
+    "diameter_lower": 14.246784381102204,
+    "radius_gap": 0.00041569717479639223,
+    "max_sample_outside": -4.3876013933186186e-13,
+    "dmax_cpp": 301.810922208441,
+    "dmax_sample": 301.81061946669905,
+    "internal_mec_gap": 9.947598300641403e-14
+  },
+  {
+    "a": 1700,
+    "beta_deg": 90,
+    "q_local": [
+      418.319280465036,
+      254.994951525921
+    ],
+    "kind": 1,
+    "theta": 5.2488711688537,
+    "independent_sample_count": 14346,
+    "cpp_arc_count": 1,
+    "radius_upper": 12.3954927806872,
+    "diameter_lower": 12.394944826381133,
+    "radius_gap": 0.0005479543060662451,
+    "max_sample_outside": 3.0730973321624333e-13,
+    "dmax_cpp": 305.020331250321,
+    "dmax_sample": 305.01929638276033,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1700,
+    "beta_deg": 90,
+    "q_local": [
+      418.319280465036,
+      254.994951525921
+    ],
+    "kind": 1,
+    "theta": 5.36988490585199,
+    "independent_sample_count": 4492,
+    "cpp_arc_count": 1,
+    "radius_upper": 7.65577229436454,
+    "diameter_lower": 7.655663605920624,
+    "radius_gap": 0.000108688443916094,
+    "max_sample_outside": -1.127986593019159e-13,
+    "dmax_cpp": 315.680607804152,
+    "dmax_sample": 315.68030553335524,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1700,
+    "beta_deg": 90,
+    "q_local": [
+      418.319280465036,
+      254.994951525921
+    ],
+    "kind": 1,
+    "theta": 5.42059712392827,
+    "independent_sample_count": 358,
+    "cpp_arc_count": 1,
+    "radius_upper": 0.887150477493295,
+    "diameter_lower": 0.8871504774939802,
+    "radius_gap": -6.852296507986466e-13,
+    "max_sample_outside": 1.5979439993429878e-12,
+    "dmax_cpp": 317.89867658078,
+    "dmax_sample": 317.8986765807802,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1700,
+    "beta_deg": 90,
+    "q_local": [
+      418.319280465036,
+      254.994951525921
+    ],
+    "kind": 0,
+    "theta": 0,
+    "independent_sample_count": 0,
+    "cpp_arc_count": 0
+  },
+  {
+    "a": 1700,
+    "beta_deg": 90,
+    "q_local": [
+      418.319280465036,
+      254.994951525921
+    ],
+    "kind": 2,
+    "theta": 0,
+    "independent_sample_count": 0,
+    "cpp_arc_count": 0
+  },
+  {
+    "a": 1700,
+    "beta_deg": 90,
+    "q_local": [
+      412.05763239786,
+      245.383134929444
+    ],
+    "kind": 1,
+    "theta": 3.66651221993487,
+    "independent_sample_count": 1982,
+    "cpp_arc_count": 1,
+    "radius_upper": 0.0215658573912071,
+    "diameter_lower": 0.0215616196238454,
+    "radius_gap": 4.237767361699174e-06,
+    "max_sample_outside": 1.3791051634015616e-14,
+    "dmax_cpp": 475.265121503245,
+    "dmax_sample": 475.2651130252745,
+    "internal_mec_gap": 3.9898639947466563e-16
+  },
+  {
+    "a": 1700,
+    "beta_deg": 90,
+    "q_local": [
+      412.05763239786,
+      245.383134929444
+    ],
+    "kind": 1,
+    "theta": 3.66674807160627,
+    "independent_sample_count": 13982,
+    "cpp_arc_count": 1,
+    "radius_upper": 0.152075207367135,
+    "diameter_lower": 0.15207242511415422,
+    "radius_gap": 2.7822529807819407e-06,
+    "max_sample_outside": 1.3877787807814457e-16,
+    "dmax_cpp": 475.332691450984,
+    "dmax_sample": 475.33268588634616,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1700,
+    "beta_deg": 90,
+    "q_local": [
+      412.05763239786,
+      245.383134929444
+    ],
+    "kind": 1,
+    "theta": 3.6884074528086,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 10.0252364328739,
+    "diameter_lower": 10.025236432873891,
+    "radius_gap": 8.881784197001252e-15,
+    "max_sample_outside": 0.0,
+    "dmax_cpp": 475.344350809939,
+    "dmax_sample": 475.3443508099387,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1700,
+    "beta_deg": 90,
+    "q_local": [
+      412.05763239786,
+      245.383134929444
+    ],
+    "kind": 1,
+    "theta": 3.70157603942236,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 15.702405601155,
+    "diameter_lower": 15.702405601154998,
+    "radius_gap": 1.7763568394002505e-15,
+    "max_sample_outside": 7.105427357601002e-15,
+    "dmax_cpp": 475.344350809939,
+    "dmax_sample": 475.3443508099387,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1700,
+    "beta_deg": 90,
+    "q_local": [
+      412.05763239786,
+      245.383134929444
+    ],
+    "kind": 1,
+    "theta": 4.27401371449649,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 0,
+    "radius_upper": 9.24264639005633,
+    "diameter_lower": 9.242646390056377,
+    "radius_gap": -4.796163466380676e-14,
+    "max_sample_outside": 2.824407374646398e-13,
+    "dmax_cpp": 278.91020929211,
+    "dmax_sample": 278.9102092921098,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1700,
+    "beta_deg": 90,
+    "q_local": [
+      412.05763239786,
+      245.383134929444
+    ],
+    "kind": 1,
+    "theta": 5.23224328635721,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 14.5546207497322,
+    "diameter_lower": 14.553992155871875,
+    "radius_gap": 0.0006285938603252106,
+    "max_sample_outside": 3.8902214782865485e-13,
+    "dmax_cpp": 296.580000669439,
+    "dmax_sample": 296.5794765259564,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1700,
+    "beta_deg": 90,
+    "q_local": [
+      412.05763239786,
+      245.383134929444
+    ],
+    "kind": 1,
+    "theta": 5.28305090545501,
+    "independent_sample_count": 14356,
+    "cpp_arc_count": 1,
+    "radius_upper": 12.702763797547,
+    "diameter_lower": 12.702205886581844,
+    "radius_gap": 0.0005579109651563385,
+    "max_sample_outside": -3.1441516057384433e-13,
+    "dmax_cpp": 300.287508006484,
+    "dmax_sample": 300.28631079581925,
+    "internal_mec_gap": 9.947598300641403e-14
+  },
+  {
+    "a": 1700,
+    "beta_deg": 90,
+    "q_local": [
+      412.05763239786,
+      245.383134929444
+    ],
+    "kind": 1,
+    "theta": 5.40463704858243,
+    "independent_sample_count": 4506,
+    "cpp_arc_count": 1,
+    "radius_upper": 7.82333267911623,
+    "diameter_lower": 7.823051383591584,
+    "radius_gap": 0.0002812955246458415,
+    "max_sample_outside": -1.1191048088221578e-13,
+    "dmax_cpp": 312.262218182071,
+    "dmax_sample": 312.26199496637554,
+    "internal_mec_gap": 5.950795411990839e-14
+  },
+  {
+    "a": 1700,
+    "beta_deg": 90,
+    "q_local": [
+      412.05763239786,
+      245.383134929444
+    ],
+    "kind": 1,
+    "theta": 5.45544466768024,
+    "independent_sample_count": 360,
+    "cpp_arc_count": 1,
+    "radius_upper": 0.903945366250584,
+    "diameter_lower": 0.9039453662512686,
+    "radius_gap": -6.84674539286334e-13,
+    "max_sample_outside": 1.2551071293387395e-12,
+    "dmax_cpp": 314.718519348218,
+    "dmax_sample": 314.7185193482189,
+    "internal_mec_gap": 5.695444116327053e-14
+  },
+  {
+    "a": 1700,
+    "beta_deg": 90,
+    "q_local": [
+      412.05763239786,
+      245.383134929444
+    ],
+    "kind": 0,
+    "theta": 0,
+    "independent_sample_count": 0,
+    "cpp_arc_count": 0
+  },
+  {
+    "a": 1700,
+    "beta_deg": 90,
+    "q_local": [
+      412.05763239786,
+      245.383134929444
+    ],
+    "kind": 2,
+    "theta": 0,
+    "independent_sample_count": 0,
+    "cpp_arc_count": 0
+  },
+  {
+    "a": 1780,
+    "beta_deg": 0,
+    "q_local": [
+      12.5034106812989,
+      -4.4086956307865e-13
+    ],
+    "kind": 1,
+    "theta": 0.00363515465003125,
+    "independent_sample_count": 5998,
+    "cpp_arc_count": 2,
+    "radius_upper": 1.25380737730371,
+    "diameter_lower": 1.2536816150877441,
+    "radius_gap": 0.00012576221596583004,
+    "max_sample_outside": -9.652368657686594e-07,
+    "dmax_cpp": 7.4982496329438,
+    "dmax_sample": 7.498248122978164,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1780,
+    "beta_deg": 0,
+    "q_local": [
+      12.5034106812989,
+      -4.4086956307865e-13
+    ],
+    "kind": 1,
+    "theta": 0.041834843606956,
+    "independent_sample_count": 4808,
+    "cpp_arc_count": 2,
+    "radius_upper": 1.25444642770533,
+    "diameter_lower": 1.2541742804080025,
+    "radius_gap": 0.0002721472973274963,
+    "max_sample_outside": -3.219646771412954e-14,
+    "dmax_cpp": 7.50467955027488,
+    "dmax_sample": 7.504679550274827,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1780,
+    "beta_deg": 0,
+    "q_local": [
+      12.5034106812989,
+      -4.4086956307865e-13
+    ],
+    "kind": 1,
+    "theta": 0.0730975411020695,
+    "independent_sample_count": 716,
+    "cpp_arc_count": 1,
+    "radius_upper": 0.357881392749843,
+    "diameter_lower": 0.35788139274983904,
+    "radius_gap": 3.941291737419306e-15,
+    "max_sample_outside": 4.574118861455645e-14,
+    "dmax_cpp": 5.71516617325573,
+    "dmax_sample": 5.715166173255728,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1780,
+    "beta_deg": 0,
+    "q_local": [
+      12.5034106812989,
+      -4.4086956307865e-13
+    ],
+    "kind": 1,
+    "theta": 3.12521831317751,
+    "independent_sample_count": 8744,
+    "cpp_arc_count": 2,
+    "radius_upper": 1.25449623069683,
+    "diameter_lower": 1.254496177346256,
+    "radius_gap": 5.3350573958610426e-08,
+    "max_sample_outside": 7.771561172376096e-15,
+    "dmax_cpp": 7.50467955027491,
+    "dmax_sample": 7.50467955027491,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1780,
+    "beta_deg": 0,
+    "q_local": [
+      12.5034106812989,
+      -4.4086956307865e-13
+    ],
+    "kind": 1,
+    "theta": 3.14013631662983,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 2,
+    "radius_upper": 1.25582732975037,
+    "diameter_lower": 1.2558270361567574,
+    "radius_gap": 2.935936125325611e-07,
+    "max_sample_outside": -4.218847493575595e-15,
+    "dmax_cpp": 7.50467955027491,
+    "dmax_sample": 7.50467955027491,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1780,
+    "beta_deg": 0,
+    "q_local": [
+      12.5034106812989,
+      -4.4086956307865e-13
+    ],
+    "kind": 1,
+    "theta": 3.15288423528669,
+    "independent_sample_count": 12240,
+    "cpp_arc_count": 2,
+    "radius_upper": 1.25580119004327,
+    "diameter_lower": 1.2558009108059698,
+    "radius_gap": 2.79237300171431e-07,
+    "max_sample_outside": -1.9984014443252818e-15,
+    "dmax_cpp": 7.5046795502749,
+    "dmax_sample": 7.5046795502749,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1780,
+    "beta_deg": 0,
+    "q_local": [
+      12.5034106812989,
+      -4.4086956307865e-13
+    ],
+    "kind": 1,
+    "theta": 6.2064438785329,
+    "independent_sample_count": 240,
+    "cpp_arc_count": 1,
+    "radius_upper": 0.108908876104756,
+    "diameter_lower": 0.10890887610475787,
+    "radius_gap": -1.8735013540549517e-15,
+    "max_sample_outside": 2.8504976157250894e-14,
+    "dmax_cpp": 5.21761887399141,
+    "dmax_sample": 5.217618873991415,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1780,
+    "beta_deg": 0,
+    "q_local": [
+      12.5034106812989,
+      -4.4086956307865e-13
+    ],
+    "kind": 1,
+    "theta": 6.2369871404428,
+    "independent_sample_count": 4238,
+    "cpp_arc_count": 2,
+    "radius_upper": 1.25399772304669,
+    "diameter_lower": 1.2537591195444981,
+    "radius_gap": 0.00023860350219195858,
+    "max_sample_outside": 3.26405569239796e-14,
+    "dmax_cpp": 7.50467955027485,
+    "dmax_sample": 7.504679550274785,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1780,
+    "beta_deg": 0,
+    "q_local": [
+      12.5034106812989,
+      -4.4086956307865e-13
+    ],
+    "kind": 1,
+    "theta": 6.27955015252955,
+    "independent_sample_count": 5998,
+    "cpp_arc_count": 2,
+    "radius_upper": 1.25380737730377,
+    "diameter_lower": 1.2536816150877512,
+    "radius_gap": 0.00012576221601867665,
+    "max_sample_outside": -9.652366668166934e-07,
+    "dmax_cpp": 7.49824963294383,
+    "dmax_sample": 7.498248122978145,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1780,
+    "beta_deg": 0,
+    "q_local": [
+      12.5034106812989,
+      -4.4086956307865e-13
+    ],
+    "kind": 0,
+    "theta": 0,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 2,
+    "radius_upper": 5,
+    "diameter_lower": 5.000000000000001,
+    "radius_gap": -8.881784197001252e-16,
+    "max_sample_outside": 1.0658141036401503e-14,
+    "dmax_cpp": 5.00000000000001,
+    "dmax_sample": 5.000000000000011,
+    "internal_mec_gap": 0
+  },
+  {
+    "a": 1780,
+    "beta_deg": 0,
+    "q_local": [
+      12.5034106812989,
+      -4.4086956307865e-13
+    ],
+    "kind": 2,
+    "theta": 0,
+    "independent_sample_count": 0,
+    "cpp_arc_count": 0
+  },
+  {
+    "a": 1780,
+    "beta_deg": 0,
+    "q_local": [
+      12.5034106812989,
+      -4.4086956307865e-13
+    ],
+    "kind": 1,
+    "theta": 0.00363515465003125,
+    "independent_sample_count": 5998,
+    "cpp_arc_count": 2,
+    "radius_upper": 1.25380737730371,
+    "diameter_lower": 1.2536816150877441,
+    "radius_gap": 0.00012576221596583004,
+    "max_sample_outside": -9.652368657686594e-07,
+    "dmax_cpp": 7.4982496329438,
+    "dmax_sample": 7.498248122978164,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1780,
+    "beta_deg": 0,
+    "q_local": [
+      12.5034106812989,
+      -4.4086956307865e-13
+    ],
+    "kind": 1,
+    "theta": 0.041834843606956,
+    "independent_sample_count": 4808,
+    "cpp_arc_count": 2,
+    "radius_upper": 1.25444642770533,
+    "diameter_lower": 1.2541742804080025,
+    "radius_gap": 0.0002721472973274963,
+    "max_sample_outside": -3.219646771412954e-14,
+    "dmax_cpp": 7.50467955027488,
+    "dmax_sample": 7.504679550274827,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1780,
+    "beta_deg": 0,
+    "q_local": [
+      12.5034106812989,
+      -4.4086956307865e-13
+    ],
+    "kind": 1,
+    "theta": 0.0730975411020695,
+    "independent_sample_count": 716,
+    "cpp_arc_count": 1,
+    "radius_upper": 0.357881392749843,
+    "diameter_lower": 0.35788139274983904,
+    "radius_gap": 3.941291737419306e-15,
+    "max_sample_outside": 4.574118861455645e-14,
+    "dmax_cpp": 5.71516617325573,
+    "dmax_sample": 5.715166173255728,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1780,
+    "beta_deg": 0,
+    "q_local": [
+      12.5034106812989,
+      -4.4086956307865e-13
+    ],
+    "kind": 1,
+    "theta": 3.12521831317751,
+    "independent_sample_count": 8744,
+    "cpp_arc_count": 2,
+    "radius_upper": 1.25449623069683,
+    "diameter_lower": 1.254496177346256,
+    "radius_gap": 5.3350573958610426e-08,
+    "max_sample_outside": 7.771561172376096e-15,
+    "dmax_cpp": 7.50467955027491,
+    "dmax_sample": 7.50467955027491,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1780,
+    "beta_deg": 0,
+    "q_local": [
+      12.5034106812989,
+      -4.4086956307865e-13
+    ],
+    "kind": 1,
+    "theta": 3.14013631662983,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 2,
+    "radius_upper": 1.25582732975037,
+    "diameter_lower": 1.2558270361567574,
+    "radius_gap": 2.935936125325611e-07,
+    "max_sample_outside": -4.218847493575595e-15,
+    "dmax_cpp": 7.50467955027491,
+    "dmax_sample": 7.50467955027491,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1780,
+    "beta_deg": 0,
+    "q_local": [
+      12.5034106812989,
+      -4.4086956307865e-13
+    ],
+    "kind": 1,
+    "theta": 3.15288423528669,
+    "independent_sample_count": 12240,
+    "cpp_arc_count": 2,
+    "radius_upper": 1.25580119004327,
+    "diameter_lower": 1.2558009108059698,
+    "radius_gap": 2.79237300171431e-07,
+    "max_sample_outside": -1.9984014443252818e-15,
+    "dmax_cpp": 7.5046795502749,
+    "dmax_sample": 7.5046795502749,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1780,
+    "beta_deg": 0,
+    "q_local": [
+      12.5034106812989,
+      -4.4086956307865e-13
+    ],
+    "kind": 1,
+    "theta": 6.2064438785329,
+    "independent_sample_count": 240,
+    "cpp_arc_count": 1,
+    "radius_upper": 0.108908876104756,
+    "diameter_lower": 0.10890887610475787,
+    "radius_gap": -1.8735013540549517e-15,
+    "max_sample_outside": 2.8504976157250894e-14,
+    "dmax_cpp": 5.21761887399141,
+    "dmax_sample": 5.217618873991415,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1780,
+    "beta_deg": 0,
+    "q_local": [
+      12.5034106812989,
+      -4.4086956307865e-13
+    ],
+    "kind": 1,
+    "theta": 6.2369871404428,
+    "independent_sample_count": 4238,
+    "cpp_arc_count": 2,
+    "radius_upper": 1.25399772304669,
+    "diameter_lower": 1.2537591195444981,
+    "radius_gap": 0.00023860350219195858,
+    "max_sample_outside": 3.26405569239796e-14,
+    "dmax_cpp": 7.50467955027485,
+    "dmax_sample": 7.504679550274785,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1780,
+    "beta_deg": 0,
+    "q_local": [
+      12.5034106812989,
+      -4.4086956307865e-13
+    ],
+    "kind": 1,
+    "theta": 6.27955015252955,
+    "independent_sample_count": 5998,
+    "cpp_arc_count": 2,
+    "radius_upper": 1.25380737730377,
+    "diameter_lower": 1.2536816150877512,
+    "radius_gap": 0.00012576221601867665,
+    "max_sample_outside": -9.652366668166934e-07,
+    "dmax_cpp": 7.49824963294383,
+    "dmax_sample": 7.498248122978145,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 1780,
+    "beta_deg": 0,
+    "q_local": [
+      12.5034106812989,
+      -4.4086956307865e-13
+    ],
+    "kind": 0,
+    "theta": 0,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 2,
+    "radius_upper": 5,
+    "diameter_lower": 5.000000000000001,
+    "radius_gap": -8.881784197001252e-16,
+    "max_sample_outside": 1.0658141036401503e-14,
+    "dmax_cpp": 5.00000000000001,
+    "dmax_sample": 5.000000000000011,
+    "internal_mec_gap": 0
+  },
+  {
+    "a": 1780,
+    "beta_deg": 0,
+    "q_local": [
+      12.5034106812989,
+      -4.4086956307865e-13
+    ],
+    "kind": 2,
+    "theta": 0,
+    "independent_sample_count": 0,
+    "cpp_arc_count": 0
+  },
+  {
+    "a": 2500,
+    "beta_deg": 150,
+    "q_local": [
+      1139.87102252083,
+      441.333599675898
+    ],
+    "kind": 1,
+    "theta": 4.11133733724862,
+    "independent_sample_count": 908,
+    "cpp_arc_count": 1,
+    "radius_upper": 1.39235837044265,
+    "diameter_lower": 1.3555716662526596,
+    "radius_gap": 0.03678670418999053,
+    "max_sample_outside": 3.3639757646142243e-13,
+    "dmax_cpp": 512.972813314629,
+    "dmax_sample": 512.9720538992408,
+    "internal_mec_gap": 5.0182080713057076e-14
+  },
+  {
+    "a": 2500,
+    "beta_deg": 150,
+    "q_local": [
+      1139.87102252083,
+      441.333599675898
+    ],
+    "kind": 1,
+    "theta": 4.13751727602854,
+    "independent_sample_count": 6294,
+    "cpp_arc_count": 1,
+    "radius_upper": 9.62924210139971,
+    "diameter_lower": 9.323405044894734,
+    "radius_gap": 0.3058370565049753,
+    "max_sample_outside": 5.5067062021407764e-14,
+    "dmax_cpp": 516.25541261294,
+    "dmax_sample": 516.2544706158438,
+    "internal_mec_gap": 3.019806626980426e-14
+  },
+  {
+    "a": 2500,
+    "beta_deg": 150,
+    "q_local": [
+      1139.87102252083,
+      441.333599675898
+    ],
+    "kind": 1,
+    "theta": 4.16941747810836,
+    "independent_sample_count": 12726,
+    "cpp_arc_count": 1,
+    "radius_upper": 15.3393065426972,
+    "diameter_lower": 14.759524960233499,
+    "radius_gap": 0.5797815824637009,
+    "max_sample_outside": -1.2967404927621828e-13,
+    "dmax_cpp": 520.645089423629,
+    "dmax_sample": 520.6444884834305,
+    "internal_mec_gap": 9.947598300641403e-14
+  },
+  {
+    "a": 2500,
+    "beta_deg": 150,
+    "q_local": [
+      1139.87102252083,
+      441.333599675898
+    ],
+    "kind": 1,
+    "theta": 4.20775622112818,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 21.7364388263349,
+    "diameter_lower": 21.72031901392567,
+    "radius_gap": 0.01611981240922944,
+    "max_sample_outside": 3.055333763768431e-13,
+    "dmax_cpp": 523.090830824195,
+    "dmax_sample": 523.0908308241947,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 2500,
+    "beta_deg": 150,
+    "q_local": [
+      1139.87102252083,
+      441.333599675898
+    ],
+    "kind": 1,
+    "theta": 4.64465452864296,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 0,
+    "radius_upper": 21.3783068898608,
+    "diameter_lower": 21.37830688986069,
+    "radius_gap": 1.1013412404281553e-13,
+    "max_sample_outside": 1.573852159708622e-12,
+    "dmax_cpp": 462.219791493498,
+    "dmax_sample": 462.21979149349824,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 2500,
+    "beta_deg": 150,
+    "q_local": [
+      1139.87102252083,
+      441.333599675898
+    ],
+    "kind": 1,
+    "theta": 5.35536508198097,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 39.2105243696607,
+    "diameter_lower": 39.21052436966069,
+    "radius_gap": 1.4210854715202004e-14,
+    "max_sample_outside": 2.0747847884194925e-12,
+    "dmax_cpp": 589.996652807841,
+    "dmax_sample": 589.9966528078405,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 2500,
+    "beta_deg": 150,
+    "q_local": [
+      1139.87102252083,
+      441.333599675898
+    ],
+    "kind": 1,
+    "theta": 5.38881521053598,
+    "independent_sample_count": 15162,
+    "cpp_arc_count": 1,
+    "radius_upper": 30.9590962564182,
+    "diameter_lower": 30.956701269210786,
+    "radius_gap": 0.0023949872074133793,
+    "max_sample_outside": -2.4726887204451486e-12,
+    "dmax_cpp": 587.853746413174,
+    "dmax_sample": 587.8489563327211,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 2500,
+    "beta_deg": 150,
+    "q_local": [
+      1139.87102252083,
+      441.333599675898
+    ],
+    "kind": 1,
+    "theta": 5.40625641040669,
+    "independent_sample_count": 10220,
+    "cpp_arc_count": 1,
+    "radius_upper": 21.1490163139145,
+    "diameter_lower": 21.146494807079975,
+    "radius_gap": 0.0025215068345261216,
+    "max_sample_outside": -2.1103119252074976e-12,
+    "dmax_cpp": 575.257142743848,
+    "dmax_sample": 575.2520995470682,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 2500,
+    "beta_deg": 150,
+    "q_local": [
+      1139.87102252083,
+      441.333599675898
+    ],
+    "kind": 1,
+    "theta": 5.4397065389617,
+    "independent_sample_count": 1146,
+    "cpp_arc_count": 1,
+    "radius_upper": 2.43576314158957,
+    "diameter_lower": 2.433485354282321,
+    "radius_gap": 0.002277787307249035,
+    "max_sample_outside": 3.801403636316536e-13,
+    "dmax_cpp": 552.315861789457,
+    "dmax_sample": 552.3113085529667,
+    "internal_mec_gap": 3.9968028886505635e-14
+  },
+  {
+    "a": 2500,
+    "beta_deg": 150,
+    "q_local": [
+      1139.87102252083,
+      441.333599675898
+    ],
+    "kind": 0,
+    "theta": 0,
+    "independent_sample_count": 0,
+    "cpp_arc_count": 0
+  },
+  {
+    "a": 2500,
+    "beta_deg": 150,
+    "q_local": [
+      1139.87102252083,
+      441.333599675898
+    ],
+    "kind": 2,
+    "theta": 0,
+    "independent_sample_count": 0,
+    "cpp_arc_count": 0
+  },
+  {
+    "a": 2500,
+    "beta_deg": 150,
+    "q_local": [
+      1119.29638050588,
+      422.359968136908
+    ],
+    "kind": 1,
+    "theta": 4.12492850887876,
+    "independent_sample_count": 864,
+    "cpp_arc_count": 1,
+    "radius_upper": 1.31083303251623,
+    "diameter_lower": 1.2720042533124845,
+    "radius_gap": 0.03882877920374561,
+    "max_sample_outside": 1.7896795156957523e-13,
+    "dmax_cpp": 485.821132793627,
+    "dmax_sample": 485.8210268723064,
+    "internal_mec_gap": 9.992007221626409e-15
+  },
+  {
+    "a": 2500,
+    "beta_deg": 150,
+    "q_local": [
+      1119.29638050588,
+      422.359968136908
+    ],
+    "kind": 1,
+    "theta": 4.15110844765868,
+    "independent_sample_count": 5988,
+    "cpp_arc_count": 1,
+    "radius_upper": 9.07345877023958,
+    "diameter_lower": 8.753099546298776,
+    "radius_gap": 0.3203592239408035,
+    "max_sample_outside": 1.6697754290362354e-13,
+    "dmax_cpp": 489.118421766884,
+    "dmax_sample": 489.1178116482012,
+    "internal_mec_gap": 4.973799150320701e-14
+  },
+  {
+    "a": 2500,
+    "beta_deg": 150,
+    "q_local": [
+      1119.29638050588,
+      422.359968136908
+    ],
+    "kind": 1,
+    "theta": 4.18549072943782,
+    "independent_sample_count": 12594,
+    "cpp_arc_count": 1,
+    "radius_upper": 14.8660308323847,
+    "diameter_lower": 14.237053363586847,
+    "radius_gap": 0.6289774687978529,
+    "max_sample_outside": 3.4994229736184934e-13,
+    "dmax_cpp": 493.879020434573,
+    "dmax_sample": 493.87767550735964,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 2500,
+    "beta_deg": 150,
+    "q_local": [
+      1119.29638050588,
+      422.359968136908
+    ],
+    "kind": 1,
+    "theta": 4.22531872027724,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 21.1554557416795,
+    "diameter_lower": 21.11298642852889,
+    "radius_gap": 0.0424693131506082,
+    "max_sample_outside": 2.4868995751603507e-13,
+    "dmax_cpp": 496.572947241795,
+    "dmax_sample": 496.5729472417954,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 2500,
+    "beta_deg": 150,
+    "q_local": [
+      1119.29638050588,
+      422.359968136908
+    ],
+    "kind": 1,
+    "theta": 4.6734113968785,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 0,
+    "radius_upper": 20.891575258769,
+    "diameter_lower": 20.891575258769013,
+    "radius_gap": -1.4210854715202004e-14,
+    "max_sample_outside": 1.0729195309977513e-12,
+    "dmax_cpp": 442.165894215675,
+    "dmax_sample": 442.1658942156753,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 2500,
+    "beta_deg": 150,
+    "q_local": [
+      1119.29638050588,
+      422.359968136908
+    ],
+    "kind": 1,
+    "theta": 5.40277923202733,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 40.9204847450238,
+    "diameter_lower": 40.92048474502379,
+    "radius_gap": 7.105427357601002e-15,
+    "max_sample_outside": 3.872457909892546e-12,
+    "dmax_cpp": 588.173617940637,
+    "dmax_sample": 588.173617940637,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 2500,
+    "beta_deg": 150,
+    "q_local": [
+      1119.29638050588,
+      422.359968136908
+    ],
+    "kind": 1,
+    "theta": 5.43667140381021,
+    "independent_sample_count": 15092,
+    "cpp_arc_count": 1,
+    "radius_upper": 31.9933311090462,
+    "diameter_lower": 31.99262517461395,
+    "radius_gap": 0.0007059344322506433,
+    "max_sample_outside": 3.3502089991088724e-12,
+    "dmax_cpp": 585.939350496681,
+    "dmax_sample": 585.9379386170426,
+    "internal_mec_gap": 9.947598300641403e-14
+  },
+  {
+    "a": 2500,
+    "beta_deg": 150,
+    "q_local": [
+      1119.29638050588,
+      422.359968136908
+    ],
+    "kind": 1,
+    "theta": 5.45676486304804,
+    "independent_sample_count": 9736,
+    "cpp_arc_count": 1,
+    "radius_upper": 20.9932169998211,
+    "diameter_lower": 20.99195654190224,
+    "radius_gap": 0.0012604579188604248,
+    "max_sample_outside": 1.779909553079051e-12,
+    "dmax_cpp": 572.838072765949,
+    "dmax_sample": 572.8355517937772,
+    "internal_mec_gap": 9.947598300641403e-14
+  },
+  {
+    "a": 2500,
+    "beta_deg": 150,
+    "q_local": [
+      1119.29638050588,
+      422.359968136908
+    ],
+    "kind": 1,
+    "theta": 5.49065703483091,
+    "independent_sample_count": 1082,
+    "cpp_arc_count": 1,
+    "radius_upper": 2.40214454024738,
+    "diameter_lower": 2.4011821403796354,
+    "radius_gap": 0.0009623998677446011,
+    "max_sample_outside": 1.2252421299763228e-12,
+    "dmax_cpp": 551.887188361165,
+    "dmax_sample": 551.8852665751521,
+    "internal_mec_gap": 1.9984014443252818e-14
+  },
+  {
+    "a": 2500,
+    "beta_deg": 150,
+    "q_local": [
+      1119.29638050588,
+      422.359968136908
+    ],
+    "kind": 0,
+    "theta": 0,
+    "independent_sample_count": 0,
+    "cpp_arc_count": 0
+  },
+  {
+    "a": 2500,
+    "beta_deg": 150,
+    "q_local": [
+      1119.29638050588,
+      422.359968136908
+    ],
+    "kind": 2,
+    "theta": 0,
+    "independent_sample_count": 0,
+    "cpp_arc_count": 0
+  },
+  {
+    "a": 2500,
+    "beta_deg": 180,
+    "q_local": [
+      1072.82942827134,
+      495.626546698439
+    ],
+    "kind": 1,
+    "theta": 4.04098594545139,
+    "independent_sample_count": 1962,
+    "cpp_arc_count": 1,
+    "radius_upper": 1.9122088857924,
+    "diameter_lower": 1.9119160208773163,
+    "radius_gap": 0.0002928649150837348,
+    "max_sample_outside": -1.5432100042289676e-13,
+    "dmax_cpp": 612.838825716297,
+    "dmax_sample": 612.8382399608264,
+    "internal_mec_gap": 2.9976021664879227e-14
+  },
+  {
+    "a": 2500,
+    "beta_deg": 180,
+    "q_local": [
+      1072.82942827134,
+      495.626546698439
+    ],
+    "kind": 1,
+    "theta": 4.05875473251588,
+    "independent_sample_count": 13962,
+    "cpp_arc_count": 1,
+    "radius_upper": 13.4275917988721,
+    "diameter_lower": 13.427044378254456,
+    "radius_gap": 0.0005474206176447893,
+    "max_sample_outside": -3.090860900556436e-13,
+    "dmax_cpp": 627.485148379376,
+    "dmax_sample": 627.4840535262364,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 2500,
+    "beta_deg": 180,
+    "q_local": [
+      1072.82942827134,
+      495.626546698439
+    ],
+    "kind": 1,
+    "theta": 4.06872549012282,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 17.0734232756442,
+    "diameter_lower": 17.073423275644107,
+    "radius_gap": 9.237055564881302e-14,
+    "max_sample_outside": -2.842170943040401e-14,
+    "dmax_cpp": 629.982722440472,
+    "dmax_sample": 629.9827224404717,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 2500,
+    "beta_deg": 180,
+    "q_local": [
+      1072.82942827134,
+      495.626546698439
+    ],
+    "kind": 1,
+    "theta": 4.08773838853427,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 22.5150284339844,
+    "diameter_lower": 22.515028433984313,
+    "radius_gap": 8.881784197001252e-14,
+    "max_sample_outside": 7.105427357601002e-15,
+    "dmax_cpp": 629.982722440472,
+    "dmax_sample": 629.9827224404717,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 2500,
+    "beta_deg": 180,
+    "q_local": [
+      1072.82942827134,
+      495.626546698439
+    ],
+    "kind": 1,
+    "theta": 4.57814326127263,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 0,
+    "radius_upper": 20.8090260059724,
+    "diameter_lower": 20.80902600597239,
+    "radius_gap": 7.105427357601002e-15,
+    "max_sample_outside": 4.511946372076636e-13,
+    "dmax_cpp": 518.943675920371,
+    "dmax_sample": 518.9436759203711,
+    "internal_mec_gap": 9.947598300641403e-14
+  },
+  {
+    "a": 2500,
+    "beta_deg": 180,
+    "q_local": [
+      1072.82942827134,
+      495.626546698439
+    ],
+    "kind": 1,
+    "theta": 5.38504071641282,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 41.5040317793859,
+    "diameter_lower": 41.50403177938574,
+    "radius_gap": 1.5631940186722204e-13,
+    "max_sample_outside": 1.7408297026122455e-12,
+    "dmax_cpp": 674.21079070299,
+    "dmax_sample": 674.2107907029899,
+    "internal_mec_gap": 9.947598300641403e-14
+  },
+  {
+    "a": 2500,
+    "beta_deg": 180,
+    "q_local": [
+      1072.82942827134,
+      495.626546698439
+    ],
+    "kind": 1,
+    "theta": 5.41775478767929,
+    "independent_sample_count": 15310,
+    "cpp_arc_count": 1,
+    "radius_upper": 31.9647159281925,
+    "diameter_lower": 31.962795055206197,
+    "radius_gap": 0.0019208729863038343,
+    "max_sample_outside": 5.719869022868806e-13,
+    "dmax_cpp": 672.487754675579,
+    "dmax_sample": 672.4839128543217,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 2500,
+    "beta_deg": 180,
+    "q_local": [
+      1072.82942827134,
+      495.626546698439
+    ],
+    "kind": 1,
+    "theta": 5.4307796438187,
+    "independent_sample_count": 11216,
+    "cpp_arc_count": 1,
+    "radius_upper": 23.6640408637222,
+    "diameter_lower": 23.66288240468026,
+    "radius_gap": 0.0011584590419388974,
+    "max_sample_outside": -2.7959856652159942e-12,
+    "dmax_cpp": 662.290168313859,
+    "dmax_sample": 662.2878513571894,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 2500,
+    "beta_deg": 180,
+    "q_local": [
+      1072.82942827134,
+      495.626546698439
+    ],
+    "kind": 1,
+    "theta": 5.46349371508517,
+    "independent_sample_count": 1288,
+    "cpp_arc_count": 1,
+    "radius_upper": 2.79099540341471,
+    "diameter_lower": 2.7901981712460544,
+    "radius_gap": 0.0007972321686557926,
+    "max_sample_outside": 3.248068480843358e-12,
+    "dmax_cpp": 637.721812548166,
+    "dmax_sample": 637.7202234098172,
+    "internal_mec_gap": 3.019806626980426e-14
+  },
+  {
+    "a": 2500,
+    "beta_deg": 180,
+    "q_local": [
+      1072.82942827134,
+      495.626546698439
+    ],
+    "kind": 0,
+    "theta": 0,
+    "independent_sample_count": 0,
+    "cpp_arc_count": 0
+  },
+  {
+    "a": 2500,
+    "beta_deg": 180,
+    "q_local": [
+      1072.82942827134,
+      495.626546698439
+    ],
+    "kind": 2,
+    "theta": 0,
+    "independent_sample_count": 0,
+    "cpp_arc_count": 0
+  },
+  {
+    "a": 2500,
+    "beta_deg": 180,
+    "q_local": [
+      1045.95430116598,
+      -472.600926375876
+    ],
+    "kind": 1,
+    "theta": 0.764093982068141,
+    "independent_sample_count": 1216,
+    "cpp_arc_count": 1,
+    "radius_upper": 2.77487617603266,
+    "diameter_lower": 2.7732738072418126,
+    "radius_gap": 0.0016023687908472972,
+    "max_sample_outside": 9.57456336436735e-13,
+    "dmax_cpp": 639.427589564108,
+    "dmax_sample": 639.4243888274965,
+    "internal_mec_gap": 7.993605777301127e-14
+  },
+  {
+    "a": 2500,
+    "beta_deg": 180,
+    "q_local": [
+      1045.95430116598,
+      -472.600926375876
+    ],
+    "kind": 1,
+    "theta": 0.790273920848056,
+    "independent_sample_count": 8670,
+    "cpp_arc_count": 1,
+    "radius_upper": 19.3053073429527,
+    "diameter_lower": 19.304253408103385,
+    "radius_gap": 0.001053934849313265,
+    "max_sample_outside": 1.2612133559741778e-12,
+    "dmax_cpp": 656.946877775168,
+    "dmax_sample": 656.9464959096754,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 2500,
+    "beta_deg": 180,
+    "q_local": [
+      1045.95430116598,
+      -472.600926375876
+    ],
+    "kind": 1,
+    "theta": 0.807432453928401,
+    "independent_sample_count": 13706,
+    "cpp_arc_count": 1,
+    "radius_upper": 30.0491255500744,
+    "diameter_lower": 30.046983422438988,
+    "radius_gap": 0.0021421276354125496,
+    "max_sample_outside": 3.0482283364108298e-12,
+    "dmax_cpp": 668.880246948881,
+    "dmax_sample": 668.875962568862,
+    "internal_mec_gap": 9.947598300641403e-14
+  },
+  {
+    "a": 2500,
+    "beta_deg": 180,
+    "q_local": [
+      1045.95430116598,
+      -472.600926375876
+    ],
+    "kind": 1,
+    "theta": 0.836926195548545,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 41.0391935879713,
+    "diameter_lower": 41.03919358797126,
+    "radius_gap": 3.552713678800501e-14,
+    "max_sample_outside": 1.0302869668521453e-12,
+    "dmax_cpp": 674.337537372078,
+    "dmax_sample": 674.3375373720777,
+    "internal_mec_gap": 9.947598300641403e-14
+  },
+  {
+    "a": 2500,
+    "beta_deg": 180,
+    "q_local": [
+      1045.95430116598,
+      -472.600926375876
+    ],
+    "kind": 1,
+    "theta": 1.3461588520884,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 0,
+    "radius_upper": 24.1381679979626,
+    "diameter_lower": 24.13816799796252,
+    "radius_gap": 8.171241461241152e-14,
+    "max_sample_outside": 1.1084466677857563e-12,
+    "dmax_cpp": 507.790756101602,
+    "dmax_sample": 507.79075610160214,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 2500,
+    "beta_deg": 180,
+    "q_local": [
+      1045.95430116598,
+      -472.600926375876
+    ],
+    "kind": 1,
+    "theta": 2.17614474169701,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 23.4174339866792,
+    "diameter_lower": 23.417433986679075,
+    "radius_gap": 1.2434497875801753e-13,
+    "max_sample_outside": 4.263256414560601e-13,
+    "dmax_cpp": 595.572250119378,
+    "dmax_sample": 595.5722501193774,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 2500,
+    "beta_deg": 180,
+    "q_local": [
+      1045.95430116598,
+      -472.600926375876
+    ],
+    "kind": 1,
+    "theta": 2.19899653097968,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 17.2493964230378,
+    "diameter_lower": 17.249396423037563,
+    "radius_gap": 2.3803181647963356e-13,
+    "max_sample_outside": -9.237055564881302e-14,
+    "dmax_cpp": 595.572250119378,
+    "dmax_sample": 595.5722501193774,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 2500,
+    "beta_deg": 180,
+    "q_local": [
+      1045.95430116598,
+      -472.600926375876
+    ],
+    "kind": 1,
+    "theta": 2.20668800360691,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 15.4720344570402,
+    "diameter_lower": 15.472034457040081,
+    "radius_gap": 1.1901590823981678e-13,
+    "max_sample_outside": -1.4210854715202004e-14,
+    "dmax_cpp": 595.572250119378,
+    "dmax_sample": 595.5722501193774,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 2500,
+    "beta_deg": 180,
+    "q_local": [
+      1045.95430116598,
+      -472.600926375876
+    ],
+    "kind": 1,
+    "theta": 2.22953979288958,
+    "independent_sample_count": 1958,
+    "cpp_arc_count": 1,
+    "radius_upper": 1.89010317750541,
+    "diameter_lower": 1.8893948492378432,
+    "radius_gap": 0.0007083282675668379,
+    "max_sample_outside": 8.859579736508749e-14,
+    "dmax_cpp": 578.257130868243,
+    "dmax_sample": 578.2557140677616,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 2500,
+    "beta_deg": 180,
+    "q_local": [
+      1045.95430116598,
+      -472.600926375876
+    ],
+    "kind": 0,
+    "theta": 0,
+    "independent_sample_count": 0,
+    "cpp_arc_count": 0
+  },
+  {
+    "a": 2500,
+    "beta_deg": 180,
+    "q_local": [
+      1045.95430116598,
+      -472.600926375876
+    ],
+    "kind": 2,
+    "theta": 0,
+    "independent_sample_count": 0,
+    "cpp_arc_count": 0
+  },
+  {
+    "a": 900,
+    "beta_deg": 0,
+    "q_local": [
+      645.623093712826,
+      -397.344205852535
+    ],
+    "kind": 1,
+    "theta": 0.969913366718125,
+    "independent_sample_count": 1872,
+    "cpp_arc_count": 1,
+    "radius_upper": 2.17719455940111,
+    "diameter_lower": 2.175697945081285,
+    "radius_gap": 0.0014966143198251736,
+    "max_sample_outside": 1.354472090042691e-13,
+    "dmax_cpp": 461.683670548205,
+    "dmax_sample": 461.68088379691807,
+    "internal_mec_gap": 2.9753977059954195e-14
+  },
+  {
+    "a": 900,
+    "beta_deg": 0,
+    "q_local": [
+      645.623093712826,
+      -397.344205852535
+    ],
+    "kind": 1,
+    "theta": 0.99609330549804,
+    "independent_sample_count": 13518,
+    "cpp_arc_count": 1,
+    "radius_upper": 15.4694136706629,
+    "diameter_lower": 15.46716372724976,
+    "radius_gap": 0.0022499434131404428,
+    "max_sample_outside": 2.504663143554353e-13,
+    "dmax_cpp": 480.934837452871,
+    "dmax_sample": 480.93434657266545,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 900,
+    "beta_deg": 0,
+    "q_local": [
+      645.623093712826,
+      -397.344205852535
+    ],
+    "kind": 1,
+    "theta": 1.00109220722354,
+    "independent_sample_count": 15824,
+    "cpp_arc_count": 1,
+    "radius_upper": 18.0531898206071,
+    "diameter_lower": 18.052080663826068,
+    "radius_gap": 0.001109156781030407,
+    "max_sample_outside": 2.5224267119483557e-13,
+    "dmax_cpp": 484.767522665399,
+    "dmax_sample": 484.7660017399237,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 900,
+    "beta_deg": 0,
+    "q_local": [
+      645.623093712826,
+      -397.344205852535
+    ],
+    "kind": 1,
+    "theta": 1.02329017003078,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 21.6561026676701,
+    "diameter_lower": 21.65610266767014,
+    "radius_gap": -3.907985046680551e-14,
+    "max_sample_outside": 1.2079226507921703e-13,
+    "dmax_cpp": 485.062023961589,
+    "dmax_sample": 485.06202396158875,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 900,
+    "beta_deg": 0,
+    "q_local": [
+      645.623093712826,
+      -397.344205852535
+    ],
+    "kind": 1,
+    "theta": 1.61106301025233,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 0,
+    "radius_upper": 13.239339761557,
+    "diameter_lower": 13.239339761556982,
+    "radius_gap": 1.7763568394002505e-14,
+    "max_sample_outside": 1.2434497875801753e-14,
+    "dmax_cpp": 408.88280272888,
+    "dmax_sample": 408.88280272887994,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 900,
+    "beta_deg": 0,
+    "q_local": [
+      645.623093712826,
+      -397.344205852535
+    ],
+    "kind": 1,
+    "theta": 2.56889238760535,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 24.3942812793823,
+    "diameter_lower": 24.394281279382227,
+    "radius_gap": 7.460698725481052e-14,
+    "max_sample_outside": -7.105427357601002e-15,
+    "dmax_cpp": 753.890373704146,
+    "dmax_sample": 753.8903737041464,
+    "internal_mec_gap": 1.0302869668521453e-13
+  },
+  {
+    "a": 900,
+    "beta_deg": 0,
+    "q_local": [
+      645.623093712826,
+      -397.344205852535
+    ],
+    "kind": 1,
+    "theta": 2.57340326653751,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 21.4086136057513,
+    "diameter_lower": 21.40861360575133,
+    "radius_gap": -3.197442310920451e-14,
+    "max_sample_outside": 6.750155989720952e-14,
+    "dmax_cpp": 753.890373704146,
+    "dmax_sample": 753.8903737041464,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 900,
+    "beta_deg": 0,
+    "q_local": [
+      645.623093712826,
+      -397.344205852535
+    ],
+    "kind": 1,
+    "theta": 2.59943564951525,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 3.31557771396621,
+    "diameter_lower": 3.315577713966192,
+    "radius_gap": 1.7763568394002505e-14,
+    "max_sample_outside": 3.552713678800501e-15,
+    "dmax_cpp": 753.890373704146,
+    "dmax_sample": 753.8903737041464,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 900,
+    "beta_deg": 0,
+    "q_local": [
+      645.623093712826,
+      -397.344205852535
+    ],
+    "kind": 1,
+    "theta": 2.60394652844741,
+    "independent_sample_count": 1982,
+    "cpp_arc_count": 1,
+    "radius_upper": 0.0210994539857123,
+    "diameter_lower": 0.021096272503572943,
+    "radius_gap": 3.181482139357622e-06,
+    "max_sample_outside": -2.2863655413374318e-14,
+    "dmax_cpp": 753.809490802181,
+    "dmax_sample": 753.8094844378924,
+    "internal_mec_gap": 3.0184188481996443e-16
+  },
+  {
+    "a": 900,
+    "beta_deg": 0,
+    "q_local": [
+      645.623093712826,
+      -397.344205852535
+    ],
+    "kind": 0,
+    "theta": 0,
+    "independent_sample_count": 0,
+    "cpp_arc_count": 0
+  },
+  {
+    "a": 900,
+    "beta_deg": 0,
+    "q_local": [
+      645.623093712826,
+      -397.344205852535
+    ],
+    "kind": 2,
+    "theta": 0,
+    "independent_sample_count": 0,
+    "cpp_arc_count": 0
+  },
+  {
+    "a": 900,
+    "beta_deg": 0,
+    "q_local": [
+      629.443364808378,
+      -379.152881108494
+    ],
+    "kind": 1,
+    "theta": 0.917905141087434,
+    "independent_sample_count": 1716,
+    "cpp_arc_count": 1,
+    "radius_upper": 2.06506710559843,
+    "diameter_lower": 2.0647611216310016,
+    "radius_gap": 0.0003059839674284248,
+    "max_sample_outside": -1.6431300764452317e-14,
+    "dmax_cpp": 455.771947543899,
+    "dmax_sample": 455.7715283215774,
+    "internal_mec_gap": 3.019806626980426e-14
+  },
+  {
+    "a": 900,
+    "beta_deg": 0,
+    "q_local": [
+      629.443364808378,
+      -379.152881108494
+    ],
+    "kind": 1,
+    "theta": 0.944085079867349,
+    "independent_sample_count": 12350,
+    "cpp_arc_count": 1,
+    "radius_upper": 14.6073319776925,
+    "diameter_lower": 14.605370142978897,
+    "radius_gap": 0.0019618347136027836,
+    "max_sample_outside": 4.973799150320701e-14,
+    "dmax_cpp": 472.751578627599,
+    "dmax_sample": 472.75114686058055,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 900,
+    "beta_deg": 0,
+    "q_local": [
+      629.443364808378,
+      -379.152881108494
+    ],
+    "kind": 1,
+    "theta": 0.951131433599849,
+    "independent_sample_count": 15316,
+    "cpp_arc_count": 1,
+    "radius_upper": 18.0300150531845,
+    "diameter_lower": 18.02870095292547,
+    "radius_gap": 0.0013141002590302264,
+    "max_sample_outside": -4.618527782440651e-13,
+    "dmax_cpp": 477.520495417898,
+    "dmax_sample": 477.5178671740869,
+    "internal_mec_gap": 9.947598300641403e-14
+  },
+  {
+    "a": 900,
+    "beta_deg": 0,
+    "q_local": [
+      629.443364808378,
+      -379.152881108494
+    ],
+    "kind": 1,
+    "theta": 0.974557867611287,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 22.4510942079037,
+    "diameter_lower": 22.45109420790368,
+    "radius_gap": 2.1316282072803006e-14,
+    "max_sample_outside": 6.039613253960852e-14,
+    "dmax_cpp": 478.622198551404,
+    "dmax_sample": 478.62219855140387,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 900,
+    "beta_deg": 0,
+    "q_local": [
+      629.443364808378,
+      -379.152881108494
+    ],
+    "kind": 1,
+    "theta": 1.5841617796023,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 0,
+    "radius_upper": 12.8264908653555,
+    "diameter_lower": 12.823515103857028,
+    "radius_gap": 0.002975761498472451,
+    "max_sample_outside": 2.255973186038318e-13,
+    "dmax_cpp": 390.170955856956,
+    "dmax_sample": 390.1709558569561,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 900,
+    "beta_deg": 0,
+    "q_local": [
+      629.443364808378,
+      -379.152881108494
+    ],
+    "kind": 1,
+    "theta": 2.57837720930397,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 23.9986261384233,
+    "diameter_lower": 23.998626138423273,
+    "radius_gap": 2.842170943040401e-14,
+    "max_sample_outside": -3.552713678800501e-15,
+    "dmax_cpp": 730.584391484408,
+    "dmax_sample": 730.5843914844081,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 900,
+    "beta_deg": 0,
+    "q_local": [
+      629.443364808378,
+      -379.152881108494
+    ],
+    "kind": 1,
+    "theta": 2.58289368463347,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 21.0614374004048,
+    "diameter_lower": 21.061437400404788,
+    "radius_gap": 1.0658141036401503e-14,
+    "max_sample_outside": -7.105427357601002e-15,
+    "dmax_cpp": 730.584391484408,
+    "dmax_sample": 730.5843914844081,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 900,
+    "beta_deg": 0,
+    "q_local": [
+      629.443364808378,
+      -379.152881108494
+    ],
+    "kind": 1,
+    "theta": 2.60892047121387,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 3.26937651251551,
+    "diameter_lower": 3.269376512515494,
+    "radius_gap": 1.5987211554602254e-14,
+    "max_sample_outside": 8.881784197001252e-16,
+    "dmax_cpp": 730.584391484408,
+    "dmax_sample": 730.5843914844081,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 900,
+    "beta_deg": 0,
+    "q_local": [
+      629.443364808378,
+      -379.152881108494
+    ],
+    "kind": 1,
+    "theta": 2.61343694654337,
+    "independent_sample_count": 1982,
+    "cpp_arc_count": 1,
+    "radius_upper": 0.0214459205977401,
+    "diameter_lower": 0.021441712113706667,
+    "radius_gap": 4.208484033433463e-06,
+    "max_sample_outside": -4.0599468231761193e-14,
+    "dmax_cpp": 730.504745546574,
+    "dmax_sample": 730.5047371272258,
+    "internal_mec_gap": 4.0245584642661925e-16
+  },
+  {
+    "a": 900,
+    "beta_deg": 0,
+    "q_local": [
+      629.443364808378,
+      -379.152881108494
+    ],
+    "kind": 0,
+    "theta": 0,
+    "independent_sample_count": 0,
+    "cpp_arc_count": 0
+  },
+  {
+    "a": 900,
+    "beta_deg": 0,
+    "q_local": [
+      629.443364808378,
+      -379.152881108494
+    ],
+    "kind": 2,
+    "theta": 0,
+    "independent_sample_count": 0,
+    "cpp_arc_count": 0
+  },
+  {
+    "a": 900,
+    "beta_deg": 90,
+    "q_local": [
+      932.612794601461,
+      589.96509802943
+    ],
+    "kind": 1,
+    "theta": 3.69056168333417,
+    "independent_sample_count": 1982,
+    "cpp_arc_count": 1,
+    "radius_upper": 0.0207032487651532,
+    "diameter_lower": 0.02070118375865997,
+    "radius_gap": 2.0650064932320467e-06,
+    "max_sample_outside": 1.96787031114809e-14,
+    "dmax_cpp": 1099.29415788767,
+    "dmax_sample": 1099.2941537571166,
+    "internal_mec_gap": 4.0245584642661925e-16
+  },
+  {
+    "a": 900,
+    "beta_deg": 90,
+    "q_local": [
+      932.612794601461,
+      589.96509802943
+    ],
+    "kind": 1,
+    "theta": 3.69066215133694,
+    "independent_sample_count": 13982,
+    "cpp_arc_count": 1,
+    "radius_upper": 0.146079405395745,
+    "diameter_lower": 0.1460790358059835,
+    "radius_gap": 3.695897614897081e-07,
+    "max_sample_outside": -2.2398749521812533e-14,
+    "dmax_cpp": 1099.36439616139,
+    "dmax_sample": 1099.3643954222102,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 900,
+    "beta_deg": 90,
+    "q_local": [
+      932.612794601461,
+      589.96509802943
+    ],
+    "kind": 1,
+    "theta": 3.71241178831835,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 22.2439490308635,
+    "diameter_lower": 22.243949030863487,
+    "radius_gap": 1.4210854715202004e-14,
+    "max_sample_outside": 4.618527782440651e-14,
+    "dmax_cpp": 1099.37650380678,
+    "dmax_sample": 1099.3765038067768,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 900,
+    "beta_deg": 90,
+    "q_local": [
+      932.612794601461,
+      589.96509802943
+    ],
+    "kind": 1,
+    "theta": 3.72553524704257,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 34.878447443407,
+    "diameter_lower": 34.87844744340703,
+    "radius_gap": -3.552713678800501e-14,
+    "max_sample_outside": 7.815970093361102e-14,
+    "dmax_cpp": 1099.37650380678,
+    "dmax_sample": 1099.3765038067768,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 900,
+    "beta_deg": 90,
+    "q_local": [
+      932.612794601461,
+      589.96509802943
+    ],
+    "kind": 1,
+    "theta": 4.36810117072051,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 0,
+    "radius_upper": 20.4572011083624,
+    "diameter_lower": 20.45720110836244,
+    "radius_gap": -3.907985046680551e-14,
+    "max_sample_outside": 3.979039320256561e-13,
+    "dmax_cpp": 643.940539802745,
+    "dmax_sample": 643.9405398027446,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 900,
+    "beta_deg": 90,
+    "q_local": [
+      932.612794601461,
+      589.96509802943
+    ],
+    "kind": 1,
+    "theta": 5.44332397664475,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 46.5817271484477,
+    "diameter_lower": 46.58172714844787,
+    "radius_gap": -1.7053025658242404e-13,
+    "max_sample_outside": 2.0889956431346945e-12,
+    "dmax_cpp": 837.437827008185,
+    "dmax_sample": 837.4378270081852,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 900,
+    "beta_deg": 90,
+    "q_local": [
+      932.612794601461,
+      589.96509802943
+    ],
+    "kind": 1,
+    "theta": 5.47504828984014,
+    "independent_sample_count": 15564,
+    "cpp_arc_count": 1,
+    "radius_upper": 34.0964816086045,
+    "diameter_lower": 34.09612825374908,
+    "radius_gap": 0.00035335485542020706,
+    "max_sample_outside": -1.8474111129762605e-12,
+    "dmax_cpp": 836.401161460858,
+    "dmax_sample": 836.400454748088,
+    "internal_mec_gap": 9.947598300641403e-14
+  },
+  {
+    "a": 900,
+    "beta_deg": 90,
+    "q_local": [
+      932.612794601461,
+      589.96509802943
+    ],
+    "kind": 1,
+    "theta": 5.48213459755308,
+    "independent_sample_count": 12950,
+    "cpp_arc_count": 1,
+    "radius_upper": 28.5548649456595,
+    "diameter_lower": 28.552941095591045,
+    "radius_gap": 0.0019238500684544135,
+    "max_sample_outside": -2.1600499167107046e-12,
+    "dmax_cpp": 830.217961298107,
+    "dmax_sample": 830.2141134875625,
+    "internal_mec_gap": 9.947598300641403e-14
+  },
+  {
+    "a": 900,
+    "beta_deg": 90,
+    "q_local": [
+      932.612794601461,
+      589.96509802943
+    ],
+    "kind": 1,
+    "theta": 5.51385891074847,
+    "independent_sample_count": 1536,
+    "cpp_arc_count": 1,
+    "radius_upper": 3.48577307524103,
+    "diameter_lower": 3.4851955008835596,
+    "radius_gap": 0.0005775743574703007,
+    "max_sample_outside": 1.8487433806058107e-12,
+    "dmax_cpp": 803.306202597567,
+    "dmax_sample": 803.3050571276896,
+    "internal_mec_gap": 2.9753977059954195e-14
+  },
+  {
+    "a": 900,
+    "beta_deg": 90,
+    "q_local": [
+      932.612794601461,
+      589.96509802943
+    ],
+    "kind": 0,
+    "theta": 0,
+    "independent_sample_count": 0,
+    "cpp_arc_count": 0
+  },
+  {
+    "a": 900,
+    "beta_deg": 90,
+    "q_local": [
+      932.612794601461,
+      589.96509802943
+    ],
+    "kind": 2,
+    "theta": 0,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 2,
+    "radius_upper": 60.9142346707974,
+    "diameter_lower": 60.91423467079732,
+    "radius_gap": 7.815970093361102e-14,
+    "max_sample_outside": -3.552713678800501e-14,
+    "dmax_cpp": 1099.37650380678,
+    "dmax_sample": 1099.3765038067768,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 900,
+    "beta_deg": 90,
+    "q_local": [
+      906.61940693127,
+      -572.792222899373
+    ],
+    "kind": 1,
+    "theta": 0.731499207548753,
+    "independent_sample_count": 1492,
+    "cpp_arc_count": 1,
+    "radius_upper": 3.51651941084602,
+    "diameter_lower": 3.515908068274348,
+    "radius_gap": 0.0006113425716720577,
+    "max_sample_outside": 9.370282327836321e-14,
+    "dmax_cpp": 809.977229548863,
+    "dmax_sample": 809.9760160466169,
+    "internal_mec_gap": 3.019806626980426e-14
+  },
+  {
+    "a": 900,
+    "beta_deg": 90,
+    "q_local": [
+      906.61940693127,
+      -572.792222899373
+    ],
+    "kind": 1,
+    "theta": 0.757679146328668,
+    "independent_sample_count": 10600,
+    "cpp_arc_count": 1,
+    "radius_upper": 24.351159800214,
+    "diameter_lower": 24.34839432261004,
+    "radius_gap": 0.0027654776039582885,
+    "max_sample_outside": 3.3999469906120794e-12,
+    "dmax_cpp": 830.649481401116,
+    "dmax_sample": 830.6472054550692,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 900,
+    "beta_deg": 90,
+    "q_local": [
+      906.61940693127,
+      -572.792222899373
+    ],
+    "kind": 1,
+    "theta": 0.768782042045796,
+    "independent_sample_count": 14550,
+    "cpp_arc_count": 1,
+    "radius_upper": 33.0606106391238,
+    "diameter_lower": 33.05996996354243,
+    "radius_gap": 0.0006406755813728182,
+    "max_sample_outside": -1.1013412404281553e-12,
+    "dmax_cpp": 839.653621524651,
+    "dmax_sample": 839.6523401614176,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 900,
+    "beta_deg": 90,
+    "q_local": [
+      906.61940693127,
+      -572.792222899373
+    ],
+    "kind": 1,
+    "theta": 0.794642401248011,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 44.853998217376,
+    "diameter_lower": 44.85399821737601,
+    "radius_gap": -7.105427357601002e-15,
+    "max_sample_outside": 3.836930773104541e-13,
+    "dmax_cpp": 842.96827606976,
+    "dmax_sample": 842.9682760697603,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 900,
+    "beta_deg": 90,
+    "q_local": [
+      906.61940693127,
+      -572.792222899373
+    ],
+    "kind": 1,
+    "theta": 1.46412180773108,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 0,
+    "radius_upper": 20.6861265346919,
+    "diameter_lower": 20.68612653469192,
+    "radius_gap": -1.7763568394002505e-14,
+    "max_sample_outside": 1.5276668818842154e-13,
+    "dmax_cpp": 594.47592521023,
+    "dmax_sample": 594.4759252102302,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 900,
+    "beta_deg": 90,
+    "q_local": [
+      906.61940693127,
+      -572.792222899373
+    ],
+    "kind": 1,
+    "theta": 2.55812144138942,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 33.9501782087009,
+    "diameter_lower": 33.95017820870087,
+    "radius_gap": 2.842170943040401e-14,
+    "max_sample_outside": 7.105427357601002e-15,
+    "dmax_cpp": 1068.2274254208,
+    "dmax_sample": 1068.2274254208003,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 900,
+    "beta_deg": 90,
+    "q_local": [
+      906.61940693127,
+      -572.792222899373
+    ],
+    "kind": 1,
+    "theta": 2.56258819553832,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 29.8245349697278,
+    "diameter_lower": 29.82453496972783,
+    "radius_gap": -2.842170943040401e-14,
+    "max_sample_outside": 6.039613253960852e-14,
+    "dmax_cpp": 1068.2274254208,
+    "dmax_sample": 1068.2274254208003,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 900,
+    "beta_deg": 90,
+    "q_local": [
+      906.61940693127,
+      -572.792222899373
+    ],
+    "kind": 1,
+    "theta": 2.58866470329932,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 1,
+    "radius_upper": 4.56220143760487,
+    "diameter_lower": 4.562201437604852,
+    "radius_gap": 1.7763568394002505e-14,
+    "max_sample_outside": -7.105427357601002e-15,
+    "dmax_cpp": 1068.2274254208,
+    "dmax_sample": 1068.2274254208003,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 900,
+    "beta_deg": 90,
+    "q_local": [
+      906.61940693127,
+      -572.792222899373
+    ],
+    "kind": 1,
+    "theta": 2.59313145744822,
+    "independent_sample_count": 1982,
+    "cpp_arc_count": 1,
+    "radius_upper": 0.0207206341424266,
+    "diameter_lower": 0.020718521509224135,
+    "radius_gap": 2.1126332024647143e-06,
+    "max_sample_outside": -1.4432899320127035e-15,
+    "dmax_cpp": 1068.14514482562,
+    "dmax_sample": 1068.145140599785,
+    "internal_mec_gap": 0.0
+  },
+  {
+    "a": 900,
+    "beta_deg": 90,
+    "q_local": [
+      906.61940693127,
+      -572.792222899373
+    ],
+    "kind": 0,
+    "theta": 0,
+    "independent_sample_count": 0,
+    "cpp_arc_count": 0
+  },
+  {
+    "a": 900,
+    "beta_deg": 90,
+    "q_local": [
+      906.61940693127,
+      -572.792222899373
+    ],
+    "kind": 2,
+    "theta": 0,
+    "independent_sample_count": 16002,
+    "cpp_arc_count": 2,
+    "radius_upper": 41.5054392820344,
+    "diameter_lower": 41.50543928203438,
+    "radius_gap": 2.1316282072803006e-14,
+    "max_sample_outside": -1.4210854715202004e-14,
+    "dmax_cpp": 1068.2274254208,
+    "dmax_sample": 1068.2274254208003,
+    "internal_mec_gap": 0.0
+  }
+]

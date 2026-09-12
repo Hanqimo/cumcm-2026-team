@@ -1,0 +1,13 @@
+{
+  "model": "Q2-expected-M01-v03-a-beta",
+  "algorithm": "Q2-GENERAL-A01-v01",
+  "started_at": "2026-09-12T15:19:16.631154+08:00",
+  "git_head": "37a722ef02cf5a8ad736baba88225446840e400d",
+  "sources": {
+    "第二问模型.tex": "78462f8a42b11fa776f2c90d748580ea81689c6125a61c8e49b00f97d4122b43",
+    "src/solver.cpp": "caeefb1a710a29bdd5f6b6f0dfdc902572c86365d114bacf6eb9ec33389bbc0b",
+    "results/area/result.json": "a54e0f1529eab4c377b20650f57c6b3fa7288aa9e208fed6ab23cd44df08e3bc",
+    "results/radius/result.json": "e1959d404652e0b0109a9deba0f22c2a468e7171ac929c59ecae3e2ad86a6623"
+  },
+  "note": "General implementation reuses old continuous-boundary/MEC kernel; baseline regression is not an independent validation. Original results remain untouched."
+}

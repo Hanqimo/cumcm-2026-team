@@ -1,0 +1,25 @@
+{
+  "温度": {
+    "dimensions": [
+      1801,
+      22
+    ],
+    "checked_numeric_result_cells": 37800,
+    "all_values_match_rounded_csv": true,
+    "all_output_number_formats_4dp": true,
+    "maximum_rounding_change": 4.999924302140357e-05,
+    "freeze_panes": "B2"
+  },
+  "水分浓度": {
+    "dimensions": [
+      1801,
+      22
+    ],
+    "checked_numeric_result_cells": 37800,
+    "all_values_match_rounded_csv": true,
+    "all_output_number_formats_4dp": true,
+    "maximum_rounding_change": 4.9999626415608844e-05,
+    "freeze_panes": "B2"
+  },
+  "sha256": "2f34b7eb6310d7b48776883f0a40c9f58064ec9fd0572fa39a3ab3d7586a006a"
+}

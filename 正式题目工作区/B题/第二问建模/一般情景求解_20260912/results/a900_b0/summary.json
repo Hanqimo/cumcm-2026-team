@@ -1,0 +1,83 @@
+{
+  "a_m": 900,
+  "beta_deg": 0,
+  "initial_geometry": {
+    "C1": 14137.4483767898,
+    "rho1": 447.603974237592,
+    "center": [
+      452.603204207347,
+      -4.40536496171262e-13
+    ],
+    "points": [
+      [
+        899.931456295839,
+        -15.7083620005894
+      ],
+      [
+        899.931456295839,
+        15.7083620005885
+      ],
+      [
+        4.99923847578196,
+        -0.0872620321864178
+      ],
+      [
+        4.99923847578196,
+        0.0872620321864154
+      ]
+    ]
+  },
+  "best": {
+    "area": {
+      "x": 645.623093712826,
+      "y": -397.344205852535,
+      "J": 936.897219411087,
+      "J_lower": 936.897219411086,
+      "P_H": 0.0,
+      "P_N": 0.0,
+      "P_A": 1.00000000000002,
+      "P_loc": 0.0,
+      "E_radius_loss": 16.9666487376042,
+      "safe_margin": 0.0,
+      "angle_calls": 1110.0,
+      "x_global": 1545.62309371283,
+      "y_global": -397.344205852535,
+      "C1": 14137.4483767898,
+      "level": 5,
+      "optimizer": {
+        "success": true,
+        "iterations": 29,
+        "simplex_diameter_m": 0.0007534110046819643,
+        "simplex_value_spread": 4.760067895404063e-10
+      }
+    },
+    "radius": {
+      "x": 629.443364808378,
+      "y": -379.152881108494,
+      "J": 940.947743471568,
+      "J_lower": 940.947743471566,
+      "P_H": 0.0,
+      "P_N": 0.0,
+      "P_A": 1.00000000000002,
+      "P_loc": 0.0,
+      "E_radius_loss": 16.9365747336906,
+      "safe_margin": 0.0,
+      "angle_calls": 1590.0,
+      "x_global": 1529.44336480838,
+      "y_global": -379.152881108494,
+      "C1": 14137.4483767898,
+      "level": 5,
+      "optimizer": {
+        "success": true,
+        "iterations": 23,
+        "simplex_diameter_m": 0.005425536480781685,
+        "simplex_value_spread": 8.874003754044679e-10
+      }
+    }
+  },
+  "elapsed_seconds": 23.760383208980784,
+  "evaluation_count": 6970,
+  "global_optimality_proven": false,
+  "status": "best candidates from covering grids and multistart refinement; no continuous-global certificate",
+  "coordinates": "x,y relative to S1 with measured bearing as +x; x_global,y_global use O origin and S1=(a,0)"
+}

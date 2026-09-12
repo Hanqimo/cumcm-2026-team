@@ -1,0 +1,8 @@
+{
+  "original_run": "R002",
+  "original_computation_git_head": "bc75927b20f3c313f93dc97e4c3207d49f1d3568",
+  "original_model_sha256": "8203dea5387dfb32f4b43f9ae262560ca5074afe15b8410e3eff5a6b1b645915",
+  "baseline_solver_sha256": "0d981699f07228c515ac84d310285fec3afa49d06177c52863537f3e0c550795",
+  "original_search_elapsed_seconds": 20.196306228637695,
+  "note": "历史版本工作文件按用户要求清理。保留原计算来源哈希；当前正文补齐已求解的半径目标，未改变计算模型或数值结果。"
+}
