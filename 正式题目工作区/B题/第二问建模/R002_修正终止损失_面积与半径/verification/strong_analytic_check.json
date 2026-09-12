@@ -1,0 +1,14 @@
+{
+  "q": [
+    500,
+    0
+  ],
+  "C1_analytic": 27633.943490930553,
+  "P_H_analytic": 0.0028421501392127246,
+  "P_H_numerical": 0.00284215807393708,
+  "absolute_error": 7.934724355427442e-09,
+  "strong_branch_radius_m": 5,
+  "strong_branch_dmax_m": 5,
+  "strong_branch_area_loss": 0,
+  "strong_branch_radius_loss": 0
+}

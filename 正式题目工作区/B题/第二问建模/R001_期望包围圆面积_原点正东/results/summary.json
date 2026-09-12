@@ -1,0 +1,146 @@
+{
+  "status": "numerically_verified_grid_minimum_not_global_certificate",
+  "main": {
+    "x": 932.6,
+    "y": 590.0,
+    "J": 2103.78340332469,
+    "J_lower": 2103.78340332469,
+    "P_H": 0.0,
+    "P_N": 0.000672621460570314,
+    "P_A": 0.999327378540336,
+    "P20": 0.206621918632163,
+    "E_radius": 25.1279545568463,
+    "safe_margin": -99.3844412183353,
+    "angle_calls": 4050.0,
+    "baseline_m": 1103.5591329874444,
+    "bearing_deg": 32.31907925447544,
+    "move_time_s": 220.71182659748888,
+    "rms_radius_m": 25.87769417215587
+  },
+  "safe": {
+    "x": 864.316399410232,
+    "y": 511.3558109716,
+    "J": 2228.83212856433,
+    "J_lower": 2228.83212856433,
+    "P_H": 0.0,
+    "P_N": 0.0,
+    "P_A": 0.999999999999944,
+    "P20": 0.341388597245545,
+    "E_radius": 25.3032375209515,
+    "safe_margin": 1.13686837721616e-13,
+    "angle_calls": 3750.0,
+    "baseline_m": 1004.2547504014558,
+    "bearing_deg": 30.609846990925913,
+    "move_time_s": 200.85095008029117,
+    "rms_radius_m": 26.635677223717963
+  },
+  "safe_relative_area_increase": 0.05943992382581831,
+  "candidates": {
+    "1": {
+      "count_upper_half_plane": 267,
+      "x_projection_m": [
+        895.0,
+        970.0
+      ],
+      "y_projection_m": [
+        535.0,
+        645.0
+      ],
+      "shortest_grid_point": {
+        "x": 910.0,
+        "y": 555.0,
+        "J": 2123.27031805822,
+        "J_lower": 2123.27031805822,
+        "P_H": 0.0,
+        "P_N": 0.000166387931542223,
+        "P_A": 0.999833612180211,
+        "P20": 0.273823528544715,
+        "E_radius": 25.0846144579884,
+        "safe_margin": -61.6723820604,
+        "angle_calls": 882.0
+      },
+      "grid_step_m": 5,
+      "warning": "Projections are not an admissible rectangle. Reflect the verified discrete candidates for y<0."
+    },
+    "5": {
+      "count_upper_half_plane": 1285,
+      "x_projection_m": [
+        840.0,
+        1010.0
+      ],
+      "y_projection_m": [
+        465.0,
+        715.0
+      ],
+      "shortest_grid_point": {
+        "x": 870.0,
+        "y": 520.0,
+        "J": 2206.7493556372,
+        "J_lower": 2206.74935563719,
+        "P_H": 0.0,
+        "P_N": 1.09192232457545e-06,
+        "P_A": 0.999998908080622,
+        "P20": 0.333976976035481,
+        "E_radius": 25.2435172690585,
+        "safe_margin": -9.31515274745243,
+        "angle_calls": 918.0
+      },
+      "grid_step_m": 5,
+      "warning": "Projections are not an admissible rectangle. Reflect the verified discrete candidates for y<0."
+    }
+  },
+  "prior_sensitivity": [
+    {
+      "x": 878.0,
+      "y": 570.0,
+      "J": 1801.87108416462,
+      "J_lower": 1801.87108416461,
+      "P_H": 0.0,
+      "P_N": 0.000137008438966776,
+      "P_A": 0.999862991552702,
+      "P20": 0.349993473352195,
+      "E_radius": 23.323235578512,
+      "safe_margin": -42.6551759585809,
+      "angle_calls": 2040.0,
+      "prior": -1,
+      "benchmark_point_loss": 1846.57600002673,
+      "benchmark_point_regret": 0.024810274305964608
+    },
+    {
+      "x": 980.0,
+      "y": 608.0,
+      "J": 2265.66264572202,
+      "J_lower": 2265.66264572202,
+      "P_H": 0.0,
+      "P_N": 0.000293387733376944,
+      "P_A": 0.999706612271082,
+      "P20": 0.000271416120387489,
+      "E_radius": 26.188276947191,
+      "safe_margin": -149.085115741478,
+      "angle_calls": 1128.0,
+      "prior": 1,
+      "benchmark_point_loss": 2301.1742967881,
+      "benchmark_point_regret": 0.01567384761942936
+    }
+  ],
+  "checks": {
+    "normalizer_error": 4.511093720793724e-10,
+    "first_MEC_analytic_error": 0.0,
+    "normalizer_analytic": 27633.943490930553,
+    "first_MEC_radius_analytic": 747.615393469892,
+    "reflection_area_difference": 3.001332515850663e-11,
+    "probability_residual_main": 9.063860773039778e-13,
+    "convergence_level4_5_area_difference": 2.8055401344317943e-06,
+    "mc_area_z_score": -2.5006821103545143,
+    "mc_safe_area_z_score": 1.058361082149171,
+    "mc_P20_z_score": 2.4486681151491956,
+    "mc_invalid": 0,
+    "independent_geometry": {
+      "cases": 47,
+      "nonempty": 46,
+      "max_sample_outside_m": 6.5991656583719305e-12,
+      "max_radius_gap_m": 0.002340912147460017,
+      "max_internal_gap_m": 9.947598300641403e-14
+    }
+  }
+}

@@ -1,0 +1,655 @@
+[
+  {
+    "q": [
+      932.6,
+      590
+    ],
+    "kind": 1,
+    "theta": 3.69058132437493,
+    "sample_count": 594,
+    "radius_upper_cpp": 0.00413609950454028,
+    "sample_diameter_lower": 0.00413309939548107,
+    "radius_gap_m": 3.000109059209978e-06,
+    "max_sample_outside_m": -3.641097839901519e-14,
+    "cpp_internal_gap_m": 0.0
+  },
+  {
+    "q": [
+      932.6,
+      590
+    ],
+    "kind": 1,
+    "theta": 3.69062151044161,
+    "sample_count": 7742,
+    "radius_upper_cpp": 0.0539386600059856,
+    "sample_diameter_lower": 0.05393571664530384,
+    "radius_gap_m": 2.943360681760543e-06,
+    "max_sample_outside_m": -1.8880730312531568e-14,
+    "cpp_internal_gap_m": 2.983724378680108e-16
+  },
+  {
+    "q": [
+      932.6,
+      590
+    ],
+    "kind": 1,
+    "theta": 3.69066839418606,
+    "sample_count": 16142,
+    "radius_upper_cpp": 0.112442813667016,
+    "sample_diameter_lower": 0.11244146342326919,
+    "radius_gap_m": 1.3502437468115858e-06,
+    "max_sample_outside_m": 2.1649348980190553e-15,
+    "cpp_internal_gap_m": 0.0
+  },
+  {
+    "q": [
+      932.6,
+      590
+    ],
+    "kind": 1,
+    "theta": 3.69158124487873,
+    "sample_count": 24002,
+    "radius_upper_cpp": 1.06015274236292,
+    "sample_diameter_lower": 1.0601527423629251,
+    "radius_gap_m": -5.10702591327572e-15,
+    "max_sample_outside_m": 1.0880185641326534e-14,
+    "cpp_internal_gap_m": 0.0
+  },
+  {
+    "q": [
+      932.6,
+      590
+    ],
+    "kind": 1,
+    "theta": 3.70375166589824,
+    "sample_count": 24002,
+    "radius_upper_cpp": 13.5861481513781,
+    "sample_diameter_lower": 13.586148151378065,
+    "radius_gap_m": 3.552713678800501e-14,
+    "max_sample_outside_m": 3.197442310920451e-14,
+    "cpp_internal_gap_m": 0.0
+  },
+  {
+    "q": [
+      932.6,
+      590
+    ],
+    "kind": 1,
+    "theta": 3.71592208691775,
+    "sample_count": 24002,
+    "radius_upper_cpp": 25.6403650456049,
+    "sample_diameter_lower": 25.640365045604906,
+    "radius_gap_m": -7.105427357601002e-15,
+    "max_sample_outside_m": 3.197442310920451e-14,
+    "cpp_internal_gap_m": 0.0
+  },
+  {
+    "q": [
+      932.6,
+      590
+    ],
+    "kind": 1,
+    "theta": 3.7254946070926,
+    "sample_count": 24002,
+    "radius_upper_cpp": 34.8074314120765,
+    "sample_diameter_lower": 34.80743141207639,
+    "radius_gap_m": 1.0658141036401503e-13,
+    "max_sample_outside_m": -4.263256414560601e-14,
+    "cpp_internal_gap_m": 0.0
+  },
+  {
+    "q": [
+      932.6,
+      590
+    ],
+    "kind": 1,
+    "theta": 3.72554149083705,
+    "sample_count": 24002,
+    "radius_upper_cpp": 34.8516744443364,
+    "sample_diameter_lower": 34.85167444433637,
+    "radius_gap_m": 3.552713678800501e-14,
+    "max_sample_outside_m": -3.552713678800501e-14,
+    "cpp_internal_gap_m": 0.0
+  },
+  {
+    "q": [
+      932.6,
+      590
+    ],
+    "kind": 1,
+    "theta": 3.72558837458151,
+    "sample_count": 24002,
+    "radius_upper_cpp": 34.8959111995755,
+    "sample_diameter_lower": 34.89591119957552,
+    "radius_gap_m": -2.1316282072803006e-14,
+    "max_sample_outside_m": 2.1316282072803006e-14,
+    "cpp_internal_gap_m": 0.0
+  },
+  {
+    "q": [
+      932.6,
+      590
+    ],
+    "kind": 1,
+    "theta": 3.93978415851143,
+    "sample_count": 24002,
+    "radius_upper_cpp": 26.8914475068038,
+    "sample_diameter_lower": 26.89144750680376,
+    "radius_gap_m": 3.907985046680551e-14,
+    "max_sample_outside_m": 2.3447910280083306e-13,
+    "cpp_internal_gap_m": 0.0
+  },
+  {
+    "q": [
+      932.6,
+      590
+    ],
+    "kind": 1,
+    "theta": 4.53944796277522,
+    "sample_count": 24002,
+    "radius_upper_cpp": 19.5484343904146,
+    "sample_diameter_lower": 19.54843439041459,
+    "radius_gap_m": 7.105427357601002e-15,
+    "max_sample_outside_m": 2.2026824808563106e-13,
+    "cpp_internal_gap_m": 0.0
+  },
+  {
+    "q": [
+      932.6,
+      590
+    ],
+    "kind": 1,
+    "theta": 5.139111767039,
+    "sample_count": 24002,
+    "radius_upper_cpp": 30.3777080896669,
+    "sample_diameter_lower": 30.377708089666786,
+    "radius_gap_m": 1.1368683772161603e-13,
+    "max_sample_outside_m": 3.588240815588506e-12,
+    "cpp_internal_gap_m": 9.947598300641403e-14
+  },
+  {
+    "q": [
+      932.6,
+      590
+    ],
+    "kind": 1,
+    "theta": 5.44505232155287,
+    "sample_count": 24002,
+    "radius_upper_cpp": 45.879798447719,
+    "sample_diameter_lower": 45.87979844771893,
+    "radius_gap_m": 6.394884621840902e-14,
+    "max_sample_outside_m": 4.305888978706207e-12,
+    "cpp_internal_gap_m": 9.947598300641403e-14
+  },
+  {
+    "q": [
+      932.6,
+      590
+    ],
+    "kind": 1,
+    "theta": 5.45726962631683,
+    "sample_count": 24002,
+    "radius_upper_cpp": 41.0719799418433,
+    "sample_diameter_lower": 41.07197994184328,
+    "radius_gap_m": 2.1316282072803006e-14,
+    "max_sample_outside_m": 3.68771679859492e-12,
+    "cpp_internal_gap_m": 9.947598300641403e-14
+  },
+  {
+    "q": [
+      932.6,
+      590
+    ],
+    "kind": 1,
+    "theta": 5.46948693108079,
+    "sample_count": 24002,
+    "radius_upper_cpp": 36.5380767345896,
+    "sample_diameter_lower": 36.53807673458956,
+    "radius_gap_m": 4.263256414560601e-14,
+    "max_sample_outside_m": 3.375077994860476e-12,
+    "cpp_internal_gap_m": 0.0
+  },
+  {
+    "q": [
+      932.6,
+      590
+    ],
+    "kind": 1,
+    "theta": 5.47597554170225,
+    "sample_count": 22820,
+    "radius_upper_cpp": 33.3585523766901,
+    "sample_diameter_lower": 33.357629563752816,
+    "radius_gap_m": 0.000922812937282913,
+    "max_sample_outside_m": -7.105427357601002e-15,
+    "cpp_internal_gap_m": 0.0
+  },
+  {
+    "q": [
+      932.6,
+      590
+    ],
+    "kind": 1,
+    "theta": 5.47928154446677,
+    "sample_count": 20990,
+    "radius_upper_cpp": 30.774274561535,
+    "sample_diameter_lower": 30.773841727908945,
+    "radius_gap_m": 0.0004328336260570609,
+    "max_sample_outside_m": -1.3713474800169934e-12,
+    "cpp_internal_gap_m": 0.0
+  },
+  {
+    "q": [
+      932.6,
+      590
+    ],
+    "kind": 1,
+    "theta": 5.48258754723128,
+    "sample_count": 19166,
+    "radius_upper_cpp": 28.1858371311101,
+    "sample_diameter_lower": 28.184661144927713,
+    "radius_gap_m": 0.0011759861823890105,
+    "max_sample_outside_m": -6.394884621840902e-13,
+    "cpp_internal_gap_m": 0.0
+  },
+  {
+    "q": [
+      932.6,
+      590
+    ],
+    "kind": 1,
+    "theta": 5.49289528728108,
+    "sample_count": 13530,
+    "radius_upper_cpp": 20.088194585271,
+    "sample_diameter_lower": 20.08585367312354,
+    "radius_gap_m": 0.002340912147460017,
+    "max_sample_outside_m": 3.630873379734112e-12,
+    "cpp_internal_gap_m": 9.947598300641403e-14
+  },
+  {
+    "q": [
+      932.6,
+      590
+    ],
+    "kind": 1,
+    "theta": 5.50511259204504,
+    "sample_count": 6946,
+    "radius_upper_cpp": 10.428653433519,
+    "sample_diameter_lower": 10.428497162757719,
+    "radius_gap_m": 0.00015627076128232886,
+    "max_sample_outside_m": 1.4281908988778014e-12,
+    "cpp_internal_gap_m": 0.0
+  },
+  {
+    "q": [
+      932.6,
+      590
+    ],
+    "kind": 1,
+    "theta": 5.517329896809,
+    "sample_count": 460,
+    "radius_upper_cpp": 0.697990675817203,
+    "sample_diameter_lower": 0.696931203186652,
+    "radius_gap_m": 0.0010594726305509505,
+    "max_sample_outside_m": 1.4453993557594913e-12,
+    "cpp_internal_gap_m": 1.9984014443252818e-14
+  },
+  {
+    "q": [
+      932.6,
+      590
+    ],
+    "kind": 2,
+    "theta": 0.0,
+    "sample_count": 24002,
+    "radius_upper_cpp": 60.9207470053357,
+    "sample_diameter_lower": 60.9207470053357,
+    "radius_gap_m": 0.0,
+    "max_sample_outside_m": 1.4210854715202004e-14,
+    "cpp_internal_gap_m": 0.0
+  },
+  {
+    "q": [
+      864.316399410232,
+      511.3558109716
+    ],
+    "kind": 1,
+    "theta": 3.66085640369615,
+    "sample_count": 594,
+    "radius_upper_cpp": 0.00435232371716198,
+    "sample_diameter_lower": 0.004348735349890315,
+    "radius_gap_m": 3.588367271665019e-06,
+    "max_sample_outside_m": 2.0006565848440516e-14,
+    "cpp_internal_gap_m": 3.903127820947816e-16
+  },
+  {
+    "q": [
+      864.316399410232,
+      511.3558109716
+    ],
+    "kind": 1,
+    "theta": 3.66090139916912,
+    "sample_count": 7746,
+    "radius_upper_cpp": 0.0567459524337042,
+    "sample_diameter_lower": 0.056743672413007935,
+    "radius_gap_m": 2.2800206962644842e-06,
+    "max_sample_outside_m": -3.0829505615059816e-14,
+    "cpp_internal_gap_m": 0.0
+  },
+  {
+    "q": [
+      864.316399410232,
+      511.3558109716
+    ],
+    "kind": 1,
+    "theta": 3.66095389388759,
+    "sample_count": 16146,
+    "radius_upper_cpp": 0.118264093285273,
+    "sample_diameter_lower": 0.1182632338749867,
+    "radius_gap_m": 8.5941028629688e-07,
+    "max_sample_outside_m": 1.2739809207573671e-14,
+    "cpp_internal_gap_m": 0.0
+  },
+  {
+    "q": [
+      864.316399410232,
+      511.3558109716
+    ],
+    "kind": 1,
+    "theta": 3.66187155398656,
+    "sample_count": 24002,
+    "radius_upper_cpp": 1.02993184225556,
+    "sample_diameter_lower": 1.02993184225559,
+    "radius_gap_m": -3.019806626980426e-14,
+    "max_sample_outside_m": 5.928590951498336e-14,
+    "cpp_internal_gap_m": 0.0
+  },
+  {
+    "q": [
+      864.316399410232,
+      511.3558109716
+    ],
+    "kind": 1,
+    "theta": 3.67403636403205,
+    "sample_count": 24002,
+    "radius_upper_cpp": 12.9855684947096,
+    "sample_diameter_lower": 12.985568494709598,
+    "radius_gap_m": 1.7763568394002505e-15,
+    "max_sample_outside_m": 7.105427357601002e-15,
+    "cpp_internal_gap_m": 0.0
+  },
+  {
+    "q": [
+      864.316399410232,
+      511.3558109716
+    ],
+    "kind": 1,
+    "theta": 3.68620117407754,
+    "sample_count": 24002,
+    "radius_upper_cpp": 24.4606256924098,
+    "sample_diameter_lower": 24.460625692409813,
+    "radius_gap_m": -1.4210854715202004e-14,
+    "max_sample_outside_m": 5.3290705182007514e-14,
+    "cpp_internal_gap_m": 0.0
+  },
+  {
+    "q": [
+      864.316399410232,
+      511.3558109716
+    ],
+    "kind": 1,
+    "theta": 3.69577048798153,
+    "sample_count": 24002,
+    "radius_upper_cpp": 33.1683805933842,
+    "sample_diameter_lower": 33.16838059338423,
+    "radius_gap_m": -2.842170943040401e-14,
+    "max_sample_outside_m": 4.973799150320701e-14,
+    "cpp_internal_gap_m": 0.0
+  },
+  {
+    "q": [
+      864.316399410232,
+      511.3558109716
+    ],
+    "kind": 1,
+    "theta": 3.69582298269999,
+    "sample_count": 24002,
+    "radius_upper_cpp": 33.2154050146603,
+    "sample_diameter_lower": 33.21540501466027,
+    "radius_gap_m": 2.842170943040401e-14,
+    "max_sample_outside_m": 7.105427357601002e-15,
+    "cpp_internal_gap_m": 0.0
+  },
+  {
+    "q": [
+      864.316399410232,
+      511.3558109716
+    ],
+    "kind": 1,
+    "theta": 3.69587547741846,
+    "sample_count": 24002,
+    "radius_upper_cpp": 33.2624214604427,
+    "sample_diameter_lower": 33.26242146044268,
+    "radius_gap_m": 2.1316282072803006e-14,
+    "max_sample_outside_m": -2.1316282072803006e-14,
+    "cpp_internal_gap_m": 0.0
+  },
+  {
+    "q": [
+      864.316399410232,
+      511.3558109716
+    ],
+    "kind": 1,
+    "theta": 3.92937311587957,
+    "sample_count": 24002,
+    "radius_upper_cpp": 24.723838748197,
+    "sample_diameter_lower": 24.723838748197025,
+    "radius_gap_m": -2.4868995751603507e-14,
+    "max_sample_outside_m": 2.4513724383723456e-13,
+    "cpp_internal_gap_m": 0.0
+  },
+  {
+    "q": [
+      864.316399410232,
+      511.3558109716
+    ],
+    "kind": 1,
+    "theta": 4.58307201307742,
+    "sample_count": 24002,
+    "radius_upper_cpp": 17.671546433885,
+    "sample_diameter_lower": 17.67154643388492,
+    "radius_gap_m": 7.815970093361102e-14,
+    "max_sample_outside_m": -4.618527782440651e-14,
+    "cpp_internal_gap_m": 0.0
+  },
+  {
+    "q": [
+      864.316399410232,
+      511.3558109716
+    ],
+    "kind": 1,
+    "theta": 5.23677091027528,
+    "sample_count": 24002,
+    "radius_upper_cpp": 31.1423109639168,
+    "sample_diameter_lower": 31.142310963916756,
+    "radius_gap_m": 4.263256414560601e-14,
+    "max_sample_outside_m": 1.0800249583553523e-12,
+    "cpp_internal_gap_m": 0.0
+  },
+  {
+    "q": [
+      864.316399410232,
+      511.3558109716
+    ],
+    "kind": 1,
+    "theta": 5.56972901125619,
+    "sample_count": 24002,
+    "radius_upper_cpp": 52.7511675694645,
+    "sample_diameter_lower": 52.7511675694645,
+    "radius_gap_m": 0.0,
+    "max_sample_outside_m": 2.4087398742267396e-12,
+    "cpp_internal_gap_m": 0.0
+  },
+  {
+    "q": [
+      864.316399410232,
+      511.3558109716
+    ],
+    "kind": 1,
+    "theta": 5.58194631602015,
+    "sample_count": 24002,
+    "radius_upper_cpp": 47.1063924077168,
+    "sample_diameter_lower": 47.10639240771662,
+    "radius_gap_m": 1.7763568394002505e-13,
+    "max_sample_outside_m": 3.858247055177344e-12,
+    "cpp_internal_gap_m": 9.947598300641403e-14
+  },
+  {
+    "q": [
+      864.316399410232,
+      511.3558109716
+    ],
+    "kind": 1,
+    "theta": 5.59416362078411,
+    "sample_count": 24002,
+    "radius_upper_cpp": 41.612469445721,
+    "sample_diameter_lower": 41.612469445720976,
+    "radius_gap_m": 2.1316282072803006e-14,
+    "max_sample_outside_m": 8.952838470577262e-13,
+    "cpp_internal_gap_m": 9.947598300641403e-14
+  },
+  {
+    "q": [
+      864.316399410232,
+      511.3558109716
+    ],
+    "kind": 1,
+    "theta": 5.60192728843172,
+    "sample_count": 22330,
+    "radius_upper_cpp": 37.094102213164,
+    "sample_diameter_lower": 37.09387846845343,
+    "radius_gap_m": 0.00022374471056707534,
+    "max_sample_outside_m": 1.2292389328649733e-12,
+    "cpp_internal_gap_m": 0.0
+  },
+  {
+    "q": [
+      864.316399410232,
+      511.3558109716
+    ],
+    "kind": 1,
+    "theta": 5.60721671323692,
+    "sample_count": 19740,
+    "radius_upper_cpp": 32.9959594392779,
+    "sample_diameter_lower": 32.994754007483714,
+    "radius_gap_m": 0.0012054317941831982,
+    "max_sample_outside_m": -2.6503244043851737e-12,
+    "cpp_internal_gap_m": 0.0
+  },
+  {
+    "q": [
+      864.316399410232,
+      511.3558109716
+    ],
+    "kind": 1,
+    "theta": 5.61250613804212,
+    "sample_count": 17166,
+    "radius_upper_cpp": 28.8716755360777,
+    "sample_diameter_lower": 28.87065298940227,
+    "radius_gap_m": 0.0010225466754292256,
+    "max_sample_outside_m": -8.562039965909207e-13,
+    "cpp_internal_gap_m": 9.947598300641403e-14
+  },
+  {
+    "q": [
+      864.316399410232,
+      511.3558109716
+    ],
+    "kind": 1,
+    "theta": 5.62323889710063,
+    "sample_count": 11986,
+    "radius_upper_cpp": 20.4197466724332,
+    "sample_diameter_lower": 20.41781011295711,
+    "radius_gap_m": 0.0019365594760891724,
+    "max_sample_outside_m": 1.9966250874858815e-12,
+    "cpp_internal_gap_m": 0.0
+  },
+  {
+    "q": [
+      864.316399410232,
+      511.3558109716
+    ],
+    "kind": 1,
+    "theta": 5.63545620186459,
+    "sample_count": 6160,
+    "radius_upper_cpp": 10.65142930964,
+    "sample_diameter_lower": 10.650051656322079,
+    "radius_gap_m": 0.001377653317920391,
+    "max_sample_outside_m": 1.7710277688820497e-12,
+    "cpp_internal_gap_m": 9.947598300641403e-14
+  },
+  {
+    "q": [
+      864.316399410232,
+      511.3558109716
+    ],
+    "kind": 1,
+    "theta": 5.64767350662855,
+    "sample_count": 410,
+    "radius_upper_cpp": 0.716389653175496,
+    "sample_diameter_lower": 0.716362381597154,
+    "radius_gap_m": 2.7271578341925284e-05,
+    "max_sample_outside_m": 2.613576022270081e-12,
+    "cpp_internal_gap_m": 4.696243394164412e-14
+  },
+  {
+    "q": [
+      864.316399410232,
+      511.3558109716
+    ],
+    "kind": 2,
+    "theta": 0.0,
+    "sample_count": 0
+  },
+  {
+    "q": [
+      500,
+      0
+    ],
+    "kind": 0,
+    "theta": 0.0,
+    "sample_count": 13750,
+    "radius_upper_cpp": 5,
+    "sample_diameter_lower": 5.0,
+    "radius_gap_m": 0.0,
+    "max_sample_outside_m": 6.5991656583719305e-12,
+    "cpp_internal_gap_m": 0
+  },
+  {
+    "q": [
+      500,
+      0
+    ],
+    "kind": 1,
+    "theta": 0.3,
+    "sample_count": 10102,
+    "radius_upper_cpp": 14.1548882037842,
+    "sample_diameter_lower": 14.154857150138541,
+    "radius_gap_m": 3.105364565847424e-05,
+    "max_sample_outside_m": 1.1901590823981678e-13,
+    "cpp_internal_gap_m": 0.0
+  },
+  {
+    "q": [
+      0,
+      500
+    ],
+    "kind": 1,
+    "theta": -0.5,
+    "sample_count": 24002,
+    "radius_upper_cpp": 69.410721118699,
+    "sample_diameter_lower": 69.41072111869897,
+    "radius_gap_m": 2.842170943040401e-14,
+    "max_sample_outside_m": 2.842170943040401e-14,
+    "cpp_internal_gap_m": 0.0
+  }
+]

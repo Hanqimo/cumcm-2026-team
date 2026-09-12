@@ -1,0 +1,36 @@
+{
+  "objective": "area",
+  "objective_definition": "E[(1-T) pi rho^2]",
+  "point_north_m": [
+    932.613165370033,
+    589.9650426827
+  ],
+  "point_south_m": [
+    932.613165370033,
+    -589.9650426827
+  ],
+  "expected_area_loss_m2": 2103.78339484829,
+  "expected_radius_loss_m": 25.1279555541383,
+  "strong_probability": 0.0,
+  "no_signal_probability": 0.00067244054725816,
+  "normal_bearing_probability": 0.999327559452747,
+  "immediate_guaranteed_localization_probability": 0.0,
+  "distance_from_S1_m": 1103.5515700723336,
+  "azimuth_deg": 32.31718001457412,
+  "distance_to_first_support_m": 573.5988441383403,
+  "nearoptimal_grid_step_m": 5,
+  "nearoptimal_grid_count": 267,
+  "nearoptimal_grid_bounds": {
+    "x": [
+      895.0,
+      970.0
+    ],
+    "y": [
+      535.0,
+      645.0
+    ]
+  },
+  "nearoptimal_note": "Bounding box only; use listed CSV points, not every point in the box. Reflections are equivalent. Classification uses level 3 integration.",
+  "verification": "numerical convergence, independent geometry, direct joint-prior rejection Monte Carlo",
+  "optimization_status": "best numerical candidate; no certified continuous global optimum"
+}

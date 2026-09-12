@@ -1,0 +1,18 @@
+{
+  "first_sensor": [
+    0,
+    0
+  ],
+  "first_bearing_deg": 0,
+  "alpha_deg": 1,
+  "source_domain_radius_m": 1800,
+  "receiving_radius_prior": "Uniform(1000,1500), independent of source before first observation",
+  "strong_signal_radius_m": 5,
+  "clearance_radius_m": 20,
+  "minimum_baseline_m": 1,
+  "primary_loss": "Expected area of continuous posterior-support minimum enclosing circle, after second radio observation before optical action",
+  "symmetry": "Search y>=0 and reflect; valid for this centered/east benchmark only",
+  "model_sha256": "be85cb27089029020434134422006f79ec14ce3f4eb0308ea72416dbf1f86061",
+  "scope": "New independent expected-area solver, not the archived minimax solver",
+  "notes": "b0=1 is a computational spacing setting, not a claim about physical error correlation."
+}

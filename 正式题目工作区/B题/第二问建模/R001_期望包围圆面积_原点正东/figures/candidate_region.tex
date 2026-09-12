@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+\begin{axis}[width=13.5cm,height=8.2cm,xmin=820,xmax=1030,ymin=450,ymax=735,xlabel={东向坐标 \(q_x\)（米）},ylabel={北向坐标 \(q_y\)（米）},grid=major,grid style={gray!18},tick label style={font=\small},legend style={at={(.99,.99)},anchor=north east,font=\small,fill=white,draw=gray!30},axis on top]
+\addplot[only marks,mark=square*,mark size=1.6pt,color=blue!22] table[x=x,y=y,col sep=comma]{results/candidates_5pct.csv};
+\addlegendentry{面积损失不超过最优值的 105\%}
+\addplot[only marks,mark=square*,mark size=1.6pt,color=teal!70] table[x=x,y=y,col sep=comma]{results/candidates_1pct.csv};
+\addlegendentry{面积损失不超过最优值的 101\%}
+\addplot[only marks,mark=star,mark size=3.5pt,color=red!75!black]coordinates{(932.6,590)};
+\addlegendentry{主模型数值最优点}
+\addplot[only marks,mark=diamond*,mark size=3pt,color=orange!90!black]coordinates{(864.3164,511.3558)};
+\addlegendentry{保证接收的数值最优点}
+\end{axis}
+\end{tikzpicture}

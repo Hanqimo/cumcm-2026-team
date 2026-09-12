@@ -1,0 +1,14 @@
+{
+  "pdf_pages": 5,
+  "visual_review": "All five final pages inspected; no clipping, broken glyphs or overlapping content.",
+  "latex_overfull_boxes": 0,
+  "undefined_references": 0,
+  "full_reproduction": "PASS",
+  "original_model_unchanged": true,
+  "source_model_sha256": "be85cb27089029020434134422006f79ec14ce3f4eb0308ea72416dbf1f86061",
+  "numerical_assertions": "PASS",
+  "candidate_counts_verified": [
+    267,
+    1285
+  ]
+}

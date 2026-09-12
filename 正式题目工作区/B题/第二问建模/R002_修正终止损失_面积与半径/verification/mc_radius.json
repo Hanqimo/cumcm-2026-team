@@ -1,0 +1,17 @@
+{
+  "n": 250000,
+  "seed": 20260913,
+  "mean_area": 2116.29387238241,
+  "standard_error": 2.55591479077436,
+  "P_H": 0,
+  "P_N": 0.0002,
+  "P_loc": 0,
+  "mean_radius": 25.0659172712022,
+  "radius_standard_error": 0.0134665859595767,
+  "radius_median": 22.7979003775387,
+  "radius_p90": 34.8754700479355,
+  "radius_p95": 40.0797530659886,
+  "radius_p99": 46.9996271986016,
+  "max_truth_coverage_residual": -0.0290276975989343,
+  "invalid": 0
+}
