@@ -71,7 +71,25 @@
       "PowerShell(wsl bash -c \"cd /home/serena/cumcm-2026-team/梳理 && ls -la q1-intersection-process.png 论文初稿.tex; echo '--- engine ---'; which xelatex pdflatex 2>&1; echo '--- log head ---'; head -3 论文初稿.log 2>/dev/null\")",
       "PowerShell(wsl python3 /tmp/cleanup.py)",
       "PowerShell(wsl bash -c \"cd /home/serena/cumcm-2026-team && git status --short\")",
-      "PowerShell(wsl bash -c \"cd /home/serena/cumcm-2026-team && git diff -- .claude/settings.local.json | head -40\")"
+      "PowerShell(wsl bash -c \"cd /home/serena/cumcm-2026-team && git diff -- .claude/settings.local.json | head -40\")",
+      "PowerShell(python -c \"import PIL; print\\('PIL', PIL.__version__\\)\" 2>&1)",
+      "PowerShell(Get-Item \"C:\\\\Users\\\\seren\\\\AppData\\\\Local\\\\Temp\\\\ai_muban.png\" | Select-Object Length; python -c \"from PIL import Image; im=Image.open\\(r'C:\\\\Users\\\\seren\\\\AppData\\\\Local\\\\Temp\\\\ai_muban.png'\\); im.thumbnail\\(\\(800,800\\)\\); im.save\\(r'C:\\\\Users\\\\seren\\\\AppData\\\\Local\\\\Temp\\\\ai_muban_small.png'\\); print\\('saved', im.size\\)\")",
+      "PowerShell(Get-Command *)",
+      "PowerShell(Write-Output \"=== Windows xelatex ===\"; \\(Get-Command xelatex -ErrorAction SilentlyContinue\\).Source; \\(Get-Command latexmk -ErrorAction SilentlyContinue\\).Source; \\(Get-Command tectonic -ErrorAction SilentlyContinue\\).Source; Write-Output \"=== WSL xelatex ===\"; wsl -e bash -lc \"which xelatex latexmk tectonic 2>/dev/null; xelatex --version 2>/dev/null | head -1\")",
+      "PowerShell(Write-Output \"=== wsl git version \\(direct\\) ===\"; wsl git --version 2>&1; Write-Output \"=== wsl bash git ===\"; wsl -e bash -c \"git --version; echo EXIT=$?\" 2>&1; Write-Output \"=== wsl ls repo ===\"; wsl -e bash -c \"cd /home/serena/cumcm-2026-team && pwd && git status --short 2>&1 | head -20\" 2>&1)",
+      "PowerShell(python -c \"import pypdf; print\\('pypdf', pypdf.__version__\\)\" 2>&1; python -c \"import pdfminer; print\\('pdfminer ok'\\)\" 2>&1; python -c \"import fitz; print\\('pymupdf', fitz.__doc__\\)\" 2>&1)",
+      "PowerShell(python -c \"import fitz; d=fitz.open\\(r'C:\\\\Users\\\\seren\\\\AppData\\\\Local\\\\Temp\\\\aitools\\\\AI工具使用详情.pdf'\\); print\\('pages', d.page_count\\); t=d[0].get_text\\(\\); print\\(t[:1200]\\)\")",
+      "PowerShell(wsl -e git -C /home/serena/cumcm-2026-team remote -v; wsl -e git -C /home/serena/cumcm-2026-team status; wsl -e git -C /home/serena/cumcm-2026-team log --oneline -5; wsl -e git -C /home/serena/cumcm-2026-team branch -a)",
+      "PowerShell(wsl -e git -C /home/serena/cumcm-2026-team fetch --all --prune 2>&1 | Out-String)",
+      "PowerShell(wsl -e git -C /home/serena/cumcm-2026-team log --oneline bb5da27..upstream/main 2>&1 | Out-String; wsl -e git -C /home/serena/cumcm-2026-team log --oneline -5 upstream/main 2>&1 | Out-String)",
+      "PowerShell(wsl -e git -C /home/serena/cumcm-2026-team show --stat 12a39b7 2>&1 | Out-String)",
+      "PowerShell(wsl -e git -C /home/serena/cumcm-2026-team show 12a39b7 --name-only 2>&1 | Out-String)",
+      "PowerShell(wsl -e git -C /home/serena/cumcm-2026-team merge --ff-only upstream/main 2>&1 | Out-String; wsl -e git -C /home/serena/cumcm-2026-team log --oneline -3 2>&1 | Out-String)",
+      "PowerShell(wsl -e wc -l /home/serena/cumcm-2026-team/梳理/论文初稿.tex 2>&1 | Out-String)",
+      "PowerShell(wsl -e git -C /home/serena/cumcm-2026-team show 12a39b7 2>&1 | Out-String)",
+      "PowerShell(wsl -e python3 /home/serena/cumcm-2026-team/梳理/_count.py 2>&1 | Out-String)",
+      "PowerShell(wsl -e python3 /home/serena/cumcm-2026-team/梳理/_draft.py 2>&1 | Out-String)",
+      "PowerShell(wsl -e rm -f /home/serena/cumcm-2026-team/梳理/_count.py /home/serena/cumcm-2026-team/梳理/_draft.py; wsl -e git -C /home/serena/cumcm-2026-team status --short 2>&1 | Out-String)"
     ]
   }
 }
