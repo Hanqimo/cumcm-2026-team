@@ -1,0 +1,26 @@
+{
+  "formal_numeric_checks": [
+    {
+      "case": "BXUJ-W9QZ-KQ54-NKCU",
+      "official_log_sha256_verified": true,
+      "average_from_virtual_time_verified": true
+    },
+    {
+      "case": "QNXC-8U8P-SQBF-A2A6",
+      "official_log_sha256_verified": true,
+      "average_from_virtual_time_verified": true
+    },
+    {
+      "case": "89UC-2392-TZ5M-ZUTB",
+      "official_log_sha256_verified": true,
+      "average_from_virtual_time_verified": true
+    }
+  ],
+  "v4_mean": 238.43864635052273,
+  "v6_mean": 231.7137098374677,
+  "saving": 6.724936513055042,
+  "ci95": [
+    -6.479940699090932,
+    19.929813725201015
+  ]
+}

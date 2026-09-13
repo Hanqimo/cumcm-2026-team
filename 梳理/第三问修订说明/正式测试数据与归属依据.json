@@ -1,0 +1,35 @@
+{
+  "paper_strategy": "v6",
+  "attribution_basis": "User correction: actual formal tests used v6; archive records were erroneous.",
+  "archive_conflict": "Existing metadata and program configuration point to a different strategy; source identity was not verified. Historical archives are not modified.",
+  "rows": [
+    {
+      "test": 1,
+      "case_code": "BXUJ-W9QZ-KQ54-NKCU",
+      "cleared_count": 15,
+      "average_clear_time_s": 195.39940446666665,
+      "program_runtime_s": 8.619,
+      "virtual_time_s": 2930.991067,
+      "official_log_sha256": "bc25f843523161362fd2316c61893a6d7a7f2c1b573d02e8f55324a5bb1f2c80"
+    },
+    {
+      "test": 2,
+      "case_code": "QNXC-8U8P-SQBF-A2A6",
+      "cleared_count": 12,
+      "average_clear_time_s": 276.74799383333334,
+      "program_runtime_s": 6.149,
+      "virtual_time_s": 3320.975926,
+      "official_log_sha256": "c6824e5f0632b5d801e74cef5075c972517c3d17be8ef80112a0d37bbf7742ae"
+    },
+    {
+      "test": 3,
+      "case_code": "89UC-2392-TZ5M-ZUTB",
+      "cleared_count": 10,
+      "average_clear_time_s": 248.7187092,
+      "program_runtime_s": 6.076,
+      "virtual_time_s": 2487.187092,
+      "official_log_sha256": "9ed46ed43cfd392bec0732a8bfe18a83d24536bbdc828dc0dbaad994808743da"
+    }
+  ],
+  "source_file_sha256": "883075963f153bf58636e9c3eb5af7a6d41a1dd8da0c9b12f2d3543e173d50e7"
+}

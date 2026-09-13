@@ -8,9 +8,9 @@
   "q3_source_sha256": "84d36adaba6b5355652f8a3d4f56cd4c71073f46c18c31aa1fde4229144512da",
   "q4_source_sha256": "b181b53e115e5b0d3b26cf54b6e71421c3fb0e4d82afa788fb4e8d5085343901",
   "reference_check_passed": true,
-  "figures": 9,
+  "figures": 10,
   "tables": 7,
-  "numbered_equation_environments": 50,
+  "numbered_equation_environments": 42,
   "sections": [
     "问题背景与重述",
     "模型假设",
@@ -25,8 +25,11 @@
   ],
   "abstract": "omitted as requested",
   "pdf_pages": 26,
-  "pdf_sha256": "44245cefbf363054de88566a623df24f8005b66a726de0ef4517068f9be487bb",
+  "pdf_sha256": "9c4138f6c12e88d0fa50ead37af9484cf0801a1833b605149781262ac5f64f9a",
   "compiler": "Tectonic 0.17.0",
   "layout_and_reference_checks": "passed; rendered all pages",
-  "new_experiments": false
+  "new_experiments": false,
+  "latest_revision_base": "93dded774eead48c937281720e7e92dc99129512",
+  "latest_q3_revision": "第三问修订说明/修订核验.json",
+  "latest_q1_q2_sha256": "a60c1918814b8dfce204a09adcc7b679af47a597ae4112936be7008654e13a4c"
 }

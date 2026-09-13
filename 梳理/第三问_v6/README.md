@@ -1,5 +1,7 @@
 # 第三问_v6 已完成正文
 
+当前为2026-09-13审核后修订稿：6页、6个编号公式、4图3表，已加入正式成绩、v4对照和等比例局部放大图。版本归属更正与证据边界见[修订说明](../第三问修订说明/README.md)。
+
 - [q3-v6-final.pdf](q3-v6-final.pdf)：本地完成的独立章节阅读版。
 - [chapter.tex](chapter.tex)：章节源码；[main.tex](main.tex)：独立编译入口。
 - [q3-v6-final.md](q3-v6-final.md)：Markdown 阅读版。
