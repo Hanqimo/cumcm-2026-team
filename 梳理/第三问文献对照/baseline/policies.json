@@ -1,0 +1,8 @@
+{
+  "literature_cautious": {
+    "beta": 0.1,
+    "scan_radius_m": 1200,
+    "clear_radius_m": 19.5,
+    "max_observations_per_target": 40
+  }
+}

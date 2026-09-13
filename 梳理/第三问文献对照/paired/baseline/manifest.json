@@ -1,0 +1,56 @@
+{
+  "simulator_id": "b-official-calibrated-20260912",
+  "simulator_entry": "D:\\math modeling\\正式题目工作区\\B题建模第一版\\contest\\global\\shared-src\\local-simulator\\b_local_simulator.py",
+  "official": false,
+  "problem": 3,
+  "policy": "literature_cautious",
+  "factory": "strategy:Planner",
+  "planner_kwargs": {
+    "policy": "literature_cautious"
+  },
+  "source": "D:\\math modeling\\正式题目工作区\\B-simulator\\p3-literature-cautious-20260913",
+  "command": [
+    "D:\\math modeling\\正式题目工作区\\B题建模第一版\\contest\\global\\shared-src\\local-simulator\\run_local.py",
+    "--problem",
+    "3",
+    "--strategy-dir",
+    "D:\\math modeling\\正式题目工作区\\B-simulator\\p3-literature-cautious-20260913",
+    "--policy",
+    "literature_cautious",
+    "--count",
+    "30",
+    "--start",
+    "2026092400",
+    "--errors",
+    "hash_uniform",
+    "--output",
+    "D:\\math modeling\\tmp\\q3-literature-paired-20260913\\baseline"
+  ],
+  "python": "3.10.11",
+  "errors": "hash_uniform",
+  "start": 2026092400,
+  "count": 30,
+  "pure_types": false,
+  "status": "completed",
+  "simulator_sha256": {
+    "b_local_simulator.py": "1bab11eae06a30052b35d029b4949b3117ef59531313dd2777b74489b97dfb38",
+    "calibrated_profile.json": "52c5aa4194fae31f266486e82252f636c42d0b4e00c4169bd9225004b2bc3b27",
+    "defaults.json": "67bc7f37a468c4e1637ded7e877ddc6288222c0296a43b04dbbe7be541908ab2",
+    "run_local.py": "cf562ffc5fe65505bdc4d9fcfa361f242b8df4925452bc94a4f05d6de23f1c68"
+  },
+  "strategy_sha256": {
+    "api_client.py": "6ce270ffb316142e5d22da27e67eeab87f22797bd22f27ea984ab55deeec8203",
+    "bearing_geometry.py": "c0c5f9bb24d8285b255776469758876102410864beafbbfe9aec311e37a7c1cb",
+    "evaluation_protocol.json": "17b23220e5f74591d2dad54fc8737e651fb14c1776d5f50dc26d4dfa5fc00e4d",
+    "legacy_strategy.py": "064a03e8fb1b6e40640747b2e4a0441c7952e766304f27f1b12be68945f6238f",
+    "policies.json": "1b345865d21ac33d2ab195609a5368ce5600f216403cae5e25af5b83647bcf80",
+    "run_robot.py": "c1121a5a554693a488c70fa43c6367fdc1dc24b82096edf09e004ae9670d8083",
+    "strategy.py": "03f9d3beadeb1f0fe1e09b5a9db03b5b6d29b2878c88d91cfa3b7836df7e2f3b",
+    "__pycache__/bearing_geometry.cpython-310.pyc": "b6d5ac939a37d291370577afb41e913f3b57993b982adb612ad38d60a2d23dc7",
+    "__pycache__/legacy_strategy.cpython-310.pyc": "8a6dff93048e448c5d60f54b21a6bd626993cdd42ded836d3cc907a393b71f13",
+    "__pycache__/strategy.cpython-310.pyc": "4edb3a2739135dc4026959c64ec2b7e9201e0231b76a709649002dd34ced75d0"
+  },
+  "runs": 30,
+  "full": 30,
+  "mean_s": 328.5360517051477
+}
