@@ -1,0 +1,37 @@
+[
+  {
+    "case": "a1200_b30",
+    "elapsed_s": 12.652739041950554,
+    "exit_code": 0
+  },
+  {
+    "case": "a0_b0",
+    "elapsed_s": 53.09265124995727,
+    "exit_code": 0
+  },
+  {
+    "case": "a1200_b90",
+    "elapsed_s": 63.41528062499128,
+    "exit_code": 0
+  },
+  {
+    "case": "a1700_b0",
+    "elapsed_s": 7.7843759169918485,
+    "exit_code": 0
+  },
+  {
+    "case": "a1700_b90",
+    "elapsed_s": 11.942874666012358,
+    "exit_code": 0
+  },
+  {
+    "case": "a1780_b0",
+    "elapsed_s": 0.18700049998005852,
+    "exit_code": 0
+  },
+  {
+    "case": "a1200_b150",
+    "elapsed_s": 61.94317174999742,
+    "exit_code": 0
+  }
+]

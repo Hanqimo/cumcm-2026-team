@@ -1,0 +1,316 @@
+{
+  "refinement": [
+    {
+      "a": 1200,
+      "beta": 30,
+      "J_refinement_difference": -2.788199893188903e-09,
+      "P_refinement_difference": 0.0,
+      "probability_residual": 3.08642000845794e-14,
+      "final_eval": {
+        "x": 458.353466053093,
+        "y": 275.448404116768,
+        "J": 12.2879753124748,
+        "P_finish": 1.00000000000003,
+        "P_onsite": 0.0,
+        "P_H": 0.0,
+        "P_N": 0.0,
+        "P_normal": 1.00000000000003,
+        "P_finish_N": 0.0,
+        "P_finish_normal": 1.00000000000003,
+        "probability_residual": 3.08642000845794e-14,
+        "mec_gap": 5.50670620214078e-14,
+        "angle_calls": 3360.0,
+        "root_count": 1.0,
+        "depth_capped": 1.0,
+        "distance_K1": 267.407081009161,
+        "x_global": 1459.22154345624,
+        "y_global": 467.72204842355
+      }
+    },
+    {
+      "a": 1200,
+      "beta": 90,
+      "J_refinement_difference": 1.316437099774248e-06,
+      "P_refinement_difference": -4.052314039881821e-15,
+      "probability_residual": 3.5527136788005e-15,
+      "final_eval": {
+        "x": 798.134096475784,
+        "y": 504.28190375329,
+        "J": 24.1214118222845,
+        "P_finish": 0.40376822396254,
+        "P_onsite": 0.0,
+        "P_H": 0.0,
+        "P_N": 0.0,
+        "P_normal": 1.0,
+        "P_finish_N": 0.0,
+        "P_finish_normal": 0.40376822396254,
+        "probability_residual": 3.5527136788005e-15,
+        "mec_gap": 1.20792265079217e-13,
+        "angle_calls": 4326.0,
+        "root_count": 4.0,
+        "depth_capped": 1.0,
+        "distance_K1": 490.275738533655,
+        "x_global": 695.71809624671,
+        "y_global": 798.134096475784
+      }
+    }
+  ],
+  "independent_geometry": [
+    {
+      "a": 1200,
+      "beta": 30,
+      "theta": 3.6701128470690048,
+      "samples": 15914,
+      "independent_lower_m": 0.08605688520716769,
+      "kernel_upper_m": 0.086059439280327,
+      "gap_m": 2.5540731593137744e-06,
+      "outside_m": 1.3877787807814457e-17
+    },
+    {
+      "a": 1200,
+      "beta": 30,
+      "theta": 3.687566139588945,
+      "samples": 32002,
+      "independent_lower_m": 8.987788612765439,
+      "kernel_upper_m": 8.98778861276545,
+      "gap_m": 1.0658141036401503e-14,
+      "outside_m": 8.881784197001252e-15
+    },
+    {
+      "a": 1200,
+      "beta": 30,
+      "theta": 3.7050194321088847,
+      "samples": 32002,
+      "independent_lower_m": 17.401727603684385,
+      "kernel_upper_m": 17.4017276036844,
+      "gap_m": 1.4210854715202004e-14,
+      "outside_m": -1.0658141036401503e-14
+    },
+    {
+      "a": 1200,
+      "beta": 30,
+      "theta": 4.4990293470167355,
+      "samples": 32002,
+      "independent_lower_m": 9.547783725111449,
+      "kernel_upper_m": 9.54778372511147,
+      "gap_m": 2.1316282072803006e-14,
+      "outside_m": 3.730349362740526e-14
+    },
+    {
+      "a": 1200,
+      "beta": 30,
+      "theta": 5.310351970410875,
+      "samples": 32002,
+      "independent_lower_m": 15.699025946693657,
+      "kernel_upper_m": 15.6990259466937,
+      "gap_m": 4.263256414560601e-14,
+      "outside_m": 3.1086244689504383e-13
+    },
+    {
+      "a": 1200,
+      "beta": 30,
+      "theta": 5.33983220624876,
+      "samples": 25230,
+      "independent_lower_m": 10.926082845221698,
+      "kernel_upper_m": 10.9265032237878,
+      "gap_m": 0.0004203785661012205,
+      "outside_m": 1.4210854715202004e-13
+    },
+    {
+      "a": 1200,
+      "beta": 30,
+      "theta": 5.36931244208664,
+      "samples": 9170,
+      "independent_lower_m": 4.324298794613191,
+      "kernel_upper_m": 4.32467008040165,
+      "gap_m": 0.00037128578845901927,
+      "outside_m": 4.476419235288631e-13
+    },
+    {
+      "a": 1200,
+      "beta": 90,
+      "theta": 3.69047336627319,
+      "samples": 15912,
+      "independent_lower_m": 0.08315841974477098,
+      "kernel_upper_m": 0.0831590523546785,
+      "gap_m": 6.326099075276703e-07,
+      "outside_m": -4.091171845743702e-14
+    },
+    {
+      "a": 1200,
+      "beta": 90,
+      "theta": 3.701989906787955,
+      "samples": 32002,
+      "independent_lower_m": 10.252582927466932,
+      "kernel_upper_m": 10.2525829274669,
+      "gap_m": -3.197442310920451e-14,
+      "outside_m": 4.085620730620576e-14
+    },
+    {
+      "a": 1200,
+      "beta": 90,
+      "theta": 3.72537995131308,
+      "samples": 32002,
+      "independent_lower_m": 29.821865569861775,
+      "kernel_upper_m": 29.8218655698618,
+      "gap_m": 2.4868995751603507e-14,
+      "outside_m": 2.4868995751603507e-14
+    },
+    {
+      "a": 1200,
+      "beta": 90,
+      "theta": 3.91748921954579,
+      "samples": 32002,
+      "independent_lower_m": 23.52266490429833,
+      "kernel_upper_m": 23.5226649042984,
+      "gap_m": 6.750155989720952e-14,
+      "outside_m": 2.948752353404416e-13
+    },
+    {
+      "a": 1200,
+      "beta": 90,
+      "theta": 4.511040837931155,
+      "samples": 32002,
+      "independent_lower_m": 16.81392439661539,
+      "kernel_upper_m": 16.8139243966155,
+      "gap_m": 1.1013412404281553e-13,
+      "outside_m": -1.1013412404281553e-13
+    },
+    {
+      "a": 1200,
+      "beta": 90,
+      "theta": 5.493207484283495,
+      "samples": 32002,
+      "independent_lower_m": 39.15457689672236,
+      "kernel_upper_m": 39.1547165237878,
+      "gap_m": 0.00013962706543679815,
+      "outside_m": -2.0605739337042905e-12
+    },
+    {
+      "a": 1200,
+      "beta": 90,
+      "theta": 5.533449325140875,
+      "samples": 23284,
+      "independent_lower_m": 26.811090387428898,
+      "kernel_upper_m": 26.811169208454,
+      "gap_m": 7.882102510237132e-05,
+      "outside_m": 2.4940050025179517e-12
+    },
+    {
+      "a": 1200,
+      "beta": 90,
+      "theta": 5.558350364617626,
+      "samples": 13854,
+      "independent_lower_m": 19.407046122929934,
+      "kernel_upper_m": 19.4073704527665,
+      "gap_m": 0.00032432983656605074,
+      "outside_m": 4.1033842990145786e-12
+    }
+  ],
+  "simulations": [
+    {
+      "n": 20000,
+      "seed": 20260943,
+      "J_mean": 12.2936821191842,
+      "J_se": 0.0181650463105123,
+      "P_finish": 1,
+      "P_finish_se": 0,
+      "P_onsite": 0,
+      "P_H": 0,
+      "P_N": 0,
+      "invalid": 0,
+      "max_truth_outside": -0.0824952688470273,
+      "a": 1200,
+      "beta_deg": 30,
+      "J_reference": 12.2879753124748,
+      "P_reference": 1.00000000000003,
+      "J_zscore": 0.3141641706742527,
+      "P_zscore": 0
+    },
+    {
+      "n": 20000,
+      "seed": 20261003,
+      "J_mean": 24.1033961121742,
+      "J_se": 0.0531635854503941,
+      "P_finish": 0.40915,
+      "P_finish_se": 0.00347668144571803,
+      "P_onsite": 0,
+      "P_H": 0,
+      "P_N": 0,
+      "invalid": 0,
+      "max_truth_outside": -0.1606853022613,
+      "a": 1200,
+      "beta_deg": 90,
+      "J_reference": 24.1214118222845,
+      "P_reference": 0.40376822396254,
+      "J_zscore": -0.33887312072116443,
+      "P_zscore": 1.5479635167864958
+    }
+  ],
+  "coordinate_rounding": [
+    {
+      "case": [
+        0,
+        0
+      ],
+      "q_global_rounded": [
+        813.8,
+        521.0
+      ],
+      "J_difference_m": 0.0003443214620979518,
+      "P_difference": 1.720955558698334e-05
+    },
+    {
+      "case": [
+        1200,
+        30
+      ],
+      "q_global_rounded": [
+        1459.2,
+        467.7
+      ],
+      "J_difference_m": 1.6468930041924068e-07,
+      "P_difference": 0.0
+    },
+    {
+      "case": [
+        1200,
+        90
+      ],
+      "q_global_rounded": [
+        695.7,
+        798.1
+      ],
+      "J_difference_m": 0.0002526526756980729,
+      "P_difference": 1.2626740752030852e-05
+    },
+    {
+      "case": [
+        1200,
+        150
+      ],
+      "q_global_rounded": [
+        755.7,
+        858.1
+      ],
+      "J_difference_m": 0.00012861557170040783,
+      "P_difference": 6.427261469987844e-06
+    },
+    {
+      "case": [
+        1700,
+        0
+      ],
+      "q_global_rounded": [
+        1770.1,
+        42.0
+      ],
+      "J_difference_m": 4.819026699909301e-07,
+      "P_difference": 0.0
+    }
+  ],
+  "inward_sector_max_target_distance_m": 1195.7169365663324,
+  "equivalent_inward_case_verified": true,
+  "global_optimality_certified": false,
+  "MC_scope": "Joint-prior sampling checks integration; geometry is shared in MC and separately checked with independent rays and support circles."
+}

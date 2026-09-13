@@ -1,0 +1,27 @@
+{
+  "full_papers_identical": true,
+  "body_matches_paper": true,
+  "all_display_equations_unchanged": true,
+  "q3_and_later_unchanged": true,
+  "no_duplicate_labels": true,
+  "no_unwanted_fonts": true,
+  "clean_compilation": true,
+  "paper_pages": 15,
+  "draft_pages": 15,
+  "model_pages": 5,
+  "paper_figure_pages": [
+    10,
+    12
+  ],
+  "model_figure_pages": [
+    3,
+    5
+  ],
+  "archive_files_verified": 10,
+  "experiment_files_verified": 56,
+  "pdf_fonts_embedded": true,
+  "all_figure_data_ranges_visible": true,
+  "Chinese_labels_and_units_checked": true,
+  "visual_review": "paper pages 9-12, model figure pages, PDF figure renders, grayscale; no clipping or overlap",
+  "main_and_draft_figure_pages_pixel_identical": true
+}

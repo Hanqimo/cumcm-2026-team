@@ -1,0 +1,29 @@
+{
+  "ours": "e42d5657507ccf6e15fcdb0fcff14bab01a59688",
+  "theirs": "22a9cfcb5b824dd835dfaaae3876fc94b93460c3",
+  "pages": 29,
+  "q3_start_pages": [
+    14
+  ],
+  "q4_start_pages": [
+    20
+  ],
+  "current_q2_unchanged": true,
+  "q3_q4_exact_upstream": true,
+  "full_sources_identical": true,
+  "all_pages_pixel_identical": true,
+  "no_duplicate_labels": true,
+  "references_resolve": true,
+  "pdfs": {
+    "梳理/论文初稿.pdf": "8e9f353a64e11c90a6e348a4195ef4aebdfbc1e47a36fe2026257235996aebc7",
+    "templates/论文模版.pdf": "11f8f9447cf83955a9d8f0ae606e6e8b4b0391dc8c53b3534e868161224079a4"
+  },
+  "visual_review": "All 29 pages reviewed; no clipping or overlap.",
+  "compilation": "XeLaTeX/latexmk passed without missing glyph, unresolved reference or overflow warnings.",
+  "conflict_resolution": "All three TeX conflict blocks use our version; graphics paths combined. PDF rebuilt.",
+  "integration_fixes": [
+    "Load placeins once with section option",
+    "Retain automatic font selection",
+    "Use shared Q1 figure paths and Q3/Q4 chapter paths from both entry directories"
+  ]
+}

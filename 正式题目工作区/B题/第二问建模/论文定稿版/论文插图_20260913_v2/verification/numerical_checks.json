@@ -1,0 +1,26 @@
+{
+  "posterior_cases": [
+    {
+      "a_m": 1200,
+      "beta_deg": 30.0,
+      "C1_radial_antiderivative_m2": 7552.930303875267,
+      "C1_geometric_kernel_m2": 7552.9303038749,
+      "difference_m2": -3.665263648144901e-10,
+      "max_density_per_m2": 0.0001323989444847543,
+      "outside_disk_density_zero": true,
+      "outside_bearing_interval_density_zero": true
+    },
+    {
+      "a_m": 1200,
+      "beta_deg": 90.0,
+      "C1_radial_antiderivative_m2": 26408.065032371742,
+      "C1_geometric_kernel_m2": 26408.0650323711,
+      "difference_m2": -6.402842700481415e-10,
+      "max_density_per_m2": 3.7867219683614536e-05,
+      "outside_disk_density_zero": true,
+      "outside_bearing_interval_density_zero": true
+    }
+  ],
+  "feedback_source_data_unchanged": true,
+  "new_optimization": false
+}
