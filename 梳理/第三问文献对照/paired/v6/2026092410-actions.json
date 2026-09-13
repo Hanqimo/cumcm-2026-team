@@ -1,0 +1,5976 @@
+{
+  "actions": [
+    {
+      "kind": "measure",
+      "point": [
+        0.0,
+        0.0
+      ],
+      "channel": 1,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 5.0
+    },
+    {
+      "kind": "measure",
+      "point": [
+        0.0,
+        0.0
+      ],
+      "channel": 2,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 265.01
+      },
+      "time_s": 11.0
+    },
+    {
+      "kind": "measure",
+      "point": [
+        0.0,
+        0.0
+      ],
+      "channel": 3,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 17.0
+    },
+    {
+      "kind": "measure",
+      "point": [
+        0.0,
+        0.0
+      ],
+      "channel": 4,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 23.0
+    },
+    {
+      "kind": "measure",
+      "point": [
+        0.0,
+        0.0
+      ],
+      "channel": 5,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 26.07
+      },
+      "time_s": 29.0
+    },
+    {
+      "kind": "measure",
+      "point": [
+        0.0,
+        0.0
+      ],
+      "channel": 6,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 35.0
+    },
+    {
+      "kind": "measure",
+      "point": [
+        0.0,
+        0.0
+      ],
+      "channel": 7,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 41.0
+    },
+    {
+      "kind": "measure",
+      "point": [
+        0.0,
+        0.0
+      ],
+      "channel": 8,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 47.0
+    },
+    {
+      "kind": "measure",
+      "point": [
+        0.0,
+        0.0
+      ],
+      "channel": 9,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 53.0
+    },
+    {
+      "kind": "measure",
+      "point": [
+        0.0,
+        0.0
+      ],
+      "channel": 10,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 59.0
+    },
+    {
+      "kind": "measure",
+      "point": [
+        0.0,
+        0.0
+      ],
+      "channel": 11,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 65.0
+    },
+    {
+      "kind": "measure",
+      "point": [
+        0.0,
+        0.0
+      ],
+      "channel": 12,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 209.04
+      },
+      "time_s": 71.0
+    },
+    {
+      "kind": "measure",
+      "point": [
+        0.0,
+        0.0
+      ],
+      "channel": 13,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 77.0
+    },
+    {
+      "kind": "measure",
+      "point": [
+        0.0,
+        0.0
+      ],
+      "channel": 14,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 163.88
+      },
+      "time_s": 83.0
+    },
+    {
+      "kind": "measure",
+      "point": [
+        0.0,
+        0.0
+      ],
+      "channel": 15,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 74.59
+      },
+      "time_s": 89.0
+    },
+    {
+      "kind": "measure",
+      "point": [
+        0.0,
+        0.0
+      ],
+      "channel": 16,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 178.73
+      },
+      "time_s": 95.0
+    },
+    {
+      "kind": "measure",
+      "point": [
+        0.0,
+        0.0
+      ],
+      "channel": 17,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 118.33
+      },
+      "time_s": 101.0
+    },
+    {
+      "kind": "measure",
+      "point": [
+        0.0,
+        0.0
+      ],
+      "channel": 18,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 107.0
+    },
+    {
+      "kind": "measure",
+      "point": [
+        0.0,
+        0.0
+      ],
+      "channel": 19,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 113.0
+    },
+    {
+      "kind": "measure",
+      "point": [
+        0.0,
+        0.0
+      ],
+      "channel": 20,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 20.13
+      },
+      "time_s": 119.0
+    },
+    {
+      "kind": "measure",
+      "point": [
+        249.0524928721145,
+        -21.745247622994647
+      ],
+      "channel": 20,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 25.81
+      },
+      "time_s": 174.0
+    },
+    {
+      "kind": "measure",
+      "point": [
+        249.0524928721145,
+        -21.745247622994647
+      ],
+      "channel": 2,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 250.43
+      },
+      "time_s": 180.0
+    },
+    {
+      "kind": "measure",
+      "point": [
+        249.0524928721145,
+        -21.745247622994647
+      ],
+      "channel": 5,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 59.36
+      },
+      "time_s": 186.0
+    },
+    {
+      "kind": "measure",
+      "point": [
+        249.0524928721145,
+        -21.745247622994647
+      ],
+      "channel": 12,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 192.0
+    },
+    {
+      "kind": "measure",
+      "point": [
+        249.0524928721145,
+        -21.745247622994647
+      ],
+      "channel": 14,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 198.0
+    },
+    {
+      "kind": "measure",
+      "point": [
+        249.0524928721145,
+        -21.745247622994647
+      ],
+      "channel": 15,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 117.77
+      },
+      "time_s": 204.0
+    },
+    {
+      "kind": "measure",
+      "point": [
+        249.0524928721145,
+        -21.745247622994647
+      ],
+      "channel": 16,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 178.28
+      },
+      "time_s": 210.0
+    },
+    {
+      "kind": "measure",
+      "point": [
+        249.0524928721145,
+        -21.745247622994647
+      ],
+      "channel": 17,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 129.76
+      },
+      "time_s": 216.0
+    },
+    {
+      "kind": "clear",
+      "point": [
+        366.1182289846134,
+        175.23666873920786
+      ],
+      "channel": 5,
+      "success": true,
+      "time_s": 266.828489805049
+    },
+    {
+      "kind": "measure",
+      "point": [
+        366.1182289846134,
+        175.23666873920786
+      ],
+      "channel": 16,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 272.828489805049
+    },
+    {
+      "kind": "measure",
+      "point": [
+        226.63298475721942,
+        234.86766104471693
+      ],
+      "channel": 20,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 9.71
+      },
+      "time_s": 309.16789560049295
+    },
+    {
+      "kind": "clear",
+      "point": [
+        87.1477405298274,
+        294.49865335022514
+      ],
+      "channel": 15,
+      "success": true,
+      "time_s": 344.50730139593645
+    },
+    {
+      "kind": "measure",
+      "point": [
+        87.1477405298274,
+        294.49865335022514
+      ],
+      "channel": 14,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 176.85
+      },
+      "time_s": 350.50730139593645
+    },
+    {
+      "kind": "measure",
+      "point": [
+        87.1477405298274,
+        294.49865335022514
+      ],
+      "channel": 16,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 194.5
+      },
+      "time_s": 356.50730139593645
+    },
+    {
+      "kind": "measure",
+      "point": [
+        231.95228896657972,
+        803.0111561500128
+      ],
+      "channel": 17,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 176.59
+      },
+      "time_s": 468.25290608032526
+    },
+    {
+      "kind": "measure",
+      "point": [
+        231.95228896657972,
+        803.0111561500128
+      ],
+      "channel": 20,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 336.4
+      },
+      "time_s": 474.25290608032526
+    },
+    {
+      "kind": "measure",
+      "point": [
+        307.15538727816926,
+        920.5148992394375
+      ],
+      "channel": 1,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 508.15461616102687
+    },
+    {
+      "kind": "measure",
+      "point": [
+        307.15538727816926,
+        920.5148992394375
+      ],
+      "channel": 3,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 514.1546161610269
+    },
+    {
+      "kind": "measure",
+      "point": [
+        307.15538727816926,
+        920.5148992394375
+      ],
+      "channel": 4,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 520.1546161610269
+    },
+    {
+      "kind": "measure",
+      "point": [
+        307.15538727816926,
+        920.5148992394375
+      ],
+      "channel": 6,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 123.2
+      },
+      "time_s": 526.1546161610269
+    },
+    {
+      "kind": "measure",
+      "point": [
+        307.15538727816926,
+        920.5148992394375
+      ],
+      "channel": 7,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 532.1546161610269
+    },
+    {
+      "kind": "measure",
+      "point": [
+        307.15538727816926,
+        920.5148992394375
+      ],
+      "channel": 8,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 538.1546161610269
+    },
+    {
+      "kind": "measure",
+      "point": [
+        307.15538727816926,
+        920.5148992394375
+      ],
+      "channel": 9,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 78.38
+      },
+      "time_s": 544.1546161610269
+    },
+    {
+      "kind": "measure",
+      "point": [
+        307.15538727816926,
+        920.5148992394375
+      ],
+      "channel": 10,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 344.43
+      },
+      "time_s": 550.1546161610269
+    },
+    {
+      "kind": "measure",
+      "point": [
+        307.15538727816926,
+        920.5148992394375
+      ],
+      "channel": 11,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 34.92
+      },
+      "time_s": 556.1546161610269
+    },
+    {
+      "kind": "measure",
+      "point": [
+        307.15538727816926,
+        920.5148992394375
+      ],
+      "channel": 13,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 562.1546161610269
+    },
+    {
+      "kind": "measure",
+      "point": [
+        307.15538727816926,
+        920.5148992394375
+      ],
+      "channel": 18,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 568.1546161610269
+    },
+    {
+      "kind": "measure",
+      "point": [
+        307.15538727816926,
+        920.5148992394375
+      ],
+      "channel": 19,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 574.1546161610269
+    },
+    {
+      "kind": "measure",
+      "point": [
+        -75.86453028905254,
+        882.5573555641075
+      ],
+      "channel": 6,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 85.5
+      },
+      "time_s": 657.1338425471282
+    },
+    {
+      "kind": "measure",
+      "point": [
+        -75.86453028905254,
+        882.5573555641075
+      ],
+      "channel": 9,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 50.7
+      },
+      "time_s": 663.1338425471282
+    },
+    {
+      "kind": "measure",
+      "point": [
+        -75.86453028905254,
+        882.5573555641075
+      ],
+      "channel": 11,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 23.15
+      },
+      "time_s": 669.1338425471282
+    },
+    {
+      "kind": "measure",
+      "point": [
+        -75.86453028905254,
+        882.5573555641075
+      ],
+      "channel": 10,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 675.1338425471282
+    },
+    {
+      "kind": "measure",
+      "point": [
+        -75.86453028905254,
+        882.5573555641075
+      ],
+      "channel": 17,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 185.65
+      },
+      "time_s": 681.1338425471282
+    },
+    {
+      "kind": "measure",
+      "point": [
+        -458.7711342036052,
+        844.973916838003
+      ],
+      "channel": 1,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 764.0831718977743
+    },
+    {
+      "kind": "measure",
+      "point": [
+        -458.7711342036052,
+        844.973916838003
+      ],
+      "channel": 3,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 770.0831718977743
+    },
+    {
+      "kind": "measure",
+      "point": [
+        -458.7711342036052,
+        844.973916838003
+      ],
+      "channel": 4,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 776.0831718977743
+    },
+    {
+      "kind": "measure",
+      "point": [
+        -458.7711342036052,
+        844.973916838003
+      ],
+      "channel": 7,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 782.0831718977743
+    },
+    {
+      "kind": "measure",
+      "point": [
+        -458.7711342036052,
+        844.973916838003
+      ],
+      "channel": 8,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 788.0831718977743
+    },
+    {
+      "kind": "measure",
+      "point": [
+        -458.7711342036052,
+        844.973916838003
+      ],
+      "channel": 13,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 794.0831718977743
+    },
+    {
+      "kind": "measure",
+      "point": [
+        -458.7711342036052,
+        844.973916838003
+      ],
+      "channel": 14,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 214.54
+      },
+      "time_s": 800.0831718977743
+    },
+    {
+      "kind": "measure",
+      "point": [
+        -458.7711342036052,
+        844.973916838003
+      ],
+      "channel": 16,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 238.4
+      },
+      "time_s": 806.0831718977743
+    },
+    {
+      "kind": "measure",
+      "point": [
+        -458.7711342036052,
+        844.973916838003
+      ],
+      "channel": 18,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 812.0831718977743
+    },
+    {
+      "kind": "measure",
+      "point": [
+        -458.7711342036052,
+        844.973916838003
+      ],
+      "channel": 19,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 818.0831718977743
+    },
+    {
+      "kind": "clear",
+      "point": [
+        -458.7711342036052,
+        844.973916838003
+      ],
+      "channel": 17,
+      "success": true,
+      "time_s": 823.0831718977743
+    },
+    {
+      "kind": "clear",
+      "point": [
+        -39.02124851594252,
+        1431.3879266362073
+      ],
+      "channel": 6,
+      "success": true,
+      "time_s": 972.3151180709317
+    },
+    {
+      "kind": "measure",
+      "point": [
+        -39.02124851594252,
+        1431.3879266362073
+      ],
+      "channel": 9,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 8.03
+      },
+      "time_s": 978.3151180709317
+    },
+    {
+      "kind": "measure",
+      "point": [
+        -39.02124851594252,
+        1431.3879266362073
+      ],
+      "channel": 11,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 346.79
+      },
+      "time_s": 984.3151180709317
+    },
+    {
+      "kind": "clear",
+      "point": [
+        422.24672249843655,
+        1496.7057235628474
+      ],
+      "channel": 9,
+      "success": true,
+      "time_s": 1082.4890534131875
+    },
+    {
+      "kind": "measure",
+      "point": [
+        422.24672249843655,
+        1496.7057235628474
+      ],
+      "channel": 11,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 323.27
+      },
+      "time_s": 1087.4890534131875
+    },
+    {
+      "kind": "measure",
+      "point": [
+        676.8942397070839,
+        1306.8979794775405
+      ],
+      "channel": 10,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 321.29
+      },
+      "time_s": 1157.0098650374991
+    },
+    {
+      "kind": "clear",
+      "point": [
+        761.7767454432934,
+        1243.6287314491094
+      ],
+      "channel": 11,
+      "success": true,
+      "time_s": 1183.1834689122682
+    },
+    {
+      "kind": "measure",
+      "point": [
+        761.7767454432934,
+        1243.6287314491094
+      ],
+      "channel": 20,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 294.51
+      },
+      "time_s": 1189.1834689122682
+    },
+    {
+      "kind": "measure",
+      "point": [
+        1621.6151836244092,
+        552.2492054430863
+      ],
+      "channel": 10,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 63.33
+      },
+      "time_s": 1415.8486259945819
+    },
+    {
+      "kind": "clear",
+      "point": [
+        1621.703324018949,
+        552.4326351408687
+      ],
+      "channel": 10,
+      "success": true,
+      "time_s": 1420.8893274359216
+    },
+    {
+      "kind": "measure",
+      "point": [
+        1145.941670656055,
+        404.58932445343015
+      ],
+      "channel": 1,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 1526.5300410675725
+    },
+    {
+      "kind": "measure",
+      "point": [
+        1145.941670656055,
+        404.58932445343015
+      ],
+      "channel": 3,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 1532.5300410675725
+    },
+    {
+      "kind": "measure",
+      "point": [
+        1145.941670656055,
+        404.58932445343015
+      ],
+      "channel": 4,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 1538.5300410675725
+    },
+    {
+      "kind": "measure",
+      "point": [
+        1145.941670656055,
+        404.58932445343015
+      ],
+      "channel": 7,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 1544.5300410675725
+    },
+    {
+      "kind": "measure",
+      "point": [
+        1145.941670656055,
+        404.58932445343015
+      ],
+      "channel": 8,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 1550.5300410675725
+    },
+    {
+      "kind": "measure",
+      "point": [
+        1145.941670656055,
+        404.58932445343015
+      ],
+      "channel": 13,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 1556.5300410675725
+    },
+    {
+      "kind": "measure",
+      "point": [
+        1145.941670656055,
+        404.58932445343015
+      ],
+      "channel": 18,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 1562.5300410675725
+    },
+    {
+      "kind": "measure",
+      "point": [
+        1145.941670656055,
+        404.58932445343015
+      ],
+      "channel": 19,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 268.93
+      },
+      "time_s": 1568.5300410675725
+    },
+    {
+      "kind": "clear",
+      "point": [
+        1145.941670656055,
+        404.58932445343015
+      ],
+      "channel": 20,
+      "success": true,
+      "time_s": 1573.5300410675725
+    },
+    {
+      "kind": "measure",
+      "point": [
+        1247.7171544238797,
+        -170.4792726169099
+      ],
+      "channel": 19,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 257.13
+      },
+      "time_s": 1695.3310925067824
+    },
+    {
+      "kind": "measure",
+      "point": [
+        1122.1853394877462,
+        -731.3815116763262
+      ],
+      "channel": 19,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 77.0
+      },
+      "time_s": 1815.2866592868259
+    },
+    {
+      "kind": "measure",
+      "point": [
+        1122.1853394877462,
+        -731.3815116763262
+      ],
+      "channel": 1,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 1821.2866592868259
+    },
+    {
+      "kind": "measure",
+      "point": [
+        1122.1853394877462,
+        -731.3815116763262
+      ],
+      "channel": 3,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 319.87
+      },
+      "time_s": 1827.2866592868259
+    },
+    {
+      "kind": "measure",
+      "point": [
+        1122.1853394877462,
+        -731.3815116763262
+      ],
+      "channel": 4,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 289.04
+      },
+      "time_s": 1833.2866592868259
+    },
+    {
+      "kind": "measure",
+      "point": [
+        1122.1853394877462,
+        -731.3815116763262
+      ],
+      "channel": 7,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 1839.2866592868259
+    },
+    {
+      "kind": "measure",
+      "point": [
+        1122.1853394877462,
+        -731.3815116763262
+      ],
+      "channel": 8,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 1845.2866592868259
+    },
+    {
+      "kind": "measure",
+      "point": [
+        1122.1853394877462,
+        -731.3815116763262
+      ],
+      "channel": 13,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 1851.2866592868259
+    },
+    {
+      "kind": "measure",
+      "point": [
+        1122.1853394877462,
+        -731.3815116763262
+      ],
+      "channel": 18,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 1857.2866592868259
+    },
+    {
+      "kind": "clear",
+      "point": [
+        1129.527099489092,
+        -696.8261223395153
+      ],
+      "channel": 19,
+      "success": false,
+      "time_s": 1867.352001096352
+    },
+    {
+      "kind": "clear",
+      "point": [
+        1137.4336102584334,
+        -659.6126261360102
+      ],
+      "channel": 19,
+      "success": false,
+      "time_s": 1877.9608307362744
+    },
+    {
+      "kind": "measure",
+      "point": [
+        1133.4803548737627,
+        -678.2193742377627
+      ],
+      "channel": 19,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 72.83
+      },
+      "time_s": 1887.7652455562354
+    },
+    {
+      "kind": "clear",
+      "point": [
+        1139.442784039128,
+        -658.0695552569463
+      ],
+      "channel": 19,
+      "success": true,
+      "time_s": 1896.96793881895
+    },
+    {
+      "kind": "measure",
+      "point": [
+        1286.2000907207819,
+        -794.7723192450803
+      ],
+      "channel": 3,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 308.09
+      },
+      "time_s": 1943.080456938085
+    },
+    {
+      "kind": "measure",
+      "point": [
+        1286.2000907207819,
+        -794.7723192450803
+      ],
+      "channel": 4,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 256.72
+      },
+      "time_s": 1949.080456938085
+    },
+    {
+      "kind": "clear",
+      "point": [
+        1439.4995321543747,
+        -995.9039519558584
+      ],
+      "channel": 3,
+      "success": true,
+      "time_s": 2004.6589711198026
+    },
+    {
+      "kind": "clear",
+      "point": [
+        1232.5829993492748,
+        -1039.6091538289381
+      ],
+      "channel": 4,
+      "success": true,
+      "time_s": 2051.9553521559387
+    },
+    {
+      "kind": "measure",
+      "point": [
+        374.13475365056684,
+        -998.2147629909468
+      ],
+      "channel": 2,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 173.45
+      },
+      "time_s": 2229.844489234003
+    },
+    {
+      "kind": "measure",
+      "point": [
+        62.20996717726043,
+        -962.9059702693928
+      ],
+      "channel": 1,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 295.41
+      },
+      "time_s": 2298.627857496584
+    },
+    {
+      "kind": "measure",
+      "point": [
+        62.20996717726043,
+        -962.9059702693928
+      ],
+      "channel": 7,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 2304.627857496584
+    },
+    {
+      "kind": "measure",
+      "point": [
+        62.20996717726043,
+        -962.9059702693928
+      ],
+      "channel": 8,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 2310.627857496584
+    },
+    {
+      "kind": "measure",
+      "point": [
+        62.20996717726043,
+        -962.9059702693928
+      ],
+      "channel": 12,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 168.82
+      },
+      "time_s": 2316.627857496584
+    },
+    {
+      "kind": "measure",
+      "point": [
+        62.20996717726043,
+        -962.9059702693928
+      ],
+      "channel": 13,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 2322.627857496584
+    },
+    {
+      "kind": "measure",
+      "point": [
+        62.20996717726043,
+        -962.9059702693928
+      ],
+      "channel": 18,
+      "result": {
+        "measure_result": "no_signal"
+      },
+      "time_s": 2328.627857496584
+    },
+    {
+      "kind": "measure",
+      "point": [
+        283.23884524162764,
+        -1233.2532131020982
+      ],
+      "channel": 1,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 285.1
+      },
+      "time_s": 2404.468074175984
+    },
+    {
+      "kind": "clear",
+      "point": [
+        401.80406628058387,
+        -1666.9130516391283
+      ],
+      "channel": 1,
+      "success": false,
+      "time_s": 2497.383271378677
+    },
+    {
+      "kind": "measure",
+      "point": [
+        401.80406628058387,
+        -1666.9130516391283
+      ],
+      "channel": 1,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 272.94
+      },
+      "time_s": 2502.383271378677
+    },
+    {
+      "kind": "clear",
+      "point": [
+        403.759215506081,
+        -1699.905518628067
+      ],
+      "channel": 1,
+      "success": true,
+      "time_s": 2513.9933409290225
+    },
+    {
+      "kind": "clear",
+      "point": [
+        -80.69314895499778,
+        -949.4234528817435
+      ],
+      "channel": 2,
+      "success": true,
+      "time_s": 2697.6457883725207
+    },
+    {
+      "kind": "clear",
+      "point": [
+        -1237.1277086743883,
+        -695.8003607942022
+      ],
+      "channel": 12,
+      "success": false,
+      "time_s": 2937.4297036837957
+    },
+    {
+      "kind": "measure",
+      "point": [
+        -1259.6481954562896,
+        -698.189101821388
+      ],
+      "channel": 12,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 2.42
+      },
+      "time_s": 2947.959067473949
+    },
+    {
+      "kind": "measure",
+      "point": [
+        -1230.3436208276034,
+        -696.4352059615873
+      ],
+      "channel": 12,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 0.98
+      },
+      "time_s": 2958.830470184904
+    },
+    {
+      "kind": "clear",
+      "point": [
+        -1221.8814275853915,
+        -696.2371029689017
+      ],
+      "channel": 12,
+      "success": true,
+      "time_s": 2965.523372536066
+    },
+    {
+      "kind": "clear",
+      "point": [
+        -970.9372048542134,
+        8.831318263631578
+      ],
+      "channel": 16,
+      "success": false,
+      "time_s": 3118.202293101587
+    },
+    {
+      "kind": "measure",
+      "point": [
+        -967.0769492213109,
+        19.677331433499184
+      ],
+      "channel": 16,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 25.4
+      },
+      "time_s": 3126.5047923978505
+    },
+    {
+      "kind": "clear",
+      "point": [
+        -955.7694678388856,
+        25.291668511269584
+      ],
+      "channel": 16,
+      "success": true,
+      "time_s": 3134.029707572954
+    },
+    {
+      "kind": "measure",
+      "point": [
+        -955.7694678388856,
+        25.291668511269584
+      ],
+      "channel": 14,
+      "result": {
+        "measure_result": "direction",
+        "svd_deg": 123.2
+      },
+      "time_s": 3140.029707572954
+    },
+    {
+      "kind": "clear",
+      "point": [
+        -1169.7630128452881,
+        351.8307118938154
+      ],
+      "channel": 14,
+      "success": true,
+      "time_s": 3223.1119678265086
+    }
+  ],
+  "decisions": [
+    {
+      "kind": "region",
+      "channel": 2,
+      "position": [
+        0.0,
+        0.0
+      ],
+      "radius_m": 750.1154293607256,
+      "center": [
+        -65.24578302911154,
+        -747.2724704965004
+      ],
+      "vertices": [
+        [
+          2.842170943040401e-14,
+          4.547473508864641e-13
+        ],
+        [
+          -156.66511604616758,
+          -1491.796253135942
+        ],
+        [
+          -130.75352860436504,
+          -1494.5196707185323
+        ],
+        [
+          -104.2403565735024,
+          -1496.3736523131604
+        ]
+      ],
+      "observations": 1,
+      "negative_positions": []
+    },
+    {
+      "kind": "optical_region",
+      "channel": 2,
+      "wkt": "POLYGON ((2.842170943040401e-14 4.547473508864641e-13, -156.66511604616758 -1491.796253135942, -130.75352860436504 -1494.5196707185323, -104.2403565735024 -1496.3736523131604, 2.842170943040401e-14 4.547473508864641e-13))",
+      "vertices": [
+        [
+          -104.2403565735024,
+          -1496.3736523131604
+        ],
+        [
+          2.842170943040401e-14,
+          4.547473508864641e-13
+        ],
+        [
+          -156.66511604616758,
+          -1491.796253135942
+        ],
+        [
+          -130.75352860436504,
+          -1494.5196707185323
+        ]
+      ],
+      "radius_m": 750.1154293607257
+    },
+    {
+      "kind": "region",
+      "channel": 5,
+      "position": [
+        0.0,
+        0.0
+      ],
+      "radius_m": 750.2142453867104,
+      "center": [
+        673.912952154071,
+        329.64032960203014
+      ],
+      "vertices": [
+        [
+          1335.79008012881,
+          682.825948568973
+        ],
+        [
+          -4.547473508864641e-13,
+          -2.2737367544323206e-13
+        ],
+        [
+          1358.92372629513,
+          635.5515149023038
+        ],
+        [
+          1336.7133750951045,
+          681.0894832905417
+        ]
+      ],
+      "observations": 1,
+      "negative_positions": []
+    },
+    {
+      "kind": "optical_region",
+      "channel": 5,
+      "wkt": "POLYGON ((1335.79008012881 682.825948568973, -4.547473508864641e-13 -2.2737367544323206e-13, 1358.92372629513 635.5515149023038, 1336.7133750951045 681.0894832905417, 1335.79008012881 682.825948568973))",
+      "vertices": [
+        [
+          -4.547473508864641e-13,
+          -2.2737367544323206e-13
+        ],
+        [
+          1358.92372629513,
+          635.5515149023038
+        ],
+        [
+          1336.7133750951045,
+          681.0894832905417
+        ],
+        [
+          1335.79008012881,
+          682.825948568973
+        ]
+      ],
+      "radius_m": 750.2142453867104
+    },
+    {
+      "kind": "region",
+      "channel": 12,
+      "position": [
+        0.0,
+        0.0
+      ],
+      "radius_m": 750.1156007388447,
+      "center": [
+        -655.8105525934625,
+        -364.12351418008285
+      ],
+      "vertices": [
+        [
+          1.1368683772161603e-12,
+          7.958078640513122e-13
+        ],
+        [
+          -1323.9924434046368,
+          -705.0140761846679
+        ],
+        [
+          -1312.1294052475748,
+          -727.3252060060677
+        ],
+        [
+          -1298.4477488008754,
+          -751.0225301034535
+        ]
+      ],
+      "observations": 1,
+      "negative_positions": [
+        [
+          249.0524928721145,
+          -21.745247622994647
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 12,
+      "wkt": "POLYGON ((1.1368683772161603e-12 7.958078640513122e-13, -1323.9924434046368 -705.0140761846679, -1312.1294052475748 -727.3252060060677, -1298.4477488008754 -751.0225301034535, 1.1368683772161603e-12 7.958078640513122e-13))",
+      "vertices": [
+        [
+          -1298.4477488008754,
+          -751.0225301034535
+        ],
+        [
+          1.1368683772161603e-12,
+          7.958078640513122e-13
+        ],
+        [
+          -1323.9924434046368,
+          -705.0140761846679
+        ],
+        [
+          -1312.1294052475748,
+          -727.3252060060677
+        ]
+      ],
+      "radius_m": 750.1156007388446
+    },
+    {
+      "kind": "region",
+      "channel": 14,
+      "position": [
+        0.0,
+        0.0
+      ],
+      "radius_m": 750.2039034239991,
+      "center": [
+        -720.7238377136181,
+        208.23795634792225
+      ],
+      "vertices": [
+        [
+          -1448.2800842551455,
+          391.1800368843835
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          -1433.66330681347,
+          441.74001225370296
+        ],
+        [
+          -1434.6756429502864,
+          438.6243619913353
+        ]
+      ],
+      "observations": 1,
+      "negative_positions": [
+        [
+          249.0524928721145,
+          -21.745247622994647
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 14,
+      "wkt": "POLYGON ((-1448.2800842551455 391.1800368843835, 0 0, -1433.66330681347 441.74001225370296, -1434.6756429502864 438.6243619913353, -1448.2800842551455 391.1800368843835))",
+      "vertices": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          -1433.66330681347,
+          441.74001225370296
+        ],
+        [
+          -1434.6756429502864,
+          438.6243619913353
+        ],
+        [
+          -1448.2800842551455,
+          391.1800368843835
+        ]
+      ],
+      "radius_m": 750.2039034239991
+    },
+    {
+      "kind": "region",
+      "channel": 15,
+      "position": [
+        0.0,
+        0.0
+      ],
+      "radius_m": 750.1346241156516,
+      "center": [
+        199.35531333602086,
+        723.1593277707389
+      ],
+      "vertices": [
+        [
+          373.1683991399722,
+          1452.8791133737045
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          423.90252888364813,
+          1438.8970606638268
+        ],
+        [
+          388.28770601094425,
+          1449.109446787192
+        ]
+      ],
+      "observations": 1,
+      "negative_positions": []
+    },
+    {
+      "kind": "optical_region",
+      "channel": 15,
+      "wkt": "POLYGON ((373.1683991399722 1452.8791133737045, 0 0, 423.90252888364813 1438.8970606638268, 388.28770601094425 1449.109446787192, 373.1683991399722 1452.8791133737045))",
+      "vertices": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          423.90252888364813,
+          1438.8970606638268
+        ],
+        [
+          388.28770601094425,
+          1449.109446787192
+        ],
+        [
+          373.1683991399722,
+          1452.8791133737045
+        ]
+      ],
+      "radius_m": 750.1346241156517
+    },
+    {
+      "kind": "region",
+      "channel": 16,
+      "position": [
+        0.0,
+        0.0
+      ],
+      "radius_m": 750.1237469873504,
+      "center": [
+        -749.939082377648,
+        16.643572840989755
+      ],
+      "vertices": [
+        [
+          -1500.000001,
+          6.935115201614593
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          -1498.8348898907295,
+          59.547014237593345
+        ],
+        [
+          -1500.000001,
+          26.18259740978133
+        ]
+      ],
+      "observations": 1,
+      "negative_positions": [
+        [
+          366.1182289846134,
+          175.23666873920786
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 16,
+      "wkt": "POLYGON ((-1500.000001 6.935115201614593, 0 0, -1498.8348898907295 59.547014237593345, -1500.000001 26.18259740978133, -1500.000001 6.935115201614593))",
+      "vertices": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          -1498.8348898907295,
+          59.547014237593345
+        ],
+        [
+          -1500.000001,
+          26.18259740978133
+        ],
+        [
+          -1500.000001,
+          6.935115201614593
+        ]
+      ],
+      "radius_m": 750.1237469873504
+    },
+    {
+      "kind": "region",
+      "channel": 17,
+      "position": [
+        0.0,
+        0.0
+      ],
+      "radius_m": 750.1667086051813,
+      "center": [
+        -355.95180352325224,
+        660.3396128266702
+      ],
+      "vertices": [
+        [
+          -734.9243837788376,
+          1307.7420179148462
+        ],
+        [
+          -6.821210263296962e-13,
+          1.1368683772161603e-12
+        ],
+        [
+          -688.6013389725493,
+          1332.7192505797016
+        ],
+        [
+          -727.3252060060721,
+          1312.1294052475723
+        ]
+      ],
+      "observations": 1,
+      "negative_positions": []
+    },
+    {
+      "kind": "optical_region",
+      "channel": 17,
+      "wkt": "POLYGON ((-734.9243837788376 1307.7420179148462, -6.821210263296962e-13 1.1368683772161603e-12, -688.6013389725493 1332.7192505797016, -727.3252060060721 1312.1294052475723, -734.9243837788376 1307.7420179148462))",
+      "vertices": [
+        [
+          -6.821210263296962e-13,
+          1.1368683772161603e-12
+        ],
+        [
+          -688.6013389725493,
+          1332.7192505797016
+        ],
+        [
+          -727.3252060060721,
+          1312.1294052475723
+        ],
+        [
+          -734.9243837788376,
+          1307.7420179148462
+        ]
+      ],
+      "radius_m": 750.1667086051813
+    },
+    {
+      "kind": "region",
+      "channel": 20,
+      "position": [
+        0.0,
+        0.0
+      ],
+      "radius_m": 750.2019036243723,
+      "center": [
+        704.3950975660637,
+        258.12873285732377
+      ],
+      "vertices": [
+        [
+          1399.2586550999079,
+          540.9140447337401
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1417.3752449932415,
+          491.50012265554176
+        ],
+        [
+          1400.5839563998215,
+          537.6338089095082
+        ]
+      ],
+      "observations": 1,
+      "negative_positions": []
+    },
+    {
+      "kind": "optical_region",
+      "channel": 20,
+      "wkt": "POLYGON ((1399.2586550999079 540.9140447337401, 0 0, 1417.3752449932415 491.50012265554176, 1400.5839563998215 537.6338089095082, 1399.2586550999079 540.9140447337401))",
+      "vertices": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1417.3752449932415,
+          491.50012265554176
+        ],
+        [
+          1400.5839563998215,
+          537.6338089095082
+        ],
+        [
+          1399.2586550999079,
+          540.9140447337401
+        ]
+      ],
+      "radius_m": 750.2019036243724
+    },
+    {
+      "kind": "region",
+      "channel": 20,
+      "position": [
+        249.0524928721145,
+        -21.745247622994647
+      ],
+      "radius_m": 258.65892978859324,
+      "center": [
+        1164.763861215383,
+        431.75071022789706
+      ],
+      "vertices": [
+        [
+          930.2690673308581,
+          322.58737572205405
+        ],
+        [
+          1185.862330086375,
+          411.2188940429951
+        ],
+        [
+          1409.0513416477943,
+          514.3698591388807
+        ],
+        [
+          1400.5839563998215,
+          537.6338089095082
+        ],
+        [
+          1399.2586550999079,
+          540.9140447337401
+        ],
+        [
+          1241.706791965257,
+          480.00892527431057
+        ]
+      ],
+      "observations": 2,
+      "negative_positions": []
+    },
+    {
+      "kind": "optical_region",
+      "channel": 20,
+      "wkt": "POLYGON ((1185.862330086375 411.2188940429951, 930.2690673308581 322.58737572205405, 1241.706791965257 480.00892527431057, 1241.7067919652573 480.0089252743106, 1399.2586550999079 540.9140447337401, 1400.5839563998215 537.6338089095082, 1409.0513416477943 514.3698591388807, 1185.862330086375 411.2188940429951))",
+      "vertices": [
+        [
+          930.2690673308581,
+          322.58737572205405
+        ],
+        [
+          1185.862330086375,
+          411.2188940429951
+        ],
+        [
+          1409.0513416477943,
+          514.3698591388807
+        ],
+        [
+          1400.5839563998215,
+          537.6338089095082
+        ],
+        [
+          1399.2586550999079,
+          540.9140447337401
+        ],
+        [
+          1241.706791965257,
+          480.00892527431057
+        ]
+      ],
+      "radius_m": 258.65892978859324
+    },
+    {
+      "kind": "region",
+      "channel": 2,
+      "position": [
+        249.0524928721145,
+        -21.745247622994647
+      ],
+      "radius_m": 137.68871567224133,
+      "center": [
+        -87.61857825340455,
+        -975.9478467949867
+      ],
+      "vertices": [
+        [
+          -116.62707500030544,
+          -1110.5460991608936
+        ],
+        [
+          -67.08751491336113,
+          -963.0434221004781
+        ],
+        [
+          -58.61008150650367,
+          -841.3495944290798
+        ],
+        [
+          -99.91125416444497,
+          -951.3747435945414
+        ]
+      ],
+      "observations": 2,
+      "negative_positions": []
+    },
+    {
+      "kind": "optical_region",
+      "channel": 2,
+      "wkt": "POLYGON ((-58.61008150650367 -841.3495944290798, -67.08751491336113 -963.0434221004781, -116.62707500030544 -1110.5460991608936, -99.91125416444497 -951.3747435945414, -58.61008150650367 -841.3495944290798))",
+      "vertices": [
+        [
+          -116.62707500030544,
+          -1110.5460991608936
+        ],
+        [
+          -67.08751491336113,
+          -963.0434221004781
+        ],
+        [
+          -58.61008150650367,
+          -841.3495944290798
+        ],
+        [
+          -99.91125416444497,
+          -951.3747435945414
+        ]
+      ],
+      "radius_m": 137.68871567224133
+    },
+    {
+      "kind": "region",
+      "channel": 5,
+      "position": [
+        249.0524928721145,
+        -21.745247622994647
+      ],
+      "radius_m": 19.903976626339688,
+      "center": [
+        369.6772630694551,
+        181.22531561156683
+      ],
+      "vertices": [
+        [
+          356.19147304929277,
+          166.58626669867746
+        ],
+        [
+          361.93714727991954,
+          169.2734461854656
+        ],
+        [
+          368.7345724531463,
+          172.45251634421348
+        ],
+        [
+          383.16305308961734,
+          195.86436452445616
+        ],
+        [
+          368.6174708429205,
+          188.4289889045601
+        ]
+      ],
+      "observations": 2,
+      "negative_positions": []
+    },
+    {
+      "kind": "optical_region",
+      "channel": 5,
+      "wkt": "POLYGON ((368.7345724531463 172.45251634421348, 361.93714727991954 169.2734461854656, 356.19147304929277 166.58626669867746, 368.6174708429205 188.4289889045601, 383.16305308961734 195.86436452445616, 368.7345724531463 172.45251634421348))",
+      "vertices": [
+        [
+          356.19147304929277,
+          166.58626669867746
+        ],
+        [
+          361.93714727991954,
+          169.2734461854656
+        ],
+        [
+          368.7345724531463,
+          172.45251634421348
+        ],
+        [
+          383.16305308961734,
+          195.86436452445616
+        ],
+        [
+          368.6174708429205,
+          188.4289889045601
+        ]
+      ],
+      "radius_m": 19.903976626339688
+    },
+    {
+      "kind": "region",
+      "channel": 12,
+      "position": [
+        249.0524928721145,
+        -21.745247622994647
+      ],
+      "radius_m": 360.1244701506451,
+      "center": [
+        -997.2109974506973,
+        -553.6749847997995
+      ],
+      "vertices": [
+        [
+          -1298.447748801,
+          -751.022530103
+        ],
+        [
+          -679.300182275,
+          -392.907409685
+        ],
+        [
+          -689.238509027,
+          -367.013311242
+        ],
+        [
+          -1323.992443405,
+          -705.014076185
+        ],
+        [
+          -1312.129405248,
+          -727.325206006
+        ]
+      ],
+      "observations": 1,
+      "negative_positions": [
+        [
+          249.0524928721145,
+          -21.745247622994647
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 12,
+      "wkt": "POLYGON ((-1312.1294052475748 -727.3252060060677, -1323.9924434045793 -705.0140761847761, -689.238509027 -367.013311242, -679.3001822751847 -392.90740968451854, -1006.3276097562085 -582.0601624439884, -1298.447748801 -751.022530103, -1302.0350954473531 -744.8090634473923, -1312.1294052475748 -727.3252060060677))",
+      "vertices": [
+        [
+          -1298.447748801,
+          -751.022530103
+        ],
+        [
+          -1006.3276097562085,
+          -582.0601624439884
+        ],
+        [
+          -679.3001822751847,
+          -392.90740968451854
+        ],
+        [
+          -689.238509027,
+          -367.013311242
+        ],
+        [
+          -1323.9924434045793,
+          -705.0140761847761
+        ],
+        [
+          -1312.1294052475748,
+          -727.3252060060677
+        ],
+        [
+          -1302.0350954473531,
+          -744.8090634473923
+        ]
+      ],
+      "radius_m": 360.12447015058797
+    },
+    {
+      "kind": "region",
+      "channel": 14,
+      "position": [
+        249.0524928721145,
+        -21.745247622994647
+      ],
+      "radius_m": 374.24666477860086,
+      "center": [
+        -1082.3375341514638,
+        312.7796789662751
+      ],
+      "vertices": [
+        [
+          -720.574717132,
+          222.023318071
+        ],
+        [
+          -1433.663306813,
+          441.740012254
+        ],
+        [
+          -1434.67564295,
+          438.624361991
+        ],
+        [
+          -1448.280084255,
+          391.180036884
+        ],
+        [
+          -726.686210777,
+          196.277737867
+        ]
+      ],
+      "observations": 1,
+      "negative_positions": [
+        [
+          249.0524928721145,
+          -21.745247622994647
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 14,
+      "wkt": "POLYGON ((-1448.2800842549084 391.18003688431946, -1434.67564295 438.624361991, -1433.6633068131305 441.74001225359837, -910.2303205040297 280.4599594774007, -720.574717132 222.023318071, -726.686210777 196.277737867, -1002.4580135103889 270.7636229781612, -1448.2800842549084 391.18003688431946))",
+      "vertices": [
+        [
+          -726.686210777,
+          196.277737867
+        ],
+        [
+          -720.574717132,
+          222.023318071
+        ],
+        [
+          -910.2303205040297,
+          280.4599594774007
+        ],
+        [
+          -1433.6633068131305,
+          441.74001225359837
+        ],
+        [
+          -1434.67564295,
+          438.624361991
+        ],
+        [
+          -1448.2800842549084,
+          391.18003688431946
+        ],
+        [
+          -1002.4580135103889,
+          270.7636229781612
+        ]
+      ],
+      "radius_m": 374.24666477859205
+    },
+    {
+      "kind": "region",
+      "channel": 15,
+      "position": [
+        249.0524928721145,
+        -21.745247622994647
+      ],
+      "radius_m": 15.929054654213184,
+      "center": [
+        81.55952881974443,
+        296.88765593850087
+      ],
+      "vertices": [
+        [
+          82.78498627113247,
+          281.00580981748124
+        ],
+        [
+          87.78849748727298,
+          297.9897556336648
+        ],
+        [
+          80.33407136835639,
+          312.76950205952056
+        ],
+        [
+          75.55636514907451,
+          294.16816927832053
+        ]
+      ],
+      "observations": 2,
+      "negative_positions": []
+    },
+    {
+      "kind": "optical_region",
+      "channel": 15,
+      "wkt": "POLYGON ((87.78849748727298 297.9897556336648, 82.78498627113247 281.00580981748124, 75.55636514907451 294.16816927832053, 80.33407136835639 312.76950205952056, 87.78849748727298 297.9897556336648))",
+      "vertices": [
+        [
+          82.78498627113247,
+          281.00580981748124
+        ],
+        [
+          87.78849748727298,
+          297.9897556336648
+        ],
+        [
+          80.33407136835639,
+          312.76950205952056
+        ],
+        [
+          75.55636514907451,
+          294.16816927832053
+        ]
+      ],
+      "radius_m": 15.929054654213184
+    },
+    {
+      "kind": "region",
+      "channel": 16,
+      "position": [
+        249.0524928721145,
+        -21.745247622994647
+      ],
+      "radius_m": 510.41796737484907,
+      "center": [
+        -740.4989989701323,
+        9.883061751512251
+      ],
+      "vertices": [
+        [
+          -230.15722375380756,
+          1.0641112401015542
+        ],
+        [
+          -1249.3712135700155,
+          49.576519994436936
+        ],
+        [
+          -1250.9005021088144,
+          5.783426054732496
+        ]
+      ],
+      "observations": 2,
+      "negative_positions": [
+        [
+          366.1182289846134,
+          175.23666873920786
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 16,
+      "wkt": "POLYGON ((-230.15722375380756 1.0641112401015542, -1250.9005021088144 5.783426054732496, -1249.3712135700155 49.576519994436936, -230.15722375380756 1.0641112401015542))",
+      "vertices": [
+        [
+          -230.15722375380756,
+          1.0641112401015542
+        ],
+        [
+          -1249.3712135700155,
+          49.576519994436936
+        ],
+        [
+          -1250.9005021088144,
+          5.783426054732496
+        ]
+      ],
+      "radius_m": 510.41796737484907
+    },
+    {
+      "kind": "region",
+      "channel": 17,
+      "position": [
+        249.0524928721145,
+        -21.745247622994647
+      ],
+      "radius_m": 177.2361039436667,
+      "center": [
+        -442.5577397081244,
+        814.3641468033053
+      ],
+      "vertices": [
+        [
+          -344.4921508474289,
+          666.7302183771632
+        ],
+        [
+          -418.3509137987646,
+          809.6764916971051
+        ],
+        [
+          -540.6233285688199,
+          961.9980752294474
+        ],
+        [
+          -431.22974895935215,
+          767.3405244623406
+        ]
+      ],
+      "observations": 2,
+      "negative_positions": []
+    },
+    {
+      "kind": "optical_region",
+      "channel": 17,
+      "wkt": "POLYGON ((-418.3509137987646 809.6764916971051, -344.4921508474289 666.7302183771632, -431.22974895935215 767.3405244623406, -540.6233285688199 961.9980752294474, -418.3509137987646 809.6764916971051))",
+      "vertices": [
+        [
+          -344.4921508474289,
+          666.7302183771632
+        ],
+        [
+          -418.3509137987646,
+          809.6764916971051
+        ],
+        [
+          -540.6233285688199,
+          961.9980752294474
+        ],
+        [
+          -431.22974895935215,
+          767.3405244623406
+        ]
+      ],
+      "radius_m": 177.2361039436667
+    },
+    {
+      "kind": "optical_decision",
+      "channel": 5,
+      "point": [
+        366.1182289846134,
+        175.23666873920786
+      ],
+      "predicted_s": 52.90724747802752,
+      "radio_predicted_s": 58.280557506595166,
+      "area_fraction": 0.9385924253970952
+    },
+    {
+      "kind": "region",
+      "channel": 16,
+      "position": [
+        366.1182289846134,
+        175.23666873920786
+      ],
+      "radius_m": 316.33961414238905,
+      "center": [
+        -934.7481455772689,
+        16.666391422435808
+      ],
+      "vertices": [
+        [
+          -1250.900502109,
+          5.783426055
+        ],
+        [
+          -618.709935526,
+          2.860549784
+        ],
+        [
+          -621.50809935,
+          19.691576947
+        ],
+        [
+          -1249.37121357,
+          49.576519994
+        ]
+      ],
+      "observations": 2,
+      "negative_positions": [
+        [
+          366.1182289846134,
+          175.23666873920786
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 16,
+      "wkt": "POLYGON ((-933.1493481118313 4.314332150101853, -1250.900502108805 5.783426054999099, -1249.5794556185829 43.61324794750948, -1249.37121357 49.576519994, -625.7379839984301 19.892910420731383, -621.5080993499995 19.69157694699702, -618.7099355260439 2.860549784264069, -933.1493481118313 4.314332150101853))",
+      "vertices": [
+        [
+          -618.7099355260439,
+          2.860549784264069
+        ],
+        [
+          -621.5080993499995,
+          19.69157694699702
+        ],
+        [
+          -625.7379839984301,
+          19.892910420731383
+        ],
+        [
+          -1249.37121357,
+          49.576519994
+        ],
+        [
+          -1249.5794556185829,
+          43.61324794750948
+        ],
+        [
+          -1250.900502108805,
+          5.783426054999099
+        ],
+        [
+          -933.1493481118313,
+          4.314332150101853
+        ]
+      ],
+      "radius_m": 316.33961414231885
+    },
+    {
+      "kind": "transit_probe",
+      "point": [
+        226.63298475721942,
+        234.86766104471693
+      ],
+      "channels": [
+        20
+      ]
+    },
+    {
+      "kind": "region",
+      "channel": 20,
+      "position": [
+        226.63298475721942,
+        234.86766104471693
+      ],
+      "radius_m": 114.13294836386397,
+      "center": [
+        1095.9152484257854,
+        385.62565039307583
+      ],
+      "vertices": [
+        [
+          987.0673037521574,
+          351.2970203220222
+        ],
+        [
+          1033.61228091957,
+          358.4234765245003
+        ],
+        [
+          1185.862330086375,
+          411.2188940429951
+        ],
+        [
+          1204.7631930994135,
+          419.9542804641295
+        ],
+        [
+          1073.9113940260456,
+          395.193858049116
+        ]
+      ],
+      "observations": 3,
+      "negative_positions": []
+    },
+    {
+      "kind": "optical_region",
+      "channel": 20,
+      "wkt": "POLYGON ((987.0673037521574 351.2970203220222, 1073.9113940260456 395.193858049116, 1204.7631930994135 419.9542804641295, 1185.862330086375 411.2188940429951, 1033.61228091957 358.4234765245003, 987.0673037521574 351.2970203220222))",
+      "vertices": [
+        [
+          987.0673037521574,
+          351.2970203220222
+        ],
+        [
+          1033.61228091957,
+          358.4234765245003
+        ],
+        [
+          1185.862330086375,
+          411.2188940429951
+        ],
+        [
+          1204.7631930994135,
+          419.9542804641295
+        ],
+        [
+          1073.9113940260456,
+          395.193858049116
+        ]
+      ],
+      "radius_m": 114.13294836386397
+    },
+    {
+      "kind": "clear_certificate",
+      "channel": 15,
+      "point": [
+        87.1477405298274,
+        294.49865335022514
+      ],
+      "worst_distance_m": 19.499999999998547
+    },
+    {
+      "kind": "region",
+      "channel": 14,
+      "position": [
+        87.1477405298274,
+        294.49865335022514
+      ],
+      "radius_m": 157.70693686510296,
+      "center": [
+        -1254.5115301219998,
+        371.0745047465
+      ],
+      "vertices": [
+        [
+          -1408.915088411,
+          403.183991243
+        ],
+        [
+          -1410.468639441,
+          380.967176445
+        ],
+        [
+          -1279.892075758,
+          345.698483909
+        ],
+        [
+          -1100.107971833,
+          338.96501825
+        ],
+        [
+          -1277.559429456,
+          393.641321041
+        ]
+      ],
+      "observations": 2,
+      "negative_positions": [
+        [
+          249.0524928721145,
+          -21.745247622994647
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 14,
+      "wkt": "POLYGON ((-1410.4686394408654 380.9671764453691, -1408.9150884105302 403.1839912429659, -1277.559429456 393.641321041, -1174.3229044748655 361.83210642777766, -1100.1079718342307 338.9650182500461, -1174.1595281886748 341.73847597418484, -1279.8920757580138 345.69848390930895, -1349.7406437208897 364.56456215555625, -1410.4686394408654 380.9671764453691))",
+      "vertices": [
+        [
+          -1100.1079718342307,
+          338.9650182500461
+        ],
+        [
+          -1174.3229044748655,
+          361.83210642777766
+        ],
+        [
+          -1277.559429456,
+          393.641321041
+        ],
+        [
+          -1408.9150884105302,
+          403.1839912429659
+        ],
+        [
+          -1410.4686394408654,
+          380.9671764453691
+        ],
+        [
+          -1279.8920757580138,
+          345.69848390930895
+        ],
+        [
+          -1174.1595281886748,
+          341.73847597418484
+        ]
+      ],
+      "radius_m": 157.70693686426222
+    },
+    {
+      "kind": "region",
+      "channel": 16,
+      "position": [
+        87.1477405298274,
+        294.49865335022514
+      ],
+      "radius_m": 128.81419828357826,
+      "center": [
+        -990.3031417914999,
+        18.158248811500002
+      ],
+      "vertices": [
+        [
+          -985.718651306,
+          37.027221223
+        ],
+        [
+          -1118.460980977,
+          5.171103831
+        ],
+        [
+          -958.44006641,
+          4.431261513
+        ],
+        [
+          -862.145302606,
+          31.145393792
+        ]
+      ],
+      "observations": 3,
+      "negative_positions": [
+        [
+          366.1182289846134,
+          175.23666873920786
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 16,
+      "wkt": "POLYGON ((-958.440066409546 4.43126151332928, -1118.4609809765952 5.1711038310971436, -985.718651306 37.027221223, -862.1453026074738 31.145393792070152, -958.440066409546 4.43126151332928))",
+      "vertices": [
+        [
+          -958.440066409546,
+          4.43126151332928
+        ],
+        [
+          -862.1453026074738,
+          31.145393792070152
+        ],
+        [
+          -985.718651306,
+          37.027221223
+        ],
+        [
+          -1118.4609809765952,
+          5.1711038310971436
+        ]
+      ],
+      "radius_m": 128.81419828264242
+    },
+    {
+      "kind": "transit_probe",
+      "point": [
+        231.95228896657972,
+        803.0111561500128
+      ],
+      "channels": [
+        17
+      ]
+    },
+    {
+      "kind": "region",
+      "channel": 17,
+      "position": [
+        231.95228896657972,
+        803.0111561500128
+      ],
+      "radius_m": 27.02796788673942,
+      "center": [
+        -458.88444785627433,
+        844.5998118887776
+      ],
+      "vertices": [
+        [
+          -435.50233439715475,
+          831.0429753008609
+        ],
+        [
+          -455.61535053408267,
+          856.0988840546864
+        ],
+        [
+          -482.2665613153939,
+          858.1566484766943
+        ],
+        [
+          -467.79131596310503,
+          832.3990508453829
+        ]
+      ],
+      "observations": 3,
+      "negative_positions": []
+    },
+    {
+      "kind": "optical_region",
+      "channel": 17,
+      "wkt": "POLYGON ((-455.61535053408267 856.0988840546864, -435.50233439715475 831.0429753008609, -467.79131596310503 832.3990508453829, -482.2665613153939 858.1566484766943, -455.61535053408267 856.0988840546864))",
+      "vertices": [
+        [
+          -435.50233439715475,
+          831.0429753008609
+        ],
+        [
+          -455.61535053408267,
+          856.0988840546864
+        ],
+        [
+          -482.2665613153939,
+          858.1566484766943
+        ],
+        [
+          -467.79131596310503,
+          832.3990508453829
+        ]
+      ],
+      "radius_m": 27.02796788673942
+    },
+    {
+      "kind": "region",
+      "channel": 20,
+      "position": [
+        231.95228896657972,
+        803.0111561500128
+      ],
+      "radius_m": 35.5713288428837,
+      "center": [
+        1143.6788251444425,
+        405.28106397631393
+      ],
+      "vertices": [
+        [
+          1129.8862699532074,
+          391.80819774474196
+        ],
+        [
+          1179.0693188792038,
+          408.8632963610692
+        ],
+        [
+          1168.7798159920826,
+          413.1453284787106
+        ],
+        [
+          1108.2883314096812,
+          401.6988315915587
+        ]
+      ],
+      "observations": 4,
+      "negative_positions": []
+    },
+    {
+      "kind": "optical_region",
+      "channel": 20,
+      "wkt": "POLYGON ((1168.7798159920826 413.1453284787106, 1179.0693188792038 408.8632963610692, 1129.8862699532074 391.80819774474196, 1108.2883314096812 401.6988315915587, 1126.753412279989 405.1928852118674, 1168.7798159920826 413.1453284787106))",
+      "vertices": [
+        [
+          1129.8862699532074,
+          391.80819774474196
+        ],
+        [
+          1179.0693188792038,
+          408.8632963610692
+        ],
+        [
+          1168.7798159920826,
+          413.1453284787106
+        ],
+        [
+          1108.2883314096812,
+          401.6988315915587
+        ]
+      ],
+      "radius_m": 35.5713288428837
+    },
+    {
+      "kind": "region",
+      "channel": 6,
+      "position": [
+        307.15538727816926,
+        920.5148992394375
+      ],
+      "radius_m": 496.2558797853301,
+      "center": [
+        3.344563983499995,
+        1368.889215502
+      ],
+      "vertices": [
+        [
+          -236.763922456,
+          1784.414631244
+        ],
+        [
+          -276.287049677,
+          1778.860017954
+        ],
+        [
+          280.571208361,
+          959.62484182
+        ],
+        [
+          282.976177644,
+          958.91841305
+        ]
+      ],
+      "observations": 1,
+      "negative_positions": [
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 6,
+      "wkt": "POLYGON ((-236.763922456 1784.414631244, -276.287049677 1778.860017954, 280.571208361 959.62484182, 282.976177644 958.91841305, -236.763922456 1784.414631244))",
+      "vertices": [
+        [
+          282.976177644,
+          958.91841305
+        ],
+        [
+          -236.763922456,
+          1784.414631244
+        ],
+        [
+          -276.287049677,
+          1778.860017954
+        ],
+        [
+          280.571208361,
+          959.62484182
+        ]
+      ],
+      "radius_m": 496.2558797853301
+    },
+    {
+      "kind": "region",
+      "channel": 9,
+      "position": [
+        307.15538727816926,
+        920.5148992394375
+      ],
+      "radius_m": 402.2273596919218,
+      "center": [
+        387.19574708899995,
+        1344.7799470700002
+      ],
+      "vertices": [
+        [
+          460.779538496,
+          1740.219290746
+        ],
+        [
+          312.619092324,
+          949.668017317
+        ],
+        [
+          313.611955682,
+          949.340603394
+        ],
+        [
+          488.989546757,
+          1732.323488334
+        ],
+        [
+          465.945246902,
+          1738.931334985
+        ]
+      ],
+      "observations": 1,
+      "negative_positions": [
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 9,
+      "wkt": "POLYGON ((460.779538496 1740.219290746, 312.619092324 949.668017317, 313.611955682 949.340603394, 488.989546757 1732.323488334, 465.945246902 1738.931334985, 460.779538496 1740.219290746))",
+      "vertices": [
+        [
+          313.611955682,
+          949.340603394
+        ],
+        [
+          488.989546757,
+          1732.323488334
+        ],
+        [
+          465.945246902,
+          1738.931334985
+        ],
+        [
+          460.779538496,
+          1740.219290746
+        ],
+        [
+          312.619092324,
+          949.668017317
+        ]
+      ],
+      "radius_m": 402.2273596919218
+    },
+    {
+      "kind": "region",
+      "channel": 10,
+      "position": [
+        307.15538727816926,
+        920.5148992394375
+      ],
+      "radius_m": 650.5038112258359,
+      "center": [
+        1107.4762670815,
+        685.6686772355
+      ],
+      "vertices": [
+        [
+          1712.152238836,
+          555.459600897
+        ],
+        [
+          484.929711359,
+          874.324433515
+        ],
+        [
+          509.327260273,
+          860.340503488
+        ],
+        [
+          1730.022822804,
+          497.012920956
+        ],
+        [
+          1721.610770393,
+          526.349234039
+        ]
+      ],
+      "observations": 1,
+      "negative_positions": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          -75.86453028905254,
+          882.5573555641075
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 10,
+      "wkt": "POLYGON ((1712.152238836 555.459600897, 484.929711359 874.324433515, 509.327260273 860.340503488, 1730.022822804 497.012920956, 1721.610770393 526.349234039, 1712.152238836 555.459600897))",
+      "vertices": [
+        [
+          1730.022822804,
+          497.012920956
+        ],
+        [
+          1721.610770393,
+          526.349234039
+        ],
+        [
+          1712.152238836,
+          555.459600897
+        ],
+        [
+          484.929711359,
+          874.324433515
+        ],
+        [
+          509.327260273,
+          860.340503488
+        ]
+      ],
+      "radius_m": 650.5038112258359
+    },
+    {
+      "kind": "region",
+      "channel": 11,
+      "position": [
+        307.15538727816926,
+        920.5148992394375
+      ],
+      "radius_m": 447.7621097483442,
+      "center": [
+        708.151647241,
+        1190.883087897
+      ],
+      "vertices": [
+        [
+          1052.282341141,
+          1460.394487191
+        ],
+        [
+          336.217714037,
+          941.571924373
+        ],
+        [
+          337.690062393,
+          941.044877655
+        ],
+        [
+          1080.085580445,
+          1440.194251421
+        ]
+      ],
+      "observations": 1,
+      "negative_positions": [
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 11,
+      "wkt": "POLYGON ((1052.282341141 1460.394487191, 336.217714037 941.571924373, 337.690062393 941.044877655, 1080.085580445 1440.194251421, 1052.282341141 1460.394487191))",
+      "vertices": [
+        [
+          337.690062393,
+          941.044877655
+        ],
+        [
+          1080.085580445,
+          1440.194251421
+        ],
+        [
+          1052.282341141,
+          1460.394487191
+        ],
+        [
+          336.217714037,
+          941.571924373
+        ]
+      ],
+      "radius_m": 447.7621097483442
+    },
+    {
+      "kind": "transit_probe",
+      "point": [
+        -75.86453028905254,
+        882.5573555641075
+      ],
+      "channels": [
+        6,
+        9,
+        11
+      ]
+    },
+    {
+      "kind": "region",
+      "channel": 6,
+      "position": [
+        -75.86453028905254,
+        882.5573555641075
+      ],
+      "radius_m": 32.062340411588316,
+      "center": [
+        -32.489606355,
+        1440.5129951610002
+      ],
+      "vertices": [
+        [
+          -39.88297126,
+          1471.711261588
+        ],
+        [
+          -42.16051713,
+          1434.419240861
+        ],
+        [
+          -25.09624145,
+          1409.314728734
+        ],
+        [
+          -21.843904562,
+          1443.060054309
+        ]
+      ],
+      "observations": 2,
+      "negative_positions": [
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 6,
+      "wkt": "POLYGON ((-41.08734993817883 1451.991037630534, -39.882971260012724 1471.7112615877918, -30.360969042569078 1456.5875933955122, -21.843904562 1443.060054309, -25.096241449983342 1409.3147287341728, -42.16051712968007 1434.4192408613892, -41.08734993817883 1451.991037630534))",
+      "vertices": [
+        [
+          -25.096241449983342,
+          1409.3147287341728
+        ],
+        [
+          -21.843904562,
+          1443.060054309
+        ],
+        [
+          -30.360969042569078,
+          1456.5875933955122
+        ],
+        [
+          -39.882971260012724,
+          1471.7112615877918
+        ],
+        [
+          -41.08734993817883,
+          1451.991037630534
+        ],
+        [
+          -42.16051712968007,
+          1434.4192408613892
+        ]
+      ],
+      "radius_m": 32.0623404114063
+    },
+    {
+      "kind": "region",
+      "channel": 9,
+      "position": [
+        -75.86453028905254,
+        882.5573555641075
+      ],
+      "radius_m": 50.80391675546706,
+      "center": [
+        426.808828649,
+        1498.057387586
+      ],
+      "vertices": [
+        [
+          411.659193299,
+          1478.124025446
+        ],
+        [
+          406.654864922,
+          1451.422039364
+        ],
+        [
+          433.038491737,
+          1482.526931054
+        ],
+        [
+          446.962792376,
+          1544.692735808
+        ],
+        [
+          417.030700673,
+          1506.785197196
+        ]
+      ],
+      "observations": 2,
+      "negative_positions": [
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 9,
+      "wkt": "POLYGON ((415.7018907489988 1499.6949622203858, 417.0307006729669 1506.7851971958232, 446.9627923759088 1544.692735807593, 433.038491737 1482.526931054, 417.1862312695623 1463.83795973331, 406.654864922147 1451.4220393647845, 408.1734713893692 1459.5249865930618, 411.65919329938214 1478.1240254457193, 415.7018907489988 1499.6949622203858))",
+      "vertices": [
+        [
+          406.654864922147,
+          1451.4220393647845
+        ],
+        [
+          417.1862312695623,
+          1463.83795973331
+        ],
+        [
+          433.038491737,
+          1482.526931054
+        ],
+        [
+          446.9627923759088,
+          1544.692735807593
+        ],
+        [
+          417.0307006729669,
+          1506.7851971958232
+        ],
+        [
+          415.7018907489988,
+          1499.6949622203858
+        ],
+        [
+          408.1734713893692,
+          1459.5249865930618
+        ]
+      ],
+      "radius_m": 50.80391675487297
+    },
+    {
+      "kind": "region",
+      "channel": 11,
+      "position": [
+        -75.86453028905254,
+        882.5573555641075
+      ],
+      "radius_m": 131.26157282097327,
+      "center": [
+        791.681700573,
+        1255.976827388
+      ],
+      "vertices": [
+        [
+          678.469486587,
+          1189.549460258
+        ],
+        [
+          751.503453455,
+          1219.272170226
+        ],
+        [
+          904.893914559,
+          1322.404194518
+        ],
+        [
+          791.877900491,
+          1271.719199859
+        ]
+      ],
+      "observations": 2,
+      "negative_positions": [
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 11,
+      "wkt": "POLYGON ((791.8779004905416 1271.7191998585392, 904.8939145581536 1322.4041945174308, 824.6413817791199 1268.4464314303884, 751.5034534547599 1219.2721702260128, 732.7649766337561 1211.6461526935475, 678.4694865881745 1189.549460258478, 791.8779004905416 1271.7191998585392))",
+      "vertices": [
+        [
+          678.4694865881745,
+          1189.549460258478
+        ],
+        [
+          732.7649766337561,
+          1211.6461526935475
+        ],
+        [
+          751.5034534547599,
+          1219.2721702260128
+        ],
+        [
+          824.6413817791199,
+          1268.4464314303884
+        ],
+        [
+          904.8939145581536,
+          1322.4041945174308
+        ],
+        [
+          791.8779004905416,
+          1271.7191998585392
+        ]
+      ],
+      "radius_m": 131.26157281983689
+    },
+    {
+      "kind": "region",
+      "channel": 10,
+      "position": [
+        -75.86453028905254,
+        882.5573555641075
+      ],
+      "radius_m": 427.7437998403298,
+      "center": [
+        1323.3406898165,
+        629.581397641
+      ],
+      "vertices": [
+        [
+          913.716791026,
+          739.978084618
+        ],
+        [
+          1730.022822804,
+          497.012920956
+        ],
+        [
+          1721.610770393,
+          526.349234039
+        ],
+        [
+          1712.152238836,
+          555.459600897
+        ],
+        [
+          916.658556829,
+          762.149874326
+        ]
+      ],
+      "observations": 1,
+      "negative_positions": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          -75.86453028905254,
+          882.5573555641075
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 10,
+      "wkt": "POLYGON ((1712.152238836 555.459600897, 1721.610770393 526.349234039, 1730.022822804 497.012920956, 913.7167910260385 739.978084618291, 916.6585568289361 762.1498743255187, 1712.152238836 555.459600897))",
+      "vertices": [
+        [
+          1730.022822804,
+          497.012920956
+        ],
+        [
+          1721.610770393,
+          526.349234039
+        ],
+        [
+          1712.152238836,
+          555.459600897
+        ],
+        [
+          916.6585568289361,
+          762.1498743255187
+        ],
+        [
+          913.7167910260385,
+          739.978084618291
+        ]
+      ],
+      "radius_m": 427.7437998402855
+    },
+    {
+      "kind": "region",
+      "channel": 17,
+      "position": [
+        -75.86453028905254,
+        882.5573555641075
+      ],
+      "radius_m": 18.277517027594598,
+      "center": [
+        -460.07418205676106,
+        844.8460187588223
+      ],
+      "vertices": [
+        [
+          -470.1270721854224,
+          836.5553513069684
+        ],
+        [
+          -442.51356470108976,
+          839.7772568999749
+        ],
+        [
+          -452.3033060412277,
+          851.9728850480421
+        ],
+        [
+          -477.6347994124323,
+          849.9147806176699
+        ]
+      ],
+      "observations": 4,
+      "negative_positions": []
+    },
+    {
+      "kind": "optical_region",
+      "channel": 17,
+      "wkt": "POLYGON ((-452.3033060412277 851.9728850480421, -442.51356470108976 839.7772568999749, -470.1270721854224 836.5553513069684, -477.6347994124323 849.9147806176699, -452.3033060412277 851.9728850480421))",
+      "vertices": [
+        [
+          -470.1270721854224,
+          836.5553513069684
+        ],
+        [
+          -442.51356470108976,
+          839.7772568999749
+        ],
+        [
+          -452.3033060412277,
+          851.9728850480421
+        ],
+        [
+          -477.6347994124323,
+          849.9147806176699
+        ]
+      ],
+      "radius_m": 18.277517027594598
+    },
+    {
+      "kind": "region",
+      "channel": 14,
+      "position": [
+        -458.7711342036052,
+        844.973916838003
+      ],
+      "radius_m": 34.808627420172094,
+      "center": [
+        -1181.280194355,
+        348.3292317465
+      ],
+      "vertices": [
+        [
+          -1183.4912413,
+          364.657052286
+        ],
+        [
+          -1215.722879682,
+          343.295150863
+        ],
+        [
+          -1174.159528189,
+          341.738475974
+        ],
+        [
+          -1163.658297476,
+          341.345172702
+        ],
+        [
+          -1146.837509028,
+          353.36331263
+        ],
+        [
+          -1174.322904475,
+          361.832106428
+        ]
+      ],
+      "observations": 3,
+      "negative_positions": [
+        [
+          249.0524928721145,
+          -21.745247622994647
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 14,
+      "wkt": "POLYGON ((-1163.6582974760581 341.3451727020022, -1167.5093697580025 341.48940716085684, -1174.1595281886748 341.73847597418484, -1204.4786623172386 342.874020463515, -1215.722879682 343.295150863, -1183.4912413 364.657052286, -1176.6690310509534 362.55499441516594, -1174.3229044748655 361.83210642777766, -1146.8375090284453 353.36331262968184, -1161.2565462388611 343.0611792096268, -1163.6582974760581 341.3451727020022))",
+      "vertices": [
+        [
+          -1163.6582974760581,
+          341.3451727020022
+        ],
+        [
+          -1161.2565462388611,
+          343.0611792096268
+        ],
+        [
+          -1146.8375090284453,
+          353.36331262968184
+        ],
+        [
+          -1174.3229044748655,
+          361.83210642777766
+        ],
+        [
+          -1176.6690310509534,
+          362.55499441516594
+        ],
+        [
+          -1183.4912413,
+          364.657052286
+        ],
+        [
+          -1215.722879682,
+          343.295150863
+        ],
+        [
+          -1204.4786623172386,
+          342.874020463515
+        ],
+        [
+          -1174.1595281886748,
+          341.73847597418484
+        ],
+        [
+          -1167.5093697580025,
+          341.48940716085684
+        ]
+      ],
+      "radius_m": 34.80862741992884
+    },
+    {
+      "kind": "region",
+      "channel": 16,
+      "position": [
+        -458.7711342036052,
+        844.973916838003
+      ],
+      "radius_m": 32.89284708964231,
+      "center": [
+        -967.0769492215,
+        19.6773314335
+      ],
+      "vertices": [
+        [
+          -975.875620298,
+          36.558713973
+        ],
+        [
+          -996.314005484,
+          4.606368267
+        ],
+        [
+          -958.44006641,
+          4.431261513
+        ],
+        [
+          -955.240931601,
+          5.318766784
+        ],
+        [
+          -937.839892959,
+          34.7482946
+        ]
+      ],
+      "observations": 4,
+      "negative_positions": [
+        [
+          366.1182289846134,
+          175.23666873920786
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 16,
+      "wkt": "POLYGON ((-995.3311563441978 4.601824152319819, -996.3140054836191 4.606368266998239, -984.884413159677 22.47481931642869, -975.8756202980718 36.55871397288762, -965.4874662401526 36.06426003004223, -937.8398929590027 34.74829460000013, -955.2409316010978 5.318766784395439, -958.440066409546 4.43126151332928, -995.3311563441978 4.601824152319819))",
+      "vertices": [
+        [
+          -958.440066409546,
+          4.43126151332928
+        ],
+        [
+          -955.2409316010978,
+          5.318766784395439
+        ],
+        [
+          -937.8398929590027,
+          34.74829460000013
+        ],
+        [
+          -965.4874662401526,
+          36.06426003004223
+        ],
+        [
+          -975.8756202980718,
+          36.55871397288762
+        ],
+        [
+          -984.884413159677,
+          22.47481931642869
+        ],
+        [
+          -996.3140054836191,
+          4.606368266998239
+        ],
+        [
+          -995.3311563441978,
+          4.601824152319819
+        ]
+      ],
+      "radius_m": 32.89284708947226
+    },
+    {
+      "kind": "clear_certificate",
+      "channel": 17,
+      "point": [
+        -458.7711342036052,
+        844.973916838003
+      ],
+      "worst_distance_m": 19.499999999998423
+    },
+    {
+      "kind": "optical_decision",
+      "channel": 6,
+      "point": [
+        -39.02124851594252,
+        1431.3879266362073
+      ],
+      "predicted_s": 155.6518495061938,
+      "radio_predicted_s": 159.31878659562875,
+      "area_fraction": 0.7329882194013099
+    },
+    {
+      "kind": "region",
+      "channel": 9,
+      "position": [
+        -39.02124851594252,
+        1431.3879266362073
+      ],
+      "radius_m": 16.168148119125362,
+      "center": [
+        425.97121813800004,
+        1497.233130331
+      ],
+      "vertices": [
+        [
+          413.347296146,
+          1487.131367755
+        ],
+        [
+          434.658018435,
+          1489.757396923
+        ],
+        [
+          435.763104822,
+          1494.691115775
+        ],
+        [
+          438.59514013,
+          1507.334892907
+        ],
+        [
+          416.474500247,
+          1503.817435108
+        ]
+      ],
+      "observations": 3,
+      "negative_positions": [
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 9,
+      "wkt": "POLYGON ((415.4308020212955 1498.248492906644, 416.474500247 1503.817435108, 436.6267400856747 1507.0218927350302, 438.59514012993185 1507.3348929069723, 437.8721450735794 1504.1070417798983, 435.763104822 1494.691115775, 434.658018435 1489.757396923, 413.3472961463808 1487.1313677550468, 415.4308020212955 1498.248492906644))",
+      "vertices": [
+        [
+          413.3472961463808,
+          1487.1313677550468
+        ],
+        [
+          434.658018435,
+          1489.757396923
+        ],
+        [
+          435.763104822,
+          1494.691115775
+        ],
+        [
+          437.8721450735794,
+          1504.1070417798983
+        ],
+        [
+          438.59514012993185,
+          1507.3348929069723
+        ],
+        [
+          436.6267400856747,
+          1507.0218927350302
+        ],
+        [
+          416.474500247,
+          1503.817435108
+        ],
+        [
+          415.4308020212955,
+          1498.248492906644
+        ]
+      ],
+      "radius_m": 16.168148118926798
+    },
+    {
+      "kind": "region",
+      "channel": 11,
+      "position": [
+        -39.02124851594252,
+        1431.3879266362073
+      ],
+      "radius_m": 30.064076267758132,
+      "center": [
+        768.8490713755,
+        1242.2289315825
+      ],
+      "vertices": [
+        [
+          770.564691965,
+          1256.276776018
+        ],
+        [
+          739.913651342,
+          1234.06865283
+        ],
+        [
+          764.316415343,
+          1227.886960788
+        ],
+        [
+          797.784491409,
+          1250.389210335
+        ]
+      ],
+      "observations": 3,
+      "negative_positions": [
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 11,
+      "wkt": "POLYGON ((739.9136513421339 1234.068652830097, 752.2436898477295 1243.00234671061, 770.5646919650309 1256.2767760178292, 780.2158040778671 1254.1892677468459, 797.7844914087833 1250.3892103350468, 764.3164153427281 1227.886960788392, 739.9136513421339 1234.068652830097))",
+      "vertices": [
+        [
+          764.3164153427281,
+          1227.886960788392
+        ],
+        [
+          797.7844914087833,
+          1250.3892103350468
+        ],
+        [
+          780.2158040778671,
+          1254.1892677468459
+        ],
+        [
+          770.5646919650309,
+          1256.2767760178292
+        ],
+        [
+          752.2436898477295,
+          1243.00234671061
+        ],
+        [
+          739.9136513421339,
+          1234.068652830097
+        ]
+      ],
+      "radius_m": 30.064076267582553
+    },
+    {
+      "kind": "clear_certificate",
+      "channel": 9,
+      "point": [
+        422.24672249843655,
+        1496.7057235628474
+      ],
+      "worst_distance_m": 19.49999999999667
+    },
+    {
+      "kind": "region",
+      "channel": 11,
+      "position": [
+        422.24672249843655,
+        1496.7057235628474
+      ],
+      "radius_m": 14.874285789563181,
+      "center": [
+        765.9116619460001,
+        1240.5466704814999
+      ],
+      "vertices": [
+        [
+          751.128952988,
+          1242.19466733
+        ],
+        [
+          767.153035266,
+          1229.794161228
+        ],
+        [
+          780.694370904,
+          1238.898673633
+        ],
+        [
+          763.574348682,
+          1251.211942929
+        ],
+        [
+          752.243689848,
+          1243.002346711
+        ]
+      ],
+      "observations": 4,
+      "negative_positions": [
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 11,
+      "wkt": "POLYGON ((761.7023159680245 1234.0122922099927, 751.128952988 1242.19466733, 751.446261441464 1242.424572255975, 752.2436898477295 1243.00234671061, 762.3556919550183 1250.3289687080442, 763.574348682 1251.211942929, 773.2851274488775 1244.2276392593012, 780.6943709035385 1238.8986736327752, 774.6426214544068 1234.8297819513584, 767.1530352662005 1229.7941612281347, 761.7023159680245 1234.0122922099927))",
+      "vertices": [
+        [
+          767.1530352662005,
+          1229.7941612281347
+        ],
+        [
+          774.6426214544068,
+          1234.8297819513584
+        ],
+        [
+          780.6943709035385,
+          1238.8986736327752
+        ],
+        [
+          773.2851274488775,
+          1244.2276392593012
+        ],
+        [
+          763.574348682,
+          1251.211942929
+        ],
+        [
+          762.3556919550183,
+          1250.3289687080442
+        ],
+        [
+          752.2436898477295,
+          1243.00234671061
+        ],
+        [
+          751.446261441464,
+          1242.424572255975
+        ],
+        [
+          751.128952988,
+          1242.19466733
+        ],
+        [
+          761.7023159680245,
+          1234.0122922099927
+        ]
+      ],
+      "radius_m": 14.874285789346263
+    },
+    {
+      "kind": "transit_probe",
+      "point": [
+        676.8942397070839,
+        1306.8979794775405
+      ],
+      "channels": [
+        10
+      ]
+    },
+    {
+      "kind": "region",
+      "channel": 10,
+      "position": [
+        676.8942397070839,
+        1306.8979794775405
+      ],
+      "radius_m": 112.59563598741032,
+      "center": [
+        1621.6151836244999,
+        552.249205443
+      ],
+      "vertices": [
+        [
+          1522.061601326,
+          604.850170215
+        ],
+        [
+          1608.248957694,
+          533.257669757
+        ],
+        [
+          1721.168765923,
+          499.648240671
+        ],
+        [
+          1616.981639041,
+          580.18743688
+        ]
+      ],
+      "observations": 2,
+      "negative_positions": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          -75.86453028905254,
+          882.5573555641075
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 10,
+      "wkt": "POLYGON ((1522.0616013262038 604.8501702148745, 1603.2972023929706 583.7430150275993, 1616.9816390408917 580.1874368797783, 1685.9493427391942 526.873715823808, 1721.1687659226145 499.648240671298, 1682.9536779727023 511.02257178814165, 1608.248957694 533.257669757, 1528.5433065983937 599.4660685643925, 1522.0616013262038 604.8501702148745))",
+      "vertices": [
+        [
+          1721.1687659226145,
+          499.648240671298
+        ],
+        [
+          1685.9493427391942,
+          526.873715823808
+        ],
+        [
+          1616.9816390408917,
+          580.1874368797783
+        ],
+        [
+          1522.0616013262038,
+          604.8501702148745
+        ],
+        [
+          1528.5433065983937,
+          599.4660685643925
+        ],
+        [
+          1608.248957694,
+          533.257669757
+        ],
+        [
+          1682.9536779727023,
+          511.02257178814165
+        ]
+      ],
+      "radius_m": 112.59563598705085
+    },
+    {
+      "kind": "clear_certificate",
+      "channel": 11,
+      "point": [
+        761.7767454432934,
+        1243.6287314491094
+      ],
+      "worst_distance_m": 19.499999999999407
+    },
+    {
+      "kind": "region",
+      "channel": 20,
+      "position": [
+        761.7767454432934,
+        1243.6287314491094
+      ],
+      "radius_m": 18.243538586056328,
+      "center": [
+        1144.6685373962132,
+        404.19369728434066
+      ],
+      "vertices": [
+        [
+          1131.9363051034986,
+          392.51908396303565
+        ],
+        [
+          1162.8877581252884,
+          403.252051827625
+        ],
+        [
+          1159.0449308149982,
+          411.30324552033176
+        ],
+        [
+          1126.4493166671377,
+          405.1353427410563
+        ]
+      ],
+      "observations": 5,
+      "negative_positions": []
+    },
+    {
+      "kind": "optical_region",
+      "channel": 20,
+      "wkt": "POLYGON ((1159.0449308149982 411.30324552033176, 1162.8877581252884 403.252051827625, 1131.9363051034986 392.51908396303565, 1126.4493166671377 405.1353427410563, 1159.0449308149982 411.30324552033176))",
+      "vertices": [
+        [
+          1131.9363051034986,
+          392.51908396303565
+        ],
+        [
+          1162.8877581252884,
+          403.252051827625
+        ],
+        [
+          1159.0449308149982,
+          411.30324552033176
+        ],
+        [
+          1126.4493166671377,
+          405.1353427410563
+        ]
+      ],
+      "radius_m": 18.243538586056328
+    },
+    {
+      "kind": "region",
+      "channel": 10,
+      "position": [
+        1621.6151836244092,
+        552.2492054430863
+      ],
+      "radius_m": 9.851753603564552,
+      "center": [
+        1625.8820470125002,
+        561.1290098265
+      ],
+      "vertices": [
+        [
+          1621.615183624,
+          552.249205443
+        ],
+        [
+          1630.704213362,
+          569.579551445
+        ],
+        [
+          1630.148910401,
+          570.00881421
+        ]
+      ],
+      "observations": 3,
+      "negative_positions": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          -75.86453028905254,
+          882.5573555641075
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 10,
+      "wkt": "POLYGON ((1630.546814584431 569.7012245481744, 1630.704213362 569.579551445, 1621.6151836283861 552.249205451363, 1628.0187023602148 565.5756207899076, 1630.1489104009238 570.0088142098415, 1630.5273943722723 569.7162368469515, 1630.546814584431 569.7012245481744))",
+      "vertices": [
+        [
+          1621.6151836283861,
+          552.249205451363
+        ],
+        [
+          1630.704213362,
+          569.579551445
+        ],
+        [
+          1630.546814584431,
+          569.7012245481744
+        ],
+        [
+          1630.5273943722723,
+          569.7162368469515
+        ],
+        [
+          1630.1489104009238,
+          570.0088142098415
+        ],
+        [
+          1628.0187023602148,
+          565.5756207899076
+        ]
+      ],
+      "radius_m": 9.851753598757899
+    },
+    {
+      "kind": "clear_certificate",
+      "channel": 10,
+      "point": [
+        1621.703324018949,
+        552.4326351408687
+      ],
+      "worst_distance_m": 19.499999999999925
+    },
+    {
+      "kind": "region",
+      "channel": 19,
+      "position": [
+        1145.941670656055,
+        404.58932445343015
+      ],
+      "radius_m": 736.0141094970844,
+      "center": [
+        1131.665987705339,
+        -359.5040259413055
+      ],
+      "vertices": [
+        [
+          1091.627508742,
+          -1094.428300667
+        ],
+        [
+          1119.759073246,
+          -1095.410676547
+        ],
+        [
+          1144.242591901,
+          -1095.410676547
+        ],
+        [
+          1145.909708629,
+          376.372244768
+        ],
+        [
+          1144.860818463,
+          374.758863485
+        ]
+      ],
+      "observations": 1,
+      "negative_positions": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          307.15538727816926,
+          920.5148992394375
+        ],
+        [
+          -458.7711342036052,
+          844.973916838003
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 19,
+      "wkt": "POLYGON ((1091.627508742 -1094.428300667, 1119.759073246 -1095.410676547, 1144.242591901 -1095.410676547, 1145.909708629 376.372244768, 1144.860818463 374.758863485, 1091.627508742 -1094.428300667))",
+      "vertices": [
+        [
+          1119.759073246,
+          -1095.410676547
+        ],
+        [
+          1144.242591901,
+          -1095.410676547
+        ],
+        [
+          1145.909708629,
+          376.372244768
+        ],
+        [
+          1144.860818463,
+          374.758863485
+        ],
+        [
+          1091.627508742,
+          -1094.428300667
+        ]
+      ],
+      "radius_m": 736.0141094970844
+    },
+    {
+      "kind": "clear_certificate",
+      "channel": 20,
+      "point": [
+        1145.941670656055,
+        404.58932445343015
+      ],
+      "worst_distance_m": 19.499999999991886
+    },
+    {
+      "kind": "transit_probe",
+      "point": [
+        1247.7171544238797,
+        -170.4792726169099
+      ],
+      "channels": [
+        19
+      ]
+    },
+    {
+      "kind": "region",
+      "channel": 19,
+      "position": [
+        1247.7171544238797,
+        -170.4792726169099
+      ],
+      "radius_m": 146.09530554601014,
+      "center": [
+        1122.1853394875,
+        -731.3815116775
+      ],
+      "vertices": [
+        [
+          1099.552257204,
+          -875.713011666
+        ],
+        [
+          1144.735050913,
+          -660.652419409
+        ],
+        [
+          1144.818421771,
+          -587.050011689
+        ],
+        [
+          1104.028115616,
+          -752.183707158
+        ]
+      ],
+      "observations": 2,
+      "negative_positions": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          307.15538727816926,
+          920.5148992394375
+        ],
+        [
+          -458.7711342036052,
+          844.973916838003
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 19,
+      "wkt": "POLYGON ((1134.3935402055758 -709.8758346739952, 1099.5522572044972 -875.7130116636336, 1100.6892650068612 -844.3327109171801, 1102.3186853197114 -799.3623075889856, 1104.028115616 -752.183707158, 1144.8184217709952 -587.050011689019, 1144.7350509128653 -660.6524194090816, 1134.3935402055758 -709.8758346739952))",
+      "vertices": [
+        [
+          1099.5522572044972,
+          -875.7130116636336
+        ],
+        [
+          1134.3935402055758,
+          -709.8758346739952
+        ],
+        [
+          1144.7350509128653,
+          -660.6524194090816
+        ],
+        [
+          1144.8184217709952,
+          -587.050011689019
+        ],
+        [
+          1104.028115616,
+          -752.183707158
+        ],
+        [
+          1102.3186853197114,
+          -799.3623075889856
+        ],
+        [
+          1100.6892650068612,
+          -844.3327109171801
+        ]
+      ],
+      "radius_m": 146.09530554479295
+    },
+    {
+      "kind": "region",
+      "channel": 19,
+      "position": [
+        1122.1853394877462,
+        -731.3815116763262
+      ],
+      "radius_m": 54.348783145799665,
+      "center": [
+        1133.4803548735,
+        -678.219374239
+      ],
+      "vertices": [
+        [
+          1144.775370259,
+          -625.057236802
+        ],
+        [
+          1122.185339488,
+          -731.381511676
+        ],
+        [
+          1144.757442905,
+          -640.884067049
+        ]
+      ],
+      "observations": 3,
+      "negative_positions": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          307.15538727816926,
+          920.5148992394375
+        ],
+        [
+          -458.7711342036052,
+          844.973916838003
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 19,
+      "wkt": "POLYGON ((1122.1853394889897 -731.3815116713415, 1144.775370258536 -625.057236804184, 1144.757442904529 -640.8840670488557, 1122.1853394889897 -731.3815116713415))",
+      "vertices": [
+        [
+          1122.1853394889897,
+          -731.3815116713415
+        ],
+        [
+          1144.757442904529,
+          -640.8840670488557
+        ],
+        [
+          1144.775370258536,
+          -625.057236804184
+        ]
+      ],
+      "radius_m": 54.34878314230211
+    },
+    {
+      "kind": "region",
+      "channel": 3,
+      "position": [
+        1122.1853394877462,
+        -731.3815116763262
+      ],
+      "radius_m": 232.05021345734835,
+      "center": [
+        1296.9564026115,
+        -884.0326730219999
+      ],
+      "vertices": [
+        [
+          1481.004740584,
+          -1023.245147377
+        ],
+        [
+          1122.185339488,
+          -731.381511676
+        ],
+        [
+          1471.727465735,
+          -1036.683834368
+        ],
+        [
+          1474.698283412,
+          -1032.59485463
+        ]
+      ],
+      "observations": 1,
+      "negative_positions": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          307.15538727816926,
+          920.5148992394375
+        ],
+        [
+          -458.7711342036052,
+          844.973916838003
+        ],
+        [
+          1145.941670656055,
+          404.58932445343015
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 3,
+      "wkt": "POLYGON ((1481.004740584 -1023.245147377, 1122.185339488 -731.381511676, 1471.727465735 -1036.683834368, 1474.698283412 -1032.59485463, 1481.004740584 -1023.245147377))",
+      "vertices": [
+        [
+          1471.727465735,
+          -1036.683834368
+        ],
+        [
+          1474.698283412,
+          -1032.59485463
+        ],
+        [
+          1481.004740584,
+          -1023.245147377
+        ],
+        [
+          1122.185339488,
+          -731.381511676
+        ]
+      ],
+      "radius_m": 232.05021345734835
+    },
+    {
+      "kind": "region",
+      "channel": 4,
+      "position": [
+        1122.1853394877462,
+        -731.3815116763262
+      ],
+      "radius_m": 274.39357276508105,
+      "center": [
+        1207.136559123,
+        -992.2936100105
+      ],
+      "vertices": [
+        [
+          1306.960005068,
+          -1237.805067167
+        ],
+        [
+          1122.185339488,
+          -731.381511676
+        ],
+        [
+          1292.087778758,
+          -1253.205708345
+        ]
+      ],
+      "observations": 1,
+      "negative_positions": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          307.15538727816926,
+          920.5148992394375
+        ],
+        [
+          -458.7711342036052,
+          844.973916838003
+        ],
+        [
+          1145.941670656055,
+          404.58932445343015
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 4,
+      "wkt": "POLYGON ((1306.960005068 -1237.805067167, 1122.185339488 -731.381511676, 1292.087778758 -1253.205708345, 1306.960005068 -1237.805067167))",
+      "vertices": [
+        [
+          1292.087778758,
+          -1253.205708345
+        ],
+        [
+          1306.960005068,
+          -1237.805067167
+        ],
+        [
+          1122.185339488,
+          -731.381511676
+        ]
+      ],
+      "radius_m": 274.39357276508105
+    },
+    {
+      "kind": "optical_decision",
+      "channel": 19,
+      "point": [
+        1129.527099489092,
+        -696.8261223395153
+      ],
+      "predicted_s": 24.08852407119999,
+      "radio_predicted_s": 31.345202533106807,
+      "area_fraction": 0.27837406238106044
+    },
+    {
+      "kind": "optical_failure_update",
+      "channel": 19,
+      "point": [
+        1129.527099489092,
+        -696.8261223395153
+      ],
+      "wkt": "MULTIPOLYGON (((1125.373116846629 -716.377631444411, 1125.6254881390914 -716.4408471622995, 1125.901660222354 -716.4818134210008, 1122.1853394889897 -731.3815116713415, 1125.373116846629 -716.377631444411)), ((1144.775370258536 -625.057236804184, 1144.757442904529 -640.8840670488557, 1135.5575590060469 -677.7687989814156, 1135.332502749504 -677.688272565207, 1133.6810821315555 -677.2746132346197, 1144.775370258536 -625.057236804184)))",
+      "vertices": [
+        [
+          1122.1853394889897,
+          -731.3815116713415
+        ],
+        [
+          1125.901660222354,
+          -716.4818134210008
+        ],
+        [
+          1144.757442904529,
+          -640.8840670488557
+        ],
+        [
+          1144.775370258536,
+          -625.057236804184
+        ],
+        [
+          1125.373116846629,
+          -716.377631444411
+        ]
+      ],
+      "radius_m": 54.34878314230211
+    },
+    {
+      "kind": "optical_decision",
+      "channel": 19,
+      "point": [
+        1137.4336102584334,
+        -659.6126261360102
+      ],
+      "predicted_s": 12.608829639922288,
+      "radio_predicted_s": 23.659840125920425,
+      "area_fraction": 0.7716906785511476
+    },
+    {
+      "kind": "optical_failure_update",
+      "channel": 19,
+      "point": [
+        1137.4336102584334,
+        -659.6126261360102
+      ],
+      "wkt": "MULTIPOLYGON (((1125.6254881390914 -716.4408471622995, 1125.901660222354 -716.4818134210008, 1122.1853394889897 -731.3815116713415, 1125.373116846629 -716.377631444411, 1125.6254881390914 -716.4408471622995)), ((1144.757442904529 -640.8840670488557, 1144.726755934158 -641.007099109743, 1143.2390135188455 -640.4747763617019, 1141.5875929008967 -640.0611170311146, 1144.775370258536 -625.057236804184, 1144.757442904529 -640.8840670488557)))",
+      "vertices": [
+        [
+          1122.1853394889897,
+          -731.3815116713415
+        ],
+        [
+          1125.901660222354,
+          -716.4818134210008
+        ],
+        [
+          1144.726755934158,
+          -641.007099109743
+        ],
+        [
+          1144.757442904529,
+          -640.8840670488557
+        ],
+        [
+          1144.775370258536,
+          -625.057236804184
+        ],
+        [
+          1125.373116846629,
+          -716.377631444411
+        ]
+      ],
+      "radius_m": 54.34878314230211
+    },
+    {
+      "kind": "region",
+      "channel": 19,
+      "position": [
+        1133.4803548737627,
+        -678.2193742377627
+      ],
+      "radius_m": 0.8495643935131487,
+      "center": [
+        1144.7429918809999,
+        -640.1576898725
+      ],
+      "vertices": [
+        [
+          1144.759227828,
+          -639.308280635
+        ],
+        [
+          1144.310024855,
+          -640.857990345
+        ],
+        [
+          1144.726755934,
+          -641.00709911
+        ],
+        [
+          1144.757442905,
+          -640.884067049
+        ]
+      ],
+      "observations": 4,
+      "negative_positions": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          307.15538727816926,
+          920.5148992394375
+        ],
+        [
+          -458.7711342036052,
+          844.973916838003
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 19,
+      "wkt": "POLYGON ((1144.535774590622 -640.9387648923614, 1144.310024855 -640.857990345, 1144.7511702210725 -639.3360786515876, 1144.759227828 -639.3082806350095, 1144.7592024203607 -639.3307113015294, 1144.757442904529 -640.8840670488557, 1144.7315509392884 -640.987874684653, 1144.726755934072 -641.0070991097122, 1144.535774590622 -640.9387648923614))",
+      "vertices": [
+        [
+          1144.726755934072,
+          -641.0070991097122
+        ],
+        [
+          1144.7315509392884,
+          -640.987874684653
+        ],
+        [
+          1144.757442904529,
+          -640.8840670488557
+        ],
+        [
+          1144.7592024203607,
+          -639.3307113015294
+        ],
+        [
+          1144.759227828,
+          -639.3082806350095
+        ],
+        [
+          1144.7511702210725,
+          -639.3360786515876
+        ],
+        [
+          1144.310024855,
+          -640.857990345
+        ],
+        [
+          1144.535774590622,
+          -640.9387648923614
+        ]
+      ],
+      "radius_m": 0.849564393363787
+    },
+    {
+      "kind": "clear_certificate",
+      "channel": 19,
+      "point": [
+        1139.442784039128,
+        -658.0695552569463
+      ],
+      "worst_distance_m": 19.499999999999076
+    },
+    {
+      "kind": "transit_probe",
+      "point": [
+        1286.2000907207819,
+        -794.7723192450803
+      ],
+      "channels": [
+        3,
+        4
+      ]
+    },
+    {
+      "kind": "region",
+      "channel": 3,
+      "position": [
+        1286.2000907207819,
+        -794.7723192450803
+      ],
+      "radius_m": 38.503767653495515,
+      "center": [
+        1447.6686615145,
+        -1006.6219970489999
+      ],
+      "vertices": [
+        [
+          1453.98407032,
+          -1001.26653909
+        ],
+        [
+          1423.609857294,
+          -976.56015973
+        ],
+        [
+          1463.865701164,
+          -1029.817094128
+        ],
+        [
+          1471.727465735,
+          -1036.683834368
+        ],
+        [
+          1474.698283412,
+          -1032.59485463
+        ],
+        [
+          1476.848830712,
+          -1029.406537142
+        ]
+      ],
+      "observations": 2,
+      "negative_positions": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          307.15538727816926,
+          920.5148992394375
+        ],
+        [
+          -458.7711342036052,
+          844.973916838003
+        ],
+        [
+          1145.941670656055,
+          404.58932445343015
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 3,
+      "wkt": "POLYGON ((1463.865701163883 -1029.817094127587, 1423.6098572943838 -976.5601597303588, 1453.9840703195985 -1001.2665390900523, 1476.8488307117532 -1029.4065371423662, 1474.698283412 -1032.59485463, 1471.727465735 -1036.683834368, 1463.865701163883 -1029.817094127587))",
+      "vertices": [
+        [
+          1471.727465735,
+          -1036.683834368
+        ],
+        [
+          1474.698283412,
+          -1032.59485463
+        ],
+        [
+          1476.8488307117532,
+          -1029.4065371423662
+        ],
+        [
+          1453.9840703195985,
+          -1001.2665390900523
+        ],
+        [
+          1423.6098572943838,
+          -976.5601597303588
+        ],
+        [
+          1463.865701163883,
+          -1029.817094127587
+        ]
+      ],
+      "radius_m": 38.50376765323554
+    },
+    {
+      "kind": "region",
+      "channel": 4,
+      "position": [
+        1286.2000907207819,
+        -794.7723192450803
+      ],
+      "radius_m": 18.26893660204047,
+      "center": [
+        1228.5308369505,
+        -1040.4650572854998
+      ],
+      "vertices": [
+        [
+          1223.281559721,
+          -1041.880019739
+        ],
+        [
+          1228.768596279,
+          -1058.732446674
+        ],
+        [
+          1233.5705885,
+          -1036.662074122
+        ],
+        [
+          1231.357931597,
+          -1030.597706085
+        ],
+        [
+          1228.293077622,
+          -1022.197667897
+        ]
+      ],
+      "observations": 2,
+      "negative_positions": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          307.15538727816926,
+          920.5148992394375
+        ],
+        [
+          -458.7711342036052,
+          844.973916838003
+        ],
+        [
+          1145.941670656055,
+          404.58932445343015
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 4,
+      "wkt": "POLYGON ((1223.2815597213735 -1041.880019738723, 1228.2930776222101 -1022.1976678975758, 1231.357931597 -1030.597706085, 1233.5705885 -1036.662074122, 1228.768596279112 -1058.7324466734842, 1223.2815597213735 -1041.880019738723))",
+      "vertices": [
+        [
+          1228.768596279112,
+          -1058.7324466734842
+        ],
+        [
+          1233.5705885,
+          -1036.662074122
+        ],
+        [
+          1231.357931597,
+          -1030.597706085
+        ],
+        [
+          1228.2930776222101,
+          -1022.1976678975758
+        ],
+        [
+          1223.2815597213735,
+          -1041.880019738723
+        ]
+      ],
+      "radius_m": 18.26893660149407
+    },
+    {
+      "kind": "optical_decision",
+      "channel": 3,
+      "point": [
+        1439.4995321543747,
+        -995.9039519558584
+      ],
+      "predicted_s": 62.80876698048314,
+      "radio_predicted_s": 67.03808129056532,
+      "area_fraction": 0.4306716799489953
+    },
+    {
+      "kind": "clear_certificate",
+      "channel": 4,
+      "point": [
+        1232.5829993492748,
+        -1039.6091538289381
+      ],
+      "worst_distance_m": 19.499999999998337
+    },
+    {
+      "kind": "transit_probe",
+      "point": [
+        374.13475365056684,
+        -998.2147629909468
+      ],
+      "channels": [
+        2
+      ]
+    },
+    {
+      "kind": "region",
+      "channel": 2,
+      "position": [
+        374.13475365056684,
+        -998.2147629909468
+      ],
+      "radius_m": 18.326187168711026,
+      "center": [
+        -82.56900548306233,
+        -946.5174980645105
+      ],
+      "vertices": [
+        [
+          -66.55731360679253,
+          -955.4323653883704
+        ],
+        [
+          -65.47590957437919,
+          -939.9087759188013
+        ],
+        [
+          -94.17816890115908,
+          -936.1019675284591
+        ],
+        [
+          -99.91125416444497,
+          -951.3747435945414
+        ],
+        [
+          -99.99646018058769,
+          -952.1860921502014
+        ]
+      ],
+      "observations": 3,
+      "negative_positions": []
+    },
+    {
+      "kind": "optical_region",
+      "channel": 2,
+      "wkt": "POLYGON ((-99.99646018058769 -952.1860921502014, -99.91125416444497 -951.3747435945414, -94.17816890115908 -936.1019675284591, -65.47590957437919 -939.9087759188013, -66.55731360679253 -955.4323653883704, -99.99646018058769 -952.1860921502014))",
+      "vertices": [
+        [
+          -66.55731360679253,
+          -955.4323653883704
+        ],
+        [
+          -65.47590957437919,
+          -939.9087759188013
+        ],
+        [
+          -94.17816890115908,
+          -936.1019675284591
+        ],
+        [
+          -99.91125416444497,
+          -951.3747435945414
+        ],
+        [
+          -99.99646018058769,
+          -952.1860921502014
+        ]
+      ],
+      "radius_m": 18.326187168711026
+    },
+    {
+      "kind": "region",
+      "channel": 1,
+      "position": [
+        62.20996717726043,
+        -962.9059702693928
+      ],
+      "radius_m": 416.91745355242074,
+      "center": [
+        263.640572658,
+        -1369.883642972
+      ],
+      "vertices": [
+        [
+          77.581843622,
+          -996.785381885
+        ],
+        [
+          419.55827878,
+          -1750.496905105
+        ],
+        [
+          449.699301694,
+          -1742.981904059
+        ],
+        [
+          78.984270222,
+          -996.675235499
+        ]
+      ],
+      "observations": 1,
+      "negative_positions": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          307.15538727816926,
+          920.5148992394375
+        ],
+        [
+          -458.7711342036052,
+          844.973916838003
+        ],
+        [
+          1145.941670656055,
+          404.58932445343015
+        ],
+        [
+          1122.1853394877462,
+          -731.3815116763262
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 1,
+      "wkt": "POLYGON ((77.581843622 -996.785381885, 419.55827878 -1750.496905105, 449.699301694 -1742.981904059, 78.984270222 -996.675235499, 77.581843622 -996.785381885))",
+      "vertices": [
+        [
+          419.55827878,
+          -1750.496905105
+        ],
+        [
+          449.699301694,
+          -1742.981904059
+        ],
+        [
+          78.984270222,
+          -996.675235499
+        ],
+        [
+          77.581843622,
+          -996.785381885
+        ]
+      ],
+      "radius_m": 416.91745355242074
+    },
+    {
+      "kind": "region",
+      "channel": 12,
+      "position": [
+        62.20996717726043,
+        -962.9059702693928
+      ],
+      "radius_m": 64.70519700240835,
+      "center": [
+        -1259.6481954565,
+        -698.1891018215
+      ],
+      "vertices": [
+        [
+          -1255.799369748,
+          -726.354696091
+        ],
+        [
+          -1195.303947508,
+          -691.364127458
+        ],
+        [
+          -1268.625136573,
+          -675.531482933
+        ],
+        [
+          -1323.992443405,
+          -705.014076185
+        ],
+        [
+          -1318.642502865,
+          -715.075850945
+        ]
+      ],
+      "observations": 2,
+      "negative_positions": [
+        [
+          249.0524928721145,
+          -21.745247622994647
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 12,
+      "wkt": "POLYGON ((-1268.625136572697 -675.5314829333483, -1225.5465155776774 -684.8336846777303, -1195.303947508 -691.364127458, -1210.4730416676193 -700.1379356345408, -1255.7993697481656 -726.354696090772, -1318.642502865134 -715.0758509447481, -1320.6130835868767 -711.3697276298574, -1323.9924434045793 -705.0140761847761, -1268.625136572697 -675.5314829333483))",
+      "vertices": [
+        [
+          -1255.7993697481656,
+          -726.354696090772
+        ],
+        [
+          -1210.4730416676193,
+          -700.1379356345408
+        ],
+        [
+          -1195.303947508,
+          -691.364127458
+        ],
+        [
+          -1225.5465155776774,
+          -684.8336846777303
+        ],
+        [
+          -1268.625136572697,
+          -675.5314829333483
+        ],
+        [
+          -1323.9924434045793,
+          -705.0140761847761
+        ],
+        [
+          -1320.6130835868767,
+          -711.3697276298574
+        ],
+        [
+          -1318.642502865134,
+          -715.0758509447481
+        ]
+      ],
+      "radius_m": 64.70519700218739
+    },
+    {
+      "kind": "transit_probe",
+      "point": [
+        283.23884524162764,
+        -1233.2532131020982
+      ],
+      "channels": [
+        1
+      ]
+    },
+    {
+      "kind": "region",
+      "channel": 1,
+      "position": [
+        283.23884524162764,
+        -1233.2532131020982
+      ],
+      "radius_m": 85.92613972666969,
+      "center": [
+        401.8040662805,
+        -1666.913051639
+      ],
+      "vertices": [
+        [
+          419.55827878,
+          -1750.496905105
+        ],
+        [
+          431.708744949,
+          -1747.467453642
+        ],
+        [
+          403.642706785,
+          -1650.262858447
+        ],
+        [
+          371.899387612,
+          -1586.358649636
+        ],
+        [
+          405.125530197,
+          -1718.687318828
+        ]
+      ],
+      "observations": 2,
+      "negative_positions": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          307.15538727816926,
+          920.5148992394375
+        ],
+        [
+          -458.7711342036052,
+          844.973916838003
+        ],
+        [
+          1145.941670656055,
+          404.58932445343015
+        ],
+        [
+          1122.1853394877462,
+          -731.3815116763262
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 1,
+      "wkt": "POLYGON ((371.8993876122239 -1586.358649636451, 380.0576600520195 -1602.782513274919, 403.6427067847244 -1650.2628584473978, 427.16535089051365 -1731.7317528036458, 431.70874494894383 -1747.4674536418054, 419.55827878 -1750.496905105, 405.125530197 -1718.687318828, 386.8114411881901 -1645.748396718705, 371.8993876122239 -1586.358649636451))",
+      "vertices": [
+        [
+          419.55827878,
+          -1750.496905105
+        ],
+        [
+          431.70874494894383,
+          -1747.4674536418054
+        ],
+        [
+          427.16535089051365,
+          -1731.7317528036458
+        ],
+        [
+          403.6427067847244,
+          -1650.2628584473978
+        ],
+        [
+          380.0576600520195,
+          -1602.782513274919
+        ],
+        [
+          371.8993876122239,
+          -1586.358649636451
+        ],
+        [
+          386.8114411881901,
+          -1645.748396718705
+        ],
+        [
+          405.125530197,
+          -1718.687318828
+        ]
+      ],
+      "radius_m": 85.92613972631847
+    },
+    {
+      "kind": "optical_decision",
+      "channel": 1,
+      "point": [
+        401.80406628058387,
+        -1666.9130516391283
+      ],
+      "predicted_s": 114.68164713250043,
+      "radio_predicted_s": 119.29628160725963,
+      "area_fraction": 0.28503212561126007
+    },
+    {
+      "kind": "optical_failure_update",
+      "channel": 1,
+      "point": [
+        401.80406628058387,
+        -1666.9130516391283
+      ],
+      "wkt": "MULTIPOLYGON (((380.0576600520195 -1602.782513274919, 401.9836262536479 -1646.9228728549497, 401.80406628058387 -1646.9140516391283, 399.843821491133 -1647.010352290411, 397.9024549305833 -1647.2983268163441, 395.9986630201719 -1647.7752018648198, 394.1507803167144 -1648.436384868435, 392.37660294080075 -1649.2755082734257, 390.69321719042483 -1650.2844908626896, 389.1168349905951 -1651.4536155823268, 388.4057719421304 -1652.098085563297, 386.8114411881901 -1645.748396718705, 371.8993876122239 -1586.358649636451, 380.0576600520195 -1602.782513274919)), ((427.16535089051365 -1731.7317528036458, 431.70874494894383 -1747.4674536418054, 419.55827878 -1750.496905105, 405.125530197 -1718.687318828, 396.99348564928204 -1686.300091509732, 397.9024549305833 -1686.5277764619125, 399.843821491133 -1686.8157509878456, 401.80406628058387 -1686.9120516391283, 403.76431107003475 -1686.8157509878456, 405.70567763058443 -1686.5277764619125, 407.60946954099586 -1686.0509014134368, 409.4573522444533 -1685.3897184098216, 411.231529620367 -1684.550595004831, 412.9149153707429 -1683.541612415567, 413.19200023420166 -1683.3361122752192, 427.16535089051365 -1731.7317528036458)))",
+      "vertices": [
+        [
+          419.55827878,
+          -1750.496905105
+        ],
+        [
+          431.70874494894383,
+          -1747.4674536418054
+        ],
+        [
+          427.16535089051365,
+          -1731.7317528036458
+        ],
+        [
+          413.19200023420166,
+          -1683.3361122752192
+        ],
+        [
+          401.9836262536479,
+          -1646.9228728549497
+        ],
+        [
+          380.0576600520195,
+          -1602.782513274919
+        ],
+        [
+          371.8993876122239,
+          -1586.358649636451
+        ],
+        [
+          386.8114411881901,
+          -1645.748396718705
+        ],
+        [
+          405.125530197,
+          -1718.687318828
+        ]
+      ],
+      "radius_m": 85.92613972631847
+    },
+    {
+      "kind": "region",
+      "channel": 1,
+      "position": [
+        401.80406628058387,
+        -1666.9130516391283
+      ],
+      "radius_m": 16.2943820119039,
+      "center": [
+        403.9489262515,
+        -1703.106821843
+      ],
+      "vertices": [
+        [
+          403.178620451,
+          -1686.844524123
+        ],
+        [
+          402.478577421,
+          -1686.878915032
+        ],
+        [
+          403.308720874,
+          -1711.451571878
+        ],
+        [
+          405.125530197,
+          -1718.687318828
+        ],
+        [
+          405.419275082,
+          -1719.334728654
+        ]
+      ],
+      "observations": 3,
+      "negative_positions": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          307.15538727816926,
+          920.5148992394375
+        ],
+        [
+          -458.7711342036052,
+          844.973916838003
+        ],
+        [
+          1145.941670656055,
+          404.58932445343015
+        ],
+        [
+          1122.1853394877462,
+          -731.3815116763262
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 1,
+      "wkt": "POLYGON ((403.09804611527153 -1705.2154948076566, 402.478577421 -1686.878915032, 403.1786204506704 -1686.844524123016, 405.41927508169147 -1719.3347286533199, 405.125530197 -1718.687318828, 403.30872087407903 -1711.451571877757, 403.09804611527153 -1705.2154948076566))",
+      "vertices": [
+        [
+          405.41927508169147,
+          -1719.3347286533199
+        ],
+        [
+          403.1786204506704,
+          -1686.844524123016
+        ],
+        [
+          402.478577421,
+          -1686.878915032
+        ],
+        [
+          403.09804611527153,
+          -1705.2154948076566
+        ],
+        [
+          403.30872087407903,
+          -1711.451571877757
+        ],
+        [
+          405.125530197,
+          -1718.687318828
+        ]
+      ],
+      "radius_m": 16.29438201155122
+    },
+    {
+      "kind": "clear_certificate",
+      "channel": 1,
+      "point": [
+        403.759215506081,
+        -1699.905518628067
+      ],
+      "worst_distance_m": 19.499999999998987
+    },
+    {
+      "kind": "clear_certificate",
+      "channel": 2,
+      "point": [
+        -80.69314895499778,
+        -949.4234528817435
+      ],
+      "worst_distance_m": 19.49999999999002
+    },
+    {
+      "kind": "optical_decision",
+      "channel": 12,
+      "point": [
+        -1237.1277086743883,
+        -695.8003607942022
+      ],
+      "predicted_s": 258.7226708703749,
+      "radio_predicted_s": 263.1028212385707,
+      "area_fraction": 0.29420301251699654
+    },
+    {
+      "kind": "optical_failure_update",
+      "channel": 12,
+      "point": [
+        -1237.1277086743883,
+        -695.8003607942022
+      ],
+      "wkt": "MULTIPOLYGON (((-1249.0341710458029 -679.7618670424281, -1249.8149399643771 -680.3409247374009, -1251.2691371913381 -681.6589322772525, -1252.5871447311897 -683.1131295042135, -1253.756269450827 -684.6895117040432, -1254.765252040091 -686.3728974544191, -1255.6043754450816 -688.1470748303328, -1256.2655584486968 -689.9949575337903, -1256.7424334971724 -691.8987494442017, -1257.0304080231056 -693.8401160047514, -1257.1267086743883 -695.8003607942022, -1257.0304080231056 -697.7606055836532, -1256.7424334971724 -699.7019721442027, -1256.2655584486968 -701.6057640546142, -1255.6043754450816 -703.4536467580716, -1254.765252040091 -705.2278241339853, -1253.756269450827 -706.9112098843613, -1252.5871447311897 -708.487592084191, -1251.2691371913381 -709.941789311152, -1249.814939964377 -711.2597968510036, -1248.2385577645473 -712.4289215706408, -1246.5551720141714 -713.437904159905, -1244.7809946382577 -714.2770275648954, -1242.9331119348003 -714.9382105685106, -1241.0293200243889 -715.4150856169864, -1239.087953463839 -715.7030601429195, -1237.5171078332066 -715.7802308402266, -1255.7993697481656 -726.354696090772, -1318.642502865134 -715.0758509447481, -1320.6130835868767 -711.3697276298574, -1323.9924434045793 -705.0140761847761, -1268.625136572697 -675.5314829333483, -1249.0341710458029 -679.7618670424281)), ((-1195.303947508 -691.364127458, -1210.4730416676193 -700.1379356345408, -1219.6054115317975 -705.4201008410715, -1219.4901653086856 -705.2278241339853, -1218.651041903695 -703.4536467580716, -1217.9898589000798 -701.6057640546142, -1217.512983851604 -699.7019721442027, -1217.225009325671 -697.760605583653, -1217.1287086743882 -695.8003607942022, -1217.225009325671 -693.8401160047514, -1217.512983851604 -691.8987494442017, -1217.9898589000798 -689.9949575337902, -1218.651041903695 -688.1470748303328, -1219.4901653086856 -686.3728974544191, -1219.6495028544841 -686.1070588195893, -1195.303947508 -691.364127458)))",
+      "vertices": [
+        [
+          -1255.7993697481656,
+          -726.354696090772
+        ],
+        [
+          -1237.5171078332066,
+          -715.7802308402266
+        ],
+        [
+          -1210.4730416676193,
+          -700.1379356345408
+        ],
+        [
+          -1195.303947508,
+          -691.364127458
+        ],
+        [
+          -1219.6495028544841,
+          -686.1070588195893
+        ],
+        [
+          -1249.0341710458029,
+          -679.7618670424281
+        ],
+        [
+          -1268.625136572697,
+          -675.5314829333483
+        ],
+        [
+          -1323.9924434045793,
+          -705.0140761847761
+        ],
+        [
+          -1320.6130835868767,
+          -711.3697276298574
+        ],
+        [
+          -1318.642502865134,
+          -715.0758509447481
+        ]
+      ],
+      "radius_m": 64.70519700218739
+    },
+    {
+      "kind": "region",
+      "channel": 12,
+      "position": [
+        -1259.6481954562896,
+        -698.189101821388
+      ],
+      "radius_m": 29.35701354958048,
+      "center": [
+        -1230.3436208325,
+        -696.4352059615001
+      ],
+      "vertices": [
+        [
+          -1201.039046209,
+          -694.681310102
+        ],
+        [
+          -1259.648195456,
+          -698.189101821
+        ],
+        [
+          -1217.194545986,
+          -697.140510068
+        ],
+        [
+          -1204.75976507,
+          -696.833374901
+        ]
+      ],
+      "observations": 3,
+      "negative_positions": [
+        [
+          249.0524928721145,
+          -21.745247622994647
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 12,
+      "wkt": "MULTIPOLYGON (((-1256.9904421319184 -698.0300337369318, -1256.9766348136798 -698.1231151156837, -1259.6481954454553 -698.1891018207396, -1256.9904421319184 -698.0300337369318)), ((-1208.358130502849 -696.9222533923551, -1217.194545986 -697.140510068, -1217.1945459864312 -697.1405100680107, -1217.1287086743882 -695.8003607942022, -1217.1363536701872 -695.6447433297222, -1201.0390462097519 -694.681310102435, -1203.0859997324487 -695.865268575503, -1204.7597650704092 -696.8333749009881, -1208.358130502849 -696.9222533923551)))",
+      "vertices": [
+        [
+          -1259.6481954454553,
+          -698.1891018207396
+        ],
+        [
+          -1217.1945459864312,
+          -697.1405100680107
+        ],
+        [
+          -1208.358130502849,
+          -696.9222533923551
+        ],
+        [
+          -1204.7597650704092,
+          -696.8333749009881
+        ],
+        [
+          -1203.0859997324487,
+          -695.865268575503
+        ],
+        [
+          -1201.0390462097519,
+          -694.681310102435
+        ],
+        [
+          -1217.1363536701872,
+          -695.6447433297222
+        ],
+        [
+          -1256.9904421319184,
+          -698.0300337369318
+        ]
+      ],
+      "radius_m": 29.357013543921603
+    },
+    {
+      "kind": "region",
+      "channel": 12,
+      "position": [
+        -1230.3436208276034,
+        -696.4352059615873
+      ],
+      "radius_m": 7.397822446684324,
+      "center": [
+        -1209.7784190815,
+        -695.953767179
+      ],
+      "vertices": [
+        [
+          -1217.160180343,
+          -696.440981332
+        ],
+        [
+          -1204.091251617,
+          -696.446706538
+        ],
+        [
+          -1203.085999732,
+          -695.865268576
+        ],
+        [
+          -1202.39665782,
+          -695.466553026
+        ],
+        [
+          -1217.137409658,
+          -695.977473391
+        ]
+      ],
+      "observations": 4,
+      "negative_positions": [
+        [
+          249.0524928721145,
+          -21.745247622994647
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 12,
+      "wkt": "POLYGON ((-1202.3966578206227 -695.4665530263603, -1202.5710385450893 -695.5674148849746, -1203.0859997324487 -695.865268575503, -1203.8793768328144 -696.3241581055581, -1204.091251617 -696.446706538, -1217.160180343 -696.440981332, -1217.1374096580082 -695.9774733911659, -1202.3966578206227 -695.4665530263603))",
+      "vertices": [
+        [
+          -1204.091251617,
+          -696.446706538
+        ],
+        [
+          -1203.8793768328144,
+          -696.3241581055581
+        ],
+        [
+          -1203.0859997324487,
+          -695.865268575503
+        ],
+        [
+          -1202.5710385450893,
+          -695.5674148849746
+        ],
+        [
+          -1202.3966578206227,
+          -695.4665530263603
+        ],
+        [
+          -1217.1374096580082,
+          -695.9774733911659
+        ],
+        [
+          -1217.160180343,
+          -696.440981332
+        ]
+      ],
+      "radius_m": 7.397822446361865
+    },
+    {
+      "kind": "clear_certificate",
+      "channel": 12,
+      "point": [
+        -1221.8814275853915,
+        -696.2371029689017
+      ],
+      "worst_distance_m": 19.499999999999943
+    },
+    {
+      "kind": "optical_decision",
+      "channel": 16,
+      "point": [
+        -970.9372048542134,
+        8.831318263631578
+      ],
+      "predicted_s": 161.19569181097572,
+      "radio_predicted_s": 164.92881889910754,
+      "area_fraction": 0.6224079462718172
+    },
+    {
+      "kind": "optical_failure_update",
+      "channel": 16,
+      "point": [
+        -970.9372048542134,
+        8.831318263631578
+      ],
+      "wkt": "MULTIPOLYGON (((-996.3140054836191 4.606368266998239, -990.1889718565066 14.18193845710183, -990.5519296769976 12.732929613632129, -990.8399042029307 10.791563053082461, -990.9362048542134 8.831318263631578, -990.8399042029307 6.871073474180692, -990.5519296769976 4.929706913631023, -990.4641628364129 4.579322045222737, -995.3311563441978 4.601824152319819, -996.3140054836191 4.606368266998239)), ((-975.8756202980718 36.55871397288762, -965.4874662401526 36.06426003004223, -937.8398929590027 34.74829460000013, -951.2291437930851 12.103707805134459, -951.3224800314292 12.732929613632136, -951.799355079905 14.636721524043573, -952.4605380835202 16.48460422750102, -953.2996614885107 18.25878160341471, -954.3086440777748 19.9421673537906, -955.4777687974121 21.518549553620332, -956.7957763372636 22.972746780581346, -958.2499735642247 24.290754320432953, -959.8263557640544 25.459879040070184, -961.5097415144303 26.468861629334327, -963.283918890344 27.3079850343248, -965.1318015938015 27.969168037940022, -967.0355935042129 28.446043086415784, -968.9769600647626 28.734017612348843, -970.9372048542134 28.830318263631575, -972.8974496436642 28.734017612348843, -974.8388162042139 28.446043086415777, -976.7426081146255 27.969168037940022, -978.5904908180828 27.307985034324794, -980.3646681939965 26.468861629334327, -982.0480539443724 25.459879040070177, -983.6244361442021 24.290754320432946, -983.8586054147728 24.07851566498, -975.8756202980718 36.55871397288762)))",
+      "vertices": [
+        [
+          -990.4641628364129,
+          4.579322045222737
+        ],
+        [
+          -951.2291437930851,
+          12.103707805134459
+        ],
+        [
+          -937.8398929590027,
+          34.74829460000013
+        ],
+        [
+          -965.4874662401526,
+          36.06426003004223
+        ],
+        [
+          -975.8756202980718,
+          36.55871397288762
+        ],
+        [
+          -983.8586054147728,
+          24.07851566498
+        ],
+        [
+          -990.1889718565066,
+          14.18193845710183
+        ],
+        [
+          -996.3140054836191,
+          4.606368266998239
+        ],
+        [
+          -995.3311563441978,
+          4.601824152319819
+        ]
+      ],
+      "radius_m": 32.89284708947226
+    },
+    {
+      "kind": "region",
+      "channel": 16,
+      "position": [
+        -967.0769492213109,
+        19.677331433499184
+      ],
+      "radius_m": 11.042917227736297,
+      "center": [
+        -948.194694084,
+        29.052659284500002
+      ],
+      "vertices": [
+        [
+          -938.303860349,
+          33.963609185
+        ],
+        [
+          -958.085527819,
+          24.141709384
+        ],
+        [
+          -957.801194642,
+          23.884004815
+        ],
+        [
+          -939.30351729,
+          32.272938165
+        ]
+      ],
+      "observations": 5,
+      "negative_positions": [
+        [
+          366.1182289846134,
+          175.23666873920786
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 16,
+      "wkt": "POLYGON ((-957.8011946421201 23.88400481510883, -957.8675365939324 23.94413365508025, -958.0855278184359 24.14170938428008, -938.3038603499065 33.96360918454995, -939.3035172904752 32.272938165214384, -957.8011946421201 23.88400481510883))",
+      "vertices": [
+        [
+          -957.8011946421201,
+          23.88400481510883
+        ],
+        [
+          -939.3035172904752,
+          32.272938165214384
+        ],
+        [
+          -938.3038603499065,
+          33.96360918454995
+        ],
+        [
+          -958.0855278184359,
+          24.14170938428008
+        ],
+        [
+          -957.8675365939324,
+          23.94413365508025
+        ]
+      ],
+      "radius_m": 11.042917226915435
+    },
+    {
+      "kind": "clear_certificate",
+      "channel": 16,
+      "point": [
+        -955.7694678388856,
+        25.291668511269584
+      ],
+      "worst_distance_m": 19.49999999999943
+    },
+    {
+      "kind": "region",
+      "channel": 14,
+      "position": [
+        -955.7694678388856,
+        25.291668511269584
+      ],
+      "radius_m": 16.533041581282745,
+      "center": [
+        -1171.5245243989998,
+        354.5186541755
+      ],
+      "vertices": [
+        [
+          -1163.658297476,
+          341.345172702
+        ],
+        [
+          -1157.52067036,
+          345.730392915
+        ],
+        [
+          -1166.054412231,
+          359.284420477
+        ],
+        [
+          -1174.322904475,
+          361.832106428
+        ],
+        [
+          -1183.4912413,
+          364.657052286
+        ],
+        [
+          -1185.528378438,
+          363.306915436
+        ],
+        [
+          -1170.781682379,
+          341.611965297
+        ]
+      ],
+      "observations": 4,
+      "negative_positions": [
+        [
+          249.0524928721145,
+          -21.745247622994647
+        ]
+      ]
+    },
+    {
+      "kind": "optical_region",
+      "channel": 14,
+      "wkt": "POLYGON ((-1185.528378437671 363.3069154358557, -1183.4912413 364.657052286, -1176.6683240565837 362.55477657622146, -1174.3229044748655 361.83210642777766, -1166.0544122313895 359.2844204769731, -1157.520670360189 345.73039291517466, -1161.2565462388611 343.0611792096268, -1163.6582974760581 341.3451727020022, -1170.781682379 341.611965297, -1181.3181597601388 357.11295280701256, -1185.528378437671 363.3069154358557))",
+      "vertices": [
+        [
+          -1163.6582974760581,
+          341.3451727020022
+        ],
+        [
+          -1161.2565462388611,
+          343.0611792096268
+        ],
+        [
+          -1157.520670360189,
+          345.73039291517466
+        ],
+        [
+          -1166.0544122313895,
+          359.2844204769731
+        ],
+        [
+          -1174.3229044748655,
+          361.83210642777766
+        ],
+        [
+          -1176.6683240565837,
+          362.55477657622146
+        ],
+        [
+          -1183.4912413,
+          364.657052286
+        ],
+        [
+          -1185.528378437671,
+          363.3069154358557
+        ],
+        [
+          -1181.3181597601388,
+          357.11295280701256
+        ],
+        [
+          -1170.781682379,
+          341.611965297
+        ]
+      ],
+      "radius_m": 16.5330415809786
+    },
+    {
+      "kind": "clear_certificate",
+      "channel": 14,
+      "point": [
+        -1169.7630128452881,
+        351.8307118938154
+      ],
+      "worst_distance_m": 19.499999999995648
+    },
+    {
+      "kind": "completion_certificate",
+      "stop_reason": "cleared_upper_bound_16",
+      "grid_level": 7,
+      "square_side_m": 28.125,
+      "square_count": 13104,
+      "absent_channels": [],
+      "cleared_channels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        9,
+        10,
+        11,
+        12,
+        14,
+        15,
+        16,
+        17,
+        19,
+        20
+      ],
+      "no_signal_positions": {},
+      "coverage_method": "whole_square_cover"
+    }
+  ]
+}

@@ -5,11 +5,11 @@
   "q1_q2_exactly_preserved": true,
   "q1_q2_sha256": "fac30dfda8394e8dc7ad8fefcf7c65323e66af002bdf9009a99f3bb238dbb01c",
   "source_pdf_sha256": "4e3a0a3f1c812cbac247042c01882d530d9094649ec4fbf57c8d8f2f6cc4593e",
-  "q3_source_sha256": "84d36adaba6b5355652f8a3d4f56cd4c71073f46c18c31aa1fde4229144512da",
+  "q3_source_sha256": "edfebc076a284e5120bccfc5cbf7edc671623b64c13c2fcad0311f41282dd81a",
   "q4_source_sha256": "b181b53e115e5b0d3b26cf54b6e71421c3fb0e4d82afa788fb4e8d5085343901",
   "reference_check_passed": true,
-  "figures": 10,
-  "tables": 7,
+  "figures": 13,
+  "tables": 8,
   "numbered_equation_environments": 42,
   "sections": [
     "问题背景与重述",
@@ -24,12 +24,14 @@
     "模型评价与推广"
   ],
   "abstract": "omitted as requested",
-  "pdf_pages": 26,
-  "pdf_sha256": "9c4138f6c12e88d0fa50ead37af9484cf0801a1833b605149781262ac5f64f9a",
+  "pdf_pages": 29,
+  "pdf_sha256": "02505b326db5742f9b792d93165e22d1a3b911aef84b7d76fd3dd024741759e2",
   "compiler": "Tectonic 0.17.0",
   "layout_and_reference_checks": "passed; rendered all pages",
-  "new_experiments": false,
-  "latest_revision_base": "93dded774eead48c937281720e7e92dc99129512",
-  "latest_q3_revision": "第三问修订说明/修订核验.json",
-  "latest_q1_q2_sha256": "a60c1918814b8dfce204a09adcc7b679af47a597ae4112936be7008654e13a4c"
+  "new_experiments": true,
+  "latest_revision_base": "a81696fbd448370ef81ddafb4705cc7dafc60599",
+  "latest_q3_revision": "第三问文献对照/核验.json",
+  "latest_q1_q2_sha256": "1091b5c3a1540d2c9361bc1c9e047e188a216bd3762a8340dfcf8389510abcd2",
+  "new_q3_official_practice": 30,
+  "new_q3_paired_local_each": 30
 }
