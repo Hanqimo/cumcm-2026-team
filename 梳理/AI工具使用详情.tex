@@ -1,0 +1,184 @@
+% !TeX encoding = UTF-8
+% 编译方法：xelatex AI工具使用详情.tex（连续编译两次以稳定布局）
+\documentclass[UTF8,a4paper,zihao=-4]{ctexart}
+
+% 页面与段落。
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage{setspace}
+\singlespacing
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+\usepackage{indentfirst}
+
+% 表格与列表。
+\usepackage{booktabs,tabularx,array,multirow}
+\usepackage{float}
+\usepackage[table]{xcolor}
+\usepackage{enumitem}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+% 交叉引用与超链接。
+\usepackage[hidelinks]{hyperref}
+
+\begin{document}
+
+% ===================== 标题 =====================
+\begin{center}
+  {\bfseries\zihao{3}AI工具使用详情\par}
+\end{center}
+\vspace{0.6\baselineskip}
+
+\noindent 本说明按2026年高教社杯全国大学生数学建模竞赛组委会《关于参赛队使用AI工具的规定》，记录本队在B题（2026）赛前准备与四问求解全过程中对AI工具的已知使用情况，覆盖工具与型号、用途与阶段、关键交互方式以及使用与核验情况。本说明用于随支撑材料提交，最终由全队复核确认。
+
+% ===================== 汇总表 =====================
+\begin{table}[H]
+  \centering
+  \caption{AI工具使用情况汇总}
+  \small
+  \renewcommand{\arraystretch}{1.35}
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabularx}{\textwidth}{C{0.7cm} C{1.0cm} C{1.5cm} L{2.2cm} X L{2.5cm} L{1.6cm}}
+    \toprule[1.2pt]
+    {\bfseries 序号} & {\bfseries 工具名称} & {\bfseries 版本或型号} & {\bfseries 使用方式} & {\bfseries 具体使用目的和环节} & {\bfseries 对应论文或材料位置} & {\bfseries 备注} \\
+    \midrule[0.5pt]
+    A1 & \multirow{6}{1.0cm}{Codex} & \multirow{6}{1.5cm}{GPT-6 系列} & \multirow{6}{2.2cm}{本地桌面客户端 / CLI，与本地工作区交互} &
+    赛题理解辅助：逐句翻译B题赛题，梳理四个小问的关系及输入输出、隐藏条件 &
+    论文“一、问题背景与重述”“四、问题分析” &
+    \multirow{6}{1.6cm}{与本地工作区交互，执行代码并生成文件} \\
+    \cmidrule{5-6}
+    A2 & & & &
+    参考文献查找与阅读：检索并梳理有界测向定位、最小包围圆、主动定位与多源联合定位等相关文献，评估其与本题的适配性 &
+    论文各章建模引用及“参考文献” &
+    \\
+    \cmidrule{5-6}
+    A3 & & & &
+    数值求解代码：按已确定的数学模型编写并运行求解程序，生成四问的数值结果 &
+    论文“五、问题一的模型与求解”至“八、问题四的模型与求解”，附录源码 &
+    \\
+    \cmidrule{5-6}
+    A4 & & & &
+    图表与流程图生成：根据求解结果绘制定位区域、路线对照、流程与分配图 &
+    论文图1至图13 &
+    \\
+    \cmidrule{5-6}
+    A5 & & & &
+    论文撰写与排版：撰写并修改四问正文，统一章节结构、公式排版与LaTeX编译 &
+    论文全文 &
+    \\
+    \cmidrule{5-6}
+    A6 & & & &
+    符号与术语统一：统一全文符号定义与策略命名，形成符号说明表 &
+    论文“三、符号说明”及全文 &
+    \\
+    \bottomrule[1.2pt]
+  \end{tabularx}
+\end{table}
+
+% ===================== 详细使用记录 =====================
+\section*{主要提示方式与使用过程说明}
+
+以下逐项记录主要使用环节的工具、目的、提示方式与使用过程，供全队复核。
+
+\subsection*{使用记录 A.01：赛题理解辅助}
+
+\noindent\textbf{使用工具：} Codex（GPT-6 系列会话）。
+
+\noindent\textbf{使用目的：} 将赛题逐句翻译为建模语言，识别隐藏条件与输入输出约束，梳理四个小问之间的递进关系。
+
+\noindent\textbf{提供给AI的材料：} B题赛题PDF、附件1（模拟器说明）、附件2（接口与计费说明）、团队已收集的参考资料。
+
+\noindent\textbf{主要提示方式：} “逐句翻译这道赛题，列出每问的输入、输出与隐藏条件，并梳理四个小问之间的递进关系”。
+
+\noindent\textbf{使用过程：} AI输出题意逐句翻译、小问关系与约束清单；参赛队逐条对照原题复核后用于后续建模。识别出的关键约束包括测角误差界 \(\pm1^\circ\)、有效接收半径 \(1000\)--\(1500\,\mathrm{m}\)、光学定位与清除距离 \(20\,\mathrm{m}\)、移动与检测换频的计费规则，以及第三、四问源数未知（10 至 16 个）与第四问定向源朝向未知的条件。
+
+\noindent\textbf{AI输出概述：} 题意翻译报告、隐藏条件清单、小问关系流程图。
+
+\noindent\textbf{对应位置：} 论文“一、问题背景与重述”“四、问题分析”。
+
+\subsection*{使用记录 A.02：参考文献查找与阅读}
+
+\noindent\textbf{使用工具：} Codex（GPT-6 系列会话）。
+
+\noindent\textbf{使用目的：} 围绕有界测角误差下的目标定位、最小包围圆、主动定位、多源联合定位与定向辐射源定位检索并阅读文献，评估其与本题的适配性。
+
+\noindent\textbf{提供给AI的材料：} 题目场景与约束、团队已收集的论文资料库及既有逐篇分析。
+
+\noindent\textbf{主要提示方式：} “检索与‘有界测角误差下的目标定位’相关的文献，说明每篇可用于本文哪些章节及迁移边界”。
+
+\noindent\textbf{使用过程：} AI检索并梳理相关文献，总结各文献的核心方法及可迁移部分；参赛队核对文献真实性、出处与适配边界，确认仅借用思路而非完整复现。最终论文参考文献包含 Tokekar 与 Isler、Gholami 等、Welzl、Vander Hook 等、Engin 与 Isler、Song 等、赵倩倩等七篇。
+
+\noindent\textbf{AI输出概述：} 文献清单与逐篇适配性说明；最终参考文献列表。
+
+\noindent\textbf{对应位置：} 论文各章建模处的文献引用及“参考文献”。
+
+\subsection*{使用记录 A.03：数值求解代码}
+
+\noindent\textbf{使用工具：} Codex（GPT-6 系列会话）。
+
+\noindent\textbf{使用目的：} 按已确定的数学模型编写并运行求解程序，生成四问的数值结果。
+
+\noindent\textbf{提供给AI的材料：} 已确定的数学模型与公式、题设参数、官方模拟器接口说明。
+
+\noindent\textbf{主要提示方式：} “按该模型编写Python程序求解，输出区域直径、最小包围圆半径、优选检测点及各策略耗时”。
+
+\noindent\textbf{使用过程：} AI编写并运行求解程序：问题一的半平面交与最小包围圆算法、问题二的贝叶斯选点程序、第三问全程协同策略与第四问联合域规划策略及对照基线；输出数值结果。参赛队复核结果与题目规则的一致性，并对关键几何量与最优性判断作独立核验。
+
+\noindent\textbf{AI输出概述：} 各问求解程序、运行日志与数值结果。
+
+\noindent\textbf{对应位置：} 论文“五、问题一的模型与求解”至“八、问题四的模型与求解”的求解结果，以及支撑材料中的完整源码。
+
+\subsection*{使用记录 A.04：图表与流程图生成}
+
+\noindent\textbf{使用工具：} Codex（GPT-6 系列会话）。
+
+\noindent\textbf{使用目的：} 根据求解结果绘制定位区域、轨迹、路线对照与流程图。
+
+\noindent\textbf{提供给AI的材料：} 求解结果数据（顶点坐标、检测点、各策略路径与耗时）。
+
+\noindent\textbf{主要提示方式：} “根据这些结果绘制定位区域示意图、后验密度热力图、路线对照图与流程图，统一配色与坐标比例”。
+
+\noindent\textbf{使用过程：} AI生成并反复核验图表（坐标比例、颜色、中文字体与嵌入），参赛队检查图表与正文数值一致。
+
+\noindent\textbf{AI输出概述：} 论文图1至图13，包括交会几何、覆盖结果、后验密度、反馈区域、候选检测点、试清与路线对照、策略比较等。
+
+\noindent\textbf{对应位置：} 论文图1至图13。
+
+\subsection*{使用记录 A.05：论文撰写与排版}
+
+\noindent\textbf{使用工具：} Codex（GPT-6 系列会话）。
+
+\noindent\textbf{使用目的：} 撰写并修改四问正文，统一章节结构、公式排版与LaTeX编译，形成可直接提交的PDF。
+
+\noindent\textbf{提供给AI的材料：} 各问建模思路、公式与数值结果、图表。
+
+\noindent\textbf{主要提示方式：} “按竞赛论文格式撰写该问正文，规范公式编号与图表引用，编译为PDF”。
+
+\noindent\textbf{使用过程：} AI撰写、修改正文并反复编译，统一标题层级、公式编号、图表引用与参考文献格式；参赛队逐章复核内容、表述与数值。
+
+\noindent\textbf{AI输出概述：} 论文全文LaTeX源码与PDF，含四问建模求解、模型检验、模型评价与推广、参考文献。
+
+\noindent\textbf{对应位置：} 论文全文。
+
+\subsection*{使用记录 A.06：符号与术语统一}
+
+\noindent\textbf{使用工具：} Codex（GPT-6 系列会话）。
+
+\noindent\textbf{使用目的：} 统一全文符号定义与策略中文命名，避免同一概念在不同章节使用不同符号或名称。
+
+\noindent\textbf{提供给AI的材料：} 各问的公式与变量说明、策略术语对照。
+
+\noindent\textbf{主要提示方式：} “核对全文符号是否一致，将重复或冲突的符号合并，生成符号说明表”。
+
+\noindent\textbf{使用过程：} AI对照各问公式统一符号（如定位区域 \(K\)、最小包围圆半径 \(\rho(K)\)、光学清除距离 \(r_{\mathrm{opt}}\) 等）与策略中文名称（谨慎测向、局部协同、全程协同、可见性评分、联合域规划），生成符号说明表。
+
+\noindent\textbf{AI输出概述：} 统一的符号说明表与全文术语对照。
+
+\noindent\textbf{对应位置：} 论文“三、符号说明”及全文。
+
+% ===================== 人工复核与责任 =====================
+\section*{人工复核与责任说明}
+
+\noindent AI用于赛题理解、文献梳理、建模讨论、代码编写与执行、绘图和论文撰写与排版等环节。AI给出的公式、代码、图表与文字均保留供全队复核；本说明如实区分已知使用事实与未逐项记录的人工审核，不以本说明代替团队对最终提交内容的确认。最终提交前，应由全队补全其他部分的使用事实，核实全文与支撑材料，确认引用、数据与程序，并对提交内容承担责任。
+
+\end{document}
