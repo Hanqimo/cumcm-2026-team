@@ -1,0 +1,96 @@
+{
+  "version": "Q2-paper-expected-finish-weighted-20260913",
+  "updated_at": "2026-09-13T11:01:55.432528",
+  "adopted_model": "基于贝叶斯更新的加权选点模型",
+  "adoption_status": "user approved",
+  "history_archive": "正式题目工作区/B题/第二问建模/历史版本/20260913_104653_单一期望与容差候选区域版",
+  "previous_check_records": "正式题目工作区/B题/第二问建模/历史版本/20260913_104653_单一期望与容差候选区域版/快照/正式题目工作区/B题/第二问建模/论文定稿版/核查结果.json",
+  "files": {
+    "templates/论文模版.tex": "bbcb65149bb8071acd323ee7a6561e5ec0ceff19676177d709e11bcdca11e3f6",
+    "templates/论文模版.pdf": "74135ac62d6af50182237ae2b9394a939da0a40554c0783984bf2f4c9d39879f",
+    "梳理/论文初稿.tex": "bbcb65149bb8071acd323ee7a6561e5ec0ceff19676177d709e11bcdca11e3f6",
+    "梳理/论文初稿.pdf": "b72a20487db5d2de7afd810e1503640ab2f7d80999ce7cc1c6879c20f9d92722",
+    "正式题目工作区/B题/第二问建模/论文定稿版/第二问正文.tex": "59a2dbece49f535041df4af425bb291eb2fdc79b33f43f0b2fe80e0f9f79ec7a",
+    "正式题目工作区/B题/第二问建模/论文定稿版/第二问模型.tex": "4d489ac6f113d75c5058b088617fa80c8f494ad58c97eaf66a3bf59bad63a86a",
+    "正式题目工作区/B题/第二问建模/论文定稿版/第二问模型.pdf": "5748288646fde48faf15224d99bd6647367a6818b88539cf7d87087e9ee28e75",
+    "正式题目工作区/B题/第二问建模/论文定稿版/README.md": "adbe524f004cc5418a29cdf8c8661278d3472c78f30f6bcf6174d418f4958b23",
+    "正式题目工作区/B题/第二问建模/论文定稿版/候选区域模型说明.md": "ef8eda7877aa1a4ccd472705d2d2d7a6a81a57b62fcf1332156a13e577f8d647",
+    "正式题目工作区/B题/第二问建模/论文定稿版/核查记录.md": "615107ea028c972e8426b4988265e514fc770c052548604635ad03329e62ae9a",
+    "正式题目工作区/B题/第二问建模/README.md": "4b93998c9982fc5898dd501c67c2820195f7f2cafb849765f47f266a103e6db1"
+  },
+  "checks": {
+    "full_papers_identical": true,
+    "body_matches_paper": true,
+    "q1_body_unchanged": true,
+    "q3_and_later_unchanged": true,
+    "three_feedback_loss_enumeration_preserved": true,
+    "bayes_fixed_unknown_description_preserved": true,
+    "no_duplicate_labels": true,
+    "references_valid": true,
+    "no_unwanted_fonts": true,
+    "mathbb_preserved": true,
+    "explicit_min_F": true,
+    "old_w_function_removed": true,
+    "reception_renamed": true,
+    "old_candidate_scheme_removed": true,
+    "no_display_preceding_colon": true,
+    "completion_includes_no_signal": true,
+    "candidate_is_union_argmin": true,
+    "formula_retained_eq:q2-pair-regions": true,
+    "formula_retained_eq:q2-pair-weight": true,
+    "formula_retained_eq:q2-pair-posterior": true,
+    "formula_retained_eq:q2-pair-feedback-weights": true,
+    "formula_retained_eq:q2-pair-prediction": true,
+    "pdf_texts_match": true,
+    "clean_compilation": true,
+    "paper_pages": 14,
+    "draft_pages": 14,
+    "model_pages": 4,
+    "compilation_errors": 0,
+    "layout_warnings": 0,
+    "archive_manifest_verified": true,
+    "experiment_manifest_verified": true,
+    "numeric_example_matches_csv": true,
+    "visual_review": "paper pages 2-4 and 7-11; standalone pages 1-4; no overlap or clipping"
+  },
+  "archive_files_verified": 12,
+  "experiment_files_verified": 56,
+  "numerical_evidence": {
+    "directory": "正式题目工作区/B题/第二问建模/期望损失与免补测概率_20260913",
+    "adopted_example_by_weight": {
+      "0.0": {
+        "J_m": 25.075721932282,
+        "P_finish": 0.266211850594134,
+        "P_onsite": 0.0
+      },
+      "0.5": {
+        "J_m": 25.6746025616283,
+        "P_finish": 0.373364048581302,
+        "P_onsite": 0.0
+      }
+    },
+    "global_optimality_certified_for_all_cases": false,
+    "csv_w1_tie_term": "1e-10 J/20; retained only in historical numerical output"
+  },
+  "notation": {
+    "reception_probability": "p_rec(d)",
+    "expected_loss": "J(q)",
+    "completion_probability": "P_finish(q)",
+    "weight": "w in [0,1]",
+    "objective": "F_w(q)=(1-w)J(q)/20+w[1-P_finish(q)]",
+    "decision": "min over q in Q of F_w(q)",
+    "candidate_region": "union over w in [0,1] of argmin over q in Q of F_w(q)"
+  },
+  "scope": "Q2, Q2 analysis and assumption applicability wording, mirrored draft, standalone model and current records. Q1/Q3 bodies unchanged; existing experiments retained.",
+  "new_optimization_run": false,
+  "new_figures_generated": false,
+  "q2_tex_chars": {
+    "before": 6856,
+    "after": 7464,
+    "includes_tex_commands": true
+  },
+  "display_equations": {
+    "before": 8,
+    "after": 9
+  }
+}

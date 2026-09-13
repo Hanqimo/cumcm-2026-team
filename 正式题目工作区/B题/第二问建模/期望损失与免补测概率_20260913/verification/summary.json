@@ -1,0 +1,17 @@
+{
+  "checked_points": 8,
+  "independent_geometry_checks": 60,
+  "max_J_regression_difference": 1.4237002687877975e-09,
+  "max_J_convergence_difference": 3.656001723584268e-09,
+  "max_P_convergence_difference": 4.601874437071274e-14,
+  "max_probability_residual": 8.897327319346e-13,
+  "max_sample_outside": 3.6131098113401094e-12,
+  "max_independent_radius_gap": 0.0007751325988500923,
+  "ambiguous_completion_checks": 0,
+  "simulation_samples": 360000,
+  "max_simulation_J_zscore": 2.478552843582255,
+  "max_simulation_P_zscore": 1.3430237602536923,
+  "status": "PASS",
+  "limitations": "Finite independent samples provide lower bounds and sampled containment only; convergence is empirical. Simulation shares MEC kernel and independently validates probabilities, not geometry. No nonzero global optimum certificate.",
+  "no_signal_completion_branch_checked": true
+}
