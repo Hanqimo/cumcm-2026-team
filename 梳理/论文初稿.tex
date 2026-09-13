@@ -274,7 +274,14 @@
   P=\bigcap_{i=1}^{n}W_i=\{x:Ax\le b\}.
   \label{eq:P}
 \end{equation}
-该表示在 \(90^\circ\)、\(270^\circ\) 以及 \(0^\circ/360^\circ\) 附近均可用，这是选择叉积形式而非斜率形式的主要原因。若真实目标落在每个 \(W_i\) 内，则真实位置 \(g\in P\)。\(P\) 是闭凸集，且当\(P\)有界，且未退化为点或线段时为一凸多边形。
+该表示在 \(90^\circ\)、\(270^\circ\) 以及 \(0^\circ/360^\circ\) 附近均可用，这是选择叉积形式而非斜率形式的主要原因。若真实目标落在每个 \(W_i\) 内，则真实位置 \(g\in P\)。\(P\) 是闭凸集，且当\(P\)有界，且未退化为点或线段时为一凸多边形。图~\ref{fig:q1-intersection-process} 给出了定位区域作为各测向角域交集的几何形态：多次观测交会得到有界凸多边形；观测不足以闭合时，交集无界，沿方向延伸至无穷。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.92\textwidth]{q1-intersection-process.png}
+  \caption{定位区域的交会几何（示意）。左：单次观测对应的前向角域；中：多次观测角域交成有界凸多边形；右：观测不足以闭合时交集无界}
+  \label{fig:q1-intersection-process}
+\end{figure}
 
 \subsection{区域状态判定与顶点算法}
 
