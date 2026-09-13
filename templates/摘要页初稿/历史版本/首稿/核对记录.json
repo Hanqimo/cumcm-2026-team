@@ -1,0 +1,15 @@
+{
+  "abstract_pages": 1,
+  "paper_pages": 30,
+  "intro_chinese_characters_without_punctuation": 104,
+  "intro_sentences": 3,
+  "problem_paragraphs": 4,
+  "keywords": 5,
+  "body_unchanged": true,
+  "template_draft_identical": true,
+  "pdf_pages_pixel_identical": true,
+  "abstract_matches_paper_page_1": true,
+  "latex_warnings": [],
+  "original_font_size_retained": true,
+  "visual_check": "Final one-page abstract inspected for clipping, overlap and page fit."
+}
