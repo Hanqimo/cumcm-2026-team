@@ -1,0 +1,21 @@
+{
+  "input_sha256": "263cdd516a567b6cc5ddbf18b89ab91b01cced7c7098ddde0d1fcddeda906f7a",
+  "case": "T446-VHAY-76FH-9VYW",
+  "channel": 3,
+  "transform": "rigid translation and rotation only",
+  "main_aspect": "equal",
+  "inset_aspect": "equal",
+  "inset_xlim": [
+    -26,
+    -16
+  ],
+  "inset_ylim": [
+    -1,
+    4
+  ],
+  "outputs": {
+    "pdf": "b83d45f89b38e8cb4fb83cd8961509da8521e7e67425e2c99946399ba46e91e9",
+    "svg": "c062bb354466c4f5c3e65c7ec36e2bee2bfba3adb121dc5ba3b0f75f3414f737",
+    "png": "2143154b5908d31be48abc661b11598ec01c203b91d04fa8603eed5231cf4076"
+  }
+}

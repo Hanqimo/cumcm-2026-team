@@ -1,0 +1,23 @@
+{
+  "base_commit": "93dded774eead48c937281720e7e92dc99129512",
+  "original_q3_characters": 10731,
+  "revised_q3_characters": 7936,
+  "original_numbered_equations": 14,
+  "revised_numbered_equations": 6,
+  "figures": 4,
+  "tables": 3,
+  "cross_references": "resolved",
+  "new_experiments": false,
+  "q3_sha256": "6857c6b7dc3830296c19fbd66b748e560533639945ed0fb7f83333706072a576",
+  "standalone_pages_before": 7,
+  "standalone_pages_after": 6,
+  "full_pages_after": 26,
+  "q1_q2_preserved_from_base": true,
+  "full_pdf_sha256": "9c4138f6c12e88d0fa50ead37af9484cf0801a1833b605149781262ac5f64f9a",
+  "standalone_pdf_sha256": "93d039d257d0a9425bdf2ad2921b4a71adabc73b1e8854d5b70d38e23a4d00e4",
+  "full_figures": 10,
+  "full_tables": 7,
+  "full_equations": 42,
+  "compiler": "Tectonic 0.17.0",
+  "layout_check": "passed"
+}
