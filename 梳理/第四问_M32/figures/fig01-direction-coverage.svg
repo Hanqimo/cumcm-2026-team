@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="453.6pt" height="201.6pt" viewBox="0 0 453.6 201.6" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-09-13T11:51:47.003017</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 201.6
+L 453.6 201.6
+L 453.6 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 108.323851 168.57792
+C 125.491072 168.57792 141.972729 161.750994 154.111787 149.611936
+C 166.250845 137.472878 173.077771 120.991221 173.077771 103.824
+C 173.077771 86.656779 166.250845 70.175122 154.111787 58.036064
+C 141.972729 45.897006 125.491072 39.07008 108.323851 39.07008
+L 108.323851 103.824
+z
+" clip-path="url(#p68e4ccbb3e)" style="fill: #245b83; opacity: 0.12"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 108.323851 168.57792
+C 125.496791 168.57792 141.968684 161.755038 154.111787 149.611936
+C 166.25489 137.468833 173.077771 120.99694 173.077771 103.824
+C 173.077771 86.65106 166.25489 70.179167 154.111787 58.036064
+C 141.968684 45.892962 125.496791 39.07008 108.323851 39.07008
+C 91.150911 39.07008 74.679018 45.892962 62.535915 58.036064
+C 50.392813 70.179167 43.569931 86.65106 43.569931 103.824
+C 43.569931 120.99694 50.392813 137.468833 62.535915 149.611936
+C 74.679018 161.755038 91.150911 168.57792 108.323851 168.57792
+L 108.323851 168.57792
+z
+" clip-path="url(#p68e4ccbb3e)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #64717c; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 148.942219 103.824
+L 143.644171 105.590016
+L 143.644171 104.177203
+L 108.323851 104.177203
+L 108.323851 103.470797
+L 143.644171 103.470797
+L 143.644171 102.057984
+z
+" clip-path="url(#p68e4ccbb3e)" style="fill: #245b83; stroke: #245b83; stroke-linejoin: miter"/>
+   </g>
+   <g id="PathCollection_1">
+    <defs>
+     <path id="ma9f549c1ca" d="M 0 2.828427
+C 0.750108 2.828427 1.469594 2.530406 2 2
+C 2.530406 1.469594 2.828427 0.750108 2.828427 0
+C 2.828427 -0.750108 2.530406 -1.469594 2 -2
+C 1.469594 -2.530406 0.750108 -2.828427 0 -2.828427
+C -0.750108 -2.828427 -1.469594 -2.530406 -2 -2
+C -2.530406 -1.469594 -2.828427 -0.750108 -2.828427 0
+C -2.828427 0.750108 -2.530406 1.469594 -2 2
+C -1.469594 2.530406 -0.750108 2.828427 0 2.828427
+z
+" style="stroke: #26756b"/>
+    </defs>
+    <g clip-path="url(#p68e4ccbb3e)">
+     <use xlink:href="#ma9f549c1ca" x="142.466827" y="76.745088" style="fill: #26756b; stroke: #26756b"/>
+    </g>
+   </g>
+   <g id="PathCollection_2">
+    <defs>
+     <path id="m768aee3d54" d="M -2.828427 2.828427
+L 2.828427 -2.828427
+M -2.828427 -2.828427
+L 2.828427 2.828427
+" style="stroke: #a54246; stroke-width: 1.1"/>
+    </defs>
+    <g clip-path="url(#p68e4ccbb3e)">
+     <use xlink:href="#m768aee3d54" x="70.060171" y="89.1072" style="fill: #a54246; stroke: #a54246; stroke-width: 1.1"/>
+    </g>
+   </g>
+   <g id="PathCollection_3">
+    <defs>
+     <path id="mce00569bd4" d="M -2.828427 2.828427
+L 2.828427 -2.828427
+M -2.828427 -2.828427
+L 2.828427 2.828427
+" style="stroke: #b46a24; stroke-width: 1.1"/>
+    </defs>
+    <g clip-path="url(#p68e4ccbb3e)">
+     <use xlink:href="#mce00569bd4" x="181.907851" y="124.42752" style="fill: #b46a24; stroke: #b46a24; stroke-width: 1.1"/>
+    </g>
+   </g>
+   <g id="PathCollection_4">
+    <defs>
+     <path id="m723e2defb7" d="M 0 -4.609772
+L -1.034958 -1.424498
+L -4.384154 -1.424498
+L -1.674598 0.54411
+L -2.709556 3.729384
+L -0 1.760776
+L 2.709556 3.729384
+L 1.674598 0.54411
+L 4.384154 -1.424498
+L 1.034958 -1.424498
+z
+" style="stroke: #245b83"/>
+    </defs>
+    <g clip-path="url(#p68e4ccbb3e)">
+     <use xlink:href="#m723e2defb7" x="108.323851" y="103.824" style="fill: #245b83; stroke: #245b83"/>
+    </g>
+   </g>
+   <g id="text_1">
+    <!-- $x$ -->
+    <g transform="translate(113.323851 120.824)">
+     <text>
+      <tspan x="0" y="-0.03125" style="font-style: italic; font-size: 9px; font-family: 'STIXGeneral'">x</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_2">
+    <!-- $n$ -->
+    <g transform="translate(128.927371 96.759936)">
+     <text>
+      <tspan x="0" y="-0.03125" style="font-style: italic; font-size: 9px; font-family: 'STIXGeneral'">n</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 8px; font-family: 'SimSun', 'DejaVu Sans', sans-serif; text-anchor: middle" x="142.466827" y="66.745088" transform="rotate(-0 142.466827 66.745088)">收到信号</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 8px; font-family: 'SimSun', 'DejaVu Sans', sans-serif; text-anchor: middle" x="70.060171" y="79.1072" transform="rotate(-0 70.060171 79.1072)">背向：无信号</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 8px; font-family: 'SimSun', 'DejaVu Sans', sans-serif; text-anchor: middle" x="181.907851" y="114.42752" transform="rotate(-0 181.907851 114.42752)">超距：无信号</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 9.5px; font-family: 'SimSun', 'DejaVu Sans', sans-serif; text-anchor: middle" x="117.153931" y="24.24" transform="rotate(-0 117.153931 24.24)">(a) 无信号对应两种原因</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_5">
+    <path d="M 295.722869 141.4336
+L 413.457269 138.1632
+L 364.401269 46.592
+z
+" clip-path="url(#p8797bf255f)" style="fill: #26756b; opacity: 0.1; stroke: #26756b; stroke-linejoin: miter"/>
+   </g>
+   <g id="PathCollection_5">
+    <defs>
+     <path id="md6dd0b394d" d="M -2.95804 2.95804
+L 2.95804 2.95804
+L 2.95804 -2.95804
+L -2.95804 -2.95804
+z
+" style="stroke: #26756b"/>
+    </defs>
+    <g clip-path="url(#p8797bf255f)">
+     <use xlink:href="#md6dd0b394d" x="295.722869" y="141.4336" style="fill: #26756b; stroke: #26756b"/>
+     <use xlink:href="#md6dd0b394d" x="413.457269" y="138.1632" style="fill: #26756b; stroke: #26756b"/>
+     <use xlink:href="#md6dd0b394d" x="364.401269" y="46.592" style="fill: #26756b; stroke: #26756b"/>
+    </g>
+   </g>
+   <g id="PathCollection_6">
+    <g clip-path="url(#p8797bf255f)">
+     <use xlink:href="#m723e2defb7" x="354.590069" y="105.4592" style="fill: #245b83; stroke: #245b83"/>
+    </g>
+   </g>
+   <g id="patch_6">
+    <path d="M 354.590069 64.08864
+L 356.388789 69.4848
+L 354.917109 69.4848
+L 354.917109 105.4592
+L 354.263029 105.4592
+L 354.263029 69.4848
+L 352.791349 69.4848
+z
+" clip-path="url(#p8797bf255f)" style="fill: #245b83; stroke: #245b83; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 282.641269 105.4592
+L 426.538869 105.4592
+" clip-path="url(#p8797bf255f)" style="fill: none; stroke-dasharray: 4.07,1.76; stroke-dashoffset: 0; stroke: #64717c; stroke-width: 1.1"/>
+   </g>
+   <g id="text_7">
+    <!-- $s_1$ -->
+    <g transform="translate(297.031029 136.20096)">
+     <text>
+      <tspan x="0" y="-0.015625" style="font-style: italic; font-size: 9px; font-family: 'STIXGeneral'">s</tspan>
+      <tspan x="3.500992" y="1.175" style="font-size: 6.3px; font-family: 'STIXGeneral'">1</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_8">
+    <!-- $s_2$ -->
+    <g transform="translate(414.765429 132.93056)">
+     <text>
+      <tspan x="0" y="-0.015625" style="font-style: italic; font-size: 9px; font-family: 'STIXGeneral'">s</tspan>
+      <tspan x="3.500992" y="1.175" style="font-size: 6.3px; font-family: 'STIXGeneral'">2</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_9">
+    <!-- $s_3$ -->
+    <g transform="translate(365.709429 41.35936)">
+     <text>
+      <tspan x="0" y="-0.015625" style="font-style: italic; font-size: 9px; font-family: 'STIXGeneral'">s</tspan>
+      <tspan x="3.500992" y="1.175" style="font-size: 6.3px; font-family: 'STIXGeneral'">3</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_10">
+    <!-- $n$ -->
+    <g transform="translate(359.822709 84.52864)">
+     <text>
+      <tspan x="0" y="-0.03125" style="font-style: italic; font-size: 9px; font-family: 'STIXGeneral'">n</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_11">
+    <!-- $x$ -->
+    <g transform="translate(346.087029 116.57856)">
+     <text>
+      <tspan x="0" y="-0.03125" style="font-style: italic; font-size: 9px; font-family: 'STIXGeneral'">x</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 8px; font-family: 'SimSun', 'DejaVu Sans', sans-serif; text-anchor: middle" x="354.590069" y="164.3264" transform="rotate(-0 354.590069 164.3264)">凸组合的有向投影之和为零</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 9.5px; font-family: 'SimSun', 'DejaVu Sans', sans-serif; text-anchor: middle" x="354.590069" y="24.24" transform="rotate(-0 354.590069 24.24)">(b) 凸包覆盖保证至少一站位于前向</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p68e4ccbb3e">
+   <rect x="28.853131" y="30.24" width="176.6016" height="147.168"/>
+  </clipPath>
+  <clipPath id="p8797bf255f">
+   <rect x="269.559669" y="30.24" width="170.0608" height="147.168"/>
+  </clipPath>
+ </defs>
+</svg>

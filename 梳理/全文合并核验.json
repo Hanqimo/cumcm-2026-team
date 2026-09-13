@@ -1,0 +1,32 @@
+{
+  "base_commit": "383289477e546fcec9cd2c9d9d0c73f58a7fa426",
+  "latest_source": "templates/论文模版.tex",
+  "latest_pdf": "templates/论文模版.pdf",
+  "q1_q2_exactly_preserved": true,
+  "q1_q2_sha256": "fac30dfda8394e8dc7ad8fefcf7c65323e66af002bdf9009a99f3bb238dbb01c",
+  "source_pdf_sha256": "4e3a0a3f1c812cbac247042c01882d530d9094649ec4fbf57c8d8f2f6cc4593e",
+  "q3_source_sha256": "84d36adaba6b5355652f8a3d4f56cd4c71073f46c18c31aa1fde4229144512da",
+  "q4_source_sha256": "b181b53e115e5b0d3b26cf54b6e71421c3fb0e4d82afa788fb4e8d5085343901",
+  "reference_check_passed": true,
+  "figures": 9,
+  "tables": 7,
+  "numbered_equation_environments": 50,
+  "sections": [
+    "问题背景与重述",
+    "模型假设",
+    "符号说明",
+    "问题分析",
+    "问题一的模型与求解",
+    "问题二的模型与求解",
+    "问题三的模型与求解",
+    "问题四的模型与求解",
+    "模型检验",
+    "模型评价与推广"
+  ],
+  "abstract": "omitted as requested",
+  "pdf_pages": 26,
+  "pdf_sha256": "44245cefbf363054de88566a623df24f8005b66a726de0ef4517068f9be487bb",
+  "compiler": "Tectonic 0.17.0",
+  "layout_and_reference_checks": "passed; rendered all pages",
+  "new_experiments": false
+}
