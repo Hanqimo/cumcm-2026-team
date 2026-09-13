@@ -30,7 +30,7 @@ def independent_difference(a,b):
  return dict(mean=float(d),ci95=[float(x) for x in t.interval(.95,df,loc=d,scale=np.sqrt(u+v))])
 
 
-keys=['cautious','m07','m32'];names=['文献适配 CG','旧版 M07','本文 M32'];colors=[ORANGE,GRAY,BLUE]
+keys=['cautious','m07','m32'];names=['谨慎测向','可见性评分','联合域规划'];colors=[ORANGE,GRAY,BLUE]
 local=read(DATA/'paired_rows.json');pair=read(DATA/'paired_analysis.json')
 i=next(i for i,r in enumerate(local['m32']) if r['seed']==pair['seed'])
 acts=read(DATA/'paired_actions.json')
@@ -52,18 +52,18 @@ for k,name,color,ls in zip(keys,names,colors,[':','--','-']):
  ax.scatter(times[-1],values[-1],marker='s',s=13,color=color,zorder=4)
 ax.set(xlabel='累计虚拟时间 / min',ylabel='累计成功清除数',title='(d) 相同场景的清除进度',ylim=(0,10.6));ax.legend(loc='upper left',fontsize=7.5,frameon=False);clean(ax)
 save(fig,'fig04-paired-paths')
-fig,axs=plt.subplots(1,2,figsize=(6.3,3.1),gridspec_kw={'width_ratios':[1.05,1]});fig.subplots_adjust(left=.11,right=.98,bottom=.23,top=.87,wspace=.35)
+fig,axs=plt.subplots(1,2,figsize=(6.3,3.1),gridspec_kw={'width_ratios':[1.05,1]});fig.subplots_adjust(left=.11,right=.98,bottom=.23,top=.87,wspace=.55)
 ax=axs[0]
 for j,k in enumerate(keys):
  vals=[r['time_per_actual_target_s'] for r in official[k]];s=stats[k];lo,hi=s['ci95']
  ax.scatter(j+.2*np.sin(np.arange(30)*2.399963),vals,s=12,c=colors[j],alpha=.65)
  ax.errorbar(j,s['mean'],yerr=[[s['mean']-lo],[hi-s['mean']]],fmt='D',color='black',capsize=3,ms=4,zorder=5)
-ax.set(xticks=range(3),xticklabels=['CG','M07','M32'],ylabel='单场平均时间 / (s·源$^{-1}$)',title='(a) 各 30 场独立官方演练');ax.grid(axis='y',alpha=.15);clean(ax)
+ax.set(xticks=range(3),xticklabels=['谨慎测向','可见性评分','联合域规划'],ylabel='单场平均时间 / (s·源$^{-1}$)',title='(a) 各 30 场独立官方演练');ax.grid(axis='y',alpha=.15);clean(ax)
 ax.text(.5,-.25,'散点：单场；菱形：均值及 95% t 区间',ha='center',transform=ax.transAxes,fontsize=7.5)
 ax=axs[1];left=np.zeros(3)
 for i,(label,col,hatch) in enumerate(zip(['移动','测量','换频','光学'],[BLUE,TEAL,ORANGE,GRAY],['','//','xx','..'])):
  vals=np.array([stats[k]['costs'][i] for k in keys]);ax.barh(range(3),vals,left=left,height=.55,label=label,color=col,hatch=hatch,edgecolor='white',lw=.5);left+=vals
-ax.set(yticks=range(3),yticklabels=['CG','M07','M32'],xlabel='场均分项时间 / (s·源$^{-1}$)',title='(b) 时间差来自哪些费用');ax.invert_yaxis();clean(ax)
+ax.set(yticks=range(3),yticklabels=['谨慎测向','可见性评分','联合域规划'],xlabel='场均分项时间 / (s·源$^{-1}$)',title='(b) 分项时间比较');ax.invert_yaxis();clean(ax)
 ax.legend(loc='upper center',bbox_to_anchor=(.5,-.24),ncol=4,frameon=False,fontsize=7,columnspacing=.5,handlelength=1)
 save(fig,'fig03-official-comparison')
 """Rebuild Q4 figures from frozen official logs. No simulator is imported or run."""
@@ -123,7 +123,7 @@ save(fig,'fig01-direction-coverage')
 # Figure 3: actual posterior domain, selected without maximising improvement.
 old=wkt.loads(example['old_region']);new=wkt.loads(example['new_region']);removed=old.difference(new)
 fig,axs=plt.subplots(1,2,figsize=(6.3,3.3));fig.subplots_adjust(left=.12,right=.98,bottom=.24,top=.86,wspace=.38)
-ax=axs[0];poly(ax,old,facecolor=BLUE,alpha=.13,edgecolor=BLUE,lw=1,label='原位置域');poly(ax,removed,facecolor=ORANGE,alpha=.5,edgecolor=ORANGE,hatch='////',lw=.6,label='经证书排除');poly(ax,new,facecolor='none',edgecolor=TEAL,lw=1.3,label='保留位置域')
+ax=axs[0];poly(ax,old,facecolor=BLUE,alpha=.13,edgecolor=BLUE,lw=1,label='原位置域');poly(ax,removed,facecolor=ORANGE,alpha=.5,edgecolor=ORANGE,hatch='////',lw=.6,label='联合约束排除');poly(ax,new,facecolor='none',edgecolor=TEAL,lw=1.3,label='保留位置域')
 x0,y0,x1,y1=old.bounds;pad=max(x1-x0,y1-y0)*.13;ax.set(xlim=(x0-pad,x1+pad),ylim=(y0-pad,y1+pad),xlabel='$x$ / m',ylabel='$y$ / m',title='(a) 实测历史产生的联合裁剪');style(ax,True);ax.ticklabel_format(useOffset=False,style='plain');ax.locator_params(axis='both',nbins=4)
 fig.legend(*ax.get_legend_handles_labels(),loc='lower center',bbox_to_anchor=(.5,.005),frameon=False,ncol=3,fontsize=8)
 ax=axs[1];rr=np.array([e['new_radius']/e['old_radius'] for e in events]);rr.sort();ax.plot(np.arange(1,len(rr)+1),rr,'o',ms=2.8,c=BLUE);ax.axhline(1,color=GRAY,ls='--',lw=.8)
