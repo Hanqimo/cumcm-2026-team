@@ -86,6 +86,7 @@
 \usepackage{booktabs,tabularx,array,multirow}
 \usepackage[table]{xcolor}
 \usepackage{float}
+\usepackage{needspace}
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{enumitem}
@@ -720,9 +721,9 @@ K_\theta(q)&=\{g\in K_1\cap W_2:r_{\mathrm{strong}}<d(g;q)\le1500\}.
 
 \subsection{整场表现与证据范围}
 
-第三问文献适配基线的30场官方演练全部清除，均值333.59秒/源；v6既有50场与30场均全清，均值231.71与226.34秒/源。另有30组同场景本地配对，平均节省96.65秒/源，不作官方成绩。第四问选定策略在30场演练中全部清除390个源，场均每源时间为458.37秒。以上结果分别来自各问既有记录，不将不同问题的时间差解释为某一模块的因果影响，也不将独立场景比较解释为同场配对实验。
+第三问文献适配基线的30场官方演练全部清除，均值333.59秒/源；v6既有50场与30场均全清，均值231.71与226.34秒/源。另有30组同场景本地配对，平均节省96.65秒/源，不作官方成绩。第四问文献适配 CG、旧版 M07 与 M32 各30场官方演练均全清，均值分别为651.83、496.70、458.37秒/源；M32 相对 CG 平均节省29.68\%，相对 M07 平均节省7.72\%。另有30组同场景本地配对，M32 相对 M07 平均节省20.38秒/源，不作官方成绩。以上结果分别来自各问既有记录，不将不同问题的时间差解释为某一模块的因果影响，也不将独立场景比较解释为同场配对实验。
 
-计费组成显示，两问的移动时间均超过总均值的七成，与联合安排搜索及目标服务的建模动机一致。第四问各对照策略均值差异的区间仍包含零，第三问也未单独识别各模块的收益。因此，现有证据支持已测试场景中的可用性，但不足以给出全局时间最优或所有场景预算内全清的保证。第三问三次正式测试成绩与程序耗时见表\ref{tab:q3-formal}，版本归属依据实际运行者更正确认；第四问本节仍报告演练记录。
+计费组成显示，两问的移动时间均超过总均值的七成，与联合安排搜索及目标服务的建模动机一致。第四问 M32 相对 CG 的节省量95\%区间为[117.67,269.25]秒/源，相对 M07 的区间仍包含零；这些整体对照尚不能单独识别联合裁剪的收益，第三问也未单独识别各模块的收益。因此，现有证据支持已测试场景中的可用性，但不足以给出全局时间最优或所有场景预算内全清的保证。第三问三次正式测试成绩与程序耗时见表\ref{tab:q3-formal}，版本归属依据实际运行者更正确认；第四问三次正式测验见表\ref{tab:q4r-formal}，分别成功清除10、11、11个源，平均定位清除时间为557.293、525.395、501.464秒。正式元数据未给出实际源总数，故不据此宣称全清。
 
 \section{模型评价与推广}
 
@@ -754,6 +755,7 @@ K_\theta(q)&=\{g\in K_1\cap W_2:r_{\mathrm{strong}}<d(g;q)\le1500\}.
   \bibitem{VanderHook2014} Vander Hook J, Tokekar P, Isler V. Cautious greedy strategy for bearing-only active localization: analysis and field experiments[J]. Journal of Field Robotics, 2014, 31(2): 296--318. DOI: 10.1002/rob.21499.
   \bibitem{Engin2020} Engin S, Isler V. Active localization of multiple targets using noisy relative measurements[EB/OL]. arXiv:2002.09850, 2020.
   \bibitem{Song2012} Song D, Kim C Y, Yi J. Simultaneous localization of multiple unknown and transient radio sources using a mobile robot[J]. IEEE Transactions on Robotics, 2012, 28(3): 668--680. DOI: 10.1109/TRO.2012.2183069.
+  \bibitem{Zhao2025} 赵倩倩, 熊刚, 王李军, 等. 面向未知定向辐射源组合定位的无人机群优化部署[J]. 信号处理, 2025, 41(4): 668--682.
 \end{thebibliography}
 
 \end{document}
