@@ -1,0 +1,21 @@
+{
+  "abstract_pages": 1,
+  "paper_pages": 30,
+  "body_chinese_characters": 1222,
+  "increase_over_first_version": 380,
+  "paragraph_chinese_characters": [
+    115,
+    242,
+    348,
+    253,
+    264
+  ],
+  "intro_sentences": 3,
+  "keywords": 5,
+  "body_unchanged": true,
+  "template_draft_identical": true,
+  "standalone_matches_both_paper_abstracts": true,
+  "latex_warnings": [],
+  "original_font_size_retained": true,
+  "visual_check": "One-page abstract; no clipping, text overlap or overflow."
+}

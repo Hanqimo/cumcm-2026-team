@@ -1,0 +1,186 @@
+% !LW recipe = latexmk (XeLaTeX, automatic references)
+% !TeX encoding = UTF-8
+% 编译方法：xelatex 论文模版.tex（建议连续编译两次以更新交叉引用）
+\documentclass[UTF8,a4paper,zihao=-4,fontset=none]{ctexart}
+
+% 字体采用三级自动选择机制，使模板能够在不同电脑上直接编译。
+% 先检查 Windows 标准字体目录；再检查 macOS 版 Microsoft Word 的字体；均不可用时回退到 TeX Live 自带的 Fandol 字体。
+% 无论选择哪一组字体，主字体的 BoldFont 都显式绑定到对应黑体，确保 \textbf 下的中文字体正确。
+\newcommand{\UseWindowsMicrosoftFonts}{
+  \setCJKmainfont{simsun.ttc}[Path={C:/Windows/Fonts/},BoldFont=simhei.ttf]
+  \setCJKsansfont{simhei.ttf}[Path={C:/Windows/Fonts/},BoldFont=simhei.ttf]
+  \setCJKmonofont{simsun.ttc}[Path={C:/Windows/Fonts/}]
+  \setCJKfamilyfont{paperhei}{simhei.ttf}[Path={C:/Windows/Fonts/},BoldFont=simhei.ttf]
+  \PackageInfo{paper-template}{Using Windows SimSun and SimHei}
+}
+
+\newcommand{\UseOfficeMicrosoftFonts}{
+  \setCJKmainfont{Simsun.ttc}[
+    Path={/Applications/Microsoft Word.app/Contents/Resources/DFonts/},
+    BoldFont=SimHei.ttf
+  ]
+  \setCJKsansfont{SimHei.ttf}[
+    Path={/Applications/Microsoft Word.app/Contents/Resources/DFonts/},
+    BoldFont=SimHei.ttf
+  ]
+  \setCJKmonofont{Simsun.ttc}[
+    Path={/Applications/Microsoft Word.app/Contents/Resources/DFonts/}
+  ]
+  \setCJKfamilyfont{paperhei}{SimHei.ttf}[
+    Path={/Applications/Microsoft Word.app/Contents/Resources/DFonts/},
+    BoldFont=SimHei.ttf
+  ]
+  \PackageInfo{paper-template}{Using Microsoft Office SimSun and SimHei}
+}
+
+\newcommand{\UsePortableFandolFonts}{
+  \setCJKmainfont{FandolSong-Regular.otf}[BoldFont=FandolHei-Regular.otf]
+  \setCJKsansfont{FandolHei-Regular.otf}[BoldFont=FandolHei-Regular.otf]
+  \setCJKmonofont{FandolFang-Regular.otf}
+  \setCJKfamilyfont{paperhei}{FandolHei-Regular.otf}[BoldFont=FandolHei-Regular.otf]
+  \PackageWarningNoLine{paper-template}{SimSun and SimHei not found; using portable Fandol fonts}
+}
+
+\newcommand{\UseOfficeOrPortableFonts}{
+  \IfFileExists{/Applications/Microsoft Word.app/Contents/Resources/DFonts/Simsun.ttc}{
+    \IfFileExists{/Applications/Microsoft Word.app/Contents/Resources/DFonts/SimHei.ttf}{
+      \UseOfficeMicrosoftFonts
+    }{
+      \UsePortableFandolFonts
+    }
+  }{
+    \UsePortableFandolFonts
+  }
+}
+
+% 将下面的 0 改为 1，可强制使用完全随 TeX Live 提供的 Fandol 字体进行兼容性测试。
+\providecommand{\ForcePortableFonts}{0}
+\ifnum\ForcePortableFonts=1
+  \UsePortableFandolFonts
+\else
+  \IfFileExists{C:/Windows/Fonts/simsun.ttc}{
+    \IfFileExists{C:/Windows/Fonts/simhei.ttf}{
+      \UseWindowsMicrosoftFonts
+    }{
+      \UseOfficeOrPortableFonts
+    }
+  }{
+    \UseOfficeOrPortableFonts
+  }
+\fi
+\newcommand{\heifont}{\CJKfamily{paperhei}}
+
+% 页面、行距与段落。
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,footskip=1.2cm]{geometry}
+\usepackage{setspace}
+\singlespacing
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{3em}
+\usepackage{indentfirst}
+
+% 数学公式、表格与插图。
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{graphicx}
+\graphicspath{{./}{../梳理/}{../正式题目工作区/B题/第二问建模/论文定稿版/期望剩余半径_重新求解_20260913/figures/}{../梳理/第三问_v6/figures/}{../梳理/第四问_M32/figures/}}
+\usepackage{booktabs,tabularx,array,multirow}
+\usepackage[table]{xcolor}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{enumitem}
+
+% 标题、页码与交叉引用。
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+
+% 一级标题使用中文序号并居中，下级标题使用阿拉伯数字层级编号并左对齐。
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
+\setcounter{secnumdepth}{3}
+\titleformat{\section}[block]
+  {\centering\heifont\bfseries\zihao{4}}
+  {\chinese{section}、}{0pt}{}
+\titleformat{\subsection}[hang]
+  {\raggedright\heifont\bfseries\zihao{-4}}
+  {\thesubsection}{0.8em}{}
+\titleformat{\subsubsection}[hang]
+  {\raggedright\heifont\bfseries\zihao{-4}}
+  {\thesubsubsection}{0.8em}{}
+\titlespacing*{\section}{0pt}{2.8ex plus 0.5ex minus 0.2ex}{1.7ex}
+\titlespacing*{\subsection}{0pt}{1.6ex plus 0.3ex minus 0.1ex}{0.8ex}
+\titlespacing*{\subsubsection}{0pt}{1.4ex plus 0.2ex minus 0.1ex}{0.7ex}
+
+% 页码从摘要页开始，位于页脚中央。
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\zihao{5}\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% 图表及列表的常用设置。
+\captionsetup{font=small,labelfont=bf,labelsep=quad}
+\setlist[itemize]{itemsep=0.35\baselineskip,topsep=0.8ex,parsep=0pt,partopsep=0pt}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{Z}{>{\centering\arraybackslash}X}
+
+% 请优先修改下面三个字段。
+\newcommand{\papertitle}{基于可行域更新与协同规划的干扰源定位清除}
+\newcommand{\paperabstract}{%
+快速定位并清除无线电干扰源，是恢复通信秩序和保障危险区域作业安全的重要环节。题目要求机器狗在同一地点测角误差固定、接收范围有限且源数未知的条件下，自主完成圆域内干扰源排查。本文从定位区域的几何性质出发，建立主动测向、路径规划与清除协同的决策方法。
+
+\textbf{针对问题一}，本文建立\textbf{半平面交与最小包围圆模型}，把每次测向允许的方位范围表示为两个半平面的交集，使多次观测转化为统一的线性不等式约束。先用\textbf{线性规划}判断交集是否为空或无界，再枚举满足全部约束的边界交点，由最远顶点对计算区域直径。对于同直径圆的覆盖问题，证明了其能够完全覆盖区域的充要条件是\textbf{最小包围圆半径等于区域直径的一半}。通过枚举两点直径圆与三点外接圆求得最小包围圆，并构造三次合法测向形成的等边三角形，其直径为\textbf{38m}，最小覆盖半径却为\textbf{21.94m}，故同直径圆\textbf{不能覆盖}。结合光学定位距离，进一步以最小包围圆半径不超过\(20\,\mathrm{m}\)作为存在保证清除位置的判据。
+
+\textbf{针对问题二}，本文建立\textbf{基于贝叶斯更新的加权选点模型}。首次观测不仅限定方位，还要求源位于目标圆域及可接收范围内；不同可能源位置对应的可能接收半径也不同，因此观测后的位置分布未必均匀。在首次观测的基础上，通过贝叶斯更新预测第二次检测可能得到的反馈，并据此评价各候选点的定位效果。评价同时考虑两个方面：一是检测后\textbf{剩余区域的最小包围圆的期望半径}，二是该半径不超过 \(20\,\mathrm{m}\)、从而\textbf{无需补测即可确定保证清除位置的概率}（完成概率）。将期望半径按\(20\,\mathrm{m}\)归一化，与未完成概率加权后最小化，采用\textbf{分段高斯求积、网格初筛和多初值Nelder--Mead搜索}求解。固定权重确定选点，改变权重汇集候选区域。特别地，在\textbf{第一检测点为原点、示向度正东}的算例中，提高完成概率权重使优选点趋近首次点，同时增大期望半径；等权下优选点为$(\textbf{813.8,}\pm\textbf{521.0})\textbf{m}$，期望半径为\textbf{25.67m}，完成概率为\textbf{37.34\%}。
+
+\textbf{针对问题三}，本文建立\textbf{基于可行区域的搜索定位清除协同模型}，将未覆盖区域的扫描和已发现源的处理作为两类任务，综合估计移动、测量与换频时间，联合安排执行顺序。采用多起点近邻与路径片段反转优化路线，每执行一项任务就根据新观测更新区域并重新规划；沿途补测兼顾多个目标，对较小区域比较继续测向与提前试清的预计耗时。逐频道检查实际无信号观测的排除圆是否完整覆盖目标圆域，结合已发现源全清判定结束。三次正式测试分别清除15、12、10个源，平均定位清除时间分别为\(195.399\)、\(276.748\)、\(248.719\,\mathrm{s}\)。两批50场、30场官方演练均全部清除，场均每源耗时分别为\(231.71\,\mathrm{s}\)和\(226.34\,\mathrm{s}\)；前者较独立演练的文献适配基线均值降低\(30.54\%\)，主要收益来自减少移动。
+
+\textbf{针对问题四}，本文建立\textbf{朝向鲁棒搜索与联合可行域模型}，将无信号可能来自超距或背向的特点纳入源位置、接收半径和朝向的联合约束。搜索时，要求每个可能源位置位于一组站点的凸包内，且到这些站点均不超过最小接收半径，从而保证任意朝向下至少有一站可接收。由此构造22站布局，并用4988个单元校核连续圆域覆盖。定位时，利用有信号观测限制半径下界，将无法用超距解释的无信号转为背向约束；仅在不存在共同相容朝向时排除相应位置块。采用分块二分和角区间求交裁剪区域，通过有限假设估计接收概率与测向收益，再用多初始路线和2-opt改进协调行动。所选策略在30场官方演练中全部清除390个源，场均每源耗时为\(458.37\,\mathrm{s}\)，未出现光学清除失败。
+}
+\newcommand{\paperkeywords}{半平面交\quad 最小包围圆\quad 贝叶斯选点\quad 协同路径规划\quad 朝向鲁棒覆盖}
+
+\hypersetup{
+  pdftitle={\papertitle},
+  pdfauthor={}
+}
+
+
+% 合稿统一浮动体与孤行设置；使用可移植中文字体。
+\usepackage[section]{placeins}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\renewcommand{\topfraction}{0.92}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\textfraction}{0.08}
+\renewcommand{\floatpagefraction}{0.75}
+\setlength{\textfloatsep}{12pt plus 2pt minus 2pt}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\begin{document}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\thispagestyle{fancy}
+
+% 摘要页：五段摘要与关键词，正文另起一页。
+\begin{center}
+  {\heifont\bfseries\zihao{3}\papertitle\par}
+\end{center}
+\vspace{0.3\baselineskip}
+\begin{center}
+  {\heifont\bfseries\zihao{4}摘要\par}
+\end{center}
+\begingroup
+\setlength{\parskip}{0.4\baselineskip}
+\paperabstract\par
+\vspace{0.3\baselineskip}
+\noindent\textbf{关键词：}\paperkeywords\par
+\endgroup
+\clearpage
+
+\end{document}
