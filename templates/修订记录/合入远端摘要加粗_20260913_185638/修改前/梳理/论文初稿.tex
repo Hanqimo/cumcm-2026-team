@@ -94,8 +94,6 @@
 % 标题、页码与交叉引用。
 \usepackage{titlesec}
 \usepackage{fancyhdr}
-\usepackage{fvextra}
-\usepackage{xurl}
 \usepackage[hidelinks]{hyperref}
 \usepackage{cleveref}
 
@@ -141,9 +139,9 @@
 
 \textbf{针对问题二}，本文建立\textbf{基于贝叶斯更新的加权选点模型}。首次观测不仅限定方位，还要求源位于目标圆域及可接收范围内；不同可能源位置对应的可能接收半径也不同，因此观测后的位置分布未必均匀。在首次观测的基础上，通过贝叶斯更新预测第二次检测可能得到的反馈，并据此评价各候选点的定位效果。评价同时考虑两个方面：一是检测后\textbf{剩余区域的最小包围圆的期望半径}，二是该半径不超过 \(20\,\mathrm{m}\)、从而\textbf{无需补测即可确定保证清除位置的概率}（完成概率）。将期望半径按\(20\,\mathrm{m}\)归一化，与未完成概率加权后最小化，采用\textbf{分段高斯求积、网格初筛和多初值Nelder--Mead搜索}求解。固定权重确定选点，改变权重汇集候选区域。特别地，在\textbf{第一检测点为原点、示向度正东}的算例中，提高完成概率权重使优选点趋近首次点，同时增大期望半径；等权下优选点为$(\textbf{813.8,}\pm\textbf{521.0})\textbf{m}$，期望半径为\textbf{25.67m}，完成概率为\textbf{37.34\%}。
 
-\textbf{针对问题三}，建立\textbf{全程协同策略}，将搜索站点与已发现源的定位清除任务\textbf{统一纳入时间规划}。根据观测更新可行区域，结合光学定位距离判断能否清除，并据此调整任务次序，通过沿途补测以及继续测向与提前试清的耗时比较，减少重复行程。以逐频道覆盖和已发现源全部清除共同判定任务完成。共80场模拟器演练测试均完成全部清除，场均每源耗时约为\(229.70\,\mathrm{s}\)，较基线谨慎测向策略降低约\(31.14\%\)。三次正式测试分别清除15、12、10个源，平均定位清除时间分别为\(195.399\)、\(276.748\)、\(248.719\,\mathrm{s}\)。
+\textbf{针对问题三}，建立\textbf{全程协同策略}，将搜索站点与已发现源的定位清除任务统一纳入时间规划。根据观测更新可行区域，结合光学定位距离判断能否清除，并据此调整任务次序，通过沿途补测以及继续测向与提前试清的耗时比较，减少重复行程。以逐频道覆盖和已发现源全部清除共同判定任务完成。共80场模拟器演练测试均完成全部清除，场均每源耗时约为\(229.70\,\mathrm{s}\)，较基线谨慎测向策略降低约\(31.14\%\)。三次正式测试分别清除15、12、10个源，平均定位清除时间分别为\(195.399\)、\(276.748\)、\(248.719\,\mathrm{s}\)。
 
-\textbf{针对问题四}，在第三问基础上建立\textbf{联合域规划策略}，处理定向源无信号可能由超距或背向引起的歧义。利用\textbf{站点凸包}与\textbf{最小接收半径条件}构造\textbf{22站搜索布局}，保证任意朝向下的源均可被发现。定位时联合约束源位置、接收半径和朝向，将无法由超距解释的无信号转化为背向约束，仅排除与观测历史不相容的位置块；再按历史相容程度确定代表位置，协调路线与测点选择，并以最小包围圆判据决定可靠清除。30场模拟器演练测试全部清除390个源，场均每源耗时为\(458.37\,\mathrm{s}\)，较基线谨慎测向降低\(29.68\%\)。
+\textbf{针对问题四}，在第三问基础上建立\textbf{联合域规划策略}，处理定向源无信号可能由超距或背向引起的歧义。利用站点凸包与最小接收半径条件构造22站搜索布局，保证任意朝向下的源均可被发现。定位时联合约束源位置、接收半径和朝向，将无法由超距解释的无信号转化为背向约束，仅排除与观测历史不相容的位置块；再按历史相容程度确定代表位置，协调路线与测点选择，并以最小包围圆判据决定可靠清除。30场模拟器演练测试全部清除390个源，场均每源耗时为\(458.37\,\mathrm{s}\)，较基线谨慎测向降低\(29.68\%\)。
 }
 \newcommand{\paperkeywords}{半平面交\quad 最小包围圆\quad 贝叶斯选点\quad 协同路径规划\quad 朝向鲁棒覆盖}
 
@@ -752,180 +750,5 @@ K_\theta(q)&=\{g\in K_1\cap W_2:r_{\mathrm{strong}}<d(g;q)\le1500\}.
   \bibitem{Song2012} Song D, Kim C Y, Yi J. Simultaneous localization of multiple unknown and transient radio sources using a mobile robot[J]. IEEE Transactions on Robotics, 2012, 28(3): 668--680. DOI: 10.1109/TRO.2012.2183069.
   \bibitem{Zhao2025} 赵倩倩, 熊刚, 王李军, 等. 面向未知定向辐射源组合定位的无人机群优化部署[J]. 信号处理, 2025, 41(4): 668--682.
 \end{thebibliography}
-
-\clearpage
-\section{附录：问题求解程序}
-\label{sec:program-appendix}
-本附录列出四问正式求解程序及其依赖模块，源码直接读取自随文提交的“支撑材料”目录，以下路径均相对于该目录。完全相同的公共文件只展示一次，其余位置注明对应关系。程序中的注释、参数及计算逻辑均按提交版本保留，长行仅在排版时自动折行。
-
-第一、二问分别以 \texttt{run\_q1.py}、\texttt{run\_q2.py} 为入口；第三问以 \texttt{q3/v6/run\_robot.py --policy v6} 为入口；第四问以 \texttt{q4/M32/run\_robot.py --policy joint} 为入口。第一、二问的样例输入、依赖安装说明，以及第三、四问连接题目模拟器所需的配置说明，见支撑材料中的 \texttt{README.md}。历史对照策略、绘图脚本及原始运行日志另见支撑材料。
-\begingroup
-\IfFontExistsTF{Menlo}{\setmonofont{Menlo}}{\setmonofont{FandolFang-Regular.otf}}
-\fvset{breaklines=true,breakanywhere=true,fontsize=\fontsize{8}{9.5}\selectfont,numbers=left,numbersep=5pt,tabsize=4,xleftmargin=1.7em,frame=single,framesep=2mm}
-\subsection{问题一：定位区域与直径计算}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q1-q2/run_q1.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q1-q2/run_q1.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q1-q2/q1/__init__.py}\par
-本文件为空文件，用于标识 Python 包。\par
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q1-q2/q1/bearing_geometry.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q1-q2/q1/bearing_geometry.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q1-q2/q1/clearance_geometry.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q1-q2/q1/clearance_geometry.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q1-q2/q1/solve.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q1-q2/q1/solve.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q1-q2/q1/validate_projection.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q1-q2/q1/validate_projection.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q1-q2/q1/validation.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q1-q2/q1/validation.py}
-\subsection{问题二：第二检测点的数值优选}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q1-q2/run_q2.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q1-q2/run_q2.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q1-q2/build.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q1-q2/build.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q1-q2/q2/__init__.py}\par
-本文件与 \path{q1-q2/q1/__init__.py} 内容完全相同，使用前述代码。
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q1-q2/q2/api.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q1-q2/q2/api.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q1-q2/q2/geometry.hpp}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q1-q2/q2/geometry.hpp}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q1-q2/q2/independent_geometry.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q1-q2/q2/independent_geometry.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q1-q2/q2/nelder_mead.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q1-q2/q2/nelder_mead.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q1-q2/q2/search.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q1-q2/q2/search.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q1-q2/q2/solver.cpp}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q1-q2/q2/solver.cpp}
-\subsection{第一、二问的批量复算与核验}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q1-q2/reproduce_paper.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q1-q2/reproduce_paper.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q1-q2/verify.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q1-q2/verify.py}
-\subsection{问题三：多源协同定位与清除}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q3/v6/action_value.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q3/v6/action_value.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q3/v6/api_client.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q3/v6/api_client.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q3/v6/bearing_geometry.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q3/v6/bearing_geometry.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q3/v6/belief_components.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q3/v6/belief_components.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q3/v6/clearance_geometry.py}\par
-本文件与 \path{q1-q2/q1/clearance_geometry.py} 内容完全相同，使用前述代码。
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q3/v6/combined_cost_cover.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q3/v6/combined_cost_cover.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q3/v6/convex_cover.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q3/v6/convex_cover.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q3/v6/cost_aware.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q3/v6/cost_aware.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q3/v6/cover_milp.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q3/v6/cover_milp.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q3/v6/exact_coverage.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q3/v6/exact_coverage.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q3/v6/flexible_cover.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q3/v6/flexible_cover.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q3/v6/joint_strategies.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q3/v6/joint_strategies.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q3/v6/legacy_strategy.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q3/v6/legacy_strategy.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q3/v6/lookahead.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q3/v6/lookahead.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q3/v6/merged_cover.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q3/v6/merged_cover.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q3/v6/reception_region.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q3/v6/reception_region.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q3/v6/run_robot.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q3/v6/run_robot.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q3/v6/service_routing.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q3/v6/service_routing.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q3/v6/strategy.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q3/v6/strategy.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q3/v6/voronoi_coverage.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q3/v6/voronoi_coverage.py}
-\subsection{问题四：定向源联合区域规划}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q4/M32/api_client.py}\par
-本文件与 \path{q3/v6/api_client.py} 内容完全相同，使用前述代码。
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q4/M32/base.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q4/M32/base.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q4/M32/bearing_geometry.py}\par
-本文件与 \path{q3/v6/bearing_geometry.py} 内容完全相同，使用前述代码。
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q4/M32/coverage.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q4/M32/coverage.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q4/M32/joint_planner.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q4/M32/joint_planner.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q4/M32/joint_region.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q4/M32/joint_region.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q4/M32/m06.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q4/M32/m06.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q4/M32/m07.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q4/M32/m07.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q4/M32/m13.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q4/M32/m13.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q4/M32/optimize.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q4/M32/optimize.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q4/M32/posterior.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q4/M32/posterior.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q4/M32/previous.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q4/M32/previous.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q4/M32/research_strategy.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q4/M32/research_strategy.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q4/M32/run_robot.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q4/M32/run_robot.py}
-\par\needspace{5\baselineskip}
-\noindent\textbf{文件}\quad\path{q4/M32/strategy.py}\par
-\VerbatimInput{../正式题目工作区/B题/支撑材料/q4/M32/strategy.py}
-\endgroup
 
 \end{document}

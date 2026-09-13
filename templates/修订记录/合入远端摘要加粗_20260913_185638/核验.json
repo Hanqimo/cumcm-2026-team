@@ -1,0 +1,25 @@
+{
+  "remote_commit": "12a39b72167ef573e319f928b36c1a163f311ab6",
+  "bold_phrases": [
+    "统一纳入时间规划",
+    "站点凸包",
+    "最小接收半径条件",
+    "22站搜索布局"
+  ],
+  "local_text_preserved": true,
+  "sources": {
+    "templates/论文模版.tex": "ac68af293cdc880a43d7e17a8ed0891d5415afdec5c39c9d23e19dd81c15ad8d",
+    "梳理/论文初稿.tex": "ac68af293cdc880a43d7e17a8ed0891d5415afdec5c39c9d23e19dd81c15ad8d",
+    "templates/摘要页初稿/摘要页.tex": "874155be3efbc4b78d736013c2283b062bd9f1f12d1ca69fee4d2008b667eebf"
+  },
+  "qa": {
+    "compile": "passed for all three documents",
+    "pages": [
+      29,
+      29,
+      1
+    ],
+    "full_paper_text_identical": true,
+    "abstract_render": "visually inspected; fits one page"
+  }
+}
