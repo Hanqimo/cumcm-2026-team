@@ -20,8 +20,8 @@
       "equations_unchanged": true,
       "table_numbers_unchanged": true,
       "legacy_codes_in_pdf": false,
-      "source_sha256": "ee8d6b2ee743df2e1c3c61833afcf8a80d441e189902318129e87848a29318d1",
-      "pdf_sha256": "1b289ef4af4d2dfe062dfc5c8f18e8b3aecf71b960cdabd300ada11bbc5516a0"
+      "source_sha256": "625fce33492b68d4b9b5ac91fd8f02230aa2983fab5347d5d6331b3e0dde5e80",
+      "pdf_sha256": "d3f36029c7f7ac33498ecbd7582c03a96cc408cea80d58e64eb87a730bfaa745"
     },
     "4": {
       "pages": 7,
@@ -29,12 +29,12 @@
       "equations_unchanged": true,
       "table_numbers_unchanged": true,
       "legacy_codes_in_pdf": false,
-      "source_sha256": "f6c891d3eac6cd559ffb1d12b65e7ebbf06939d40bcdadcea17614ab0d7dd77e",
-      "pdf_sha256": "269cf1e1fa430da646aa689c45f01884d6d935a6ebe88a7c54c13596ed8210de"
+      "source_sha256": "3398087f89ffa9ae8096c66db28660279d6f2dea14808925d97c8415c3081ecb",
+      "pdf_sha256": "4ff67d7a91ea1337b09975046a490848b5037d23a60072f2c1f47bf4bcefdc58"
     }
   },
   "full_pages": 29,
-  "full_pdf_sha256": "e797674ef89d78a2bfdccd9dea250dab191e61f0f8bdfed66d3c29078fcf2a0b",
+  "full_pdf_sha256": "47682d5bd578defda1dd4167b4f31127e9d25c528470c5b599dc6faede51f6e4",
   "frozen_code_and_evidence_files_unchanged": 101,
   "reference_sources": [
     {
@@ -57,5 +57,13 @@
   "latest_integration_base": "4cf94609b932eaa022966b7f9bbec66a33d459e1",
   "abstract_included": true,
   "abstract_changes": "Only Q3/Q4 strategy names synchronized; latest teammate abstract otherwise retained",
-  "source_hash_encoding": "UTF-8 with LF newlines"
+  "source_hash_encoding": "UTF-8 with LF newlines",
+  "latest_adjustment": "模拟器演练测试术语统一；7.6.2与7.6.3换序；删除指定两段文字",
+  "q3_subsection_order": [
+    "7.6.1 模拟器演练测试比较",
+    "7.6.2 同场景路线比较",
+    "7.6.3 三次正式测试记录"
+  ],
+  "q3_archive_sentence_removed": true,
+  "q4_post_formal_table_paragraph_removed": true
 }

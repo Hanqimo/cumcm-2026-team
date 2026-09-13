@@ -111,12 +111,12 @@ Engin 和 Isler\cite{Engin2020}通过联合考虑多个目标的信息需求减�
 \subsection{测试结果与策略分析}
 
 
-\subsubsection{官方演练比较}
+\subsubsection{模拟器演练测试比较}
 
-谨慎测向进行了30场官方演练，局部协同与全程协同分别采用此前各50场完整记录。每场以总虚拟时间除以实际源数，再对场次取平均，结果见表\ref{tab:q3-performance}。三组均完成全部清除，全部结果纳入统计。由于场景与批次不同，组间差异按独立样本分析。
+谨慎测向进行了30场模拟器演练测试，局部协同与全程协同分别采用此前各50场完整记录。每场以总虚拟时间除以实际源数，再对场次取平均，结果见表\ref{tab:q3-performance}。三组均完成全部清除，全部结果纳入统计。由于场景与批次不同，组间差异按独立样本分析。
 
 \begin{table}[htbp]\centering\small
-\caption{谨慎测向、局部协同与全程协同的官方演练}\label{tab:q3-performance}
+\caption{谨慎测向、局部协同与全程协同的模拟器演练测试}\label{tab:q3-performance}
 \begin{tabularx}{\linewidth}{L{2.7cm}Z Z Z Z Z}\toprule
 策略 & 全清场数 & 源总数 & 均值 & 标准差 & 最大值\\\midrule
 谨慎测向 & 30/30 & 373 & 333.59 & 37.21 & 396.52\\
@@ -132,28 +132,11 @@ Engin 和 Isler\cite{Engin2020}通过联合考虑多个目标的信息需求减�
 
 \begin{figure}[htbp]\centering
 \includegraphics[width=\linewidth]{q3-performance.pdf}
-\caption{官方演练的逐场耗时与费用分解。左图保留30、50、50场观测，菱形与误差线为均值及其95\%置信区间；右图各分项先除以本场源数，再对场次平均。独立案例比较不单独识别某一模块的因果收益。}
+\caption{模拟器演练测试的逐场耗时与费用分解。左图保留30、50、50场观测，菱形与误差线为均值及其95\%置信区间；右图各分项先除以本场源数，再对场次平均。独立案例比较不单独识别某一模块的因果收益。}
 \label{fig:q3-performance}\end{figure}
 \FloatBarrier
 
 全程协同较局部协同平均节省6.72秒/源（2.82\%），其中移动时间减少6.22秒/源，但节省量区间$[-6.48,19.93]$包含零。另有30场独立的全程协同演练均完成全部清除，均值为226.34秒/源。因此，现有数据已显示其相对谨慎测向的明显改善，对局部协同的优势则仍需更多同场景对照检验。
-
-\subsubsection{三次正式测试记录}
-
-全程协同的三次正式测试结果见表\ref{tab:q3-formal}。自动归档的版本字段存在冲突，此处按实际运行者的更正确认确定策略归属，核验记录见配套材料。正式元数据未提供真实源总数，故表中报告成功清除数。
-
-\begin{table}[htbp]\centering\small
-\caption{第三问已提交的正式测试记录}\label{tab:q3-formal}
-\begin{tabularx}{\linewidth}{L{5.5cm}Z Z Z}\toprule
-测试案例编码 & 清除源数 & 平均定位清除时间/s & 程序运行时间/s\\\midrule
-BXUJ-W9QZ-KQ54-NKCU & 15 & 195.399 & 8.619\\
-QNXC-8U8P-SQBF-A2A6 & 12 & 276.748 & 6.149\\
-89UC-2392-TZ5M-ZUTB & 10 & 248.719 & 6.076\\\bottomrule
-\end{tabularx}
-\end{table}
-
-平均定位清除时间计入搜索和失败操作；程序运行时间取官方接受进入与退出请求的时间差。前者反映题目规定的动作费用，后者反映实际运行耗时。
-
 
 \subsubsection{同场景路线比较}
 
@@ -168,3 +151,19 @@ QNXC-8U8P-SQBF-A2A6 & 12 & 276.748 & 6.149\\
 \FloatBarrier
 
 除上述完整实验外，历史本地测试还发现一次异常：试清的假想续跑区域发生数值退化，估价异常传播至主程序并导致退出，当时真实观测对应的位置域仍有效。该记录属于未完成任务，不能计为低耗时结果。后续仍需完善退化区域处理，并检验先验、误差场和参数变化的影响。
+
+\subsubsection{三次正式测试记录}
+
+全程协同的三次正式测试结果见表\ref{tab:q3-formal}。正式元数据未提供真实源总数，故表中报告成功清除数。
+
+\begin{table}[htbp]\centering\small
+\caption{第三问已提交的正式测试记录}\label{tab:q3-formal}
+\begin{tabularx}{\linewidth}{L{5.5cm}Z Z Z}\toprule
+测试案例编码 & 清除源数 & 平均定位清除时间/s & 程序运行时间/s\\\midrule
+BXUJ-W9QZ-KQ54-NKCU & 15 & 195.399 & 8.619\\
+QNXC-8U8P-SQBF-A2A6 & 12 & 276.748 & 6.149\\
+89UC-2392-TZ5M-ZUTB & 10 & 248.719 & 6.076\\\bottomrule
+\end{tabularx}
+\end{table}
+
+平均定位清除时间计入搜索和失败操作；程序运行时间取官方接受进入与退出请求的时间差。前者反映题目规定的动作费用，后者反映实际运行耗时。
