@@ -471,7 +471,7 @@ K_\theta(q)&=\{g\in K_1\cap W_2:r_{\mathrm{strong}}<d(g;q)\le1500\}.
 贝叶斯更新将原有概率与观测的似然相乘，再归一化。似然表示假定某个源位置成立时，得到已有观测的可能程度。在 \(K_1\) 内，均匀测角误差对应的角度似然相同，位置权重的差别来自能否接收到信号。距离为 \(d\) 时，这一接收概率为
 
 \begin{equation}
- p_{\mathrm{rec}}(d)=\Pr(R\ge d)=
+ p_{\mathrm{rec}}(d)=\mathbb{P}(R\ge d)=
  \begin{cases}
  1,&d\le1000,\\
  (1500-d)/500,&1000<d<1500,\\
@@ -488,11 +488,11 @@ K_\theta(q)&=\{g\in K_1\cap W_2:r_{\mathrm{strong}}<d(g;q)\le1500\}.
 \label{eq:q2-pair-posterior}
 \end{equation}
 
-其中 \(C_1\) 是归一化系数。该结果说明，距离超过1000米后，越远的位置得到的权重越低，因为能解释首次接收的半径取值越来越少。
+其中 \(C_1\) 是归一化系数，$\mathbf1$表示集合的示性函数。该结果说明，距离超过1000米后，越远的位置得到的权重越低，因为能解释首次接收的半径取值越来越少。
 
 图~\ref{fig:q2-posterior} 固定首次检测点为 \(s_1=(1200,0)\) 米，比较 \(\beta=30^\circ\) 与 \(90^\circ\) 时的后验分布。示向度决定保留哪个角域，而圆域边界进一步限制源的位置：\(30^\circ\) 方向的角域较早遇到边界，后验集中在较小的区域；\(90^\circ\) 方向保留的距离范围更长，其中超过1000米的部分还因接收概率下降而降低权重。这说明，当圆域边界参与截断时，示向度会改变后验分布的形状与密度大小。两幅热力图采用同一色标，并按源距与相对示向角展开显示；颜色仍表示单位面积上的位置概率密度。
 
-接收半径本身也需要更新。若源位于 \(g\)，首次接收已经排除了小于 \(d_1(g)\) 的半径。因此，对于后验密度为正的位置，有 \(R\mid G=g,I_1\sim\operatorname{U}[\max\{1000,d_1(g)\},1500]\)。预测第二次检测时，要使用这个更新后的范围，不能再次把 \(R\) 当作与源位置无关的均匀量。
+接收半径本身也需要更新。若源位于 \(g\)，首次接收已经排除了小于 \(d_1(g)\) 的半径。因此，对于后验密度为正的位置，有 \(R\mid G=g,I_1\sim\operatorname{U}[\max\{1000,d_1(g)\},1500]\)。预测第二次检测时，要使用更新后的范围，不能把 \(R\) 再当作与源位置无关的量。
 
 \begin{figure}[htbp]
   \centering
@@ -549,13 +549,13 @@ K_\theta(q)&=\{g\in K_1\cap W_2:r_{\mathrm{strong}}<d(g;q)\le1500\}.
 \begin{equation}
 \begin{aligned}
  P_{\mathrm{finish}}(q)
- &=\Pr\bigl(\rho_Z(q)\le20\mid I_1,q\bigr)\\
+ &=\mathbb{P}\bigl(\rho_Z(q)\le20\mid I_1,q\bigr)\\
  &=P_{\mathrm H}(q)+P_{\mathrm N}(q)\mathbf1_{\{\rho_{\mathrm N}(q)\le20\}}\\
  &\quad+\int_0^{2\pi}f_\Theta(\theta;q)\mathbf1_{\{\rho_\theta(q)\le20\}}\,\mathrm d\theta.
 \end{aligned}
 \label{eq:q2-completion-probability}
 \end{equation}
-其中，\(\mathbf1_{\{\cdot\}}\) 在条件满足时取1，否则取0。强信号一定满足完成条件；无信号和正常示向度则都要检查剩余区域能否被20米圆覆盖。无信号也可能使剩余区域满足这一条件。
+强信号一定满足完成条件；无信号和正常示向度则都要检查剩余区域能否被20米圆覆盖。无信号也可能使剩余区域满足这一条件。
 
 图~\ref{fig:q2-feedback-regions} 具体说明了20米包围圆条件。这里取首次点为原点、首次示向正东，第二检测点为 \(q=(813.82,521.02)\) 米。若新读数为 \(270^\circ\)，剩余区域的包围圆半径约为16.87米，移动到其圆心即可保证清除，无需补测；若读数为 \(300^\circ\)，半径约为30.43米，任何20米圆都无法覆盖整个区域，因而仍需补测。两幅局部图使用相同的长度尺度，虚线圆的半径均为20米。
 
@@ -626,7 +626,7 @@ K_\theta(q)&=\{g\in K_1\cap W_2:r_{\mathrm{strong}}<d(g;q)\le1500\}.
   \renewcommand{\arraystretch}{1.08}
   \begin{tabular}{rrrrr}
     \toprule
-    \(a\) / 米 & \(\beta\) / 度 & 第二检测点 \(q\) / 米 & \(J(q)\) / 米 & \(P_{\mathrm{finish}}(q)\) / \% \\
+    \(a\) / \(\mathrm{m}\) & \(\beta\) / \({}^\circ\) & 第二检测点 \(q\) / \(\mathrm{m}\) & \(J(q)\) / \(\mathrm{m}\) & \(P_{\mathrm{finish}}(q)\) / \% \\
     \midrule
     0 & 0 & \((813.8,\,521.0)\) & 25.67 & 37.34 \\
     1200 & 30 & \((1459.2,\,467.7)\) & 12.29 & 100.00 \\
@@ -653,7 +653,7 @@ K_\theta(q)&=\{g\in K_1\cap W_2:r_{\mathrm{strong}}<d(g;q)\le1500\}.
   \renewcommand{\arraystretch}{1.08}
   \begin{tabular}{rrrr}
     \toprule
-    权重 \(w\) & 第二检测点 \(q\) / 米 & \(J(q)\) / 米 & \(P_{\mathrm{finish}}(q)\) / \% \\
+    权重 \(w\) & 第二检测点 \(q\) / \(\mathrm{m}\) & \(J(q)\) / \(\mathrm{m}\) & \(P_{\mathrm{finish}}(q)\) / \% \\
     \midrule
     0 & \((906.6,\,\pm572.8)\) & 25.08 & 26.62 \\
     0.05 & \((895.8,\,\pm562.3)\) & 25.09 & 28.77 \\
