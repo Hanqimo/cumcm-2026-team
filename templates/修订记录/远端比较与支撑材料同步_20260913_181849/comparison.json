@@ -1,0 +1,47 @@
+{
+  "head": "e480272f407832db92b4d03971b5ca11410fd7dd",
+  "remote": "656f33c0e42afb417889f2f2147f119ccf4eef1d",
+  "base": "e480272f407832db92b4d03971b5ca11410fd7dd",
+  "upstream": "StevenKaiyi/cumcm-2026-team",
+  "files": [
+    {
+      "file": "templates/论文模版.tex",
+      "local_changed": true,
+      "remote_changed": true,
+      "conflict_blocks": 4
+    },
+    {
+      "file": "梳理/论文初稿.tex",
+      "local_changed": true,
+      "remote_changed": true,
+      "conflict_blocks": 4
+    },
+    {
+      "file": "templates/摘要页初稿/摘要页.tex",
+      "local_changed": true,
+      "remote_changed": false,
+      "conflict_blocks": 0
+    },
+    {
+      "file": "梳理/全文章节/问题四.tex",
+      "local_changed": false,
+      "remote_changed": true,
+      "conflict_blocks": 0
+    },
+    {
+      "file": "梳理/全文章节/问题三.tex",
+      "local_changed": true,
+      "remote_changed": true,
+      "conflict_blocks": 1
+    }
+  ],
+  "paper_sha256_before": {
+    "templates/论文模版.tex": "2f1dcceb2708722fad3469c3289da61eb161d0424cd0cc4f564d0659bbfdab68",
+    "梳理/论文初稿.tex": "f03fdda87c9693336fc46a0fe26ad30ab8ff47658743474c856c9b991fda87e3",
+    "templates/摘要页初稿/摘要页.tex": "b38fe38245a2004f5f9bb1771ddbd5ef7245e3fa6f12966e47a4c9825daf9cf5",
+    "梳理/全文章节/问题四.tex": "77968bb759024df7df23d24b4522a45cacbb435115819c5683d662638d9c6ded",
+    "梳理/全文章节/问题三.tex": "dbe6c78585ba1f7175a452e95438d864ed6ddb219a5703d53934fee710fd1537"
+  },
+  "upstream_package_files": 210,
+  "q1_q2_copied_files": 73
+}

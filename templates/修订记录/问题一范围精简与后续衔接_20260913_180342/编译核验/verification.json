@@ -1,0 +1,38 @@
+{
+  "outputs": {
+    "templates/论文模版.pdf": {
+      "pages": 28,
+      "sha256": "32eba8b6a0d822327a99e911d6da5dfa35d25f3f467e2e802ee62ebb729f0e86"
+    },
+    "梳理/论文初稿.pdf": {
+      "pages": 28,
+      "sha256": "2753b24c7abf957008526299681a966a869b1ba4abe5f0dced605375902c5b68"
+    },
+    "templates/摘要页初稿/摘要页.pdf": {
+      "pages": 1,
+      "sha256": "eea6753c67e82aaa8e6e2bb23631e9c02f1436a3de9d5fa52e2b7ad5429cc4a2"
+    }
+  },
+  "sources": {
+    "templates/论文模版.tex": "f03fdda87c9693336fc46a0fe26ad30ab8ff47658743474c856c9b991fda87e3",
+    "梳理/论文初稿.tex": "f03fdda87c9693336fc46a0fe26ad30ab8ff47658743474c856c9b991fda87e3",
+    "templates/摘要页初稿/摘要页.tex": "b38fe38245a2004f5f9bb1771ddbd5ef7245e3fa6f12966e47a4c9825daf9cf5",
+    "梳理/全文章节/问题三.tex": "dbe6c78585ba1f7175a452e95438d864ed6ddb219a5703d53934fee710fd1537"
+  },
+  "undefined_references": [],
+  "latex_warnings": [],
+  "overfull_boxes": [],
+  "visual_pages_checked": [
+    1,
+    4,
+    5,
+    6,
+    7,
+    8,
+    11,
+    15,
+    16
+  ],
+  "main_and_draft_sources_identical": true,
+  "three_abstracts_identical": true
+}

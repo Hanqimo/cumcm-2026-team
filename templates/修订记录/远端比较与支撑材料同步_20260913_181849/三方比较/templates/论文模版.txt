@@ -1,0 +1,788 @@
+% !LW recipe = latexmk (XeLaTeX, automatic references)
+% !TeX encoding = UTF-8
+% 编译方法：xelatex 论文模版.tex（建议连续编译两次以更新交叉引用）
+\documentclass[UTF8,a4paper,zihao=-4,fontset=none]{ctexart}
+
+% 字体采用三级自动选择机制，使模板能够在不同电脑上直接编译。
+% 先检查 Windows 标准字体目录；再检查 macOS 版 Microsoft Word 的字体；均不可用时回退到 TeX Live 自带的 Fandol 字体。
+% 无论选择哪一组字体，主字体的 BoldFont 都显式绑定到对应黑体，确保 \textbf 下的中文字体正确。
+\newcommand{\UseWindowsMicrosoftFonts}{
+  \setCJKmainfont{simsun.ttc}[Path={C:/Windows/Fonts/},BoldFont=simhei.ttf]
+  \setCJKsansfont{simhei.ttf}[Path={C:/Windows/Fonts/},BoldFont=simhei.ttf]
+  \setCJKmonofont{simsun.ttc}[Path={C:/Windows/Fonts/}]
+  \setCJKfamilyfont{paperhei}{simhei.ttf}[Path={C:/Windows/Fonts/},BoldFont=simhei.ttf]
+  \PackageInfo{paper-template}{Using Windows SimSun and SimHei}
+}
+
+\newcommand{\UseOfficeMicrosoftFonts}{
+  \setCJKmainfont{Simsun.ttc}[
+    Path={/Applications/Microsoft Word.app/Contents/Resources/DFonts/},
+    BoldFont=SimHei.ttf
+  ]
+  \setCJKsansfont{SimHei.ttf}[
+    Path={/Applications/Microsoft Word.app/Contents/Resources/DFonts/},
+    BoldFont=SimHei.ttf
+  ]
+  \setCJKmonofont{Simsun.ttc}[
+    Path={/Applications/Microsoft Word.app/Contents/Resources/DFonts/}
+  ]
+  \setCJKfamilyfont{paperhei}{SimHei.ttf}[
+    Path={/Applications/Microsoft Word.app/Contents/Resources/DFonts/},
+    BoldFont=SimHei.ttf
+  ]
+  \PackageInfo{paper-template}{Using Microsoft Office SimSun and SimHei}
+}
+
+\newcommand{\UsePortableFandolFonts}{
+  \setCJKmainfont{FandolSong-Regular.otf}[BoldFont=FandolHei-Regular.otf]
+  \setCJKsansfont{FandolHei-Regular.otf}[BoldFont=FandolHei-Regular.otf]
+  \setCJKmonofont{FandolFang-Regular.otf}
+  \setCJKfamilyfont{paperhei}{FandolHei-Regular.otf}[BoldFont=FandolHei-Regular.otf]
+  \PackageWarningNoLine{paper-template}{SimSun and SimHei not found; using portable Fandol fonts}
+}
+
+\newcommand{\UseOfficeOrPortableFonts}{
+  \IfFileExists{/Applications/Microsoft Word.app/Contents/Resources/DFonts/Simsun.ttc}{
+    \IfFileExists{/Applications/Microsoft Word.app/Contents/Resources/DFonts/SimHei.ttf}{
+      \UseOfficeMicrosoftFonts
+    }{
+      \UsePortableFandolFonts
+    }
+  }{
+    \UsePortableFandolFonts
+  }
+}
+
+% 将下面的 0 改为 1，可强制使用完全随 TeX Live 提供的 Fandol 字体进行兼容性测试。
+\providecommand{\ForcePortableFonts}{0}
+\ifnum\ForcePortableFonts=1
+  \UsePortableFandolFonts
+\else
+  \IfFileExists{C:/Windows/Fonts/simsun.ttc}{
+    \IfFileExists{C:/Windows/Fonts/simhei.ttf}{
+      \UseWindowsMicrosoftFonts
+    }{
+      \UseOfficeOrPortableFonts
+    }
+  }{
+    \UseOfficeOrPortableFonts
+  }
+\fi
+\newcommand{\heifont}{\CJKfamily{paperhei}}
+
+% 页面、行距与段落。
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,footskip=1.2cm]{geometry}
+\usepackage{setspace}
+\singlespacing
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{3em}
+\usepackage{indentfirst}
+
+% 数学公式、表格与插图。
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{graphicx}
+\graphicspath{{./}{../梳理/}{../正式题目工作区/B题/第二问建模/论文定稿版/期望剩余半径_重新求解_20260913/figures/}{../梳理/第三问_v6/figures/}{../梳理/第四问_M32/figures/}}
+\usepackage{booktabs,tabularx,array,multirow}
+\usepackage[table]{xcolor}
+\usepackage{float}
+\usepackage{needspace}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{enumitem}
+
+% 标题、页码与交叉引用。
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+
+% 一级标题使用中文序号并居中，下级标题使用阿拉伯数字层级编号并左对齐。
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
+\setcounter{secnumdepth}{3}
+\titleformat{\section}[block]
+  {\centering\heifont\bfseries\zihao{4}}
+  {\chinese{section}、}{0pt}{}
+\titleformat{\subsection}[hang]
+  {\raggedright\heifont\bfseries\zihao{-4}}
+  {\thesubsection}{0.8em}{}
+\titleformat{\subsubsection}[hang]
+  {\raggedright\heifont\bfseries\zihao{-4}}
+  {\thesubsubsection}{0.8em}{}
+\titlespacing*{\section}{0pt}{2.8ex plus 0.5ex minus 0.2ex}{1.7ex}
+\titlespacing*{\subsection}{0pt}{1.6ex plus 0.3ex minus 0.1ex}{0.8ex}
+\titlespacing*{\subsubsection}{0pt}{1.4ex plus 0.2ex minus 0.1ex}{0.7ex}
+
+% 摘要页不编号；正文从第1页开始，页码位于页脚中央。
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\zihao{5}\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% 图表及列表的常用设置。
+\captionsetup{font=small,labelfont=bf,labelsep=quad}
+\setlist[itemize]{itemsep=0.35\baselineskip,topsep=0.8ex,parsep=0pt,partopsep=0pt}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{Z}{>{\centering\arraybackslash}X}
+
+% 请优先修改下面三个字段。
+\newcommand{\papertitle}{基于可行域更新与协同规划的干扰源定位清除}
+\newcommand{\paperabstract}{%
+题目要求机器狗在同一地点测角误差固定、接收范围有限且源数未知的条件下，自主定位并清除圆域内的无线电干扰源，以恢复通信秩序并保障危险区域作业安全。本文从定位区域的几何性质出发，建立主动测向、路径规划与清除协同的决策方法。
+
+\textbf{针对问题一}，本文建立\textbf{半平面交与直径圆覆盖判定模型}，把每次测向允许的方位范围表示为两个半平面的交集，使多次观测转化为统一的线性不等式约束。先用\textbf{线性规划}判断交集是否为空或无界，再枚举满足全部约束的边界交点，由最远顶点对计算区域直径。对于同直径圆的覆盖问题，提出并证明\textbf{最远顶点对夹角判据}：其余每个顶点到最远两点的连线夹角均不小于\(90^\circ\)，是该圆能够覆盖整个区域的充要条件。构造三次合法测向形成的等边三角形，其直径为\(\mathbf{38}\,\textbf{m}\)，第三个顶点处的夹角为\(60^\circ\)，最小覆盖半径为\(\mathbf{21.94}\,\textbf{m}\)，大于直径的一半，说明同直径圆\textbf{未必能够覆盖定位区域}。
+
+\textbf{针对问题二}，本文建立\textbf{基于贝叶斯更新的加权选点模型}。首次观测不仅限定方位，还要求源位于目标圆域及可接收范围内；不同源位置所允许的接收半径范围不同，因此观测后的位置分布未必均匀。根据首次观测进行贝叶斯更新，预测第二次检测的反馈，并据此评价各候选点的定位效果。评价采用两个指标：检测后\textbf{剩余区域的最小包围圆的期望半径}，以及该半径不超过 \(20\,\mathrm{m}\)、从而\textbf{无需补测即可确定保证清除位置的概率}（完成概率）。将期望半径按\(20\,\mathrm{m}\)归一化后与未完成概率加权，以加权值最小为目标，采用\textbf{分段高斯求积、网格初筛和多初值Nelder--Mead搜索}求解。固定权重确定选点，汇集不同权重下的选点形成候选区域。在\textbf{第一检测点为原点、示向度正东}的算例中，提高完成概率权重使优选点趋近首次点，同时增大期望半径；等权下优选点为$(\textbf{813.8,}\pm\textbf{521.0})\textbf{m}$，期望半径为\textbf{25.67m}，完成概率为\textbf{37.34\%}。
+
+\textbf{针对问题三}，建立\textbf{全程协同策略}，将搜索站点与已发现源的定位清除任务统一纳入时间规划。沿用前文的可行域更新与清除判据，根据观测反馈调整任务次序，通过沿途补测以及继续测向与提前试清的耗时比较，减少重复行程。以逐频道覆盖和已发现源全部清除共同判定任务完成。共80场模拟器演练测试均完成全部清除，场均每源耗时约为\(229.70\,\mathrm{s}\)，较基线谨慎测向策略降低约\(31.14\%\)。三次正式测试分别清除15、12、10个源，平均定位清除时间分别为\(195.399\)、\(276.748\)、\(248.719\,\mathrm{s}\)。
+
+\textbf{针对问题四}，在第三问基础上建立\textbf{联合域规划策略}，处理定向源无信号可能由超距或背向引起的歧义。利用站点凸包与最小接收半径条件构造22站搜索布局，保证任意朝向下的源均可被发现。定位时联合约束源位置、接收半径和朝向，将无法由超距解释的无信号转化为背向约束，仅排除与观测历史不相容的位置块；再按历史相容程度确定代表位置，协调路线与测点选择，并以最小包围圆判据决定可靠清除。30场模拟器演练测试全部清除390个源，场均每源耗时为\(458.37\,\mathrm{s}\)，较基线谨慎测向降低\(29.68\%\)。
+}
+\newcommand{\paperkeywords}{半平面交\quad 最小包围圆\quad 贝叶斯选点\quad 协同路径规划\quad 朝向鲁棒覆盖}
+
+\hypersetup{
+  pdftitle={\papertitle},
+  pdfauthor={}
+}
+
+
+% 合稿统一浮动体与孤行设置；使用可移植中文字体。
+\usepackage[section]{placeins}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\renewcommand{\topfraction}{0.92}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\textfraction}{0.08}
+\renewcommand{\floatpagefraction}{0.75}
+\setlength{\textfloatsep}{12pt plus 2pt minus 2pt}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\begin{document}
+\pagenumbering{gobble}
+\thispagestyle{empty}
+
+% 摘要页：五段摘要与关键词，正文另起一页。
+\begin{center}
+  {\heifont\bfseries\zihao{3}\papertitle\par}
+\end{center}
+\vspace{0.3\baselineskip}
+\begin{center}
+  {\heifont\bfseries\zihao{4}摘要\par}
+\end{center}
+\begingroup
+\setlength{\parskip}{0.4\baselineskip}
+\paperabstract\par
+\vspace{0.3\baselineskip}
+\noindent\textbf{关键词：}\paperkeywords\par
+\endgroup
+\clearpage
+\pagenumbering{arabic}
+
+\section{问题背景与重述}
+
+\subsection{问题背景}
+
+无线电干扰源的定位与清除是无线电频谱管理的重要任务。实际排查通常经历初步监测、区域性排查和精准定位三个阶段，其中前两个阶段确定干扰源的分布区域，而具体位置仍需进一步通过精准定位设备查明。为了尽快消除干扰，需要尽可能缩短这一过程的耗时。
+
+针对危险环境下的排查需求，某公司拟研发搭载于机器狗的干扰源自动定位清除系统。该系统先通过无线电测向获取干扰源的方位信息，并在接近目标后利用光学探测设备实现精确定位和清除。然而，测向结果存在误差，信号接收受到距离和发射方向的限制，各项设备操作也需要耗时。因此，如何在有限观测信息下完成干扰源定位，并在确保全部清除的前提下提高作业效率，是本题研究的核心问题。
+
+\subsection{问题重述}
+
+已知干扰源分布在半径为 \(1800\,\mathrm{m}\) 的圆形区域内，以圆心为坐标原点，正东方向和正北方向分别为 \(x\) 轴与 \(y\) 轴正向。各干扰源占用固定、互不相同且互不影响的频道，编号为 \(1\) 至 \(20\)。干扰源分为全向与定向两类，有效接收半径在 \(1000\,\mathrm{m}\) 至 \(1500\,\mathrm{m}\) 之间。
+
+测向机每次检测一个频道，测得的示向度与真实方位角之间的误差在 \([-1^\circ,1^\circ]\) 内，同一地点重复检测不会改变误差。机器狗以 \(5\,\mathrm{m/s}\) 的速度沿直线移动，停止移动后可进行检测。频道切换和单次检测分别耗时 \(1\,\mathrm{s}\) 和 \(5\,\mathrm{s}\)；机器狗距干扰源不超过 \(20\,\mathrm{m}\) 时，可进行光学精确定位与清除，分别耗时 \(3\,\mathrm{s}\) 和 \(2\,\mathrm{s}\)。依据上述条件，需要完成以下四项任务。
+
+\textbf{问题一：}已知若干检测点的坐标及其对同一干扰源测得的示向度，给出采用交会定位法计算多边形定位区域直径的算法，并判断以该直径为直径的圆能否覆盖整个定位区域。
+
+\textbf{问题二：}已知某全向干扰源在一个检测点处的示向度，提出第二个检测点的选择策略，使进一步检测能够取得较好的定位效果，并给出第二个检测点的候选区域。
+
+\textbf{问题三：}目标区域内有 \(10\) 至 \(16\) 个全向干扰源，具体数量未知。机器狗从原点出发，测向机初始频道为 \(1\)。需要制定相应策略与算法，使机器狗自主完成搜索、定位和清除，并在确保所有干扰源被清除的前提下尽可能缩短任务时间。
+
+\textbf{问题四：}目标区域内同时存在全向和定向干扰源，总数仍为 \(10\) 至 \(16\) 个，但具体数量、定向干扰源的数量及其定向方向均未知。其余条件与问题三相同，在此情形下提出检测与清除策略及算法。
+
+
+\section{模型假设}
+
+为预测第二次检测可能出现的反馈，并计算不同检测点的期望定位损失与定位完成概率，本文采用以下假设。
+
+\textbf{假设一：源位置采用面积均匀先验。} 在获得首次观测之前，假设干扰源位于目标圆域内各处的可能性仅与区域面积有关，即等面积区域具有相同的先验概率。
+
+\textbf{假设二：接收半径采用均匀先验。} 对固定但未知的有效接收半径，假设其在 \(1000\)--\(1500\) 米范围内服从均匀先验分布，用于计算不同源距下能够接收信号的概率。
+
+\textbf{假设三：地点误差采用均匀先验。} 对检测地点对应的固定未知测角误差，假设其在 \([-\alpha,\alpha]\) 内服从均匀先验分布，其中 \(\alpha=\pi/180\)。该分布描述观测前对误差取值的认识，不表示同一地点重复检测时误差重新随机产生。
+
+\textbf{假设四：未知状态在先验中相互独立。} 在获得首次观测之前，假设源位置、接收半径以及两个不同检测地点的测角误差相互独立。获得观测后，按观测条件更新其联合分布，不再假定更新后的未知量仍相互独立。
+
+上述假设用于计算第二问的期望定位损失与完成概率。第四问在规划代表位置时另设朝向均匀、两种类型等权的工作先验，具体定义见第四问；这些先验只用于行动估价。第一问的几何判据，以及第三、四问的保守可行域、保证清除与搜索覆盖判据，不依赖这些概率假设。
+
+\section{符号说明}
+
+\begin{table}[H]
+  \centering
+  \begingroup
+  \renewcommand{\arraystretch}{1.45}
+  \begin{tabularx}{\textwidth}{C{0.18\textwidth}ZC{0.18\textwidth}}
+    \toprule[1.2pt]
+    {\heifont\bfseries 符号} & {\heifont\bfseries 定义} & {\heifont\bfseries 单位} \\
+    \midrule[0.5pt]
+    \(\Omega\) & 以原点为圆心、半径为 \(1800\,\mathrm{m}\) 的目标圆域 & -- \\
+    \(g\) & 干扰源的位置，固定但未知 & \(\mathrm{m}\) \\
+    \(s_i\) & 第 \(i\) 个检测点的位置 & \(\mathrm{m}\) \\
+    \(q\) & 待选择的检测点或行动位置 & \(\mathrm{m}\) \\
+    \(R\) & 干扰源的固定有效接收半径，取值为 \(1000\)--\(1500\,\mathrm{m}\) & \(\mathrm{m}\) \\
+    \(\theta_i\) & 在检测点 \(s_i\) 获得的正常示向度读数 & \(\mathrm{rad}\) \\
+    \(\alpha\) & 测角误差上界，\(\alpha=\pi/180\) & \(\mathrm{rad}\) \\
+    \(r_{\mathrm{strong}}\) & 强信号距离阈值，取值为 \(5\,\mathrm{m}\) & \(\mathrm{m}\) \\
+    \(r_{\mathrm{opt}}\) & 光学精确定位距离，取值为 \(20\,\mathrm{m}\) & \(\mathrm{m}\) \\
+    \(W_i\) & 第 \(i\) 次正常测向对应的正向角域，半角为 \(\alpha\) & -- \\
+    \(P\) & 纯测角交会区域，即各角域 \(W_i\) 的交集 & -- \\
+    \(K\) & 综合观测信息与物理条件得到的源位置可行区域 & -- \\
+    \(\operatorname{diam}(K)\) & 区域 \(K\) 的直径 & \(\mathrm{m}\) \\
+    \(c(K)\) & 区域 \(K\) 的最小包围圆圆心 & \(\mathrm{m}\) \\
+    \(\rho(K)\) & 区域 \(K\) 的最小包围圆半径 & \(\mathrm{m}\) \\
+    \(d_{\max}(q;K)\) & 位置 \(q\) 到区域 \(K\) 的最远距离 & \(\mathrm{m}\) \\
+    \bottomrule[1.2pt]
+  \end{tabularx}
+  \endgroup
+\end{table}
+
+其中，全部位置变量均为二维向量；公式推导中的角度统一转化为弧度，观测数据与结果展示可采用度并注明单位。多干扰源情形下增加源编号下标。其余局部符号在各问建模时另行定义。
+
+\section{问题分析}
+\subsection{问题一分析}
+
+问题一研究使用交会定位法排查干扰源时定位区域的几何性质。根据题意，可将各次观测对应的方向范围表示为多个半平面约束，并将定位区域表示为其交集，进而利用凸多边形的性质，将区域直径的计算转化为顶点间最大距离的求解。对于同直径圆的覆盖问题，可从最远顶点对入手，通过其余顶点处的夹角判断该点对的直径圆能否覆盖整个区域，并构造符合测向条件的反例说明同直径圆未必能够覆盖定位区域。
+
+\subsection{问题二分析}
+
+问题二需根据首次观测选择第二个检测点，并给出候选区域。其难点在于，首次示向度对应的角域还需与目标圆域、可接收范围取交集，定位区域的形状随首次检测位置和示向度共同变化。同时，首次成功接收对未知接收半径的范围也施加了限制。因此，应联合考虑这些几何约束，判断第二次可能出现哪些反馈，以及每种反馈能够排除哪些源位置。
+
+在此基础上，用贝叶斯方法更新对源位置和接收半径的判断，预测强信号、无信号和正常示向度的概率。以剩余区域最小包围圆半径的期望衡量平均定位效果，以其不超过20米的概率衡量无需补测即可确定保证清除位置的可能性。将两项指标归一化后加权，固定权重求得相应的优选位置，再汇集不同权重下的优选位置，形成候选区域。
+
+\subsection{问题三分析}
+
+问题三将前两问的单源定位扩展到源数未知的多源任务。机器狗依据已有观测、已清除频道和各目标的位置可行区域，在源数量未知（10 至 16 个）的条件下自主搜索、定位与清除，并尽可能缩短总时间。为此，需要统一计算移动、检测、换频、清除和末尾排查的耗时，建立能够确认无遗漏的终止条件，并根据每次反馈选择后续行动。
+
+\subsection{问题四分析}
+
+第四问加入朝向未知的定向源，使无信号同时具有超距与背向两种解释。因此，需要调整第三问基于无信号圆盘排除的搜索与定位方法：搜索时利用站点凸包与距离条件保证任意朝向下均有接收机会；定位时联合考虑源位置、接收半径及朝向，只有不存在与全部观测历史相容的参数时，才排除相应区域。在此基础上，利用代表位置和测点评分安排目标处理次序，继续以保守位置域判断是否能够可靠清除。
+
+
+
+\section{问题一的模型与求解}
+
+\subsection{单次观测的半平面表示}
+
+设获取示向度的观测次数为$n$。以 \(x\in\mathbb R^2\) 表示候选干扰源位置，记 \(u(\phi)=(\cos\phi,\sin\phi)\) 为方向角 \(\phi\) 对应的单位向量，并定义二维叉积 \([a,b]=a_xb_y-a_yb_x\)，则每一次示向度观测给出了正向角域
+\begin{equation}
+  W_i=\{x:[u(\theta_i-\alpha),\,x-s_i]\ge0,\quad [u(\theta_i+\alpha),\,x-s_i]\le0\}.
+  \label{eq:wedge}
+\end{equation}
+由二维叉积的几何意义可知，这里的第一个约束要求目标位于下边界射线的左侧，第二个约束要求目标位于上边界射线的右侧，两个半平面之交即为前向角域。
+
+记 \(u_i^-=(\cos(\theta_i-\alpha),\sin(\theta_i-\alpha))\)、\(u_i^+=(\cos(\theta_i+\alpha),\sin(\theta_i+\alpha))\)。上述角域约束可写为
+\begin{equation}
+  \begin{bmatrix}u_{iy}^- & -u_{ix}^-\\[2pt] -u_{iy}^+ & u_{ix}^+\end{bmatrix}x
+  \;\le\;
+  \begin{bmatrix}u_{iy}^- & -u_{ix}^-\\[2pt] -u_{iy}^+ & u_{ix}^+\end{bmatrix}s_i .
+  \label{eq:halfplane}
+\end{equation}
+将全部观测的系数按行组成矩阵 \(A\)，右端项组成向量 \(b\)，叠加得到
+\begin{equation}
+  P=\bigcap_{i=1}^{n}W_i=\{x:Ax\le b\}.
+  \label{eq:P}
+\end{equation}
+该表示在 \(90^\circ\)、\(270^\circ\) 以及 \(0^\circ/360^\circ\) 附近均可用，这是选择叉积形式而非斜率形式的主要原因。若真实目标落在每个 \(W_i\) 内，则真实位置 \(g\in P\)。\(P\) 是闭凸集；当\(P\)有界且未退化为点或线段时，它是凸多边形。图~\ref{fig:q1-intersection-process} 展示了测向角域交集的几何形态：多次观测可交会得到有界凸多边形；观测不足以闭合时，交集无界。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=160mm]{../梳理/问题一插图/q1-intersection-process.pdf}
+  \caption{定位区域的交会几何（示意）。左：单次观测对应的前向角域；中：多次观测角域交成有界凸多边形；右：观测不足以闭合时交集无界}
+  \label{fig:q1-intersection-process}
+\end{figure}
+
+\subsection{顶点与直径计算算法}
+
+输入检测点坐标及示向度，按式~\eqref{eq:P} 构造半平面约束，再按以下步骤计算区域直径。
+
+\begin{enumerate}[label=(\arabic*),leftmargin=2.2em]
+  \item 归一化各半平面法向量，求解可行性线性规划。若不可行，则报告观测约束没有公共区域。
+  \item 将候选位置写作 \(x=(x_1,x_2)\)，在 \(P\) 上分别最大化 \(x_1\)、\(-x_1\)、\(x_2\)、\(-x_2\)。若任一目标无界则 \(P\) 无界，直径记为 \(+\infty\)；若四个方向均有有限上界则 \(P\) 有界。
+  \item 取一个可行点作坐标平移，减轻大坐标下的数值相消。
+  \item 枚举不平行的边界直线对，求其交点，仅保留满足全部半平面约束的交点，并按容差去重。
+  \item 对二维区域按极角整理顶点顺序；对点、线段分别保留退化表示。
+  \item 计算各顶点对的欧氏距离，取最大值作为区域直径，并记录对应的最远顶点对。
+\end{enumerate}
+
+若共有 \(m=2n\) 条约束，交点枚举与可行性检验的复杂度为 \(O(m^3)\)，顶点存储为 \(O(h)\)（\(h\) 为去重后的顶点数）。
+
+\textbf{直径算法的依据。} 若 \(P\) 非空有界，将其 \(h\) 个顶点记为 \(v_1,\dots,v_h\)，则有
+\begin{equation}
+  \operatorname{diam}(P)=\max_{x,y\in P}\lVert x-y\rVert=\max_{i,j}\lVert v_i-v_j\rVert .
+  \label{eq:diameter}
+\end{equation}
+
+\textbf{证明:} 任意 \(x\in P\) 可写为顶点凸组合 \(x=\sum_i\mu_iv_i\)（\(\mu_i\ge0\)，\(\sum_i\mu_i=1\)），同理 \(y=\sum_j\nu_jv_j\)。利用两组系数之和为1以及三角不等式，有
+\begin{equation}
+  \lVert x-y\rVert
+  =\Bigl\lVert\sum_{i,j}\mu_i\nu_j(v_i-v_j)\Bigr\rVert
+  \le\sum_{i,j}\mu_i\nu_j\lVert v_i-v_j\rVert
+  \le\max_{i,j}\lVert v_i-v_j\rVert .
+\end{equation}
+又因为顶点本身属于 \(P\)，上界可以取到，故式 \eqref{eq:diameter} 成立。\(\square\) 
+\vspace{0.5em}
+
+上述结论说明，只需比较顶点之间的距离，就能得到整个区域的直径。在算法中，需要枚举 \(h(h-1)/2\) 个点对，复杂度为 \(O(h^2)\)；加上前面的交点枚举，在完成线性规划判定后，几何计算的总复杂度为 \(O(m^3+h^2)\)。
+
+\subsection{同直径圆的覆盖判据与反例}
+
+由最小包围圆的定义，对区域 \(P\) 有
+\begin{equation}
+  \rho(P)=\min_c\max_{x\in P}\lVert x-c\rVert
+  =\min_c\max_i\lVert v_i-c\rVert .
+  \label{eq:mincircle}
+\end{equation}
+<<<<<<< 本地当前修改
+其中第二个等号成立的原因与 \eqref{eq:diameter} 同理。该最小化问题的最优圆心记为 \(c(P)\)。由于任一覆盖圆都必须容纳区域中相距最远的两点，其半径至少为两点间距的一半，因此 \(\rho(P)\ge\operatorname{diam}(P)/2\)。下面给出这一半径下界能够达到的几何条件。
+||||||| e480272f
+其中第二个等号成立的原因与 \eqref{eq:diameter} 同理。该最小化问题的最优圆心记为 \(c(P)\)。由于覆盖圆必须包含最远点对，有 \(\rho(P)\ge\operatorname{diam}(P)/2\)。事实上，我们有
+=======
+其中第二个等号可用与式 \eqref{eq:diameter} 相同的方法证明。该最小化问题的最优圆心记为 \(c(P)\)。由于覆盖圆必须包含最远点对，有 \(\rho(P)\ge\operatorname{diam}(P)/2\)，进而得到以下判据。
+>>>>>>> 团队远端
+
+\vspace{0.5em}
+\textbf{最远顶点对夹角判据：} 对有界多边形区域 \(P\)，任选一对最远顶点 \(v_i,v_j\)，以 \(M\) 表示其中点。则存在直径为 \(\operatorname{diam}(P)\) 的覆盖圆，当且仅当其余每个顶点 \(v_k\) 都满足 \(\angle v_i v_k v_j\ge90^\circ\)。此时，最小包围圆的圆心为 \(M\)，半径为 \(\operatorname{diam}(P)/2\)。
+
+\textbf{证明：} 由于 \(M\) 是 \(v_iv_j\) 的中点，向量 \(\overrightarrow{Mv_i}\) 与 \(\overrightarrow{Mv_j}\) 互为相反向量，故
+\begin{equation}
+  \overrightarrow{v_kv_i}\cdot\overrightarrow{v_kv_j}
+  =\left\lVert\overrightarrow{v_kM}\right\rVert^2
+  -\frac14\left\lVert\overrightarrow{v_iv_j}\right\rVert^2.
+  \label{eq:q1-angle-identity}
+\end{equation}
+当 \(\angle v_i v_k v_j\ge90^\circ\) 时，左侧内积非正，说明 \(v_k\) 到 \(M\) 的距离不超过 \(\lVert v_i-v_j\rVert/2\)。若其余所有顶点都满足该条件，则以 \(v_iv_j\) 为直径的圆盘包含全部顶点，也包含它们的凸包 \(P\)，因而构成所需的覆盖圆。结合半径下界，可知它就是最小包围圆。
+
+反过来，若存在直径为 \(\operatorname{diam}(P)\) 的覆盖圆，最远顶点 \(v_i,v_j\) 的间距恰好等于圆的直径，因此它们只能是该圆的一对直径端点，圆心必须为 \(M\)。其余顶点均在圆盘内，由式~\eqref{eq:q1-angle-identity} 可得对应内积非正，即夹角均不小于 \(90^\circ\)。\(\square\)
+\vspace{0.5em}
+
+从恒等式\eqref{eq:q1-angle-identity}可以知道，利用这一判据计算时不需要求角度，只需逐个检查 \(\overrightarrow{v_kv_i}\cdot\overrightarrow{v_kv_j}\le0\)。若 \(P\) 退化为单点，其直径与最小包围圆半径均为0，可直接处理。
+
+下面构造一个符合题意的反例，说明\textbf{与定位区域同直径的圆未必能够覆盖整个区域}。如图~\ref{fig:q1-counterexample} 所示，取边长为38米的等边三角形 \(T\)。在每条边的反向延长线上，距起始顶点1000米处设置一个检测点，并使测向角域的一条边界沿该边、另一条边界向三角形内部偏转 \(2^\circ\)。从各检测点看，整个三角形的张角均小于 \(2^\circ\)，因此三个测向角域的交集恰好为该三角形。
+
+这一构造可以在题目情境下实现。取三角形重心为真实源位置，各次示向度读数取相应角域的中间方向，则测角误差均不超过 \(1^\circ\)。源到三个检测点的距离均约为1019米，选取共同接收半径为1200米即可正常接收；将三角形放在目标圆域中心附近，也满足源位置的范围要求。
+
+等边三角形的任意一对顶点都是最远点对，但第三个顶点处的夹角为 \(60^\circ<90^\circ\)，不满足上述夹角判据。因此，以任意一条边为直径的圆都无法覆盖第三个顶点，也就不存在与该三角形同直径的覆盖圆。具体地，该区域的直径为38米，而最小包围圆是以重心为圆心的外接圆，其半径为
+\begin{equation}
+  \rho(T)=\frac{38}{\sqrt{3}}\,\mathrm{m}\approx21.94\,\mathrm{m}>19\,\mathrm{m}=\frac{\operatorname{diam}(T)}{2}.
+  \label{eq:counterexample}
+\end{equation}
+因此，区域直径为38米时，覆盖整个区域所需的最小圆直径约为43.88米，同直径圆不能覆盖该区域。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=110mm]{../梳理/问题一插图/q1-counterexample.pdf}
+  \caption{等边三角形的直径圆无法覆盖整个定位区域。三角形边长为38米，以边 \(v_1v_2\) 为直径的圆半径为19米，第三个顶点 \(v_3\) 位于圆外}
+  \label{fig:q1-counterexample}
+\end{figure}
+
+
+\subsection{数值计算示例与核验}
+
+<<<<<<< 本地当前修改
+\subsubsection{数值计算示例}
+||||||| e480272f
+存在至少一个保证清除位置的充要条件是 \(\rho(P)\le r_{\mathrm{opt}}\)。在本问中，将所有保证清除位置组成的集合记为 \(C(P)\)，并用 \(\overline B(v,r)\) 表示以 \(v\) 为圆心、半径为 \(r\) 的闭圆盘，于是
+\begin{equation}
+  C(P)=\bigcap_i\overline{B}(v_i,r_{\mathrm{opt}}).
+  \label{eq:clear-set}
+\end{equation}
+值得注意，当 \(\rho(P)\le r_{\mathrm{opt}}\) 时，最小包围圆圆心 \(c(P)\) 是一个合法选择，但不一定是离机器狗当前位置最近的选择。
+=======
+存在至少一个保证清除位置的充要条件是 \(\rho(P)\le r_{\mathrm{opt}}\)。在本问中，将所有保证清除位置组成的集合记为 \(C(P)\)，并用 \(\overline B(v,r)\) 表示以 \(v\) 为圆心、半径为 \(r\) 的闭圆盘，于是
+\begin{equation}
+  C(P)=\bigcap_i\overline{B}(v_i,r_{\mathrm{opt}}).
+  \label{eq:clear-set}
+\end{equation}
+当 \(\rho(P)\le r_{\mathrm{opt}}\) 时，最小包围圆圆心 \(c(P)\) 是一个可行的清除位置，但不一定离机器狗当前位置最近。
+>>>>>>> 团队远端
+
+题目未给出问题一的具体观测数据，下面构造一组输入，说明算法的计算过程。取两个检测点 \(s_1=(-1000,0)\,\mathrm{m}\)、\(s_2=(0,-1000)\,\mathrm{m}\)，示向度分别为 \(0^\circ\)、\(90^\circ\)，测角误差界均为 \(\pm1^\circ\)。该观测可由位于原点的源产生，此时测角误差为零，源到两个检测点的距离均为1000米，满足正常接收条件。
+
+首先，以 \(g=(x_g,y_g)\) 表示待求源位置，将上述数据代入测向角域约束，得到四个半平面不等式，可合并写为
+\begin{equation}
+  \begin{aligned}
+    -(x_g+1000)\tan1^\circ &\le y_g\le(x_g+1000)\tan1^\circ,\\
+    -(y_g+1000)\tan1^\circ &\le x_g\le(y_g+1000)\tan1^\circ.
+  \end{aligned}
+  \label{eq:q1-example-halfplanes}
+\end{equation}
+线性规划判定该交集非空且有界。随后将四条边界直线两两联立，保留满足全部不等式的交点，去重并按边界顺序排列，得到四个顶点。其坐标近似为
+\begin{equation}
+  \begin{aligned}
+    v_1&=(-17.1556,-17.1556), &v_2&=(17.1452,-17.7543),\\
+    v_3&=(17.7652,17.7652), &v_4&=(-17.7543,17.1452),
+  \end{aligned}
+  \label{eq:q1-example-vertices}
+\end{equation}
+坐标单位为米。计算四个顶点之间的六个距离，得到最远点对为 \(v_1,v_3\)，因此区域直径为 \(\operatorname{diam}(P)=\lVert v_1-v_3\rVert\approx49.3854\,\mathrm{m}\)。
+
+最后，检验另外两个顶点处的夹角，均为 \(90^\circ\)，满足前述夹角判据。因此，以 \(v_1v_3\) 为直径的圆能够覆盖整个区域，并且就是最小包围圆。其圆心为最远点对的中点，约为 \((0.3048,0.3048)\,\mathrm{m}\)，半径为 \(24.6927\,\mathrm{m}\)。
+
+
+图~\ref{fig:q1-numerical-example} 展示了上述计算得到的定位区域：四条角域边界围成四边形，虚线连接最远顶点 \(v_1,v_3\)，以其中点为圆心的最小包围圆覆盖全部顶点。
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=110mm]{../梳理/问题一插图/q1-numerical-example.pdf}
+  \caption{数值计算示例的定位区域与最小包围圆。最远点对为 \(v_1,v_3\)，区域直径为49.3854米，最小包围圆半径为24.6927米}
+  \label{fig:q1-numerical-example}
+\end{figure}
+
+\subsubsection{算法的数值核验}
+
+为检查半平面表示是否正确，在跨越 \(0^\circ/360^\circ\) 及接近坐标轴的方向上共取3500个测试点，直接角度判断与半平面不等式判断的结果全部一致；以独立的斜率直线求交复核上述算例，所得直径也一致。另对60组包含3至8个检测点的随机观测，用线性规划计算区域在给定方向上的最远投影，与所提取顶点的最大投影比较，最大差约为 \(4.55\times10^{-13}\,\mathrm{m}\)，支持顶点提取的数值一致性。
+
+\section{问题二的模型与求解}
+
+本文采用\textbf{期望定位损失}与{完成概率}评价第二次检测的效果，分别衡量检测后的剩余位置不确定性，以及无需补测即可确定保证清除位置的可能性。
+
+其中，“定位损失”指第二次无线电检测后剩余可行区域的最小包围圆半径。将各种反馈下的半径按概率求平均，得到期望定位损失，其数值越小，表示平均定位范围越小。“完成概率”指第二次检测后剩余区域的最小包围圆半径不超过20米的概率；满足这一条件时，无需继续无线电测向，移动到该圆圆心即可完成光学定位与清除。
+
+源位置、接收半径和各地点的测角误差均为固定未知量。本文采用贝叶斯方法，以\textbf{主观概率}描述在已有信息下对这些未知量取值的认识。获得新观测后，通过贝叶斯公式更新其概率分布；更新只改变对未知量的判断，其实际取值保持不变，与题目规定的同一地点误差固定相容。
+
+在此基础上，本文建立\textbf{基于贝叶斯更新的加权选点模型}。先根据首次观测更新对固定未知量的判断，再预测第二次反馈，计算上述两个指标，并构造定位效果综合评价函数。权重确定后，最小化该函数即可作出选点决策；改变权重，则得到不同定位偏好下的一组候选位置。
+
+\subsection{准备工作：由观测信息构造定位区域}
+
+设第二个检测点为 \(q\)，它的位置是本问需要决定的量。为简化坐标表示，利用圆的旋转对称性，不妨将首次检测点写成 \(s_1=(a,0)\)，首次示向度记为 \(\beta\)，其中 \(a\ge0\)、\(\beta\in[-\pi,\pi)\) 均为确定的参数。若在 \(q\) 处得到正常示向度 \(\theta\)，则令 \(s_2=q\)、\(\theta_1=\beta\)、\(\theta_2=\theta\)，并沿用问题一的角域记号 \(W_1,W_2\)。源位置 \(g\) 到两次检测点的距离分别简记为 \(d_1(g)=\|g-s_1\|\)、\(d(g;q)=\|g-q\|\)。
+
+首次测得正常示向度，说明源位于对应角域内，信号可接收，且源距超过强信号阈值。因此，首次观测后的源位置可行区域为 \(K_1=\{g\in\Omega\cap W_1:r_{\mathrm{strong}}<d_1(g)\le1500\}\)。对于其中一个可能位置 \(g\)，接收半径还必须满足 \(\max\{1000,d_1(g)\}\le R\le1500\)。
+
+在 \(q\) 处进行第二次检测，可能得到强信号（源距\(q\)不超过5米）、无信号（源距大于接收半径）或正常示向度，分别记为 \(\mathrm H\)、\(\mathrm N\) 和 \(\theta\)。
+由于首次检测已成功接收，且两次检测对应同一个固定接收半径，第二次无信号表明源到 \(q\) 的距离大于其到 \(s_1\) 的距离，同时超过1000米。因此，无信号也能排除部分源位置。将新反馈对应的约束与 \(K_1\) 取交集，得到三种反馈后的剩余区域
+
+\begin{equation}
+\begin{aligned}
+K_{\mathrm H}(q)&=\{g\in K_1:d(g;q)\le r_{\mathrm{strong}}\},\\
+K_{\mathrm N}(q)&=\{g\in K_1:d(g;q)>\max\{1000,d_1(g)\}\},\\
+K_\theta(q)&=\{g\in K_1\cap W_2:r_{\mathrm{strong}}<d(g;q)\le1500\}.
+\end{aligned}
+\label{eq:q2-pair-regions}
+\end{equation}
+
+其中，\(W_2\) 由检测点 \(q\) 和读数 \(\theta\) 确定。若某种反馈对应的区域为空，它就不可能在已有观测条件下出现，后续不计入评价。
+
+<<<<<<< 本地当前修改
+沿用问题一中最小包围圆的定义，用半径 \(\rho(K)\) 衡量区域 \(K\) 还有多大，半径越小，源的位置就确定得越精细。第二次反馈为 \(z\) 时，将剩余区域 \(K_z(q)\) 的这一半径简记为 \(\rho_z(q)\)。
+||||||| e480272f
+沿用问题一的方法，用最小包围圆半径 \(\rho(K)\) 衡量区域 \(K\) 还有多大，半径越小，源的位置就确定得越精细。第二次反馈为 \(z\) 时，将剩余区域 \(K_z(q)\) 的这一半径简记为 \(\rho_z(q)\)。
+=======
+沿用问题一的方法，以最小包围圆半径 \(\rho(K)\) 衡量区域 \(K\) 的尺度，半径越小，定位越精细。第二次反馈为 \(z\) 时，将剩余区域 \(K_z(q)\) 的这一半径简记为 \(\rho_z(q)\)。
+>>>>>>> 团队远端
+
+若第二个检测点距 \(K_1\) 超过1500米，则必然只能得到无信号，因而无法缩小已有区域。因此，将距 \(K_1\) 不超过1500米、且不同于首次检测点的位置作为搜索范围，记为 \(Q\)（允许位于目标圆域 \(\Omega\) 外）。
+
+\subsection{定位损失的定义}
+
+第二次反馈为 \(z\) 时，将剩余区域的最小包围圆半径定义为定位损失，即 \(L_z(q)=\rho_z(q)\)，单位为米。三种反馈均按这一规则计算。
+
+\begin{enumerate}[label=(\arabic*),leftmargin=2.2em]
+  \item \textbf{强信号。} 剩余区域 \(K_{\mathrm H}(q)\) 位于检测点的5米范围内，取 \(L_{\mathrm H}(q)=\rho_{\mathrm H}(q)\le5\) 米。
+  \item \textbf{无信号。} 根据未能接收信号的信息排除部分源位置，取剩余区域的半径 \(L_{\mathrm N}(q)=\rho_{\mathrm N}(q)\)。
+  \item \textbf{正常示向度。} 将新读数对应的角域与已有区域相交，取更新后区域的半径 \(L_\theta(q)=\rho_\theta(q)\)。
+\end{enumerate}
+
+\subsection{基于贝叶斯更新的反馈预测}
+
+对于同一个检测点，不同反馈留下的区域大小不同，能否达到清除条件也不同。为了计算期望定位损失和完成概率，需要先用首次观测更新对源位置和接收半径的判断，再预测第二次各种反馈出现的可能性。
+
+\subsubsection{未知量的先验描述}
+
+按照前文模型假设，源位置 \(G\) 在 \(\Omega\) 内按面积均匀分布，接收半径 \(R\sim\operatorname{U}[1000,1500]\)，两个不同检测点的误差 \(E_1,E_2\sim\operatorname{U}[-\alpha,\alpha]\)，观测前认为这些未知量相互独立。均匀性和独立性是为了计算反馈概率而增加的假设，不能仅由题目给出的误差界与接收范围推出。后续的期望定位损失与完成概率均基于上述先验假设和观测信息计算，其结果反映这些条件下的预测评价。
+
+同一地点的多次检测始终共享同一个误差，不能重新抽样，也不能靠重复测量取平均消除误差。本模型只预测不同于首次检测点的新位置。对于观测后产生的关联，例如较远的源位置必须对应较大的接收半径，后续计算会一并保留。
+
+\subsubsection{首次观测后的概率更新}
+
+将首次正常示向度信息记为 \(I_1=(s_1,\beta)\)。可行区域 \(K_1\) 包含尚未排除的位置，但这些位置的后验密度未必相同。例如，源距不超过1000米时，题目允许的任何接收半径都能解释首次接收；距离超过1000米后，只有较大的接收半径才能解释这一观测。因此，应根据接收条件调整不同位置的概率权重。
+
+贝叶斯更新将原有概率与观测的似然相乘，再归一化。似然表示假定某个源位置成立时，得到已有观测的可能程度。在 \(K_1\) 内，均匀测角误差对应的角度似然相同，位置权重的差别来自能否接收到信号。距离为 \(d\) 时，这一接收概率为
+
+\begin{equation}
+ p_{\mathrm{rec}}(d)=\mathbb{P}(R\ge d)=
+ \begin{cases}
+ 1,&d\le1000,\\
+ (1500-d)/500,&1000<d<1500,\\
+ 0,&d\ge1500.
+ \end{cases}
+\label{eq:q2-pair-weight}
+\end{equation}
+
+将上述权重用于 \(K_1\) 内的各个位置，并使总概率等于1，得到首次观测后的源位置密度
+
+\begin{equation}
+ p_1(g)=\frac{\mathbf1_{K_1}(g)p_{\mathrm{rec}}(d_1(g))}{C_1},
+ \qquad C_1=\int_{K_1}p_{\mathrm{rec}}(d_1(g))\,\mathrm dg>0.
+\label{eq:q2-pair-posterior}
+\end{equation}
+
+其中 \(C_1\) 是归一化系数，$\mathbf1$表示集合的示性函数。该结果说明，距离超过1000米后，越远的位置得到的权重越低，因为能解释首次接收的半径取值越来越少。
+
+图~\ref{fig:q2-posterior} 固定首次检测点为 \(s_1=(1200,0)\) 米，比较 \(\beta=30^\circ\) 与 \(90^\circ\) 时的后验分布。示向度决定保留哪个角域，而圆域边界进一步限制源的位置：\(30^\circ\) 方向的角域较早遇到边界，后验集中在较小的区域；\(90^\circ\) 方向保留的距离范围更长，其中超过1000米的部分还因接收概率下降而降低权重。这说明，当圆域边界参与截断时，示向度会改变后验分布的形状与密度大小。两幅热力图采用同一色标，并按源距与相对示向角展开显示；颜色仍表示单位面积上的位置概率密度。
+
+接收半径本身也需要更新。若源位于 \(g\)，首次接收已经排除了小于 \(d_1(g)\) 的半径。因此，对于后验密度为正的位置，有 \(R\mid G=g,I_1\sim\operatorname{U}[\max\{1000,d_1(g)\},1500]\)。预测第二次检测时，要使用更新后的范围，不能把 \(R\) 再当作与源位置无关的量。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=160mm]{q2_posterior_general.pdf}
+  \caption{非圆心检测点处，不同首次示向度对应的后验位置密度}
+  \label{fig:q2-posterior}
+\end{figure}
+
+\subsubsection{第二次反馈的概率预测}
+
+固定待评价的检测点 \(q\)，考虑每个可能源位置 \(g\)。接收半径固定，因此两次均可接收要求半径不小于两次源距的较大值。记这个距离为 \(d_\vee(g;q)=\max\{d_1(g),d(g;q)\}\)，则两次均能接收的概率权重为 \(p_{\mathrm{rec}}(d_\vee)\)。将首次可接收的权重 \(p_{\mathrm{rec}}(d_1)\) 减去两次均可接收的权重，即得到首次接收、第二次无信号的权重。
+
+再结合三种反馈各自的位置约束，得到用于计算反馈概率的权重函数
+
+\begin{equation}
+\begin{aligned}
+ b_{\mathrm H}(g;q)&=\mathbf1_{K_{\mathrm H}(q)}(g)p_{\mathrm{rec}}(d_1(g)),\\
+ b_{\mathrm N}(g;q)&=\mathbf1_{K_1}(g)\bigl[p_{\mathrm{rec}}(d_1(g))-p_{\mathrm{rec}}(d_\vee(g;q))\bigr],\\
+ b_\theta(g;q)&=\frac{\mathbf1_{K_\theta(q)}(g)}{2\alpha}p_{\mathrm{rec}}(d_\vee(g;q)).
+\end{aligned}
+\label{eq:q2-pair-feedback-weights}
+\end{equation}
+
+其中，正常示向度的读数还受新地点测角误差影响。按照不同地点误差独立且均匀的假设，允许的角度范围内密度为 \(1/(2\alpha)\)，因此第三项包含这个因子。将各个可能源位置的权重积分，并除以首次观测的归一化系数，得到
+
+\begin{equation}
+\begin{aligned}
+ P_{\mathrm H}(q)&=\frac{1}{C_1}\int_{K_1}b_{\mathrm H}(g;q)\,\mathrm dg,
+ &P_{\mathrm N}(q)&=\frac{1}{C_1}\int_{K_1}b_{\mathrm N}(g;q)\,\mathrm dg,\\
+ f_\Theta(\theta;q)&=\frac{1}{C_1}\int_{K_1}b_\theta(g;q)\,\mathrm dg.
+\end{aligned}
+\label{eq:q2-pair-prediction}
+\end{equation}
+
+\(P_{\mathrm H}(q)\) 和 \(P_{\mathrm N}(q)\) 分别是强信号与无信号出现的概率。正常示向度可以连续变化，因此用密度 \(f_\Theta(\theta;q)\) 描述；将它在某个角度区间内积分，就得到读数落入该区间的概率。在全部角度上积分所得的正常反馈概率，与前两种概率相加等于1。
+
+\subsection{定位效果的综合评价与选点决策}
+
+对每个待选位置 \(q\)，利用上述反馈概率及相应的定位损失即可计算期望。以 \(Z\) 表示尚未得到的第二次反馈，将损失按预测概率求平均，得到期望定位损失
+
+\begin{equation}
+\begin{aligned}
+ J(q)&=\mathbb E[\rho_Z(q)\mid I_1,q]\\
+ &=P_{\mathrm H}(q)\rho_{\mathrm H}(q)+P_{\mathrm N}(q)\rho_{\mathrm N}(q)
+ +\int_0^{2\pi}f_\Theta(\theta;q)\rho_\theta(q)\,\mathrm d\theta.
+\end{aligned}
+\label{eq:q2-pair-expected-objective}
+\end{equation}
+
+右端依次累加强信号、无信号和正常示向度对应的剩余半径，其中前两项按反馈概率加权，正常示向度按预测密度积分。
+
+另一方面，题目允许在距源20米以内进行光学定位。只要剩余区域能被一个半径20米的圆完全覆盖，移动到圆心后，无论源位于区域中的何处，都能完成光学定位与清除，无需继续无线电测向。按最小包围圆的定义，这一条件等价于 \(\rho_Z(q)\le20\,\mathrm{m}\)。将这一事件的概率记为 \(P_{\mathrm{finish}}(q)\)，则
+
+\begin{equation}
+\begin{aligned}
+ P_{\mathrm{finish}}(q)
+ &=\mathbb{P}\bigl(\rho_Z(q)\le20\mid I_1,q\bigr)\\
+ &=P_{\mathrm H}(q)+P_{\mathrm N}(q)\mathbf1_{\{\rho_{\mathrm N}(q)\le20\}}\\
+ &\quad+\int_0^{2\pi}f_\Theta(\theta;q)\mathbf1_{\{\rho_\theta(q)\le20\}}\,\mathrm d\theta.
+\end{aligned}
+\label{eq:q2-completion-probability}
+\end{equation}
+强信号将源限制在检测点的5米范围内，一定满足完成条件；无信号和正常示向度则按更新后区域的最小包围圆半径判断。
+
+图~\ref{fig:q2-feedback-regions} 具体说明了20米包围圆条件。这里取首次点为原点、首次示向正东，第二检测点为 \(q=(813.82,521.02)\) 米。若新读数为 \(270^\circ\)，剩余区域的包围圆半径约为16.87米，移动到其圆心即可保证清除，无需补测；若读数为 \(300^\circ\)，半径约为30.43米，任何20米圆都无法覆盖整个区域，因而仍需补测。两幅局部图使用相同的长度尺度，虚线圆的半径均为20米。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=130mm]{q2_feedback_regions.pdf}
+  \caption{两种示向度反馈下的剩余区域与完成条件}
+  \label{fig:q2-feedback-regions}
+\end{figure}
+
+上述两个指标分别反映平均剩余不确定性和本次检测后结束测向的可能性。例如，在首次点位于原点、示向正东的算例中，将完成概率纳入权衡后，数值优选点的期望损失可由25.08米增至25.67米，而完成概率由26.62\%提高至37.34\%。这说明\textbf{较小的平均损失增量可能换来明显更高的完成概率}，因此有必要同时考虑两个指标。
+
+以题设20米光学定位距离为尺度，将 \(J(q)\) 除以20，消除其与概率之间的量纲差异。设 \(w\in[0,1]\) 为完成概率指标的权重，构造\textbf{定位效果综合评价函数} \(F_w(q)\)，并将第二检测点的选择写为
+
+\begin{equation}
+ \min_{q\in Q}\quad F_w(q)
+ =(1-w)\frac{J(q)}{20}+w\bigl[1-P_{\mathrm{finish}}(q)\bigr].
+\label{eq:q2-weighted-objective}
+\end{equation}
+
+\(F_w\) 越小，综合定位效果越好。\(w=0\) 时，只最小化期望定位损失；\(w=1\) 时，只最大化完成概率；中间取值表示两者之间的权衡。权重反映对定位效果的偏好，不是题目给定的物理参数。固定 \(w\) 后，求解式~\eqref{eq:q2-weighted-objective} 即得到该偏好下的选点决策。
+
+沿用图~\ref{fig:q2-feedback-regions} 的原点算例，该检测点是 \(w=0.5\) 时得到的数值优选点。图~\ref{fig:q2-feedback} 给出其第二次示向度的预测密度，并用阴影标出满足完成条件的反馈。本例强信号与无信号的概率均为0，因此阴影面积就是完成概率，约为37.34\%。密度较高的读数未必能使区域缩小到20米圆内，这说明选点时需要同时考虑反馈出现的可能性及其留下的区域大小。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=150mm]{q2_feedback_distribution.pdf}
+  \caption{第二次示向度的预测密度及满足完成条件的反馈}
+  \label{fig:q2-feedback}
+\end{figure}
+
+\subsection{由权重变化确定候选区域}
+
+题目没有指定上述两项指标的相对重要程度，因此不必预先限定唯一的权重。让 \(w\) 在0至1之间变化，汇集各个权重下的最优位置，便得到第二检测点的候选区域
+
+\begin{equation}
+ Q_{\mathrm{cand}}=\bigcup_{w\in[0,1]}\arg\min_{q\in Q}F_w(q).
+\label{eq:q2-candidate-region}
+\end{equation}
+
+每个入选位置都对应至少一种定位偏好。使用时先确定权重，再选取该权重对应的位置即可。若出现并列最优点，则保留这些等效选择；例如，首次点位于圆心时，关于首次示向方向对称的位置具有相同评价。在只重视完成概率且出现并列解时，可优先报告期望损失较小的代表点。
+
+实际计算时，对若干权重分别求解并汇集优选点。候选区域可能表现为曲线上的点集或若干分离部分，不一定具有非零面积；具体求解方法与结果如下。
+
+\subsection{数值求解方法}
+
+对一般的 \((a,\beta)\)，反馈区域随检测点改变，评价函数同时包含分段概率积分和最小包围圆计算，难以写成统一、简洁的显式选点公式。因此，本文采用\textbf{确定性数值积分与网格、多初值局部搜索相结合的方法}，输入首次观测及权重，输出检测点和两项评价指标。
+
+\textbf{第一步：构造区域与搜索范围。} 由 \((a,\beta)\) 计算 \(K_1\) 和归一化系数 \(C_1\)，检查首次观测是否可行。计算时以首次点为临时原点、首次示向为横轴，便于处理狭窄角域；最终将选点坐标平移、旋转回题目的坐标系。若首次区域已满足20米包围圆条件，则直接报告无需再次测向。
+
+\textbf{第二步：计算一个检测点的评价值。} 固定 \(q\)，分别构造强信号、无信号和各正常读数对应的区域，用边界交点与圆弧计算最小包围圆。位置积分在极坐标下进行，包含面积因子 \(r\)；在接收权重和区域约束变化处划分积分区间，再用高斯求积计算反馈概率。对正常示向度的外层积分，还要在区域形状变化及包围圆半径穿过20米的位置分段，并自适应细分，从而分别累加 \(J(q)\) 与 \(P_{\mathrm{finish}}(q)\)。这种确定性计算避免了随机抽样波动干扰相近检测点的比较。
+
+\textbf{第三步：搜索优选位置。} 先在搜索范围的外包矩形内布置100米网格，再在可行区域附近补充较密的网格与沿示向方向的采样点。每次评价均检查 \(q\ne s_1\) 且距 \(K_1\) 不超过1500米，不合格的位置不参与比较。对固定权重，选取5个位置相互分开的较优网格点，并加入初始区域圆心作为参考起点，分别进行 Nelder--Mead 单纯形搜索。该方法只比较函数值，适合本模型中导数不易稳定计算的情形；随后对两个较优结果提高积分精度并再次细化。局部细化以坐标收缩至厘米量级、目标值极差不超过 \(2\times10^{-9}\) 为停止条件，最多迭代130次。同一点的两项指标可供不同权重复用。
+
+\textbf{第四步：复算与核验。} 最终候选点采用更高阶求积和更密的阈值扫描复算，并检查0.1、1、5米邻域内是否存在更优点。各组优选点的期望损失在提高精度前后变化小于 \(2\times10^{-6}\) 米，概率归一化残差小于 \(10^{-7}\)。另以独立射线交区间和支撑圆计算核查区域几何，并对8个代表选点分别进行20000次联合先验抽样，核对期望损失与完成概率。下文报告经过上述搜索与核验得到的数值优选点。
+
+\subsection{求解结果与第二检测点的选择}
+
+\subsubsection{不同首次观测下的典型结果}
+
+为分辨首次位置与示向度的影响，表~\ref{tab:q2-typical-results} 统一取 \(w=0.5\)，比较圆心、非圆心的不同朝向及靠近边界的情形。表中均使用以目标圆心为原点的坐标，存在等效选点时列出一个代表。
+
+\begin{table}[htbp]
+  \centering
+  \caption{典型首次观测下的数值优选点（\(w=0.5\)）}
+  \label{tab:q2-typical-results}
+  \small
+  \renewcommand{\arraystretch}{1.08}
+  \begin{tabular}{rrrrr}
+    \toprule
+    \(a\) / \(\mathrm{m}\) & \(\beta\) / \({}^\circ\) & 第二检测点 \(q\) / \(\mathrm{m}\) & \(J(q)\) / \(\mathrm{m}\) & \(P_{\mathrm{finish}}(q)\) / \% \\
+    \midrule
+    0 & 0 & \((813.8,\,521.0)\) & 25.67 & 37.34 \\
+    1200 & 30 & \((1459.2,\,467.7)\) & 12.29 & 100.00 \\
+    1200 & 90 & \((695.7,\,798.1)\) & 24.12 & 40.38 \\
+    1200 & 150 & \((755.7,\,858.1)\) & 25.67 & 37.34 \\
+    1700 & 0 & \((1770.1,\,42.0)\) & 1.88 & 100.00 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+表~\ref{tab:q2-typical-results} 说明，首次点到圆心的距离相同，并不必然对应相近的定位效果。例如，\(a=1200\) 米时，\(30^\circ\) 方向的初始区域受圆域边界截断较多，第二次检测的完成概率可达100\%；\(90^\circ\) 方向保留范围更长，完成概率约为40.38\%。\(150^\circ\) 方向的首次角域在接收范围内完整落入圆域，其定位几何与圆心算例等价，因此平移、旋转选点后得到相同的两项指标。靠近边界的 \(a=1700\)、\(\beta=0\) 情形则具有更小的剩余不确定性。
+
+上述结果表明，首次位置与示向度共同决定第二次检测能够达到的定位精度和完成概率。
+
+\subsubsection{首次位于原点、示向正东时的权重比较}
+
+当 \(a=0,\beta=0\) 时，关于横轴对称的两个检测点具有相同评价。表~\ref{tab:q2-origin-weights} 列出11个权重对应的数值优选点，以 \(\pm\) 同时表示两支对称候选位置。
+
+\begin{table}[htbp]
+  \centering
+  \caption{原点、正东算例中不同权重的选点与定位效果}
+  \label{tab:q2-origin-weights}
+  \small
+  \renewcommand{\arraystretch}{1.08}
+  \begin{tabular}{rrrr}
+    \toprule
+    权重 \(w\) & 第二检测点 \(q\) / \(\mathrm{m}\) & \(J(q)\) / \(\mathrm{m}\) & \(P_{\mathrm{finish}}(q)\) / \% \\
+    \midrule
+    0 & \((906.6,\,\pm572.8)\) & 25.08 & 26.62 \\
+    0.05 & \((895.8,\,\pm562.3)\) & 25.09 & 28.77 \\
+    0.1 & \((885.9,\,\pm554.0)\) & 25.11 & 30.40 \\
+    0.2 & \((867.4,\,\pm541.8)\) & 25.20 & 32.84 \\
+    0.35 & \((840.9,\,\pm529.6)\) & 25.39 & 35.42 \\
+    0.5 & \((813.8,\,\pm521.0)\) & 25.67 & 37.34 \\
+    0.65 & \((785.1,\,\pm513.1)\) & 26.08 & 38.81 \\
+    0.8 & \((754.0,\,\pm502.4)\) & 26.65 & 39.89 \\
+    0.9 & \((731.4,\,\pm490.7)\) & 27.20 & 40.37 \\
+    0.95 & \((719.1,\,\pm482.2)\) & 27.56 & 40.51 \\
+    1 & \((705.5,\,\pm470.7)\) & 28.02 & 40.57 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+由表~\ref{tab:q2-origin-weights}，只考虑期望损失时，优选点约为 \((906.6,\pm572.8)\) 米。两项归一化指标等权时，选取 \(w=0.5\)，得到 \(q\approx(813.8,\pm521.0)\) 米；相较 \(w=0\)，期望损失增加约0.60米，完成概率提高约10.71个百分点。若只追求完成概率，则取 \(w=1\)，优选点约为 \((705.5,\pm470.7)\) 米，完成概率约为40.57\%，相应期望损失增至28.02米。
+
+图~\ref{fig:q2-candidates} 将这些结果画在位置平面和指标平面上。左图显示权重变化对应的两支镜像候选点；右图的曲线逐渐变平，说明完成概率越接近本次搜索得到的最大值，进一步提高它所需增加的期望损失越多。由此，本问的输出是随权重变化的一组候选位置；确定定位偏好后，采用对应权重的选点。对于表外的首次观测，按前述数值流程重新求解即可。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=160mm]{q2_candidates.pdf}
+  \caption{11个权重下的候选检测点及评价指标（\(a=0,\beta=0\)）。颜色表示完成概率权重，虚线连接相邻权重的数值结果。}
+  \label{fig:q2-candidates}
+\end{figure}
+
+\FloatBarrier
+
+\input{../梳理/全文章节/问题三.tex}
+
+\input{../梳理/全文章节/问题四.tex}
+
+\section{模型检验}
+
+\subsection{几何计算与完成依据的核验}
+
+第一问通过直接角度判断、独立直线求交和线性规划，对照检查半平面表示、顶点提取及算例的直径结果；夹角判据的正反两种情形分别由数值算例和等边三角形反例展示。第二问的反馈预测同时保留接收半径固定及地点误差固定的条件，三种反馈的概率总和为1，选点指标与候选区域均在所声明的先验下解释。
+
+第三、四问进一步将局部定位与整场完成分开核验。第三问对每个未发现频道独立保存实际负观测，并以整网格覆盖确认不存在遗漏；历史官方场景的七个未发现频道均通过13,104个含边界单元的检查。第四问采用覆盖目标圆域的4,988个矩形单元校核固定站点布局，同时以放宽后的朝向必要条件删除不相容块。两问均使用最小包围圆半径不超过19.5米的可靠清除判据；计划中的观测和离散规划样本不替代实际完成证据。
+
+\subsection{整场表现与证据范围}
+
+第三问谨慎测向的30场模拟器演练测试均完成全部清除，均值为333.59秒/源；全程协同既有50场与30场均全清，均值为231.71与226.34秒/源。另有30组同场景本地配对，平均节省96.65秒/源，不作为官方成绩。第四问谨慎测向、可见性评分与联合域规划各30场模拟器演练测试均全清，均值分别为651.83、496.70、458.37秒/源；联合域规划相对谨慎测向平均节省29.68\%，相对可见性评分平均节省7.72\%。另有30组同场景本地配对，联合域规划相对可见性评分平均节省20.38秒/源，不作为官方成绩。以上结果分别来自各问既有记录，不将不同问题的时间差解释为某一模块的因果影响，也不将独立场景比较解释为同场配对实验。
+
+计费组成显示，两问的移动时间均超过总均值的七成，说明减少移动是联合安排搜索与目标处理任务时需要重点考虑的因素。第四问联合域规划相对谨慎测向的节省量95\%区间为[117.67,269.25]秒/源，相对可见性评分的区间仍包含零；这些整体对照尚不能单独识别联合裁剪的收益，第三问也未单独识别各模块的收益。因此，现有证据支持策略在已测试场景中的可用性，但不足以保证全局时间最优或在所有场景的预算内完成全部清除。
+
+第三问三次正式测试成绩与程序耗时见表\ref{tab:q3-formal}，策略版本依据实际运行者提供的更正信息确认；第四问三次正式测验见表\ref{tab:q4r-formal}，分别成功清除10、11、11个源，平均定位清除时间为557.293、525.395、501.464秒。正式元数据未给出实际源总数，故不据此宣称全清。
+
+\section{模型评价与推广}
+
+\subsection{模型的优点}
+
+<<<<<<< 本地当前修改
+\textbf{四问共享一致的几何依据。} 第一问通过角域求交计算定位区域直径，并回答同直径圆的覆盖问题；第二问以反馈后区域的最小包围圆评价定位效果；第三、四问进一步结合光学定位距离安排清除行动。各问通过位置可行区域承接观测信息，几何尺度与行动条件之间的联系明确。
+||||||| e480272f
+\textbf{四问共享一致的几何依据。} 从第一问的角域求交与包围圆判据，到第二问对反馈后区域的评价，再到第三、四问的可靠清除，位置可行区域始终承接观测信息。区域直径、最小包围圆半径与当前位置能否清除的含义得到区分，避免仅凭直径或代表位置作出过强判断。
+=======
+\textbf{四问共享一致的几何依据。} 第一问用角域求交构造位置可行区域并建立包围圆判据，第二问评价不同反馈留下的区域，第三、四问据此判断能否可靠清除。各问均区分区域直径、最小包围圆半径与当前位置能否清除，避免仅凭直径或代表位置作出过强判断。
+>>>>>>> 团队远端
+
+\textbf{完整性判断与效率估价各有依据。} 搜索覆盖和保守位置域用于排除与清除判断，概率模型、有限情形试算及路线估计用于比较行动。第四问还保留无信号历史，结合半径与朝向固定的条件约束源位置，避免将背向反馈误当作超距。
+
+\textbf{能够连接数学条件与实际行动。} 策略给出站点、下一测点、清除位置、任务次序及停止条件，并依据实际计费动作重建轨迹、统计各项耗时。图表展示全部样本与代表场景，便于核对公式、算法描述和执行结果。
+
+\subsection{模型的局限性}
+
+第二问的期望评价及第四问的规划代表位置依赖工作先验，改变先验可能改变优选行动；当前数值结果不代表题目未规定的真实生成分布。第三问的有限步评分和第四问的测点代价包含经验系数，路线也使用启发式求解，均不具备全局最优性保证。
+
+保守几何近似可能保留多余位置，增加后续测量；选择网格与多边形分辨率时，还需权衡计算开销与精度。第四问在达到细分预算后保留尚未证伪的区域，以维持保守性，但这可能削弱裁剪效果。第三问冻结实现还存在假想续跑区域数值退化导致异常退出的已知案例，几何完成证书不保证软件无异常。本文尚未对先验、细分尺度和各评分系数完成系统敏感性分析。
+
+现有场景有限，且官方比较使用不同案例。样本全清不能覆盖所有边界情形，未触发的回退分支也不能据此认定已获得整场性能验证。后续若检验单项机制，应采用相同场景的独立对照，并保持时间口径、物理规则与成功标准一致。
+
+\subsection{模型的推广}
+
+若设备的接收半径、测角精度或清除距离发生变化，可替换相应观测约束与动作成本，再重新校核搜索布局。存在障碍时，应将直线距离换成可行路径长度，并重新检查观测可达性；现有无障碍路线结论不能直接沿用。对于一般定向辐射形状，可在位置、尺度与朝向的联合参数空间中构造新的相容条件，仍以保守域作出可靠判断，以代表状态辅助行动规划。
+
+\clearpage
+\begin{thebibliography}{99}
+  \bibitem{Tokekar2013} Tokekar P, Isler V. Sensor placement and selection for bearing sensors with bounded uncertainty[C]. IEEE International Conference on Robotics and Automation (ICRA), 2013. DOI: 10.1109/ICRA.2013.6630920.
+  \bibitem{Gholami2015} Gholami M R, Gezici S, Wymeersch H, et al. Characterizing the worst-case position error in bearing-only target localization[C]. Workshop on Positioning, Navigation and Communication (WPNC), 2015.
+  \bibitem{Welzl1991} Welzl E. Smallest enclosing disks (balls and ellipsoids)[C]. New Results and New Trends in Computer Science, LNCS 555, 1991: 359--370. DOI: 10.1007/BFb0038202.
+  \bibitem{VanderHook2014} Vander Hook J, Tokekar P, Isler V. Cautious greedy strategy for bearing-only active localization: analysis and field experiments[J]. Journal of Field Robotics, 2014, 31(2): 296--318. DOI: 10.1002/rob.21499.
+  \bibitem{Engin2020} Engin S, Isler V. Active localization of multiple targets using noisy relative measurements[EB/OL]. arXiv:2002.09850, 2020.
+  \bibitem{Song2012} Song D, Kim C Y, Yi J. Simultaneous localization of multiple unknown and transient radio sources using a mobile robot[J]. IEEE Transactions on Robotics, 2012, 28(3): 668--680. DOI: 10.1109/TRO.2012.2183069.
+  \bibitem{Zhao2025} 赵倩倩, 熊刚, 王李军, 等. 面向未知定向辐射源组合定位的无人机群优化部署[J]. 信号处理, 2025, 41(4): 668--682.
+\end{thebibliography}
+
+\end{document}

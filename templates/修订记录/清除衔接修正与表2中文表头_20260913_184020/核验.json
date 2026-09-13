@@ -1,0 +1,39 @@
+{
+  "changed_sources": {
+    "templates/论文模版.tex": "6fcf507e5acf319a1c9cd01e688c4b49327a3033b1bb2ec0c46c60d16ee69674",
+    "梳理/论文初稿.tex": "4650c36fffb04b36e422d5524a571653584ab4511ff595a0185def5c418de1e4",
+    "templates/摘要页初稿/摘要页.tex": "14bc19988666da47d0ffb317bbc95d72724926739c3f357edd2d5151c81f87ef",
+    "梳理/全文章节/问题三.tex": "054c87e70c7a60ea46e8fa50c21d96fc04dbb70c69443cb6b9a099155333f708",
+    "梳理/全文章节/问题四.tex": "dfb041bee683dce72027e9a7454c24b7669aa7d7166ec92564fb17998abe6263"
+  },
+  "sections_9_10_unchanged_in_last_adoption_and_this_turn": true,
+  "table_2_labels": [
+    "首次观测点横坐标",
+    "首次观测点示向度",
+    "期望定位损失",
+    "完成概率"
+  ],
+  "outputs": {
+    "templates/论文模版.pdf": {
+      "pages": 29,
+      "sha256": "f2d747643e05098d7de4897bf5b3a0e470010ec06804545299de7436b8f55b7f"
+    },
+    "梳理/论文初稿.pdf": {
+      "pages": 29,
+      "sha256": "f7d3b4bd27e81a8e77c7ae155e75520ec13d858f9233f7fb2c3f6cbbc2eab705"
+    },
+    "templates/摘要页初稿/摘要页.pdf": {
+      "pages": 1,
+      "sha256": "e1dde9278c19409ce5dc48bc9f3efd036ef9305e4b4adb1f5ae8be9e1701e63d"
+    }
+  },
+  "compile_warnings": [],
+  "table_values_unchanged": true,
+  "old_clearance_references_removed": true,
+  "visual_pages_checked": [
+    1,
+    14,
+    16,
+    23
+  ]
+}

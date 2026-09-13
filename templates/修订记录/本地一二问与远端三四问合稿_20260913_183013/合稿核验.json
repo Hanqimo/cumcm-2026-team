@@ -1,0 +1,86 @@
+{
+  "remote": "656f33c0e42afb417889f2f2147f119ccf4eef1d",
+  "remote_repository": "StevenKaiyi/cumcm-2026-team",
+  "changed_files": {
+    "templates/论文模版.tex": "076a9e62a756bbcaa9715e6580337f75498e002d071fa056d20227613f4c142b",
+    "梳理/论文初稿.tex": "19068ebc5ae0697b7a14a8f60ed50dcdc84385746dfa034548dba3ce131ca270",
+    "templates/摘要页初稿/摘要页.tex": "2cf6cc018b564f8668f1d8be1fdce947d4b4ba00b2fe9834fe8c5182648dea8b",
+    "梳理/全文章节/问题三.tex": "f510e42f02c8d906fc592d98b88ec1b1ddffb3a748427e6dd98ac737c8d1dcde",
+    "梳理/全文章节/问题四.tex": "132ab738231003d8f2f0932cdeb125fde2c075e9a0f21405ad2058b38a5368b9",
+    "梳理/第三问_v6/figures/q3-performance.pdf": "4aff53ded10a18cbe10714614551a9175199e8cc427ac5d9d29b4a07d2e90f5a",
+    "梳理/第三问_v6/figures/q3-performance.png": "0123a6c248c6b32e7de559dce34f30da623d95dd41f16e3b763f9f965a6f73f1",
+    "梳理/第三问_v6/figures/q3-performance.svg": "25c9308934c80921721cc9bedfb08214700145da8d90c3c836efac2889d992b4",
+    "梳理/第三问_v6/figures/q3-route-coverage.pdf": "59cf0060fd9b033a23a998c1edcfaaa1a60da01065a9d7dbd33de245161acba6",
+    "梳理/第三问_v6/figures/q3-route-coverage.png": "830e9b2394cd05e39d06ef1ee1f536f55238296aaebae62d458daa20b42d7474",
+    "梳理/第三问_v6/figures/q3-route-coverage.svg": "86ce1d951cf8ce9d6e173aa0e1a07704b5ce063a427317e20732b9feefe9b82f",
+    "梳理/第四问_M32/figures/fig01-direction-coverage.pdf": "a042c74c5725fc11f5716c1c7ab5db8e437a6c173be52b90fb402a9a1a31cd47",
+    "梳理/第四问_M32/figures/fig01-direction-coverage.svg": "5c051228fb2ff5f164d8f3223c5a9cef5525024e964de1dd31d428ef21123bec",
+    "梳理/第四问_M32/figures/fig02-joint-domain.pdf": "6f5a333518738633de812e0af6997ea977b8a90dc9b82c3bdc884ae97055fdb8",
+    "梳理/第四问_M32/figures/fig02-joint-domain.png": "ca2be1da165863e9a68b4eeada713ef4723894f18ddda01357c3e2d474061f56",
+    "梳理/第四问_M32/figures/fig02-joint-domain.svg": "b264bbeacb7838ab3b715adfbe6e2e1f509d8ada88f4e7e77d6b1d716c9e3e5c",
+    "梳理/第四问_M32/figures/fig03-official-comparison.pdf": "1e9dc46175e9c05af6892ce4c5fb8f150803a4138178a351d0df9e0461362b0b",
+    "梳理/第四问_M32/figures/fig03-official-comparison.png": "914602a6a3c00179acb8874e4536d432dcd259e41a9c0fa4961b4daa8a1dfcf5",
+    "梳理/第四问_M32/figures/fig03-official-comparison.svg": "e610d39610f6b8081f62af145c595c6b3edaea02d101d25761e971c8230b9b74",
+    "梳理/第四问_M32/figures/fig04-paired-paths.pdf": "b669bc82c6d0d535855d84527cc96f0ae21332ee4d8cb840a2468b0a1789a07e",
+    "梳理/第四问_M32/figures/fig04-paired-paths.png": "dd917aaa760d45c090e10d28decd78690d07b647b8e5c864e2bdc5f50a80a73c",
+    "梳理/第四问_M32/figures/fig04-paired-paths.svg": "9a0c236ea960d9f6f4145786d83ced15283646c5c4d7e6b729f0eac87143c736"
+  },
+  "preserved_main_sections": {
+    "templates/论文模版.tex": {
+      "unchanged_prefix_sha256": "ba86bfb2034d5d721909d9ea960bf8b80938c94ed11e5b6889bf2e7e43a145b6",
+      "unchanged_suffix_sha256": "caad0189ae72839529427044e5eacef731faeaa7e01850e62d6c274f24ee65c7"
+    },
+    "梳理/论文初稿.tex": {
+      "unchanged_prefix_sha256": "c90e3630a1852ce85e9d5a6f07e99319d14fe12bfd52c5e20d07d3cc6eda4434",
+      "unchanged_suffix_sha256": "caad0189ae72839529427044e5eacef731faeaa7e01850e62d6c274f24ee65c7"
+    },
+    "templates/摘要页初稿/摘要页.tex": {
+      "unchanged_prefix_sha256": "b6471a7e0166e4161e4d81287e5151413558c7a95d0596b1adf6c1af05522ba4",
+      "unchanged_suffix_sha256": "10a6dee3cbe507c5caa50b11a185f1f55df95eb2037440955160eb2900da3f55"
+    }
+  },
+  "strategy_code_changed": false,
+  "consistency_corrections_applied": false,
+  "pdf_outputs": {
+    "templates/论文模版.pdf": {
+      "pages": 29,
+      "labels": [
+        "",
+        "1",
+        "2"
+      ],
+      "sha256": "4f035a87b13812f203f09ef6a95d473b6a60ca9b822ab755a9b8863e7f434d61"
+    },
+    "梳理/论文初稿.pdf": {
+      "pages": 29,
+      "labels": [
+        "",
+        "1",
+        "2"
+      ],
+      "sha256": "2bd6fca5dc2a1c3ba1f9e65c3f651c87ca3d862708da34289f82a36535854995"
+    },
+    "templates/摘要页初稿/摘要页.pdf": {
+      "pages": 1,
+      "labels": [
+        ""
+      ],
+      "sha256": "f8da7dbc3c81098a8f98dcc546a2483de5e53c87bd08fffc363d638490b9c980"
+    }
+  },
+  "validation": {
+    "compile_warnings": [],
+    "missing_references": [],
+    "preserved_local_q1_q2": true,
+    "remote_q3_q4_exact": true,
+    "rendered_pages": [
+      1,
+      15,
+      16,
+      20,
+      24,
+      25,
+      27
+    ]
+  }
+}
