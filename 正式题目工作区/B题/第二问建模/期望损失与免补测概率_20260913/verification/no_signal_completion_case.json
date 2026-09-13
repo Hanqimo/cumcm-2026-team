@@ -1,0 +1,43 @@
+{
+  "a": 1700,
+  "beta_deg": 0,
+  "q_local": [
+    -930,
+    0
+  ],
+  "q_global": [
+    770,
+    0
+  ],
+  "evaluation": {
+    "x": -930.0,
+    "y": 0.0,
+    "J": 46.8329039092041,
+    "P_finish": 0.0171286463855444,
+    "P_onsite": 0.0,
+    "P_H": 0.0,
+    "P_N": 0.0162407300351846,
+    "P_normal": 0.983759269964794,
+    "P_finish_N": 0.0162407300351846,
+    "P_finish_normal": 0.000887916350359828,
+    "probability_residual": -2.09832151654155e-14,
+    "mec_gap": 3.5527136788005e-14,
+    "angle_calls": 1638.0,
+    "root_count": 2.0,
+    "depth_capped": 0.0,
+    "distance_K1": 934.999242547797,
+    "x_global": 770.0,
+    "y_global": 0.0
+  },
+  "no_signal_geometry": {
+    "radius_lower": 15.0754433324904,
+    "radius_upper": 15.0754433324904,
+    "center": [
+      85.0251011142174,
+      -4.40758540776187e-13
+    ],
+    "dmax": 1030.00063268357
+  },
+  "check": "No signal branch can finish bearing localization after moving: P_finish_N=P_N, rho_N<20, current point farther than 1000m.",
+  "status": "PASS"
+}

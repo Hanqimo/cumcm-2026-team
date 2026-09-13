@@ -1,0 +1,50 @@
+{
+  "model": "Q2-expected-finish-M01-v01",
+  "algorithm": "A01-weight-scan-multistart",
+  "run": "R001",
+  "started_at": "2026-09-13T10:11:48.131774",
+  "git_head": "999e1c795a40fa790d6093352ae34b2fd73d8dd7",
+  "git_status_before": "## main...origin/main [behind 2]\n?? \"\\346\\255\\243\\345\\274\\217\\351\\242\\230\\347\\233\\256\\345\\267\\245\\344\\275\\234\\345\\214\\272/B\\351\\242\\230/\\347\\254\\254\\344\\272\\214\\351\\227\\256\\345\\273\\272\\346\\250\\241/\\346\\234\\237\\346\\234\\233\\346\\215\\237\\345\\244\\261\\344\\270\\216\\345\\205\\215\\350\\241\\245\\346\\265\\213\\346\\246\\202\\347\\216\\207_20260913/\"\n",
+  "source_sha256": {
+    "正式题目工作区/B题/第二问建模/一般情景求解_20260912/src/solver.cpp": "9c6a113a8c7dff8d1926079f97c7e4645cab6d84a576edc67f951cd78c707b70",
+    "正式题目工作区/B题/第二问建模/一般情景求解_20260912/src/search_general.py": "de344cc3b41a54ee0469de730dd515324d8ef06575ad6f141675dacade2bb667",
+    "正式题目工作区/B题/第二问建模/一般情景求解_20260912/src/validate_general.py": "f9584b82cd50e6e1b6a3403fc60713a19d73f3144a53dfb26d5e5c22ff9e9cb5",
+    "templates/论文模版.tex": "7b78f736545fed995c1d25deaf72153411c979542011e946100bf0bb273d1275"
+  },
+  "adoption_status": "experiment only; current paper unchanged",
+  "objective": "(1-w)*J/20+w*(1-P_finish)",
+  "J": "original expected radius loss, zero only for guaranteed optical location at current q",
+  "P_finish": "Pr(rho(K_Z)<=20), allows moving to covering-circle center; all feedback branches included",
+  "probability_weight_grid": [
+    0,
+    0.05,
+    0.1,
+    0.2,
+    0.35,
+    0.5,
+    0.65,
+    0.8,
+    0.9,
+    0.95,
+    1
+  ],
+  "normalization_m": 20,
+  "cases": [
+    [
+      0,
+      0
+    ],
+    [
+      1700,
+      90
+    ],
+    [
+      1700,
+      0
+    ],
+    [
+      1780,
+      0
+    ]
+  ]
+}
