@@ -1,0 +1,18 @@
+{
+  "grid_box": [
+    800,
+    1040,
+    400,
+    700
+  ],
+  "grid_step_m": 2,
+  "grid_points": 18271,
+  "worst_angle_bound_max_gap_m": 0.001999966687499466,
+  "expected_integration_level": 3,
+  "source_hashes": {
+    "worstcase/src/worst_solver.cpp": "884f589b4305ef57b26f4608c4dc8b359024a349c5cf37076127de6da444c474",
+    "src/solver.cpp": "caeefb1a710a29bdd5f6b6f0dfdc902572c86365d114bacf6eb9ec33389bbc0b",
+    "worstcase/runs/R001/comparison.json": "a6ad8049e18c1ed48a7a3aa3346699e1cc97d0571d96ebcd0c47b3b9207f6709"
+  },
+  "elapsed_seconds": 36.42278695106506
+}

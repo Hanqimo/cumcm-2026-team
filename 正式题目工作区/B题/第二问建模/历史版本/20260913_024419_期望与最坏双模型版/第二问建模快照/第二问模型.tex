@@ -1,0 +1,348 @@
+% 编译：latexmk -xelatex -interaction=nonstopmode -halt-on-error -outdir=build 第二问模型.tex
+\documentclass[UTF8,a4paper,zihao=-4,fontset=none]{ctexart}
+\usepackage[a4paper,margin=2.3cm,headheight=15pt,footskip=1.1cm]{geometry}
+\usepackage{lmodern}
+\setCJKmainfont{Songti SC}[UprightFont=STSongti-SC-Regular,BoldFont=STSongti-SC-Bold]
+\setCJKsansfont{Heiti SC}[UprightFont=STHeitiSC-Light,BoldFont=STHeitiSC-Medium]
+\setCJKmonofont{Heiti SC}[UprightFont=STHeitiSC-Light,BoldFont=STHeitiSC-Medium]
+\usepackage{amsmath,amssymb,mathtools,booktabs,tabularx,longtable,array}
+\usepackage{float,fancyhdr,xcolor,tikz,pgfplots,needspace}
+\usepackage[hidelinks,unicode]{hyperref}
+\usepackage{bookmark}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta}
+\definecolor{inkblue}{RGB}{24,67,103}
+\definecolor{deepteal}{RGB}{20,119,121}
+\ctexset{section={format=\normalfont\Large\mdseries\rmfamily,beforeskip=1.4ex,afterskip=.8ex},subsection={format=\normalfont\large\mdseries\rmfamily,beforeskip=1ex,afterskip=.5ex}}
+\setlength{\parindent}{2em}\setlength{\parskip}{.25em}\linespread{1.08}
+\setlength{\emergencystretch}{2em}\raggedbottom
+\clubpenalty=10000\widowpenalty=10000
+
+\numberwithin{equation}{section}
+\newcommand{\ind}{\mathbf 1}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Prob}{\mathbb P}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\cl}{\operatorname{cl}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\hypersetup{pdftitle={第二检测点选择：概率更新与定位损失},pdfauthor={}}
+\begin{document}
+\begin{center}
+{\normalfont\LARGE\sffamily\mdseries 第二检测点选择：概率更新与定位损失}\par
+\end{center}
+\vspace{2em}
+
+\section{变量与分布假设}
+用随机向量 \(G\) 表示未知源位置，\(g=(g_x,g_y)\) 表示其候选取值。位置密度均相对于平面面积元 \(\dd g\) 定义，因此 \(\Prob(G\in A)=\int_A p(g)\dd g\)。
+
+\subsection{几何量与观测量}
+目标圆域为 \(D=B(O,1800)\)，其中 \(O=(0,0)\)，\(B(c,s)=\{g:\norm{g-c}\le s\}\)。利用大圆及位置先验关于圆心的旋转对称性，不妨直接设第一检测点为 \(S_1=(a,0)\)，其中 \(a=\norm{OS_1}\ge0\)。第一正常示向度记为 \(\theta_1=\beta\in[-\pi,\pi)\)，它相对于 \(x\) 轴正向度量；当 \(a>0\) 时，这正是相对于向量 \(OS_1\) 的方向角。\(\beta=0\) 表示向外，\(\beta=-\pi\) 表示朝向圆心；当 \(a=0\) 时，可再由旋转对称性取 \(\beta=0\)。
+
+\(a,\beta\) 是第一次观测已经确定的情景参数，第二检测点 \(q=(q_x,q_y)\) 才是优化变量。第一点允许位于大圆之外。角度统一使用弧度，\(1^\circ\) 对应 \(\alpha=\pi/180\)。下文所有观测后的分布、区域、反馈概率和损失都依赖于固定的 \((a,\beta)\)；中间推导可省略这两个参数，关键区域及最终优化问题中显式写出。
+
+\begin{longtable}{p{.24\textwidth}p{.67\textwidth}}
+\caption{主要符号及直观含义}\label{tab:symbols}\\
+\toprule 符号 & 含义 \\\midrule\endfirsthead
+\toprule 符号 & 含义 \\\midrule\endhead
+\bottomrule\endfoot
+\(G\)、\(g\) & 未知源位置，以及某一个候选位置；均位于 \(D\)。\\
+\(R\)、\(r\) & 未知的固定接收半径，以及一个候选半径值；单位为米。\\
+\(a,\beta\) & 已知情景参数；\(S_1=(a,0)\)、\(\theta_1=\beta\)。\\
+\(q=(q_x,q_y)\) & 第二检测点；两个坐标是优化变量。\\
+\(d_1(g),d_2(g;q)\) & \(\sqrt{(g_x-a)^2+g_y^2}\)、\(\norm{g-q}\)，即候选源到两点的距离。\\
+\(\mathcal F_1,\mathcal F_2(q,\theta)\) & 第一次、第二次正常示向度对应的扇形区域。\\
+\(E_1,E_2\) & 两个不同检测点处的角误差。\\
+\(\mathcal I_1\) & 已知信息“第一点返回正常示向度 \(\theta_1\)”。\\
+\(Z\) & 第二次反馈：强信号 \(H\)、无信号 \(N\)，或正常角度 \(\theta\)。\\
+\(K_1,K_z(q)\) & 第一次、第二次反馈后的源位置支持集。\\
+\(\rho_z(q),L_z(q),J(q)\) & 反馈后的包围圆半径、定位损失，以及布站前的期望损失。\\
+\end{longtable}
+
+\subsection{扇形区域的统一记号}
+记 \(e(\vartheta)=(\cos\vartheta,\sin\vartheta)\)。对检测点 \(s\) 和正常示向度 \(\vartheta\)，将对应的扇形区域统一记为
+\begin{equation}\label{eq:sector}
+\mathcal F(s,\vartheta)=\{s+t\,e(\vartheta+\delta):5<t<1500,\ -\alpha\le\delta\le\alpha\}.
+\end{equation}
+它以 \(s\) 为顶点，以 \(\vartheta\) 为中心方向，张角为 \(2\alpha\)，源距在 \(5\) 与 \(1500\) 米之间，严格说是一个扇环。定义 \(\mathcal F_1=\mathcal F((a,0),\beta)\) 和 \(\mathcal F_2(q,\theta)=\mathcal F(q,\theta)\)，分别表示两次正常示向度的扇形。角度增加 \(2\pi\) 不改变方向或扇形，后文角度关系均按这一周期理解。
+
+\subsection{观测前的分布设定}
+位置按面积均匀分布，接收半径在 \([1000,1500]\) 上均匀分布，二者在观测前独立。这三项均匀设定及不同地点误差独立性是采用的概率假设；题目给出的区域、接收范围和误差界限定了取值范围。位置均匀表达同面积区域等可能，半径均匀表达在已知区间内采用常密度，角误差均匀表达误差界内采用常密度。相应密度为 \(p_G(g)=\ind_D(g)/|D|\) 和 \(h(r)=\ind_{[1000,1500]}(r)/500\)，其中 \(|D|=\pi1800^2\)。符号 \(\ind_A\) 是指示函数：条件 \(A\) 成立时取 \(1\)，其余情况取 \(0\)。
+
+给定源位置与接收半径，两个不同地点的角误差独立，均服从 \(U[-\alpha,\alpha]\)。在一项具体任务中，源的位置、接收半径和各地点的误差均有固定实现；上述分布表达我们在获得观测前对它们的认识。第二点取 \(q\ne S_1\)。
+
+\section{连续变量的贝叶斯更新}
+本模型同时包含连续的源位置、接收半径和示向度，因而使用事件贝叶斯公式的密度形式。记未知参数为 \(x\)，观测为 \(y\)，先验密度为 \(p(x)\)，似然为 \(\ell(y\mid x)\)，则后验密度为
+\begin{equation}\label{eq:bayes}
+p(x\mid y)=\frac{p(x)\ell(y\mid x)}{\int p(u)\ell(y\mid u)\dd u}.
+\end{equation}
+离散反馈的似然是条件概率，连续示向度的似然是条件密度。分母对全部候选参数积分，使后验密度归一化。第一次更新取 \(x=(g,r)\)，由联合后验积分得到位置与半径的边缘后验；第二次更新使用第一次后验作为先验。
+
+\section{第一次正常示向度后的联合更新}
+\subsection{将方向条件与接收条件写进似然}
+第一次正常示向度要求候选源位于 \(\mathcal F_1\)，并且满足 \(d_1(g)\le r\)。角误差均匀，方向相容时的角度似然密度为 \(1/(2\alpha)\)，因此似然密度可写为
+\begin{equation}\label{eq:likelihood1}
+\ell_1(g,r)=\frac{1}{2\alpha}\,\ind_{\mathcal F_1}(g)\,\ind_{\{d_1(g)\le r\}}.
+\end{equation}
+其中扇形 \(\mathcal F_1\) 已统一包含方向误差界与正常源距范围。
+
+将目标圆域、角度范围和最大接收距离合并，得到第一次观测的正权重区域
+\begin{equation}\label{eq:omega-ab}
+\Omega_1(a,\beta)=D\cap\mathcal F_1.
+\end{equation}
+因此，圆外第一点产生的方向扇形也始终要与 \(D\) 取交。定义 \(w(d)=\Prob(R\ge d)=\int_{1000}^{1500}\ind_{\{r\ge d\}}h(r)\dd r\)，它表示观测前对一个距离为 \(d\) 的候选源能够接收的概率。直接计算区间长度，得到
+\begin{equation}\label{eq:tail}
+ w(d)=
+ \begin{cases}
+ 1,&d\le1000,\\
+ (1500-d)/500,&1000<d<1500,\\
+ 0,&d\ge1500.
+ \end{cases}
+\end{equation}
+
+\begin{figure}[H]\centering
+\begin{tikzpicture}
+\begin{axis}[width=11.8cm,height=4.5cm,xmin=0,xmax=1600,ymin=0,ymax=1.12,xlabel={候选源距 \(d\)（米）},ylabel={接收权重 \(w(d)\)},xtick={0,500,1000,1500},ytick={0,.2,.6,1},grid=major,grid style={gray!18},tick label style={font=\small}]
+\addplot[very thick,deepteal]coordinates{(0,1)(1000,1)(1500,0)(1600,0)};
+\addplot[only marks,mark=*,mark size=2pt,inkblue]coordinates{(800,1)(1200,.6)(1400,.2)};
+\end{axis}
+\end{tikzpicture}
+\caption{接收半径的不确定性转化为不同源距的位置权重。}
+\end{figure}
+
+\subsection{联合后验与位置后验}
+位置与半径在观测前独立，联合先验密度为 \(p_G(g)h(r)\)。将它乘以式~\eqref{eq:likelihood1}，可得到未归一化联合权重。所有候选情形共有的系数 \(1/|D|\) 与 \(1/(2\alpha)\) 在归一化时约去，保留下来的权重为 \(\ind_{\Omega_1}(g)\ind_{\{r\ge d_1(g)\}}h(r)\)。
+
+先对半径积分，候选位置 \(g\) 的权重就变成 \(\ind_{\Omega_1}(g)w(d_1(g))\)。再对全部候选位置积分，得到总权重 \(C_1(a,\beta)=\int_{\Omega_1(a,\beta)}w(d_1(g;a))\dd g\)，并要求它严格大于零。因此，联合后验和位置后验分别为
+\begin{equation}\label{eq:posterior1}
+\begin{aligned}
+p(g,r\mid\mathcal I_1)
+&=\frac{\ind_{\Omega_1}(g)\ind_{\{r\ge d_1(g)\}}h(r)}{C_1},\\
+p_1(g;a,\beta)
+&=\int_{1000}^{1500}p(g,r\mid\mathcal I_1)\dd r
+=\frac{\ind_{\Omega_1(a,\beta)}(g)w(d_1(g;a))}{C_1(a,\beta)}.
+\end{aligned}
+\end{equation}
+
+式~\eqref{eq:posterior1} 给出了第一次观测后每一小块区域的相对可信程度。扇形内距离不超过 \(1000\) 米的位置保留相同的面积密度，\(1000\) 米以外的位置按式~\eqref{eq:tail} 逐渐降低权重。将这些密度在任一区域 \(A\) 上积分，就得到 \(\Prob(G\in A\mid\mathcal I_1)\)。
+
+\subsection{情景相容性与大圆裁剪的显式表达}
+第一次正常接收意味着某个 \(g\in D\) 满足 \(d_1\le1500\)，由三角不等式有 \(a\le1800+1500=3300\)。当 \(a=3300\) 时，两圆至多相切于一个点，且必须取 \(R=1500\)，在当前连续先验下该观测的密度为零。可作后验更新的参数域因而取为
+\begin{equation}\label{eq:parameter-domain}
+\mathcal P=\{(a,\beta):0\le a<3300,\ -\pi\le\beta<\pi,\ C_1(a,\beta)>0\}.
+\end{equation}
+其中 \(C_1>0\) 进一步排除方向扇形没有正面积落入有效区域的情景；仅有 \(a<3300\) 还不足以保证观测相容。
+
+为了显式算出交集，沿第一次扇形中的方向 \(\varphi=\beta+\delta\) 写 \(g=(a,0)+t(\cos\varphi,\sin\varphi)\)，其中 \(-\alpha\le\delta\le\alpha\)，\(t=d_1>5\) 是源距。代入 \(\norm{g}\le1800\)，得到 \(t^2+2a\cos\varphi\,t+a^2-1800^2\le0\)。令 \(\Delta(\varphi)=1800^2-a^2\sin^2\varphi\)，当 \(\Delta\ge0\) 时，这个二次不等式的根及有效源距端点为
+\begin{equation}\label{eq:ray-interval}
+\begin{aligned}
+t_\pm(\varphi)&=-a\cos\varphi\pm\sqrt{\Delta(\varphi)},\\
+\ell(\varphi)&=\max\{5,t_-(\varphi)\},\qquad
+u(\varphi)=\min\{1500,t_+(\varphi)\}.
+\end{aligned}
+\end{equation}
+仅在 \(\Delta\ge0\) 且 \(u>\ell\) 时，该方向留下正长度区间 \(\ell<t<u\)。将这样的偏角集合记为 \(\mathcal V(a,\beta)\subseteq[-\alpha,\alpha]\)，则极坐标面积元 \(\dd g=t\dd t\dd\delta\) 给出
+\begin{equation}\label{eq:c1-ray}
+C_1(a,\beta)=\int_{\mathcal V(a,\beta)}\int_{\ell(\beta+\delta)}^{u(\beta+\delta)}t\,w(t)\dd t\dd\delta.
+\end{equation}
+式~\eqref{eq:c1-ray} 同时说明面积均匀在源距坐标中带有因子 \(t\)，而接收信息另外带来因子 \(w(t)\)。例如 \(a=2500,\beta=-\pi\) 时，中心射线在大圆内的源距为 \([700,4300]\)，与正常接收范围相交后为 \((700,1500)\)；若改为 \(\beta=0\)，整个窄扇形朝外，便不能产生相容的正常观测。
+
+\section{接收半径怎样随第一次信息更新}
+\subsection{只给定第一次观测时的半径分布}
+也可以对式~\eqref{eq:posterior1} 中的源位置积分，得到半径后验。用 \(A(r;a,\beta)\) 表示给定半径 \(r\) 时能够解释第一次观测的源位置区域面积，即 \(\Omega_1(a,\beta)\) 中满足 \(d_1(g;a)\le r\) 的部分的面积。于是有
+\begin{equation}\label{eq:radiusposterior}
+p_R(r\mid\mathcal I_1)
+=\int_Dp(g,r\mid\mathcal I_1)\dd g
+=\frac{h(r)A(r;a,\beta)}{\int_{1000}^{1500}h(s)A(s;a,\beta)\dd s}.
+\end{equation}
+分母与 \(C_1\) 相等，因为二者是在不同积分顺序下汇总同一个联合权重。式~\eqref{eq:radiusposterior} 表示，较大的半径允许更多源位置产生接收成功的观测，因此会获得相应的面积权重。
+
+由式~\eqref{eq:ray-interval}，还可将面积直接写为
+\begin{equation}\label{eq:area-ray}
+A(r;a,\beta)=\frac12\int_{\mathcal V(a,\beta)}
+\left[\min\{r,u(\beta+\delta)\}^2-\ell(\beta+\delta)^2\right]_+\dd\delta,
+\qquad 1000\le r\le1500,
+\end{equation}
+其中 \([x]_+=\max\{x,0\}\)。这由沿每条有效射线积分 \(\int t\dd t\) 得到；圆外或接近边界的第一点，通过积分区间改变 \(R\) 的后验。
+
+在 \(a=0,\beta=0\) 的基准情形下，允许区域为内半径 \(5\)、外半径 \(r\)、张角 \(2\alpha\) 的扇环。由扇形面积公式，\(A(r)=\alpha(r^2-25)\)，于是 \(p_R(r\mid\mathcal I_1)=(r^2-25)/\int_{1000}^{1500}(s^2-25)\dd s\)。这条密度随半径增大而增大。
+
+\subsection{进一步给定源位置时的半径分布}
+在分析某个具体位置 \(g\) 时，第一次接收已经表明 \(R\ge d_1(g)\)。将联合后验除以位置后验，得到 \(p(r\mid g,\mathcal I_1)=h(r)\ind_{\{r\ge d_1(g)\}}/w(d_1(g))\)。代入均匀先验后，得到
+\begin{equation}\label{eq:conditionalradius}
+R\mid G=g,\mathcal I_1
+\sim U\!\left[\max\{1000,d_1(g)\},1500\right].
+\end{equation}
+
+式~\eqref{eq:radiusposterior} 对全部未知位置作了汇总，式~\eqref{eq:conditionalradius} 则是在某个位置已经给定时作判断。源位置与接收半径在第一次观测后产生关联：距离较远的候选源，需要搭配较大的半径才能解释接收成功。
+
+\section{第二次反馈的概率与再次更新}
+\subsection{给定源位置的反馈分布}
+固定第二点 \(q\) 后，依次考察每个候选位置 \(g\)。为简化书写，下文记 \(d_1=d_1(g)\)、\(d_2=d_2(g;q)\)，并令 \(m=\max\{d_1,d_2\}\)。
+
+\textbf{强信号 \(H\)。} 当 \(d_2\le5\) 时，反馈确定为强信号，所以给定 \(g\) 的条件概率为 \(\ind_{\{d_2\le5\}}\)。
+
+\textbf{无信号 \(N\)。} 第一次接收与第二次未接收对应 \(d_1\le R<d_2\)。观测前满足这组条件的半径概率为 \(w(d_1)-w(m)\)，再除以第一次接收的概率 \(w(d_1)\)，得到 \(\Prob(N\mid g,q,\mathcal I_1)=[w(d_1)-w(m)]/w(d_1)\)。
+
+\textbf{正常示向度 \(\theta\)。} 两次都接收需要同一个半径满足 \(R\ge m\)，所以给定第一次接收后，再次接收的概率为 \(w(m)/w(d_1)\)。正常示向度 \(\theta\) 对应扇形 \(\mathcal F_2(q,\theta)\)，因此它的条件密度为 \(\ind_{\mathcal F_2(q,\theta)}(g)w(m)/(2\alpha w(d_1))\)。
+
+以上判断均使用第一次观测后仍有正密度的位置，因而 \(w(d_1)>0\)。三个反馈条件完整描述一次检测的结果。
+
+\subsection{反馈的预测分布}
+将刚才的条件概率或条件密度乘以 \(p_1(g)\)，就得到“源在位置 \(g\)，并且出现相应反馈”的联合密度。式~\eqref{eq:posterior1} 中的 \(w(d_1)\) 与条件概率分母约去，得到下面三个未归一化权重
+\begin{equation}\label{eq:weights}
+\begin{aligned}
+b_H(g;q)&=\ind_{\Omega_1}(g)\ind_{\{d_2\le5\}}w(d_1),\\
+b_N(g;q)&=\ind_{\Omega_1}(g)\bigl[w(d_1)-w(m)\bigr],\\
+b_\theta(g;q)&=\frac{\ind_{\Omega_1\cap\mathcal F_2(q,\theta)}(g)}{2\alpha}\,w(m).
+\end{aligned}
+\end{equation}
+
+记 \(M_z(q)=\int_D b_z(g;q)\dd g\)，由全概率公式得到
+\begin{equation}\label{eq:feedbackprob}
+P_H(q)=\frac{M_H(q)}{C_1},\qquad
+P_N(q)=\frac{M_N(q)}{C_1},\qquad
+f_\Theta(\theta;q)=\frac{M_\theta(q)}{C_1}.
+\end{equation}
+
+前两个量是离散反馈的概率，第三个量是正常角度的预测密度，其全圆积分等于正常反馈发生的概率。
+
+可以直接检查总概率。在 \(d_2>5\) 时，对全部角度积分后的正常权重为 \(w(m)\)，加上无信号权重 \(w(d_1)-w(m)\)，恰好恢复 \(w(d_1)\)；在 \(d_2\le5\) 时，全部权重进入强信号分支。再对源位置积分，得到 \(P_H+P_N+\int_0^{2\pi}f_\Theta(\theta;q)\dd\theta=1\)。
+
+\subsection{第二次位置后验}
+实际反馈为 \(z\) 时，对对应联合权重归一化，得到位置后验
+\begin{equation}\label{eq:posterior2}
+p_2(g\mid z,q,\mathcal I_1)=\frac{b_z(g;q)}{M_z(q)},\qquad M_z(q)>0.
+\end{equation}
+
+这仍然是式~\eqref{eq:bayes} 的“先验乘似然，再归一化”，只不过这一步的先验已经是第一次更新后的 \(p_1\)。对于强信号、无信号和正常角度，使用相应的 \(b_z\) 即可完成更新。
+
+\section{从概率分布得到可行区域与定位损失}
+\subsection{支持集：全部仍然可能的位置}
+后验密度回答各个位置有多可信，\textbf{支持集}则收集全部仍然可能的位置。记 \(K_z(q)=\supp p_2(\cdot\mid z,q,\mathcal I_1)\)。几何上，它由后验密度为正的区域及其极限边界构成；第一次支持集相应记为 \(K_1=\supp p_1\)。
+
+从式~\eqref{eq:weights} 的正权重条件出发，在本模型下可将三类支持集写为
+\begin{equation}\label{eq:support}
+\begin{aligned}
+K_H(q)&=\cl\{g\in\Omega_1:d_2(g;q)<5\},\\
+K_N(q)&=\cl\{g\in\Omega_1:d_2(g;q)>\max\{1000,d_1(g)\}\},\\
+K_\theta(q)&=\cl\bigl(\Omega_1\cap\mathcal F_2(q,\theta)\bigr).
+\end{aligned}
+\end{equation}
+
+其中 \(\cl\) 按面积测度的本质闭包理解，即仅保留任意邻域内都具有正面积可行部分的点；孤立相切点本身不产生后验概率。式~\eqref{eq:support} 只对预测概率或密度为正的反馈使用。强信号留下第二点附近的 \(5\) 米区域；无信号留下那些可能满足“第一次够近、第二次过远”的位置；正常角度将第二组方向约束与接收条件加入第一次区域。
+
+各分支都满足 \(K_z(q)\subseteq K_1\)。例如，第二次无信号要求 \(d_2>d_1\)，所以也能排除部分源位置。这说明一次检测的三种反馈都可以通过位置约束发挥作用。
+
+\subsection{最小包围圆：用一个尺度描述位置不确定性}
+对于某个非空反馈支持集 \(K_z(q)\)，先选择一个代表位置 \(c\)。它到支持集中最远位置的距离为 \(\max_{g\in K_z(q)}\norm{g-c}\)。在所有代表位置中选择这一最大距离最小的点，就得到最小包围圆
+\begin{equation}\label{eq:mec}
+\rho_z(q)=\min_{c\in\mathbb R^2}\max_{g\in K_z(q)}\norm{g-c},\qquad
+c_z(q)\in\underset{c\in\mathbb R^2}{\arg\min}\max_{g\in K_z(q)}\norm{g-c}.
+\end{equation}
+
+圆心 \(c_z(q)\) 是对全部可行位置最有利的代表位置，半径 \(\rho_z(q)\) 是它仍需覆盖的最大偏差。狭长区域即使面积较小，只要两端相距较远，包围圆半径仍然较大，因此这个尺度能够体现沿某一方向残留的定位不确定性。
+
+\subsection{原地光学定位的终止条件}
+第二次反馈后，机器人位于 \(q\)。定义 \(d_{\max}(q,z)=\max_{g\in K_z(q)}\norm{g-q}\)。若 \(d_{\max}(q,z)\le20\)，全部可行源位置都处于当前点的光学有效距离内，执行光学操作即可保证获得精确位置。
+
+这给出统一的终止判据 \(T_z(q)=\ind_{\{d_{\max}(q,z)\le20\}}\)。特别地，强信号满足 \(K_H(q)\subseteq B(q,5)\)，所以必有 \(T_H(q)=1\)。正常示向度反馈如果同样使全部可行位置落入 \(B(q,20)\)，也满足相同的终止条件。
+
+最小包围圆以 \(c_z(q)\) 为圆心，原地光学范围以 \(q\) 为圆心。因而 \(\rho_z\) 描述区域本身的大小，\(d_{\max}\) 描述该区域相对于当前检测点的位置。图~\ref{fig:optical} 将这两个量放在同一几何图中比较。
+
+\begin{figure}[H]\centering
+\begin{tikzpicture}[font=\small]
+\begin{scope}[xshift=0cm]
+\draw[deepteal,dashed,thick](0,0)circle(1.15);
+\filldraw[fill=deepteal!20,draw=deepteal](0,0)circle(.2875);
+\fill(0,0)circle(1.5pt)node[below right]{\(q\)};
+\node at(0,1.48){强信号反馈};
+\node[align=center]at(0,-1.5){\(5\) 米源位置范围\\\(d_{\max}\le5\)，原地光学定位};
+\node[anchor=west]at(.82,.95){\(20\) 米};
+\end{scope}
+\begin{scope}[xshift=5cm]
+\draw[deepteal,dashed,thick](0,0)circle(1.15);
+\fill(0,0)circle(1.5pt)node[below]{\(q\)};
+\filldraw[fill=inkblue!15,draw=inkblue](2.8,.5)--(3.25,0)--(2.8,-.5)--(2.35,0)--cycle;
+\draw[inkblue](2.8,0)circle(.5);
+\fill(2.8,0)circle(1.2pt)node[below right]{\(c_z\)};
+\draw[-{Stealth},inkblue](2.8,0)--(2.8,.5)node[midway,left]{\(\rho_z\)};
+\draw[-{Stealth},gray](0,0)--(3.25,0)node[midway,above]{\(d_{\max}\)};
+\node at(1.3,1.48){位置仍有不确定性的反馈};
+\node[align=center]at(1.3,-1.5){支持集位于当前光学范围之外\\以包围圆面积衡量剩余定位损失};
+\end{scope}
+\end{tikzpicture}
+\caption{虚线圆表示当前位置的光学范围，着色区域表示无线电反馈后的源位置支持集。}\label{fig:optical}
+\end{figure}
+
+\subsection{分支损失的定义与含义}
+评价在第二次无线电反馈后、完成能够原地保证成功的光学精确定位这一阶段结束时进行。主模型分别研究面积损失与半径损失。对终止分支，精确位置已经可以确定，定位损失取零；其余分支按支持集的最小包围圆面积计损失。统一写为
+\begin{equation}\label{eq:loss}
+L_z(q)=(1-T_z(q))\pi\rho_z(q)^2
+=\begin{cases}
+0,&d_{\max}(q,z)\le20,\\
+\pi\rho_z(q)^2,&d_{\max}(q,z)>20.
+\end{cases}
+\end{equation}
+
+这一损失将“能否原地完成精确定位”和“尚存的位置不确定性”接起来。强信号对应 \(L_H(q)=0\)，它的概率仍然保留在完整反馈分布中。面积型损失以平方米计，随半径的平方增长。
+
+将式~\eqref{eq:loss} 的面积损失记为 \(L_{A,z}(q)=L_z(q)\)。相应的半径损失定义为 \(L_{R,z}(q)=(1-T_z(q))\rho_z(q)\)，单位为米。两者使用完全相同的可行区域与终止条件，并满足 \(L_{A,z}(q)=\pi L_{R,z}(q)^2\)。
+
+对未来随机反馈采用期望面积，等价于对未终止分支的半径平方加权。在终止状态相同时，它更重视较差反馈导致的大定位半径。损失中的 \(\rho_z(q)\) 来自反馈后的支持集几何，反馈之间的权重则由概率更新决定。
+
+\section{在观测发生前选择第二检测点}
+\subsection{将全部反馈的损失按概率汇总}
+选择 \(q\) 时，第二次反馈尚未出现，需要将各类反馈的概率与损失相乘后求和。强信号和无信号使用离散概率，正常示向度使用角度积分，得到
+\begin{equation}\label{eq:objective}
+\begin{aligned}
+J(q)&=\E[L_Z(q)\mid q,\mathcal I_1]\\
+&=P_H(q)L_H(q)+P_N(q)L_N(q)
+ +\int_0^{2\pi}f_\Theta(\theta;q)L_\theta(q)\dd\theta\\
+&=\frac{1}{C_1}\left[M_N(q)L_N(q)
+ +\int_0^{2\pi}M_\theta(q)L_\theta(q)\dd\theta\right].
+\end{aligned}
+\end{equation}
+
+记式~\eqref{eq:objective} 为面积目标 \(J_A(q)=J(q)\)。采用同一预测分布，半径目标为
+\begin{equation}\label{eq:radius-objective}
+J_R(q)=\E[L_{R,Z}(q)\mid q,\mathcal I_1]
+=\frac{M_N(q)L_{R,N}(q)+\int_0^{2\pi}M_\theta(q)L_{R,\theta}(q)\dd\theta}{C_1}.
+\end{equation}
+因此，\(J_A=\pi\E[L_{R,Z}^2\mid q,\mathcal I_1]\)，而 \(J_R=\E[L_{R,Z}\mid q,\mathcal I_1]\)，两者分别关注半径的二阶矩和一阶矩。
+
+式~\eqref{eq:objective} 最后一行代入了式~\eqref{eq:feedbackprob}，并利用 \(L_H=0\)。反馈出现后才确定其支持集、包围圆与终止状态，布站前则将它们统一汇总为 \(J(q)\)。
+
+例如，一个点更容易出现强信号，会让更多概率质量进入零损失分支；一个点能够使正常示向度后的支持集更紧凑，则会降低相应分支的几何损失。两种收益通过同一个期望目标比较。
+
+\subsection{决策域与完整优化问题}
+对每个给定的 \((a,\beta)\in\mathcal P\)，第一支持集为 \(K_1(a,\beta)=\supp p_1(\cdot;a,\beta)\)，第二点取 \(q\in\mathbb R^2\setminus\{(a,0)\}\)。若 \(\dist(q,K_1)>1500\)，则对全部可行源位置都会得到无信号，支持集保持为 \(K_1\)，损失为 \(\pi\rho(K_1)^2\) 或 \(\rho(K_1)\)。其余点的各反馈支持集均包含于 \(K_1\)，终止分支取零，因此损失不超过这一基准。由此可将搜索域限定为
+\begin{equation}\label{eq:candidate-domain}
+\mathcal C(a,\beta)=\{q\in\mathbb R^2:q\ne(a,0),\ \dist(q,K_1(a,\beta))\le1500\}\subseteq B(O,3300).
+\end{equation}
+候选点允许位于目标圆域之外。这个候选域只排除完全不能增加信息的远点，不要求第二次检测一定接收到信号；无信号反馈的概率和损失已经包含在目标函数中。
+
+显式恢复参数依赖后，两个目标和最终选点问题可以统一写为
+\begin{equation}\label{eq:optimization}
+\begin{aligned}
+J_k(q;a,\beta)
+&=\frac{M_N(q;a,\beta)L_{k,N}(q;a,\beta)
++\displaystyle\int_0^{2\pi}M_\theta(q;a,\beta)L_{k,\theta}(q;a,\beta)\dd\theta}{C_1(a,\beta)},\\
+J_{k,*}(a,\beta)&=\inf_{q\in\mathcal C(a,\beta)}J_k(q;a,\beta),\qquad k\in\{A,R\},\\
+q_k^*(a,\beta)&\in\underset{q\in\mathcal C(a,\beta)}{\arg\min}\,J_k(q;a,\beta)
+\quad\text{（最小值可达时）}.
+\end{aligned}
+\end{equation}
+其中 \(L_{A,z}=(1-T_z)\pi\rho_z^2\)、\(L_{R,z}=(1-T_z)\rho_z\)，\(T_z=\ind_{\{K_z\subseteq B(q,20)\}}\)，\(M_z\) 由式~\eqref{eq:weights} 对源位置积分得到。因而 \((a,\beta)\) 经由第一次交集、概率更新、第二次反馈支持集与损失，完整传递到选点结果。对预测权重为零的反馈，其目标贡献定义为零，无须为其定义条件后验。
+
+若希望输出一片较好的候选区域，在 \(J_{k,*}>0\) 时可取 \(\mathcal C_{k,\eta}(a,\beta)=\{q\in\mathcal C(a,\beta):J_k(q;a,\beta)\le(1+\eta)J_{k,*}(a,\beta)\}\)，其中 \(\eta>0\) 是相对容差。若 \(J_{k,*}=0\)，则用绝对容差 \(\varepsilon>0\) 定义 \(\{q\in\mathcal C:J_k(q;a,\beta)\le\varepsilon\}\)。这种写法也涵盖下确界只能逼近的情形。
+
+还可以用同一预测分布报告原地精确定位的成功概率 \(P_{\rm loc}(q;a,\beta)=P_H+P_NT_N+\int_0^{2\pi}f_\Theta(\theta;q)T_\theta(q)\dd\theta\)。它将各个终止分支的概率相加，反映第二次反馈后能够原地精确定位的可能性；将其最大化或作为约束，属于另行比较的目标方案。
+
+\subsection{对称性与坐标还原}
+记关于 \(x\) 轴的反射为 \(F(x,y)=(x,-y)\)，则模型满足 \(J_k(Fq;a,-\beta)=J_k(q;a,\beta)\)。这是两个镜像情景之间的对应关系；只有情景自身关于该轴对称时，才能直接在同一情景内配对上下两个候选点。\(a=0,\beta=0\) 正是这样的基准情景。
+
+若实际坐标中第一点为 \(\widetilde S_1=a(\cos\gamma,\sin\gamma)\)，正常示向度为 \(\widetilde\theta_1\)，则取满足 \(\beta\equiv\widetilde\theta_1-\gamma\pmod{2\pi}\) 的角度代表 \(\beta\in[-\pi,\pi)\)，求得标准坐标中的 \(q_k^*(a,\beta)\) 后，将它绕圆心旋转 \(\gamma\) 即得到实际第二点。\(a=0\) 时可取 \(\gamma=\widetilde\theta_1\)、\(\beta=0\)。整个坐标变换始终保留大圆圆心为原点。
+\end{document}

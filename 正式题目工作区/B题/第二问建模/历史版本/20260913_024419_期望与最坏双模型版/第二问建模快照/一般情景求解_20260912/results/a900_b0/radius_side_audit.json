@@ -1,0 +1,54 @@
+[
+  {
+    "x": 629.443228600996,
+    "y": -379.151822953165,
+    "J": 940.947946139026,
+    "J_lower": 940.947946139024,
+    "P_H": 0.0,
+    "P_N": 0.0,
+    "P_A": 1.00000000000002,
+    "P_loc": 0.0,
+    "E_radius_loss": 16.9365747336473,
+    "safe_margin": 0.0,
+    "angle_calls": 1590.0,
+    "x_global": 1529.443228601,
+    "y_global": -379.151822953165,
+    "C1": 14137.4483767898,
+    "case": "a900_b0",
+    "objective": "radius",
+    "start_side": -1,
+    "optimizer": {
+      "success": true,
+      "iterations": 22,
+      "simplex_diameter_m": 0.0022087259874912376,
+      "simplex_value_spread": 2.6409807674099284e-10
+    },
+    "level": 5
+  },
+  {
+    "x": 629.442659017846,
+    "y": 379.15274029944,
+    "J": 940.948010910638,
+    "J_lower": 940.948010910636,
+    "P_H": 0.0,
+    "P_N": 0.0,
+    "P_A": 1.00000000000001,
+    "P_loc": 0.0,
+    "E_radius_loss": 16.9365747336092,
+    "safe_margin": 0.0,
+    "angle_calls": 1590.0,
+    "x_global": 1529.44265901785,
+    "y_global": 379.15274029944,
+    "C1": 14137.4483767898,
+    "case": "a900_b0",
+    "objective": "radius",
+    "start_side": 1,
+    "optimizer": {
+      "success": true,
+      "iterations": 21,
+      "simplex_diameter_m": 0.003063846144776069,
+      "simplex_value_spread": 4.4850168023913284e-10
+    },
+    "level": 5
+  }
+]

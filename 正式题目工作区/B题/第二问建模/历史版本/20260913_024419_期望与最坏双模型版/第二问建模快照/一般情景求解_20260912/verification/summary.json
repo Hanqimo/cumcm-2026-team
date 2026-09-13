@@ -1,0 +1,9 @@
+{
+  "cases": 8,
+  "geometry_checks": 176,
+  "max_containment_residual_m": 3.872457909892546e-12,
+  "max_mc_area_zscore": 2.561981577780925,
+  "max_mc_radius_zscore": 2.4359685047241806,
+  "max_probability_sum_residual": 8.890665981198254e-13,
+  "note": "Geometry uses independent polar interval samples. MC shares MEC evaluator; coverage and integration claims are separate."
+}

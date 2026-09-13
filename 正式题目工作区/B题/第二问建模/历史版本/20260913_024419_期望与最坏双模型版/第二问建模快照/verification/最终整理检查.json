@@ -1,0 +1,11 @@
+{
+  "src/solver.cpp": "identical to saved R002 numerical source/result",
+  "results/area/result.json": "identical to saved R002 numerical source/result",
+  "results/radius/result.json": "identical to saved R002 numerical source/result",
+  "pdf_pages": 6,
+  "pdf_visual_review": "all six pages inspected",
+  "undefined_references": false,
+  "compile_success": true,
+  "font_note": "Songti SC and Heiti SC; Latin Modern text/math. Existing Chinese slanted-style fallback warning is harmless.",
+  "numerical_recheck_difference": 0.0
+}

@@ -5,8 +5,10 @@ Latexmk: applying rule 'xelatex'...
 Rule 'xelatex':  Reasons for rerun
 Changed files or newly in use/created:
   第二问模型.tex
+  第二问正文.tex
 Category 'changed_user':
   第二问模型.tex
+  第二问正文.tex
 
 ------------
 Run number 1 of rule 'xelatex'
@@ -120,22 +122,29 @@ ty (/usr/local/texlive/2026/texmf-dist/tex/latex/kvoptions/kvoptions.sty)))
 (build/第二问模型.out) (build/第二问模型.out)
 (/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd)
 (/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd) (./第二问正文.tex
-[1] [2]) [3] (build/第二问模型.aux)
+[1] [2] [3]) [4] (build/第二问模型.aux)
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
+
+Package rerunfilecheck Warning: File `第二问模型.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
  )
-Output written on build/第二问模型.xdv (3 pages, 59060 bytes).
+Output written on build/第二问模型.xdv (4 pages, 82668 bytes).
 Transcript written on build/第二问模型.log.
 Latexmk: Getting log file 'build/第二问模型.log'
 Latexmk: Examining 'build/第二问模型.fls'
 Latexmk: Examining 'build/第二问模型.log'
+Latexmk: References changed.
 Latexmk: References changed.
 Latexmk: Log file says output to 'build/第二问模型.xdv'
 Latexmk: applying rule 'xelatex'...
 Rule 'xelatex':  Reasons for rerun
 Changed files or newly in use/created:
   build/第二问模型.aux
+  build/第二问模型.out
 
 ------------
 Run number 2 of rule 'xelatex'
@@ -249,8 +258,8 @@ ty (/usr/local/texlive/2026/texmf-dist/tex/latex/kvoptions/kvoptions.sty)))
 (build/第二问模型.out) (build/第二问模型.out)
 (/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd)
 (/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd) (./第二问正文.tex
-[1] [2]) [3] (build/第二问模型.aux) )
-Output written on build/第二问模型.xdv (3 pages, 59060 bytes).
+[1] [2] [3]) [4] (build/第二问模型.aux) )
+Output written on build/第二问模型.xdv (4 pages, 82500 bytes).
 Transcript written on build/第二问模型.log.
 Latexmk: Getting log file 'build/第二问模型.log'
 Latexmk: Examining 'build/第二问模型.fls'
@@ -270,7 +279,7 @@ Run number 1 of rule 'xdvipdfmx'
 Running 'xdvipdfmx -E -o "build/第二问模型.pdf"  "build/第二问模型.xdv"'
 ------------
 build/第二问模型.xdv -> build/第二问模型.pdf
-[1][2][3]
-130235 bytes written
+[1][2][3][4]
+143083 bytes written
 Latexmk: All targets (build/第二问模型.xdv build/第二问模型.pdf) are up-to-date
 

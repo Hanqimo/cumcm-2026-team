@@ -1,0 +1,139 @@
+{
+  "python": "3.12.14",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "versions": {
+    "numpy": "2.5.3",
+    "matplotlib": "3.11.2",
+    "pypdf": "6.10.0"
+  },
+  "source_contract": {
+    "worstcase/src/worst_solver.cpp": "884f589b4305ef57b26f4608c4dc8b359024a349c5cf37076127de6da444c474",
+    "src/solver.cpp": "caeefb1a710a29bdd5f6b6f0dfdc902572c86365d114bacf6eb9ec33389bbc0b",
+    "worstcase/runs/R001/comparison.json": "a6ad8049e18c1ed48a7a3aa3346699e1cc97d0571d96ebcd0c47b3b9207f6709"
+  },
+  "outputs": {
+    "fig01_geometry": {
+      "pdf_pages": 1,
+      "page_points": [
+        518.4,
+        392.4
+      ],
+      "embedded_fonts": [
+        {
+          "name": "/ESYMKF+STSongti-SC-Regular",
+          "embedded": true
+        },
+        {
+          "name": "/TMBLDH+STIXGeneral-Regular",
+          "embedded": true
+        },
+        {
+          "name": "/EXRUIW+STIXGeneral-Italic",
+          "embedded": true
+        }
+      ],
+      "png_pixels": [
+        4320,
+        3270
+      ],
+      "png_dpi": [
+        599.9988,
+        599.9988
+      ]
+    },
+    "fig02_objective_maps": {
+      "pdf_pages": 1,
+      "page_points": [
+        518.4,
+        356.4
+      ],
+      "embedded_fonts": [
+        {
+          "name": "/PWWCHK+STSongti-SC-Regular",
+          "embedded": true
+        },
+        {
+          "name": "/FOKWBI+STIXGeneral-Regular",
+          "embedded": true
+        },
+        {
+          "name": "/BTRLOY+STIXGeneral-Italic",
+          "embedded": true
+        }
+      ],
+      "png_pixels": [
+        4320,
+        2970
+      ],
+      "png_dpi": [
+        599.9988,
+        599.9988
+      ]
+    },
+    "fig03_branch_balance": {
+      "pdf_pages": 1,
+      "page_points": [
+        518.4,
+        277.2
+      ],
+      "embedded_fonts": [
+        {
+          "name": "/DOTUIN+STSongti-SC-Regular",
+          "embedded": true
+        },
+        {
+          "name": "/HARIXG+STIXGeneral-Regular",
+          "embedded": true
+        },
+        {
+          "name": "/IZBXID+STIXGeneral-Italic",
+          "embedded": true
+        }
+      ],
+      "png_pixels": [
+        4320,
+        2310
+      ],
+      "png_dpi": [
+        599.9988,
+        599.9988
+      ]
+    }
+  },
+  "sha256": {
+    ".gitignore": "ff63df8be66a31e561556247ae39fc5e56634fb4c4d7f38dd848279dff719dd3",
+    "README.md": "9533619f9cebb3741e0823bbf64c1c2d09598839b0103b178843cb3fe4a3a8dd",
+    "data/branch_curve.csv": "193e3b1baaae7c6f2541acf27bafae605829cd344b58ee5c58a49c8d91df9be7",
+    "data/checks.json": "74d5c87077dddb5f3ae80470cb34b47d39f5150b4d313bc8e7f39c6bfcd7323e",
+    "data/contour_check.csv": "5f80f2cc4c05a75a0f32cfae7080dff4456b5b15fa5d5d5437c28b6bcc70d361",
+    "data/contour_check_input.csv": "07d8ad0df95ee14cb1d26ef5509d5b257d540830e2f44d647cd08fa0306dae73",
+    "data/contours_1pct.json": "707aa557346c441ec538585786174277efbc859660a734be1468fc2921108ae4",
+    "data/geometry.json": "2c8db852451232800d75a5a622e1405639745bde7a8d2b53ddaafdf6e0b5baa7",
+    "data/heatmap.csv": "8ff841a677dc67add11ab519b33169c991927a3fbd1fc3e94741fd1e061a26b2",
+    "data/heatmap_part0.csv": "8d077bf11e900b1bac21b9fc1b3f642ed9ae4ba48f28df9ccfc15d0253a81343",
+    "data/heatmap_part0_input.csv": "bf7dc1c0137315919af6ea929948128bdd99ae0d36ef83359633653d531d6b29",
+    "data/heatmap_part1.csv": "66f119c0a620ea91f77356a21fb3d88eadc88326dc8fd2de39ea7b212ae7dc94",
+    "data/heatmap_part1_input.csv": "b9a7190961e7591222e55d42e3f523bd5d990145871c269dcb2dd91fc6cfe963",
+    "data/heatmap_part2.csv": "087e8efa446a3eb5cd2bdf87266e4949162b30656d5b1daab62c02427ae3ef6d",
+    "data/heatmap_part2_input.csv": "9bec3f0146eaba4da698997850c3ae0527e4e9a70641fc5b334a28a5fe26227e",
+    "data/preparation.json": "07c4b1f6cc1744f4fc50f0bdb950a6a3694f3d42fb2e9030d4990db0464fb5d0",
+    "data/preservation_check.json": "d571a2e8687b832523c5b659a8e38ef8728584823aa2c53ec8dec005bb48c7dc",
+    "data/worst_contour_geometry.json": "26e9fdee73b2accb67d2a7162a64deb166ac9819095abe0344571b755f67f3de",
+    "input_contract.json": "cacb9c60fcfce4a76f2678975a33ecaaf28c1622f77ca5c401071c66f9e0e592",
+    "output/fig01_geometry.pdf": "9c05c335d9a05596345cee8ad59cf0c175bcbdeef047c6736b189214f3a2b74a",
+    "output/fig01_geometry.png": "ffebfeaf808692bc614b1859bb721348aeb50df2633de8168a6b2183a3ff3b4b",
+    "output/fig01_geometry.svg": "3f22d8dd16cdd729f2a61bb9bed7ec097d96842f46dc4d177c5f964acbd8b8c6",
+    "output/fig02_objective_maps.pdf": "53ebff41d3c105294072c91ed33b3ff0a8e9b4110a3af4cfb563f82b9070245c",
+    "output/fig02_objective_maps.png": "06a62486ed49a4f9a80b48e45f8f79f5acb89f522167c4b96e8b654cb3ac69f1",
+    "output/fig02_objective_maps.svg": "6573d76ae4c5da910b67b77b8f88c17edefc497e9d07993788641e4d4d05d76d",
+    "output/fig03_branch_balance.pdf": "a619b699ecdba54a4433045fc3815e8840aaff444227ce9eded828c2b3984a9e",
+    "output/fig03_branch_balance.png": "52b1f8f1b4c36c5934ee7df5b9b6f150a2b771a692cb5bd79a76c7f5a013bc56",
+    "output/fig03_branch_balance.svg": "3e29edad8fee941fecb9e0dc07f2cb9614dcbc9ee544d0b2e2afef77f95b047b",
+    "requirements.txt": "ece8b30293138952711085425295dc77d07e0bb69df62c82d537502d37982b0d",
+    "src/check_data.py": "3919641b3655b34ca125e4bc7901f4c711dfd42dd149e7250bde18356c58d49a",
+    "src/draw_figures.py": "43d6611bb3d5c514cd7243211c4d85435080ea636499dd295be82f442eb6ddd6",
+    "src/figure_backend.cpp": "d13a113cb1b476d9748764e2a245172795a5e8fe75f9b14585f4d08bb287a50e",
+    "src/prepare_data.py": "596883d63bd495ab210abd6fb06ef7011b01e2f5d0e434f5ebac70701919fdef",
+    "src/reproduce.py": "fb61710a7eebf7a550ea9f7cf4855c7ba9a7b1020dc1e5aff525c65725e06241"
+  }
+}

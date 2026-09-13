@@ -1,0 +1,1 @@
+{"domain":[-1500,3000,0,1550],"upper_bound":49.03634166438676,"global_lower_bound":49.0263418311994,"gap_m":0.009999833187357865,"requested_gap_m":0.01,"completed":true,"evaluated_cells":122245,"active_cells":0,"elapsed_seconds":10.181549666,"arithmetic":"double with geometric safety margins; not outward-rounded interval arithmetic"}

@@ -1,0 +1,414 @@
+[
+  {
+    "name": "minimax",
+    "branch": "normal",
+    "independent_radius": 49.036333799831546,
+    "cpp_radius": 49.03633359983154,
+    "sample_count": 80002,
+    "max_sample_outside_m": 9.947598300641403e-14,
+    "support_pair": [
+      [
+        1499.771542734587,
+        -26.178609655925268
+      ],
+      [
+        1415.9380226140063,
+        24.7152901190595
+      ]
+    ],
+    "method": "analytic opposing rays plus independent polar radial intervals"
+  },
+  {
+    "name": "minimax",
+    "branch": "no_signal",
+    "independent_radius": 49.036333800256884,
+    "cpp_radius": 49.03633400025684,
+    "sample_count": 80002,
+    "max_sample_outside_m": 0.0,
+    "support_pair": [
+      [
+        4.999238475781956,
+        0.08726203218641757
+      ],
+      [
+        103.05376851768379,
+        -1.7988102205736758
+      ]
+    ],
+    "method": "analytic opposing rays plus independent polar radial intervals"
+  },
+  {
+    "name": "minimax",
+    "branch": "normal-angle-grid",
+    "theta": -2.682644540645779,
+    "sample_count": 454,
+    "max_sample_outside_m": 1.2742411292787637e-14
+  },
+  {
+    "name": "minimax",
+    "branch": "normal-angle-grid",
+    "theta": -2.600420173261526,
+    "sample_count": 16002,
+    "max_sample_outside_m": 6.394884621840902e-14
+  },
+  {
+    "name": "minimax",
+    "branch": "normal-angle-grid",
+    "theta": -2.5181958058772738,
+    "sample_count": 16002,
+    "max_sample_outside_m": -5.684341886080802e-14
+  },
+  {
+    "name": "minimax",
+    "branch": "normal-angle-grid",
+    "theta": -2.435971438493021,
+    "sample_count": 16002,
+    "max_sample_outside_m": -1.1013412404281553e-13
+  },
+  {
+    "name": "minimax",
+    "branch": "normal-angle-grid",
+    "theta": -2.353747071108768,
+    "sample_count": 16002,
+    "max_sample_outside_m": 0.0
+  },
+  {
+    "name": "minimax",
+    "branch": "normal-angle-grid",
+    "theta": -2.271522703724515,
+    "sample_count": 16002,
+    "max_sample_outside_m": -3.552713678800501e-15
+  },
+  {
+    "name": "minimax",
+    "branch": "normal-angle-grid",
+    "theta": -2.1892983363402627,
+    "sample_count": 16002,
+    "max_sample_outside_m": 1.0302869668521453e-13
+  },
+  {
+    "name": "minimax",
+    "branch": "normal-angle-grid",
+    "theta": -2.10707396895601,
+    "sample_count": 16002,
+    "max_sample_outside_m": 0.0
+  },
+  {
+    "name": "minimax",
+    "branch": "normal-angle-grid",
+    "theta": -2.024849601571757,
+    "sample_count": 16002,
+    "max_sample_outside_m": -3.552713678800501e-15
+  },
+  {
+    "name": "minimax",
+    "branch": "normal-angle-grid",
+    "theta": -1.9426252341875043,
+    "sample_count": 16002,
+    "max_sample_outside_m": 3.552713678800501e-15
+  },
+  {
+    "name": "minimax",
+    "branch": "normal-angle-grid",
+    "theta": -1.8604008668032517,
+    "sample_count": 16002,
+    "max_sample_outside_m": 7.815970093361102e-14
+  },
+  {
+    "name": "minimax",
+    "branch": "normal-angle-grid",
+    "theta": -1.7781764994189988,
+    "sample_count": 16002,
+    "max_sample_outside_m": 7.460698725481052e-14
+  },
+  {
+    "name": "minimax",
+    "branch": "normal-angle-grid",
+    "theta": -1.6959521320347462,
+    "sample_count": 16002,
+    "max_sample_outside_m": -3.552713678800501e-15
+  },
+  {
+    "name": "minimax",
+    "branch": "normal-angle-grid",
+    "theta": -1.6137277646504933,
+    "sample_count": 16002,
+    "max_sample_outside_m": 0.0
+  },
+  {
+    "name": "minimax",
+    "branch": "normal-angle-grid",
+    "theta": -1.5315033972662406,
+    "sample_count": 16002,
+    "max_sample_outside_m": 5.3290705182007514e-14
+  },
+  {
+    "name": "minimax",
+    "branch": "normal-angle-grid",
+    "theta": -1.4492790298819878,
+    "sample_count": 16002,
+    "max_sample_outside_m": 2.4158453015843406e-13
+  },
+  {
+    "name": "minimax",
+    "branch": "normal-angle-grid",
+    "theta": -1.367054662497735,
+    "sample_count": 16002,
+    "max_sample_outside_m": -1.3500311979441904e-13
+  },
+  {
+    "name": "minimax",
+    "branch": "normal-angle-grid",
+    "theta": -1.2848302951134825,
+    "sample_count": 16002,
+    "max_sample_outside_m": 0.0
+  },
+  {
+    "name": "minimax",
+    "branch": "normal-angle-grid",
+    "theta": -1.2026059277292296,
+    "sample_count": 16002,
+    "max_sample_outside_m": 1.4566126083082054e-13
+  },
+  {
+    "name": "minimax",
+    "branch": "normal-angle-grid",
+    "theta": -1.120381560344977,
+    "sample_count": 16002,
+    "max_sample_outside_m": 1.5987211554602254e-13
+  },
+  {
+    "name": "minimax",
+    "branch": "normal-angle-grid",
+    "theta": -1.038157192960724,
+    "sample_count": 16002,
+    "max_sample_outside_m": 1.6342482922482304e-13
+  },
+  {
+    "name": "minimax",
+    "branch": "normal-angle-grid",
+    "theta": -0.9559328255764714,
+    "sample_count": 16002,
+    "max_sample_outside_m": 1.8474111129762605e-13
+  },
+  {
+    "name": "minimax",
+    "branch": "normal-angle-grid",
+    "theta": -0.8737084581922185,
+    "sample_count": 16002,
+    "max_sample_outside_m": 1.8474111129762605e-13
+  },
+  {
+    "name": "minimax",
+    "branch": "normal-angle-grid",
+    "theta": -0.7914840908079659,
+    "sample_count": 16002,
+    "max_sample_outside_m": 1.8474111129762605e-13
+  },
+  {
+    "name": "expected",
+    "branch": "normal",
+    "independent_radius": 50.378292370082036,
+    "cpp_radius": 50.37829217008184,
+    "sample_count": 80002,
+    "max_sample_outside_m": -9.947598300641403e-14,
+    "support_pair": [
+      [
+        1499.771542734587,
+        -26.178609655925268
+      ],
+      [
+        1412.7812793498358,
+        24.66018896042169
+      ]
+    ],
+    "method": "analytic opposing rays plus independent polar radial intervals"
+  },
+  {
+    "name": "expected",
+    "branch": "no_signal",
+    "independent_radius": 41.50421280916201,
+    "cpp_radius": 41.50421300916201,
+    "sample_count": 80002,
+    "max_sample_outside_m": 0.0,
+    "support_pair": [
+      [
+        4.999238475781956,
+        0.08726203218641757
+      ],
+      [
+        87.99179272421966,
+        -1.5359024551515177
+      ]
+    ],
+    "method": "analytic opposing rays plus independent polar radial intervals"
+  },
+  {
+    "name": "expected",
+    "branch": "normal-angle-grid",
+    "theta": -2.593145588705618,
+    "sample_count": 562,
+    "max_sample_outside_m": 3.3351793549130093e-14
+  },
+  {
+    "name": "expected",
+    "branch": "normal-angle-grid",
+    "theta": -2.5153950644159084,
+    "sample_count": 16002,
+    "max_sample_outside_m": 1.1723955140041653e-13
+  },
+  {
+    "name": "expected",
+    "branch": "normal-angle-grid",
+    "theta": -2.4376445401261995,
+    "sample_count": 16002,
+    "max_sample_outside_m": 3.197442310920451e-14
+  },
+  {
+    "name": "expected",
+    "branch": "normal-angle-grid",
+    "theta": -2.35989401583649,
+    "sample_count": 16002,
+    "max_sample_outside_m": 5.3290705182007514e-14
+  },
+  {
+    "name": "expected",
+    "branch": "normal-angle-grid",
+    "theta": -2.2821434915467806,
+    "sample_count": 16002,
+    "max_sample_outside_m": 4.973799150320701e-14
+  },
+  {
+    "name": "expected",
+    "branch": "normal-angle-grid",
+    "theta": -2.2043929672570712,
+    "sample_count": 16002,
+    "max_sample_outside_m": 5.3290705182007514e-14
+  },
+  {
+    "name": "expected",
+    "branch": "normal-angle-grid",
+    "theta": -2.1266424429673623,
+    "sample_count": 16002,
+    "max_sample_outside_m": -3.552713678800501e-15
+  },
+  {
+    "name": "expected",
+    "branch": "normal-angle-grid",
+    "theta": -2.048891918677653,
+    "sample_count": 16002,
+    "max_sample_outside_m": 9.947598300641403e-14
+  },
+  {
+    "name": "expected",
+    "branch": "normal-angle-grid",
+    "theta": -1.9711413943879434,
+    "sample_count": 16002,
+    "max_sample_outside_m": -9.237055564881302e-14
+  },
+  {
+    "name": "expected",
+    "branch": "normal-angle-grid",
+    "theta": -1.8933908700982343,
+    "sample_count": 16002,
+    "max_sample_outside_m": 8.881784197001252e-14
+  },
+  {
+    "name": "expected",
+    "branch": "normal-angle-grid",
+    "theta": -1.815640345808525,
+    "sample_count": 16002,
+    "max_sample_outside_m": 8.171241461241152e-14
+  },
+  {
+    "name": "expected",
+    "branch": "normal-angle-grid",
+    "theta": -1.7378898215188157,
+    "sample_count": 16002,
+    "max_sample_outside_m": 0.0
+  },
+  {
+    "name": "expected",
+    "branch": "normal-angle-grid",
+    "theta": -1.6601392972291065,
+    "sample_count": 16002,
+    "max_sample_outside_m": 7.105427357601002e-15
+  },
+  {
+    "name": "expected",
+    "branch": "normal-angle-grid",
+    "theta": -1.582388772939397,
+    "sample_count": 16002,
+    "max_sample_outside_m": -3.552713678800501e-15
+  },
+  {
+    "name": "expected",
+    "branch": "normal-angle-grid",
+    "theta": -1.5046382486496879,
+    "sample_count": 16002,
+    "max_sample_outside_m": 3.552713678800501e-15
+  },
+  {
+    "name": "expected",
+    "branch": "normal-angle-grid",
+    "theta": -1.4268877243599785,
+    "sample_count": 16002,
+    "max_sample_outside_m": -6.750155989720952e-14
+  },
+  {
+    "name": "expected",
+    "branch": "normal-angle-grid",
+    "theta": -1.3491372000702693,
+    "sample_count": 16002,
+    "max_sample_outside_m": 7.105427357601002e-14
+  },
+  {
+    "name": "expected",
+    "branch": "normal-angle-grid",
+    "theta": -1.27138667578056,
+    "sample_count": 16002,
+    "max_sample_outside_m": 3.552713678800501e-15
+  },
+  {
+    "name": "expected",
+    "branch": "normal-angle-grid",
+    "theta": -1.1936361514908507,
+    "sample_count": 16002,
+    "max_sample_outside_m": 3.197442310920451e-13
+  },
+  {
+    "name": "expected",
+    "branch": "normal-angle-grid",
+    "theta": -1.1158856272011415,
+    "sample_count": 16002,
+    "max_sample_outside_m": 1.7408297026122455e-13
+  },
+  {
+    "name": "expected",
+    "branch": "normal-angle-grid",
+    "theta": -1.038135102911432,
+    "sample_count": 16002,
+    "max_sample_outside_m": 1.7763568394002505e-13
+  },
+  {
+    "name": "expected",
+    "branch": "normal-angle-grid",
+    "theta": -0.9603845786217229,
+    "sample_count": 16002,
+    "max_sample_outside_m": 0.0
+  },
+  {
+    "name": "expected",
+    "branch": "normal-angle-grid",
+    "theta": -0.8826340543320135,
+    "sample_count": 16002,
+    "max_sample_outside_m": 3.765876499528531e-13
+  },
+  {
+    "name": "expected",
+    "branch": "normal-angle-grid",
+    "theta": -0.8048835300423043,
+    "sample_count": 16002,
+    "max_sample_outside_m": 0.0
+  }
+]
