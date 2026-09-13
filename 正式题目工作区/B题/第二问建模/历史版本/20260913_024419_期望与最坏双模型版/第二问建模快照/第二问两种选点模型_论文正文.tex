@@ -1,0 +1,116 @@
+% 论文正文片段：沿用全文符号表和模板导言区，无需另设字体或宏包。
+\section{问题二：第二检测点的两种优化模型}
+
+第二检测点的选择可以转化为对观测后定位效果的预先比较。具体而言，对每个候选点，先分析可能获得哪些反馈，再求出各反馈下仍与观测相容的源位置区域，最后以区域的包围圆半径构造评价指标。这样，选点时既考虑两次测向的交会效果，也考虑强信号和无信号带来的位置约束。以下先给出两种模型共用的区域构造，再分别按反馈概率求期望、按全部可能反馈取最坏值，形成侧重平均效果与不利情形保证的两种选点方案。
+
+\subsection{由观测信息构造定位区域}
+
+区域构造的基本方法是将每次反馈转化为位置约束，再与已有信息取交。利用旋转对称性，取 \(s_1=(a,0)\)、\(\theta_1=\beta\)，其中 \(a\ge0\)、\(\beta\in[-\pi,\pi)\) 为给定参数。考察第二点 \(q\) 及其可能读数 \(\theta\) 时，令 \(s_2=q\)、\(\theta_2=\theta\)，并简记 \(d_1(g)=\|g-s_1\|\)、\(d_2(g;q)=\|g-q\|\)。在已有角域 \(\mathcal W_i\) 上加入正常接收的距离限制，得到扇形区域 \(\mathcal F_i=\mathcal W_i\cap\{g:r_{\mathrm{strong}}<\|g-s_i\|\le1500\}\)，其中 \(\mathcal F_2\) 随 \((q,\theta)\) 变化。
+
+第一次观测将源位置限制在 \(A_1=\Omega\cap\mathcal F_1\)，令 \(K_1=\overline{A_1}\)，并要求 \(A_1\ne\varnothing\)。交集中的 \(\Omega\) 保留了目标圆域的限制，因此第一点的位置及示向度的相对方向均会影响后续选点。对任一 \(g\in A_1\)，还须存在同一个接收半径满足 \(\max\{1000,d_1(g)\}\le R\le1500\)。这一条件在第二次反馈中继续保留。
+
+以 \(\mathsf H\)、\(\mathsf N\) 和 \(\theta\in[0,2\pi)\) 表示强信号、无信号和正常示向度反馈。强信号给出近距约束，正常反馈增加一个扇形约束；无信号则要求首次能够接收、第二次不能接收，即存在 \(R\) 满足 \(\max\{1000,d_1(g)\}\le R<d_2(g;q)\)。消去 \(R\) 后，三类反馈对应的相容位置集为
+\begin{equation}
+\begin{aligned}
+A_{\mathsf H}(q)&=\{g\in A_1:d_2(g;q)\le r_{\mathrm{strong}}\},\\
+A_{\mathsf N}(q)&=\{g\in A_1:d_2(g;q)>\max\{1000,d_1(g)\}\},\\
+A_\theta(q)&=A_1\cap\mathcal F_2(q,\theta).
+\end{aligned}
+\label{eq:q2-pair-regions}
+\end{equation}
+正常分支中的两次源距均不超过1500，因而也存在满足两次接收的共同半径。记 \(\mathcal Z(q)\) 为使 \(A_z(q)\ne\varnothing\) 的全部反馈；对这些反馈，令 \(K_z(q)=\overline{A_z(q)}\)、\(\rho_z(q)=\rho(K_z(q))\)，另记 \(\rho_1=\rho(K_1)\)。
+
+若某点距整个 \(K_1\) 均超过1500，则必然无信号，且定位区域保持不变。因此，以下在 \(\mathcal Q(a,\beta)=\{q\in\mathbb R^2:q\ne s_1,\ \operatorname{dist}(q,K_1)\le1500\}\) 内比较候选点；该约束允许检测点位于 \(\Omega\) 外。
+
+\subsection{最小化期望定位损失的模型}
+
+期望模型需要回答两个相互衔接的问题：首次观测后，哪些源位置更可能；在这些位置与接收半径的条件分布下，第二点的各种反馈各有多大可能。前者由贝叶斯更新确定，后者用于对定位损失加权。
+
+\subsubsection{首次观测后的概率更新}
+
+用 \(G\) 表示源位置的随机向量。假设观测前 \(G\) 在 \(\Omega\) 内按面积均匀分布，\(R\sim\operatorname{Unif}[1000,1500]\)，不同检测点的角误差 \(E_1,E_2\sim\operatorname{Unif}[-\alpha,\alpha]\)，且上述随机量相互独立。首次观测信息记为 \(\mathcal I_1=(s_1,\beta)\)。
+
+对于符合方向约束的位置，均匀角误差给出的似然密度相同，但正常接收还要求 \(R\ge d_1(g)\)。因此，需要先计算距离为 \(d\) 时的接收概率
+\begin{equation}
+ w(d)=\Pr(R\ge d)=
+ \begin{cases}
+ 1,&d\le1000,\\
+ (1500-d)/500,&1000<d<1500,\\
+ 0,&d\ge1500.
+ \end{cases}
+\label{eq:q2-pair-weight}
+\end{equation}
+由贝叶斯公式，将位置先验与上述观测似然相乘，再归一化，得到首次位置后验
+\begin{equation}
+ p_{1,G}(g)=\frac{\mathbf1_{A_1}(g)w(d_1(g))}{C_1},
+ \qquad C_1=\int_{A_1}w(d_1(g))\,\mathrm dg>0.
+\label{eq:q2-pair-posterior}
+\end{equation}
+这里 \(C_1\) 保证密度积分为1。该更新的直观含义是，较远的位置需要较大的接收半径才能解释首次接收，因而在更新后获得较低权重。进一步，对于正后验密度的位置，有 \(R\mid G=g,\mathcal I_1\sim\operatorname{Unif}[\max\{1000,d_1(g)\},1500]\)；位置与半径在后验中由此产生关联，第二次预测须保留这一关系。
+
+\subsubsection{第二次反馈的概率预测}
+
+预测第二次反馈时，将相应的反馈条件加入首次观测条件，并对未知半径积分。记 \(d_\vee(g;q)=\max\{d_1(g),d_2(g;q)\}\)。两次正常接收要求 \(R\ge d_\vee\)，对应权重为 \(w(d_\vee)\)；先接收而后无信号的权重则为 \(w(d_1)-w(d_\vee)\)。结合方向信息，三类反馈的未归一化位置权重为
+\begin{equation}
+\begin{aligned}
+ b_{\mathsf H}(g;q)&=\mathbf1_{A_{\mathsf H}(q)}(g)w(d_1(g)),\\
+ b_{\mathsf N}(g;q)&=\mathbf1_{A_1}(g)\bigl[w(d_1(g))-w(d_\vee(g;q))\bigr],\\
+ b_\theta(g;q)&=\frac{\mathbf1_{A_\theta(q)}(g)}{2\alpha}w(d_\vee(g;q)).
+\end{aligned}
+\label{eq:q2-pair-feedback-weights}
+\end{equation}
+其中，正常分支的 \(1/(2\alpha)\) 来自第二次测角误差的均匀密度。令 \(M_z(q)=\int_\Omega b_z(g;q)\,\mathrm dg\)，对全部位置汇总并除以首次观测的归一化常数，即得
+\begin{equation}
+ P_{\mathsf H}(q)=\frac{M_{\mathsf H}(q)}{C_1},\qquad
+ P_{\mathsf N}(q)=\frac{M_{\mathsf N}(q)}{C_1},\qquad
+ f_\Theta(\theta;q)=\frac{M_\theta(q)}{C_1}.
+\label{eq:q2-pair-prediction}
+\end{equation}
+前两项为离散反馈概率，最后一项为正常角度的预测密度分量，其积分等于正常反馈发生的概率，三者合计为1。实际得到反馈后，将对应权重归一化，还可得到 \(p_{2,G}(g\mid z,q)=b_z(g;q)/M_z(q)\)，其中 \(M_z(q)>0\)。至此，每种反馈的发生可能性与其定位区域均已确定，可以构造选点指标。
+
+\subsubsection{损失函数与选点目标}
+
+本方案兼顾正常反馈的定位精度与无信号的代价。正常反馈以区域半径计损失；强信号能够在当前点完成精确定位，取零损失；无信号采用首次区域半径加附加惩罚作为失败代价，即
+\begin{equation}
+ L_{\mathrm E,z}(q)=
+ \begin{cases}
+ 0,&z=\mathsf H,\\
+ \rho_\theta(q),&z=\theta,\\
+ \rho_1+\lambda,&z=\mathsf N,
+ \end{cases}
+ \qquad \lambda\ge0.
+\label{eq:q2-pair-expected-loss}
+\end{equation}
+基础方案取 \(\lambda=0\)，使无信号的代价不小于任何正常反馈的区域半径；增大 \(\lambda\) 则提高对无信号的惩罚。这里无信号采用的是决策代价，其实际相容区域仍由式~\eqref{eq:q2-pair-regions} 给出。
+
+按式~\eqref{eq:q2-pair-prediction} 的概率权重求平均，得到期望损失
+\begin{equation}
+ J_{\mathrm E}(q)
+ =P_{\mathsf N}(q)(\rho_1+\lambda)
+ +\int_0^{2\pi}f_\Theta(\theta;q)\rho_\theta(q)\,\mathrm d\theta.
+\label{eq:q2-pair-expected-objective}
+\end{equation}
+第一项衡量无信号的预期代价，第二项衡量正常反馈的平均定位损失，强信号分支以零损失参与加权。给定 \((a,\beta)\) 与 \(\lambda\)，求 \(\inf_{q\in\mathcal Q(a,\beta)}J_{\mathrm E}(q)\)，最小值可达时取 \(q_{\mathrm E}^*\in\arg\min_{q\in\mathcal Q(a,\beta)}J_{\mathrm E}(q)\)。数值上，对候选点计算反馈权重和区域半径，经角度积分得到评分，再通过空间搜索与局部加密寻找近优点。
+
+\subsection{最小化最坏剩余半径的模型}
+
+最坏模型着重控制不利反馈造成的定位误差。对每个候选点，考察所有与首次信息相容的第二次反馈，并以其中最大的剩余半径评价该点。这样，即使不知道各情形的发生概率，也能比较不同检测点所提供的定位保证。
+
+本方案按反馈后的实际剩余区域计损失，并对所有反馈采用同一原地定位判据。当整个区域都在当前点的光学范围内时，可精确定位，剩余损失为零；否则用区域半径衡量尚未消除的位置不确定性。因此定义
+\begin{equation}
+ L_{\mathrm W,z}(q)=
+ \begin{cases}
+ 0,&d_{\max}(q;K_z(q))\le r_{\mathrm{opt}},\\
+ \rho_z(q),&d_{\max}(q;K_z(q))>r_{\mathrm{opt}}.
+ \end{cases}
+\label{eq:q2-pair-worst-loss}
+\end{equation}
+由此，强信号分支的损失为零，无信号分支的损失为 \(\rho_{\mathsf N}(q)\)，正常分支则依据上述判据确定。对全部可实现反馈取上确界，再在候选点中最小化，得到
+\begin{equation}
+ J_{\mathrm W}(q)=\sup_{z\in\mathcal Z(q)}L_{\mathrm W,z}(q),
+ \qquad J_{\mathrm W}^*=\inf_{q\in\mathcal Q(a,\beta)}J_{\mathrm W}(q).
+\label{eq:q2-pair-worst-objective}
+\end{equation}
+最小值可达时，取 \(q_{\mathrm W}^*\in\arg\min_{q\in\mathcal Q(a,\beta)}J_{\mathrm W}(q)\)。内层取最坏值时保留所有可实现反馈，包括边界状态及退化交集；外层据此寻找最坏损失较小的检测点。数值求解采用两层搜索，内层细分正常角度区间并与强信号、无信号分支比较，外层在检测点空间逐步加密，同时检查原地定位条件。
+
+为给出具有较好定位效果的候选区域，两种模型均可在最优值附近保留一定余量。对 \(J\in\{J_{\mathrm E},J_{\mathrm W}\}\)，记 \(J^*=\inf_{q\in\mathcal Q}J(q)\)，给定 \(\varepsilon>0\)，取 \(\mathcal Q_{J,\varepsilon}=\{q\in\mathcal Q:J(q)\le J^*+\varepsilon\}\)。其中 \(\varepsilon\) 以米计，表示相对于相应最优指标允许增加的损失。

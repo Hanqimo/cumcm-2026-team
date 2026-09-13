@@ -1,0 +1,83 @@
+{
+  "a_m": 1700,
+  "beta_deg": 90,
+  "initial_geometry": {
+    "C1": 6118.45869718926,
+    "rho1": 308.511811920234,
+    "center": [
+      313.462527516928,
+      5.38424673818459
+    ],
+    "points": [
+      [
+        562.596672163823,
+        -9.82016144101885
+      ],
+      [
+        621.925816558074,
+        10.8557555085556
+      ],
+      [
+        4.99923847578196,
+        -0.0872620321864178
+      ],
+      [
+        4.99923847578196,
+        0.0872620321864154
+      ]
+    ]
+  },
+  "best": {
+    "area": {
+      "x": 418.319280465036,
+      "y": 254.994951525921,
+      "J": 372.974829980097,
+      "J_lower": 372.974829980096,
+      "P_H": 0.0,
+      "P_N": 0.0,
+      "P_A": 1.0,
+      "P_loc": 0.0,
+      "E_radius_loss": 10.7371728522785,
+      "safe_margin": 0.0,
+      "angle_calls": 1170.0,
+      "x_global": 1445.00504847408,
+      "y_global": 418.319280465036,
+      "C1": 6118.45869718926,
+      "level": 5,
+      "optimizer": {
+        "success": true,
+        "iterations": 26,
+        "simplex_diameter_m": 0.0008501103286621051,
+        "simplex_value_spread": 5.609877007373143e-10
+      }
+    },
+    "radius": {
+      "x": 412.05763239786,
+      "y": 245.383134929444,
+      "J": 373.727708096069,
+      "J_lower": 373.727708096068,
+      "P_H": 0.0,
+      "P_N": 0.0,
+      "P_A": 1.0,
+      "P_loc": 0.0,
+      "E_radius_loss": 10.7279213584285,
+      "safe_margin": 0.0,
+      "angle_calls": 1170.0,
+      "x_global": 1454.61686507056,
+      "y_global": 412.05763239786,
+      "C1": 6118.45869718926,
+      "level": 5,
+      "optimizer": {
+        "success": true,
+        "iterations": 23,
+        "simplex_diameter_m": 0.003633906592969569,
+        "simplex_value_spread": 9.56200452151279e-10
+      }
+    }
+  },
+  "elapsed_seconds": 16.7948284590384,
+  "evaluation_count": 5134,
+  "global_optimality_proven": false,
+  "status": "best candidates from covering grids and multistart refinement; no continuous-global certificate",
+  "coordinates": "x,y relative to S1 with measured bearing as +x; x_global,y_global use O origin and S1=(a,0)"
+}

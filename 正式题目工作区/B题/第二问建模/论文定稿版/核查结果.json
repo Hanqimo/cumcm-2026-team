@@ -1,28 +1,71 @@
 {
-  "version": "Q2-paper-final-20260912",
+  "version": "Q2-paper-expectation-only-20260913",
+  "updated_at": "2026-09-13T02:47:25",
+  "adopted_model": "基于贝叶斯更新的期望定位损失模型",
+  "history_archive": "正式题目工作区/B题/第二问建模/历史版本/20260913_024419_期望与最坏双模型版",
+  "previous_check_records": "正式题目工作区/B题/第二问建模/历史版本/20260913_024419_期望与最坏双模型版/第二问建模快照/论文定稿版/核查结果.json",
   "files": {
-    "templates/论文模版.tex": "51146de7bf36282af924bb7b5bb3bbd074127050a12f8e68d47d69508e300929",
-    "templates/论文模版.pdf": "aa15cb3290b663650382ac9d7b30958043d2670a80a39920bd5981f5ddc90f1d",
-    "正式题目工作区/B题/第二问建模/论文定稿版/第二问正文.tex": "36970ec3d0b3f197c7e0efc2dd15ec4a5a370afee51eaf2fdc4bd9f625951bc0",
-    "正式题目工作区/B题/第二问建模/论文定稿版/第二问模型.tex": "0e3303886cac4f1a4919b18814bf83a6db8cc697cb61f5f6792971c6830335ab",
-    "正式题目工作区/B题/第二问建模/论文定稿版/第二问模型.pdf": "80d4ee890e869de1e441d84b9181bd9516f74738cb7c4e8c44a6ec081a0372c7"
+    "templates/论文模版.tex": "7b78f736545fed995c1d25deaf72153411c979542011e946100bf0bb273d1275",
+    "templates/论文模版.pdf": "b3b022469571df09e491ed81f8dc915cc7b475d7ad3c15b4aa7fd5994ba586b8",
+    "梳理/论文初稿.tex": "7b78f736545fed995c1d25deaf72153411c979542011e946100bf0bb273d1275",
+    "梳理/论文初稿.pdf": "d2e62092ace05ef82f3b99e0b89fc033baef105bf4c75d64dc206e901ac78e69",
+    "正式题目工作区/B题/第二问建模/论文定稿版/第二问正文.tex": "b80a55feb2491ef6e7873e4f6230675bf8c5825fa2656371198ef59163ec429d",
+    "正式题目工作区/B题/第二问建模/论文定稿版/第二问模型.tex": "fa853bdc3628d38eb9cfefa1580bed6953708f6c5f24c07b6805402650318f22",
+    "正式题目工作区/B题/第二问建模/论文定稿版/第二问模型.pdf": "f41e83d95c400e77474b34df799ddd5996d468dd78bc30c9c54982c94606132c",
+    "正式题目工作区/B题/第二问建模/论文定稿版/候选区域模型说明.md": "0738496fa52c6bad4a30b9b33f8d14db96e55f6fe0248c62c548960e289972d2",
+    "正式题目工作区/B题/第二问建模/论文定稿版/README.md": "8705f29dea6f4f916d7d28e167399cf045ea1eb1e635d09fc52b42e9dabf4460",
+    "正式题目工作区/B题/第二问建模/论文定稿版/核查记录.md": "ccce258b5b610d018dca80716c83263059f4def063058c5df64cd6595da8f5c8"
   },
   "checks": {
     "body_matches_paper": true,
-    "mathcal_removed": true,
-    "greek_variants_removed": true,
+    "full_papers_identical": true,
+    "pdf_texts_match": true,
+    "retained_equations_unchanged_except_notation": true,
+    "three_feedback_loss_enumeration_preserved": true,
+    "references_valid": true,
+    "duplicate_labels": false,
+    "unwanted_fonts": false,
+    "clean_compilation": true,
+    "archive_manifest_verified": true,
+    "explicit_min_J": true,
+    "worst_model_removed_from_current_q2": true,
+    "unused_feedback_set_removed": true,
     "mathbb_preserved": true,
-    "feedback_set_F_random_feedback_Z": true,
-    "cross_references_valid": true,
     "paper_pages": 14,
-    "model_pages": 3,
+    "draft_pages": 14,
+    "model_pages": 4,
     "compilation_errors": 0,
-    "paper_layout_warnings": 0,
-    "model_layout_warning": "one Underfull hbox (badness 1082); rendered page reviewed, no clipping or overlap",
-    "visual_review": "paper 4,6,8,10; standalone 1-3"
+    "layout_warnings": 0,
+    "visual_review": "paper pages 2-4 and 7-11; standalone pages 1-4; no clipping or overlap"
+  },
+  "archive_files_verified": 363,
+  "scope": "Current Q2, its problem analysis, assumption applicability statement, mirrored full draft, standalone model and current README entries. Existing numerical research and Q1/Q3 bodies preserved.",
+  "notation": {
+    "objective": "J(q)",
+    "candidate_region": "Q_epsilon",
+    "decision": "min over q in Q of J(q)"
+  },
+  "candidate_region": {
+    "default_epsilon_m": 1,
+    "sensitivity_epsilon_m": [
+      0.5,
+      1,
+      2
+    ],
+    "default_validated": false,
+    "actual_region_computed": false,
+    "global_optimality_certified": false,
+    "selection": "nearest reviewed point within the expected-loss sublevel set"
   },
   "new_optimization_run": false,
-  "notation_revision": "d_2(g;q) renamed to d(g;q), six occurrences in current paper; final body synchronized with current paper.",
-  "font_revision": "All mathcal letters replaced with ordinary letters, with Z set renamed F; varphi -> phi, varepsilon -> epsilon; mathsf H/N -> mathrm H/N; mathbb retained.",
-  "paper_integration": "Question 3 integrated; Question 2 body unchanged and matches standalone model."
+  "new_figures_generated": false,
+  "q2_tex_chars": {
+    "before": 7694,
+    "after": 6856,
+    "includes_tex_commands": true
+  },
+  "display_equations": {
+    "before": 9,
+    "after": 8
+  }
 }

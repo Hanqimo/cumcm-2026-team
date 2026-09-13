@@ -1,0 +1,19 @@
+{
+  "body_matches_paper": true,
+  "mathcal_removed": true,
+  "greek_variants_removed": true,
+  "mathbb_preserved": true,
+  "feedback_set_F_random_feedback_Z": true,
+  "cross_references_valid": true,
+  "paper_pages": 14,
+  "model_pages": 4,
+  "compilation_errors": 0,
+  "paper_layout_warnings": 0,
+  "model_layout_warning": null,
+  "visual_review": "paper pages 7-12 and standalone pages 1-4; no clipping or overlap",
+  "full_papers_identical": true,
+  "draft_pages": 14,
+  "candidate_region_only_change_to_template": true,
+  "explicit_min_J_E_and_J_W": true,
+  "other_equations_preserved": true
+}

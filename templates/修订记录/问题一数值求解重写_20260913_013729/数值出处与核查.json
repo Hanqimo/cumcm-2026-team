@@ -1,0 +1,19 @@
+{
+  "date": "2026-09-13",
+  "sources": {
+    "正式题目工作区/B题/contest/q1/models/m01-bounded-bearing/runs/R003/orthogonal_example.json": "7957ac85ca9ef138de7453ef4cb48f67639d19ec99cab714260e7f93aec8d8af",
+    "正式题目工作区/B题/contest/q1/models/m01-bounded-bearing/runs/R003/counterexample.json": "f4159124aae035876ed3b29b2be6f3394d507d1fc1c0c03188410664a088e117",
+    "正式题目工作区/B题/contest/q1/models/m01-bounded-bearing/runs/R003/verification.json": "265383326985233bb6d7a2a88ce243d8bbf377edc9bc5d7da62b9c9f00164763",
+    "正式题目工作区/B题/contest/q1/models/m01-bounded-bearing/runs/R003/source_snapshot/verify_q1.py": "47856d0fd6b82ca19979b2f565cf6203577090173a3f07f933367f70f994cceb",
+    "正式题目工作区/B题/contest/q3/models/m03-cost-aware/verification/q12-checks-v1/result.json": "023bab3504b3149451758a123581bc52c8e6a2540bf4d0c22bfe935f4c55ae1f",
+    "正式题目工作区/B题/contest/q3/models/m03-cost-aware/verification/q12-checks-v1/source_snapshot/check_q12.py": "f99053f57c38383d48df26df4dfe8ca356afc3fc34793e434ee5a36528e53e61"
+  },
+  "archived_checks_reused": true,
+  "new_full_random_validation": false,
+  "current_analytic_crosscheck": {
+    "orthogonal_slope_construction": true,
+    "triangle_radius": true
+  },
+  "scipy_runtime_available": false,
+  "synthetic_only": true
+}

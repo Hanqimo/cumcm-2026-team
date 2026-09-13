@@ -1,0 +1,10 @@
+solver
+__pycache__/
+build/
+*.aux
+*.log
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.xdv
+*.dvi

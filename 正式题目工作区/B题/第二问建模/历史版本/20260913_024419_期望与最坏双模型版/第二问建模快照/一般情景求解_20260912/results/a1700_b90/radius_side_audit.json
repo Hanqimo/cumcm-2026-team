@@ -1,0 +1,54 @@
+[
+  {
+    "x": 422.312349591461,
+    "y": -253.569734045495,
+    "J": 401.970723549231,
+    "J_lower": 401.97072354923,
+    "P_H": 0.0,
+    "P_N": 0.0,
+    "P_A": 1.00000000000001,
+    "P_loc": 0.0,
+    "E_radius_loss": 11.110385979037,
+    "safe_margin": 0.0,
+    "angle_calls": 1230.0,
+    "x_global": 1953.56973404549,
+    "y_global": 422.312349591461,
+    "C1": 6118.45869718926,
+    "case": "a1700_b90",
+    "objective": "radius",
+    "start_side": -1,
+    "optimizer": {
+      "success": true,
+      "iterations": 21,
+      "simplex_diameter_m": 0.0026254257351709053,
+      "simplex_value_spread": 4.572999756646823e-10
+    },
+    "level": 5
+  },
+  {
+    "x": 412.056655394377,
+    "y": 245.383277178523,
+    "J": 373.727825945597,
+    "J_lower": 373.727825945597,
+    "P_H": 0.0,
+    "P_N": 0.0,
+    "P_A": 1.0,
+    "P_loc": 0.0,
+    "E_radius_loss": 10.7279213583989,
+    "safe_margin": 0.0,
+    "angle_calls": 1170.0,
+    "x_global": 1454.61672282148,
+    "y_global": 412.056655394377,
+    "C1": 6118.45869718926,
+    "case": "a1700_b90",
+    "objective": "radius",
+    "start_side": 1,
+    "optimizer": {
+      "success": true,
+      "iterations": 23,
+      "simplex_diameter_m": 0.0021160252198387623,
+      "simplex_value_spread": 2.0459900440528145e-10
+    },
+    "level": 5
+  }
+]

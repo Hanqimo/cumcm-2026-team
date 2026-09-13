@@ -1,0 +1,2546 @@
+{
+  "created_at": "2026-09-13T02:44:19",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2088,
+      "sha256": "3c14f70d08a50754af3aa6bd84344e754b08bf262585653360e0657399551342",
+      "source": "extracted_or_generated",
+      "copy_verified": false
+    },
+    {
+      "path": "整篇论文快照/论文初稿.pdf",
+      "bytes": 437669,
+      "sha256": "67c91d7f7b904534355b7e2efc6218a4dc832198ffce543118f24c785831463d",
+      "source": "梳理/论文初稿.pdf",
+      "copy_verified": true
+    },
+    {
+      "path": "整篇论文快照/论文初稿.tex",
+      "bytes": 52814,
+      "sha256": "c481d87f97e69d7edaa67da13fe2fbb061d9ff98042eb51b9121662efe52ff0b",
+      "source": "梳理/论文初稿.tex",
+      "copy_verified": true
+    },
+    {
+      "path": "整篇论文快照/论文模版.pdf",
+      "bytes": 437509,
+      "sha256": "620a91e0aae764731bc066acefb2e7f7c5567666dfc72d41eb2cedc163f2c0a2",
+      "source": "templates/论文模版.pdf",
+      "copy_verified": true
+    },
+    {
+      "path": "整篇论文快照/论文模版.tex",
+      "bytes": 52608,
+      "sha256": "fb8668385ebc3a9f647adda99cfcbe431f56459beec761ba0f33778b9390a034",
+      "source": "templates/论文模版.tex",
+      "copy_verified": true
+    },
+    {
+      "path": "最坏模型_论文节选.tex",
+      "bytes": 1004,
+      "sha256": "a77f74906fb6139e8a5118ea4eb272fc24b6fbc5cf3fabe7cf3fd3f658148fe9",
+      "source": "extracted_or_generated",
+      "copy_verified": false
+    },
+    {
+      "path": "第二问建模快照/.gitignore",
+      "bytes": 84,
+      "sha256": "3e4b36b8cac0f2d47bcde9ae2fbd6efc996c9045bea20eb47258e0f9ed48e0b4",
+      "source": "正式题目工作区/B题/第二问建模/.gitignore",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/.latexmkrc",
+      "bytes": 15,
+      "sha256": "08d1ddb08c41fc542cf347015584f904e36b5c72f7396229ea6a4ab955ff7386",
+      "source": "正式题目工作区/B题/第二问建模/.latexmkrc",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/README.md",
+      "bytes": 5980,
+      "sha256": "c83dd2e83074b532f372f7e3d724cb7c069ae20e00f18a2e8367ade32ad77a46",
+      "source": "正式题目工作区/B题/第二问建模/README.md",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/manifest.yaml",
+      "bytes": 8891,
+      "sha256": "fa0b92a2fdc5aa1b0cf8e03c913eefd731a08dcceb3f8c2e252ac3e801c2c288",
+      "source": "正式题目工作区/B题/第二问建模/manifest.yaml",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/results/area/best.json",
+      "bytes": 339,
+      "sha256": "ff10b8f39a8e7014c5849c65f49a1256e2bd2ac9c0e814b10f9f6974b338860c",
+      "source": "正式题目工作区/B题/第二问建模/results/area/best.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/results/area/candidates_1pct_grid5.csv",
+      "bytes": 33215,
+      "sha256": "b240efb170837131e539bd9d3f3727484cfc699f50560d63511557378b923db4",
+      "source": "正式题目工作区/B题/第二问建模/results/area/candidates_1pct_grid5.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/results/area/multistart.json",
+      "bytes": 3359,
+      "sha256": "b947047c77ba6698abb64157d4901a66fab3d6b3796a2e81dcd8490953454b81",
+      "source": "正式题目工作区/B题/第二问建模/results/area/multistart.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/results/area/result.json",
+      "bytes": 1165,
+      "sha256": "a54e0f1529eab4c377b20650f57c6b3fa7288aa9e208fed6ab23cd44df08e3bc",
+      "source": "正式题目工作区/B题/第二问建模/results/area/result.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/results/global50.csv",
+      "bytes": 286648,
+      "sha256": "28905d6f70bb4c3df080e96f91975e09c3394bf2307cbdee959476ac67697897",
+      "source": "正式题目工作区/B题/第二问建模/results/global50.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/results/global50_input.csv",
+      "bytes": 29528,
+      "sha256": "800eeb8537d745aeed3eaafca5447b2d9f4cc7bdecab7d07423b2ff5d1c8b3b4",
+      "source": "正式题目工作区/B题/第二问建模/results/global50_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/results/local_evaluations.csv",
+      "bytes": 147615,
+      "sha256": "fea8302402debfd549f5cc8f2b2a104b99ceb3cb74d925822a4ca392ec67ef68",
+      "source": "正式题目工作区/B题/第二问建模/results/local_evaluations.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/results/nearopt5.csv",
+      "bytes": 375741,
+      "sha256": "09bed05cda391cbcda8ee8acec59ebd31bed7a4511774eb75f67008192a26657",
+      "source": "正式题目工作区/B题/第二问建模/results/nearopt5.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/results/nearopt5_input.csv",
+      "bytes": 28675,
+      "sha256": "218d3cb13c600253318d140819f70f73d0616e5388c5a080ffd4a24ba2da3e8d",
+      "source": "正式题目工作区/B题/第二问建模/results/nearopt5_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/results/radius/best.json",
+      "bytes": 340,
+      "sha256": "a3280fb74b9e731001fe00d13947d19539f273192e99e65f658644c099345e9a",
+      "source": "正式题目工作区/B题/第二问建模/results/radius/best.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/results/radius/candidates_1pct_grid5.csv",
+      "bytes": 97853,
+      "sha256": "56778db9bc95334fe28dc0bc8bc038dbc6f6815c04bd31e9415bb67e648c3d50",
+      "source": "正式题目工作区/B题/第二问建模/results/radius/candidates_1pct_grid5.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/results/radius/multistart.json",
+      "bytes": 3357,
+      "sha256": "65559f7935cb2fe68a2b0444f8027160f795717d9b5f5f949802574a2b9c3857",
+      "source": "正式题目工作区/B题/第二问建模/results/radius/multistart.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/results/radius/result.json",
+      "bytes": 1165,
+      "sha256": "e1959d404652e0b0109a9deba0f22c2a468e7171ac929c59ecae3e2ad86a6623",
+      "source": "正式题目工作区/B题/第二问建模/results/radius/result.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/results/search.log",
+      "bytes": 7305,
+      "sha256": "ee45ceb7476c5de67e856b58a696c483f854b5f9393692a555467eb8ae2eeb3a",
+      "source": "正式题目工作区/B题/第二问建模/results/search.log",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/results/search_summary.json",
+      "bytes": 1174,
+      "sha256": "d8d5049cb8f8a7c4db65ecd320842403070d39349a8c7cd1d900247466b21d68",
+      "source": "正式题目工作区/B题/第二问建模/results/search_summary.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/results/strong_band.csv",
+      "bytes": 77113,
+      "sha256": "56418c50406766a841992dfc01eb76f0214f5879ee08cbfa32dce561cea43da1",
+      "source": "正式题目工作区/B题/第二问建模/results/strong_band.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/results/strong_band_input.csv",
+      "bytes": 4775,
+      "sha256": "66f11a7c0ab130fd32ee762d54adea69264c20af5ce570e9bc4d9d8f231ee556",
+      "source": "正式题目工作区/B题/第二问建模/results/strong_band_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/results/summary.json",
+      "bytes": 2684,
+      "sha256": "f9d76c26f633df795ad4bca51e8e6655b370d9e9ffb9aa7b09591b6ccd81fd95",
+      "source": "正式题目工作区/B题/第二问建模/results/summary.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/results/summary.stdout",
+      "bytes": 2684,
+      "sha256": "f9d76c26f633df795ad4bca51e8e6655b370d9e9ffb9aa7b09591b6ccd81fd95",
+      "source": "正式题目工作区/B题/第二问建模/results/summary.stdout",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/solver",
+      "bytes": 98312,
+      "sha256": "46c00ee667abb8cf7189419aaad742662b17219ca7343ff07518eec7bc65003b",
+      "source": "正式题目工作区/B题/第二问建模/solver",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/src/check_model_geometry.py",
+      "bytes": 2335,
+      "sha256": "4118325cf92225bb2c577cd8af01f5ee77d7a40b25791b9d4a10876cb6b8dacb",
+      "source": "正式题目工作区/B题/第二问建模/src/check_model_geometry.py",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/src/manifest.py",
+      "bytes": 2966,
+      "sha256": "1fa778515e115ea88812e4f000d5e94398dee44a75619f3c32ef7c29f4300d5c",
+      "source": "正式题目工作区/B题/第二问建模/src/manifest.py",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/src/reproduce.py",
+      "bytes": 1147,
+      "sha256": "f1d25ef769ff3930d2db0521d58f9f5bae441e9a204e1873cfad37ad8dcb1487",
+      "source": "正式题目工作区/B题/第二问建模/src/reproduce.py",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/src/search.py",
+      "bytes": 4025,
+      "sha256": "21bf20cfe80c227996017cc832a2a00d7782e3a0324c6a948992e7ac10c1d633",
+      "source": "正式题目工作区/B题/第二问建模/src/search.py",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/src/solver.cpp",
+      "bytes": 16203,
+      "sha256": "caeefb1a710a29bdd5f6b6f0dfdc902572c86365d114bacf6eb9ec33389bbc0b",
+      "source": "正式题目工作区/B题/第二问建模/src/solver.cpp",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/src/summarize.py",
+      "bytes": 11840,
+      "sha256": "6de6241e00009d391e8b1c716c8f6f00f9d1568c09ffa4a665dc471e62ff5907",
+      "source": "正式题目工作区/B题/第二问建模/src/summarize.py",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/src/validate.py",
+      "bytes": 2569,
+      "sha256": "9e38dea28b6acacbee369ba5e59b69f20658937b8d2bf1b1f7e66c07f4f5ae1b",
+      "source": "正式题目工作区/B题/第二问建模/src/validate.py",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/src/verify_geometry.py",
+      "bytes": 3437,
+      "sha256": "9f57e8141b4099238067bcf21c732b2911517dddb42bbf0ace0ec24855e30323",
+      "source": "正式题目工作区/B题/第二问建模/src/verify_geometry.py",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/verification/a_beta_model_checks.json",
+      "bytes": 1478,
+      "sha256": "8d3e5949ca0a750a5d189fd62d9cd3c49c41081b1cef833d7d04bd0aa160fdc8",
+      "source": "正式题目工作区/B题/第二问建模/verification/a_beta_model_checks.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/verification/checks.json",
+      "bytes": 766,
+      "sha256": "407c4ce3f6147e3f96b7bd93968e9d4ebc67fd520294d922b2b6c25f50cfbc10",
+      "source": "正式题目工作区/B题/第二问建模/verification/checks.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/verification/comparison.csv",
+      "bytes": 1431,
+      "sha256": "7c9cac503dfd0ea9060592a7b96e82daba6bb717af6728fe1e3eaa2520dae8d9",
+      "source": "正式题目工作区/B题/第二问建模/verification/comparison.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/verification/convergence.csv",
+      "bytes": 1722,
+      "sha256": "7a51d042a827ed20a7aa1464c1debe30b72d4f138bcb0a4a290884cdac8331aa",
+      "source": "正式题目工作区/B题/第二问建模/verification/convergence.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/verification/geometry_stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "正式题目工作区/B题/第二问建模/verification/geometry_stderr.txt",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/verification/geometry_summary.json",
+      "bytes": 179,
+      "sha256": "e2662b38ab57dc8d77256072043f579eeb789f0311ce6367e69c818ef2f09b6c",
+      "source": "正式题目工作区/B题/第二问建模/verification/geometry_summary.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/verification/independent_geometry.json",
+      "bytes": 20776,
+      "sha256": "c458bb013904648e6768c82c9e19ad2c1af5ff4c150ed7816f58a118b95ad7c2",
+      "source": "正式题目工作区/B题/第二问建模/verification/independent_geometry.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/verification/mc_area.json",
+      "bytes": 443,
+      "sha256": "405a32e7274a00eb6939962c8b2ebca8847b0a6a0f4419f1c3b536bc56244022",
+      "source": "正式题目工作区/B题/第二问建模/verification/mc_area.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/verification/mc_radius.json",
+      "bytes": 442,
+      "sha256": "5026ad2ab8fb58ec89d87c6b10ae8ba0ab8ff3ce06f073826b32df222d1044c9",
+      "source": "正式题目工作区/B题/第二问建模/verification/mc_radius.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/verification/profile_906.618820480172.csv",
+      "bytes": 14794,
+      "sha256": "7648de2e7e7ab6cf372fd150d0f762e92b0eea94a6b1951249bf446a2172b217",
+      "source": "正式题目工作区/B题/第二问建模/verification/profile_906.618820480172.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/verification/profile_932.613165370033.csv",
+      "bytes": 14795,
+      "sha256": "b817021cd02008c8266982862bbc1394f12f0844f967d482399dad32b43531de",
+      "source": "正式题目工作区/B题/第二问建模/verification/profile_932.613165370033.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/verification/sector_notation_revision.json",
+      "bytes": 790,
+      "sha256": "37ef1d88d392e22ec431be234cf0f505db381c3a44cce32ade1a2395486269c1",
+      "source": "正式题目工作区/B题/第二问建模/verification/sector_notation_revision.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/verification/selftest.txt",
+      "bytes": 188,
+      "sha256": "362c5746e096ecb1473c445080d37c3d26b01cb027f7cbc4b59fd38d4edbb1a9",
+      "source": "正式题目工作区/B题/第二问建模/verification/selftest.txt",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/verification/strong_analytic_check.json",
+      "bytes": 318,
+      "sha256": "1bd5979e7cb6a0b1eb75d823efcc9e1382a3e00a9c50b013fc835dcf29739b63",
+      "source": "正式题目工作区/B题/第二问建模/verification/strong_analytic_check.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/verification/strong_branches.csv",
+      "bytes": 146,
+      "sha256": "1fe8e8ff37999969e5ce48322cac6809ed9a879855f7514363ec73668e8fbd0b",
+      "source": "正式题目工作区/B题/第二问建模/verification/strong_branches.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/verification/validate.log",
+      "bytes": 2841,
+      "sha256": "931988b03c14da6b790de193a1aec4963bfd8fd6465a1d03676a41142a87c972",
+      "source": "正式题目工作区/B题/第二问建模/verification/validate.log",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/verification/最终整理检查.json",
+      "bytes": 532,
+      "sha256": "0fe428a4580ce7c40907fec3232aaf4138ae279d34f4d1bbaede2386210ef703",
+      "source": "正式题目工作区/B题/第二问建模/verification/最终整理检查.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/verification/计算来源.json",
+      "bytes": 531,
+      "sha256": "e816a52104be51750406f9e631bf6d7feb952e72362ea5634d42f473198555dd",
+      "source": "正式题目工作区/B题/第二问建模/verification/计算来源.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/.gitignore",
+      "bytes": 42,
+      "sha256": "e7c85baef3eaa8a4344591e5e10bdebcab61f0593d17cf7ac1cacf9d86180133",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/.gitignore",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/README.md",
+      "bytes": 1302,
+      "sha256": "c7055c8f167da7c06ee275600c98bc5306decc49f9e4946729d712d9394ab813",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/README.md",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/expected_solver",
+      "bytes": 98320,
+      "sha256": "51cc1cdb216c4cceade7c80c9b5e27fb36f71088a186d9d45f2d29ec9c4c386a",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/expected_solver",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/manifest.json",
+      "bytes": 6093,
+      "sha256": "2b29516085cb671b2fcec158e1a071dde34beae07902024fa251df5cd184367f",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/manifest.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/runs/R001/best_search.json",
+      "bytes": 409,
+      "sha256": "c8d944d956c4bd5e5f25c4304e4b9338d07d93806df3ed156a198de46c9a764f",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/runs/R001/best_search.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/runs/R001/candidates_1pct_grid5.csv",
+      "bytes": 5194,
+      "sha256": "6cfded1515f558b0547e1dace815b27857a5dc0a0c380e05a720159d8e11f9b1",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/runs/R001/candidates_1pct_grid5.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/runs/R001/candidates_summary.json",
+      "bytes": 594,
+      "sha256": "6c11986a054a4bd357329309690309ba283be4713b21f2ca2775f28438158325",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/runs/R001/candidates_summary.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/runs/R001/comparison.csv",
+      "bytes": 771,
+      "sha256": "83e8ed407e61a0739a67fc27990c2e55c61325ea5410299ddf99f89fb1fdba2b",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/runs/R001/comparison.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/runs/R001/comparison.json",
+      "bytes": 6746,
+      "sha256": "a6ad8049e18c1ed48a7a3aa3346699e1cc97d0571d96ebcd0c47b3b9207f6709",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/runs/R001/comparison.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/runs/R001/global50.csv",
+      "bytes": 260005,
+      "sha256": "c9e993ee1685f71e07947caf229082f6c5302d4951e0edb33538ec65839a5ba3",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/runs/R001/global50.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/runs/R001/global50_input.csv",
+      "bytes": 29528,
+      "sha256": "800eeb8537d745aeed3eaafca5447b2d9f4cc7bdecab7d07423b2ff5d1c8b3b4",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/runs/R001/global50_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/runs/R001/local5.csv",
+      "bytes": 1398636,
+      "sha256": "3af6071af2ec11c0338b0b10be8d07020fd97d2edbc5eea6cd9506c7d8b9eeb1",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/runs/R001/local5.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/runs/R001/local5_input.csv",
+      "bytes": 124635,
+      "sha256": "36d2709eb65c95243e9270da265ef34b86f172fad0070f0ea108db445a11aabd",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/runs/R001/local5_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/runs/R001/local_evaluations.csv",
+      "bytes": 389805,
+      "sha256": "5cba13e3fc00de8856f99cbed4761a90a8f1daf001f0125f211227efdae3d702",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/runs/R001/local_evaluations.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/runs/R001/multistart.json",
+      "bytes": 6829,
+      "sha256": "b8628cc7e8f79d2c56cacc871a002c65bb3d5e893fddb8f8d167a8e9e8007757",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/runs/R001/multistart.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/runs/R001/near_sector.csv",
+      "bytes": 65181,
+      "sha256": "386e72903a7eacb4c031dfc7c3839b76cedc47fdad70ed80925ff4fad3b061c1",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/runs/R001/near_sector.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/runs/R001/near_sector_input.csv",
+      "bytes": 5210,
+      "sha256": "9c2ce27fc13850b604ad217eba2c1c7548ae6722d7083e594414660a8283dbf7",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/runs/R001/near_sector_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/runs/R001/search.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/runs/R001/search.stderr",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/runs/R001/search.stdout",
+      "bytes": 6950,
+      "sha256": "a89370c09e24857e63d375fe7c5c3971c963f3df287a2373fd9562489d3ab5a7",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/runs/R001/search.stdout",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/runs/R001/search_summary.json",
+      "bytes": 681,
+      "sha256": "c0f714171410829e961287153471cad43b84088d6883a3b305877f3f5c6d4b37",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/runs/R001/search_summary.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/sources_snapshot.json",
+      "bytes": 771,
+      "sha256": "0acf6e82c0ec5685b55c7151b2581d25984eeed9a17d9b6f7f90a1175cb865ce",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/sources_snapshot.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/src/manifest.py",
+      "bytes": 3724,
+      "sha256": "cff1014a6ea14ddf21a5e62f7f2488083f744fefd7d7542286d4704fbc5e7baf",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/src/manifest.py",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/src/reproduce.py",
+      "bytes": 1746,
+      "sha256": "f187e906b05d16b4ced0447fafe6cd3d1dda2530800cbb4f0a8ea06a2d6c76ce",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/src/reproduce.py",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/src/search_worst.py",
+      "bytes": 3015,
+      "sha256": "94579dc5efa48bc8f7e2bc088e8460975b3efe1d1906e84c9713909a80216cd6",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/src/search_worst.py",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/src/verify_cells_candidates.py",
+      "bytes": 2926,
+      "sha256": "f0aceee934be3263aa07b165bc8f31bd1ac877d740f29cdb370ec1beeb027f4f",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/src/verify_cells_candidates.py",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/src/verify_compare.py",
+      "bytes": 6227,
+      "sha256": "a74a60e1ef246c9ce4db6665af6c916b1f21a6d20eeb6454846b92b344c17701",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/src/verify_compare.py",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/src/worst_solver.cpp",
+      "bytes": 9573,
+      "sha256": "884f589b4305ef57b26f4608c4dc8b359024a349c5cf37076127de6da444c474",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/src/worst_solver.cpp",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/verification/baseline_preservation.json",
+      "bytes": 5790,
+      "sha256": "68081c1510180f0d270c0d661b6196f225db5a169e15bd1c36f58cdceaf3b998",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/verification/baseline_preservation.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/verification/candidates.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/verification/candidates.stderr",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/verification/candidates.stdout",
+      "bytes": 835,
+      "sha256": "07a8fc81597a2febe1957c7eedb6102d0b87a1cb6f7787d60f899187f5440c06",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/verification/candidates.stdout",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/verification/cell_bound_checks.json",
+      "bytes": 58734,
+      "sha256": "845b3c6f50b2dd78752a1b3c92246feef7b72cfb8022cde5c9d64584fe51fd30",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/verification/cell_bound_checks.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/verification/convergence.json",
+      "bytes": 1188,
+      "sha256": "580dbf552f7291044b3f4ad6fecaa23dfb6221a067a6c3f7e5573d97b122e81d",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/verification/convergence.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/verification/global_bound.stderr",
+      "bytes": 273,
+      "sha256": "2607f1e138039fecc097829ac31435f7248b9fe2c1a1402e823588a2006ef2b2",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/verification/global_bound.stderr",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/verification/global_bound.stdout",
+      "bytes": 88,
+      "sha256": "0255ef213152b142523978feb193ef5099b7ee3cbb70b868fb81ab85c8d5428d",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/verification/global_bound.stdout",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/verification/global_bound_0001.json",
+      "bytes": 339,
+      "sha256": "ce2b0ea7acb3abe2579ff46c6f691c84256d8780c6f5ec9cc40a1aa9339bf76a",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/verification/global_bound_0001.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/verification/global_bound_001.json",
+      "bytes": 336,
+      "sha256": "0a0f8729d575130b621fc1071b3d21dac861d34b45fed4843fbb75445661b2cd",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/verification/global_bound_001.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/verification/global_bound_fine.stderr",
+      "bytes": 883,
+      "sha256": "1726dcc8ae9bf3a72997e69aadc8f495517ac4fd31bbf595d558a8e4ffda67aa",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/verification/global_bound_fine.stderr",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/verification/global_bound_fine.stdout",
+      "bytes": 972,
+      "sha256": "bb074efe753d3127202107022385d9df4ffae2def8dbc4517ac684d99a0a3544",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/verification/global_bound_fine.stdout",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/verification/independent_geometry.json",
+      "bytes": 10290,
+      "sha256": "ee27969674fa256f8a1d4a4ca8d7476e7708564fe6928b3e55df01af6cad4611",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/verification/independent_geometry.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/verification/minimax_monte_carlo.json",
+      "bytes": 383,
+      "sha256": "23a53c448844f91e14b1663bec531f91ef0b8d831eef3c80c8b4321d57fd4d87",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/verification/minimax_monte_carlo.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/verification/reproduce.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/verification/reproduce.stderr",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/verification/reproduce.stdout",
+      "bytes": 151,
+      "sha256": "06db42f9ebf3b2478ac3cbd7a2a33e7f7adef4e8da099ab4e6ed35beea55b069",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/verification/reproduce.stdout",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/verification/verify.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/verification/verify.stderr",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/verification/verify.stdout",
+      "bytes": 1735,
+      "sha256": "b7a3962af049226adc4b883f30e6a39c8c77f000d1ce0721b3ff32bf5d21362f",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/verification/verify.stdout",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/worst_solver",
+      "bytes": 134048,
+      "sha256": "f0fe81cf6e98e9d211a3a989344323d2e159c3a3c3e1c564017d12a26abbb758",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/worst_solver",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/worstcase/结果与对比.md",
+      "bytes": 13738,
+      "sha256": "340b536f406208e6b507d92db7de69068e2762877e889355540cd2311015aaf3",
+      "source": "正式题目工作区/B题/第二问建模/worstcase/结果与对比.md",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/.gitignore",
+      "bytes": 26,
+      "sha256": "5385bc743e206840f26e611d4114861e4958428fbcc0714ace72765ea983f1f5",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/.gitignore",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/inputs/baseline_reference.json",
+      "bytes": 2496,
+      "sha256": "128ca89b6d7114f6384f11935edd496adc31a91053db96156d9064f57aa71eef",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/inputs/baseline_reference.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/inputs/scenarios.json",
+      "bytes": 407,
+      "sha256": "4572ff84eb8a785dff2691b5600ed022b77977e7c1fb9ea96d4c03fb8b058425",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/inputs/scenarios.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/inputs/source_manifest.json",
+      "bytes": 764,
+      "sha256": "2ba3e6823ba3bb26c3138ab71c9c0caa59dbf7dcf489e91e0a1d7b3be622309b",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/inputs/source_manifest.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/manifest.json",
+      "bytes": 25333,
+      "sha256": "62d0c3bfa7413be136bb0cc8094843dd3c27ff57030db3f7ef2273d4cba84e5d",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/manifest.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a0_b0/area_multistart.json",
+      "bytes": 3855,
+      "sha256": "c1e5ed623987cff506759b43d56a222d2e9bf69989be88bb8595b03597232392",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a0_b0/area_multistart.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a0_b0/area_near_1pct.json",
+      "bytes": 116510,
+      "sha256": "857667c056fab3db7ccda435d92419e0ed25bf55fd18f8c733eb9fdd0213819f",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a0_b0/area_near_1pct.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a0_b0/area_near_grid.csv",
+      "bytes": 80380,
+      "sha256": "38495051ba6c26bb20b9ebeca17f1075c973bab41ffb5067ca62aa2100604f61",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a0_b0/area_near_grid.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a0_b0/area_near_grid_input.csv",
+      "bytes": 14999,
+      "sha256": "94aaed2d796a75e9eb5bd592ac81bc36fe6df698cee7c279edaa72f7f258acbc",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a0_b0/area_near_grid_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a0_b0/area_neighbors.json",
+      "bytes": 10069,
+      "sha256": "9401532562ce3864b7968e6d1809cb36a6619b47b1d434288eeb3389c67de7d6",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a0_b0/area_neighbors.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a0_b0/area_refined.json",
+      "bytes": 1194,
+      "sha256": "c7934b4f6fd80d2d2a1fe1f5aba5d86b2f1677c6ad4ee8c5aeb1c294b647e0bb",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a0_b0/area_refined.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a0_b0/area_side_audit.json",
+      "bytes": 1332,
+      "sha256": "1a745ca0498dd35892c3e28b151965b8352d08902d6849cacde72d3057cc0c38",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a0_b0/area_side_audit.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a0_b0/central_grid.csv",
+      "bytes": 1189289,
+      "sha256": "f2bbc520d3e12d4a0d9d6786d6a2773c380c34023058876cf816e014d72c1c4c",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a0_b0/central_grid.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a0_b0/central_grid_input.csv",
+      "bytes": 132753,
+      "sha256": "3402d7fb7e544f0d0b8f663d5cf50879ca5fe3bf5607c434fe69a4c274683112",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a0_b0/central_grid_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a0_b0/evaluations.csv",
+      "bytes": 2031473,
+      "sha256": "a1d9faed1f8c6d5fba31c509599486eccc48a718d50f3fc0a3fac191e2066eaf",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a0_b0/evaluations.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a0_b0/global100.csv",
+      "bytes": 197072,
+      "sha256": "94f1d27eaaeac96a24c5b3dff44c9cb9683668dbe4be1d63c15a0e02fb545424",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a0_b0/global100.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a0_b0/global100_input.csv",
+      "bytes": 22837,
+      "sha256": "f8c6057923b9c2767d4d04dbcd02c6b9f5d147f09c65a018a9a6d720dff2451c",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a0_b0/global100_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a0_b0/initial_geometry.json",
+      "bytes": 387,
+      "sha256": "7689e424d49766a7eb45283c4c499d90547c44d3a2c2efb743d1e0fe89c8519f",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a0_b0/initial_geometry.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a0_b0/radius_multistart.json",
+      "bytes": 3852,
+      "sha256": "afccdc1c5c30f51f8afd2b2796b5023699e371ef42bf44335512847eaf39012c",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a0_b0/radius_multistart.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a0_b0/radius_near_1pct.json",
+      "bytes": 199601,
+      "sha256": "69e84dab9f62260d5bb699cf2f16e1ea0f94c5c9ab6e5ea79153a1f87854f224",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a0_b0/radius_near_1pct.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a0_b0/radius_near_grid.csv",
+      "bytes": 81402,
+      "sha256": "a607a088fe31f2cb8c6d24a833d8c00f6c5cfdf84ab3640d0d5edf13d411e07c",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a0_b0/radius_near_grid.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a0_b0/radius_near_grid_input.csv",
+      "bytes": 15440,
+      "sha256": "00397268db9e3d4126bf5e3f536c0470773c7149b47ccc61806e71211936bbe6",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a0_b0/radius_near_grid_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a0_b0/radius_neighbors.json",
+      "bytes": 10112,
+      "sha256": "60a1c7ac8a26220265588e8410b1ab7f9dfac74df7b267050ef101d7f2f45cb7",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a0_b0/radius_neighbors.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a0_b0/radius_refined.json",
+      "bytes": 1192,
+      "sha256": "ab7a59d0dc40041fac024141b6cf3accf63f33916a77896548780747da2cf7fc",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a0_b0/radius_refined.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a0_b0/radius_side_audit.json",
+      "bytes": 1337,
+      "sha256": "aeaaa9141e2f398be60abf7dcfd3c059859ec0802653225e3f16371d9dfe0f57",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a0_b0/radius_side_audit.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a0_b0/strong_optical_band.csv",
+      "bytes": 110461,
+      "sha256": "f3e48250ccfe509870d772198052efb9cbfb8a2ddfc566b9c401afb68f754c40",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a0_b0/strong_optical_band.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a0_b0/strong_optical_band_input.csv",
+      "bytes": 9790,
+      "sha256": "f571b7b47eaee315480c21e603fa128274dc8d0b4d15aa438b594970ee24fd1c",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a0_b0/strong_optical_band_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a0_b0/summary.json",
+      "bytes": 2136,
+      "sha256": "7fc861a249a64056a09f022a2cc4e1c17eb74902109850dc8ab6bb4237c85959",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a0_b0/summary.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b0/area_multistart.json",
+      "bytes": 3788,
+      "sha256": "79a85149f6415930ac86a8e6bd11c896d4a37ca525e1446a80027adde0b0bea7",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b0/area_multistart.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b0/area_near_1pct.json",
+      "bytes": 28129,
+      "sha256": "bcc802c09951346a0a6fcce51cc6361263dd1af85dafbcfe17aa83c1018607a3",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b0/area_near_1pct.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b0/area_near_grid.csv",
+      "bytes": 66880,
+      "sha256": "6d159cb92177bd93e4e2454513515c7c611152f13f3698af86ea51b2364fdc1d",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b0/area_near_grid.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b0/area_near_grid_input.csv",
+      "bytes": 16868,
+      "sha256": "24edd175cbfc149a750f20084a1e80cc86765fa7d8ecabcecf8b55d052abcaf7",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b0/area_near_grid_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b0/area_neighbors.json",
+      "bytes": 9716,
+      "sha256": "f311cd66564846e54a85620101e2dab8d5a4e39e470de81b0f2a9e5724e6a4ac",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b0/area_neighbors.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b0/area_refined.json",
+      "bytes": 1150,
+      "sha256": "12f284e09d4632d18b73f9cac828dad30e3c2a08ae508ad5ad52f8dc19e2cdea",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b0/area_refined.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b0/area_side_audit.json",
+      "bytes": 1284,
+      "sha256": "17195600026bf611fec36e701256ade234d93f600151c832daa7a0533e395d3b",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b0/area_side_audit.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b0/central_grid.csv",
+      "bytes": 169718,
+      "sha256": "55c6b16b7c45eee2c9c4df5603f2dbdece7bc3eae421b3d2150be2e1f75854b5",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b0/central_grid.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b0/central_grid_input.csv",
+      "bytes": 39126,
+      "sha256": "2a5e6e0bedf549dc40e0158beb62a0ae56dbb481f05de8b347459c39452a072d",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b0/central_grid_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b0/evaluations.csv",
+      "bytes": 713212,
+      "sha256": "7858827010b8d9ce5d9f4846187032f45906a83e8ad79b1c11f50d17445b1d37",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b0/evaluations.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b0/global100.csv",
+      "bytes": 121536,
+      "sha256": "c7f9fe79f3e0dd50f2c53c5833e2e8757bceee8a485f0f0177fb187582e89fc9",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b0/global100.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b0/global100_input.csv",
+      "bytes": 15977,
+      "sha256": "fde9f59c7a9b67af9c5084b0eb70924f09f389b4674bcd5ad76812372e280ba6",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b0/global100_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b0/initial_geometry.json",
+      "bytes": 387,
+      "sha256": "927f5a74929ae2ee297ab619aad9532e454aa2f613c0a634b85a92f9d8745609",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b0/initial_geometry.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b0/radius_multistart.json",
+      "bytes": 3816,
+      "sha256": "4f898441ed11f0b3b498e81ab53c71c225a150c8a67ac9abf327ac8874a8ba74",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b0/radius_multistart.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b0/radius_near_1pct.json",
+      "bytes": 61604,
+      "sha256": "0675bba9f3e4c7dd57e1579335e182210a311b80a21c55d325e42d54b024b881",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b0/radius_near_1pct.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b0/radius_near_grid.csv",
+      "bytes": 72819,
+      "sha256": "bd6f2237108430b676d1c3a76cd561bd5b3a1dccdde4c56cc9b1de4442aa448a",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b0/radius_near_grid.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b0/radius_near_grid_input.csv",
+      "bytes": 16322,
+      "sha256": "dce168b613c724afd514fb7fd050beb6f3cb3bcc7230be58eb0aa230709d59f8",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b0/radius_near_grid_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b0/radius_neighbors.json",
+      "bytes": 9465,
+      "sha256": "5a80be31750ab9a4e2d0ad4ceeb61a5d2836220a196dbc5e1d7c01ccde227886",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b0/radius_neighbors.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b0/radius_refined.json",
+      "bytes": 1162,
+      "sha256": "d6f384d4511877c358bc54a7d2e0eb1f39bee70ba62fac832cd28adcd8b8cc14",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b0/radius_refined.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b0/radius_side_audit.json",
+      "bytes": 1293,
+      "sha256": "b36abea4f243d75db4a80f113128772de732c84fee3f82d37af885424e36c369",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b0/radius_side_audit.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b0/strong_optical_band.csv",
+      "bytes": 100024,
+      "sha256": "c485a8c5dec921eb7ad166ddd0da6012f09f1dc9199a509f2f2be86c954c012c",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b0/strong_optical_band.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b0/strong_optical_band_input.csv",
+      "bytes": 15929,
+      "sha256": "cf73eb53ccfaf7855343d8bbaaafba30c33ea7bd6870d180d39ba13dd2a42586",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b0/strong_optical_band_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b0/summary.json",
+      "bytes": 2111,
+      "sha256": "810903c3810b9e7fc062e9b657f8d2d27c703e4a9865d95531b11006bc0d9dd9",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b0/summary.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b90/area_multistart.json",
+      "bytes": 3878,
+      "sha256": "7c94cc00465313b933448cea6f6c55cb55b5e11218519025ed70c1d31bf3d75e",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b90/area_multistart.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b90/area_near_1pct.json",
+      "bytes": 31981,
+      "sha256": "d67eb14b9953fee681e5fab903846c424704cb0e2eb62f03272ac373ab739b41",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b90/area_near_1pct.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b90/area_near_grid.csv",
+      "bytes": 73145,
+      "sha256": "d2d2b37793f4d38f93c08de195501c8326ad1b325e86dd893ef1419b62dc5ed8",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b90/area_near_grid.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b90/area_near_grid_input.csv",
+      "bytes": 15440,
+      "sha256": "f9b4c17b3f90f4f3151baf79ff86fa9146863fedc91e4f33d7c2844328d755eb",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b90/area_near_grid_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b90/area_neighbors.json",
+      "bytes": 9350,
+      "sha256": "8452b644bdfc8e35f4e3c14644535e5aa24a2fe00e7c841c6648e6b280010f16",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b90/area_neighbors.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b90/area_refined.json",
+      "bytes": 568,
+      "sha256": "65539d47c7944708be6412cd7aa503070f959bae11868a5d3a03575943a5dcbf",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b90/area_refined.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b90/area_side_audit.json",
+      "bytes": 1290,
+      "sha256": "5c59fe261d0d9989510152581361464c4ab7cb6f22e2b23f85d71d8eeabc3403",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b90/area_side_audit.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b90/central_grid.csv",
+      "bytes": 259846,
+      "sha256": "6dd934994229f02f93449518f2185fedf1d0d28a9e1ee6a45a4a40ffd418c168",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b90/central_grid.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b90/central_grid_input.csv",
+      "bytes": 61645,
+      "sha256": "89326836566a4efac1c8bf23aaf918d786be54306f435860dc37446157063c2d",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b90/central_grid_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b90/evaluations.csv",
+      "bytes": 867262,
+      "sha256": "68224757df4b03fbc9d399c411d4530ea95560e4a8c8e2ab32472f9de5202f3e",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b90/evaluations.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b90/global100.csv",
+      "bytes": 145408,
+      "sha256": "47c03a509b66e705ec53b85fb69d378f7345b44f58dea04fd3f2e40bc466aa0e",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b90/global100.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b90/global100_input.csv",
+      "bytes": 18427,
+      "sha256": "793768f4d37720b6f43664e0c13ba52365694736964c7d5d1a17885b9cc818b4",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b90/global100_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b90/initial_geometry.json",
+      "bytes": 382,
+      "sha256": "a2cade26cee8b0fa2e66325fe957acbf423d57454b11481f943a29ca931a2ef2",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b90/initial_geometry.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b90/radius_multistart.json",
+      "bytes": 3874,
+      "sha256": "f1d9276dc7f2ffb44e29e15c925e5e40cf5850b268a6d1a06269a382909a1df3",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b90/radius_multistart.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b90/radius_near_1pct.json",
+      "bytes": 73139,
+      "sha256": "7976b2664e28057c2758ca32908af932c73a696841a71c0fcd1b1913e537b335",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b90/radius_near_1pct.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b90/radius_near_grid.csv",
+      "bytes": 72286,
+      "sha256": "2932984039154889b238537f3783695942d5d6d5f4825f9ce613abc3ee268306",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b90/radius_near_grid.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b90/radius_near_grid_input.csv",
+      "bytes": 14999,
+      "sha256": "9a4d6d45ef4730938520227c1c63bfcdaa249f6ed51824dfceb476af284495fd",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b90/radius_near_grid_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b90/radius_neighbors.json",
+      "bytes": 9326,
+      "sha256": "bdb26b843165fb71769c318672b2617892df0e597a5a2533eae5065be1e5f08c",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b90/radius_neighbors.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b90/radius_refined.json",
+      "bytes": 564,
+      "sha256": "834ec8dd566232fdcd5fae4b109ecbebbb8c30fc9c3ec68a63f1c18ee072fee6",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b90/radius_refined.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b90/radius_side_audit.json",
+      "bytes": 1294,
+      "sha256": "e4dbf09387cb5d7be685bc82e9606e172d3e95e1a56f23051b661820ae2e84a1",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b90/radius_side_audit.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b90/strong_optical_band.csv",
+      "bytes": 103394,
+      "sha256": "27179b58e48d9888b77ca42b24ea950be4fc373dc3c97d49ae79219f6d1ad80c",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b90/strong_optical_band.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b90/strong_optical_band_input.csv",
+      "bytes": 15981,
+      "sha256": "02f641abe6cf081bd7c8b245ad0a5f72050a3abc643e9d44cd19ac0a6c6de6e5",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b90/strong_optical_band_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1700_b90/summary.json",
+      "bytes": 2072,
+      "sha256": "f81e10a29aa7828ab58eb093d18064bc761777b32ae335280e695f3028253d79",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1700_b90/summary.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1780_b0/evaluations.csv",
+      "bytes": 272,
+      "sha256": "64a6660b5126701f622b6b1c4468e2a73acccbbe1a37dcbf9a03134e5d299710",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1780_b0/evaluations.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1780_b0/initial_geometry.json",
+      "bytes": 388,
+      "sha256": "b34d33eb3905a679e76e4ede0163573d6c65f82e740a525889cf88f6751ce3d7",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1780_b0/initial_geometry.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a1780_b0/summary.json",
+      "bytes": 1895,
+      "sha256": "385f68fd73a72777337c9484c05b7e6c66963f5fe67c7d8562f7b400c6e61724",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a1780_b0/summary.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b150/area_multistart.json",
+      "bytes": 3873,
+      "sha256": "031c20f8cf250390bf55c4aa08beb08c77dff1a607a4bb86e6a3885d48654082",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b150/area_multistart.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b150/area_near_1pct.json",
+      "bytes": 109021,
+      "sha256": "0ecfa1e4b8c6c951d0d2c5c78c73919128e9e3ac3a2ba69ceb3b4835f2e7f92c",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b150/area_near_1pct.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b150/area_near_grid.csv",
+      "bytes": 72721,
+      "sha256": "613687871d6df33a1a7c9ff218bcee6313ed0318ed243f9b017e1f6790f9fc47",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b150/area_near_grid.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b150/area_near_grid_input.csv",
+      "bytes": 15440,
+      "sha256": "3f0655daa1e680a787f5bdd0660623f6bdd03e207b3c801fdedd21e37f3aa447",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b150/area_near_grid_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b150/area_neighbors.json",
+      "bytes": 9682,
+      "sha256": "d456ceb0ff98ae72cb77b29aac9649507d21bfb925f401715eb67ff1ca105077",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b150/area_neighbors.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b150/area_refined.json",
+      "bytes": 581,
+      "sha256": "daaeeb2d8f834c3bbb114604757072e274502cb208efaf8478dbf219be8a5ba3",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b150/area_refined.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b150/area_side_audit.json",
+      "bytes": 1305,
+      "sha256": "e581b50ba1b402df54e25efd2c6fef39fb7cd41d9f0b498455b35a1d6f834d1f",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b150/area_side_audit.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b150/central_grid.csv",
+      "bytes": 286033,
+      "sha256": "46376de65f5a1cd82b6efea5dde84f5187fe3be32ce8bb66f14f779a5d043f7c",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b150/central_grid.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b150/central_grid_input.csv",
+      "bytes": 64166,
+      "sha256": "4812f0fcd7a1be6f963acdb000a44c8a73706251dc4abd4345d58490dea1eb03",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b150/central_grid_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b150/evaluations.csv",
+      "bytes": 946153,
+      "sha256": "a93dc5030958202bbc94a0a60645ff6124636879730ad733f10cfa197b95099d",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b150/evaluations.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b150/global100.csv",
+      "bytes": 181184,
+      "sha256": "7d500d835c62694cb8c501d27877f3161f9d2bdf11b7d80230f7b006069b4847",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b150/global100.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b150/global100_input.csv",
+      "bytes": 18719,
+      "sha256": "003be49e5b211540c7614dc8e79dec47028d6ca46957294c6fc055df9246da47",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b150/global100_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b150/initial_geometry.json",
+      "bytes": 379,
+      "sha256": "926007918b4ed381569285dbcbeaa6d62cf40bd76c62b17bcff67df7c19d5d6b",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b150/initial_geometry.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b150/radius_multistart.json",
+      "bytes": 3874,
+      "sha256": "5b7fa85560b16ad4cb10ddc6f0be988c44fd64793b5c0eda38ceb1a02c71ba8d",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b150/radius_multistart.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b150/radius_near_1pct.json",
+      "bytes": 170102,
+      "sha256": "4a80d1175e3b1512be3e9976cf5d4d4911641c4bcaa0701b71ad2a4effee24fb",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b150/radius_near_1pct.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b150/radius_near_grid.csv",
+      "bytes": 72790,
+      "sha256": "f95a137d2ea4d119e2ee1874e2fade4d2f553bee8e76402e54c95b83a6ae5014",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b150/radius_near_grid.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b150/radius_near_grid_input.csv",
+      "bytes": 15440,
+      "sha256": "f29a1c3c68d36c391a5d07325fda944104322663f4904e897fc1881682c62aaa",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b150/radius_near_grid_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b150/radius_neighbors.json",
+      "bytes": 9682,
+      "sha256": "bdb9a7b59670c1643f56d5658db0efd5d133ab9ee4fc63eccfdd50176ab0b835",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b150/radius_neighbors.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b150/radius_refined.json",
+      "bytes": 576,
+      "sha256": "7ac328d984803c3e91d3d748c739905e6b636463dccc81b90c2038b67506cb82",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b150/radius_refined.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b150/radius_side_audit.json",
+      "bytes": 1311,
+      "sha256": "43b9ab9754cdc23b6de4ec36e0cd4c4abde53a27a755d70d4ec6ed849368e43c",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b150/radius_side_audit.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b150/strong_optical_band.csv",
+      "bytes": 116703,
+      "sha256": "90b42727873b8438fdc49f509c5c9d2df2494885e025430cb768be11093f7439",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b150/strong_optical_band.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b150/strong_optical_band_input.csv",
+      "bytes": 16306,
+      "sha256": "b3b7f1b634a5e1ab5d334fb2b13563da5e0082db8214f6a1b6c97b5d054fff14",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b150/strong_optical_band_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b150/summary.json",
+      "bytes": 2097,
+      "sha256": "7a45a28f4d9a52108f5ba28bf414628ded51baadba1d8cbd60c99cf121ecc9bc",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b150/summary.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b180/area_multistart.json",
+      "bytes": 3861,
+      "sha256": "7ee2c43d66b83853966ffa602aead9e2bccdaac34aa981a932fde048f4a8c09c",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b180/area_multistart.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b180/area_near_1pct.json",
+      "bytes": 122924,
+      "sha256": "dc3757257b6bdc1602822a619bbcdae06c7cc3d9e50ee9bc6de749dd08dfb3b6",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b180/area_near_1pct.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b180/area_near_grid.csv",
+      "bytes": 73321,
+      "sha256": "42c5d7218d511eca5c7b37efa176f8a33f2fdd2fb3faff68da2933ddf7c24cb7",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b180/area_near_grid.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b180/area_near_grid_input.csv",
+      "bytes": 15587,
+      "sha256": "3705b0fcc8afced1f47fa0fdd1512b76ce09a049cb92c541254e43f700eeb136",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b180/area_near_grid_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b180/area_neighbors.json",
+      "bytes": 9696,
+      "sha256": "171d3c4c3ca2f204b2fb09bed7f4abb2e6008c2a9605c07934652b19f2e5bca8",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b180/area_neighbors.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b180/area_refined.json",
+      "bytes": 1159,
+      "sha256": "a9c5949d16f23105e73e74b3f7e15b0a8d37fb91edf19a53300f9b5b970be3b7",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b180/area_refined.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b180/area_side_audit.json",
+      "bytes": 1303,
+      "sha256": "3b495be3e56cb84d3cc98a406bb84f59119ce6d7e726dd5c899c614e6dcfcdd8",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b180/area_side_audit.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b180/central_grid.csv",
+      "bytes": 443566,
+      "sha256": "05a2ad7778f5ba3ef33aff7cbebf989057090abc24bf51f2ed884cfa33536125",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b180/central_grid.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b180/central_grid_input.csv",
+      "bytes": 101042,
+      "sha256": "76c95eaf240d879104a544187f7463f75d0e90ca09233c43476bb8240d9ad88d",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b180/central_grid_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b180/evaluations.csv",
+      "bytes": 1118792,
+      "sha256": "74417bf8900621c9e239f51c96329507d0410949606326f131b3ef1c11f8ef9d",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b180/evaluations.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b180/global100.csv",
+      "bytes": 160119,
+      "sha256": "8b9230f96dac196864566ac117ddfa4a04729e86384aae50e1b20def5f21624e",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b180/global100.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b180/global100_input.csv",
+      "bytes": 19699,
+      "sha256": "09016957c57dc3d19db773e6f34ee2b85cfb5109cecee9426a0ad4853654d000",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b180/global100_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b180/initial_geometry.json",
+      "bytes": 383,
+      "sha256": "554c0d0482ec033e3c749dff15afc0d27c2b41beedb2715f3aef0b0905e0a727",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b180/initial_geometry.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b180/radius_multistart.json",
+      "bytes": 3868,
+      "sha256": "01fe9451e406a46be6332c918bfaa2c8f210d0fc5b3e67b8501dc063fdbb89ca",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b180/radius_multistart.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b180/radius_near_1pct.json",
+      "bytes": 189339,
+      "sha256": "d0ffb0cdef722bba8c7257d8c5c69a2b7856a34885913eb2f74b0b11562ecdfa",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b180/radius_near_1pct.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b180/radius_near_grid.csv",
+      "bytes": 73298,
+      "sha256": "c3488132b5b2cc5b9a7fc8e269c7855659539d4e03c7bfce78b34b5490e79d96",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b180/radius_near_grid.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b180/radius_near_grid_input.csv",
+      "bytes": 15860,
+      "sha256": "388efe594a33acb89f61f8c90267c4ead81f4227cd1561c3952fea612728553b",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b180/radius_near_grid_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b180/radius_neighbors.json",
+      "bytes": 9672,
+      "sha256": "487c0f7d261a32cba8290217b2ae5cb4c29d60d9370d2bc9549cc9ef7121d379",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b180/radius_neighbors.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b180/radius_refined.json",
+      "bytes": 1161,
+      "sha256": "7b53593c1680af1d7a2da8ec3c9ddebb92361ca450487fc17529d4ae458a9047",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b180/radius_refined.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b180/radius_side_audit.json",
+      "bytes": 1311,
+      "sha256": "e8e3914174404dc40f0a8c79c826bd9ae0a517208fb9b21085e4d63ea58c6c7a",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b180/radius_side_audit.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b180/strong_optical_band.csv",
+      "bytes": 116864,
+      "sha256": "6ad3bdcef69fb94927740a56574b41cc9b93c6811276451d91e1d30688348f53",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b180/strong_optical_band.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b180/strong_optical_band_input.csv",
+      "bytes": 16202,
+      "sha256": "deb7d629e6c7001fd9a46e6c0a496d477799a65ef7eae4fcdf0a8f3d9957336c",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b180/strong_optical_band_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a2500_b180/summary.json",
+      "bytes": 2106,
+      "sha256": "ffde6f8d0f6ccfa236a821cb8565a471426b1a5418411f4de2b5f3ff631e04ab",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a2500_b180/summary.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b0/area_multistart.json",
+      "bytes": 3856,
+      "sha256": "2fddb7e02be7de3496a85870541d6c7225451b1ddbdd3d7706066c6a573a9bb2",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b0/area_multistart.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b0/area_near_1pct.json",
+      "bytes": 82821,
+      "sha256": "3ebf4a69ff9fdc42dd0466eba96a62214aea4e72f09d0b70af033e251a64a220",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b0/area_near_1pct.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b0/area_near_grid.csv",
+      "bytes": 73577,
+      "sha256": "0e2e29f41c08a0ca288577c5ef157160cdf078a62c5c4d51d304305b5dd72239",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b0/area_near_grid.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b0/area_near_grid_input.csv",
+      "bytes": 15881,
+      "sha256": "b94f8434cceda0d87b91fb03299ec0110fcfa721cab03aed9b45515a194437f3",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b0/area_near_grid_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b0/area_neighbors.json",
+      "bytes": 9705,
+      "sha256": "fc79ea92ff59106d6f89bab25da551c9578833fd2d516d5eb04c85165760e46c",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b0/area_neighbors.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b0/area_refined.json",
+      "bytes": 1162,
+      "sha256": "87faa912744f88fcb9d7bd8414b73bfda9c4dfcb42e9dd8713b5e7d6debc1b3d",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b0/area_refined.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b0/area_side_audit.json",
+      "bytes": 1300,
+      "sha256": "ce9e904cee1ac530cce20f9d2b82366b178337ea5b0ab465b364b2f7a205af70",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b0/area_side_audit.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b0/central_grid.csv",
+      "bytes": 557781,
+      "sha256": "cff5b6420d1d3c02f5f8f50ecce5e4a4ae7e9c3fcf29b9a8cfb23d7d242a929c",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b0/central_grid.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b0/central_grid_input.csv",
+      "bytes": 123490,
+      "sha256": "7ed54d162fb577eec3d6319d38fdfc6f66143709c6850eb59e9f9e29c90dba36",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b0/central_grid_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b0/evaluations.csv",
+      "bytes": 1218167,
+      "sha256": "38b9e767470ed0dddad3c63ce478b2f89f69db86b306d9c574fe0f5a497bf30c",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b0/evaluations.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b0/global100.csv",
+      "bytes": 160518,
+      "sha256": "a38f1a453e7c80d906ace8ef2b26943d52e151a939ac6eb758094f0750dbecb0",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b0/global100.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b0/global100_input.csv",
+      "bytes": 19897,
+      "sha256": "abf785c27e2e8f2e8461ee978cd5cbfdfc928313923e6d2b339d7d49549fd444",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b0/global100_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b0/initial_geometry.json",
+      "bytes": 387,
+      "sha256": "fb46a09d1da430516fd1124bead0610ce16735fb83d1c38064c2a82a476f77cc",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b0/initial_geometry.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b0/radius_multistart.json",
+      "bytes": 3866,
+      "sha256": "7fd18eb1b886fb8ad119322f3a6738411fa1e52ed0c2ece0faa885503a6e7c4b",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b0/radius_multistart.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b0/radius_near_1pct.json",
+      "bytes": 155931,
+      "sha256": "97c7d4c16be39c74eddb711d8f1b3784936f64a7707de252fb6df4e2f55681ee",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b0/radius_near_1pct.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b0/radius_near_grid.csv",
+      "bytes": 73605,
+      "sha256": "08349dc2fc574dc6bea347f30152358040cd9098536469ee9b231e6ec6a4e39d",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b0/radius_near_grid.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b0/radius_near_grid_input.csv",
+      "bytes": 15881,
+      "sha256": "9d14560c5563ab839624162ed60111dcdbfc0e7351c7e4b72d43a9ad3a99d069",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b0/radius_near_grid_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b0/radius_neighbors.json",
+      "bytes": 9713,
+      "sha256": "d8837c3ecf28fb1614258265a2c796fc74892c97fce40d74513f24c33ce05500",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b0/radius_neighbors.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b0/radius_refined.json",
+      "bytes": 1160,
+      "sha256": "e85989b18ae7911c08e8380abe8497a8e7d70cd40aecf2000d3d657c7a70df1a",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b0/radius_refined.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b0/radius_side_audit.json",
+      "bytes": 1302,
+      "sha256": "90e23519d80651605a21906da29081f27690031ddcea91f9f45918f20035b4a0",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b0/radius_side_audit.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b0/strong_optical_band.csv",
+      "bytes": 102960,
+      "sha256": "70ca256894320e24eec9aeee891bb4db9a988cdb20388aa967e00d5ca993ed6c",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b0/strong_optical_band.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b0/strong_optical_band_input.csv",
+      "bytes": 15851,
+      "sha256": "9ca9194cc4afd42c45becda160458a9a5d66797950b0c7a3c874c65b87833cd2",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b0/strong_optical_band_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b0/summary.json",
+      "bytes": 2110,
+      "sha256": "3100cf1b7e4481f467aab7191f0a039b00a293f87810df34a9116ed01c16c97b",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b0/summary.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b90/area_multistart.json",
+      "bytes": 3853,
+      "sha256": "4abc4cda5110e3e170bf2bfc14cf7cbd69d2267f3ea247483c84223b1922b7cb",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b90/area_multistart.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b90/area_near_1pct.json",
+      "bytes": 116508,
+      "sha256": "e08d9afdf940b2b65f077325c7999b401628548b2ec2285f1e3688b904c9a811",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b90/area_near_1pct.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b90/area_near_grid.csv",
+      "bytes": 80377,
+      "sha256": "97abbb77755cf7ec764a9b1454eea965b4f834f59885bf0908648e078fed08a7",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b90/area_near_grid.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b90/area_near_grid_input.csv",
+      "bytes": 14999,
+      "sha256": "94aaed2d796a75e9eb5bd592ac81bc36fe6df698cee7c279edaa72f7f258acbc",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b90/area_near_grid_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b90/area_neighbors.json",
+      "bytes": 10069,
+      "sha256": "95ebfdc700b9f5e9e5377cc37e13e79e51ea808d9cfc5c495111d50ebe2f3586",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b90/area_neighbors.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b90/area_refined.json",
+      "bytes": 1194,
+      "sha256": "19561e4e7de39694efc23d92401c608695eda02772370dd6e9b195954b7fa53f",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b90/area_refined.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b90/area_side_audit.json",
+      "bytes": 1337,
+      "sha256": "a0553859e376e1d7fc629e48393abb39901c16a9d0558d516602eb1373aec184",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b90/area_side_audit.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b90/central_grid.csv",
+      "bytes": 1196402,
+      "sha256": "713a74a1f19c705ee6b2264da2b8fecd5f8eb866e6b093b8e7c7c2eeeb9cd3ad",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b90/central_grid.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b90/central_grid_input.csv",
+      "bytes": 132753,
+      "sha256": "3402d7fb7e544f0d0b8f663d5cf50879ca5fe3bf5607c434fe69a4c274683112",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b90/central_grid_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b90/evaluations.csv",
+      "bytes": 2032471,
+      "sha256": "5a9cf2a5144629518225711a3d2c4ffad5773f8a0d6f0fc4642aab38973ef2b3",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b90/evaluations.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b90/global100.csv",
+      "bytes": 192819,
+      "sha256": "35b63b4a1c6fad04b33c81b6691f813c5ebbed239f198b6ec226570fa5f781f5",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b90/global100.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b90/global100_input.csv",
+      "bytes": 22837,
+      "sha256": "f8c6057923b9c2767d4d04dbcd02c6b9f5d147f09c65a018a9a6d720dff2451c",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b90/global100_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b90/initial_geometry.json",
+      "bytes": 387,
+      "sha256": "7689e424d49766a7eb45283c4c499d90547c44d3a2c2efb743d1e0fe89c8519f",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b90/initial_geometry.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b90/radius_multistart.json",
+      "bytes": 3853,
+      "sha256": "e5e7882e39a2b3129c0c7b7e29e19abe85e4a6ae5f58eba2064a406463dded36",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b90/radius_multistart.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b90/radius_near_1pct.json",
+      "bytes": 199149,
+      "sha256": "82c65d1cf2b995f72b2b142bb1458745a60f74e94ddb3b1f3c036d36e846ead2",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b90/radius_near_1pct.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b90/radius_near_grid.csv",
+      "bytes": 80949,
+      "sha256": "a8aa2a655cf08b9ba12d7139d012a7725560d33f9d9ae750dce76f612e9e49be",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b90/radius_near_grid.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b90/radius_near_grid_input.csv",
+      "bytes": 15440,
+      "sha256": "00397268db9e3d4126bf5e3f536c0470773c7149b47ccc61806e71211936bbe6",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b90/radius_near_grid_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b90/radius_neighbors.json",
+      "bytes": 10085,
+      "sha256": "a803c3066b0cf028fdfa7f47e4439b7874dd0b4287e5817d495fb82158b14401",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b90/radius_neighbors.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b90/radius_refined.json",
+      "bytes": 1191,
+      "sha256": "bada9eab026990e2d8a3b9cfe54fea5b02ef0ca546f908ed4358ec148ad0f9be",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b90/radius_refined.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b90/radius_side_audit.json",
+      "bytes": 1342,
+      "sha256": "cd2385953fb4747cdcde55ea7b1be33556d9e4cb5f5dddde07fa8144070f49dd",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b90/radius_side_audit.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b90/strong_optical_band.csv",
+      "bytes": 111222,
+      "sha256": "d98ceb6666be09dbf8057862b132aeb619685989ee6b9f3f7bdaece5ebb49bf4",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b90/strong_optical_band.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b90/strong_optical_band_input.csv",
+      "bytes": 9790,
+      "sha256": "f571b7b47eaee315480c21e603fa128274dc8d0b4d15aa438b594970ee24fd1c",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b90/strong_optical_band_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/a900_b90/summary.json",
+      "bytes": 2140,
+      "sha256": "b91c79686cd63bb98c0c8c397529e2d89423b37550b9ee77e6fd814bc5abe584",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/a900_b90/summary.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/summary.csv",
+      "bytes": 1780,
+      "sha256": "c0f9b4fca7930b204dd0b2c4d6819b80e7d38366e4d0669b723b49e30f4c7ba7",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/summary.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/results/summary.json",
+      "bytes": 4908,
+      "sha256": "862390342fdfb0d10d4e94c9ef17388fa38ecd3f8fac1296414a6a5d5ec0615f",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/results/summary.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/solver",
+      "bytes": 98584,
+      "sha256": "8b61d59edeb7ea7211350a18ae160317926f8a42e8ce84b419a8f84f4055387e",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/solver",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/src/audit_search.py",
+      "bytes": 2023,
+      "sha256": "bd4621c4a25044e5eeb02cc0d8e9bdc8c75a3fc0a2d1d829ac8a952f4e6d7a0b",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/src/audit_search.py",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/src/extra_checks.py",
+      "bytes": 2983,
+      "sha256": "1e168eca24acb7ae7d2098ba8db11307829619fa3d0aedf606f25898fc572249",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/src/extra_checks.py",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/src/report.py",
+      "bytes": 12897,
+      "sha256": "ad4e9fb29559da0875e7af1d4e1dafdda8cb7f793a5815fbfbaaf4b1f44a00d9",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/src/report.py",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/src/reproduce.py",
+      "bytes": 450,
+      "sha256": "5fa266e4fbed5e4ed4856d2525979618c68d9ab5b8662474d0309293da7483da",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/src/reproduce.py",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/src/search_general.py",
+      "bytes": 7402,
+      "sha256": "de344cc3b41a54ee0469de730dd515324d8ef06575ad6f141675dacade2bb667",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/src/search_general.py",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/src/solver.cpp",
+      "bytes": 17510,
+      "sha256": "9c6a113a8c7dff8d1926079f97c7e4645cab6d84a576edc67f951cd78c707b70",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/src/solver.cpp",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/src/validate_general.py",
+      "bytes": 6127,
+      "sha256": "f9584b82cd50e6e1b6a3403fc60713a19d73f3144a53dfb26d5e5c22ff9e9cb5",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/src/validate_general.py",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/verification/a0_b0_area_profile.csv",
+      "bytes": 3004,
+      "sha256": "d3b3580f80bb158b29b943d90b89889baf679e28263fa1562ab487f16190b073",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/verification/a0_b0_area_profile.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/verification/a0_b0_radius_profile.csv",
+      "bytes": 3030,
+      "sha256": "d04523583edef91f467074b3be63786746e11986ebeaf08648eb0697deadf049",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/verification/a0_b0_radius_profile.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/verification/a1700_b0_area_profile.csv",
+      "bytes": 3024,
+      "sha256": "7af4535e20a6f1d710af8c1ff8888574c9b5cff9f46e36e3c46c089383abad6d",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/verification/a1700_b0_area_profile.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/verification/a1700_b0_radius_profile.csv",
+      "bytes": 3004,
+      "sha256": "9fb92c68cb4e86f4d67e16b61708c2ad27b55195679b1d9ac0aeff1639ef3bad",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/verification/a1700_b0_radius_profile.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/verification/a1700_b90_area_profile.csv",
+      "bytes": 2980,
+      "sha256": "c6598193712721b2ec96152d7931a1e2124e93a3e0cd42e9d1e193f5f2d4f92d",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/verification/a1700_b90_area_profile.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/verification/a1700_b90_radius_profile.csv",
+      "bytes": 2981,
+      "sha256": "da46f5221077cb5f3c27b59f79489cc3e0915c678508fd3dbd20ce7887dedf7a",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/verification/a1700_b90_radius_profile.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/verification/a1780_b0_area_profile.csv",
+      "bytes": 6348,
+      "sha256": "86bc56112921ccc38ad89d8036651a2797787531d2a7a752310cc0d67c1851b6",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/verification/a1780_b0_area_profile.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/verification/a1780_b0_radius_profile.csv",
+      "bytes": 6348,
+      "sha256": "86bc56112921ccc38ad89d8036651a2797787531d2a7a752310cc0d67c1851b6",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/verification/a1780_b0_radius_profile.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/verification/a2500_b150_area_profile.csv",
+      "bytes": 2953,
+      "sha256": "291155686130057d16ebe507880383c6723aeeec37f5bea437155ced52d9a2e4",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/verification/a2500_b150_area_profile.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/verification/a2500_b150_radius_profile.csv",
+      "bytes": 2945,
+      "sha256": "1398d3412710df0022562375a6fa670b3d91b056261ca094608ea1ca077fd8e8",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/verification/a2500_b150_radius_profile.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/verification/a2500_b180_area_profile.csv",
+      "bytes": 2955,
+      "sha256": "c83668cffdfb3aab0eecfece8c3a1bfacae9d391f8729bd927ac560c78d52794",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/verification/a2500_b180_area_profile.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/verification/a2500_b180_radius_profile.csv",
+      "bytes": 2989,
+      "sha256": "4e4b0fe87f7715eccfb662f7e09efd153f2eaddd2012469f015466c9fd2988ea",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/verification/a2500_b180_radius_profile.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/verification/a900_b0_area_profile.csv",
+      "bytes": 2993,
+      "sha256": "4fda516a555b64fc6e2f82df114bf1714559401c0f3beb8cd23f7199b56a6f7b",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/verification/a900_b0_area_profile.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/verification/a900_b0_radius_profile.csv",
+      "bytes": 3019,
+      "sha256": "7688887246ce9511a3affcac7a4cad02d19dec7ed7a5ec6000456612bc962db8",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/verification/a900_b0_radius_profile.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/verification/a900_b90_area_profile.csv",
+      "bytes": 3005,
+      "sha256": "65a4c3643e31f4e35d7e4a04c8de34f5c345ce23f27d895f7eb623408200d80a",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/verification/a900_b90_area_profile.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/verification/a900_b90_radius_profile.csv",
+      "bytes": 3030,
+      "sha256": "b25297986cdf4916555103072735ea0d37db6c7009c96bf3b54b15d067ec3885",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/verification/a900_b90_radius_profile.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/verification/candidate_feasibility.json",
+      "bytes": 5443,
+      "sha256": "d47626ed7e3e111c46a21ca12f317207bf23733437476d9a80f8fd8e2a06991c",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/verification/candidate_feasibility.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/verification/convergence.json",
+      "bytes": 29140,
+      "sha256": "88cc8695ef2fc3bafdb8d659b5ef8b9f6f221b08272a2cb49e6658b0be1c5400",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/verification/convergence.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/verification/exhaustive_support_circles.json",
+      "bytes": 17879,
+      "sha256": "17bbe5f98638d93554d5ef636fb1eaee247802b8c7978280887287298822306f",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/verification/exhaustive_support_circles.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/verification/independent_geometry.json",
+      "bytes": 80157,
+      "sha256": "655c347633d162f5ac4f9ec2cacd7361ec5304c0629feabe25fb0d8022385fa3",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/verification/independent_geometry.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/verification/joint_prior_mc.json",
+      "bytes": 10118,
+      "sha256": "b6a03ebfcfe87b11cf20e54ee0fbcd004fcdabb70d9631bd6381a6f8a979df85",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/verification/joint_prior_mc.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/verification/opposite_side_search.json",
+      "bytes": 18315,
+      "sha256": "5c92f3ba7e03abeebdeb47f3b0674552d80a074ffe593b2036354c392a6e4876",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/verification/opposite_side_search.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/verification/origin_regression.json",
+      "bytes": 2860,
+      "sha256": "1f638716da76e2bae20013623c77e1525dc6283dc5c1798110b2d4b401d9a4b2",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/verification/origin_regression.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/verification/pilot.json",
+      "bytes": 5441,
+      "sha256": "9faad5a4a01393929e8a317de29562dd70cbf0978d934c3df5185cccd389873f",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/verification/pilot.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/verification/summary.json",
+      "bytes": 377,
+      "sha256": "e8b21337514f7d2e4a8d2cd5ebcda20a218542dbb9ed319e0d92eb5fb7acc64f",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/verification/summary.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/verification/symmetry.json",
+      "bytes": 995,
+      "sha256": "90b5bbeaf274382ea6f9103cefe7a8227ceef67b6de2e44dbff17eb5859173ca",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/verification/symmetry.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/一般情景求解_20260912/结果汇报.md",
+      "bytes": 8044,
+      "sha256": "ca4db781e40a734a5a6ce0854eb2a85e29a8cd8c808d2b69f74c5ea704f193af",
+      "source": "正式题目工作区/B题/第二问建模/一般情景求解_20260912/结果汇报.md",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/备选模型_最坏半径.md",
+      "bytes": 24738,
+      "sha256": "ddadb18e8f937d7b6806b6567c7583a471705f18f1df924e7cebdc4ec9f4ace8",
+      "source": "正式题目工作区/B题/第二问建模/备选模型_最坏半径.md",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/备选模型_来源与核查.json",
+      "bytes": 2845,
+      "sha256": "a1275cd9a13aafd6652dfbcef1293712ce3639d7bd66e3e69f16063f94e0f7b8",
+      "source": "正式题目工作区/B题/第二问建模/备选模型_来源与核查.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/模型评估与待定方案.md",
+      "bytes": 8761,
+      "sha256": "c3753f8d82f9435ce169842866caed2e167edcb5574527ac369b9f90c1f579ae",
+      "source": "正式题目工作区/B题/第二问建模/模型评估与待定方案.md",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/第二问两种选点模型_论文正文.tex",
+      "bytes": 9740,
+      "sha256": "2264b6a736b07bab108683cd02292271c1fbdf98235a8e3dac20c38bd558722a",
+      "source": "正式题目工作区/B题/第二问建模/第二问两种选点模型_论文正文.tex",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/第二问模型.pdf",
+      "bytes": 199729,
+      "sha256": "6418f3597f4507124f3ea81872ae306c3ba0543294f85944302376b7255ef4de",
+      "source": "正式题目工作区/B题/第二问建模/第二问模型.pdf",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/第二问模型.tex",
+      "bytes": 26941,
+      "sha256": "7e7b48ee4510dafdc74c96051d4b57485908a25ae1de79bb14d1959b97f9fde6",
+      "source": "正式题目工作区/B题/第二问建模/第二问模型.tex",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/结果汇报.md",
+      "bytes": 7616,
+      "sha256": "eb911f341bb558e9bc9be9f603707dc8aa4407407d61fe9ab304456085b1e004",
+      "source": "正式题目工作区/B题/第二问建模/结果汇报.md",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文01与02阅读说明.md",
+      "bytes": 7508,
+      "sha256": "c2ec648288e6669d04a69b38db2bf8aef7d29b5aed67a67b692ce747383decc2",
+      "source": "正式题目工作区/B题/第二问建模/论文01与02阅读说明.md",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文定稿版/.gitignore",
+      "bytes": 7,
+      "sha256": "181314065df2f2fdaf920b1a8b5311daa216a2d6489a06ada5b49cc514d89417",
+      "source": "正式题目工作区/B题/第二问建模/论文定稿版/.gitignore",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文定稿版/README.md",
+      "bytes": 2596,
+      "sha256": "e65a54a2eabadc76c15112f6a45ac290d1e061b36852f10f62686cfe1b6aa117",
+      "source": "正式题目工作区/B题/第二问建模/论文定稿版/README.md",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文定稿版/候选区域模型说明.md",
+      "bytes": 4159,
+      "sha256": "dd2ba7cacee94756c1b78279113478a73faee4455b57f6127aedfb840339e4ad",
+      "source": "正式题目工作区/B题/第二问建模/论文定稿版/候选区域模型说明.md",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文定稿版/核查结果.json",
+      "bytes": 3671,
+      "sha256": "c7d7765ec1b0fa306178f34ed05d16f512dc5fa7faf3249b98a0237299c049ba",
+      "source": "正式题目工作区/B题/第二问建模/论文定稿版/核查结果.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文定稿版/核查记录.md",
+      "bytes": 5310,
+      "sha256": "e91fceaedd9f50fe3671331fe7c9e06526d6b19086c07df0da6f4b29d59b9ccd",
+      "source": "正式题目工作区/B题/第二问建模/论文定稿版/核查记录.md",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文定稿版/第二问模型.pdf",
+      "bytes": 150931,
+      "sha256": "7f890dc3f31dc8824f9e4f77b56a5d82c4faf72b056d2ffa0ab52c19682361b7",
+      "source": "正式题目工作区/B题/第二问建模/论文定稿版/第二问模型.pdf",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文定稿版/第二问模型.tex",
+      "bytes": 6227,
+      "sha256": "0e3303886cac4f1a4919b18814bf83a6db8cc697cb61f5f6792971c6830335ab",
+      "source": "正式题目工作区/B题/第二问建模/论文定稿版/第二问模型.tex",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文定稿版/第二问正文.tex",
+      "bytes": 16015,
+      "sha256": "8038d8558b2a6b3ce04932ff981fd0f75b1a6dffb09b4b507c7410805c8f96e6",
+      "source": "正式题目工作区/B题/第二问建模/论文定稿版/第二问正文.tex",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文定稿版/编译输出.txt",
+      "bytes": 15902,
+      "sha256": "37644aab78c4465b43648b8ac81d77ec729adcd42e23a4d3e380ec41039556c1",
+      "source": "正式题目工作区/B题/第二问建模/论文定稿版/编译输出.txt",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/.gitignore",
+      "bytes": 49,
+      "sha256": "ff63df8be66a31e561556247ae39fc5e56634fb4c4d7f38dd848279dff719dd3",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/.gitignore",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/README.md",
+      "bytes": 9244,
+      "sha256": "9533619f9cebb3741e0823bbf64c1c2d09598839b0103b178843cb3fe4a3a8dd",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/README.md",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/data/branch_curve.csv",
+      "bytes": 41350,
+      "sha256": "193e3b1baaae7c6f2541acf27bafae605829cd344b58ee5c58a49c8d91df9be7",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/data/branch_curve.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/data/checks.json",
+      "bytes": 818,
+      "sha256": "74d5c87077dddb5f3ae80470cb34b47d39f5150b4d313bc8e7f39c6bfcd7323e",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/data/checks.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/data/contour_check.csv",
+      "bytes": 40353,
+      "sha256": "5f80f2cc4c05a75a0f32cfae7080dff4456b5b15fa5d5d5437c28b6bcc70d361",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/data/contour_check.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/data/contour_check_input.csv",
+      "bytes": 9119,
+      "sha256": "07d8ad0df95ee14cb1d26ef5509d5b257d540830e2f44d647cd08fa0306dae73",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/data/contour_check_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/data/contours_1pct.json",
+      "bytes": 103372,
+      "sha256": "707aa557346c441ec538585786174277efbc859660a734be1468fc2921108ae4",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/data/contours_1pct.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/data/geometry.json",
+      "bytes": 694173,
+      "sha256": "2c8db852451232800d75a5a622e1405639745bde7a8d2b53ddaafdf6e0b5baa7",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/data/geometry.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/data/heatmap.csv",
+      "bytes": 2144458,
+      "sha256": "8ff841a677dc67add11ab519b33169c991927a3fbd1fc3e94741fd1e061a26b2",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/data/heatmap.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/data/heatmap_part0.csv",
+      "bytes": 708870,
+      "sha256": "8d077bf11e900b1bac21b9fc1b3f642ed9ae4ba48f28df9ccfc15d0253a81343",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/data/heatmap_part0.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/data/heatmap_part0_input.csv",
+      "bytes": 55881,
+      "sha256": "bf7dc1c0137315919af6ea929948128bdd99ae0d36ef83359633653d531d6b29",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/data/heatmap_part0_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/data/heatmap_part1.csv",
+      "bytes": 708794,
+      "sha256": "66f119c0a620ea91f77356a21fb3d88eadc88326dc8fd2de39ea7b212ae7dc94",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/data/heatmap_part1.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/data/heatmap_part1_input.csv",
+      "bytes": 55872,
+      "sha256": "b9a7190961e7591222e55d42e3f523bd5d990145871c269dcb2dd91fc6cfe963",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/data/heatmap_part1_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/data/heatmap_part2.csv",
+      "bytes": 708702,
+      "sha256": "087e8efa446a3eb5cd2bdf87266e4949162b30656d5b1daab62c02427ae3ef6d",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/data/heatmap_part2.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/data/heatmap_part2_input.csv",
+      "bytes": 55872,
+      "sha256": "9bec3f0146eaba4da698997850c3ae0527e4e9a70641fc5b334a28a5fe26227e",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/data/heatmap_part2_input.csv",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/data/preparation.json",
+      "bytes": 565,
+      "sha256": "07c4b1f6cc1744f4fc50f0bdb950a6a3694f3d42fb2e9030d4990db0464fb5d0",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/data/preparation.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/data/preservation_check.json",
+      "bytes": 253,
+      "sha256": "d571a2e8687b832523c5b659a8e38ef8728584823aa2c53ec8dec005bb48c7dc",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/data/preservation_check.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/data/worst_contour_geometry.json",
+      "bytes": 454,
+      "sha256": "26e9fdee73b2accb67d2a7162a64deb166ac9819095abe0344571b755f67f3de",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/data/worst_contour_geometry.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/input_contract.json",
+      "bytes": 304,
+      "sha256": "cacb9c60fcfce4a76f2678975a33ecaaf28c1622f77ca5c401071c66f9e0e592",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/input_contract.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/manifest.json",
+      "bytes": 5589,
+      "sha256": "b409f73fccccf1b8f82f968593c0cba35bd0ce990c7d35e1c49b57ebeb93e493",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/manifest.json",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/output/fig01_geometry.pdf",
+      "bytes": 195966,
+      "sha256": "9c05c335d9a05596345cee8ad59cf0c175bcbdeef047c6736b189214f3a2b74a",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/output/fig01_geometry.pdf",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/output/fig01_geometry.png",
+      "bytes": 714881,
+      "sha256": "ffebfeaf808692bc614b1859bb721348aeb50df2633de8168a6b2183a3ff3b4b",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/output/fig01_geometry.png",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/output/fig01_geometry.svg",
+      "bytes": 704305,
+      "sha256": "3f22d8dd16cdd729f2a61bb9bed7ec097d96842f46dc4d177c5f964acbd8b8c6",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/output/fig01_geometry.svg",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/output/fig02_objective_maps.pdf",
+      "bytes": 2350974,
+      "sha256": "53ebff41d3c105294072c91ed33b3ff0a8e9b4110a3af4cfb563f82b9070245c",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/output/fig02_objective_maps.pdf",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/output/fig02_objective_maps.png",
+      "bytes": 793044,
+      "sha256": "06a62486ed49a4f9a80b48e45f8f79f5acb89f522167c4b96e8b654cb3ac69f1",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/output/fig02_objective_maps.png",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/output/fig02_objective_maps.svg",
+      "bytes": 7091894,
+      "sha256": "6573d76ae4c5da910b67b77b8f88c17edefc497e9d07993788641e4d4d05d76d",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/output/fig02_objective_maps.svg",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/output/fig03_branch_balance.pdf",
+      "bytes": 28133,
+      "sha256": "a619b699ecdba54a4433045fc3815e8840aaff444227ce9eded828c2b3984a9e",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/output/fig03_branch_balance.pdf",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/output/fig03_branch_balance.png",
+      "bytes": 443732,
+      "sha256": "52b1f8f1b4c36c5934ee7df5b9b6f150a2b771a692cb5bd79a76c7f5a013bc56",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/output/fig03_branch_balance.png",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/output/fig03_branch_balance.svg",
+      "bytes": 134986,
+      "sha256": "3e29edad8fee941fecb9e0dc07f2cb9614dcbc9ee544d0b2e2afef77f95b047b",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/output/fig03_branch_balance.svg",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/requirements.txt",
+      "bytes": 46,
+      "sha256": "ece8b30293138952711085425295dc77d07e0bb69df62c82d537502d37982b0d",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/requirements.txt",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/src/check_data.py",
+      "bytes": 3602,
+      "sha256": "3919641b3655b34ca125e4bc7901f4c711dfd42dd149e7250bde18356c58d49a",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/src/check_data.py",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/src/draw_figures.py",
+      "bytes": 14345,
+      "sha256": "43d6611bb3d5c514cd7243211c4d85435080ea636499dd295be82f442eb6ddd6",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/src/draw_figures.py",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/src/figure_backend.cpp",
+      "bytes": 1462,
+      "sha256": "d13a113cb1b476d9748764e2a245172795a5e8fe75f9b14585f4d08bb287a50e",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/src/figure_backend.cpp",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/src/prepare_data.py",
+      "bytes": 4398,
+      "sha256": "596883d63bd495ab210abd6fb06ef7011b01e2f5d0e434f5ebac70701919fdef",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/src/prepare_data.py",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/src/reproduce.py",
+      "bytes": 3275,
+      "sha256": "fb61710a7eebf7a550ea9f7cf4855c7ba9a7b1020dc1e5aff525c65725e06241",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/src/reproduce.py",
+      "copy_verified": true
+    },
+    {
+      "path": "第二问建模快照/论文插图/src/worst_backend.hpp",
+      "bytes": 7916,
+      "sha256": "2efafbbe2180eddc74d7d3193ef8387b593aa29844b90b40efae92a0e356bdf7",
+      "source": "正式题目工作区/B题/第二问建模/论文插图/src/worst_backend.hpp",
+      "copy_verified": true
+    },
+    {
+      "path": "论文问题二_双模型版.tex",
+      "bytes": 15810,
+      "sha256": "2b7e852a99f9aaf7e78e98b2822f3c943b0935d667bfb151b435e4f42e2951d9",
+      "source": "extracted_or_generated",
+      "copy_verified": false
+    },
+    {
+      "path": "论文问题二_独立入口.tex",
+      "bytes": 6240,
+      "sha256": "370a63047e54b4b29f2f69f59eb44ff11453ce4fa210c61d748d8a82995b2fe3",
+      "source": "extracted_or_generated",
+      "copy_verified": false
+    }
+  ]
+}

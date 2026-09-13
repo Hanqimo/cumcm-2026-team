@@ -1,0 +1,22 @@
+{
+  "area": {
+    "mass_residual": 5.10702591327572e-15,
+    "area_level5_to6": 3.4290997064090334e-07,
+    "radius_level5_to6": 2.834401158224864e-09,
+    "reflection_area_difference": 4.001776687800884e-11,
+    "reflection_radius_difference": 3.019806626980426e-13,
+    "mc_area_zscore": -0.6053274163849272,
+    "mc_radius_zscore": -0.4075953657975357,
+    "mc_invalid": 0
+  },
+  "radius": {
+    "mass_residual": 1.9984014443252818e-15,
+    "area_level5_to6": -1.8084197108692024e-06,
+    "radius_level5_to6": -1.537939908757835e-08,
+    "reflection_area_difference": 3.956301952712238e-11,
+    "reflection_radius_difference": 3.019806626980426e-13,
+    "mc_area_zscore": -0.7262949027098963,
+    "mc_radius_zscore": -0.7280731577276824,
+    "mc_invalid": 0
+  }
+}

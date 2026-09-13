@@ -1,0 +1,31 @@
+{
+  "contour_checks": 280,
+  "contour_deviation_percentage_points": {
+    "expected": {
+      "min": -0.00043812781404994894,
+      "max": 5.8577183970953683e-05,
+      "max_abs": 0.00043812781404994894
+    },
+    "worst": {
+      "min": -1.4689637105824715e-05,
+      "max": 0.004066436435291365,
+      "max_abs": 0.004066436435291365
+    }
+  },
+  "geometry_max_circle_residual_m": {
+    "normal": 9.947598300641403e-14,
+    "no_signal": 0.0
+  },
+  "branch_envelope_max_gap_m": 1.9941745769358477e-05,
+  "curve_points": 311,
+  "reference_point_checks": {
+    "expected": {
+      "expected_radius_level3_deviation_m": -5.787491158315561e-06,
+      "worst_lower_deviation_m": 0.0
+    },
+    "minimax": {
+      "expected_radius_level3_deviation_m": 1.745351875825918e-05,
+      "worst_lower_deviation_m": 0.0
+    }
+  }
+}

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.8.1)  12 SEP 2026 23:26
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.8.1)  13 SEP 2026 02:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1100,15 +1100,15 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2022/07/14>
  ***********
 Package rerunfilecheck Info: File `论文模版.out' has not changed.
-(rerunfilecheck)             Checksum: 5073D1DEEC4E303EF85FD58EA3BF8EFC;4925.
+(rerunfilecheck)             Checksum: 9D509F1D43DA7C7BFFCF5771BAC41388;5835.
  ) 
 Here is how much of TeX's memory you used:
- 21768 strings out of 468168
- 470720 string characters out of 5432816
- 943834 words of memory out of 5000000
- 50194 multiletter control sequences out of 15000+600000
+ 21775 strings out of 468168
+ 471331 string characters out of 5432816
+ 951834 words of memory out of 5000000
+ 50201 multiletter control sequences out of 15000+600000
  643000 words of font info for 125 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 93i,14n,96p,3237b,524s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,14n,96p,3237b,523s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 论文模版.xdv (14 pages, 231872 bytes).
+Output written on 论文模版.xdv (14 pages, 253096 bytes).

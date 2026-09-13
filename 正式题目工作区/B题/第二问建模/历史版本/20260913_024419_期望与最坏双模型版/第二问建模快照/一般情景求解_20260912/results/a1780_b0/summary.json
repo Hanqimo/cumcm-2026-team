@@ -1,0 +1,79 @@
+{
+  "a_m": 1780,
+  "beta_deg": 0,
+  "initial_geometry": {
+    "C1": 6.54568577949245,
+    "rho1": 7.50467955027488,
+    "center": [
+      12.5034106812989,
+      -4.4086956307865e-13
+    ],
+    "points": [
+      [
+        19.9999661468596,
+        -0.349100707655846
+      ],
+      [
+        19.9999661468596,
+        0.349100707654964
+      ],
+      [
+        4.99923847578196,
+        -0.0872620321864178
+      ],
+      [
+        4.99923847578196,
+        0.0872620321864154
+      ]
+    ]
+  },
+  "best": {
+    "area": {
+      "x": 12.5034106812989,
+      "y": -4.4086956307865e-13,
+      "J": 0.0,
+      "J_lower": 0.0,
+      "P_H": 0.666531575801376,
+      "P_N": 0.0,
+      "P_A": 0.333468424199513,
+      "P_loc": 1.00000000000089,
+      "E_radius_loss": 0.0,
+      "safe_margin": 0.0,
+      "angle_calls": 510.0,
+      "x_global": 1792.5034106813,
+      "y_global": -4.4086956307865e-13,
+      "C1": 6.54568577949245,
+      "level": 5,
+      "optimizer": {
+        "success": true,
+        "reason": "rho(K1)<=20, zero objective is globally minimal"
+      }
+    },
+    "radius": {
+      "x": 12.5034106812989,
+      "y": -4.4086956307865e-13,
+      "J": 0.0,
+      "J_lower": 0.0,
+      "P_H": 0.666531575801376,
+      "P_N": 0.0,
+      "P_A": 0.333468424199513,
+      "P_loc": 1.00000000000089,
+      "E_radius_loss": 0.0,
+      "safe_margin": 0.0,
+      "angle_calls": 510.0,
+      "x_global": 1792.5034106813,
+      "y_global": -4.4086956307865e-13,
+      "C1": 6.54568577949245,
+      "level": 5,
+      "optimizer": {
+        "success": true,
+        "reason": "rho(K1)<=20, zero objective is globally minimal"
+      }
+    }
+  },
+  "elapsed_seconds": 0.02127366600325331,
+  "evaluation_count": 1,
+  "global_optimality_proven": true,
+  "status": "zero-loss global minimum",
+  "coordinates": "x,y relative to S1 with measured bearing as +x; x_global,y_global use O origin and S1=(a,0)"
+}
