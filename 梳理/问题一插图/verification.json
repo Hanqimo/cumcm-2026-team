@@ -1,0 +1,14 @@
+{
+  "paper_pages": 29,
+  "figure_pages": [
+    4,
+    7
+  ],
+  "tex_changes": "Only two figure include paths and widths in each main TeX.",
+  "compilation": "Both latexmk XeLaTeX builds succeeded; no overfull/underfull, LaTeX warnings, undefined references or missing glyphs.",
+  "fonts": "All fonts in both figure PDFs are embedded.",
+  "visual_review": "Inspected both rendered paper pages: Chinese labels legible, no overlap or clipping.",
+  "template_draft_same_source": true,
+  "figure_pages_pixel_identical": true,
+  "numeric_results": "Existing R003 data retained; enclosing circle containment and known radii checked."
+}

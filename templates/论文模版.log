@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.8.1)  13 SEP 2026 14:23
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.8.1)  13 SEP 2026 14:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1092,12 +1092,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 ] [2]
-File: ../梳理/q1-intersection-process.png Graphic file (type bmp)
-<../梳理/q1-intersection-process.png>
-
-[3] [4] [5]
-File: ../梳理/q1-geometry.png Graphic file (type bmp)
-<../梳理/q1-geometry.png>
+[3]
+File: ../梳理/问题一插图/q1-intersection-process.pdf Graphic file (type pdf)
+<use ../梳理/问题一插图/q1-intersection-process.pdf>
+ [4] [5]
+File: ../梳理/问题一插图/q1-geometry.pdf Graphic file (type pdf)
+<use ../梳理/问题一插图/q1-geometry.pdf>
  [6] [7] [8]
 File: ../正式题目工作区/B题/第二问建模/论文定稿版/期望剩余半径_重新求解_20260913/figures/q2_posterior_gener
 al.pdf Graphic file (type pdf)
@@ -1116,10 +1116,7 @@ ution.pdf>
 File: ../正式题目工作区/B题/第二问建模/论文定稿版/期望剩余半径_重新求解_20260913/figures/q2_candidates.pdf 
 Graphic file (type pdf)
 <use ../正式题目工作区/B题/第二问建模/论文定稿版/期望剩余半径_重新求解_20260913/figures/q2_candidates.pdf>
- (../梳理/全文章节/问题三.tex
-File: ../梳理/第三问_v6/figures/q3-flow.pdf Graphic file (type pdf)
-<use ../梳理/第三问_v6/figures/q3-flow.pdf>
- [14]
+ (../梳理/全文章节/问题三.tex [14]
 [15] [16]
 File: ../梳理/第三问_v6/figures/q3-optical.pdf Graphic file (type pdf)
 <use ../梳理/第三问_v6/figures/q3-optical.pdf>
@@ -1129,23 +1126,23 @@ File: ../梳理/第三问_v6/figures/q3-performance.pdf Graphic file (type pdf)
  [18]
 File: ../梳理/第三问_v6/figures/q3-route-coverage.pdf Graphic file (type pdf)
 <use ../梳理/第三问_v6/figures/q3-route-coverage.pdf>
-) (../梳理/全文章节/问题四.tex [19]
+) (../梳理/全文章节/问题四.tex
 File: ../梳理/第四问_M32/figures/fig01-direction-coverage.pdf Graphic file (type pdf
 )
 <use ../梳理/第四问_M32/figures/fig01-direction-coverage.pdf>
- [20]
+ [19] [20]
 File: ../梳理/第四问_M32/figures/fig02-layout-trajectory.pdf Graphic file (type pdf)
 
 <use ../梳理/第四问_M32/figures/fig02-layout-trajectory.pdf>
  [21]
 File: ../梳理/第四问_M32/figures/fig03-joint-domain.pdf Graphic file (type pdf)
 <use ../梳理/第四问_M32/figures/fig03-joint-domain.pdf>
- [22] [23] [24] [25]
+ [22] [23] [24]
 File: ../梳理/第四问_M32/figures/fig04-official-performance.pdf Graphic file (type p
 df)
 <use ../梳理/第四问_M32/figures/fig04-official-performance.pdf>
-
-[26]) [27] [28] [29
+ [25])
+[26] [27] [28] [29
 
 ] (./论文模版.aux)
  ***********
@@ -1153,15 +1150,15 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2022/07/14>
  ***********
 Package rerunfilecheck Info: File `论文模版.out' has not changed.
-(rerunfilecheck)             Checksum: 8A84CD43417EB9686B1CEB43C74B7FBC;9044.
+(rerunfilecheck)             Checksum: 12AC1861156B14079E6584FDA17F171C;9248.
  ) 
 Here is how much of TeX's memory you used:
- 22192 strings out of 468168
- 490535 string characters out of 5432816
+ 22189 strings out of 468168
+ 491078 string characters out of 5432816
  955869 words of memory out of 5000000
- 50580 multiletter control sequences out of 15000+600000
+ 50579 multiletter control sequences out of 15000+600000
  643056 words of font info for 132 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,14n,96p,3237b,570s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 论文模版.xdv (29 pages, 489632 bytes).
+Output written on 论文模版.xdv (29 pages, 497640 bytes).

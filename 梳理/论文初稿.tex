@@ -54,7 +54,7 @@
 }
 
 % 将下面的 0 改为 1，可强制使用完全随 TeX Live 提供的 Fandol 字体进行兼容性测试。
-\providecommand{\ForcePortableFonts}{1}
+\providecommand{\ForcePortableFonts}{0}
 \ifnum\ForcePortableFonts=1
   \UsePortableFandolFonts
 \else
@@ -82,7 +82,7 @@
 % 数学公式、表格与插图。
 \usepackage{amsmath,amssymb,mathtools,bm}
 \usepackage{graphicx}
-\graphicspath{{./}{../梳理/}{./第二问图表/}{../梳理/第三问_v6/figures/}{../梳理/第四问_M32/figures/}}
+\graphicspath{{./}{../梳理/}{../正式题目工作区/B题/第二问建模/论文定稿版/期望剩余半径_重新求解_20260913/figures/}{../梳理/第三问_v6/figures/}{../梳理/第四问_M32/figures/}}
 \usepackage{booktabs,tabularx,array,multirow}
 \usepackage[table]{xcolor}
 \usepackage{float}
@@ -240,7 +240,10 @@
 
 \subsection{问题二分析}
 
-问题二要求依据首次示向度选择第二个检测点，并给出候选区域。本文以期望定位损失衡量平均剩余不确定性，以完成概率衡量无需补测即可确定保证清除位置的可能性。通过贝叶斯更新预测第二次反馈，将两项指标加权形成综合评价函数；固定权重求得相应的优选位置，改变权重后汇集候选位置，形成题目要求的候选区域。
+问题二需根据首次观测选择第二个检测点，并给出候选区域。其难点在于，首次示向度对应的角域还需与目标圆域、可接收范围取交集，定位区域的形状随首次检测位置和示向度共同变化。同时，首次成功接收对未知接收半径的范围也施加了限制。因此，应联合考虑这些几何约束，判断第二次可能出现哪些反馈，以及每种反馈能够排除哪些源位置。
+
+在此基础上，用贝叶斯方法更新对源位置和接收半径的判断，预测强信号、无信号和正常示向度的概率。以剩余区域最小包围圆半径的期望衡量平均定位效果，以其不超过20米的概率衡量无需补测即可确定保证清除位置的可能性。将两项指标归一化后加权，固定权重求得相应的优选位置，再汇集不同权重下的优选位置，形成候选区域。
+
 \subsection{问题三分析}
 
 问题三将前两问的“单源几何”扩展为“未知数量多源的在线闭环”：机器狗只知道已返回的观测、已清除的频道与各目标的位置可行集，需要在源数量未知（10 至 16 个）的前提下，自主完成搜索、定位与清除，并尽可能缩短总时间。与前两问相比，这里出现三个新问题：其一，如何把移动、检测、换频道、清除与末尾排除放在同一时间尺度上比较，即建立统一的时间账本；其二，如何证明“没有遗漏未发现源”，即给出可审计的完整性（终止）条件；其三，如何在一个“发现—定位—清除”的闭环里选择每一步动作。
@@ -278,7 +281,7 @@
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.92\textwidth]{../梳理/q1-intersection-process.png}
+  \includegraphics[width=160mm]{../梳理/问题一插图/q1-intersection-process.pdf}
   \caption{定位区域的交会几何（示意）。左：单次观测对应的前向角域；中：多次观测角域交成有界凸多边形；右：观测不足以闭合时交集无界}
   \label{fig:q1-intersection-process}
 \end{figure}
@@ -393,7 +396,7 @@
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.92\textwidth]{../梳理/q1-geometry.png}
+  \includegraphics[width=135mm]{../梳理/问题一插图/q1-geometry.pdf}
   \caption{两类交会区域的覆盖结果。左：边长38米的等边三角形，其直径圆不能覆盖整个区域；右：两次正交示向度形成的四边形，其直径圆能够覆盖整个区域}
   \label{fig:q1-geometry}
 \end{figure}
@@ -683,9 +686,9 @@ K_\theta(q)&=\{g\in K_1\cap W_2:r_{\mathrm{strong}}<d(g;q)\le1500\}.
 
 \FloatBarrier
 
-\input{全文章节/问题三.tex}
+\input{../梳理/全文章节/问题三.tex}
 
-\input{全文章节/问题四.tex}
+\input{../梳理/全文章节/问题四.tex}
 
 \section{模型检验}
 
