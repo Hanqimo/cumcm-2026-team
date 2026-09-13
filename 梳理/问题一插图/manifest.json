@@ -1,0 +1,28 @@
+{
+  "source_data": {
+    "contest/q1/models/m01-bounded-bearing/runs/R003/counterexample.json": "f4159124aae035876ed3b29b2be6f3394d507d1fc1c0c03188410664a088e117",
+    "contest/q1/models/m01-bounded-bearing/runs/R003/orthogonal_example.json": "7957ac85ca9ef138de7453ef4cb48f67639d19ec99cab714260e7f93aec8d8af"
+  },
+  "figure_1": {
+    "kind": "schematic",
+    "width_mm": 160,
+    "height_mm": 59,
+    "angles_enlarged_for_visibility": true,
+    "sensor_marker": "circle"
+  },
+  "figure_2": {
+    "kind": "unchanged_R003_geometry",
+    "width_mm": 135,
+    "height_mm": 78,
+    "bearing_error_degrees": 1,
+    "axis_units": "m"
+  },
+  "font": "/Applications/Microsoft Word.app/Contents/Resources/DFonts/SimHei.ttf",
+  "font_pt": {
+    "body": 10.5,
+    "ticks": 9
+  },
+  "numpy": "2.5.3",
+  "matplotlib": "3.11.2",
+  "png_dpi": 400
+}
