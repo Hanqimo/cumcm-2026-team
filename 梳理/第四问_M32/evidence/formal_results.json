@@ -1,0 +1,45 @@
+{
+  "strategy": "M32 joint",
+  "rows": [
+    {
+      "test": 1,
+      "case_code": "9N77-TH84-ME6J-NRK4",
+      "cleared_count": 10,
+      "average_clear_time_s": 557.2932711999999,
+      "program_runtime_s": 4.325,
+      "local_elapsed_s": 4.3289999999997235,
+      "virtual_time_s": 5572.932712,
+      "source_run": "D:\\math modeling\\正式题目工作区\\B-simulator\\p4-m32-joint-formal-20260913\\runs\\20260913-131818-51edc0",
+      "official_metadata": "D:\\math modeling\\正式题目工作区\\B-simulator\\Jammers-simulator-full-win64\\Jammers-simulator-full\\JammersSimulatorData\\behavior-logs\\formal-p4-1-9N77-TH84-ME6J-NRK4.result.json",
+      "official_log_sha256": "4adfea7f4852f65da175ccd0ecec73af7d373dc3469eecc2de176d912c2beca1",
+      "runtime_basis": "Official accepted /exit real_timestamp_ms minus accepted /enter real_timestamp_ms"
+    },
+    {
+      "test": 2,
+      "case_code": "QGEZ-KRWA-MNGB-6CMH",
+      "cleared_count": 11,
+      "average_clear_time_s": 525.3954671818182,
+      "program_runtime_s": 4.426,
+      "local_elapsed_s": 4.421999999998661,
+      "virtual_time_s": 5779.350139,
+      "source_run": "D:\\math modeling\\正式题目工作区\\B-simulator\\p4-m32-joint-formal-20260913\\runs\\20260913-131851-475e20",
+      "official_metadata": "D:\\math modeling\\正式题目工作区\\B-simulator\\Jammers-simulator-full-win64\\Jammers-simulator-full\\JammersSimulatorData\\behavior-logs\\formal-p4-2-QGEZ-KRWA-MNGB-6CMH.result.json",
+      "official_log_sha256": "d4481ea98a16dfb4553b04ff9a904ecf39de4fd650f7d8a7ac85652f59c0d836",
+      "runtime_basis": "Official accepted /exit real_timestamp_ms minus accepted /enter real_timestamp_ms"
+    },
+    {
+      "test": 3,
+      "case_code": "KTZ8-EZQ5-937B-QNEV",
+      "cleared_count": 11,
+      "average_clear_time_s": 501.4640515454546,
+      "program_runtime_s": 4.53,
+      "local_elapsed_s": 4.53099999999904,
+      "virtual_time_s": 5516.104567,
+      "source_run": "D:\\math modeling\\正式题目工作区\\B-simulator\\p4-m32-joint-formal-20260913\\runs\\20260913-131916-89a12c",
+      "official_metadata": "D:\\math modeling\\正式题目工作区\\B-simulator\\Jammers-simulator-full-win64\\Jammers-simulator-full\\JammersSimulatorData\\behavior-logs\\formal-p4-3-KTZ8-EZQ5-937B-QNEV.result.json",
+      "official_log_sha256": "f5120145de776ecf329b8a35cd2d66d636a0ccbc103542e913e9ac6fd47e8fac",
+      "runtime_basis": "Official accepted /exit real_timestamp_ms minus accepted /enter real_timestamp_ms"
+    }
+  ],
+  "note": "平均定位清除时间＝接口累计虚拟时间÷成功清除个数，包含搜索、测量、移动、换频及失败清除开销。程序运行时间＝官方接口接受/exit与/enter的时间戳之差。官方历史页面已核对三次均为“已上传”；正式结果元数据未提供目标总数，表内只报告已核验的成功清除数。"
+}

@@ -1,0 +1,22 @@
+{
+  "adapter_check.py": "1a8e9a89d60f233794bec28c16c251c087e07a940fc7c4c8a07d0282cf87cc44",
+  "api_client.py": "6ce270ffb316142e5d22da27e67eeab87f22797bd22f27ea984ab55deeec8203",
+  "base.py": "0bc561f642d8b4aca99526958ca91cce92fe1cf377627331e95cb5d2fae6c824",
+  "bearing_geometry.py": "c0c5f9bb24d8285b255776469758876102410864beafbbfe9aec311e37a7c1cb",
+  "config.example.json": "ce7c9a1f4b5b4b9a0ccea86c81fed7ca4a31709c81abddbaa845a79043d6d366",
+  "coverage.py": "f17365d718406aed0f176720e8cbef3a3de85a1cff6132f835a1885409a4af37",
+  "m06.py": "3145212a5d9fc376a5ad9e8784da7b65c5118d1a1b5e9b4da49875f7bc19d85e",
+  "m07.py": "c1e665a6b0a01bf97953c22e505cc7e5a2b39cbfa51e2a13926cba08d1b113f4",
+  "m13.py": "a9cfc9b333b64292136c68d9cad028edfd9ffc1fa7244fab7bd8bf0750adc247",
+  "optimize.py": "fe1d57f3860702315fb4bb3aa89375173c8fc5472a353a3b4d6f316fdfe19d9e",
+  "policies.json": "3e630b92e646728b8d3fb99183c6e712e9d81e3a48d6c0e199a0c276d59431a6",
+  "posterior.py": "78033c7bfee4795beff4a2fa20ea3ca033c53884ff6539823dfd879b4f75bfb3",
+  "previous.py": "7956922eeabaf25d8786ce44c137f93c7e0368c77c44fe1154039cdab8be8fba",
+  "provenance.json": "030b3e4a4976ef85f4023dd985bd12678cb375bb95b6e3e8d712bfa79060bcad",
+  "README.md": "e25a2c374e98d9cb583fb9e2a22e866390935e10b5544287a4417db2452bcd3b",
+  "requirements.txt": "f42dabd3232cd2a98b9c7181f2d2f9b94f6d0538304dc5ae916f3d9742d4edca",
+  "research_strategy.py": "6484605ce99a02970983750e01c77afd573ea5b8d243341f0276923f0492124d",
+  "ring.json": "fa904bb925de9fbd8eb2f2bc24b04f9e50a325f00a12e1ce7a4f3db0905f9edd",
+  "run_robot.py": "9c2b95776082e2e512b02c22508b2f5d7e9cd402a3ace1db7bbc93f90fe4ed6c",
+  "strategy.py": "2d0a1a6b307deb0fd6aff5402a0b63fba74c3646e940c85078a00a72481eebd1"
+}

@@ -1,0 +1,7 @@
+{
+  "baseline": {
+    "model": "M07 portfolio",
+    "route": "MEC centers, multi-start route",
+    "safety": "unchanged continuous coverage and enclosing circle"
+  }
+}

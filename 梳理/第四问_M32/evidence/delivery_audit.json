@@ -1,0 +1,19 @@
+{
+  "pages": 7,
+  "numbered_equations": 6,
+  "figures": 4,
+  "tables": 3,
+  "new_official_practice": 30,
+  "new_official_formal_tests": 0,
+  "reused_official_practice": 60,
+  "formal_results": 3,
+  "paired_local_scenes": 30,
+  "paired_local_executions": 90,
+  "local_interface_validation": 4,
+  "official_full_clear": "CG 30/30; M07 30/30; M32 30/30",
+  "source": "independent official samples; matched local scenarios only",
+  "final_pdf_visually_checked": true,
+  "no_latex_overflow_or_missing_references": true,
+  "baseline_frozen_snapshots_match": true,
+  "formal_m32_core_identical_to_practice": true
+}

@@ -1,0 +1,108 @@
+{
+  "simulator": "b-official-calibrated-20260912",
+  "count": 30,
+  "fixture_equal": true,
+  "means": {
+    "cautious": {
+      "n": 30,
+      "mean": 601.5087746409754,
+      "sd": 108.91908186895044,
+      "ci95": [
+        560.8377210610514,
+        642.1798282208994
+      ],
+      "median": 597.5265019411818,
+      "p90": 736.5916709911345
+    },
+    "m07": {
+      "n": 30,
+      "mean": 505.0802311089287,
+      "sd": 76.77932606563785,
+      "ci95": [
+        476.4103595798684,
+        533.750102637989
+      ],
+      "median": 504.4927624782834,
+      "p90": 597.5885135611121
+    },
+    "m32": {
+      "n": 30,
+      "mean": 484.7031200352363,
+      "sd": 71.46067544590642,
+      "ci95": [
+        458.01926528685595,
+        511.3869747836166
+      ],
+      "median": 475.91718092489054,
+      "p90": 581.8627677749678
+    }
+  },
+  "m07_minus_m32": {
+    "n": 30,
+    "mean": 20.377111073692543,
+    "sd": 24.083929664276507,
+    "ci95": [
+      11.384023939801251,
+      29.370198207583833
+    ],
+    "median": 19.844500631217358,
+    "p90": 49.62653468386175
+  },
+  "m32_faster": 25,
+  "m32_slower": 5,
+  "selection": "Lower median, rank 15/30, by M07 minus M32 seconds per source; all scenes included",
+  "seed": 2026111616,
+  "selected_rows": {
+    "cautious": {
+      "seed": 2026111616,
+      "problem": 4,
+      "policy": "cautious",
+      "n": 10,
+      "k": 3,
+      "cleared": 10,
+      "full": true,
+      "error": null,
+      "time_s": 6112.137030644558,
+      "per_source_s": 611.2137030644558,
+      "distance_m": 22105.685153222785,
+      "measures": 275,
+      "switches": 266,
+      "failures": 0,
+      "compute_s": 0.04972339999949327
+    },
+    "m07": {
+      "seed": 2026111616,
+      "problem": 4,
+      "policy": "baseline",
+      "n": 10,
+      "k": 3,
+      "cleared": 10,
+      "full": true,
+      "error": null,
+      "time_s": 5750.041625891906,
+      "per_source_s": 575.0041625891906,
+      "distance_m": 20145.20812945953,
+      "measures": 281,
+      "switches": 266,
+      "failures": 0,
+      "compute_s": 0.17354229999909876
+    },
+    "m32": {
+      "seed": 2026111616,
+      "problem": 4,
+      "policy": "joint",
+      "n": 10,
+      "k": 3,
+      "cleared": 10,
+      "full": true,
+      "error": null,
+      "time_s": 5552.342634324351,
+      "per_source_s": 555.2342634324351,
+      "distance_m": 19346.713171621755,
+      "measures": 273,
+      "switches": 268,
+      "failures": 0,
+      "compute_s": 0.9033861999996589
+    }
+  }
+}
