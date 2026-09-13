@@ -63,7 +63,7 @@ for j,(key,col) in enumerate(zip(['literature','v4','v6'],colors)):
     ax.scatter(j+rng.uniform(-.16,.16,len(values)),values,c=col,s=8,alpha=.5,linewidths=0)
     s=report['official'][key];ax.errorbar(j,s['mean'],yerr=np.array([[s['mean']-s['sem_ci95'][0]],[s['sem_ci95'][1]-s['mean']]]),fmt='D',ms=4,c='black',capsize=3,lw=1,zorder=5)
 ax.set(xticks=range(3),xticklabels=names,ylabel='场均每源耗时 / s',ylim=(0,450),xlim=(-.5,2.5))
-ax.set_title('(a) 独立官方演练：保留每场观测',loc='left',pad=13)
+ax.set_title('(a) 模拟器演练测试：保留每场观测',loc='left',pad=13)
 ax.yaxis.grid(alpha=.2,lw=.5)
 ax.text(.02,.98,'◆ 均值及 95% 均值置信区间',transform=ax.transAxes,va='top',fontsize=6.7)
 ax=axs[1];cost_colors=['#176B9B','#D9902B','#707070','#37816A','#B8475B'];labels=['移动','检测','换频','成功清除','失败清除'];hatches=['','///','...','xx','\\\\']

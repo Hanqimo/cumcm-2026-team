@@ -58,7 +58,7 @@ for j,k in enumerate(keys):
  vals=[r['time_per_actual_target_s'] for r in official[k]];s=stats[k];lo,hi=s['ci95']
  ax.scatter(j+.2*np.sin(np.arange(30)*2.399963),vals,s=12,c=colors[j],alpha=.65)
  ax.errorbar(j,s['mean'],yerr=[[s['mean']-lo],[hi-s['mean']]],fmt='D',color='black',capsize=3,ms=4,zorder=5)
-ax.set(xticks=range(3),xticklabels=['谨慎测向','可见性评分','联合域规划'],ylabel='单场平均时间 / (s·源$^{-1}$)',title='(a) 各 30 场独立官方演练');ax.grid(axis='y',alpha=.15);clean(ax)
+ax.set(xticks=range(3),xticklabels=['谨慎测向','可见性评分','联合域规划'],ylabel='单场平均时间 / (s·源$^{-1}$)',title='(a) 各 30 场模拟器演练测试');ax.grid(axis='y',alpha=.15);clean(ax)
 ax.text(.5,-.25,'散点：单场；菱形：均值及 95% t 区间',ha='center',transform=ax.transAxes,fontsize=7.5)
 ax=axs[1];left=np.zeros(3)
 for i,(label,col,hatch) in enumerate(zip(['移动','测量','换频','光学'],[BLUE,TEAL,ORANGE,GRAY],['','//','xx','..'])):
