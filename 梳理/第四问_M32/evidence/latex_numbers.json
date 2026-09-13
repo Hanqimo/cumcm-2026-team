@@ -1,0 +1,23 @@
+{
+  "CGFull": "30",
+  "CGMean": "651.83",
+  "CGCI": "[587.29, 716.36]",
+  "CGPninety": "825.11",
+  "OldMean": "496.70",
+  "OldCI": "[456.42, 536.98]",
+  "OldPninety": "636.08",
+  "CGSaving": "193.46",
+  "CGPercent": "29.68",
+  "CGDiffCI": "[117.67, 269.25]",
+  "OldSaving": "38.33",
+  "OldPercent": "7.72",
+  "OldDiffCI": "[-18.85, 95.51]",
+  "CGKnownLoss": "617",
+  "CGOptFails": "928",
+  "OldKnownLoss": "393",
+  "OldOptFails": "592",
+  "NewKnownLoss": "194",
+  "CGN": "12.77",
+  "OldN": "12.87",
+  "SignificanceText": "本批数据支持 M32 相对文献适配版的时间改善，但相对 M07 的区间仍跨零，不能仅凭均值下降认定稳定领先。"
+}

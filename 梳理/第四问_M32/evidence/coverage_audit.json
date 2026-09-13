@@ -1,0 +1,8 @@
+{
+  "stations": 22,
+  "cells": 4988,
+  "maximum_witness_distance_m": 999.97514122492,
+  "maximum_corner_outside_hull_m": 0.0,
+  "minimum_uncovered_distance_m": 1800.0,
+  "continuous_disk_covered": true
+}

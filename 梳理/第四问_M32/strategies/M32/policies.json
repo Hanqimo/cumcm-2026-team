@@ -1,0 +1,7 @@
+{
+  "joint": {
+    "model": "m32-joint-feasible-region",
+    "frozen": true,
+    "optimization": false
+  }
+}
