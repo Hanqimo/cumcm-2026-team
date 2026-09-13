@@ -1,18 +1,13 @@
 {
-  "revision": "2026-09-13 Q4 M32 文献对照与正式测验修订",
-  "base_commit": "4392929d7604f85318ccef4a0a7f6842bf9f3cc1",
-  "pdf_pages": 28,
+  "revision": "2026-09-13 全文语言润色及最新版摘要",
+  "base_commit": "429ac588f1064228416d9c387081972c1a42c4c3",
+  "pdf_pages": 29,
   "q4_standalone_pages": 7,
-  "q4_integrated_pages": [
-    19,
-    26
-  ],
-  "q1_q2_exactly_preserved": true,
-  "q1_q2_sha256": "40298d6e4fc42f4889b202a5036eaaf6e195fbb3b10168819908c59cdd5492f1",
-  "q3_exactly_preserved": true,
-  "q3_source_sha256": "edfebc076a284e5120bccfc5cbf7edc671623b64c13c2fcad0311f41282dd81a",
-  "q4_source_sha256": "26c89632d2c1bd7c5f3dcda9488cacbad5c1c8cc06fff3566d98205fabbad8c3",
-  "pdf_sha256": "8d37edf40afc9dd677d0c5205a8c1dede4b507255e76cc91199eb6b4b614f8ca",
+  "q1_q2_exactly_preserved": false,
+  "q3_exactly_preserved": false,
+  "q3_source_sha256": "f510e42f02c8d906fc592d98b88ec1b1ddffb3a748427e6dd98ac737c8d1dcde",
+  "q4_source_sha256": "132ab738231003d8f2f0932cdeb125fde2c075e9a0f21405ad2058b38a5368b9",
+  "pdf_sha256": "85bd883d609cb65bfa5afd9bdf9fe3d2a6d1665af3bddf619ae739fad0465f5d",
   "template_source_identical": true,
   "template_pdf_identical": true,
   "reference_check_passed": true,
@@ -21,10 +16,13 @@
   "numbered_equation_environments": 33,
   "q4_numbered_equations": 6,
   "compiler": "Tectonic 0.17.0, ForcePortableFonts=1",
-  "layout_and_reference_checks": "All pages rendered; revised pages inspected; no overfull, missing glyph or undefined reference warnings",
+  "layout_and_reference_checks": "All pages rendered; no overfull, missing glyph or undefined reference warnings",
   "experiments_this_publish": 0,
   "q4_evidence": "第四问_M32/evidence",
   "q4_official_practice_per_strategy": 30,
   "q4_formal_tests": 3,
-  "abstract": "unchanged, omitted per existing manuscript"
+  "abstract": "第三问合并80场并报告近似加权均值；第四问按证据核定为30场",
+  "style_revision_audit": "第三四问行文修订/核验.json",
+  "q3_standalone_pages": 6,
+  "latest_revision_base": "429ac588f1064228416d9c387081972c1a42c4c3"
 }

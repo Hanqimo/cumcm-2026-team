@@ -1,0 +1,67 @@
+{
+  "base_commit": "429ac588f1064228416d9c387081972c1a42c4c3",
+  "date": "2026-09-13",
+  "scope": "全文语言润色及作者确认的第三、四问摘要；模型与实验保留",
+  "q1_q2_body_unchanged": false,
+  "new_experiments": 0,
+  "strategy_names": {
+    "v4": "局部协同",
+    "v6": "全程协同",
+    "M07": "可见性评分",
+    "M16": "后验规划",
+    "M32": "联合域规划",
+    "CG": "谨慎测向"
+  },
+  "chapters": {
+    "3": {
+      "pages": 6,
+      "equations": 6,
+      "equations_unchanged": true,
+      "table_numbers_unchanged": true,
+      "legacy_codes_in_pdf": false,
+      "source_sha256": "f510e42f02c8d906fc592d98b88ec1b1ddffb3a748427e6dd98ac737c8d1dcde",
+      "pdf_sha256": "31f6714466bad97c3d596dd4e20a0a3eb38d7c892de4425959ce1b497f970f70"
+    },
+    "4": {
+      "pages": 7,
+      "equations": 6,
+      "equations_unchanged": true,
+      "table_numbers_unchanged": true,
+      "legacy_codes_in_pdf": false,
+      "source_sha256": "132ab738231003d8f2f0932cdeb125fde2c075e9a0f21405ad2058b38a5368b9",
+      "pdf_sha256": "304dcb8ea14fdbc3de8cabe28f896603e290c760200346099556b8ca2ac3b35d"
+    }
+  },
+  "full_pages": 29,
+  "full_pdf_sha256": "85bd883d609cb65bfa5afd9bdf9fe3d2a6d1665af3bddf619ae739fad0465f5d",
+  "reference_sources": [
+    {
+      "paper": "2022 B035",
+      "pages": [
+        17,
+        18
+      ],
+      "application": "先解释贪心局限，再定义改进决策，紧接图表比较结果；本次重看原PDF页面。"
+    },
+    {
+      "paper": "2023 B311",
+      "pages": [
+        13
+      ],
+      "application": "具体边界检验后直接解释覆盖图、路线长度与题意；本次重看原PDF页面。"
+    }
+  ],
+  "visual_qa": "All 42 pages rendered; visual inspection recorded in publication note.",
+  "latest_integration_base": "429ac588f1064228416d9c387081972c1a42c4c3",
+  "abstract_included": true,
+  "abstract_changes": "第三问合并80场并报告近似加权均值；第四问按证据核定为30场",
+  "source_hash_encoding": "UTF-8 with LF newlines",
+  "latest_adjustment": "全文语言润色及最新版摘要同步",
+  "q3_subsection_order": [
+    "7.6.1 模拟器演练测试比较",
+    "7.6.2 同场景路线比较",
+    "7.6.3 三次正式测试记录"
+  ],
+  "q3_archive_sentence_removed": true,
+  "q4_post_formal_table_paragraph_removed": true
+}
