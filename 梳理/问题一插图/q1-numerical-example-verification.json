@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "figure_dimensions_mm": [
+    110,
+    85
+  ],
+  "checked_geometry": "source halfplanes, vertex coverage, diameter and midpoint",
+  "visual_check": "PNG and compiled paper figure page checked; no clipping or overlap",
+  "paper_physical_pages": 30,
+  "page_labels_start": [
+    "",
+    "1",
+    "2"
+  ],
+  "unrelated_tex_content_preserved": true
+}

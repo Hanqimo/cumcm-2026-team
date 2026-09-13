@@ -1,0 +1,5 @@
+{
+  "case": "T446-VHAY-76FH-9VYW",
+  "original_actions_sha256": "263cdd516a567b6cc5ddbf18b89ab91b01cced7c7098ddde0d1fcddeda906f7a",
+  "selection": "按顺序保留同频道的失败前区域、失败更新、失败后再测向区域三个绘图事件"
+}

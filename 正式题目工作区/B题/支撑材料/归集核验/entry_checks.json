@@ -1,0 +1,12 @@
+{
+  "q3_check": {
+    "exit_code": 0,
+    "stdout": "策略 v6；研究版，200 秒/点目标尚未达成。\n自检通过：Python 3.12.14 / numpy 2.3.5 / scipy 1.18.1\n配置可读；端口 2026；未连接模拟器。\n",
+    "stderr": ""
+  },
+  "q4_check": {
+    "exit_code": 0,
+    "stdout": "策略 joint；第四问M32 joint；已完成30场官方演练。\n自检通过：Python 3.12.14 / numpy 2.3.5 / scipy 1.18.1\n配置可读；端口 2026；未连接模拟器。\n",
+    "stderr": ""
+  }
+}

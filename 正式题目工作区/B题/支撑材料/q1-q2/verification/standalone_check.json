@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "runs": [
+    {
+      "command": [
+        "<standalone>/build.py"
+      ],
+      "exit_code": 0,
+      "output": "/private/var/folders/9n/wh1m4s212kb5kty7cdnrwf_00000gn/T/q12-standalone-lrcxujmi/build/q2_solver\n"
+    },
+    {
+      "command": [
+        "<standalone>/run_q1.py",
+        "<standalone>/examples/q1_clearable.json"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"status\": \"polygon\",\n  \"vertices\": [\n    [\n      -8.577806298231474,\n      -8.577806298231486\n    ],\n    [\n      8.572580930399218,\n      -8.87716742085131\n    ],\n    [\n      8.88257844764242,\n      8.882578447642379\n    ],\n    [\n      -8.877167420851292,\n      8.572580930399171\n    ]\n  ],\n  \"diameter_m\": 24.69271291186715,\n  \"diameter_pair\": [\n    0,\n    2\n  ],\n  \"cover_center\": [\n    0.15238607470547283,\n    0.15238607470544618\n  ],\n  \"cover_radius_m\": 12.346356455933575,\n  \"support_indices\": [\n    0,\n    2\n  ],\n  \"diameter_disk_covers\": true,\n  \"guaranteed_clear_possible\": true,\n  \"max_halfplane_residual_m\": 3.552713678800501e-15,\n  \"observations\": [\n    {\n      \"position\": [\n        -500,\n        0\n      ],\n      \"bearing_deg\": 0\n    },\n    {\n      \"position\": [\n        0,\n        -500\n      ],\n      \"bearing_deg\": 90\n    }\n  ],\n  \"epsilon_deg\": 1.0,\n  \"units\": {\n    \"length\": \"m\",\n    \"angle\": \"degree\"\n  },\n  \"physical_clear_radius_m\": 20,\n  \"halfplanes\": {\n    \"A\": [\n      [\n        -0.01745240643728351,\n        -0.9998476951563913\n      ],\n      [\n        -0.01745240643728351,\n        0.9998476951563913\n      ],\n      [\n        0.9998476951563913,\n        -0.0174524064372836\n      ],\n      [\n        -0.9998476951563913,\n        -0.017452406437283477\n      ]\n    ],\n    \"b\": [\n      8.726203218641755,\n      8.726203218641755,\n      8.7262032186418,\n      8.72620321864174\n    ]\n  },\n  \"model\": \"directed_bearing_halfplanes_and_minimum_enclosing_circle\",\n  \"clearance\": {\n    \"engineering_radius_m\": 19.5,\n    \"feasibility_tolerance_m\": 1e-08,\n    \"current_position\": [\n      100.0,\n      100.0\n    ],\n    \"engineering_feasible\": true,\n    \"position\": [\n      5.210775934906202,\n      5.21077593490619\n    ],\n    \"move_distance_m\": 134.05220623967782,\n    \"max_source_distance_m\": 19.5\n  },\n  \"physical_threshold_near_boundary\": false\n}\n"
+    },
+    {
+      "command": [
+        "<standalone>/run_q2.py",
+        "evaluate",
+        "--a",
+        "1200",
+        "--beta",
+        "30",
+        "--q",
+        "1459.22154345624",
+        "467.72204842355"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"x\": 458.353466053091,\n  \"y\": 275.44840411677,\n  \"J\": 12.2879753124748,\n  \"P_finish\": 1.00000000000003,\n  \"P_onsite\": 0.0,\n  \"P_H\": 0.0,\n  \"P_N\": 0.0,\n  \"P_normal\": 1.00000000000003,\n  \"P_finish_N\": 0.0,\n  \"P_finish_normal\": 1.00000000000003,\n  \"probability_residual\": 3.04201108747293e-14,\n  \"mec_gap\": 5.50670620214078e-14,\n  \"angle_calls\": 3360.0,\n  \"root_count\": 1.0,\n  \"depth_capped\": 1.0,\n  \"distance_K1\": 267.407081009162,\n  \"x_global\": 1459.22154345624,\n  \"y_global\": 467.72204842355,\n  \"admissible\": true,\n  \"w\": 0.5,\n  \"F\": 0.30719938281187\n}\n"
+    },
+    {
+      "command": [
+        "<standalone>/run_q2.py",
+        "solve",
+        "--a",
+        "1780",
+        "--beta",
+        "0",
+        "--out",
+        "<standalone>/early_completion"
+      ],
+      "exit_code": 0,
+      "output": "{\"case\": \"a1780_b0\", \"a\": 1780.0, \"beta_deg\": 0.0, \"status\": \"no_second_detection_needed\", \"rho1\": 7.50467955027488, \"clear_center_global\": [1792.5034106812989, -4.4086956307865e-13], \"weights\": [0, 0.05, 0.1, 0.2, 0.35, 0.5, 0.65, 0.8, 0.9, 0.95, 1], \"candidates\": []}\n结果已保存到 /private/var/folders/9n/wh1m4s212kb5kty7cdnrwf_00000gn/T/q12-standalone-lrcxujmi/early_completion\n"
+    }
+  ],
+  "note": "Copied sources outside repository; built a new binary and invoked commands from an unrelated working directory."
+}

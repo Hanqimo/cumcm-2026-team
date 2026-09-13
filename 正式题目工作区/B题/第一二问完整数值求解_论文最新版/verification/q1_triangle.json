@@ -1,0 +1,114 @@
+{
+  "status": "polygon",
+  "vertices": [
+    [
+      -2.625485054475693e-13,
+      -0.0
+    ],
+    [
+      37.99999999999983,
+      0.0
+    ],
+    [
+      18.999999999999783,
+      32.90896534380873
+    ]
+  ],
+  "diameter_m": 38.00000000000009,
+  "diameter_pair": [
+    0,
+    1
+  ],
+  "cover_center": [
+    18.999999999999783,
+    10.969655114602904
+  ],
+  "cover_radius_m": 21.939310229205827,
+  "support_indices": [
+    0,
+    1,
+    2
+  ],
+  "diameter_disk_covers": false,
+  "guaranteed_clear_possible": false,
+  "max_halfplane_residual_m": 2.0183085065653285e-16,
+  "observations": [
+    {
+      "position": [
+        -1000.0,
+        0.0
+      ],
+      "bearing_deg": 1.0
+    },
+    {
+      "position": [
+        538.0,
+        -866.0254037844386
+      ],
+      "bearing_deg": 121.00000000000001
+    },
+    {
+      "position": [
+        519.0,
+        898.9343691282472
+      ],
+      "bearing_deg": -119.00000000000001
+    }
+  ],
+  "epsilon_deg": 1.0,
+  "units": {
+    "length": "m",
+    "angle": "degree"
+  },
+  "physical_clear_radius_m": 20,
+  "halfplanes": {
+    "A": [
+      [
+        0.0,
+        -1.0
+      ],
+      [
+        -0.03489949670250097,
+        0.9993908270190958
+      ],
+      [
+        0.8660254037844386,
+        0.5000000000000002
+      ],
+      [
+        -0.8480480961564258,
+        -0.5299192642332052
+      ],
+      [
+        -0.8660254037844386,
+        0.5000000000000002
+      ],
+      [
+        0.8829475928589269,
+        -0.4694715627858909
+      ]
+    ],
+    "b": [
+      -0.0,
+      34.89949670250097,
+      32.90896534380852,
+      2.6736690485570875,
+      2.2737367544323206e-13,
+      36.22567757719594
+    ]
+  },
+  "model": "directed_bearing_halfplanes_and_minimum_enclosing_circle",
+  "clearance": {
+    "engineering_radius_m": 19.5,
+    "feasibility_tolerance_m": 1e-08,
+    "current_position": [
+      0.0,
+      0.0
+    ],
+    "engineering_feasible": false,
+    "position": null,
+    "move_distance_m": null,
+    "max_source_distance_m": null
+  },
+  "physical_threshold_near_boundary": false
+}

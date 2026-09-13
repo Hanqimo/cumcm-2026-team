@@ -1,5 +1,15 @@
 # 问题一插图重绘记录
 
+## 当前论文采用的版本（2026-09-13）
+
+当前论文将等边三角形反例图放在“定位区域的覆盖”一节，引用 `q1-counterexample.pdf`。该图只显示边长 38 m 的三角形和半径 19 m 的直径圆，标出圆外顶点及 60° 夹角，不再与计算示例拼图。源代码为 `plot_q1_counterexample.py`，以解析坐标生成图形，等比例绘制，输出 110 × 70 mm 的矢量 PDF 和 400 dpi PNG；几何数值、字体及源文件散列见 `q1-counterexample-manifest.json`。
+
+复现命令为 `python3 梳理/问题一插图/plot_q1_counterexample.py`，依赖 numpy、matplotlib；可用环境变量 `CJK_FONT` 指定中文字体。图内无总标题，总图名由论文 LaTeX 图注提供。
+
+5.7.1 改为“数值计算示例”，正文直接列出输入、半平面约束、四个顶点、直径及覆盖判定，并单独引用 `q1-numerical-example.pdf` 展示角域边界、四个顶点、最远点对及包围圆。对应源码为 `plot_q1_numerical_example.py`，读取 R003 的全精度计算结果，输出 110 × 85 mm 的 PDF 和 400 dpi PNG。图中是原点附近的局部范围，两个距离原点1000米的检测点未在视窗内显示。复现命令为 `python3 梳理/问题一插图/plot_q1_numerical_example.py`；几何检查、源数据散列及字体记录见 `q1-numerical-example-manifest.json`。原 `q1-geometry.pdf/png` 及绘图代码保留为历史素材。图1 `q1-intersection-process.pdf` 继续使用。
+
+## 以下为此前组合图的重绘记录
+
 本目录保存论文图1、图2的可复现绘图代码及 PDF、PNG 输出。论文模版和初稿引用此处的矢量 PDF，旧 PNG 保留在上一级目录。
 
 ## 来源与几何含义

@@ -1,0 +1,2196 @@
+{
+  "q1_geometry": {
+    "checks": [
+      {
+        "name": "realizable_triangle_diameter",
+        "passed": true,
+        "details": {
+          "status": "polygon",
+          "vertices": [
+            [
+              -5.907341372570311e-13,
+              -0.0
+            ],
+            [
+              37.99999999999983,
+              0.0
+            ],
+            [
+              18.999999999999627,
+              32.90896534380901
+            ]
+          ],
+          "diameter_m": 38.00000000000042,
+          "diameter_pair": [
+            0,
+            1
+          ],
+          "cover_center": [
+            18.99999999999962,
+            10.969655114602991
+          ],
+          "cover_radius_m": 21.939310229206015,
+          "support_indices": [
+            0,
+            1,
+            2
+          ],
+          "diameter_disk_covers": false,
+          "guaranteed_clear_possible": false,
+          "max_halfplane_residual_m": 7.105427357601002e-15,
+          "observations": [
+            {
+              "position": [
+                -1000.0,
+                0.0
+              ],
+              "bearing_deg": 1.0
+            },
+            {
+              "position": [
+                538.0,
+                -866.0254037844386
+              ],
+              "bearing_deg": 121.00000000000001
+            },
+            {
+              "position": [
+                519.0,
+                898.9343691282472
+              ],
+              "bearing_deg": 241.0
+            }
+          ],
+          "true_target_for_consistency": [
+            19.0,
+            10.969655114602888
+          ]
+        }
+      },
+      {
+        "name": "realizable_triangle_radius",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "triangle_direct_angle_consistency",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "triangle_physical_reception",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "triangle_direct_angle_consistency",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "triangle_physical_reception",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "triangle_direct_angle_consistency",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "triangle_physical_reception",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_38_not_clearable",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "orthogonal_tangent_construction",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "single_wedge_unbounded",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "incompatible_wedges_empty",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "segment_classification",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "point_classification",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "atan2_vs_halfplanes_3500_points",
+        "passed": true,
+        "details": 0
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "random_bounded_region",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "independent_circle_solver_status",
+        "passed": true,
+        "details": "Optimization terminated successfully"
+      },
+      {
+        "name": "circle_vertex_coverage",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diameter_circle_bounds",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "LP_support_vs_vertex_enumeration",
+        "passed": true,
+        "details": 7.673861546209082e-13
+      },
+      {
+        "name": "convex_optimization_vs_support_circle",
+        "passed": true,
+        "details": 5.954223780690882e-10
+      },
+      {
+        "name": "true_target_containment",
+        "passed": true,
+        "details": 0.0
+      },
+      {
+        "name": "rotation_translation_invariance",
+        "passed": true,
+        "details": 1.6909140754250984e-11
+      },
+      {
+        "name": "information_monotonicity",
+        "passed": true,
+        "details": null
+      }
+    ],
+    "passed": true,
+    "random_cases": 60,
+    "seed": 20260910,
+    "support_max_error_m": 7.673861546209082e-13,
+    "circle_max_error_m": 5.954223780690882e-10,
+    "equivariance_error_m": 1.6909140754250984e-11,
+    "elapsed_s": 0.4848300000303425
+  },
+  "q1_projection": {
+    "cases": 200,
+    "seed": 712233,
+    "max_distance_difference_m": 2.1764788016298553e-07,
+    "mean_saved_m": 0.7704153733430538,
+    "max_saved_m": 3.826632939188187,
+    "slsqp_success_count": 192,
+    "note": "SLSQP status is reported alongside objective/feasibility checks; all comparisons use synthetic geometry."
+  },
+  "q1_radius_20_boundary": {
+    "status": "segment",
+    "vertices": [
+      [
+        -20.0,
+        0.0
+      ],
+      [
+        20.0,
+        0.0
+      ]
+    ],
+    "diameter_m": 40.0,
+    "diameter_pair": [
+      0,
+      1
+    ],
+    "cover_center": [
+      0.0,
+      0.0
+    ],
+    "cover_radius_m": 20.0,
+    "support_indices": [
+      0,
+      1
+    ],
+    "diameter_disk_covers": true,
+    "guaranteed_clear_possible": true,
+    "max_halfplane_residual_m": 0.0
+  },
+  "q2_reference_and_convergence": [
+    {
+      "a": 0.0,
+      "beta_deg": 0.0,
+      "q_internal": [
+        906.616940073079,
+        572.7885087952
+      ],
+      "w": 0.0,
+      "J_reference_difference_m": 0.0,
+      "P_reference_difference": 0.0,
+      "J_precision_difference_m": -1.4791012858950126e-09,
+      "P_precision_difference": -7.993605777301127e-15,
+      "evaluation": {
+        "x": 906.616940073079,
+        "y": 572.7885087952,
+        "J": 25.0757219305311,
+        "P_finish": 0.266218101696506,
+        "P_onsite": 0.0,
+        "P_H": 0.0,
+        "P_N": 0.000226353431878567,
+        "P_normal": 0.999773646568109,
+        "P_finish_N": 0.0,
+        "P_finish_normal": 0.266218101696506,
+        "probability_residual": -1.19904086659517e-14,
+        "mec_gap": 1.06581410364015e-13,
+        "angle_calls": 5250.0,
+        "root_count": 4.0,
+        "depth_capped": 1.0,
+        "distance_K1": 556.878623009865,
+        "x_global": 906.616940073079,
+        "y_global": 572.7885087952,
+        "admissible": true,
+        "w": 0.5,
+        "F": 0.9937839974150245
+      }
+    },
+    {
+      "a": 0.0,
+      "beta_deg": 0.0,
+      "q_internal": [
+        895.786469470461,
+        562.29002494931
+      ],
+      "w": 0.05,
+      "J_reference_difference_m": 0.0,
+      "P_reference_difference": 0.0,
+      "J_precision_difference_m": 1.1726015713975357e-09,
+      "P_precision_difference": 9.992007221626409e-16,
+      "evaluation": {
+        "x": 895.786469470461,
+        "y": 562.29002494931,
+        "J": 25.08622944755,
+        "P_finish": 0.28767730475581,
+        "P_onsite": 0.0,
+        "P_H": 0.0,
+        "P_N": 0.000112641428802371,
+        "P_normal": 0.999887358571197,
+        "P_finish_N": 0.0,
+        "P_finish_normal": 0.28767730475581,
+        "probability_residual": -7.7715611723761e-16,
+        "mec_gap": 1.06581410364015e-13,
+        "angle_calls": 5586.0,
+        "root_count": 4.0,
+        "depth_capped": 1.0,
+        "distance_K1": 546.57075590878,
+        "x_global": 895.786469470461,
+        "y_global": 562.29002494931,
+        "admissible": true,
+        "w": 0.5,
+        "F": 0.9833170838108449
+      }
+    },
+    {
+      "a": 0.0,
+      "beta_deg": 0.0,
+      "q_internal": [
+        885.869215864265,
+        554.025922660584
+      ],
+      "w": 0.1,
+      "J_reference_difference_m": 0.0,
+      "P_reference_difference": 0.0,
+      "J_precision_difference_m": 9.426983638149977e-10,
+      "P_precision_difference": 0.0,
+      "evaluation": {
+        "x": 885.869215864265,
+        "y": 554.025922660584,
+        "J": 25.1124513334643,
+        "P_finish": 0.304022582091716,
+        "P_onsite": 0.0,
+        "P_H": 0.0,
+        "P_N": 5.2227124428123e-05,
+        "P_normal": 0.999947772875536,
+        "P_finish_N": 0.0,
+        "P_finish_normal": 0.304022582091716,
+        "probability_residual": -3.54161144855425e-14,
+        "mec_gap": 1.06581410364015e-13,
+        "angle_calls": 5082.0,
+        "root_count": 4.0,
+        "depth_capped": 1.0,
+        "distance_K1": 538.480992223537,
+        "x_global": 885.869215864265,
+        "y_global": 554.025922660584,
+        "admissible": true,
+        "w": 0.5,
+        "F": 0.9757999922907495
+      }
+    },
+    {
+      "a": 0.0,
+      "beta_deg": 0.0,
+      "q_internal": [
+        867.443056398354,
+        541.793287188394
+      ],
+      "w": 0.2,
+      "J_reference_difference_m": 0.0,
+      "P_reference_difference": 0.0,
+      "J_precision_difference_m": -2.5515980439649866e-09,
+      "P_precision_difference": 4.601874437071274e-14,
+      "evaluation": {
+        "x": 867.443056398354,
+        "y": 541.793287188394,
+        "J": 25.1970352289063,
+        "P_finish": 0.328364013031935,
+        "P_onsite": 0.0,
+        "P_H": 0.0,
+        "P_N": 6.30159831084354e-06,
+        "P_normal": 0.999993698401647,
+        "P_finish_N": 6.30159831084354e-06,
+        "P_finish_normal": 0.328357711433624,
+        "probability_residual": -4.19664303308309e-14,
+        "mec_gap": 1.06581410364015e-13,
+        "angle_calls": 5082.0,
+        "root_count": 4.0,
+        "depth_capped": 1.0,
+        "distance_K1": 526.571800665057,
+        "x_global": 867.443056398354,
+        "y_global": 541.793287188394,
+        "admissible": true,
+        "w": 0.5,
+        "F": 0.9657438742066901
+      }
+    },
+    {
+      "a": 0.0,
+      "beta_deg": 0.0,
+      "q_internal": [
+        840.921239985028,
+        529.583659829511
+      ],
+      "w": 0.35,
+      "J_reference_difference_m": 0.0,
+      "P_reference_difference": 0.0,
+      "J_precision_difference_m": 3.2059972454590024e-09,
+      "P_precision_difference": 9.992007221626409e-16,
+      "evaluation": {
+        "x": 840.921239985028,
+        "y": 529.583659829511,
+        "J": 25.3912445788793,
+        "P_finish": 0.354196970328774,
+        "P_onsite": 0.0,
+        "P_H": 0.0,
+        "P_N": 0.0,
+        "P_normal": 0.999999999999999,
+        "P_finish_N": 0.0,
+        "P_finish_normal": 0.354196970328774,
+        "probability_residual": -5.55111512312578e-16,
+        "mec_gap": 1.06581410364015e-13,
+        "angle_calls": 4242.0,
+        "root_count": 4.0,
+        "depth_capped": 1.0,
+        "distance_K1": 514.82690241106,
+        "x_global": 840.921239985028,
+        "y_global": 529.583659829511,
+        "admissible": true,
+        "w": 0.5,
+        "F": 0.9576826293075955
+      }
+    },
+    {
+      "a": 0.0,
+      "beta_deg": 0.0,
+      "q_internal": [
+        813.824371479152,
+        521.018510869701
+      ],
+      "w": 0.5,
+      "J_reference_difference_m": 0.0,
+      "P_reference_difference": 0.0,
+      "J_precision_difference_m": -2.136200549784917e-09,
+      "P_precision_difference": -9.992007221626409e-16,
+      "evaluation": {
+        "x": 813.824371479152,
+        "y": 521.018510869701,
+        "J": 25.6746025594921,
+        "P_finish": 0.373364048581301,
+        "P_onsite": 0.0,
+        "P_H": 0.0,
+        "P_N": 0.0,
+        "P_normal": 0.999999999999999,
+        "P_finish_N": 0.0,
+        "P_finish_normal": 0.373364048581301,
+        "probability_residual": -1.11022302462516e-15,
+        "mec_gap": 1.06581410364015e-13,
+        "angle_calls": 4242.0,
+        "root_count": 4.0,
+        "depth_capped": 1.0,
+        "distance_K1": 506.735963527265,
+        "x_global": 813.824371479152,
+        "y_global": 521.018510869701,
+        "admissible": true,
+        "w": 0.5,
+        "F": 0.955183039696652
+      }
+    },
+    {
+      "a": 0.0,
+      "beta_deg": 0.0,
+      "q_internal": [
+        785.070084106417,
+        513.089848289038
+      ],
+      "w": 0.65,
+      "J_reference_difference_m": 0.0,
+      "P_reference_difference": 0.0,
+      "J_precision_difference_m": 6.000533403494046e-12,
+      "P_precision_difference": 7.049916206369744e-15,
+      "evaluation": {
+        "x": 785.070084106417,
+        "y": 513.089848289038,
+        "J": 26.0760243822643,
+        "P_finish": 0.388135209679879,
+        "P_onsite": 0.0,
+        "P_H": 0.0,
+        "P_N": 0.0,
+        "P_normal": 1.00000000000002,
+        "P_finish_N": 0.0,
+        "P_finish_normal": 0.388135209679879,
+        "probability_residual": 1.88737914186277e-14,
+        "mec_gap": 1.06581410364015e-13,
+        "angle_calls": 3570.0,
+        "root_count": 4.0,
+        "depth_capped": 0.0,
+        "distance_K1": 499.31034003036,
+        "x_global": 785.070084106417,
+        "y_global": 513.089848289038,
+        "admissible": true,
+        "w": 0.5,
+        "F": 0.9578330047166681
+      }
+    },
+    {
+      "a": 0.0,
+      "beta_deg": 0.0,
+      "q_internal": [
+        754.029054966445,
+        502.358537975245
+      ],
+      "w": 0.8,
+      "J_reference_difference_m": 0.0,
+      "P_reference_difference": 0.0,
+      "J_precision_difference_m": 1.7437997712477227e-09,
+      "P_precision_difference": 5.995204332975845e-15,
+      "evaluation": {
+        "x": 754.029054966445,
+        "y": 502.358537975245,
+        "J": 26.6505996180946,
+        "P_finish": 0.398915466793778,
+        "P_onsite": 0.0,
+        "P_H": 0.0,
+        "P_N": 0.0,
+        "P_normal": 1.00000000000001,
+        "P_finish_N": 0.0,
+        "P_finish_normal": 0.398915466793778,
+        "probability_residual": 9.76996261670138e-15,
+        "mec_gap": 1.06581410364015e-13,
+        "angle_calls": 3654.0,
+        "root_count": 4.0,
+        "depth_capped": 1.0,
+        "distance_K1": 489.122404803888,
+        "x_global": 754.029054966445,
+        "y_global": 502.358537975245,
+        "admissible": true,
+        "w": 0.5,
+        "F": 0.966807257055476
+      }
+    },
+    {
+      "a": 0.0,
+      "beta_deg": 0.0,
+      "q_internal": [
+        731.423130778445,
+        490.731442402798
+      ],
+      "w": 0.9,
+      "J_reference_difference_m": 0.0,
+      "P_reference_difference": 0.0,
+      "J_precision_difference_m": -4.468798664447604e-09,
+      "P_precision_difference": -5.995204332975845e-15,
+      "evaluation": {
+        "x": 731.423130778445,
+        "y": 490.731442402798,
+        "J": 27.1956180996089,
+        "P_finish": 0.403657784398241,
+        "P_onsite": 0.0,
+        "P_H": 0.0,
+        "P_N": 0.0,
+        "P_normal": 1.0,
+        "P_finish_N": 0.0,
+        "P_finish_normal": 0.403657784398241,
+        "probability_residual": -4.44089209850063e-16,
+        "mec_gap": 1.13686837721616e-13,
+        "angle_calls": 3990.0,
+        "root_count": 4.0,
+        "depth_capped": 1.0,
+        "distance_K1": 477.891607871233,
+        "x_global": 731.423130778445,
+        "y_global": 490.731442402798,
+        "admissible": true,
+        "w": 0.5,
+        "F": 0.978061560291102
+      }
+    },
+    {
+      "a": 0.0,
+      "beta_deg": 0.0,
+      "q_internal": [
+        719.103049974651,
+        482.248273896758
+      ],
+      "w": 0.95,
+      "J_reference_difference_m": 0.0,
+      "P_reference_difference": 0.0,
+      "J_precision_difference_m": 2.643300689442185e-09,
+      "P_precision_difference": -6.994405055138486e-15,
+      "evaluation": {
+        "x": 719.103049974651,
+        "y": 482.248273896758,
+        "J": 27.5563608124741,
+        "P_finish": 0.405105218188292,
+        "P_onsite": 0.0,
+        "P_H": 0.0,
+        "P_N": 0.0,
+        "P_normal": 1.0,
+        "P_finish_N": 0.0,
+        "P_finish_normal": 0.405105218188292,
+        "probability_residual": -4.44089209850063e-16,
+        "mec_gap": 1.13686837721616e-13,
+        "angle_calls": 4242.0,
+        "root_count": 4.0,
+        "depth_capped": 1.0,
+        "distance_K1": 469.624746450374,
+        "x_global": 719.103049974651,
+        "y_global": 482.248273896758,
+        "admissible": true,
+        "w": 0.5,
+        "F": 0.9863564112177066
+      }
+    },
+    {
+      "a": 0.0,
+      "beta_deg": 0.0,
+      "q_internal": [
+        705.538591283356,
+        470.667882718127
+      ],
+      "w": 1.0,
+      "J_reference_difference_m": 0.0,
+      "P_reference_difference": 0.0,
+      "J_precision_difference_m": -3.6332998831767327e-09,
+      "P_precision_difference": 6.050715484207103e-15,
+      "evaluation": {
+        "x": 705.538591283356,
+        "y": 470.667882718127,
+        "J": 28.0244885004235,
+        "P_finish": 0.40567955603705,
+        "P_onsite": 0.0,
+        "P_H": 0.0,
+        "P_N": 0.0,
+        "P_normal": 1.0,
+        "P_finish_N": 0.0,
+        "P_finish_normal": 0.40567955603705,
+        "probability_residual": 2.22044604925031e-16,
+        "mec_gap": 1.13686837721616e-13,
+        "angle_calls": 3990.0,
+        "root_count": 4.0,
+        "depth_capped": 1.0,
+        "distance_K1": 458.282851467592,
+        "x_global": 705.538591283356,
+        "y_global": 470.667882718127,
+        "admissible": true,
+        "w": 0.5,
+        "F": 0.9977724344920625
+      }
+    },
+    {
+      "a": 0.0,
+      "beta_deg": 0.0,
+      "q_internal": [
+        813.824371479152,
+        521.018510869701
+      ],
+      "w": 0.5,
+      "J_reference_difference_m": 0.0,
+      "P_reference_difference": 0.0,
+      "J_precision_difference_m": -2.136200549784917e-09,
+      "P_precision_difference": -9.992007221626409e-16,
+      "evaluation": {
+        "x": 813.824371479152,
+        "y": 521.018510869701,
+        "J": 25.6746025594921,
+        "P_finish": 0.373364048581301,
+        "P_onsite": 0.0,
+        "P_H": 0.0,
+        "P_N": 0.0,
+        "P_normal": 0.999999999999999,
+        "P_finish_N": 0.0,
+        "P_finish_normal": 0.373364048581301,
+        "probability_residual": -1.11022302462516e-15,
+        "mec_gap": 1.06581410364015e-13,
+        "angle_calls": 4242.0,
+        "root_count": 4.0,
+        "depth_capped": 1.0,
+        "distance_K1": 506.735963527265,
+        "x_global": 813.824371479152,
+        "y_global": 521.018510869701,
+        "admissible": true,
+        "w": 0.5,
+        "F": 0.955183039696652
+      }
+    },
+    {
+      "a": 1200.0,
+      "beta_deg": 30.0,
+      "q_internal": [
+        458.353466053093,
+        275.448404116768
+      ],
+      "w": 0.5,
+      "J_reference_difference_m": 0.0,
+      "P_reference_difference": 0.0,
+      "J_precision_difference_m": -2.788199893188903e-09,
+      "P_precision_difference": 0.0,
+      "evaluation": {
+        "x": 458.353466053093,
+        "y": 275.448404116768,
+        "J": 12.2879753124748,
+        "P_finish": 1.00000000000003,
+        "P_onsite": 0.0,
+        "P_H": 0.0,
+        "P_N": 0.0,
+        "P_normal": 1.00000000000003,
+        "P_finish_N": 0.0,
+        "P_finish_normal": 1.00000000000003,
+        "probability_residual": 3.08642000845794e-14,
+        "mec_gap": 5.50670620214078e-14,
+        "angle_calls": 3360.0,
+        "root_count": 1.0,
+        "depth_capped": 1.0,
+        "distance_K1": 267.407081009161,
+        "x_global": 1459.22154345624,
+        "y_global": 467.72204842355,
+        "admissible": true,
+        "w": 0.5,
+        "F": 0.30719938281187
+      }
+    },
+    {
+      "a": 1200.0,
+      "beta_deg": 90.0,
+      "q_internal": [
+        798.134096475784,
+        504.28190375329
+      ],
+      "w": 0.5,
+      "J_reference_difference_m": 0.0,
+      "P_reference_difference": 0.0,
+      "J_precision_difference_m": 1.316437099774248e-06,
+      "P_precision_difference": 6.994405055138486e-15,
+      "evaluation": {
+        "x": 798.134096475784,
+        "y": 504.28190375329,
+        "J": 24.1214118222845,
+        "P_finish": 0.40376822396254,
+        "P_onsite": 0.0,
+        "P_H": 0.0,
+        "P_N": 0.0,
+        "P_normal": 1.0,
+        "P_finish_N": 0.0,
+        "P_finish_normal": 0.40376822396254,
+        "probability_residual": 3.5527136788005e-15,
+        "mec_gap": 1.20792265079217e-13,
+        "angle_calls": 4326.0,
+        "root_count": 4.0,
+        "depth_capped": 1.0,
+        "distance_K1": 490.275738533655,
+        "x_global": 695.71809624671,
+        "y_global": 798.134096475784,
+        "admissible": true,
+        "w": 0.5,
+        "F": 0.9011511835758426
+      }
+    },
+    {
+      "a": 1200.0,
+      "beta_deg": 150.0,
+      "q_internal": [
+        813.825742819345,
+        -521.018556706647
+      ],
+      "w": 0.5,
+      "J_reference_difference_m": 0.0,
+      "P_reference_difference": 0.0,
+      "J_precision_difference_m": -2.1936017446932965e-09,
+      "P_precision_difference": 6.994405055138486e-15,
+      "evaluation": {
+        "x": 813.825742819345,
+        "y": -521.018556706647,
+        "J": 25.6745874172399,
+        "P_finish": 0.373363291502594,
+        "P_onsite": 0.0,
+        "P_H": 0.0,
+        "P_N": 0.0,
+        "P_normal": 1.00000000000001,
+        "P_finish_N": 0.0,
+        "P_finish_normal": 0.373363291502594,
+        "probability_residual": 8.65973959207622e-15,
+        "mec_gap": 1.06581410364015e-13,
+        "angle_calls": 4242.0,
+        "root_count": 4.0,
+        "depth_capped": 1.0,
+        "distance_K1": 506.735985424043,
+        "x_global": 755.715510818029,
+        "y_global": 858.128177360732,
+        "admissible": true,
+        "w": 0.5,
+        "F": 0.9551830396797005
+      }
+    },
+    {
+      "a": 1700.0,
+      "beta_deg": 0.0,
+      "q_internal": [
+        70.0975426475311,
+        41.9637373559216
+      ],
+      "w": 0.5,
+      "J_reference_difference_m": 0.0,
+      "P_reference_difference": 0.0,
+      "J_precision_difference_m": -5.098799160663248e-10,
+      "P_precision_difference": 9.992007221626409e-16,
+      "evaluation": {
+        "x": 70.0975426475311,
+        "y": 41.9637373559216,
+        "J": 1.87819025243104,
+        "P_finish": 1.0,
+        "P_onsite": 0.0,
+        "P_H": 0.0,
+        "P_N": 0.0,
+        "P_normal": 1.0,
+        "P_finish_N": 0.0,
+        "P_finish_normal": 1.0,
+        "probability_residual": 6.66133814775094e-16,
+        "mec_gap": 5.77315972805081e-15,
+        "angle_calls": 2142.0,
+        "root_count": 2.0,
+        "depth_capped": 1.0,
+        "distance_K1": 40.7339752709268,
+        "x_global": 1770.09754264753,
+        "y_global": 41.9637373559216,
+        "admissible": true,
+        "w": 0.5,
+        "F": 0.046954756310776
+      }
+    }
+  ],
+  "q2_symmetry": {
+    "J_difference_m": -3.979039320256561e-13,
+    "P_difference": 4.9960036108132044e-15
+  },
+  "q2_strong_signal": {
+    "evaluation": {
+      "x": 700.0,
+      "y": 0.0,
+      "J": 303.19702958265,
+      "P_finish": 0.0364548904484893,
+      "P_onsite": 0.0147310531985246,
+      "P_H": 0.00284215306112329,
+      "P_N": 0.0,
+      "P_normal": 0.997157849860758,
+      "P_finish_N": 0.0,
+      "P_finish_normal": 0.033612737387366,
+      "probability_residual": 2.9218811814502e-09,
+      "mec_gap": 3.41060513164848e-13,
+      "angle_calls": 8526.0,
+      "root_count": 4.0,
+      "depth_capped": 0.0,
+      "distance_K1": 0.0,
+      "x_global": 700.0,
+      "y_global": 0.0,
+      "admissible": true,
+      "w": 0.5,
+      "F": 8.061698294342005
+    },
+    "strong_radius_m": 5,
+    "strong_J_contribution_m": 0.01421076530561645
+  },
+  "q2_no_signal_completion": {
+    "evaluation": {
+      "x": -930.0,
+      "y": 0.0,
+      "J": 46.8329039092041,
+      "P_finish": 0.0171286463855444,
+      "P_onsite": 0.0,
+      "P_H": 0.0,
+      "P_N": 0.0162407300351846,
+      "P_normal": 0.983759269964794,
+      "P_finish_N": 0.0162407300351846,
+      "P_finish_normal": 0.000887916350359828,
+      "probability_residual": -2.09832151654155e-14,
+      "mec_gap": 3.5527136788005e-14,
+      "angle_calls": 1638.0,
+      "root_count": 2.0,
+      "depth_capped": 0.0,
+      "distance_K1": 934.999242547797,
+      "x_global": 770.0,
+      "y_global": 0.0,
+      "admissible": true,
+      "w": 0.5,
+      "F": 1.6622582745373302
+    },
+    "geometry": {
+      "nonempty": true,
+      "radius_lower": 15.0754433324904,
+      "radius_upper": 15.0754433324904,
+      "center": [
+        85.0251011142174,
+        -4.40758540776187e-13
+      ],
+      "dmax": 1030.00063268357,
+      "points": [
+        [
+          99.9991536827606,
+          -1.74549172030057
+        ],
+        [
+          99.9991536827606,
+          1.74549172029968
+        ],
+        [
+          69.9992535513768,
+          -1.22184151566605
+        ],
+        [
+          69.9992535513768,
+          1.22184151566605
+        ]
+      ],
+      "arcs": [
+        [
+          -1700,
+          0,
+          1800,
+          6.28221558940522,
+          6.28415502495395
+        ],
+        [
+          -930,
+          0,
+          1000,
+          6.28196346535991,
+          6.28440714899927
+        ]
+      ],
+      "center_global": [
+        1785.0251011142175,
+        -4.40758540776187e-13
+      ]
+    }
+  },
+  "q2_joint_prior_mc": {
+    "n": 20000,
+    "seed": 20260913,
+    "J_mean": 25.5619505109056,
+    "J_se": 0.0662875028609087,
+    "P_finish": 0.3736,
+    "P_finish_se": 0.00342069466629221,
+    "P_onsite": 0,
+    "P_H": 0,
+    "P_N": 0,
+    "invalid": 0,
+    "max_truth_outside": -0.195606464612275,
+    "J_zscore": -1.6994462564516721,
+    "P_zscore": 0.06897763224062643
+  },
+  "q2_independent_geometry": [
+    {
+      "a": 0,
+      "beta_deg": 0,
+      "kind": 0,
+      "q_internal": [
+        700,
+        0
+      ],
+      "sample_count": 13098,
+      "lower_radius_m": 4.9999999995193285,
+      "upper_radius_m": 5,
+      "gap_m": 4.806715026006714e-10,
+      "max_sample_outside_m": 1.504218971604132e-11
+    },
+    {
+      "a": 1700,
+      "beta_deg": 0,
+      "kind": 2,
+      "q_internal": [
+        -930,
+        0
+      ],
+      "sample_count": 32002,
+      "lower_radius_m": 15.075443332490433,
+      "upper_radius_m": 15.0754433324904,
+      "gap_m": -3.375077994860476e-14,
+      "max_sample_outside_m": 1.687538997430238e-13
+    },
+    {
+      "a": 0,
+      "beta_deg": 0,
+      "kind": 1,
+      "q_internal": [
+        813.824371479152,
+        521.018510869701
+      ],
+      "sample_count": 32002,
+      "lower_radius_m": 17.25970182033398,
+      "upper_radius_m": 17.259701820334,
+      "gap_m": 2.1316282072803006e-14,
+      "max_sample_outside_m": 3.019806626980426e-13
+    },
+    {
+      "a": 1200,
+      "beta_deg": 30,
+      "kind": 1,
+      "q_internal": [
+        458.35,
+        275.45
+      ],
+      "sample_count": 32002,
+      "lower_radius_m": 9.538319113501554,
+      "upper_radius_m": 9.53831911350157,
+      "gap_m": 1.5987211554602254e-14,
+      "max_sample_outside_m": 4.085620730620576e-14
+    }
+  ],
+  "status": "PASS",
+  "elapsed_s": 3.418679833994247,
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.18.1"
+  },
+  "source_sha256": {
+    "build.py": "8fb708fc9e2d88745f551c159e76fdb0f5328234154afda1f4ebd62de4fa5d87",
+    "q1/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "q1/bearing_geometry.py": "d31d1a0873101b7363b13d9dc88d0ff6a69102e93fc031b65ec85fd0bec3d730",
+    "q1/clearance_geometry.py": "579998fa4e0fd4c75b1597522cd65a4164598b2601c84feb2811613b29ea5d93",
+    "q1/solve.py": "37ab827ed16890185f5cff237bce9e2c64a6a83933124ef2526185219c968102",
+    "q1/validate_projection.py": "fe3542a1380f2016223e2531841de34e89a5c374e6c86a725f053c4686154dfd",
+    "q1/validation.py": "bbb2533df620e9e66f4cdc1f484bcb2bdc58f4e48c4bb25f21e99366ff14f2a5",
+    "q2/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "q2/api.py": "e823bf876b869f12253be077b6e1e5dfe5f864d96b9b3c9a077f46ce1df7984a",
+    "q2/geometry.hpp": "262533f3ffb394cbe04f8114ae240a84b4ff0255765e3912c218a23f5586a201",
+    "q2/independent_geometry.py": "e67bc3b1bf0effa26ec74a825601d8269f19b0e3837e71f83ed81b791e34074f",
+    "q2/nelder_mead.py": "e7c64d98ba23245ab4d6654a209de51c13b5354c9e10ca2525c49be32d4321ce",
+    "q2/search.py": "3dff29d0d202957021b4bfcf70181a279a428c1442ec4b4c39b7a01c0575630c",
+    "q2/solver.cpp": "3ed6d28324761764b00a320b3a32854f7b833a647563c542bd9f017a107b99f7",
+    "reproduce_paper.py": "b894061727a1d15b0c10be629a5bf2c31a24a5f3b6148e1c126c7f6565480564",
+    "run_q1.py": "ea5d42e66253f095e6e20f01222a6d2e202fa92c920e64b7dbc6d928b5cd7958",
+    "run_q2.py": "14f66567ce112d72d2fa7c4622841ca812f03881ad91be3b3d24eaf6571138e1",
+    "verify.py": "f383261281c48738ac8150d4a5a9d3c31fe7c0b0ec8dd83119c1515d6a03f96d"
+  },
+  "limits": "有限几何采样、积分精度递增和独立抽样是数值核验；不构成连续全局最优或物理实验验证。"
+}

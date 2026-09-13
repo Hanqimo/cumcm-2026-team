@@ -1,0 +1,383 @@
+{
+  "date": "2026-09-13T18:21:36.855572",
+  "upstream": "StevenKaiyi/cumcm-2026-team",
+  "upstream_commit": "656f33c0e42afb417889f2f2147f119ccf4eef1d",
+  "q3_q4_package_source": "正式题目工作区/B题/支撑材料",
+  "q1_q2_source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版",
+  "q1_q2_files": [
+    {
+      "path": "q1-q2/.gitignore",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/.gitignore",
+      "sha256": "ce0cb486611218a723925bd7855ae06eece4ccefefe79154652d3de71c5eff6c"
+    },
+    {
+      "path": "q1-q2/README.md",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/README.md",
+      "sha256": "d055f27432b347e2b46cab7789f2346d09aa5407239f98ba6355a8c21cb7f977"
+    },
+    {
+      "path": "q1-q2/build.py",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/build.py",
+      "sha256": "8fb708fc9e2d88745f551c159e76fdb0f5328234154afda1f4ebd62de4fa5d87"
+    },
+    {
+      "path": "q1-q2/examples/q1_clearable.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/examples/q1_clearable.json",
+      "sha256": "73f059bcd1908a479dd0d4db304f78ce981de3592d353b6c86baef2d03bb1d45"
+    },
+    {
+      "path": "q1-q2/examples/q1_orthogonal.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/examples/q1_orthogonal.json",
+      "sha256": "0ecabf6824230bcbe7480b401f5f43163f450f8c0f57abe3e2e3bac9bf5be876"
+    },
+    {
+      "path": "q1-q2/examples/q1_triangle.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/examples/q1_triangle.json",
+      "sha256": "ba8abf1f0d8adee191f07577b296e181aee62dcf171cdfbbe139971ea3734d31"
+    },
+    {
+      "path": "q1-q2/examples/q1_unbounded.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/examples/q1_unbounded.json",
+      "sha256": "90a03186ab56015475a9320e899e53f4d7b69b7cb01bba160fb942c5027c18c0"
+    },
+    {
+      "path": "q1-q2/examples/q2_cases.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/examples/q2_cases.json",
+      "sha256": "3baf68984465f2a97cee9debdd7bac8c0bafb1f5ec92f229bbcc9368c0bfa2c4"
+    },
+    {
+      "path": "q1-q2/provenance.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/provenance.json",
+      "sha256": "d6fc0fab73885af647c9f5e7118d86bb78e03443aefc375f1d0c1b1b4ea94c97"
+    },
+    {
+      "path": "q1-q2/q1/__init__.py",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/q1/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "q1-q2/q1/bearing_geometry.py",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/q1/bearing_geometry.py",
+      "sha256": "d31d1a0873101b7363b13d9dc88d0ff6a69102e93fc031b65ec85fd0bec3d730"
+    },
+    {
+      "path": "q1-q2/q1/clearance_geometry.py",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/q1/clearance_geometry.py",
+      "sha256": "579998fa4e0fd4c75b1597522cd65a4164598b2601c84feb2811613b29ea5d93"
+    },
+    {
+      "path": "q1-q2/q1/solve.py",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/q1/solve.py",
+      "sha256": "37ab827ed16890185f5cff237bce9e2c64a6a83933124ef2526185219c968102"
+    },
+    {
+      "path": "q1-q2/q1/validate_projection.py",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/q1/validate_projection.py",
+      "sha256": "fe3542a1380f2016223e2531841de34e89a5c374e6c86a725f053c4686154dfd"
+    },
+    {
+      "path": "q1-q2/q1/validation.py",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/q1/validation.py",
+      "sha256": "bbb2533df620e9e66f4cdc1f484bcb2bdc58f4e48c4bb25f21e99366ff14f2a5"
+    },
+    {
+      "path": "q1-q2/q2/__init__.py",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/q2/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "q1-q2/q2/api.py",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/q2/api.py",
+      "sha256": "e823bf876b869f12253be077b6e1e5dfe5f864d96b9b3c9a077f46ce1df7984a"
+    },
+    {
+      "path": "q1-q2/q2/geometry.hpp",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/q2/geometry.hpp",
+      "sha256": "262533f3ffb394cbe04f8114ae240a84b4ff0255765e3912c218a23f5586a201"
+    },
+    {
+      "path": "q1-q2/q2/independent_geometry.py",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/q2/independent_geometry.py",
+      "sha256": "e67bc3b1bf0effa26ec74a825601d8269f19b0e3837e71f83ed81b791e34074f"
+    },
+    {
+      "path": "q1-q2/q2/nelder_mead.py",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/q2/nelder_mead.py",
+      "sha256": "e7c64d98ba23245ab4d6654a209de51c13b5354c9e10ca2525c49be32d4321ce"
+    },
+    {
+      "path": "q1-q2/q2/search.py",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/q2/search.py",
+      "sha256": "3dff29d0d202957021b4bfcf70181a279a428c1442ec4b4c39b7a01c0575630c"
+    },
+    {
+      "path": "q1-q2/q2/solver.cpp",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/q2/solver.cpp",
+      "sha256": "3ed6d28324761764b00a320b3a32854f7b833a647563c542bd9f017a107b99f7"
+    },
+    {
+      "path": "q1-q2/reference_results/origin_weights.csv",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/reference_results/origin_weights.csv",
+      "sha256": "10edc90c9cada5aa9b5a2b002b12d515d70da4c0764d9c46c2a0ab2e3e82692e"
+    },
+    {
+      "path": "q1-q2/reference_results/typical_cases.csv",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/reference_results/typical_cases.csv",
+      "sha256": "9b793e4495c320be519a3d233cc3a04b75887b943a34904e7738ab56ba453795"
+    },
+    {
+      "path": "q1-q2/reproduce_paper.py",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/reproduce_paper.py",
+      "sha256": "b894061727a1d15b0c10be629a5bf2c31a24a5f3b6148e1c126c7f6565480564"
+    },
+    {
+      "path": "q1-q2/requirements.txt",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/requirements.txt",
+      "sha256": "2872240ad39db3fa61ea202cac35a5579c482437efa38edec506dbdc0f870942"
+    },
+    {
+      "path": "q1-q2/run_q1.py",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/run_q1.py",
+      "sha256": "ea5d42e66253f095e6e20f01222a6d2e202fa92c920e64b7dbc6d928b5cd7958"
+    },
+    {
+      "path": "q1-q2/run_q2.py",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/run_q2.py",
+      "sha256": "14f66567ce112d72d2fa7c4622841ca812f03881ad91be3b3d24eaf6571138e1"
+    },
+    {
+      "path": "q1-q2/verification/checks/q1_geometry/counterexample.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/checks/q1_geometry/counterexample.json",
+      "sha256": "9b15664ac53f6744c8330ce893d826643ef4672d370baa0c7bb09f2bae8b2bc7"
+    },
+    {
+      "path": "q1-q2/verification/checks/q1_geometry/orthogonal_example.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/checks/q1_geometry/orthogonal_example.json",
+      "sha256": "a571d62e5b37e535f92a712d7e28d84b0afa9b244e0756b7584190b9a8a303c8"
+    },
+    {
+      "path": "q1-q2/verification/checks/q1_geometry/report.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/checks/q1_geometry/report.json",
+      "sha256": "a56ebf670a57838f0018d39865675c08499fa4052cebcbd9053f71dbcf9924d5"
+    },
+    {
+      "path": "q1-q2/verification/checks/q1_projection/cases.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/checks/q1_projection/cases.json",
+      "sha256": "755f6a2c6c5ba1e20c61451ff3b4bc94dde73f3df6ebe3a94d51a25d1ed624cb"
+    },
+    {
+      "path": "q1-q2/verification/checks/q1_projection/report.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/checks/q1_projection/report.json",
+      "sha256": "9b1d8e1f55a691abdf833318896bb07f875485121df7e72f256a974268eda467"
+    },
+    {
+      "path": "q1-q2/verification/checks/report.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/checks/report.json",
+      "sha256": "ac6f9f8085ab9bd47a4dd3c34dab8436d20f23acef3ae742d33c72492c4b708e"
+    },
+    {
+      "path": "q1-q2/verification/general_search/candidates.csv",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/general_search/candidates.csv",
+      "sha256": "6e34527bc8f16e54b2541087a6011a823e110c6723228869e2276ca0a68a4c2a"
+    },
+    {
+      "path": "q1-q2/verification/general_search/evaluations.csv",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/general_search/evaluations.csv",
+      "sha256": "5cd91395c33f231e803af866d11d7257436ec98674f22d597987991aefc528b7"
+    },
+    {
+      "path": "q1-q2/verification/general_search/initial_geometry.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/general_search/initial_geometry.json",
+      "sha256": "b2565fd39bc8e154a9ef65f3a76cfc9bb35a07a104e4446517a484e0422dd187"
+    },
+    {
+      "path": "q1-q2/verification/general_search/multistart.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/general_search/multistart.json",
+      "sha256": "006bc8caae3d1c32d8ccdc49c2d86e7d4d0ebdc383844a7ebc2ccb79c65f22e1"
+    },
+    {
+      "path": "q1-q2/verification/general_search/neighbors.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/general_search/neighbors.json",
+      "sha256": "04a9038c7ddbed459225e3b1811ef447ec41605a7dc84a098f3e8bb9ba9b4265"
+    },
+    {
+      "path": "q1-q2/verification/general_search/summary.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/general_search/summary.json",
+      "sha256": "84c186ca4a294d40e51e3838c3ef52ca616b85790707ed769e080ae7daada43d"
+    },
+    {
+      "path": "q1-q2/verification/origin_search/candidates.csv",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/origin_search/candidates.csv",
+      "sha256": "acf68e8db7f553b560f463ee0c34acd6983e27bf64b966145bbf5e067207c01b"
+    },
+    {
+      "path": "q1-q2/verification/origin_search/evaluations.csv",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/origin_search/evaluations.csv",
+      "sha256": "1ddca7ba52927b5533b473237aab9bb385dcea3017a0085074e87c67b9455c49"
+    },
+    {
+      "path": "q1-q2/verification/origin_search/initial_geometry.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/origin_search/initial_geometry.json",
+      "sha256": "b79b04d17b2dfa3e6695ac2c397a23be6f171078bc1411d3fb702597318b4247"
+    },
+    {
+      "path": "q1-q2/verification/origin_search/multistart.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/origin_search/multistart.json",
+      "sha256": "069458b5cf6e39342fe1319299553821ce0810dfc323061b0e02e03d12a6f317"
+    },
+    {
+      "path": "q1-q2/verification/origin_search/neighbors.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/origin_search/neighbors.json",
+      "sha256": "1f26b477306053ec4e8b3d149b32e0f97fbfd0170a0d8be29a3600ca886388c6"
+    },
+    {
+      "path": "q1-q2/verification/origin_search/summary.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/origin_search/summary.json",
+      "sha256": "7e17d3ecbd0c5ee07a7a7d34d40efb031e9e4a8d81e8eef436400c5b56667ad4"
+    },
+    {
+      "path": "q1-q2/verification/paper_recomputed/a0_b0/candidate_points.csv",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/paper_recomputed/a0_b0/candidate_points.csv",
+      "sha256": "6055c61b48479f319c9e12697e6e20619763a06e21a5d2f290eb09da3f885281"
+    },
+    {
+      "path": "q1-q2/verification/paper_recomputed/a0_b0/initial_geometry.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/paper_recomputed/a0_b0/initial_geometry.json",
+      "sha256": "b79b04d17b2dfa3e6695ac2c397a23be6f171078bc1411d3fb702597318b4247"
+    },
+    {
+      "path": "q1-q2/verification/paper_recomputed/a0_b0/summary.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/paper_recomputed/a0_b0/summary.json",
+      "sha256": "47b9f42d4ee6e940b002ff78febc2c85cfeb78346abd588e19605aa8efdc3d59"
+    },
+    {
+      "path": "q1-q2/verification/paper_recomputed/a1200_b150/candidate_points.csv",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/paper_recomputed/a1200_b150/candidate_points.csv",
+      "sha256": "55cfa5e8ebafeb2f19bbd4e2c7fcbfd4133557ed9887676b7273bd8d5f9fe717"
+    },
+    {
+      "path": "q1-q2/verification/paper_recomputed/a1200_b150/initial_geometry.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/paper_recomputed/a1200_b150/initial_geometry.json",
+      "sha256": "f22ecfb275a2a7ea73600e0f1335d2dbb4e508a22e6a2e71b5beb116ad5a8835"
+    },
+    {
+      "path": "q1-q2/verification/paper_recomputed/a1200_b150/summary.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/paper_recomputed/a1200_b150/summary.json",
+      "sha256": "cb771a8f3ccf8335027911dc8fc280089ce4e9a1516e9d5880b3a960fa1dbd91"
+    },
+    {
+      "path": "q1-q2/verification/paper_recomputed/a1200_b30/candidate_points.csv",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/paper_recomputed/a1200_b30/candidate_points.csv",
+      "sha256": "0b1e5dcf2f9651b0e1929387c633c461ce7ccf2cf31cef373a44b9322a8c0bef"
+    },
+    {
+      "path": "q1-q2/verification/paper_recomputed/a1200_b30/initial_geometry.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/paper_recomputed/a1200_b30/initial_geometry.json",
+      "sha256": "598271d86aabe33aca0668060194cdaa812f896041671c77be9fc1a2799b26ad"
+    },
+    {
+      "path": "q1-q2/verification/paper_recomputed/a1200_b30/summary.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/paper_recomputed/a1200_b30/summary.json",
+      "sha256": "72089d8d28c1c5a077de776e2ad006da29e0b2a281ef9790524f6503acf4c6af"
+    },
+    {
+      "path": "q1-q2/verification/paper_recomputed/a1200_b90/candidate_points.csv",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/paper_recomputed/a1200_b90/candidate_points.csv",
+      "sha256": "17bdfaabbdac46ef5417245780ddf9549327966a418e059da62d7437751be59e"
+    },
+    {
+      "path": "q1-q2/verification/paper_recomputed/a1200_b90/initial_geometry.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/paper_recomputed/a1200_b90/initial_geometry.json",
+      "sha256": "657ed1ed67b4bb2304a3d47bd7798170fb135864cd68e63b79063b9ca727599c"
+    },
+    {
+      "path": "q1-q2/verification/paper_recomputed/a1200_b90/summary.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/paper_recomputed/a1200_b90/summary.json",
+      "sha256": "10d7e1078175f162cd5115709d0a67464a6b756073e4075d95aa2af9f5fda8b6"
+    },
+    {
+      "path": "q1-q2/verification/paper_recomputed/a1700_b0/candidate_points.csv",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/paper_recomputed/a1700_b0/candidate_points.csv",
+      "sha256": "3550ff97a3f04bca923eca6565ea4e47245d5eca509c1d88d8680d0e0ef8e939"
+    },
+    {
+      "path": "q1-q2/verification/paper_recomputed/a1700_b0/initial_geometry.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/paper_recomputed/a1700_b0/initial_geometry.json",
+      "sha256": "baa76650cfe18cd941fcf0cffa91cd4a51ed7973ed79183e2de42d8ce9cdad07"
+    },
+    {
+      "path": "q1-q2/verification/paper_recomputed/a1700_b0/summary.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/paper_recomputed/a1700_b0/summary.json",
+      "sha256": "1932f097ce1077890371b988ae4d3756665b8be358088d39e932007bc860e559"
+    },
+    {
+      "path": "q1-q2/verification/paper_recomputed/a1780_b0/initial_geometry.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/paper_recomputed/a1780_b0/initial_geometry.json",
+      "sha256": "7a8bfdc6dcc9ea2120aacddd5160f8fbfe6990706551e3395ac569f8e6fa8b4f"
+    },
+    {
+      "path": "q1-q2/verification/paper_recomputed/a1780_b0/summary.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/paper_recomputed/a1780_b0/summary.json",
+      "sha256": "e08bf5c8d42e7606716d256fd80aff089df3e0bb605e267340c465ebf4c8e1e2"
+    },
+    {
+      "path": "q1-q2/verification/paper_recomputed/all_candidates.csv",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/paper_recomputed/all_candidates.csv",
+      "sha256": "bc59787503bac3f639c4e513a07d740743283c849c8a04cb6af80dbf40e349df"
+    },
+    {
+      "path": "q1-q2/verification/paper_recomputed/case_summaries.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/paper_recomputed/case_summaries.json",
+      "sha256": "7f71cb3d20669c198034bd3669017529947544642d1c67621adb01cd7455b350"
+    },
+    {
+      "path": "q1-q2/verification/paper_recomputed/comparison.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/paper_recomputed/comparison.json",
+      "sha256": "619b2a12c53ef6fb867a27df98a11a0ef9f915be4f349e96ce2389b2458a86e7"
+    },
+    {
+      "path": "q1-q2/verification/paper_recomputed/console.log",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/paper_recomputed/console.log",
+      "sha256": "ba93f43821ac2319ee8cec813bd0f9d8db37c3d3056f5b1f67e83f5ff49b59f1"
+    },
+    {
+      "path": "q1-q2/verification/paper_recomputed/manifest.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/paper_recomputed/manifest.json",
+      "sha256": "a460f933c507e995c4f70465d0d315f4aefdbb78b9408bb54e1a0c0059ccda75"
+    },
+    {
+      "path": "q1-q2/verification/paper_recomputed/origin_weights.csv",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/paper_recomputed/origin_weights.csv",
+      "sha256": "79a8c32bc31ad9d95b53332688905d8798764f799e3969bf77def20ac98eea67"
+    },
+    {
+      "path": "q1-q2/verification/paper_recomputed/typical_cases.csv",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/paper_recomputed/typical_cases.csv",
+      "sha256": "afd975cf969754c1c1696bb2b46f19302ab519a4ba8c24afedd3af2ca305ff8a"
+    },
+    {
+      "path": "q1-q2/verification/q1_triangle.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/q1_triangle.json",
+      "sha256": "16200dc8c7ad5bee0443a481ba635b6548380720f6c9ffc3fd9416a773ac95a3"
+    },
+    {
+      "path": "q1-q2/verification/standalone_check.json",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verification/standalone_check.json",
+      "sha256": "5517d72593f0503e24af399ee2d762dbaf7c33d3f02740c397eb6a206544c339"
+    },
+    {
+      "path": "q1-q2/verify.py",
+      "source": "正式题目工作区/B题/第一二问完整数值求解_论文最新版/verify.py",
+      "sha256": "f383261281c48738ac8150d4a5a9d3c31fe7c0b0ec8dd83119c1515d6a03f96d"
+    }
+  ],
+  "original_q3_q4_verification": "PASS: hashes, Python syntax, six original formal logs and recorded results verified before adding q1-q2",
+  "omitted_local_generated_directories": [
+    ".DS_Store",
+    ".git",
+    ".venv",
+    "__pycache__",
+    "build",
+    "outputs"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "cases": 200,
+  "seed": 712233,
+  "max_distance_difference_m": 2.1764788016298553e-07,
+  "mean_saved_m": 0.7704153733430538,
+  "max_saved_m": 3.826632939188187,
+  "slsqp_success_count": 192,
+  "note": "SLSQP status is reported alongside objective/feasibility checks; all comparisons use synthetic geometry."
+}

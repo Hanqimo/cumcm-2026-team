@@ -1,0 +1,10 @@
+{
+  "q1_example_and_triangle": "PASS",
+  "q2_paper_point": "PASS",
+  "q3_q4_offline_entry_checks": "PASS",
+  "original_six_formal_logs": "PASS",
+  "paper_sources_unchanged": true,
+  "head_unchanged": true,
+  "git_unmerged_paths": 0,
+  "official_simulator_runs": 0
+}

@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "image_size_pixels": [
+    1732,
+    1102
+  ],
+  "image_dpi": [
+    399.9992,
+    399.9992
+  ],
+  "figure_page_mm": [
+    110,
+    70
+  ],
+  "radius_m": 19.0,
+  "outside_vertex_distance_m": 32.90896534380867,
+  "example_halfplane_max_residual_m": 8.526512829121202e-14,
+  "visual_check": "checked new figure and paper physical pages 7 and 8",
+  "first_page_numbering": "blank, 1, 2",
+  "unrelated_source_content": "preserved"
+}

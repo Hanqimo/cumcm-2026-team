@@ -1,0 +1,1402 @@
+[
+  {
+    "case": 0,
+    "saved_m": 0.9222480196008291,
+    "independent_objective_error_m": 1.1368683772161603e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 1,
+    "saved_m": 0.002648808579976958,
+    "independent_objective_error_m": 1.9042545318370685e-12,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 2,
+    "saved_m": 1.6070049243636504,
+    "independent_objective_error_m": 1.2897544365841895e-08,
+    "solver_success": false,
+    "solver_message": "Positive directional derivative for linesearch"
+  },
+  {
+    "case": 3,
+    "saved_m": 0.053998382380427756,
+    "independent_objective_error_m": 6.849631972727366e-12,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 4,
+    "saved_m": 1.6524715671220065,
+    "independent_objective_error_m": 1.9895196601282805e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 5,
+    "saved_m": 0.17343632769325268,
+    "independent_objective_error_m": 1.9747403712244704e-10,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 6,
+    "saved_m": 0.17545717309280917,
+    "independent_objective_error_m": 1.7053025658242404e-12,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 7,
+    "saved_m": 2.6426241063970224,
+    "independent_objective_error_m": 6.195932655828074e-12,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 8,
+    "saved_m": 0.000721014625156613,
+    "independent_objective_error_m": 2.523847797419876e-11,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 9,
+    "saved_m": 0.035753345119019286,
+    "independent_objective_error_m": 0.0,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 10,
+    "saved_m": 0.5789012660051753,
+    "independent_objective_error_m": 0.0,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 11,
+    "saved_m": 0.053407755798474454,
+    "independent_objective_error_m": 6.764366844436154e-11,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 12,
+    "saved_m": 0.8648177490484272,
+    "independent_objective_error_m": 8.526512829121202e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 13,
+    "saved_m": 0.7437845403604797,
+    "independent_objective_error_m": 5.684341886080801e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 14,
+    "saved_m": 0.7013731108033028,
+    "independent_objective_error_m": 2.8421709430404007e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 15,
+    "saved_m": 1.6733693615826724,
+    "independent_objective_error_m": 2.2737367544323206e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 16,
+    "saved_m": 0.06537792573629986,
+    "independent_objective_error_m": 1.7053025658242404e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 17,
+    "saved_m": 0.16455182317403683,
+    "independent_objective_error_m": 1.1368683772161603e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 18,
+    "saved_m": 0.19917296817038732,
+    "independent_objective_error_m": 2.9274360713316128e-12,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 19,
+    "saved_m": 0.034278621549333366,
+    "independent_objective_error_m": 6.252776074688882e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 20,
+    "saved_m": 0.2742490499294945,
+    "independent_objective_error_m": 5.247215995041188e-10,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 21,
+    "saved_m": 0.29346204975610135,
+    "independent_objective_error_m": 1.1368683772161603e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 22,
+    "saved_m": 0.747987953635004,
+    "independent_objective_error_m": 2.842170943040401e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 23,
+    "saved_m": 1.4406106548879052,
+    "independent_objective_error_m": 1.1368683772161603e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 24,
+    "saved_m": 0.08593859661104375,
+    "independent_objective_error_m": 5.087485988042317e-12,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 25,
+    "saved_m": 5.429260050959783e-05,
+    "independent_objective_error_m": 2.2026824808563106e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 26,
+    "saved_m": 1.219202639940363,
+    "independent_objective_error_m": 7.958078640513122e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 27,
+    "saved_m": 0.3153385406806706,
+    "independent_objective_error_m": 5.684341886080802e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 28,
+    "saved_m": 0.002744666386774952,
+    "independent_objective_error_m": 2.2737367544323206e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 29,
+    "saved_m": 2.354732592632786,
+    "independent_objective_error_m": 2.3618895284016617e-08,
+    "solver_success": false,
+    "solver_message": "Positive directional derivative for linesearch"
+  },
+  {
+    "case": 30,
+    "saved_m": 0.2005583990973605,
+    "independent_objective_error_m": 1.3073986337985843e-12,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 31,
+    "saved_m": 1.2567324992094484,
+    "independent_objective_error_m": 2.842170943040401e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 32,
+    "saved_m": 0.04557554859007951,
+    "independent_objective_error_m": 3.232969447708456e-12,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 33,
+    "saved_m": 0.07678441266762093,
+    "independent_objective_error_m": 9.663381206337363e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 34,
+    "saved_m": 0.6585263913463848,
+    "independent_objective_error_m": 1.9895196601282805e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 35,
+    "saved_m": 0.20129579786464546,
+    "independent_objective_error_m": 3.410605131648481e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 36,
+    "saved_m": 2.612468014928993,
+    "independent_objective_error_m": 2.7773694455390796e-10,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 37,
+    "saved_m": 1.2297522614708214,
+    "independent_objective_error_m": 1.0038547770818695e-09,
+    "solver_success": false,
+    "solver_message": "Positive directional derivative for linesearch"
+  },
+  {
+    "case": 38,
+    "saved_m": 2.154017333881086,
+    "independent_objective_error_m": 1.4222223398974165e-10,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 39,
+    "saved_m": 0.4766489862435037,
+    "independent_objective_error_m": 1.7053025658242404e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 40,
+    "saved_m": 0.0006678464981177967,
+    "independent_objective_error_m": 5.684341886080802e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 41,
+    "saved_m": 0.006287012072277776,
+    "independent_objective_error_m": 0.0,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 42,
+    "saved_m": 1.5320699302832068,
+    "independent_objective_error_m": 2.1316282072803006e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 43,
+    "saved_m": 0.10598677023028813,
+    "independent_objective_error_m": 3.3026026358129457e-11,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 44,
+    "saved_m": 0.3526593752221743,
+    "independent_objective_error_m": 5.684341886080802e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 45,
+    "saved_m": 1.2254140973932408,
+    "independent_objective_error_m": 0.0,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 46,
+    "saved_m": 0.9399305365654982,
+    "independent_objective_error_m": 1.1368683772161603e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 47,
+    "saved_m": 0.33054429307014743,
+    "independent_objective_error_m": 5.684341886080802e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 48,
+    "saved_m": 3.826632939188187,
+    "independent_objective_error_m": 1.590109377502813e-09,
+    "solver_success": false,
+    "solver_message": "Positive directional derivative for linesearch"
+  },
+  {
+    "case": 49,
+    "saved_m": 0.0061022888521051755,
+    "independent_objective_error_m": 5.684341886080802e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 50,
+    "saved_m": 0.08247798273600893,
+    "independent_objective_error_m": 0.0,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 51,
+    "saved_m": 0.012234055343299133,
+    "independent_objective_error_m": 1.1368683772161603e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 52,
+    "saved_m": 0.70898012376108,
+    "independent_objective_error_m": 1.8189894035458565e-12,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 53,
+    "saved_m": 0.02818611014288308,
+    "independent_objective_error_m": 0.0,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 54,
+    "saved_m": 0.0011322242779669978,
+    "independent_objective_error_m": 0.0,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 55,
+    "saved_m": 0.4188624557449998,
+    "independent_objective_error_m": 0.0,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 56,
+    "saved_m": 1.1242055136862064,
+    "independent_objective_error_m": 2.2737367544323206e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 57,
+    "saved_m": 0.018943143557294206,
+    "independent_objective_error_m": 1.1368683772161603e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 58,
+    "saved_m": 0.2802302229539464,
+    "independent_objective_error_m": 8.526512829121202e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 59,
+    "saved_m": 1.4972853321031607,
+    "independent_objective_error_m": 1.7621459846850485e-11,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 60,
+    "saved_m": 0.6662133008549063,
+    "independent_objective_error_m": 1.7053025658242404e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 61,
+    "saved_m": 0.3592275915463006,
+    "independent_objective_error_m": 0.0,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 62,
+    "saved_m": 0.25745430141603265,
+    "independent_objective_error_m": 0.0,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 63,
+    "saved_m": 0.3867192495116569,
+    "independent_objective_error_m": 2.632418727444019e-10,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 64,
+    "saved_m": 0.3145841755421088,
+    "independent_objective_error_m": 0.0,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 65,
+    "saved_m": 0.3053579388435992,
+    "independent_objective_error_m": 1.1880274541908875e-11,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 66,
+    "saved_m": 0.0023664142676125266,
+    "independent_objective_error_m": 7.958078640513122e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 67,
+    "saved_m": 0.06257197897289757,
+    "independent_objective_error_m": 1.1652900866465643e-12,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 68,
+    "saved_m": 0.2708291468317725,
+    "independent_objective_error_m": 2.842170943040401e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 69,
+    "saved_m": 0.002885321532744456,
+    "independent_objective_error_m": 5.684341886080802e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 70,
+    "saved_m": 0.34288490435864105,
+    "independent_objective_error_m": 6.87805368215777e-12,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 71,
+    "saved_m": 0.15366770987708378,
+    "independent_objective_error_m": 2.842170943040401e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 72,
+    "saved_m": 0.03625054373276271,
+    "independent_objective_error_m": 3.410605131648481e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 73,
+    "saved_m": 2.431552123479861,
+    "independent_objective_error_m": 0.0,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 74,
+    "saved_m": 0.003436909763706808,
+    "independent_objective_error_m": 3.043965079996269e-11,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 75,
+    "saved_m": 1.066166258300683,
+    "independent_objective_error_m": 4.121147867408581e-12,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 76,
+    "saved_m": 2.4955231703989114,
+    "independent_objective_error_m": 1.9895196601282805e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 77,
+    "saved_m": 0.6671068392654433,
+    "independent_objective_error_m": 1.1368683772161603e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 78,
+    "saved_m": 2.0507488345531897,
+    "independent_objective_error_m": 1.217961198562989e-08,
+    "solver_success": false,
+    "solver_message": "Positive directional derivative for linesearch"
+  },
+  {
+    "case": 79,
+    "saved_m": 0.5671244549940866,
+    "independent_objective_error_m": 0.0,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 80,
+    "saved_m": 1.9177163649938223,
+    "independent_objective_error_m": 2.842170943040401e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 81,
+    "saved_m": 0.6673040456475405,
+    "independent_objective_error_m": 5.684341886080801e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 82,
+    "saved_m": 0.5444053729083862,
+    "independent_objective_error_m": 0.0,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 83,
+    "saved_m": 0.7146039140481548,
+    "independent_objective_error_m": 0.0,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 84,
+    "saved_m": 0.015841375901743504,
+    "independent_objective_error_m": 2.2737367544323206e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 85,
+    "saved_m": 0.10844345101878616,
+    "independent_objective_error_m": 2.842170943040401e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 86,
+    "saved_m": 0.9750221987621615,
+    "independent_objective_error_m": 3.836930773104541e-12,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 87,
+    "saved_m": 0.19169258126336786,
+    "independent_objective_error_m": 0.0,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 88,
+    "saved_m": 0.35797281412033044,
+    "independent_objective_error_m": 0.0,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 89,
+    "saved_m": 0.02212516736058845,
+    "independent_objective_error_m": 4.618527782440651e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 90,
+    "saved_m": 3.0686101681313858,
+    "independent_objective_error_m": 1.7053025658242404e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 91,
+    "saved_m": 0.1525501988961082,
+    "independent_objective_error_m": 1.1368683772161603e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 92,
+    "saved_m": 0.23015718860960988,
+    "independent_objective_error_m": 1.1368683772161603e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 93,
+    "saved_m": 0.0571678772149653,
+    "independent_objective_error_m": 0.0,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 94,
+    "saved_m": 0.4442895918986096,
+    "independent_objective_error_m": 1.1368683772161603e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 95,
+    "saved_m": 0.002633493267239828,
+    "independent_objective_error_m": 5.684341886080802e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 96,
+    "saved_m": 0.9262855234459266,
+    "independent_objective_error_m": 5.343281372915953e-12,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 97,
+    "saved_m": 2.615590944754672,
+    "independent_objective_error_m": 8.219558367272839e-10,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 98,
+    "saved_m": 1.6678519926180115,
+    "independent_objective_error_m": 1.1368683772161603e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 99,
+    "saved_m": 0.3340967761791944,
+    "independent_objective_error_m": 2.2737367544323206e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 100,
+    "saved_m": 2.5843464771407696,
+    "independent_objective_error_m": 5.684341886080801e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 101,
+    "saved_m": 1.9707532773761045,
+    "independent_objective_error_m": 0.0,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 102,
+    "saved_m": 0.6180325765477335,
+    "independent_objective_error_m": 7.105427357601002e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 103,
+    "saved_m": 0.002628220525679126,
+    "independent_objective_error_m": 1.4210854715202004e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 104,
+    "saved_m": 0.0013626131739385983,
+    "independent_objective_error_m": 3.1178615245153196e-11,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 105,
+    "saved_m": 0.2051351315245995,
+    "independent_objective_error_m": 3.5214497984270565e-11,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 106,
+    "saved_m": 0.052309932403716175,
+    "independent_objective_error_m": 7.8017592386459e-12,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 107,
+    "saved_m": 0.22367496109933427,
+    "independent_objective_error_m": 5.684341886080802e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 108,
+    "saved_m": 2.0105375645060235,
+    "independent_objective_error_m": 6.584599532288848e-10,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 109,
+    "saved_m": 0.8530236419411494,
+    "independent_objective_error_m": 5.684341886080802e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 110,
+    "saved_m": 1.7580489379723758,
+    "independent_objective_error_m": 5.684341886080802e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 111,
+    "saved_m": 0.04650797357891179,
+    "independent_objective_error_m": 1.7053025658242404e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 112,
+    "saved_m": 0.38386119410603214,
+    "independent_objective_error_m": 8.526512829121202e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 113,
+    "saved_m": 0.5383866086892795,
+    "independent_objective_error_m": 8.872120815794915e-10,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 114,
+    "saved_m": 1.8559754524707444,
+    "independent_objective_error_m": 3.410605131648481e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 115,
+    "saved_m": 0.21473291369795788,
+    "independent_objective_error_m": 5.684341886080802e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 116,
+    "saved_m": 2.0373238266847693,
+    "independent_objective_error_m": 8.185452315956354e-12,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 117,
+    "saved_m": 5.505259446181299e-05,
+    "independent_objective_error_m": 7.958078640513122e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 118,
+    "saved_m": 0.002791984453352825,
+    "independent_objective_error_m": 4.718003765447065e-12,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 119,
+    "saved_m": 0.23643944224522784,
+    "independent_objective_error_m": 5.684341886080802e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 120,
+    "saved_m": 1.0510840705408384,
+    "independent_objective_error_m": 1.5631940186722204e-12,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 121,
+    "saved_m": 3.566643804743876,
+    "independent_objective_error_m": 2.8421709430404007e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 122,
+    "saved_m": 0.02415253207971091,
+    "independent_objective_error_m": 0.0,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 123,
+    "saved_m": 0.4161898778273212,
+    "independent_objective_error_m": 1.1092538443335798e-08,
+    "solver_success": false,
+    "solver_message": "Positive directional derivative for linesearch"
+  },
+  {
+    "case": 124,
+    "saved_m": 2.120270481082116,
+    "independent_objective_error_m": 2.1605387701129075e-08,
+    "solver_success": false,
+    "solver_message": "Positive directional derivative for linesearch"
+  },
+  {
+    "case": 125,
+    "saved_m": 0.01562898779468469,
+    "independent_objective_error_m": 5.6843418860808015e-12,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 126,
+    "saved_m": 0.09425402281775064,
+    "independent_objective_error_m": 8.526512829121202e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 127,
+    "saved_m": 0.008231646225681288,
+    "independent_objective_error_m": 2.842170943040401e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 128,
+    "saved_m": 2.4620411258383115,
+    "independent_objective_error_m": 0.0,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 129,
+    "saved_m": 0.17829075003703565,
+    "independent_objective_error_m": 0.0,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 130,
+    "saved_m": 9.942384508576652e-06,
+    "independent_objective_error_m": 1.0800249583553523e-12,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 131,
+    "saved_m": 0.010912453435139469,
+    "independent_objective_error_m": 5.684341886080802e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 132,
+    "saved_m": 0.013130912045369314,
+    "independent_objective_error_m": 5.115907697472721e-12,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 133,
+    "saved_m": 0.8622498688755513,
+    "independent_objective_error_m": 2.205524651799351e-11,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 134,
+    "saved_m": 0.00403397735760791,
+    "independent_objective_error_m": 5.684341886080802e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 135,
+    "saved_m": 1.9645602045858084,
+    "independent_objective_error_m": 5.684341886080802e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 136,
+    "saved_m": 2.4849011063610362,
+    "independent_objective_error_m": 0.0,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 137,
+    "saved_m": 1.6564555828138054,
+    "independent_objective_error_m": 5.684341886080802e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 138,
+    "saved_m": 0.0016792615382428266,
+    "independent_objective_error_m": 1.1368683772161603e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 139,
+    "saved_m": 0.0006295337797723732,
+    "independent_objective_error_m": 1.1368683772161603e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 140,
+    "saved_m": 0.09941410834278486,
+    "independent_objective_error_m": 6.536993168992922e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 141,
+    "saved_m": 0.3497575419844452,
+    "independent_objective_error_m": 9.208633855450898e-12,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 142,
+    "saved_m": 0.38462343805713317,
+    "independent_objective_error_m": 5.684341886080802e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 143,
+    "saved_m": 0.07225512500440345,
+    "independent_objective_error_m": 1.1368683772161603e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 144,
+    "saved_m": 0.017554294762476275,
+    "independent_objective_error_m": 1.1368683772161603e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 145,
+    "saved_m": 0.3168053486340341,
+    "independent_objective_error_m": 5.684341886080802e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 146,
+    "saved_m": 0.043260579668441324,
+    "independent_objective_error_m": 1.2789769243681803e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 147,
+    "saved_m": 1.0187215105244078,
+    "independent_objective_error_m": 9.237055564881302e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 148,
+    "saved_m": 1.0154864032776914,
+    "independent_objective_error_m": 1.1368683772161603e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 149,
+    "saved_m": 2.346442168738463,
+    "independent_objective_error_m": 2.7284841053187847e-12,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 150,
+    "saved_m": 0.8261106213948892,
+    "independent_objective_error_m": 2.9558577807620168e-12,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 151,
+    "saved_m": 0.04480366083231502,
+    "independent_objective_error_m": 5.684341886080802e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 152,
+    "saved_m": 2.529680652392699,
+    "independent_objective_error_m": 2.1764788016298553e-07,
+    "solver_success": false,
+    "solver_message": "Positive directional derivative for linesearch"
+  },
+  {
+    "case": 153,
+    "saved_m": 2.3230376639293127,
+    "independent_objective_error_m": 1.1368683772161603e-12,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 154,
+    "saved_m": 0.1192776907763573,
+    "independent_objective_error_m": 9.208633855450898e-12,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 155,
+    "saved_m": 0.2022847067589737,
+    "independent_objective_error_m": 6.252776074688882e-12,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 156,
+    "saved_m": 0.35500815488319404,
+    "independent_objective_error_m": 2.842170943040401e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 157,
+    "saved_m": 0.23516331438815996,
+    "independent_objective_error_m": 1.7053025658242404e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 158,
+    "saved_m": 0.5005051226189607,
+    "independent_objective_error_m": 1.1368683772161603e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 159,
+    "saved_m": 1.5076343025867232,
+    "independent_objective_error_m": 1.4807710613240488e-10,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 160,
+    "saved_m": 3.0534998993260842,
+    "independent_objective_error_m": 1.1368683772161603e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 161,
+    "saved_m": 2.0777400490201217,
+    "independent_objective_error_m": 7.901235221652314e-12,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 162,
+    "saved_m": 0.2623898961134046,
+    "independent_objective_error_m": 6.218670023372397e-10,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 163,
+    "saved_m": 0.44204222525527825,
+    "independent_objective_error_m": 5.684341886080802e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 164,
+    "saved_m": 2.6924408302875236e-07,
+    "independent_objective_error_m": 1.1368683772161603e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 165,
+    "saved_m": 1.0936045733451465,
+    "independent_objective_error_m": 0.0,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 166,
+    "saved_m": 0.7689840922434144,
+    "independent_objective_error_m": 1.6626700016786344e-12,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 167,
+    "saved_m": 0.012642478096431375,
+    "independent_objective_error_m": 1.4210854715202004e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 168,
+    "saved_m": 0.6381176972375329,
+    "independent_objective_error_m": 3.808509063674137e-12,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 169,
+    "saved_m": 0.2782717796295344,
+    "independent_objective_error_m": 7.958078640513122e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 170,
+    "saved_m": 2.0801851857662257,
+    "independent_objective_error_m": 0.0,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 171,
+    "saved_m": 0.04104591181092587,
+    "independent_objective_error_m": 5.684341886080802e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 172,
+    "saved_m": 1.6106693830222696,
+    "independent_objective_error_m": 1.1368683772161603e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 173,
+    "saved_m": 1.4353266605066892,
+    "independent_objective_error_m": 0.0,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 174,
+    "saved_m": 2.778942961784537,
+    "independent_objective_error_m": 1.1368683772161603e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 175,
+    "saved_m": 1.6403406434156977,
+    "independent_objective_error_m": 1.1368683772161603e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 176,
+    "saved_m": 0.38507163473698824,
+    "independent_objective_error_m": 4.973799150320701e-12,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 177,
+    "saved_m": 1.382323902535859,
+    "independent_objective_error_m": 1.1368683772161603e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 178,
+    "saved_m": 0.2561700129896778,
+    "independent_objective_error_m": 0.0,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 179,
+    "saved_m": 1.4469803656899103,
+    "independent_objective_error_m": 2.1032064978498966e-12,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 180,
+    "saved_m": 1.5968641769457008,
+    "independent_objective_error_m": 3.410605131648481e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 181,
+    "saved_m": 0.05474149389209515,
+    "independent_objective_error_m": 1.7053025658242404e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 182,
+    "saved_m": 1.5658302373348363,
+    "independent_objective_error_m": 7.780442956573097e-12,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 183,
+    "saved_m": 0.339019326219443,
+    "independent_objective_error_m": 5.684341886080802e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 184,
+    "saved_m": 0.1674759864462203,
+    "independent_objective_error_m": 1.1368683772161603e-12,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 185,
+    "saved_m": 0.5802341578189498,
+    "independent_objective_error_m": 0.0,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 186,
+    "saved_m": 0.6374148139849751,
+    "independent_objective_error_m": 2.842170943040401e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 187,
+    "saved_m": 1.69906206527412,
+    "independent_objective_error_m": 1.3017142919125035e-10,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 188,
+    "saved_m": 1.7515591358639426,
+    "independent_objective_error_m": 5.115907697472721e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 189,
+    "saved_m": 0.4485543381473036,
+    "independent_objective_error_m": 0.0,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 190,
+    "saved_m": 0.02441968597435107,
+    "independent_objective_error_m": 2.5579538487363607e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 191,
+    "saved_m": 0.18277753753648085,
+    "independent_objective_error_m": 2.2737367544323206e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 192,
+    "saved_m": 0.005018264418367835,
+    "independent_objective_error_m": 2.916067387559451e-11,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 193,
+    "saved_m": 1.7123111266987507,
+    "independent_objective_error_m": 1.1368683772161603e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 194,
+    "saved_m": 0.9382436744213436,
+    "independent_objective_error_m": 1.3130829756846651e-11,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 195,
+    "saved_m": 2.258282372019835,
+    "independent_objective_error_m": 0.0,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 196,
+    "saved_m": 1.545452904835372,
+    "independent_objective_error_m": 0.0,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 197,
+    "saved_m": 1.383773371058851,
+    "independent_objective_error_m": 5.684341886080802e-14,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 198,
+    "saved_m": 0.006073479067424614,
+    "independent_objective_error_m": 1.1368683772161603e-13,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  },
+  {
+    "case": 199,
+    "saved_m": 0.714568628100352,
+    "independent_objective_error_m": 0.0,
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully"
+  }
+]

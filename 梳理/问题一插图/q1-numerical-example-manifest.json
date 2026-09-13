@@ -1,0 +1,59 @@
+{
+  "figure": "第一问数值计算示例的定位区域与最小包围圆",
+  "source": "contest/q1/models/m01-bounded-bearing/runs/R003/orthogonal_example.json",
+  "source_data_sha256": "7957ac85ca9ef138de7453ef4cb48f67639d19ec99cab714260e7f93aec8d8af",
+  "source_code_sha256": "c32b9af72ef1bafdd8806267eae8442c6950059b18984e9262ec3e724d8f474a",
+  "vertices_m": [
+    [
+      -17.15561259646294,
+      -17.155612596462973
+    ],
+    [
+      17.145161860798435,
+      -17.75433484170262
+    ],
+    [
+      17.76515689528484,
+      17.765156895284758
+    ],
+    [
+      -17.754334841702583,
+      17.145161860798343
+    ]
+  ],
+  "diameter_pair_one_based": [
+    1,
+    3
+  ],
+  "center_m": [
+    0.3047721494109492,
+    0.30477214941089237
+  ],
+  "radius_m": 24.692712911867147,
+  "diameter_m": 49.385425823734295,
+  "max_halfplane_residual_m": 8.526512829121202e-14,
+  "width_mm": 110,
+  "height_mm": 85,
+  "dpi": 400,
+  "font": "/Applications/Microsoft Word.app/Contents/Resources/DFonts/SimHei.ttf",
+  "numpy": "2.5.3",
+  "matplotlib": "3.11.2",
+  "coordinates": "source coordinates in original frame, local view [-32,32] m",
+  "detectors_outside_view": true,
+  "equal_axis_scale": true,
+  "observations": {
+    "s1_m": [
+      -1000,
+      0
+    ],
+    "s2_m": [
+      0,
+      -1000
+    ],
+    "bearings_deg": [
+      0,
+      90
+    ],
+    "error_bound_deg": 1
+  }
+}

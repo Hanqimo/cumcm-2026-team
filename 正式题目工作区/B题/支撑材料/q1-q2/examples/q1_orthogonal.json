@@ -1,0 +1,22 @@
+{
+  "observations": [
+    {
+      "position": [
+        -1000,
+        0
+      ],
+      "bearing_deg": 0
+    },
+    {
+      "position": [
+        0,
+        -1000
+      ],
+      "bearing_deg": 90
+    }
+  ],
+  "current_position": [
+    -1000,
+    0
+  ]
+}

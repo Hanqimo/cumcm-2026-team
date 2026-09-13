@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "solved_candidates": 55,
+  "early_completion_cases": 1,
+  "typical_case_comparisons": [
+    {
+      "a_m": 0.0,
+      "beta_deg": 0.0,
+      "J_difference_m": -6.041568930115204e-05,
+      "P_difference": -3.020774784034952e-06
+    },
+    {
+      "a_m": 1200.0,
+      "beta_deg": 30.0,
+      "J_difference_m": 0.0,
+      "P_difference": 0.0
+    },
+    {
+      "a_m": 1200.0,
+      "beta_deg": 90.0,
+      "J_difference_m": 0.0,
+      "P_difference": 6.050715484207103e-15
+    },
+    {
+      "a_m": 1200.0,
+      "beta_deg": 150.0,
+      "J_difference_m": 0.0,
+      "P_difference": 0.0
+    },
+    {
+      "a_m": 1700.0,
+      "beta_deg": 0.0,
+      "J_difference_m": -9.992007221626409e-15,
+      "P_difference": 0.0
+    }
+  ],
+  "max_probability_residual": 4.28657109807773e-13
+}

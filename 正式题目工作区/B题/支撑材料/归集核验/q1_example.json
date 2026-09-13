@@ -1,0 +1,100 @@
+{
+  "status": "polygon",
+  "vertices": [
+    [
+      -17.155612596462948,
+      -17.155612596462973
+    ],
+    [
+      17.145161860798435,
+      -17.75433484170262
+    ],
+    [
+      17.76515689528484,
+      17.765156895284758
+    ],
+    [
+      -17.754334841702583,
+      17.145161860798343
+    ]
+  ],
+  "diameter_m": 49.3854258237343,
+  "diameter_pair": [
+    0,
+    2
+  ],
+  "cover_center": [
+    0.30477214941094566,
+    0.30477214941089237
+  ],
+  "cover_radius_m": 24.69271291186715,
+  "support_indices": [
+    0,
+    2
+  ],
+  "diameter_disk_covers": true,
+  "guaranteed_clear_possible": false,
+  "max_halfplane_residual_m": 7.105427357601002e-15,
+  "observations": [
+    {
+      "position": [
+        -1000,
+        0
+      ],
+      "bearing_deg": 0
+    },
+    {
+      "position": [
+        0,
+        -1000
+      ],
+      "bearing_deg": 90
+    }
+  ],
+  "epsilon_deg": 1.0,
+  "units": {
+    "length": "m",
+    "angle": "degree"
+  },
+  "physical_clear_radius_m": 20,
+  "halfplanes": {
+    "A": [
+      [
+        -0.01745240643728351,
+        -0.9998476951563913
+      ],
+      [
+        -0.01745240643728351,
+        0.9998476951563913
+      ],
+      [
+        0.9998476951563913,
+        -0.0174524064372836
+      ],
+      [
+        -0.9998476951563913,
+        -0.017452406437283477
+      ]
+    ],
+    "b": [
+      17.45240643728351,
+      17.45240643728351,
+      17.4524064372836,
+      17.45240643728348
+    ]
+  },
+  "model": "directed_bearing_halfplanes_and_minimum_enclosing_circle",
+  "clearance": {
+    "engineering_radius_m": 19.5,
+    "feasibility_tolerance_m": 1e-08,
+    "current_position": [
+      -1000.0,
+      0.0
+    ],
+    "engineering_feasible": false,
+    "position": null,
+    "move_distance_m": null,
+    "max_source_distance_m": null
+  },
+  "physical_threshold_near_boundary": false
+}

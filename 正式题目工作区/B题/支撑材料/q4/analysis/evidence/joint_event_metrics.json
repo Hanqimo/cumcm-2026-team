@@ -1,0 +1,680 @@
+[
+  {
+    "case": "42YP-6M8M-GB32-D5D8",
+    "channel": 12,
+    "old_radius": 444.299722962435,
+    "new_radius": 444.299722962435
+  },
+  {
+    "case": "42YP-6M8M-GB32-D5D8",
+    "channel": 6,
+    "old_radius": 479.981655818257,
+    "new_radius": 479.981655818257
+  },
+  {
+    "case": "5SGS-PVV3-6YKM-XMEH",
+    "channel": 19,
+    "old_radius": 430.1846245619804,
+    "new_radius": 430.1846245619804
+  },
+  {
+    "case": "5SGS-PVV3-6YKM-XMEH",
+    "channel": 19,
+    "old_radius": 430.1846245619804,
+    "new_radius": 430.1846245619804
+  },
+  {
+    "case": "5SGS-PVV3-6YKM-XMEH",
+    "channel": 15,
+    "old_radius": 724.5239374800428,
+    "new_radius": 617.2133014472779
+  },
+  {
+    "case": "5SGS-PVV3-6YKM-XMEH",
+    "channel": 15,
+    "old_radius": 617.2133014472779,
+    "new_radius": 617.2133014472779
+  },
+  {
+    "case": "5SGS-PVV3-6YKM-XMEH",
+    "channel": 9,
+    "old_radius": 22.423018000086355,
+    "new_radius": 17.400039368572713
+  },
+  {
+    "case": "5SGS-PVV3-6YKM-XMEH",
+    "channel": 8,
+    "old_radius": 721.4427693016985,
+    "new_radius": 721.4281222969987
+  },
+  {
+    "case": "8BXE-G3BW-6XVW-WNWC",
+    "channel": 18,
+    "old_radius": 586.3025278048724,
+    "new_radius": 583.4182070886351
+  },
+  {
+    "case": "9N8Q-886F-8G48-DA6M",
+    "channel": 9,
+    "old_radius": 501.7446008191543,
+    "new_radius": 501.7446008191543
+  },
+  {
+    "case": "9N8Q-886F-8G48-DA6M",
+    "channel": 1,
+    "old_radius": 750.2390993433619,
+    "new_radius": 380.9807921351416
+  },
+  {
+    "case": "9N8Q-886F-8G48-DA6M",
+    "channel": 16,
+    "old_radius": 421.4749522915769,
+    "new_radius": 421.4749522915769
+  },
+  {
+    "case": "9N8Q-886F-8G48-DA6M",
+    "channel": 16,
+    "old_radius": 421.4749522915769,
+    "new_radius": 421.4749522915769
+  },
+  {
+    "case": "9N8Q-886F-8G48-DA6M",
+    "channel": 8,
+    "old_radius": 418.5122532844549,
+    "new_radius": 418.5122532844549
+  },
+  {
+    "case": "DUZJ-TQHM-PN54-V37G",
+    "channel": 19,
+    "old_radius": 717.3114304578193,
+    "new_radius": 591.0890211890182
+  },
+  {
+    "case": "DUZJ-TQHM-PN54-V37G",
+    "channel": 2,
+    "old_radius": 34.08468247897596,
+    "new_radius": 24.882483959635795
+  },
+  {
+    "case": "DUZJ-TQHM-PN54-V37G",
+    "channel": 20,
+    "old_radius": 750.178522173511,
+    "new_radius": 688.9454348361118
+  },
+  {
+    "case": "DUZJ-TQHM-PN54-V37G",
+    "channel": 7,
+    "old_radius": 518.8449052954252,
+    "new_radius": 518.8449052954252
+  },
+  {
+    "case": "E3KT-3H6M-A4Q7-TT9G",
+    "channel": 6,
+    "old_radius": 525.9692388477448,
+    "new_radius": 525.9692388477448
+  },
+  {
+    "case": "E3KT-3H6M-A4Q7-TT9G",
+    "channel": 15,
+    "old_radius": 432.0769402520801,
+    "new_radius": 432.0769402520801
+  },
+  {
+    "case": "E3KT-3H6M-A4Q7-TT9G",
+    "channel": 15,
+    "old_radius": 432.0769402520801,
+    "new_radius": 334.2021708033522
+  },
+  {
+    "case": "E3KT-3H6M-A4Q7-TT9G",
+    "channel": 20,
+    "old_radius": 586.4205329849299,
+    "new_radius": 583.5333318925448
+  },
+  {
+    "case": "E3KT-3H6M-A4Q7-TT9G",
+    "channel": 17,
+    "old_radius": 719.0666400265958,
+    "new_radius": 421.3833509331316
+  },
+  {
+    "case": "E9CC-4TNC-BZV2-SBSB",
+    "channel": 5,
+    "old_radius": 503.850312359454,
+    "new_radius": 503.850312359454
+  },
+  {
+    "case": "E9CC-4TNC-BZV2-SBSB",
+    "channel": 5,
+    "old_radius": 503.850312359454,
+    "new_radius": 503.850312359454
+  },
+  {
+    "case": "E9CC-4TNC-BZV2-SBSB",
+    "channel": 12,
+    "old_radius": 694.1527416592354,
+    "new_radius": 395.8198689233624
+  },
+  {
+    "case": "E9CC-4TNC-BZV2-SBSB",
+    "channel": 17,
+    "old_radius": 721.2136749106743,
+    "new_radius": 721.1406950291446
+  },
+  {
+    "case": "E9CC-4TNC-BZV2-SBSB",
+    "channel": 8,
+    "old_radius": 663.8112669057078,
+    "new_radius": 420.32673664844697
+  },
+  {
+    "case": "E9CC-4TNC-BZV2-SBSB",
+    "channel": 3,
+    "old_radius": 718.6776811066674,
+    "new_radius": 710.5189995259764
+  },
+  {
+    "case": "EF7S-Q5BT-HYUR-8GGM",
+    "channel": 9,
+    "old_radius": 723.7840811563071,
+    "new_radius": 330.7665550725542
+  },
+  {
+    "case": "EF7S-Q5BT-HYUR-8GGM",
+    "channel": 6,
+    "old_radius": 750.2231709850056,
+    "new_radius": 726.6127359501698
+  },
+  {
+    "case": "EF7S-Q5BT-HYUR-8GGM",
+    "channel": 17,
+    "old_radius": 750.2100278349155,
+    "new_radius": 392.83636400639404
+  },
+  {
+    "case": "EMDR-NYDH-ZCJM-8DX5",
+    "channel": 14,
+    "old_radius": 424.383917421983,
+    "new_radius": 424.383917421983
+  },
+  {
+    "case": "EMDR-NYDH-ZCJM-8DX5",
+    "channel": 14,
+    "old_radius": 424.383917421983,
+    "new_radius": 424.383917421983
+  },
+  {
+    "case": "EMDR-NYDH-ZCJM-8DX5",
+    "channel": 16,
+    "old_radius": 415.25050886790495,
+    "new_radius": 415.25050886790495
+  },
+  {
+    "case": "EMDR-NYDH-ZCJM-8DX5",
+    "channel": 13,
+    "old_radius": 750.0460778771628,
+    "new_radius": 750.0460778771628
+  },
+  {
+    "case": "EMDR-NYDH-ZCJM-8DX5",
+    "channel": 11,
+    "old_radius": 725.2676167010497,
+    "new_radius": 563.6510817051278
+  },
+  {
+    "case": "EMDR-NYDH-ZCJM-8DX5",
+    "channel": 17,
+    "old_radius": 716.7328417922936,
+    "new_radius": 299.72109827872873
+  },
+  {
+    "case": "EMDR-NYDH-ZCJM-8DX5",
+    "channel": 12,
+    "old_radius": 716.2500239422629,
+    "new_radius": 310.5072508556544
+  },
+  {
+    "case": "EREM-XRUB-KS2U-WPZY",
+    "channel": 2,
+    "old_radius": 714.3736580379161,
+    "new_radius": 697.5725758977022
+  },
+  {
+    "case": "FCPJ-4CY4-2NT7-NVVA",
+    "channel": 1,
+    "old_radius": 709.9929383342007,
+    "new_radius": 709.8566440228108
+  },
+  {
+    "case": "M35H-BDAM-F2C6-FGKT",
+    "channel": 19,
+    "old_radius": 750.1921299086918,
+    "new_radius": 750.178522173511
+  },
+  {
+    "case": "M35H-BDAM-F2C6-FGKT",
+    "channel": 3,
+    "old_radius": 523.4998848865642,
+    "new_radius": 523.4998848865642
+  },
+  {
+    "case": "M35H-BDAM-F2C6-FGKT",
+    "channel": 7,
+    "old_radius": 427.0105512418292,
+    "new_radius": 427.0105512418292
+  },
+  {
+    "case": "M35H-BDAM-F2C6-FGKT",
+    "channel": 9,
+    "old_radius": 723.9188932346957,
+    "new_radius": 560.1284201649062
+  },
+  {
+    "case": "M35H-BDAM-F2C6-FGKT",
+    "channel": 1,
+    "old_radius": 711.6487802610058,
+    "new_radius": 483.8847847985354
+  },
+  {
+    "case": "M35H-BDAM-F2C6-FGKT",
+    "channel": 2,
+    "old_radius": 715.2366304072565,
+    "new_radius": 528.2482942261428
+  },
+  {
+    "case": "M35H-BDAM-F2C6-FGKT",
+    "channel": 2,
+    "old_radius": 202.7848906371929,
+    "new_radius": 199.61648911961015
+  },
+  {
+    "case": "M35H-BDAM-F2C6-FGKT",
+    "channel": 2,
+    "old_radius": 199.61648911961015,
+    "new_radius": 34.32961875259536
+  },
+  {
+    "case": "MFUR-4P9F-TNRG-4D5E",
+    "channel": 20,
+    "old_radius": 423.6195201186739,
+    "new_radius": 423.6195201186739
+  },
+  {
+    "case": "MFUR-4P9F-TNRG-4D5E",
+    "channel": 17,
+    "old_radius": 421.74391389474624,
+    "new_radius": 421.74391389474624
+  },
+  {
+    "case": "MV5W-WJG2-Q57C-28XN",
+    "channel": 12,
+    "old_radius": 724.764223754887,
+    "new_radius": 657.0698824518124
+  },
+  {
+    "case": "MV5W-WJG2-Q57C-28XN",
+    "channel": 12,
+    "old_radius": 657.0698824518124,
+    "new_radius": 657.0698824518124
+  },
+  {
+    "case": "N4JA-M84Z-4E3A-S9UE",
+    "channel": 5,
+    "old_radius": 724.6411182529682,
+    "new_radius": 633.9294893087766
+  },
+  {
+    "case": "N4JA-M84Z-4E3A-S9UE",
+    "channel": 5,
+    "old_radius": 633.9294893087766,
+    "new_radius": 633.9294893087766
+  },
+  {
+    "case": "N4JA-M84Z-4E3A-S9UE",
+    "channel": 14,
+    "old_radius": 575.1121828736101,
+    "new_radius": 575.0658186932277
+  },
+  {
+    "case": "N4JA-M84Z-4E3A-S9UE",
+    "channel": 5,
+    "old_radius": 633.9294893087766,
+    "new_radius": 480.7227875250576
+  },
+  {
+    "case": "N4JA-M84Z-4E3A-S9UE",
+    "channel": 5,
+    "old_radius": 480.7227875250576,
+    "new_radius": 232.87984364689447
+  },
+  {
+    "case": "N4JA-M84Z-4E3A-S9UE",
+    "channel": 13,
+    "old_radius": 750.1891581877998,
+    "new_radius": 307.9118697538429
+  },
+  {
+    "case": "NGFE-DJRW-QENS-CMAY",
+    "channel": 8,
+    "old_radius": 750.2246110185685,
+    "new_radius": 383.94763987582354
+  },
+  {
+    "case": "NGFE-DJRW-QENS-CMAY",
+    "channel": 11,
+    "old_radius": 470.8220801881562,
+    "new_radius": 470.8220801881562
+  },
+  {
+    "case": "NZQ8-FTE7-BZYW-R7V8",
+    "channel": 1,
+    "old_radius": 439.1048841846942,
+    "new_radius": 439.1048841846942
+  },
+  {
+    "case": "NZQ8-FTE7-BZYW-R7V8",
+    "channel": 10,
+    "old_radius": 488.12290530535734,
+    "new_radius": 488.12290530535734
+  },
+  {
+    "case": "NZQ8-FTE7-BZYW-R7V8",
+    "channel": 14,
+    "old_radius": 515.8977029891381,
+    "new_radius": 515.8977029891381
+  },
+  {
+    "case": "NZQ8-FTE7-BZYW-R7V8",
+    "channel": 12,
+    "old_radius": 698.8297409778183,
+    "new_radius": 698.7690535439948
+  },
+  {
+    "case": "QH3K-WYYW-AEJ7-VPBJ",
+    "channel": 13,
+    "old_radius": 482.24272453248176,
+    "new_radius": 482.24272453248176
+  },
+  {
+    "case": "QH3K-WYYW-AEJ7-VPBJ",
+    "channel": 8,
+    "old_radius": 455.54667281732276,
+    "new_radius": 455.54667281732276
+  },
+  {
+    "case": "QH3K-WYYW-AEJ7-VPBJ",
+    "channel": 8,
+    "old_radius": 455.54667281732276,
+    "new_radius": 455.54667281732276
+  },
+  {
+    "case": "QH3K-WYYW-AEJ7-VPBJ",
+    "channel": 20,
+    "old_radius": 562.4394830610861,
+    "new_radius": 559.9470801686649
+  },
+  {
+    "case": "R4AA-BVZP-2QUH-RZA7",
+    "channel": 7,
+    "old_radius": 725.2048128843712,
+    "new_radius": 464.7621913437754
+  },
+  {
+    "case": "R4AA-BVZP-2QUH-RZA7",
+    "channel": 19,
+    "old_radius": 724.3772923430458,
+    "new_radius": 591.6104326175155
+  },
+  {
+    "case": "R4AA-BVZP-2QUH-RZA7",
+    "channel": 8,
+    "old_radius": 66.86169313483327,
+    "new_radius": 48.79897550259512
+  },
+  {
+    "case": "R4AA-BVZP-2QUH-RZA7",
+    "channel": 2,
+    "old_radius": 690.1979346879648,
+    "new_radius": 547.3111283747464
+  },
+  {
+    "case": "R4AA-BVZP-2QUH-RZA7",
+    "channel": 20,
+    "old_radius": 750.1859577367208,
+    "new_radius": 711.9282550413167
+  },
+  {
+    "case": "R4AA-BVZP-2QUH-RZA7",
+    "channel": 1,
+    "old_radius": 750.2163136911075,
+    "new_radius": 492.5153891143323
+  },
+  {
+    "case": "RVRB-99UE-RS8G-RFNK",
+    "channel": 3,
+    "old_radius": 725.1714887005121,
+    "new_radius": 439.2998050639591
+  },
+  {
+    "case": "RZ5Y-2E72-M5ZX-ZY9W",
+    "channel": 16,
+    "old_radius": 750.180310327219,
+    "new_radius": 750.178522173511
+  },
+  {
+    "case": "RZ5Y-2E72-M5ZX-ZY9W",
+    "channel": 16,
+    "old_radius": 110.06983890648337,
+    "new_radius": 103.1905645100023
+  },
+  {
+    "case": "RZ5Y-2E72-M5ZX-ZY9W",
+    "channel": 3,
+    "old_radius": 750.178522173511,
+    "new_radius": 407.49573811319783
+  },
+  {
+    "case": "RZ5Y-2E72-M5ZX-ZY9W",
+    "channel": 11,
+    "old_radius": 415.12955668735293,
+    "new_radius": 415.12955668735293
+  },
+  {
+    "case": "RZ5Y-2E72-M5ZX-ZY9W",
+    "channel": 11,
+    "old_radius": 415.12955668735293,
+    "new_radius": 275.8114128432342
+  },
+  {
+    "case": "TSS6-EY7J-UYB6-TH3H",
+    "channel": 20,
+    "old_radius": 699.7002600099794,
+    "new_radius": 352.79480399307835
+  },
+  {
+    "case": "TSS6-EY7J-UYB6-TH3H",
+    "channel": 14,
+    "old_radius": 719.3610277639019,
+    "new_radius": 553.8048228566839
+  },
+  {
+    "case": "TSS6-EY7J-UYB6-TH3H",
+    "channel": 14,
+    "old_radius": 553.8048228566839,
+    "new_radius": 307.3771867074871
+  },
+  {
+    "case": "TSS6-EY7J-UYB6-TH3H",
+    "channel": 10,
+    "old_radius": 750.182871339694,
+    "new_radius": 430.93175493496256
+  },
+  {
+    "case": "TSS6-EY7J-UYB6-TH3H",
+    "channel": 3,
+    "old_radius": 451.93627475286365,
+    "new_radius": 451.93627475286365
+  },
+  {
+    "case": "TSS6-EY7J-UYB6-TH3H",
+    "channel": 17,
+    "old_radius": 24.644535101915665,
+    "new_radius": 21.317331377279466
+  },
+  {
+    "case": "UK6R-NPE6-FX7X-3WD7",
+    "channel": 6,
+    "old_radius": 496.5664857170581,
+    "new_radius": 496.5664857170581
+  },
+  {
+    "case": "UK6R-NPE6-FX7X-3WD7",
+    "channel": 2,
+    "old_radius": 722.1430666914782,
+    "new_radius": 722.1430666914782
+  },
+  {
+    "case": "UK6R-NPE6-FX7X-3WD7",
+    "channel": 1,
+    "old_radius": 750.1785221735113,
+    "new_radius": 709.0468031340914
+  },
+  {
+    "case": "UN2R-NYDY-FD8A-RKPP",
+    "channel": 15,
+    "old_radius": 418.72115959168366,
+    "new_radius": 418.72115959168366
+  },
+  {
+    "case": "UN2R-NYDY-FD8A-RKPP",
+    "channel": 5,
+    "old_radius": 712.041863929884,
+    "new_radius": 710.0699314415353
+  },
+  {
+    "case": "UN2R-NYDY-FD8A-RKPP",
+    "channel": 18,
+    "old_radius": 725.3682836428541,
+    "new_radius": 713.8551251154751
+  },
+  {
+    "case": "WS2K-EYS4-EN8J-HZV7",
+    "channel": 10,
+    "old_radius": 447.0922049653927,
+    "new_radius": 447.0922049653927
+  },
+  {
+    "case": "WS2K-EYS4-EN8J-HZV7",
+    "channel": 1,
+    "old_radius": 482.62883976534266,
+    "new_radius": 482.62883976534266
+  },
+  {
+    "case": "WS2K-EYS4-EN8J-HZV7",
+    "channel": 5,
+    "old_radius": 422.30558439585064,
+    "new_radius": 422.30558439585064
+  },
+  {
+    "case": "WS2K-EYS4-EN8J-HZV7",
+    "channel": 10,
+    "old_radius": 447.0922049653927,
+    "new_radius": 447.0922049653927
+  },
+  {
+    "case": "WS2K-EYS4-EN8J-HZV7",
+    "channel": 12,
+    "old_radius": 590.2407287417383,
+    "new_radius": 587.2630783998355
+  },
+  {
+    "case": "WS2K-EYS4-EN8J-HZV7",
+    "channel": 17,
+    "old_radius": 542.0313291285064,
+    "new_radius": 359.9632056278964
+  },
+  {
+    "case": "XUFX-92S8-F734-HPBG",
+    "channel": 12,
+    "old_radius": 492.4092854067699,
+    "new_radius": 492.4092854067699
+  },
+  {
+    "case": "XUFX-92S8-F734-HPBG",
+    "channel": 9,
+    "old_radius": 514.6200229724675,
+    "new_radius": 514.6200229724675
+  },
+  {
+    "case": "YCAF-4CQT-VCED-N4XY",
+    "channel": 5,
+    "old_radius": 750.1787545769565,
+    "new_radius": 433.8608825730459
+  },
+  {
+    "case": "YCAF-4CQT-VCED-N4XY",
+    "channel": 3,
+    "old_radius": 722.4742397468085,
+    "new_radius": 643.3094556897727
+  },
+  {
+    "case": "YCAF-4CQT-VCED-N4XY",
+    "channel": 12,
+    "old_radius": 697.2717220696649,
+    "new_radius": 697.1689521915737
+  },
+  {
+    "case": "YCAF-4CQT-VCED-N4XY",
+    "channel": 20,
+    "old_radius": 750.1785221735103,
+    "new_radius": 750.1785221735103
+  },
+  {
+    "case": "YCAF-4CQT-VCED-N4XY",
+    "channel": 20,
+    "old_radius": 750.1785221735103,
+    "new_radius": 750.1785221735103
+  },
+  {
+    "case": "ZUZT-NMUA-Z746-9J9Z",
+    "channel": 8,
+    "old_radius": 438.5568735388167,
+    "new_radius": 438.5568735388167
+  },
+  {
+    "case": "ZUZT-NMUA-Z746-9J9Z",
+    "channel": 20,
+    "old_radius": 750.178522173512,
+    "new_radius": 392.820598129553
+  },
+  {
+    "case": "ZUZT-NMUA-Z746-9J9Z",
+    "channel": 9,
+    "old_radius": 721.8515627855353,
+    "new_radius": 708.7662354443521
+  },
+  {
+    "case": "ZY2J-3B33-A93U-8CS4",
+    "channel": 9,
+    "old_radius": 493.11245791242396,
+    "new_radius": 493.11245791242396
+  },
+  {
+    "case": "ZY2J-3B33-A93U-8CS4",
+    "channel": 3,
+    "old_radius": 750.1905983410722,
+    "new_radius": 750.1905983410722
+  },
+  {
+    "case": "ZY2J-3B33-A93U-8CS4",
+    "channel": 19,
+    "old_radius": 750.2402686242076,
+    "new_radius": 750.2402686242076
+  },
+  {
+    "case": "ZY2J-3B33-A93U-8CS4",
+    "channel": 6,
+    "old_radius": 724.3196423280976,
+    "new_radius": 517.9977241882204
+  }
+]
