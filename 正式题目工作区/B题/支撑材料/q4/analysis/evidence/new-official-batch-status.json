@@ -1,0 +1,18 @@
+{
+  "requested": 30,
+  "start_actions": 30,
+  "archived": 30,
+  "full_clear": 30,
+  "error": false,
+  "ui": {
+    "phase": "home",
+    "started_at_ms": 1789283482933,
+    "case": null,
+    "updated_at": "2026-09-13T07:11:43.661130+00:00",
+    "mode": "问题4 演练 测试",
+    "ready_at_ms": 1789283488729,
+    "worker_pid": 12696,
+    "last_case": "6GZB-7BEW-6QCE-5QWA",
+    "complete": true
+  }
+}

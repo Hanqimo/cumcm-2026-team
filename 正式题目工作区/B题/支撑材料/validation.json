@@ -1,0 +1,47 @@
+{
+  "check": "imports and config only, no simulator connection",
+  "strategies": [
+    {
+      "package": "q3/v6",
+      "exit_code": 0,
+      "output": "策略 v6；研究版，200 秒/点目标尚未达成。\n自检通过：Python 3.10.11 / numpy 2.2.6 / scipy 1.15.3\n配置可读；端口 2026；未连接模拟器。\n"
+    },
+    {
+      "package": "q3/baselines/v4",
+      "exit_code": 0,
+      "output": "策略 combined_v4；研究版，200 秒/点目标尚未达成。\n自检通过：Python 3.10.11 / numpy 2.2.6 / scipy 1.15.3\n配置可读；端口 2026；未连接模拟器。\n"
+    },
+    {
+      "package": "q3/baselines/CG",
+      "exit_code": 0,
+      "output": "策略 literature_cautious；研究版，200 秒/点目标尚未达成。\n自检通过：Python 3.10.11 / numpy 2.2.6 / scipy 1.15.3\n配置可读；端口 2026；未连接模拟器。\n"
+    },
+    {
+      "package": "q4/M32",
+      "exit_code": 0,
+      "output": "策略 joint；第四问M32 joint；已完成30场官方演练。\n自检通过：Python 3.10.11 / numpy 2.2.6 / scipy 1.15.3\n配置可读；端口 2026；未连接模拟器。\n"
+    },
+    {
+      "package": "q4/baselines/CG",
+      "exit_code": 0,
+      "output": "策略 cautious；第四问覆盖改进版，仅完成本地验证。\n自检通过：Python 3.10.11 / numpy 2.2.6 / scipy 1.15.3\n配置可读；端口 2026；未连接模拟器。\n"
+    },
+    {
+      "package": "q4/baselines/M07",
+      "exit_code": 0,
+      "output": "策略 baseline；第四问覆盖改进版，仅完成本地验证。\n自检通过：Python 3.10.11 / numpy 2.2.6 / scipy 1.15.3\n配置可读；端口 2026；未连接模拟器。\n"
+    }
+  ],
+  "formal_logs_original_hashes_passed": 6,
+  "formal_result_recalculation": "cleared channels, virtual time, accepted enter/exit timestamps and per-source ratios passed",
+  "statistical_recalculation": true,
+  "figures_redrawn": 7,
+  "python_files_syntax_checked": 89,
+  "pdf_layout": {
+    "source_appendix_pages": 88,
+    "AI_pages": 1,
+    "out_of_page_text_blocks": 0,
+    "visual_review": "AI full page, appendix sample pages, and all seven plots reviewed"
+  },
+  "identity_scan": "no actual team number, personal name or absolute user/workspace path found in submitted plaintext/PDFs; encrypted official logs unchanged"
+}

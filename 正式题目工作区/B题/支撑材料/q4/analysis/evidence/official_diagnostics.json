@@ -1,0 +1,23 @@
+{
+  "cautious": {
+    "measures": 8045,
+    "no_signal": 6977,
+    "known_channel_no_signal": 617,
+    "optical_failures": 928,
+    "optical_fallbacks": 30
+  },
+  "m07": {
+    "measures": 7952,
+    "no_signal": 6689,
+    "known_channel_no_signal": 393,
+    "optical_failures": 592,
+    "optical_fallbacks": 23
+  },
+  "m32": {
+    "measures": 7387,
+    "no_signal": 6123,
+    "known_channel_no_signal": 194,
+    "optical_failures": 0,
+    "optical_fallbacks": 0
+  }
+}

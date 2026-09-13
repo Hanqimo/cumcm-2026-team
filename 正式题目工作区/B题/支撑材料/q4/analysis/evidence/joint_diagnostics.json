@@ -1,0 +1,16 @@
+{
+  "certificate_events": 113,
+  "radius_reduction_events": 65,
+  "rejected_boxes": 1374,
+  "median_radius_remaining_fraction": 0.9972305947329203,
+  "minimum_radius_remaining_fraction": 0.1719778706859485,
+  "representative_case": "R4AA-BVZP-2QUH-RZA7",
+  "representative_rank": "15/30 by seconds per actual source (lower median)",
+  "representative_seconds_per_source": 445.24447250000003,
+  "example_selection": "lower median relative radius reduction among all strictly positive radius reductions",
+  "example_case": "5SGS-PVV3-6YKM-XMEH",
+  "example_channel": 9,
+  "example_old_radius": 22.423018000086355,
+  "example_new_radius": 17.400039368572713,
+  "total_optical_failures": 0
+}

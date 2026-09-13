@@ -1,0 +1,40 @@
+{
+  "channel": 3,
+  "origin": [
+    -1263.2267141373904,
+    -173.948098733428
+  ],
+  "rotation_columns": [
+    [
+      0.6698423698674704,
+      0.742503333009577
+    ],
+    [
+      -0.742503333009577,
+      0.6698423698674704
+    ]
+  ],
+  "decision": {
+    "kind": "optical_decision",
+    "channel": 3,
+    "point": [
+      -1263.2267141373904,
+      -173.948098733428
+    ],
+    "predicted_s": 24.89774456718677,
+    "radio_predicted_s": 29.590373521175177,
+    "area_fraction": 0.3836903517724536
+  },
+  "before_radius": 87.43185874407465,
+  "after_failure_radius": 87.43185874407465,
+  "after_radio_radius": 18.27801766515507,
+  "clear_certificate": {
+    "kind": "clear_certificate",
+    "channel": 3,
+    "point": [
+      -1287.2504013101868,
+      -145.7640598434042
+    ],
+    "worst_distance_m": 19.499999999999652
+  }
+}

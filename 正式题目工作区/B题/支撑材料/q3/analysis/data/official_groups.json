@@ -1,0 +1,2478 @@
+{
+  "literature": [
+    {
+      "case": "M7KF-7HYM-RPD2-YW67",
+      "n": 15,
+      "full": true,
+      "time_s": 4528.700761,
+      "per_source_s": 301.91338406666665,
+      "cost": [
+        254.44671735406502,
+        36.0,
+        6.466666666666667,
+        5.0,
+        0.0
+      ],
+      "distance_m": 19083.503801554874,
+      "measures": 108,
+      "switches": 97,
+      "failures": 0,
+      "cleared": 15
+    },
+    {
+      "case": "CFBQ-4JZM-WTB7-6C6F",
+      "n": 14,
+      "full": true,
+      "time_s": 4168.445027,
+      "per_source_s": 297.74607335714285,
+      "cost": [
+        253.53178761127225,
+        33.214285714285715,
+        6.0,
+        5.0,
+        0.0
+      ],
+      "distance_m": 17747.22513278906,
+      "measures": 93,
+      "switches": 84,
+      "failures": 0,
+      "cleared": 14
+    },
+    {
+      "case": "HXZD-QXP8-DJPB-U4QZ",
+      "n": 15,
+      "full": true,
+      "time_s": 4230.880963,
+      "per_source_s": 282.0587308666666,
+      "cost": [
+        238.65873077780822,
+        32.666666666666664,
+        5.733333333333333,
+        5.0,
+        0.0
+      ],
+      "distance_m": 17899.404808335617,
+      "measures": 98,
+      "switches": 86,
+      "failures": 0,
+      "cleared": 15
+    },
+    {
+      "case": "QY9C-2FVA-REZS-P8Q3",
+      "n": 10,
+      "full": true,
+      "time_s": 3699.087528,
+      "per_source_s": 369.9087528,
+      "cost": [
+        301.00875291793756,
+        54.0,
+        9.9,
+        5.0,
+        0.0
+      ],
+      "distance_m": 15050.437645896876,
+      "measures": 108,
+      "switches": 99,
+      "failures": 0,
+      "cleared": 10
+    },
+    {
+      "case": "8W3R-RN6Q-89MW-8CHK",
+      "n": 11,
+      "full": true,
+      "time_s": 3407.913046,
+      "per_source_s": 309.81027690909093,
+      "cost": [
+        241.2648224338728,
+        53.63636363636363,
+        9.909090909090908,
+        5.0,
+        0.0
+      ],
+      "distance_m": 13269.565233863004,
+      "measures": 118,
+      "switches": 109,
+      "failures": 0,
+      "cleared": 11
+    },
+    {
+      "case": "H8S7-TREM-ZX3R-G6DV",
+      "n": 10,
+      "full": true,
+      "time_s": 3965.196136,
+      "per_source_s": 396.5196136,
+      "cost": [
+        321.7196133412035,
+        59.0,
+        10.8,
+        5.0,
+        0.0
+      ],
+      "distance_m": 16085.980667060176,
+      "measures": 118,
+      "switches": 108,
+      "failures": 0,
+      "cleared": 10
+    },
+    {
+      "case": "G6HZ-Y58C-29RB-CQV3",
+      "n": 14,
+      "full": true,
+      "time_s": 3908.857794,
+      "per_source_s": 279.20412814285714,
+      "cost": [
+        238.27555663519348,
+        30.714285714285715,
+        5.214285714285714,
+        5.0,
+        0.0
+      ],
+      "distance_m": 16679.288964463543,
+      "measures": 86,
+      "switches": 73,
+      "failures": 0,
+      "cleared": 14
+    },
+    {
+      "case": "2GH2-UZV5-SGXB-BSPB",
+      "n": 16,
+      "full": true,
+      "time_s": 4559.759846,
+      "per_source_s": 284.984990375,
+      "cost": [
+        247.42249029438213,
+        27.8125,
+        4.75,
+        5.0,
+        0.0
+      ],
+      "distance_m": 19793.79922355057,
+      "measures": 89,
+      "switches": 76,
+      "failures": 0,
+      "cleared": 16
+    },
+    {
+      "case": "PGT7-8Y4E-5Q4T-MU9J",
+      "n": 14,
+      "full": true,
+      "time_s": 4035.012393,
+      "per_source_s": 288.2151709285714,
+      "cost": [
+        238.5008851301386,
+        37.857142857142854,
+        6.857142857142857,
+        5.0,
+        0.0
+      ],
+      "distance_m": 16695.061959109702,
+      "measures": 106,
+      "switches": 96,
+      "failures": 0,
+      "cleared": 14
+    },
+    {
+      "case": "82VN-WPYR-CHUB-QJJH",
+      "n": 11,
+      "full": true,
+      "time_s": 3824.243222,
+      "per_source_s": 347.65847472727273,
+      "cost": [
+        287.93120206003977,
+        46.36363636363637,
+        8.363636363636363,
+        5.0,
+        0.0
+      ],
+      "distance_m": 15836.216113302187,
+      "measures": 102,
+      "switches": 92,
+      "failures": 0,
+      "cleared": 11
+    },
+    {
+      "case": "7JE2-DJ9B-C23Q-EHXW",
+      "n": 14,
+      "full": true,
+      "time_s": 4291.290087,
+      "per_source_s": 306.52072050000004,
+      "cost": [
+        260.23500614314696,
+        35.0,
+        6.285714285714286,
+        5.0,
+        0.0
+      ],
+      "distance_m": 18216.450430020286,
+      "measures": 98,
+      "switches": 88,
+      "failures": 0,
+      "cleared": 14
+    },
+    {
+      "case": "YKZW-BRHM-ZAC2-P4RY",
+      "n": 13,
+      "full": true,
+      "time_s": 4315.095883,
+      "per_source_s": 331.9304525384615,
+      "cost": [
+        280.2381446510212,
+        39.61538461538461,
+        7.076923076923077,
+        5.0,
+        0.0
+      ],
+      "distance_m": 18215.479402316378,
+      "measures": 103,
+      "switches": 92,
+      "failures": 0,
+      "cleared": 13
+    },
+    {
+      "case": "QXUJ-9YJ8-Y5KM-HHG5",
+      "n": 10,
+      "full": true,
+      "time_s": 3881.140064,
+      "per_source_s": 388.1140064,
+      "cost": [
+        313.3140063388426,
+        59.0,
+        10.8,
+        5.0,
+        0.0
+      ],
+      "distance_m": 15665.70031694213,
+      "measures": 118,
+      "switches": 108,
+      "failures": 0,
+      "cleared": 10
+    },
+    {
+      "case": "7CQE-4S7S-93JH-4TPF",
+      "n": 10,
+      "full": true,
+      "time_s": 3915.592597,
+      "per_source_s": 391.5592597,
+      "cost": [
+        321.95925955748817,
+        54.5,
+        10.1,
+        5.0,
+        0.0
+      ],
+      "distance_m": 16097.96297787441,
+      "measures": 109,
+      "switches": 101,
+      "failures": 0,
+      "cleared": 10
+    },
+    {
+      "case": "EPV2-27YA-8T62-9VYE",
+      "n": 11,
+      "full": true,
+      "time_s": 4220.255737,
+      "per_source_s": 383.6596124545455,
+      "cost": [
+        319.02324880040254,
+        50.45454545454545,
+        9.181818181818182,
+        5.0,
+        0.0
+      ],
+      "distance_m": 17546.27868402214,
+      "measures": 111,
+      "switches": 101,
+      "failures": 0,
+      "cleared": 11
+    },
+    {
+      "case": "537Y-JCCJ-47E9-PHHW",
+      "n": 13,
+      "full": true,
+      "time_s": 4429.450666,
+      "per_source_s": 340.7269743076923,
+      "cost": [
+        292.4962050280861,
+        36.92307692307692,
+        6.3076923076923075,
+        5.0,
+        0.0
+      ],
+      "distance_m": 19012.253326825594,
+      "measures": 96,
+      "switches": 82,
+      "failures": 0,
+      "cleared": 13
+    },
+    {
+      "case": "CUQZ-JJ64-RENS-BM96",
+      "n": 14,
+      "full": true,
+      "time_s": 4208.678318,
+      "per_source_s": 300.61987985714285,
+      "cost": [
+        254.40559400775643,
+        35.0,
+        6.214285714285714,
+        5.0,
+        0.0
+      ],
+      "distance_m": 17808.39158054295,
+      "measures": 98,
+      "switches": 87,
+      "failures": 0,
+      "cleared": 14
+    },
+    {
+      "case": "ZEZT-BJU2-9PKV-SS52",
+      "n": 10,
+      "full": true,
+      "time_s": 3351.966444,
+      "per_source_s": 335.1966444,
+      "cost": [
+        261.8966443223669,
+        57.5,
+        10.8,
+        5.0,
+        0.0
+      ],
+      "distance_m": 13094.832216118346,
+      "measures": 115,
+      "switches": 108,
+      "failures": 0,
+      "cleared": 10
+    },
+    {
+      "case": "5ZB3-HBST-BN54-MT2K",
+      "n": 11,
+      "full": true,
+      "time_s": 3540.839463,
+      "per_source_s": 321.8944966363636,
+      "cost": [
+        261.80358742982946,
+        46.81818181818182,
+        8.272727272727273,
+        5.0,
+        0.0
+      ],
+      "distance_m": 14399.197308640621,
+      "measures": 103,
+      "switches": 91,
+      "failures": 0,
+      "cleared": 11
+    },
+    {
+      "case": "KW27-CRR6-E7XY-NT8T",
+      "n": 11,
+      "full": true,
+      "time_s": 4134.759561,
+      "per_source_s": 375.8872328181818,
+      "cost": [
+        313.887232703565,
+        48.18181818181818,
+        8.818181818181818,
+        5.0,
+        0.0
+      ],
+      "distance_m": 17263.797798696076,
+      "measures": 106,
+      "switches": 97,
+      "failures": 0,
+      "cleared": 11
+    },
+    {
+      "case": "ZX9M-EQ78-WKM2-RMKS",
+      "n": 13,
+      "full": true,
+      "time_s": 3915.11469,
+      "per_source_s": 301.16266846153843,
+      "cost": [
+        251.00882210636135,
+        38.46153846153846,
+        6.6923076923076925,
+        5.0,
+        0.0
+      ],
+      "distance_m": 16315.573436913488,
+      "measures": 100,
+      "switches": 87,
+      "failures": 0,
+      "cleared": 13
+    },
+    {
+      "case": "QA8Z-BXD6-GBME-2HJK",
+      "n": 11,
+      "full": true,
+      "time_s": 4148.78052,
+      "per_source_s": 377.1618654545455,
+      "cost": [
+        317.3436833823566,
+        46.36363636363637,
+        8.454545454545455,
+        5.0,
+        0.0
+      ],
+      "distance_m": 17453.90258602961,
+      "measures": 102,
+      "switches": 93,
+      "failures": 0,
+      "cleared": 11
+    },
+    {
+      "case": "WSN9-8J4E-E97Z-CZ34",
+      "n": 14,
+      "full": true,
+      "time_s": 4591.742541,
+      "per_source_s": 327.9816100714285,
+      "cost": [
+        280.1244669810397,
+        36.42857142857143,
+        6.428571428571429,
+        5.0,
+        0.0
+      ],
+      "distance_m": 19608.71268867278,
+      "measures": 102,
+      "switches": 90,
+      "failures": 0,
+      "cleared": 14
+    },
+    {
+      "case": "7H8D-2XVT-DUPS-8W72",
+      "n": 16,
+      "full": true,
+      "time_s": 4871.565031,
+      "per_source_s": 304.4728144375,
+      "cost": [
+        265.78531439076016,
+        28.75,
+        4.9375,
+        5.0,
+        0.0
+      ],
+      "distance_m": 21262.82515126081,
+      "measures": 92,
+      "switches": 79,
+      "failures": 0,
+      "cleared": 16
+    },
+    {
+      "case": "SMFD-M8GK-PFDZ-N24P",
+      "n": 10,
+      "full": true,
+      "time_s": 3696.12985,
+      "per_source_s": 369.612985,
+      "cost": [
+        301.3129851798188,
+        53.5,
+        9.8,
+        5.0,
+        0.0
+      ],
+      "distance_m": 15065.64925899094,
+      "measures": 107,
+      "switches": 98,
+      "failures": 0,
+      "cleared": 10
+    },
+    {
+      "case": "FGMG-EJTS-KQ83-4VAY",
+      "n": 11,
+      "full": true,
+      "time_s": 4216.963224,
+      "per_source_s": 383.3602930909091,
+      "cost": [
+        314.99665673634377,
+        53.63636363636363,
+        9.727272727272727,
+        5.0,
+        0.0
+      ],
+      "distance_m": 17324.81612049891,
+      "measures": 118,
+      "switches": 107,
+      "failures": 0,
+      "cleared": 11
+    },
+    {
+      "case": "DSAS-F8Z8-36E5-X2VH",
+      "n": 14,
+      "full": true,
+      "time_s": 4624.945061,
+      "per_source_s": 330.35321864285714,
+      "cost": [
+        278.06750445230483,
+        40.0,
+        7.285714285714286,
+        5.0,
+        0.0
+      ],
+      "distance_m": 19464.725311661336,
+      "measures": 112,
+      "switches": 102,
+      "failures": 0,
+      "cleared": 14
+    },
+    {
+      "case": "RMZK-3FMV-WQ5P-PB5S",
+      "n": 12,
+      "full": true,
+      "time_s": 4070.126525,
+      "per_source_s": 339.1772104166667,
+      "cost": [
+        282.9272102968771,
+        43.75,
+        7.5,
+        5.0,
+        0.0
+      ],
+      "distance_m": 16975.632617812626,
+      "measures": 105,
+      "switches": 90,
+      "failures": 0,
+      "cleared": 12
+    },
+    {
+      "case": "4D9X-6XHY-T6CV-SC9F",
+      "n": 13,
+      "full": true,
+      "time_s": 3851.747937,
+      "per_source_s": 296.28830284615384,
+      "cost": [
+        242.4421491294559,
+        41.15384615384615,
+        7.6923076923076925,
+        5.0,
+        0.0
+      ],
+      "distance_m": 15758.739693414635,
+      "measures": 107,
+      "switches": 100,
+      "failures": 0,
+      "cleared": 13
+    },
+    {
+      "case": "2HTU-DJ2Q-4983-CMFT",
+      "n": 12,
+      "full": true,
+      "time_s": 4128.542053,
+      "per_source_s": 344.04517108333334,
+      "cost": [
+        284.378504537469,
+        45.833333333333336,
+        8.833333333333334,
+        5.0,
+        0.0
+      ],
+      "distance_m": 17062.71027224814,
+      "measures": 110,
+      "switches": 106,
+      "failures": 0,
+      "cleared": 12
+    }
+  ],
+  "v4": [
+    {
+      "case": "94TK-G6ZC-U287-FW5Q",
+      "n": 11,
+      "full": true,
+      "time_s": 3047.016973,
+      "per_source_s": 277.00154299999997,
+      "cost": [
+        200.00154296001972,
+        60.45454545454545,
+        11.545454545454545,
+        5.0,
+        0.0
+      ],
+      "distance_m": 11000.084862801084,
+      "measures": 133,
+      "switches": 127,
+      "failures": 0,
+      "cleared": 11
+    },
+    {
+      "case": "TJAG-829N-VK29-ZSR8",
+      "n": 16,
+      "full": true,
+      "time_s": 2881.351894,
+      "per_source_s": 180.084493375,
+      "cost": [
+        139.95949327058625,
+        29.6875,
+        5.4375,
+        5.0,
+        0.0
+      ],
+      "distance_m": 11196.7594616469,
+      "measures": 95,
+      "switches": 87,
+      "failures": 0,
+      "cleared": 16
+    },
+    {
+      "case": "8B6K-U7TP-KK49-BC7H",
+      "n": 12,
+      "full": true,
+      "time_s": 3439.204603,
+      "per_source_s": 286.6003835833333,
+      "cost": [
+        225.85038363505302,
+        47.083333333333336,
+        8.666666666666666,
+        5.0,
+        0.0
+      ],
+      "distance_m": 13551.02301810318,
+      "measures": 113,
+      "switches": 104,
+      "failures": 0,
+      "cleared": 12
+    },
+    {
+      "case": "XJE7-H789-ZFC6-WYXA",
+      "n": 10,
+      "full": true,
+      "time_s": 2803.923644,
+      "per_source_s": 280.3923644,
+      "cost": [
+        202.89236427036474,
+        61.0,
+        11.5,
+        5.0,
+        0.0
+      ],
+      "distance_m": 10144.618213518237,
+      "measures": 122,
+      "switches": 115,
+      "failures": 0,
+      "cleared": 10
+    },
+    {
+      "case": "928D-DPGB-JC73-JEGB",
+      "n": 11,
+      "full": true,
+      "time_s": 2719.74793,
+      "per_source_s": 247.24981181818183,
+      "cost": [
+        179.24981181654118,
+        53.18181818181818,
+        9.818181818181818,
+        5.0,
+        0.0
+      ],
+      "distance_m": 9858.739649909765,
+      "measures": 117,
+      "switches": 108,
+      "failures": 0,
+      "cleared": 11
+    },
+    {
+      "case": "HSA4-C77R-JHWA-9FSH",
+      "n": 13,
+      "full": true,
+      "time_s": 2886.680313,
+      "per_source_s": 222.05233176923076,
+      "cost": [
+        166.8215627483971,
+        42.30769230769231,
+        7.923076923076923,
+        5.0,
+        0.0
+      ],
+      "distance_m": 10843.401578645811,
+      "measures": 110,
+      "switches": 103,
+      "failures": 0,
+      "cleared": 13
+    },
+    {
+      "case": "K8UX-X5ZN-8GAY-64HX",
+      "n": 16,
+      "full": true,
+      "time_s": 3231.125268,
+      "per_source_s": 201.94532925,
+      "cost": [
+        155.1953292496838,
+        35.3125,
+        6.4375,
+        5.0,
+        0.0
+      ],
+      "distance_m": 12415.626339974704,
+      "measures": 113,
+      "switches": 103,
+      "failures": 0,
+      "cleared": 16
+    },
+    {
+      "case": "8HUR-ZTJY-EXBX-UD7F",
+      "n": 11,
+      "full": true,
+      "time_s": 3325.319437,
+      "per_source_s": 302.301767,
+      "cost": [
+        234.93813068859797,
+        52.72727272727273,
+        9.636363636363637,
+        5.0,
+        0.0
+      ],
+      "distance_m": 12921.597187872887,
+      "measures": 116,
+      "switches": 106,
+      "failures": 0,
+      "cleared": 11
+    },
+    {
+      "case": "75M3-9YZA-G657-SGBH",
+      "n": 10,
+      "full": true,
+      "time_s": 2677.805287,
+      "per_source_s": 267.7805287,
+      "cost": [
+        183.3805286552894,
+        67.0,
+        12.4,
+        5.0,
+        0.0
+      ],
+      "distance_m": 9169.026432764469,
+      "measures": 134,
+      "switches": 124,
+      "failures": 0,
+      "cleared": 10
+    },
+    {
+      "case": "YCU3-WAUF-AYFU-H4XS",
+      "n": 10,
+      "full": true,
+      "time_s": 2685.037072,
+      "per_source_s": 268.5037072,
+      "cost": [
+        187.60370706455257,
+        64.0,
+        11.9,
+        5.0,
+        0.0
+      ],
+      "distance_m": 9380.185353227627,
+      "measures": 128,
+      "switches": 119,
+      "failures": 0,
+      "cleared": 10
+    },
+    {
+      "case": "4YFV-BJP2-32EP-E499",
+      "n": 15,
+      "full": true,
+      "time_s": 3061.631941,
+      "per_source_s": 204.10879606666668,
+      "cost": [
+        153.4421293115907,
+        38.666666666666664,
+        7.0,
+        5.0,
+        0.0
+      ],
+      "distance_m": 11508.159698369302,
+      "measures": 116,
+      "switches": 105,
+      "failures": 0,
+      "cleared": 15
+    },
+    {
+      "case": "N4RC-D2ZS-PMW3-KWED",
+      "n": 14,
+      "full": true,
+      "time_s": 3263.456707,
+      "per_source_s": 233.1040505,
+      "cost": [
+        179.67547909266472,
+        41.07142857142857,
+        7.357142857142857,
+        5.0,
+        0.0
+      ],
+      "distance_m": 12577.28353648653,
+      "measures": 115,
+      "switches": 103,
+      "failures": 0,
+      "cleared": 14
+    },
+    {
+      "case": "GY6Y-ZMNZ-QWPV-SDVZ",
+      "n": 11,
+      "full": true,
+      "time_s": 2538.829072,
+      "per_source_s": 230.8026429090909,
+      "cost": [
+        157.07537026844486,
+        57.72727272727273,
+        11.0,
+        5.0,
+        0.0
+      ],
+      "distance_m": 8639.145364764467,
+      "measures": 127,
+      "switches": 121,
+      "failures": 0,
+      "cleared": 11
+    },
+    {
+      "case": "TXPN-YCU8-7JNP-UZU2",
+      "n": 15,
+      "full": true,
+      "time_s": 2999.441497,
+      "per_source_s": 199.96276646666666,
+      "cost": [
+        156.16276643745093,
+        32.666666666666664,
+        6.133333333333334,
+        5.0,
+        0.0
+      ],
+      "distance_m": 11712.207482808819,
+      "measures": 98,
+      "switches": 92,
+      "failures": 0,
+      "cleared": 15
+    },
+    {
+      "case": "WBJB-QE7A-NKWY-YMDH",
+      "n": 10,
+      "full": true,
+      "time_s": 2824.034439,
+      "per_source_s": 282.4034439,
+      "cost": [
+        200.20344391848553,
+        65.0,
+        12.2,
+        5.0,
+        0.0
+      ],
+      "distance_m": 10010.172195924277,
+      "measures": 130,
+      "switches": 122,
+      "failures": 0,
+      "cleared": 10
+    },
+    {
+      "case": "R2TD-Z4WG-CEHS-Z4XF",
+      "n": 13,
+      "full": true,
+      "time_s": 2886.215612,
+      "per_source_s": 222.01658553846153,
+      "cost": [
+        161.40120114506485,
+        46.92307692307692,
+        8.692307692307692,
+        5.0,
+        0.0
+      ],
+      "distance_m": 10491.078074429215,
+      "measures": 122,
+      "switches": 113,
+      "failures": 0,
+      "cleared": 13
+    },
+    {
+      "case": "NZNC-SXQM-AHNS-ZPZ6",
+      "n": 14,
+      "full": true,
+      "time_s": 2852.100778,
+      "per_source_s": 203.72148414285715,
+      "cost": [
+        155.86434126141953,
+        36.07142857142857,
+        6.785714285714286,
+        5.0,
+        0.0
+      ],
+      "distance_m": 10910.503888299367,
+      "measures": 101,
+      "switches": 95,
+      "failures": 0,
+      "cleared": 14
+    },
+    {
+      "case": "DGKH-2WRM-ZAR9-U2Q6",
+      "n": 13,
+      "full": true,
+      "time_s": 3108.628062,
+      "per_source_s": 239.12523553846157,
+      "cost": [
+        175.58677429146718,
+        49.61538461538461,
+        8.923076923076923,
+        5.0,
+        0.0
+      ],
+      "distance_m": 11413.140328945366,
+      "measures": 129,
+      "switches": 116,
+      "failures": 0,
+      "cleared": 13
+    },
+    {
+      "case": "GZ3H-F6DX-EVYK-CYAX",
+      "n": 12,
+      "full": true,
+      "time_s": 2641.279414,
+      "per_source_s": 220.10661783333333,
+      "cost": [
+        159.68995114252866,
+        46.666666666666664,
+        8.75,
+        5.0,
+        0.0
+      ],
+      "distance_m": 9581.39706855172,
+      "measures": 112,
+      "switches": 105,
+      "failures": 0,
+      "cleared": 12
+    },
+    {
+      "case": "9B39-47S4-PDAW-XMG5",
+      "n": 11,
+      "full": true,
+      "time_s": 2850.825037,
+      "per_source_s": 259.16591245454543,
+      "cost": [
+        193.34773059243662,
+        51.36363636363637,
+        9.454545454545455,
+        5.0,
+        0.0
+      ],
+      "distance_m": 10634.125182584014,
+      "measures": 113,
+      "switches": 104,
+      "failures": 0,
+      "cleared": 11
+    },
+    {
+      "case": "G8D9-AUC7-UN24-5V8K",
+      "n": 13,
+      "full": true,
+      "time_s": 2902.878736,
+      "per_source_s": 223.2983643076923,
+      "cost": [
+        167.14451814173069,
+        43.07692307692308,
+        8.076923076923077,
+        5.0,
+        0.0
+      ],
+      "distance_m": 10864.393679212493,
+      "measures": 112,
+      "switches": 105,
+      "failures": 0,
+      "cleared": 13
+    },
+    {
+      "case": "JYN4-QM8F-QXNW-JWDN",
+      "n": 14,
+      "full": true,
+      "time_s": 3186.717846,
+      "per_source_s": 227.6227032857143,
+      "cost": [
+        174.4084176982447,
+        40.714285714285715,
+        7.5,
+        5.0,
+        0.0
+      ],
+      "distance_m": 12208.58923887713,
+      "measures": 114,
+      "switches": 105,
+      "failures": 0,
+      "cleared": 14
+    },
+    {
+      "case": "HYAQ-6UHY-4YVR-SJCM",
+      "n": 16,
+      "full": true,
+      "time_s": 3147.85173,
+      "per_source_s": 196.740733125,
+      "cost": [
+        154.17823318311716,
+        31.875,
+        5.6875,
+        5.0,
+        0.0
+      ],
+      "distance_m": 12334.258654649373,
+      "measures": 102,
+      "switches": 91,
+      "failures": 0,
+      "cleared": 16
+    },
+    {
+      "case": "TE9T-VPA2-6EXQ-HV5T",
+      "n": 10,
+      "full": true,
+      "time_s": 2725.572592,
+      "per_source_s": 272.5572592,
+      "cost": [
+        190.3572590156794,
+        65.0,
+        12.2,
+        5.0,
+        0.0
+      ],
+      "distance_m": 9517.86295078397,
+      "measures": 130,
+      "switches": 122,
+      "failures": 0,
+      "cleared": 10
+    },
+    {
+      "case": "64Q7-VTNR-2ZDZ-KRGT",
+      "n": 12,
+      "full": true,
+      "time_s": 3377.285946,
+      "per_source_s": 281.4404955,
+      "cost": [
+        205.35716216846018,
+        60.0,
+        11.083333333333334,
+        5.0,
+        0.0
+      ],
+      "distance_m": 12321.429730107611,
+      "measures": 144,
+      "switches": 133,
+      "failures": 0,
+      "cleared": 12
+    },
+    {
+      "case": "PY7C-C8EJ-9NP3-VY33",
+      "n": 15,
+      "full": true,
+      "time_s": 2901.443204,
+      "per_source_s": 193.42954693333334,
+      "cost": [
+        143.2962136047267,
+        38.0,
+        7.133333333333334,
+        5.0,
+        0.0
+      ],
+      "distance_m": 10747.2160203545,
+      "measures": 114,
+      "switches": 107,
+      "failures": 0,
+      "cleared": 15
+    },
+    {
+      "case": "ARRC-HPBH-5PZS-KJM9",
+      "n": 11,
+      "full": true,
+      "time_s": 2847.35374,
+      "per_source_s": 258.85034,
+      "cost": [
+        190.66852185197268,
+        53.18181818181818,
+        10.0,
+        5.0,
+        0.0
+      ],
+      "distance_m": 10486.768701858498,
+      "measures": 117,
+      "switches": 110,
+      "failures": 0,
+      "cleared": 11
+    },
+    {
+      "case": "2G6Z-J8US-J6SX-HNC6",
+      "n": 16,
+      "full": true,
+      "time_s": 3003.682642,
+      "per_source_s": 187.730165125,
+      "cost": [
+        147.6676652268436,
+        29.6875,
+        5.375,
+        5.0,
+        0.0
+      ],
+      "distance_m": 11813.413218147489,
+      "measures": 95,
+      "switches": 86,
+      "failures": 0,
+      "cleared": 16
+    },
+    {
+      "case": "QMKV-8WSS-5E5B-SUVZ",
+      "n": 16,
+      "full": true,
+      "time_s": 3352.790596,
+      "per_source_s": 209.54941225,
+      "cost": [
+        161.54941219357178,
+        36.25,
+        6.75,
+        5.0,
+        0.0
+      ],
+      "distance_m": 12923.952975485743,
+      "measures": 116,
+      "switches": 108,
+      "failures": 0,
+      "cleared": 16
+    },
+    {
+      "case": "93EC-EPVR-T8SS-W54R",
+      "n": 15,
+      "full": true,
+      "time_s": 3055.752544,
+      "per_source_s": 203.71683626666666,
+      "cost": [
+        154.51683622825615,
+        37.333333333333336,
+        6.866666666666666,
+        5.0,
+        0.0
+      ],
+      "distance_m": 11588.762717119213,
+      "measures": 112,
+      "switches": 103,
+      "failures": 0,
+      "cleared": 15
+    },
+    {
+      "case": "XE24-6AHD-APXQ-5H86",
+      "n": 11,
+      "full": true,
+      "time_s": 3145.505911,
+      "per_source_s": 285.95508281818184,
+      "cost": [
+        213.04599175574702,
+        57.27272727272727,
+        10.636363636363637,
+        5.0,
+        0.0
+      ],
+      "distance_m": 11717.529546566086,
+      "measures": 126,
+      "switches": 117,
+      "failures": 0,
+      "cleared": 11
+    },
+    {
+      "case": "G5SK-VUM8-AC8J-VSEQ",
+      "n": 13,
+      "full": true,
+      "time_s": 2927.158316,
+      "per_source_s": 225.1660243076923,
+      "cost": [
+        165.08910112825546,
+        46.53846153846154,
+        8.538461538461538,
+        5.0,
+        0.0
+      ],
+      "distance_m": 10730.791573336604,
+      "measures": 121,
+      "switches": 111,
+      "failures": 0,
+      "cleared": 13
+    },
+    {
+      "case": "7RQR-744V-623Y-9P9X",
+      "n": 12,
+      "full": true,
+      "time_s": 3189.576866,
+      "per_source_s": 265.79807216666666,
+      "cost": [
+        201.04807211944453,
+        50.416666666666664,
+        9.333333333333334,
+        5.0,
+        0.0
+      ],
+      "distance_m": 12062.884327166672,
+      "measures": 121,
+      "switches": 112,
+      "failures": 0,
+      "cleared": 12
+    },
+    {
+      "case": "S4AV-SQF2-MJ7S-N4JE",
+      "n": 14,
+      "full": true,
+      "time_s": 3154.114852,
+      "per_source_s": 225.29391800000002,
+      "cost": [
+        167.43677526884525,
+        44.642857142857146,
+        8.214285714285714,
+        5.0,
+        0.0
+      ],
+      "distance_m": 11720.57426881917,
+      "measures": 125,
+      "switches": 115,
+      "failures": 0,
+      "cleared": 14
+    },
+    {
+      "case": "S4AU-8A7S-STPN-H959",
+      "n": 12,
+      "full": true,
+      "time_s": 2941.348483,
+      "per_source_s": 245.11237358333335,
+      "cost": [
+        182.779040090984,
+        48.333333333333336,
+        9.0,
+        5.0,
+        0.0
+      ],
+      "distance_m": 10966.742405459041,
+      "measures": 116,
+      "switches": 108,
+      "failures": 0,
+      "cleared": 12
+    },
+    {
+      "case": "JX2Q-CXBY-2JWJ-8QKS",
+      "n": 11,
+      "full": true,
+      "time_s": 2917.703386,
+      "per_source_s": 265.2457623636364,
+      "cost": [
+        196.70030784520853,
+        53.63636363636363,
+        9.909090909090908,
+        5.0,
+        0.0
+      ],
+      "distance_m": 10818.51693148647,
+      "measures": 118,
+      "switches": 109,
+      "failures": 0,
+      "cleared": 11
+    },
+    {
+      "case": "DNUG-FAFE-B38F-FHF5",
+      "n": 12,
+      "full": true,
+      "time_s": 3522.286721,
+      "per_source_s": 293.5238934166667,
+      "cost": [
+        224.02389363665918,
+        54.583333333333336,
+        9.916666666666666,
+        5.0,
+        0.0
+      ],
+      "distance_m": 13441.433618199551,
+      "measures": 131,
+      "switches": 119,
+      "failures": 0,
+      "cleared": 12
+    },
+    {
+      "case": "875P-JJMA-VRA5-TDVG",
+      "n": 14,
+      "full": true,
+      "time_s": 2838.271903,
+      "per_source_s": 202.73370735714283,
+      "cost": [
+        149.09085023971937,
+        41.07142857142857,
+        7.571428571428571,
+        5.0,
+        0.0
+      ],
+      "distance_m": 10436.359516780356,
+      "measures": 115,
+      "switches": 106,
+      "failures": 0,
+      "cleared": 14
+    },
+    {
+      "case": "Y5NY-PSVU-RNFP-BXCV",
+      "n": 16,
+      "full": true,
+      "time_s": 2648.421879,
+      "per_source_s": 165.5263674375,
+      "cost": [
+        126.21386748944971,
+        29.0625,
+        5.25,
+        5.0,
+        0.0
+      ],
+      "distance_m": 10097.109399155977,
+      "measures": 93,
+      "switches": 84,
+      "failures": 0,
+      "cleared": 16
+    },
+    {
+      "case": "KG4M-MMTW-8DB7-U7VH",
+      "n": 13,
+      "full": true,
+      "time_s": 2796.954841,
+      "per_source_s": 215.1503723846154,
+      "cost": [
+        159.61191077159282,
+        42.69230769230769,
+        7.846153846153846,
+        5.0,
+        0.0
+      ],
+      "distance_m": 10374.774200153533,
+      "measures": 111,
+      "switches": 102,
+      "failures": 0,
+      "cleared": 13
+    },
+    {
+      "case": "GNNB-HXEB-BPHT-UGMS",
+      "n": 12,
+      "full": true,
+      "time_s": 3557.778085,
+      "per_source_s": 296.4815070833333,
+      "cost": [
+        226.8981736313721,
+        54.583333333333336,
+        10.0,
+        5.0,
+        0.0
+      ],
+      "distance_m": 13613.890417882325,
+      "measures": 131,
+      "switches": 120,
+      "failures": 0,
+      "cleared": 12
+    },
+    {
+      "case": "SAA8-TT62-K42R-7KVQ",
+      "n": 10,
+      "full": true,
+      "time_s": 2786.405065,
+      "per_source_s": 278.6405065,
+      "cost": [
+        198.94050645520784,
+        63.0,
+        11.7,
+        5.0,
+        0.0
+      ],
+      "distance_m": 9947.025322760392,
+      "measures": 126,
+      "switches": 117,
+      "failures": 0,
+      "cleared": 10
+    },
+    {
+      "case": "UFKN-GWW7-GUJ3-NNC8",
+      "n": 10,
+      "full": true,
+      "time_s": 2636.610205,
+      "per_source_s": 263.6610205,
+      "cost": [
+        187.36102042093052,
+        60.0,
+        11.3,
+        5.0,
+        0.0
+      ],
+      "distance_m": 9368.051021046525,
+      "measures": 120,
+      "switches": 113,
+      "failures": 0,
+      "cleared": 10
+    },
+    {
+      "case": "Y86F-QSJ7-W2NQ-32VV",
+      "n": 13,
+      "full": true,
+      "time_s": 3184.417888,
+      "per_source_s": 244.95522215384614,
+      "cost": [
+        178.49368369814005,
+        51.53846153846154,
+        9.923076923076923,
+        5.0,
+        0.0
+      ],
+      "distance_m": 11602.089440379103,
+      "measures": 134,
+      "switches": 129,
+      "failures": 0,
+      "cleared": 13
+    },
+    {
+      "case": "ZSFA-JSRB-5NUZ-6FVQ",
+      "n": 16,
+      "full": true,
+      "time_s": 2852.010576,
+      "per_source_s": 178.250661,
+      "cost": [
+        130.75066082805728,
+        35.9375,
+        6.5625,
+        5.0,
+        0.0
+      ],
+      "distance_m": 10460.052866244581,
+      "measures": 115,
+      "switches": 105,
+      "failures": 0,
+      "cleared": 16
+    },
+    {
+      "case": "58FP-YWHK-V65G-SJPW",
+      "n": 12,
+      "full": true,
+      "time_s": 3036.557114,
+      "per_source_s": 253.0464261666667,
+      "cost": [
+        191.21309291053635,
+        47.916666666666664,
+        8.916666666666666,
+        5.0,
+        0.0
+      ],
+      "distance_m": 11472.78557463218,
+      "measures": 115,
+      "switches": 107,
+      "failures": 0,
+      "cleared": 12
+    },
+    {
+      "case": "PFFF-HZB3-FD29-GJ5J",
+      "n": 12,
+      "full": true,
+      "time_s": 2765.244233,
+      "per_source_s": 230.43701941666666,
+      "cost": [
+        164.02035292254615,
+        51.666666666666664,
+        9.75,
+        5.0,
+        0.0
+      ],
+      "distance_m": 9841.221175352768,
+      "measures": 124,
+      "switches": 117,
+      "failures": 0,
+      "cleared": 12
+    },
+    {
+      "case": "NS4V-X9H7-TPAJ-FM7P",
+      "n": 14,
+      "full": true,
+      "time_s": 3076.235144,
+      "per_source_s": 219.73108171428572,
+      "cost": [
+        162.73108158385529,
+        43.92857142857143,
+        8.071428571428571,
+        5.0,
+        0.0
+      ],
+      "distance_m": 11391.175710869871,
+      "measures": 123,
+      "switches": 113,
+      "failures": 0,
+      "cleared": 14
+    },
+    {
+      "case": "ZK4T-HPE4-2WRH-ZFEG",
+      "n": 15,
+      "full": true,
+      "time_s": 3299.533182,
+      "per_source_s": 219.9688788,
+      "cost": [
+        166.63554547075609,
+        40.666666666666664,
+        7.666666666666667,
+        5.0,
+        0.0
+      ],
+      "distance_m": 12497.665910306707,
+      "measures": 122,
+      "switches": 115,
+      "failures": 0,
+      "cleared": 15
+    },
+    {
+      "case": "9379-W2S7-EQUV-2AM3",
+      "n": 12,
+      "full": true,
+      "time_s": 3166.665227,
+      "per_source_s": 263.88876891666666,
+      "cost": [
+        197.13876879061695,
+        52.083333333333336,
+        9.666666666666666,
+        5.0,
+        0.0
+      ],
+      "distance_m": 11828.326127437018,
+      "measures": 125,
+      "switches": 116,
+      "failures": 0,
+      "cleared": 12
+    }
+  ],
+  "v6": [
+    {
+      "case": "NVDB-DCMS-A2R4-RKQ8",
+      "n": 12,
+      "full": true,
+      "time_s": 2905.991983,
+      "per_source_s": 242.16599858333333,
+      "cost": [
+        180.99933210439838,
+        46.666666666666664,
+        9.0,
+        5.0,
+        0.5
+      ],
+      "distance_m": 10859.959926263902,
+      "measures": 112,
+      "switches": 108,
+      "failures": 2,
+      "cleared": 12
+    },
+    {
+      "case": "JDAK-2J8H-GBR4-X6WQ",
+      "n": 12,
+      "full": true,
+      "time_s": 3071.536639,
+      "per_source_s": 255.96138658333334,
+      "cost": [
+        193.0447199024767,
+        47.916666666666664,
+        9.25,
+        5.0,
+        0.75
+      ],
+      "distance_m": 11582.683194148602,
+      "measures": 115,
+      "switches": 111,
+      "failures": 3,
+      "cleared": 12
+    },
+    {
+      "case": "2QHP-TS2K-PSN3-XKRJ",
+      "n": 13,
+      "full": true,
+      "time_s": 2927.903399,
+      "per_source_s": 225.22333838461537,
+      "cost": [
+        156.60795369335636,
+        53.07692307692308,
+        9.846153846153847,
+        5.0,
+        0.6923076923076923
+      ],
+      "distance_m": 10179.516990068163,
+      "measures": 138,
+      "switches": 128,
+      "failures": 3,
+      "cleared": 13
+    },
+    {
+      "case": "AMA6-TAPH-2MPJ-VCU6",
+      "n": 12,
+      "full": true,
+      "time_s": 2729.721886,
+      "per_source_s": 227.47682383333333,
+      "cost": [
+        162.89349044532335,
+        49.583333333333336,
+        9.5,
+        5.0,
+        0.5
+      ],
+      "distance_m": 9773.6094267194,
+      "measures": 119,
+      "switches": 114,
+      "failures": 2,
+      "cleared": 12
+    },
+    {
+      "case": "P3P4-FF2K-UNVH-Y6G4",
+      "n": 16,
+      "full": true,
+      "time_s": 3392.007789,
+      "per_source_s": 212.0004868125,
+      "cost": [
+        166.6254867846879,
+        33.4375,
+        6.375,
+        5.0,
+        0.5625
+      ],
+      "distance_m": 13330.038942775032,
+      "measures": 107,
+      "switches": 102,
+      "failures": 3,
+      "cleared": 16
+    },
+    {
+      "case": "PBAG-8WNX-WS2E-V4BM",
+      "n": 13,
+      "full": true,
+      "time_s": 2873.074881,
+      "per_source_s": 221.00576007692308,
+      "cost": [
+        160.92883709798207,
+        46.15384615384615,
+        8.692307692307692,
+        5.0,
+        0.23076923076923078
+      ],
+      "distance_m": 10460.374411368835,
+      "measures": 120,
+      "switches": 113,
+      "failures": 1,
+      "cleared": 13
+    },
+    {
+      "case": "S7P2-6NPZ-GAGH-7KF4",
+      "n": 15,
+      "full": true,
+      "time_s": 3232.33477,
+      "per_source_s": 215.48898466666665,
+      "cost": [
+        166.95565138817855,
+        36.333333333333336,
+        7.0,
+        5.0,
+        0.2
+      ],
+      "distance_m": 12521.673854113393,
+      "measures": 109,
+      "switches": 105,
+      "failures": 1,
+      "cleared": 15
+    },
+    {
+      "case": "UGH7-YRHU-8PZQ-DGJ9",
+      "n": 10,
+      "full": true,
+      "time_s": 2718.815485,
+      "per_source_s": 271.8815485,
+      "cost": [
+        195.2815484623269,
+        60.0,
+        11.3,
+        5.0,
+        0.3
+      ],
+      "distance_m": 9764.077423116345,
+      "measures": 120,
+      "switches": 113,
+      "failures": 1,
+      "cleared": 10
+    },
+    {
+      "case": "QJU7-8RMG-W94F-6JYG",
+      "n": 12,
+      "full": true,
+      "time_s": 2853.466843,
+      "per_source_s": 237.78890358333334,
+      "cost": [
+        175.12223691376266,
+        47.916666666666664,
+        9.25,
+        5.0,
+        0.5
+      ],
+      "distance_m": 10507.33421482576,
+      "measures": 115,
+      "switches": 111,
+      "failures": 2,
+      "cleared": 12
+    },
+    {
+      "case": "X9PM-KRWR-2QXN-CR34",
+      "n": 11,
+      "full": true,
+      "time_s": 2891.618826,
+      "per_source_s": 262.8744387272727,
+      "cost": [
+        193.32898421406978,
+        53.63636363636363,
+        10.090909090909092,
+        5.0,
+        0.8181818181818182
+      ],
+      "distance_m": 10633.094131773836,
+      "measures": 118,
+      "switches": 111,
+      "failures": 3,
+      "cleared": 11
+    },
+    {
+      "case": "DM3J-RV3V-WT6W-8DXQ",
+      "n": 12,
+      "full": true,
+      "time_s": 2790.015007,
+      "per_source_s": 232.50125058333333,
+      "cost": [
+        175.50125060788397,
+        42.916666666666664,
+        8.333333333333334,
+        5.0,
+        0.75
+      ],
+      "distance_m": 10530.075036473037,
+      "measures": 103,
+      "switches": 100,
+      "failures": 3,
+      "cleared": 12
+    },
+    {
+      "case": "Q3YX-2QCK-SGKT-M82P",
+      "n": 12,
+      "full": true,
+      "time_s": 2853.132541,
+      "per_source_s": 237.76104508333333,
+      "cost": [
+        168.34437860209118,
+        53.333333333333336,
+        10.083333333333334,
+        5.0,
+        1.0
+      ],
+      "distance_m": 10100.662716125471,
+      "measures": 128,
+      "switches": 121,
+      "failures": 4,
+      "cleared": 12
+    },
+    {
+      "case": "TN99-QFNB-HNJ3-D58J",
+      "n": 14,
+      "full": true,
+      "time_s": 3135.623599,
+      "per_source_s": 223.97311421428572,
+      "cost": [
+        167.75882860516285,
+        42.857142857142854,
+        8.142857142857142,
+        5.0,
+        0.21428571428571427
+      ],
+      "distance_m": 11743.1180023614,
+      "measures": 120,
+      "switches": 114,
+      "failures": 1,
+      "cleared": 14
+    },
+    {
+      "case": "9DCU-HFSN-XPQV-YKTR",
+      "n": 16,
+      "full": true,
+      "time_s": 2889.714448,
+      "per_source_s": 180.607153,
+      "cost": [
+        131.85715310340956,
+        36.5625,
+        7.0,
+        5.0,
+        0.1875
+      ],
+      "distance_m": 10548.572248272765,
+      "measures": 117,
+      "switches": 112,
+      "failures": 1,
+      "cleared": 16
+    },
+    {
+      "case": "U2GH-5ETW-59BB-HRTY",
+      "n": 12,
+      "full": true,
+      "time_s": 2842.806125,
+      "per_source_s": 236.90051041666666,
+      "cost": [
+        173.81717709968407,
+        48.75,
+        9.333333333333334,
+        5.0,
+        0.0
+      ],
+      "distance_m": 10429.030625981044,
+      "measures": 117,
+      "switches": 112,
+      "failures": 0,
+      "cleared": 12
+    },
+    {
+      "case": "UF4F-QF7Z-UXKC-WQ88",
+      "n": 11,
+      "full": true,
+      "time_s": 2704.211663,
+      "per_source_s": 245.83742390909092,
+      "cost": [
+        167.20106026113112,
+        61.81818181818182,
+        11.818181818181818,
+        5.0,
+        0.0
+      ],
+      "distance_m": 9196.058314362212,
+      "measures": 136,
+      "switches": 130,
+      "failures": 0,
+      "cleared": 11
+    },
+    {
+      "case": "2UAJ-JFHQ-4R58-P5ND",
+      "n": 15,
+      "full": true,
+      "time_s": 3227.628727,
+      "per_source_s": 215.17524846666666,
+      "cost": [
+        162.1752481724403,
+        40.0,
+        7.6,
+        5.0,
+        0.4
+      ],
+      "distance_m": 12163.143612933023,
+      "measures": 120,
+      "switches": 114,
+      "failures": 2,
+      "cleared": 15
+    },
+    {
+      "case": "QN7N-6QN5-XJPS-EAAF",
+      "n": 13,
+      "full": true,
+      "time_s": 2801.037914,
+      "per_source_s": 215.46445492307691,
+      "cost": [
+        163.15676256531054,
+        39.61538461538461,
+        7.461538461538462,
+        5.0,
+        0.23076923076923078
+      ],
+      "distance_m": 10605.189566745184,
+      "measures": 103,
+      "switches": 97,
+      "failures": 1,
+      "cleared": 13
+    },
+    {
+      "case": "EW3D-92GM-MVEJ-QZ22",
+      "n": 13,
+      "full": true,
+      "time_s": 3148.917439,
+      "per_source_s": 242.22441838461538,
+      "cost": [
+        181.839802870859,
+        46.15384615384615,
+        8.76923076923077,
+        5.0,
+        0.46153846153846156
+      ],
+      "distance_m": 11819.587186605833,
+      "measures": 120,
+      "switches": 114,
+      "failures": 2,
+      "cleared": 13
+    },
+    {
+      "case": "6S56-TZW8-NRVA-Y3FM",
+      "n": 14,
+      "full": true,
+      "time_s": 2837.695461,
+      "per_source_s": 202.6925329285714,
+      "cost": [
+        148.62110437124758,
+        41.07142857142857,
+        7.571428571428571,
+        5.0,
+        0.42857142857142855
+      ],
+      "distance_m": 10403.47730598733,
+      "measures": 115,
+      "switches": 106,
+      "failures": 2,
+      "cleared": 14
+    },
+    {
+      "case": "QAP6-3M98-CCK3-VHFY",
+      "n": 10,
+      "full": true,
+      "time_s": 2692.504597,
+      "per_source_s": 269.2504597,
+      "cost": [
+        190.25045973489688,
+        62.0,
+        11.7,
+        5.0,
+        0.3
+      ],
+      "distance_m": 9512.522986744843,
+      "measures": 124,
+      "switches": 117,
+      "failures": 1,
+      "cleared": 10
+    },
+    {
+      "case": "T446-VHAY-76FH-9VYW",
+      "n": 13,
+      "full": true,
+      "time_s": 2949.268573,
+      "per_source_s": 226.8668133076923,
+      "cost": [
+        159.94373651982536,
+        51.92307692307692,
+        9.76923076923077,
+        5.0,
+        0.23076923076923078
+      ],
+      "distance_m": 10396.34287378865,
+      "measures": 135,
+      "switches": 127,
+      "failures": 1,
+      "cleared": 13
+    },
+    {
+      "case": "4KVU-S2H5-TP3H-UHMC",
+      "n": 15,
+      "full": true,
+      "time_s": 3079.142303,
+      "per_source_s": 205.27615353333334,
+      "cost": [
+        153.94282001612586,
+        39.0,
+        7.333333333333333,
+        5.0,
+        0.0
+      ],
+      "distance_m": 11545.71150120944,
+      "measures": 117,
+      "switches": 110,
+      "failures": 0,
+      "cleared": 15
+    },
+    {
+      "case": "WTRW-7H7P-X2DP-JK47",
+      "n": 13,
+      "full": true,
+      "time_s": 2931.118063,
+      "per_source_s": 225.4706202307692,
+      "cost": [
+        163.1629279359781,
+        48.07692307692308,
+        9.23076923076923,
+        5.0,
+        0.0
+      ],
+      "distance_m": 10605.590315838577,
+      "measures": 125,
+      "switches": 120,
+      "failures": 0,
+      "cleared": 13
+    },
+    {
+      "case": "7PYV-WGHE-VCR7-2CA4",
+      "n": 14,
+      "full": true,
+      "time_s": 2815.982741,
+      "per_source_s": 201.14162435714283,
+      "cost": [
+        141.85590999232997,
+        45.0,
+        8.642857142857142,
+        5.0,
+        0.6428571428571429
+      ],
+      "distance_m": 9929.913699463099,
+      "measures": 126,
+      "switches": 121,
+      "failures": 3,
+      "cleared": 14
+    },
+    {
+      "case": "JHYC-YEVY-K4C2-MR9Y",
+      "n": 16,
+      "full": true,
+      "time_s": 2775.846493,
+      "per_source_s": 173.4904058125,
+      "cost": [
+        134.61540578274986,
+        28.125,
+        5.1875,
+        5.0,
+        0.5625
+      ],
+      "distance_m": 10769.232462619988,
+      "measures": 90,
+      "switches": 83,
+      "failures": 3,
+      "cleared": 16
+    },
+    {
+      "case": "G5ZP-BXW5-G6RA-A5B8",
+      "n": 11,
+      "full": true,
+      "time_s": 3036.299551,
+      "per_source_s": 276.0272319090909,
+      "cost": [
+        211.11814127848186,
+        50.0,
+        9.363636363636363,
+        5.0,
+        0.5454545454545454
+      ],
+      "distance_m": 11611.497770316502,
+      "measures": 110,
+      "switches": 103,
+      "failures": 2,
+      "cleared": 11
+    },
+    {
+      "case": "2AEB-Y8A9-MFA9-E6JV",
+      "n": 14,
+      "full": true,
+      "time_s": 3195.388618,
+      "per_source_s": 228.24204414285714,
+      "cost": [
+        172.81347261841094,
+        42.142857142857146,
+        7.857142857142857,
+        5.0,
+        0.42857142857142855
+      ],
+      "distance_m": 12096.943083288767,
+      "measures": 118,
+      "switches": 110,
+      "failures": 2,
+      "cleared": 14
+    },
+    {
+      "case": "CJM4-SGSK-89X5-65Z2",
+      "n": 12,
+      "full": true,
+      "time_s": 2752.40483,
+      "per_source_s": 229.36706916666665,
+      "cost": [
+        164.20040259298267,
+        50.416666666666664,
+        9.25,
+        5.0,
+        0.5
+      ],
+      "distance_m": 9852.02415557896,
+      "measures": 121,
+      "switches": 111,
+      "failures": 2,
+      "cleared": 12
+    },
+    {
+      "case": "NKAF-AMEJ-V5Z8-2M2E",
+      "n": 10,
+      "full": true,
+      "time_s": 2604.623354,
+      "per_source_s": 260.4623354,
+      "cost": [
+        185.76233567874868,
+        57.5,
+        11.3,
+        5.0,
+        0.9
+      ],
+      "distance_m": 9288.116783937434,
+      "measures": 115,
+      "switches": 113,
+      "failures": 3,
+      "cleared": 10
+    },
+    {
+      "case": "DBKY-U9MB-EENU-UCH6",
+      "n": 15,
+      "full": true,
+      "time_s": 3141.646988,
+      "per_source_s": 209.44313253333334,
+      "cost": [
+        159.44313251847706,
+        37.666666666666664,
+        7.133333333333334,
+        5.0,
+        0.2
+      ],
+      "distance_m": 11958.23493888578,
+      "measures": 113,
+      "switches": 107,
+      "failures": 1,
+      "cleared": 15
+    },
+    {
+      "case": "VVZW-2DFG-PNXX-5CDE",
+      "n": 12,
+      "full": true,
+      "time_s": 2793.015291,
+      "per_source_s": 232.75127425000002,
+      "cost": [
+        166.58460755768058,
+        51.25,
+        9.666666666666666,
+        5.0,
+        0.25
+      ],
+      "distance_m": 9995.076453460835,
+      "measures": 123,
+      "switches": 116,
+      "failures": 1,
+      "cleared": 12
+    },
+    {
+      "case": "WXUR-FR79-6SFH-CYKS",
+      "n": 12,
+      "full": true,
+      "time_s": 2960.058437,
+      "per_source_s": 246.67153641666667,
+      "cost": [
+        184.67153635287204,
+        47.5,
+        9.0,
+        5.0,
+        0.5
+      ],
+      "distance_m": 11080.292181172323,
+      "measures": 114,
+      "switches": 108,
+      "failures": 2,
+      "cleared": 12
+    },
+    {
+      "case": "DBV3-EVUE-2W97-877N",
+      "n": 16,
+      "full": true,
+      "time_s": 2946.296714,
+      "per_source_s": 184.143544625,
+      "cost": [
+        141.08104454512147,
+        31.875,
+        6.0,
+        5.0,
+        0.1875
+      ],
+      "distance_m": 11286.483563609718,
+      "measures": 102,
+      "switches": 96,
+      "failures": 1,
+      "cleared": 16
+    },
+    {
+      "case": "WFTP-4NGQ-4CNC-QY5Z",
+      "n": 13,
+      "full": true,
+      "time_s": 2664.727797,
+      "per_source_s": 204.97906130769232,
+      "cost": [
+        140.67136900434758,
+        50.0,
+        9.307692307692308,
+        5.0,
+        0.0
+      ],
+      "distance_m": 9143.638985282594,
+      "measures": 130,
+      "switches": 121,
+      "failures": 0,
+      "cleared": 13
+    },
+    {
+      "case": "5EVG-KGWG-R97S-VWZB",
+      "n": 10,
+      "full": true,
+      "time_s": 2658.085276,
+      "per_source_s": 265.8085276,
+      "cost": [
+        187.70852769242327,
+        61.0,
+        11.5,
+        5.0,
+        0.6
+      ],
+      "distance_m": 9385.426384621163,
+      "measures": 122,
+      "switches": 115,
+      "failures": 2,
+      "cleared": 10
+    },
+    {
+      "case": "G54C-AX8J-3NNW-B4KV",
+      "n": 16,
+      "full": true,
+      "time_s": 3023.121607,
+      "per_source_s": 188.9451004375,
+      "cost": [
+        146.07010039627954,
+        31.5625,
+        6.125,
+        5.0,
+        0.1875
+      ],
+      "distance_m": 11685.608031702364,
+      "measures": 101,
+      "switches": 98,
+      "failures": 1,
+      "cleared": 16
+    },
+    {
+      "case": "YD7H-HP4J-5UVW-SFGV",
+      "n": 15,
+      "full": true,
+      "time_s": 3218.049522,
+      "per_source_s": 214.53663479999997,
+      "cost": [
+        171.13663469089173,
+        32.0,
+        6.2,
+        5.0,
+        0.2
+      ],
+      "distance_m": 12835.24760181688,
+      "measures": 96,
+      "switches": 93,
+      "failures": 1,
+      "cleared": 15
+    },
+    {
+      "case": "GBV6-Z8VR-SBC9-R9PJ",
+      "n": 10,
+      "full": true,
+      "time_s": 2995.952137,
+      "per_source_s": 299.59521370000004,
+      "cost": [
+        221.0952139041167,
+        60.0,
+        11.7,
+        5.0,
+        1.8
+      ],
+      "distance_m": 11054.760695205834,
+      "measures": 120,
+      "switches": 117,
+      "failures": 6,
+      "cleared": 10
+    },
+    {
+      "case": "WG8G-W227-8R6F-AJJF",
+      "n": 15,
+      "full": true,
+      "time_s": 2964.51328,
+      "per_source_s": 197.63421866666667,
+      "cost": [
+        143.8342186005704,
+        40.666666666666664,
+        7.733333333333333,
+        5.0,
+        0.4
+      ],
+      "distance_m": 10787.566395042782,
+      "measures": 122,
+      "switches": 116,
+      "failures": 2,
+      "cleared": 15
+    },
+    {
+      "case": "ZZC5-SYBE-GK7U-6UZ8",
+      "n": 10,
+      "full": true,
+      "time_s": 3034.11746,
+      "per_source_s": 303.411746,
+      "cost": [
+        229.01174614259085,
+        58.0,
+        10.8,
+        5.0,
+        0.6
+      ],
+      "distance_m": 11450.587307129543,
+      "measures": 116,
+      "switches": 108,
+      "failures": 2,
+      "cleared": 10
+    },
+    {
+      "case": "UKK6-MYDY-DKTY-MJ6Q",
+      "n": 16,
+      "full": true,
+      "time_s": 2945.634407,
+      "per_source_s": 184.1021504375,
+      "cost": [
+        142.41465050370056,
+        30.9375,
+        5.5625,
+        5.0,
+        0.1875
+      ],
+      "distance_m": 11393.172040296044,
+      "measures": 99,
+      "switches": 89,
+      "failures": 1,
+      "cleared": 16
+    },
+    {
+      "case": "HYMM-E8R5-9BWB-7QSZ",
+      "n": 10,
+      "full": true,
+      "time_s": 2986.280383,
+      "per_source_s": 298.62803829999996,
+      "cost": [
+        222.22803806489583,
+        59.5,
+        11.3,
+        5.0,
+        0.6
+      ],
+      "distance_m": 11111.40190324479,
+      "measures": 119,
+      "switches": 113,
+      "failures": 2,
+      "cleared": 10
+    },
+    {
+      "case": "3K2Z-PCRZ-YWA8-AW38",
+      "n": 13,
+      "full": true,
+      "time_s": 2887.184081,
+      "per_source_s": 222.09108315384614,
+      "cost": [
+        160.93723700920788,
+        46.92307692307692,
+        9.0,
+        5.0,
+        0.23076923076923078
+      ],
+      "distance_m": 10460.920405598512,
+      "measures": 122,
+      "switches": 117,
+      "failures": 1,
+      "cleared": 13
+    },
+    {
+      "case": "QPQB-F5EB-T6AH-68KE",
+      "n": 12,
+      "full": true,
+      "time_s": 2772.712178,
+      "per_source_s": 231.0593481666667,
+      "cost": [
+        164.97601484939926,
+        51.25,
+        9.833333333333334,
+        5.0,
+        0.0
+      ],
+      "distance_m": 9898.560890963956,
+      "measures": 123,
+      "switches": 118,
+      "failures": 0,
+      "cleared": 12
+    },
+    {
+      "case": "6R2H-C6XT-SNGE-Y3FR",
+      "n": 10,
+      "full": true,
+      "time_s": 2921.202128,
+      "per_source_s": 292.1202128,
+      "cost": [
+        213.32021305747384,
+        61.0,
+        11.6,
+        5.0,
+        1.2
+      ],
+      "distance_m": 10666.010652873692,
+      "measures": 122,
+      "switches": 116,
+      "failures": 4,
+      "cleared": 10
+    },
+    {
+      "case": "M8KV-ZCDH-REV4-XNUT",
+      "n": 15,
+      "full": true,
+      "time_s": 3348.969407,
+      "per_source_s": 223.26462713333333,
+      "cost": [
+        170.46462703321032,
+        39.666666666666664,
+        7.533333333333333,
+        5.0,
+        0.6
+      ],
+      "distance_m": 12784.847027490774,
+      "measures": 119,
+      "switches": 113,
+      "failures": 3,
+      "cleared": 15
+    },
+    {
+      "case": "YP3M-D97V-TQ7Q-TGAJ",
+      "n": 13,
+      "full": true,
+      "time_s": 2713.590133,
+      "per_source_s": 208.73770253846155,
+      "cost": [
+        146.9684717562736,
+        47.30769230769231,
+        9.23076923076923,
+        5.0,
+        0.23076923076923078
+      ],
+      "distance_m": 9552.950664157785,
+      "measures": 123,
+      "switches": 120,
+      "failures": 1,
+      "cleared": 13
+    },
+    {
+      "case": "KMHV-VMTZ-KE2E-2NM5",
+      "n": 14,
+      "full": true,
+      "time_s": 3071.314789,
+      "per_source_s": 219.3796277857143,
+      "cost": [
+        167.379627772523,
+        39.285714285714285,
+        7.5,
+        5.0,
+        0.21428571428571427
+      ],
+      "distance_m": 11716.57394407661,
+      "measures": 110,
+      "switches": 105,
+      "failures": 1,
+      "cleared": 14
+    },
+    {
+      "case": "HKQT-BD5J-VNPN-CM8G",
+      "n": 12,
+      "full": true,
+      "time_s": 3093.397584,
+      "per_source_s": 257.78313199999997,
+      "cost": [
+        186.19979872146973,
+        55.416666666666664,
+        10.416666666666666,
+        5.0,
+        0.75
+      ],
+      "distance_m": 11171.987923288185,
+      "measures": 133,
+      "switches": 125,
+      "failures": 3,
+      "cleared": 12
+    }
+  ]
+}

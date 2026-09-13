@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "official_equivalent": false,
+  "source": "official-calibration-20260912",
+  "n_distribution": "uniform_integer_10_16",
+  "q4_directional_count_model": "uniform_1_N",
+  "position": "uniform_area_disk",
+  "radius": "uniform_1000_1500_unverified",
+  "heading": "uniform_0_2pi_unverified",
+  "bearing_error": "sin_legacy_unverified",
+  "sensitivity_errors": [
+    "sin",
+    "hash_uniform",
+    "plus",
+    "minus",
+    "checker"
+  ],
+  "q4_support_includes_pure_types": true,
+  "note": "Candidate selection on first 35 official Q4 cases; distribution assumptions remain provisional. Pure types are valid scenarios, irrespective of candidate selection."
+}

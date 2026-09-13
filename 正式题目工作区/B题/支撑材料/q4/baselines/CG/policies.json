@@ -1,0 +1,9 @@
+{
+  "cautious": {
+    "beta": 0.05,
+    "angle_variance": "uniform +/-1 deg second moment",
+    "source": "Vander Hook et al. 2014 Algorithm 1, bounded-region adaptation",
+    "global_scaffold": "M07 portfolio; same 22-site cover and clearance",
+    "fixed_before_testing": true
+  }
+}

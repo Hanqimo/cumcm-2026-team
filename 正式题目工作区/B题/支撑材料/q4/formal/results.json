@@ -1,0 +1,47 @@
+{
+  "rows": [
+    {
+      "test": 1,
+      "case_code": "9N77-TH84-ME6J-NRK4",
+      "cleared_count": 10,
+      "average_clear_time_s": 557.2932711999999,
+      "program_runtime_s": 4.325,
+      "virtual_time_s": 5572.932712,
+      "official_log_sha256": "4adfea7f4852f65da175ccd0ecec73af7d373dc3469eecc2de176d912c2beca1",
+      "runtime_basis": "Official accepted /exit real_timestamp_ms minus accepted /enter real_timestamp_ms",
+      "problem": 4,
+      "adopted_strategy": "M32 joint",
+      "official_log": "logs/formal-p4-1-9N77-TH84-ME6J-NRK4.jlog",
+      "actions": "records/formal-p4-1-9N77-TH84-ME6J-NRK4.actions.jsonl"
+    },
+    {
+      "test": 2,
+      "case_code": "QGEZ-KRWA-MNGB-6CMH",
+      "cleared_count": 11,
+      "average_clear_time_s": 525.3954671818182,
+      "program_runtime_s": 4.426,
+      "virtual_time_s": 5779.350139,
+      "official_log_sha256": "d4481ea98a16dfb4553b04ff9a904ecf39de4fd650f7d8a7ac85652f59c0d836",
+      "runtime_basis": "Official accepted /exit real_timestamp_ms minus accepted /enter real_timestamp_ms",
+      "problem": 4,
+      "adopted_strategy": "M32 joint",
+      "official_log": "logs/formal-p4-2-QGEZ-KRWA-MNGB-6CMH.jlog",
+      "actions": "records/formal-p4-2-QGEZ-KRWA-MNGB-6CMH.actions.jsonl"
+    },
+    {
+      "test": 3,
+      "case_code": "KTZ8-EZQ5-937B-QNEV",
+      "cleared_count": 11,
+      "average_clear_time_s": 501.4640515454546,
+      "program_runtime_s": 4.53,
+      "virtual_time_s": 5516.104567,
+      "official_log_sha256": "f5120145de776ecf329b8a35cd2d66d636a0ccbc103542e913e9ac6fd47e8fac",
+      "runtime_basis": "Official accepted /exit real_timestamp_ms minus accepted /enter real_timestamp_ms",
+      "problem": 4,
+      "adopted_strategy": "M32 joint",
+      "official_log": "logs/formal-p4-3-KTZ8-EZQ5-937B-QNEV.jlog",
+      "actions": "records/formal-p4-3-KTZ8-EZQ5-937B-QNEV.actions.jsonl"
+    }
+  ],
+  "note": "正式模式不提供源总数；不据此宣称全清率。"
+}

@@ -1,0 +1,4006 @@
+[
+  {
+    "seed": 2026092400,
+    "n": 10,
+    "directional": 0,
+    "problem": 3,
+    "sources": {
+      "11": {
+        "point": [
+          465.5922622132426,
+          -611.3341873874577
+        ],
+        "radius": 1474.5629378584679,
+        "heading": null
+      },
+      "15": {
+        "point": [
+          265.50912376729497,
+          -1354.907720056064
+        ],
+        "radius": 1468.170697659546,
+        "heading": null
+      },
+      "20": {
+        "point": [
+          -1368.5648698676257,
+          -30.797166674826975
+        ],
+        "radius": 1498.4651203053513,
+        "heading": null
+      },
+      "5": {
+        "point": [
+          -139.4670066356435,
+          1630.294509966582
+        ],
+        "radius": 1465.5685485299985,
+        "heading": null
+      },
+      "8": {
+        "point": [
+          313.5701721705931,
+          946.9664871336812
+        ],
+        "radius": 1350.0089647019652,
+        "heading": null
+      },
+      "1": {
+        "point": [
+          4.623978712626669,
+          1590.040671830044
+        ],
+        "radius": 1029.0318957317154,
+        "heading": null
+      },
+      "18": {
+        "point": [
+          -1357.0870718416877,
+          -451.04527705504205
+        ],
+        "radius": 1252.408779395965,
+        "heading": null
+      },
+      "9": {
+        "point": [
+          -440.7505110964685,
+          -59.631518531150306
+        ],
+        "radius": 1409.2033275288418,
+        "heading": null
+      },
+      "6": {
+        "point": [
+          1130.751359221302,
+          348.996497989906
+        ],
+        "radius": 1098.8257368667573,
+        "heading": null
+      },
+      "3": {
+        "point": [
+          885.8400234575439,
+          -367.60847915186235
+        ],
+        "radius": 1270.8068993286806,
+        "heading": null
+      }
+    },
+    "errors": "hash_uniform",
+    "layout": "area",
+    "profile": {
+      "version": 1,
+      "official_equivalent": false,
+      "source": "official-calibration-20260912",
+      "n_distribution": "uniform_integer_10_16",
+      "q4_directional_count_model": "uniform_1_N",
+      "position": "uniform_area_disk",
+      "radius": "uniform_1000_1500_unverified",
+      "heading": "uniform_0_2pi_unverified",
+      "bearing_error": "sin_legacy_unverified",
+      "sensitivity_errors": [
+        "sin",
+        "hash_uniform",
+        "plus",
+        "minus",
+        "checker"
+      ],
+      "q4_support_includes_pure_types": true,
+      "note": "Candidate selection on first 35 official Q4 cases; distribution assumptions remain provisional. Pure types are valid scenarios, irrespective of candidate selection."
+    }
+  },
+  {
+    "seed": 2026092401,
+    "n": 13,
+    "directional": 0,
+    "problem": 3,
+    "sources": {
+      "16": {
+        "point": [
+          1510.5494766715833,
+          766.1331840755388
+        ],
+        "radius": 1374.5857659383928,
+        "heading": null
+      },
+      "19": {
+        "point": [
+          1193.3797160466102,
+          -154.91539543002094
+        ],
+        "radius": 1212.7597802974713,
+        "heading": null
+      },
+      "5": {
+        "point": [
+          -437.7329562757064,
+          -120.40099092866971
+        ],
+        "radius": 1368.8220125042087,
+        "heading": null
+      },
+      "11": {
+        "point": [
+          -597.5108471372471,
+          -264.56135941917216
+        ],
+        "radius": 1244.1759104531413,
+        "heading": null
+      },
+      "13": {
+        "point": [
+          -152.52972022801788,
+          -1683.052046229843
+        ],
+        "radius": 1068.8828841869995,
+        "heading": null
+      },
+      "8": {
+        "point": [
+          -1589.6923207886,
+          -165.65157269424748
+        ],
+        "radius": 1377.4526675256989,
+        "heading": null
+      },
+      "10": {
+        "point": [
+          -844.7107586147524,
+          -1058.6344509744813
+        ],
+        "radius": 1257.5679202702645,
+        "heading": null
+      },
+      "20": {
+        "point": [
+          727.1361925611486,
+          -1513.2301536023867
+        ],
+        "radius": 1267.247604096431,
+        "heading": null
+      },
+      "2": {
+        "point": [
+          1413.73129532957,
+          342.0964030265214
+        ],
+        "radius": 1444.978793592393,
+        "heading": null
+      },
+      "1": {
+        "point": [
+          -818.9796688268223,
+          378.74976242104157
+        ],
+        "radius": 1180.611847878489,
+        "heading": null
+      },
+      "17": {
+        "point": [
+          -395.524158638304,
+          1101.2570665308165
+        ],
+        "radius": 1035.8719979127968,
+        "heading": null
+      },
+      "3": {
+        "point": [
+          -1066.0556656943872,
+          -597.5908755019905
+        ],
+        "radius": 1396.3802660169447,
+        "heading": null
+      },
+      "4": {
+        "point": [
+          620.624499223971,
+          374.1315563083727
+        ],
+        "radius": 1343.2321871523418,
+        "heading": null
+      }
+    },
+    "errors": "hash_uniform",
+    "layout": "area",
+    "profile": {
+      "version": 1,
+      "official_equivalent": false,
+      "source": "official-calibration-20260912",
+      "n_distribution": "uniform_integer_10_16",
+      "q4_directional_count_model": "uniform_1_N",
+      "position": "uniform_area_disk",
+      "radius": "uniform_1000_1500_unverified",
+      "heading": "uniform_0_2pi_unverified",
+      "bearing_error": "sin_legacy_unverified",
+      "sensitivity_errors": [
+        "sin",
+        "hash_uniform",
+        "plus",
+        "minus",
+        "checker"
+      ],
+      "q4_support_includes_pure_types": true,
+      "note": "Candidate selection on first 35 official Q4 cases; distribution assumptions remain provisional. Pure types are valid scenarios, irrespective of candidate selection."
+    }
+  },
+  {
+    "seed": 2026092402,
+    "n": 16,
+    "directional": 0,
+    "problem": 3,
+    "sources": {
+      "4": {
+        "point": [
+          119.31967185548574,
+          -1185.7463021288697
+        ],
+        "radius": 1072.6581275744752,
+        "heading": null
+      },
+      "1": {
+        "point": [
+          1148.9400224500262,
+          1126.3527039456878
+        ],
+        "radius": 1017.8175466813104,
+        "heading": null
+      },
+      "7": {
+        "point": [
+          380.00391562101794,
+          -1222.4688972646209
+        ],
+        "radius": 1351.1270191090184,
+        "heading": null
+      },
+      "17": {
+        "point": [
+          -895.3560223837832,
+          -340.396698890369
+        ],
+        "radius": 1186.833136646575,
+        "heading": null
+      },
+      "8": {
+        "point": [
+          -76.74308938299667,
+          -235.79525437598465
+        ],
+        "radius": 1272.2155963083178,
+        "heading": null
+      },
+      "19": {
+        "point": [
+          -714.798177815759,
+          108.50893932808971
+        ],
+        "radius": 1069.9605339269806,
+        "heading": null
+      },
+      "18": {
+        "point": [
+          361.3441542700203,
+          172.632277233544
+        ],
+        "radius": 1059.8927360364157,
+        "heading": null
+      },
+      "6": {
+        "point": [
+          -146.7540808147438,
+          -357.9308877970792
+        ],
+        "radius": 1186.6219418481362,
+        "heading": null
+      },
+      "9": {
+        "point": [
+          684.1847427947049,
+          -29.37807693124303
+        ],
+        "radius": 1343.4362714344443,
+        "heading": null
+      },
+      "13": {
+        "point": [
+          978.1968314754632,
+          -912.387534294718
+        ],
+        "radius": 1372.2211925103445,
+        "heading": null
+      },
+      "12": {
+        "point": [
+          -896.6239644562871,
+          567.6221257213032
+        ],
+        "radius": 1189.434109138877,
+        "heading": null
+      },
+      "20": {
+        "point": [
+          961.9842471473637,
+          1207.2037697739863
+        ],
+        "radius": 1492.2648164077848,
+        "heading": null
+      },
+      "16": {
+        "point": [
+          175.28711519001203,
+          -93.5133896432519
+        ],
+        "radius": 1171.2763949371276,
+        "heading": null
+      },
+      "14": {
+        "point": [
+          1066.794951590263,
+          -723.1332913581994
+        ],
+        "radius": 1257.74189635743,
+        "heading": null
+      },
+      "10": {
+        "point": [
+          -778.7279642087159,
+          -132.59585287917864
+        ],
+        "radius": 1160.8439257274138,
+        "heading": null
+      },
+      "11": {
+        "point": [
+          -298.134586828425,
+          -1197.2182627001268
+        ],
+        "radius": 1288.428149638048,
+        "heading": null
+      }
+    },
+    "errors": "hash_uniform",
+    "layout": "area",
+    "profile": {
+      "version": 1,
+      "official_equivalent": false,
+      "source": "official-calibration-20260912",
+      "n_distribution": "uniform_integer_10_16",
+      "q4_directional_count_model": "uniform_1_N",
+      "position": "uniform_area_disk",
+      "radius": "uniform_1000_1500_unverified",
+      "heading": "uniform_0_2pi_unverified",
+      "bearing_error": "sin_legacy_unverified",
+      "sensitivity_errors": [
+        "sin",
+        "hash_uniform",
+        "plus",
+        "minus",
+        "checker"
+      ],
+      "q4_support_includes_pure_types": true,
+      "note": "Candidate selection on first 35 official Q4 cases; distribution assumptions remain provisional. Pure types are valid scenarios, irrespective of candidate selection."
+    }
+  },
+  {
+    "seed": 2026092403,
+    "n": 13,
+    "directional": 0,
+    "problem": 3,
+    "sources": {
+      "19": {
+        "point": [
+          1.1262181099242528,
+          1689.4219626708039
+        ],
+        "radius": 1080.0321310104002,
+        "heading": null
+      },
+      "1": {
+        "point": [
+          -1749.6071804914548,
+          297.92638747929504
+        ],
+        "radius": 1355.4997814223257,
+        "heading": null
+      },
+      "2": {
+        "point": [
+          -1714.7463380228235,
+          21.297397613962314
+        ],
+        "radius": 1311.6507996844966,
+        "heading": null
+      },
+      "9": {
+        "point": [
+          -555.9949572370942,
+          -442.7656473357906
+        ],
+        "radius": 1420.3464819546116,
+        "heading": null
+      },
+      "5": {
+        "point": [
+          627.9651475716533,
+          911.4393734404956
+        ],
+        "radius": 1305.7923900920343,
+        "heading": null
+      },
+      "8": {
+        "point": [
+          -103.40127832687685,
+          371.85596438270346
+        ],
+        "radius": 1324.3008298406496,
+        "heading": null
+      },
+      "20": {
+        "point": [
+          -468.0325732890542,
+          1012.3608401468798
+        ],
+        "radius": 1326.5498056734937,
+        "heading": null
+      },
+      "10": {
+        "point": [
+          -368.29134243627067,
+          -698.6717002914368
+        ],
+        "radius": 1354.3175066900399,
+        "heading": null
+      },
+      "18": {
+        "point": [
+          778.9171746170641,
+          -889.5819621717018
+        ],
+        "radius": 1230.1543385913271,
+        "heading": null
+      },
+      "11": {
+        "point": [
+          -1162.4578618816802,
+          -91.44348929577825
+        ],
+        "radius": 1457.916737081957,
+        "heading": null
+      },
+      "17": {
+        "point": [
+          1495.190035612622,
+          -277.7690748115272
+        ],
+        "radius": 1443.6712045415486,
+        "heading": null
+      },
+      "15": {
+        "point": [
+          -716.9727833572736,
+          1563.3544614038344
+        ],
+        "radius": 1326.524537149313,
+        "heading": null
+      },
+      "6": {
+        "point": [
+          1045.9680955523124,
+          -209.69085661208038
+        ],
+        "radius": 1291.6302900843934,
+        "heading": null
+      }
+    },
+    "errors": "hash_uniform",
+    "layout": "area",
+    "profile": {
+      "version": 1,
+      "official_equivalent": false,
+      "source": "official-calibration-20260912",
+      "n_distribution": "uniform_integer_10_16",
+      "q4_directional_count_model": "uniform_1_N",
+      "position": "uniform_area_disk",
+      "radius": "uniform_1000_1500_unverified",
+      "heading": "uniform_0_2pi_unverified",
+      "bearing_error": "sin_legacy_unverified",
+      "sensitivity_errors": [
+        "sin",
+        "hash_uniform",
+        "plus",
+        "minus",
+        "checker"
+      ],
+      "q4_support_includes_pure_types": true,
+      "note": "Candidate selection on first 35 official Q4 cases; distribution assumptions remain provisional. Pure types are valid scenarios, irrespective of candidate selection."
+    }
+  },
+  {
+    "seed": 2026092404,
+    "n": 15,
+    "directional": 0,
+    "problem": 3,
+    "sources": {
+      "9": {
+        "point": [
+          -1092.7481384781338,
+          1349.443646085708
+        ],
+        "radius": 1299.0815052059475,
+        "heading": null
+      },
+      "14": {
+        "point": [
+          926.8440678961542,
+          620.3563208277357
+        ],
+        "radius": 1179.9615197498765,
+        "heading": null
+      },
+      "8": {
+        "point": [
+          195.68789482232464,
+          719.0428060391454
+        ],
+        "radius": 1439.1381886271004,
+        "heading": null
+      },
+      "6": {
+        "point": [
+          589.6706600652269,
+          -488.4439075447489
+        ],
+        "radius": 1198.5612104724116,
+        "heading": null
+      },
+      "7": {
+        "point": [
+          41.66344856878843,
+          -1645.7006582705424
+        ],
+        "radius": 1328.368056250838,
+        "heading": null
+      },
+      "12": {
+        "point": [
+          -1042.7069999093835,
+          75.48729004035206
+        ],
+        "radius": 1255.5468868991597,
+        "heading": null
+      },
+      "16": {
+        "point": [
+          1286.5883895072434,
+          236.25718795537537
+        ],
+        "radius": 1302.7621840256406,
+        "heading": null
+      },
+      "10": {
+        "point": [
+          961.0193934900027,
+          463.7815290182554
+        ],
+        "radius": 1135.759315153109,
+        "heading": null
+      },
+      "13": {
+        "point": [
+          -338.68965958446415,
+          750.7894274945337
+        ],
+        "radius": 1270.19310441649,
+        "heading": null
+      },
+      "5": {
+        "point": [
+          -1589.1006959691715,
+          345.19497804462856
+        ],
+        "radius": 1441.4704466482299,
+        "heading": null
+      },
+      "2": {
+        "point": [
+          1153.0905312009565,
+          39.91519983870474
+        ],
+        "radius": 1122.7361068357811,
+        "heading": null
+      },
+      "20": {
+        "point": [
+          545.506977379008,
+          -727.2610658539695
+        ],
+        "radius": 1401.3654716736514,
+        "heading": null
+      },
+      "11": {
+        "point": [
+          -756.1322825775216,
+          -610.8086488775488
+        ],
+        "radius": 1286.2938464206482,
+        "heading": null
+      },
+      "18": {
+        "point": [
+          -384.2038398761467,
+          1115.2616182407858
+        ],
+        "radius": 1069.4042692931293,
+        "heading": null
+      },
+      "17": {
+        "point": [
+          110.73611024721357,
+          1567.0394074909773
+        ],
+        "radius": 1245.5169527799976,
+        "heading": null
+      }
+    },
+    "errors": "hash_uniform",
+    "layout": "area",
+    "profile": {
+      "version": 1,
+      "official_equivalent": false,
+      "source": "official-calibration-20260912",
+      "n_distribution": "uniform_integer_10_16",
+      "q4_directional_count_model": "uniform_1_N",
+      "position": "uniform_area_disk",
+      "radius": "uniform_1000_1500_unverified",
+      "heading": "uniform_0_2pi_unverified",
+      "bearing_error": "sin_legacy_unverified",
+      "sensitivity_errors": [
+        "sin",
+        "hash_uniform",
+        "plus",
+        "minus",
+        "checker"
+      ],
+      "q4_support_includes_pure_types": true,
+      "note": "Candidate selection on first 35 official Q4 cases; distribution assumptions remain provisional. Pure types are valid scenarios, irrespective of candidate selection."
+    }
+  },
+  {
+    "seed": 2026092405,
+    "n": 15,
+    "directional": 0,
+    "problem": 3,
+    "sources": {
+      "13": {
+        "point": [
+          -288.81742153437517,
+          -1724.5724575387578
+        ],
+        "radius": 1423.403317311046,
+        "heading": null
+      },
+      "14": {
+        "point": [
+          -895.4109699294306,
+          59.83946020450242
+        ],
+        "radius": 1468.8645527397214,
+        "heading": null
+      },
+      "1": {
+        "point": [
+          -139.4731530456946,
+          -204.02630734062
+        ],
+        "radius": 1042.0122562517372,
+        "heading": null
+      },
+      "6": {
+        "point": [
+          1116.8818341876458,
+          -854.9612755209042
+        ],
+        "radius": 1403.8844700612726,
+        "heading": null
+      },
+      "19": {
+        "point": [
+          808.57529538873,
+          -244.2516288584417
+        ],
+        "radius": 1177.730049374626,
+        "heading": null
+      },
+      "2": {
+        "point": [
+          -150.5166590110632,
+          558.3784597316894
+        ],
+        "radius": 1115.6080591824978,
+        "heading": null
+      },
+      "5": {
+        "point": [
+          1208.6967288827077,
+          280.42223378943845
+        ],
+        "radius": 1370.3403370894011,
+        "heading": null
+      },
+      "3": {
+        "point": [
+          -1111.787003767325,
+          361.4365764361958
+        ],
+        "radius": 1227.5923958555804,
+        "heading": null
+      },
+      "9": {
+        "point": [
+          -376.40480989906047,
+          -1354.3859693453617
+        ],
+        "radius": 1165.4835942737286,
+        "heading": null
+      },
+      "8": {
+        "point": [
+          1427.1616782395317,
+          647.4170834895647
+        ],
+        "radius": 1356.6498453773127,
+        "heading": null
+      },
+      "20": {
+        "point": [
+          -559.3026805695521,
+          -1160.924058367684
+        ],
+        "radius": 1008.5588700876713,
+        "heading": null
+      },
+      "4": {
+        "point": [
+          -208.92599057567114,
+          -135.7372874961099
+        ],
+        "radius": 1268.3718971688527,
+        "heading": null
+      },
+      "15": {
+        "point": [
+          456.285750862077,
+          1353.5500061385749
+        ],
+        "radius": 1110.8479685538844,
+        "heading": null
+      },
+      "10": {
+        "point": [
+          379.09846295572675,
+          -1307.7512730702297
+        ],
+        "radius": 1190.2572453087423,
+        "heading": null
+      },
+      "16": {
+        "point": [
+          73.05899773418129,
+          12.116643954197999
+        ],
+        "radius": 1131.7539149545498,
+        "heading": null
+      }
+    },
+    "errors": "hash_uniform",
+    "layout": "area",
+    "profile": {
+      "version": 1,
+      "official_equivalent": false,
+      "source": "official-calibration-20260912",
+      "n_distribution": "uniform_integer_10_16",
+      "q4_directional_count_model": "uniform_1_N",
+      "position": "uniform_area_disk",
+      "radius": "uniform_1000_1500_unverified",
+      "heading": "uniform_0_2pi_unverified",
+      "bearing_error": "sin_legacy_unverified",
+      "sensitivity_errors": [
+        "sin",
+        "hash_uniform",
+        "plus",
+        "minus",
+        "checker"
+      ],
+      "q4_support_includes_pure_types": true,
+      "note": "Candidate selection on first 35 official Q4 cases; distribution assumptions remain provisional. Pure types are valid scenarios, irrespective of candidate selection."
+    }
+  },
+  {
+    "seed": 2026092406,
+    "n": 13,
+    "directional": 0,
+    "problem": 3,
+    "sources": {
+      "12": {
+        "point": [
+          1075.2692825052138,
+          -1114.6269529575304
+        ],
+        "radius": 1193.011887042833,
+        "heading": null
+      },
+      "16": {
+        "point": [
+          403.4585485813384,
+          694.6656264222596
+        ],
+        "radius": 1107.1130599956887,
+        "heading": null
+      },
+      "1": {
+        "point": [
+          1282.212543576616,
+          1187.5632141277263
+        ],
+        "radius": 1474.3668297105219,
+        "heading": null
+      },
+      "4": {
+        "point": [
+          -208.20738082004158,
+          -972.9247878519211
+        ],
+        "radius": 1393.9042204213704,
+        "heading": null
+      },
+      "18": {
+        "point": [
+          78.79269599276078,
+          -853.358860223969
+        ],
+        "radius": 1442.5445452592262,
+        "heading": null
+      },
+      "8": {
+        "point": [
+          108.7399875270751,
+          -1032.1872734577273
+        ],
+        "radius": 1319.4608664717534,
+        "heading": null
+      },
+      "15": {
+        "point": [
+          -370.4924869229741,
+          -673.2717457371679
+        ],
+        "radius": 1402.646332353001,
+        "heading": null
+      },
+      "9": {
+        "point": [
+          306.29854055123417,
+          390.247736411192
+        ],
+        "radius": 1294.2284929522384,
+        "heading": null
+      },
+      "17": {
+        "point": [
+          -948.3984359778646,
+          565.3266979168116
+        ],
+        "radius": 1001.1203448890818,
+        "heading": null
+      },
+      "10": {
+        "point": [
+          -826.740438042905,
+          1090.3112951745456
+        ],
+        "radius": 1423.6737390385645,
+        "heading": null
+      },
+      "13": {
+        "point": [
+          -1052.0134583336614,
+          623.5408687711341
+        ],
+        "radius": 1197.702436033491,
+        "heading": null
+      },
+      "20": {
+        "point": [
+          0.10114448340380358,
+          1482.501499625062
+        ],
+        "radius": 1421.056228694067,
+        "heading": null
+      },
+      "11": {
+        "point": [
+          -197.92896692147522,
+          301.6684127615411
+        ],
+        "radius": 1093.582812710873,
+        "heading": null
+      }
+    },
+    "errors": "hash_uniform",
+    "layout": "area",
+    "profile": {
+      "version": 1,
+      "official_equivalent": false,
+      "source": "official-calibration-20260912",
+      "n_distribution": "uniform_integer_10_16",
+      "q4_directional_count_model": "uniform_1_N",
+      "position": "uniform_area_disk",
+      "radius": "uniform_1000_1500_unverified",
+      "heading": "uniform_0_2pi_unverified",
+      "bearing_error": "sin_legacy_unverified",
+      "sensitivity_errors": [
+        "sin",
+        "hash_uniform",
+        "plus",
+        "minus",
+        "checker"
+      ],
+      "q4_support_includes_pure_types": true,
+      "note": "Candidate selection on first 35 official Q4 cases; distribution assumptions remain provisional. Pure types are valid scenarios, irrespective of candidate selection."
+    }
+  },
+  {
+    "seed": 2026092407,
+    "n": 13,
+    "directional": 0,
+    "problem": 3,
+    "sources": {
+      "3": {
+        "point": [
+          -639.9870473143019,
+          -5.848948313264926
+        ],
+        "radius": 1365.3627198311704,
+        "heading": null
+      },
+      "6": {
+        "point": [
+          -915.1970314006642,
+          1199.3732223768664
+        ],
+        "radius": 1337.8602785432597,
+        "heading": null
+      },
+      "8": {
+        "point": [
+          -455.7438314006514,
+          1311.491292558982
+        ],
+        "radius": 1463.4625275421122,
+        "heading": null
+      },
+      "20": {
+        "point": [
+          34.04617162057786,
+          1420.5665537642647
+        ],
+        "radius": 1409.870432739463,
+        "heading": null
+      },
+      "10": {
+        "point": [
+          1735.2180331478419,
+          -241.5829820085842
+        ],
+        "radius": 1336.1172381793144,
+        "heading": null
+      },
+      "2": {
+        "point": [
+          984.0221679967278,
+          -631.30077585257
+        ],
+        "radius": 1327.0844898531416,
+        "heading": null
+      },
+      "19": {
+        "point": [
+          1100.592405525749,
+          993.943953036081
+        ],
+        "radius": 1378.0202212615818,
+        "heading": null
+      },
+      "12": {
+        "point": [
+          -326.7607558697465,
+          -60.040334184899486
+        ],
+        "radius": 1401.0481509453948,
+        "heading": null
+      },
+      "5": {
+        "point": [
+          1228.0294502527797,
+          850.8750064097457
+        ],
+        "radius": 1087.5806940027196,
+        "heading": null
+      },
+      "7": {
+        "point": [
+          993.7812701423019,
+          678.682950064713
+        ],
+        "radius": 1356.9059324469247,
+        "heading": null
+      },
+      "4": {
+        "point": [
+          -768.1612212329646,
+          -224.99705610305045
+        ],
+        "radius": 1145.1481518183468,
+        "heading": null
+      },
+      "11": {
+        "point": [
+          -591.866496065926,
+          376.00599603267426
+        ],
+        "radius": 1498.6104851164296,
+        "heading": null
+      },
+      "1": {
+        "point": [
+          719.8766076948548,
+          -385.12756129258645
+        ],
+        "radius": 1252.028459625324,
+        "heading": null
+      }
+    },
+    "errors": "hash_uniform",
+    "layout": "area",
+    "profile": {
+      "version": 1,
+      "official_equivalent": false,
+      "source": "official-calibration-20260912",
+      "n_distribution": "uniform_integer_10_16",
+      "q4_directional_count_model": "uniform_1_N",
+      "position": "uniform_area_disk",
+      "radius": "uniform_1000_1500_unverified",
+      "heading": "uniform_0_2pi_unverified",
+      "bearing_error": "sin_legacy_unverified",
+      "sensitivity_errors": [
+        "sin",
+        "hash_uniform",
+        "plus",
+        "minus",
+        "checker"
+      ],
+      "q4_support_includes_pure_types": true,
+      "note": "Candidate selection on first 35 official Q4 cases; distribution assumptions remain provisional. Pure types are valid scenarios, irrespective of candidate selection."
+    }
+  },
+  {
+    "seed": 2026092408,
+    "n": 11,
+    "directional": 0,
+    "problem": 3,
+    "sources": {
+      "8": {
+        "point": [
+          339.90997198529885,
+          361.18464370989403
+        ],
+        "radius": 1163.4318341678782,
+        "heading": null
+      },
+      "16": {
+        "point": [
+          723.2284905783222,
+          -759.7893255269718
+        ],
+        "radius": 1481.0287515708121,
+        "heading": null
+      },
+      "14": {
+        "point": [
+          -102.88009530707637,
+          449.69001283132474
+        ],
+        "radius": 1058.2759239585725,
+        "heading": null
+      },
+      "10": {
+        "point": [
+          361.74969125280717,
+          -11.681229913532244
+        ],
+        "radius": 1353.9895989663098,
+        "heading": null
+      },
+      "3": {
+        "point": [
+          919.9959794041962,
+          -86.27743796758143
+        ],
+        "radius": 1459.6098406336318,
+        "heading": null
+      },
+      "6": {
+        "point": [
+          1439.978889534729,
+          -194.26527067579042
+        ],
+        "radius": 1261.1659054222769,
+        "heading": null
+      },
+      "2": {
+        "point": [
+          1249.790805187437,
+          96.4379134109944
+        ],
+        "radius": 1466.773948477388,
+        "heading": null
+      },
+      "11": {
+        "point": [
+          321.7445779362336,
+          -59.98912449092431
+        ],
+        "radius": 1414.5393342941243,
+        "heading": null
+      },
+      "1": {
+        "point": [
+          271.3154697459491,
+          -163.10026281691916
+        ],
+        "radius": 1383.252448863154,
+        "heading": null
+      },
+      "7": {
+        "point": [
+          -47.239992306956026,
+          -974.1283929762978
+        ],
+        "radius": 1176.1045158595873,
+        "heading": null
+      },
+      "5": {
+        "point": [
+          467.77989138722063,
+          -1460.4383359001808
+        ],
+        "radius": 1125.4182872198594,
+        "heading": null
+      }
+    },
+    "errors": "hash_uniform",
+    "layout": "area",
+    "profile": {
+      "version": 1,
+      "official_equivalent": false,
+      "source": "official-calibration-20260912",
+      "n_distribution": "uniform_integer_10_16",
+      "q4_directional_count_model": "uniform_1_N",
+      "position": "uniform_area_disk",
+      "radius": "uniform_1000_1500_unverified",
+      "heading": "uniform_0_2pi_unverified",
+      "bearing_error": "sin_legacy_unverified",
+      "sensitivity_errors": [
+        "sin",
+        "hash_uniform",
+        "plus",
+        "minus",
+        "checker"
+      ],
+      "q4_support_includes_pure_types": true,
+      "note": "Candidate selection on first 35 official Q4 cases; distribution assumptions remain provisional. Pure types are valid scenarios, irrespective of candidate selection."
+    }
+  },
+  {
+    "seed": 2026092409,
+    "n": 14,
+    "directional": 0,
+    "problem": 3,
+    "sources": {
+      "11": {
+        "point": [
+          1675.6383034646137,
+          -630.0548357960212
+        ],
+        "radius": 1325.336404653055,
+        "heading": null
+      },
+      "16": {
+        "point": [
+          -133.66413460153032,
+          1767.0272482567048
+        ],
+        "radius": 1085.4812930007415,
+        "heading": null
+      },
+      "13": {
+        "point": [
+          -393.90810580640556,
+          1344.8347031960611
+        ],
+        "radius": 1268.2738144593777,
+        "heading": null
+      },
+      "19": {
+        "point": [
+          1158.8279560299554,
+          945.6114671915404
+        ],
+        "radius": 1142.6732589891049,
+        "heading": null
+      },
+      "18": {
+        "point": [
+          -430.4405950913302,
+          244.88169543774418
+        ],
+        "radius": 1265.4617980916685,
+        "heading": null
+      },
+      "17": {
+        "point": [
+          -779.6404182004215,
+          1572.629335239122
+        ],
+        "radius": 1264.36793227008,
+        "heading": null
+      },
+      "20": {
+        "point": [
+          1525.272334853058,
+          -119.4869292402683
+        ],
+        "radius": 1148.2600902347658,
+        "heading": null
+      },
+      "9": {
+        "point": [
+          -1303.6058819223392,
+          -422.7377933595908
+        ],
+        "radius": 1434.8176373373544,
+        "heading": null
+      },
+      "8": {
+        "point": [
+          406.56981340479547,
+          -1397.5257244693582
+        ],
+        "radius": 1343.8736134277879,
+        "heading": null
+      },
+      "10": {
+        "point": [
+          20.69929727570665,
+          -784.4424251454689
+        ],
+        "radius": 1391.6287021958397,
+        "heading": null
+      },
+      "7": {
+        "point": [
+          -563.5768666135957,
+          375.23674801927797
+        ],
+        "radius": 1051.8682149150718,
+        "heading": null
+      },
+      "4": {
+        "point": [
+          -1028.2276287355392,
+          -744.9722078026927
+        ],
+        "radius": 1356.3778322067385,
+        "heading": null
+      },
+      "5": {
+        "point": [
+          -1553.0652648772,
+          266.06953640233723
+        ],
+        "radius": 1073.3809825191772,
+        "heading": null
+      },
+      "3": {
+        "point": [
+          -1367.4804121546529,
+          370.8952401657405
+        ],
+        "radius": 1224.688348379335,
+        "heading": null
+      }
+    },
+    "errors": "hash_uniform",
+    "layout": "area",
+    "profile": {
+      "version": 1,
+      "official_equivalent": false,
+      "source": "official-calibration-20260912",
+      "n_distribution": "uniform_integer_10_16",
+      "q4_directional_count_model": "uniform_1_N",
+      "position": "uniform_area_disk",
+      "radius": "uniform_1000_1500_unverified",
+      "heading": "uniform_0_2pi_unverified",
+      "bearing_error": "sin_legacy_unverified",
+      "sensitivity_errors": [
+        "sin",
+        "hash_uniform",
+        "plus",
+        "minus",
+        "checker"
+      ],
+      "q4_support_includes_pure_types": true,
+      "note": "Candidate selection on first 35 official Q4 cases; distribution assumptions remain provisional. Pure types are valid scenarios, irrespective of candidate selection."
+    }
+  },
+  {
+    "seed": 2026092410,
+    "n": 16,
+    "directional": 0,
+    "problem": 3,
+    "sources": {
+      "17": {
+        "point": [
+          -454.0660792166993,
+          841.3009286213255
+        ],
+        "radius": 1231.8505377695851,
+        "heading": null
+      },
+      "2": {
+        "point": [
+          -79.67137492067532,
+          -943.6591259537912
+        ],
+        "radius": 1340.1941198604075,
+        "heading": null
+      },
+      "1": {
+        "point": [
+          404.37935197290835,
+          -1713.2979802650946
+        ],
+        "radius": 1152.1512727453692,
+        "heading": null
+      },
+      "20": {
+        "point": [
+          1155.0171145894935,
+          407.62603271410313
+        ],
+        "radius": 1226.8232250672002,
+        "heading": null
+      },
+      "9": {
+        "point": [
+          424.7180314238795,
+          1495.7418510944667
+        ],
+        "radius": 1297.6604985433553,
+        "heading": null
+      },
+      "5": {
+        "point": [
+          366.23087085021393,
+          179.26244742616186
+        ],
+        "radius": 1345.8249992259914,
+        "heading": null
+      },
+      "10": {
+        "point": [
+          1629.025978452055,
+          566.5570107657483
+        ],
+        "radius": 1452.921559332996,
+        "heading": null
+      },
+      "14": {
+        "point": [
+          -1172.209840932493,
+          350.25979967747975
+        ],
+        "radius": 1282.9025016981566,
+        "heading": null
+      },
+      "6": {
+        "point": [
+          -35.92330199516494,
+          1450.2188718446464
+        ],
+        "radius": 1335.8642421851223,
+        "heading": null
+      },
+      "12": {
+        "point": [
+          -1208.2539810407454,
+          -696.4183129338343
+        ],
+        "radius": 1437.7596614495728,
+        "heading": null
+      },
+      "19": {
+        "point": [
+          1144.4483662508915,
+          -640.689767335789
+        ],
+        "radius": 1133.2523541186915,
+        "heading": null
+      },
+      "4": {
+        "point": [
+          1231.8011343148694,
+          -1039.5858144120414
+        ],
+        "radius": 1245.4011833185707,
+        "heading": null
+      },
+      "11": {
+        "point": [
+          772.9310691447672,
+          1242.6585179255187
+        ],
+        "radius": 1434.114322193891,
+        "heading": null
+      },
+      "3": {
+        "point": [
+          1446.1225030406135,
+          -1001.0612492497685
+        ],
+        "radius": 1354.3248718312473,
+        "heading": null
+      },
+      "15": {
+        "point": [
+          79.63248274313968,
+          291.1615666840331
+        ],
+        "radius": 1259.8626007255227,
+        "heading": null
+      },
+      "16": {
+        "point": [
+          -946.6507217136582,
+          29.120104112264187
+        ],
+        "radius": 1269.3880854153954,
+        "heading": null
+      }
+    },
+    "errors": "hash_uniform",
+    "layout": "area",
+    "profile": {
+      "version": 1,
+      "official_equivalent": false,
+      "source": "official-calibration-20260912",
+      "n_distribution": "uniform_integer_10_16",
+      "q4_directional_count_model": "uniform_1_N",
+      "position": "uniform_area_disk",
+      "radius": "uniform_1000_1500_unverified",
+      "heading": "uniform_0_2pi_unverified",
+      "bearing_error": "sin_legacy_unverified",
+      "sensitivity_errors": [
+        "sin",
+        "hash_uniform",
+        "plus",
+        "minus",
+        "checker"
+      ],
+      "q4_support_includes_pure_types": true,
+      "note": "Candidate selection on first 35 official Q4 cases; distribution assumptions remain provisional. Pure types are valid scenarios, irrespective of candidate selection."
+    }
+  },
+  {
+    "seed": 2026092411,
+    "n": 14,
+    "directional": 0,
+    "problem": 3,
+    "sources": {
+      "15": {
+        "point": [
+          81.66276422690842,
+          1356.958640622075
+        ],
+        "radius": 1175.0580458381876,
+        "heading": null
+      },
+      "18": {
+        "point": [
+          -360.7191219783059,
+          657.0806559172345
+        ],
+        "radius": 1088.4417869956912,
+        "heading": null
+      },
+      "4": {
+        "point": [
+          -371.73723318821305,
+          -1525.3185119063771
+        ],
+        "radius": 1046.9158725404013,
+        "heading": null
+      },
+      "20": {
+        "point": [
+          297.99135704175575,
+          -22.519577879249226
+        ],
+        "radius": 1160.924380648544,
+        "heading": null
+      },
+      "10": {
+        "point": [
+          789.6902063891464,
+          -1163.8155777740055
+        ],
+        "radius": 1155.9104073577207,
+        "heading": null
+      },
+      "7": {
+        "point": [
+          -1274.358014342592,
+          -1171.1649669134622
+        ],
+        "radius": 1483.0591649705195,
+        "heading": null
+      },
+      "14": {
+        "point": [
+          947.674007946756,
+          -1179.5293590612403
+        ],
+        "radius": 1251.421248089979,
+        "heading": null
+      },
+      "5": {
+        "point": [
+          -475.2851181651102,
+          273.9424313057367
+        ],
+        "radius": 1255.6625061280417,
+        "heading": null
+      },
+      "16": {
+        "point": [
+          157.15547142788992,
+          -1576.028441619239
+        ],
+        "radius": 1226.1933132738068,
+        "heading": null
+      },
+      "13": {
+        "point": [
+          -1470.832505771292,
+          -267.71740458895437
+        ],
+        "radius": 1257.5238788949164,
+        "heading": null
+      },
+      "3": {
+        "point": [
+          -1080.1563889906374,
+          595.4343414676305
+        ],
+        "radius": 1353.6075549054121,
+        "heading": null
+      },
+      "19": {
+        "point": [
+          -307.21381984046957,
+          1677.526137442721
+        ],
+        "radius": 1179.8981201453407,
+        "heading": null
+      },
+      "12": {
+        "point": [
+          593.5494918389583,
+          -1337.4167928169545
+        ],
+        "radius": 1411.4557375104669,
+        "heading": null
+      },
+      "6": {
+        "point": [
+          494.3774675766421,
+          -1084.5555839919446
+        ],
+        "radius": 1322.2268572356709,
+        "heading": null
+      }
+    },
+    "errors": "hash_uniform",
+    "layout": "area",
+    "profile": {
+      "version": 1,
+      "official_equivalent": false,
+      "source": "official-calibration-20260912",
+      "n_distribution": "uniform_integer_10_16",
+      "q4_directional_count_model": "uniform_1_N",
+      "position": "uniform_area_disk",
+      "radius": "uniform_1000_1500_unverified",
+      "heading": "uniform_0_2pi_unverified",
+      "bearing_error": "sin_legacy_unverified",
+      "sensitivity_errors": [
+        "sin",
+        "hash_uniform",
+        "plus",
+        "minus",
+        "checker"
+      ],
+      "q4_support_includes_pure_types": true,
+      "note": "Candidate selection on first 35 official Q4 cases; distribution assumptions remain provisional. Pure types are valid scenarios, irrespective of candidate selection."
+    }
+  },
+  {
+    "seed": 2026092412,
+    "n": 11,
+    "directional": 0,
+    "problem": 3,
+    "sources": {
+      "11": {
+        "point": [
+          -1460.3480634257546,
+          671.7034953599301
+        ],
+        "radius": 1131.6670568689058,
+        "heading": null
+      },
+      "16": {
+        "point": [
+          1710.8984709674376,
+          -558.7255906208069
+        ],
+        "radius": 1402.518894098382,
+        "heading": null
+      },
+      "6": {
+        "point": [
+          -1548.965962707803,
+          -399.7581072995869
+        ],
+        "radius": 1308.9997671383653,
+        "heading": null
+      },
+      "8": {
+        "point": [
+          1392.8799731978147,
+          36.205405235493984
+        ],
+        "radius": 1044.9108300018192,
+        "heading": null
+      },
+      "10": {
+        "point": [
+          702.8357851351458,
+          -827.4047529968223
+        ],
+        "radius": 1350.593192310872,
+        "heading": null
+      },
+      "14": {
+        "point": [
+          1041.5560564028337,
+          -818.2478751003129
+        ],
+        "radius": 1352.7760684738732,
+        "heading": null
+      },
+      "3": {
+        "point": [
+          1274.8892172362116,
+          -1062.3719200864261
+        ],
+        "radius": 1411.8338109832948,
+        "heading": null
+      },
+      "12": {
+        "point": [
+          719.029409184391,
+          -100.1039213142924
+        ],
+        "radius": 1043.5348265700231,
+        "heading": null
+      },
+      "17": {
+        "point": [
+          -3.4495328832502454,
+          1228.8224443529327
+        ],
+        "radius": 1371.7923709335741,
+        "heading": null
+      },
+      "15": {
+        "point": [
+          -101.61290338956931,
+          1435.29950113967
+        ],
+        "radius": 1057.500578443619,
+        "heading": null
+      },
+      "18": {
+        "point": [
+          -1150.0706468771539,
+          -654.9009514888694
+        ],
+        "radius": 1374.7559568264403,
+        "heading": null
+      }
+    },
+    "errors": "hash_uniform",
+    "layout": "area",
+    "profile": {
+      "version": 1,
+      "official_equivalent": false,
+      "source": "official-calibration-20260912",
+      "n_distribution": "uniform_integer_10_16",
+      "q4_directional_count_model": "uniform_1_N",
+      "position": "uniform_area_disk",
+      "radius": "uniform_1000_1500_unverified",
+      "heading": "uniform_0_2pi_unverified",
+      "bearing_error": "sin_legacy_unverified",
+      "sensitivity_errors": [
+        "sin",
+        "hash_uniform",
+        "plus",
+        "minus",
+        "checker"
+      ],
+      "q4_support_includes_pure_types": true,
+      "note": "Candidate selection on first 35 official Q4 cases; distribution assumptions remain provisional. Pure types are valid scenarios, irrespective of candidate selection."
+    }
+  },
+  {
+    "seed": 2026092413,
+    "n": 10,
+    "directional": 0,
+    "problem": 3,
+    "sources": {
+      "3": {
+        "point": [
+          840.0509431087906,
+          512.5239065697151
+        ],
+        "radius": 1010.8334754919364,
+        "heading": null
+      },
+      "6": {
+        "point": [
+          288.3829922041932,
+          -194.30851720918477
+        ],
+        "radius": 1294.4335356666986,
+        "heading": null
+      },
+      "7": {
+        "point": [
+          449.13710101760785,
+          219.66887156005802
+        ],
+        "radius": 1298.2712854050533,
+        "heading": null
+      },
+      "15": {
+        "point": [
+          838.6829578098775,
+          -1116.1441845741915
+        ],
+        "radius": 1352.2586840950476,
+        "heading": null
+      },
+      "4": {
+        "point": [
+          985.8082755294945,
+          139.43270313852298
+        ],
+        "radius": 1209.6958357971882,
+        "heading": null
+      },
+      "5": {
+        "point": [
+          1021.6837603206732,
+          1231.500290160057
+        ],
+        "radius": 1192.2642610335179,
+        "heading": null
+      },
+      "11": {
+        "point": [
+          -763.0693244398599,
+          -363.6983537549801
+        ],
+        "radius": 1031.5159161537294,
+        "heading": null
+      },
+      "19": {
+        "point": [
+          -1028.0183514299813,
+          317.2414111036112
+        ],
+        "radius": 1059.3920538574628,
+        "heading": null
+      },
+      "9": {
+        "point": [
+          1228.6839919640179,
+          437.8702146529941
+        ],
+        "radius": 1393.7897154230573,
+        "heading": null
+      },
+      "12": {
+        "point": [
+          850.0796424233503,
+          -1476.3579712581718
+        ],
+        "radius": 1042.5065946091668,
+        "heading": null
+      }
+    },
+    "errors": "hash_uniform",
+    "layout": "area",
+    "profile": {
+      "version": 1,
+      "official_equivalent": false,
+      "source": "official-calibration-20260912",
+      "n_distribution": "uniform_integer_10_16",
+      "q4_directional_count_model": "uniform_1_N",
+      "position": "uniform_area_disk",
+      "radius": "uniform_1000_1500_unverified",
+      "heading": "uniform_0_2pi_unverified",
+      "bearing_error": "sin_legacy_unverified",
+      "sensitivity_errors": [
+        "sin",
+        "hash_uniform",
+        "plus",
+        "minus",
+        "checker"
+      ],
+      "q4_support_includes_pure_types": true,
+      "note": "Candidate selection on first 35 official Q4 cases; distribution assumptions remain provisional. Pure types are valid scenarios, irrespective of candidate selection."
+    }
+  },
+  {
+    "seed": 2026092414,
+    "n": 14,
+    "directional": 0,
+    "problem": 3,
+    "sources": {
+      "20": {
+        "point": [
+          -1536.447717992825,
+          299.41495582437864
+        ],
+        "radius": 1127.0003196881578,
+        "heading": null
+      },
+      "10": {
+        "point": [
+          -552.6127636503456,
+          375.2925011219833
+        ],
+        "radius": 1133.07948698713,
+        "heading": null
+      },
+      "5": {
+        "point": [
+          -967.4096715627791,
+          -1135.1206270354037
+        ],
+        "radius": 1039.2818620757057,
+        "heading": null
+      },
+      "12": {
+        "point": [
+          -1040.4144030054974,
+          -336.8582011315852
+        ],
+        "radius": 1028.2429651759599,
+        "heading": null
+      },
+      "3": {
+        "point": [
+          950.283669361117,
+          -85.2417059016155
+        ],
+        "radius": 1231.0072883841553,
+        "heading": null
+      },
+      "2": {
+        "point": [
+          -280.4187433244913,
+          -963.5699609024203
+        ],
+        "radius": 1390.8836867707287,
+        "heading": null
+      },
+      "1": {
+        "point": [
+          -1122.959825361047,
+          133.08000492072514
+        ],
+        "radius": 1154.6636045969701,
+        "heading": null
+      },
+      "17": {
+        "point": [
+          -1304.3917117750304,
+          793.306856292001
+        ],
+        "radius": 1185.7733285300117,
+        "heading": null
+      },
+      "18": {
+        "point": [
+          1033.1315588397292,
+          6.99941764316465
+        ],
+        "radius": 1407.9774991789911,
+        "heading": null
+      },
+      "16": {
+        "point": [
+          1347.2296705616734,
+          -146.66890370344402
+        ],
+        "radius": 1417.5975983655953,
+        "heading": null
+      },
+      "14": {
+        "point": [
+          800.4933291240005,
+          990.6707052391467
+        ],
+        "radius": 1413.8921728658338,
+        "heading": null
+      },
+      "9": {
+        "point": [
+          -167.1096993535774,
+          -1134.192154766847
+        ],
+        "radius": 1298.7601746066036,
+        "heading": null
+      },
+      "4": {
+        "point": [
+          153.5532548684568,
+          1555.5143125617933
+        ],
+        "radius": 1336.3324382933015,
+        "heading": null
+      },
+      "15": {
+        "point": [
+          565.3793667995872,
+          48.32284977537769
+        ],
+        "radius": 1028.8697019714268,
+        "heading": null
+      }
+    },
+    "errors": "hash_uniform",
+    "layout": "area",
+    "profile": {
+      "version": 1,
+      "official_equivalent": false,
+      "source": "official-calibration-20260912",
+      "n_distribution": "uniform_integer_10_16",
+      "q4_directional_count_model": "uniform_1_N",
+      "position": "uniform_area_disk",
+      "radius": "uniform_1000_1500_unverified",
+      "heading": "uniform_0_2pi_unverified",
+      "bearing_error": "sin_legacy_unverified",
+      "sensitivity_errors": [
+        "sin",
+        "hash_uniform",
+        "plus",
+        "minus",
+        "checker"
+      ],
+      "q4_support_includes_pure_types": true,
+      "note": "Candidate selection on first 35 official Q4 cases; distribution assumptions remain provisional. Pure types are valid scenarios, irrespective of candidate selection."
+    }
+  },
+  {
+    "seed": 2026092415,
+    "n": 16,
+    "directional": 0,
+    "problem": 3,
+    "sources": {
+      "18": {
+        "point": [
+          -46.10607732909756,
+          1035.1597758779524
+        ],
+        "radius": 1002.8750288712035,
+        "heading": null
+      },
+      "19": {
+        "point": [
+          -384.3044425348004,
+          358.75565464574197
+        ],
+        "radius": 1187.294941369878,
+        "heading": null
+      },
+      "13": {
+        "point": [
+          -152.42777721320684,
+          -1249.6475355832913
+        ],
+        "radius": 1375.4269730897436,
+        "heading": null
+      },
+      "4": {
+        "point": [
+          -286.29127942236113,
+          -1534.4876296649968
+        ],
+        "radius": 1255.293928508,
+        "heading": null
+      },
+      "10": {
+        "point": [
+          -1418.0851738591755,
+          510.82939934629104
+        ],
+        "radius": 1187.0461707723036,
+        "heading": null
+      },
+      "12": {
+        "point": [
+          1318.7891273303874,
+          626.3414182410472
+        ],
+        "radius": 1147.6615490334048,
+        "heading": null
+      },
+      "11": {
+        "point": [
+          -928.8779475136804,
+          -893.1991766068213
+        ],
+        "radius": 1095.437827640578,
+        "heading": null
+      },
+      "20": {
+        "point": [
+          -1100.0052896090024,
+          -1189.4498132459812
+        ],
+        "radius": 1212.0592989298455,
+        "heading": null
+      },
+      "9": {
+        "point": [
+          -375.45092117658027,
+          1713.27806001869
+        ],
+        "radius": 1039.3493577497366,
+        "heading": null
+      },
+      "1": {
+        "point": [
+          -1155.006336033598,
+          1182.0494716504127
+        ],
+        "radius": 1431.7501468072776,
+        "heading": null
+      },
+      "8": {
+        "point": [
+          416.18921921072405,
+          832.7999222721382
+        ],
+        "radius": 1350.9841286309652,
+        "heading": null
+      },
+      "15": {
+        "point": [
+          -491.16951174123494,
+          392.3995567589789
+        ],
+        "radius": 1198.2832653828955,
+        "heading": null
+      },
+      "17": {
+        "point": [
+          1117.9294728034022,
+          790.7383086598123
+        ],
+        "radius": 1194.1187373707717,
+        "heading": null
+      },
+      "2": {
+        "point": [
+          -440.5473109252511,
+          -1310.1462735485716
+        ],
+        "radius": 1216.5291205724961,
+        "heading": null
+      },
+      "14": {
+        "point": [
+          -1067.22946057753,
+          582.5321757908541
+        ],
+        "radius": 1477.4110938433178,
+        "heading": null
+      },
+      "5": {
+        "point": [
+          658.8040819177124,
+          1434.1439838426227
+        ],
+        "radius": 1181.776372881201,
+        "heading": null
+      }
+    },
+    "errors": "hash_uniform",
+    "layout": "area",
+    "profile": {
+      "version": 1,
+      "official_equivalent": false,
+      "source": "official-calibration-20260912",
+      "n_distribution": "uniform_integer_10_16",
+      "q4_directional_count_model": "uniform_1_N",
+      "position": "uniform_area_disk",
+      "radius": "uniform_1000_1500_unverified",
+      "heading": "uniform_0_2pi_unverified",
+      "bearing_error": "sin_legacy_unverified",
+      "sensitivity_errors": [
+        "sin",
+        "hash_uniform",
+        "plus",
+        "minus",
+        "checker"
+      ],
+      "q4_support_includes_pure_types": true,
+      "note": "Candidate selection on first 35 official Q4 cases; distribution assumptions remain provisional. Pure types are valid scenarios, irrespective of candidate selection."
+    }
+  },
+  {
+    "seed": 2026092416,
+    "n": 10,
+    "directional": 0,
+    "problem": 3,
+    "sources": {
+      "2": {
+        "point": [
+          -1366.3101832997818,
+          -10.67137031802178
+        ],
+        "radius": 1224.96905797084,
+        "heading": null
+      },
+      "17": {
+        "point": [
+          696.638586987193,
+          -1580.97063750087
+        ],
+        "radius": 1479.5038965018641,
+        "heading": null
+      },
+      "6": {
+        "point": [
+          -1220.0056083673746,
+          -1062.672069352976
+        ],
+        "radius": 1369.5605085895008,
+        "heading": null
+      },
+      "12": {
+        "point": [
+          1027.3283352573824,
+          -106.40270835333867
+        ],
+        "radius": 1370.465470666718,
+        "heading": null
+      },
+      "14": {
+        "point": [
+          -180.37161429612547,
+          -1424.3935947634366
+        ],
+        "radius": 1177.9942403133925,
+        "heading": null
+      },
+      "4": {
+        "point": [
+          1635.8923945821118,
+          221.9489892768629
+        ],
+        "radius": 1105.3522623126407,
+        "heading": null
+      },
+      "8": {
+        "point": [
+          -1617.01414268704,
+          -68.16508877430779
+        ],
+        "radius": 1492.4310027904635,
+        "heading": null
+      },
+      "5": {
+        "point": [
+          1628.0486171498799,
+          204.50824338311185
+        ],
+        "radius": 1251.7799126941736,
+        "heading": null
+      },
+      "16": {
+        "point": [
+          -553.739092512155,
+          -974.9952544730992
+        ],
+        "radius": 1110.8784582552855,
+        "heading": null
+      },
+      "18": {
+        "point": [
+          870.4402300226069,
+          627.129892081369
+        ],
+        "radius": 1164.2213075007335,
+        "heading": null
+      }
+    },
+    "errors": "hash_uniform",
+    "layout": "area",
+    "profile": {
+      "version": 1,
+      "official_equivalent": false,
+      "source": "official-calibration-20260912",
+      "n_distribution": "uniform_integer_10_16",
+      "q4_directional_count_model": "uniform_1_N",
+      "position": "uniform_area_disk",
+      "radius": "uniform_1000_1500_unverified",
+      "heading": "uniform_0_2pi_unverified",
+      "bearing_error": "sin_legacy_unverified",
+      "sensitivity_errors": [
+        "sin",
+        "hash_uniform",
+        "plus",
+        "minus",
+        "checker"
+      ],
+      "q4_support_includes_pure_types": true,
+      "note": "Candidate selection on first 35 official Q4 cases; distribution assumptions remain provisional. Pure types are valid scenarios, irrespective of candidate selection."
+    }
+  },
+  {
+    "seed": 2026092417,
+    "n": 12,
+    "directional": 0,
+    "problem": 3,
+    "sources": {
+      "17": {
+        "point": [
+          1692.1383238213523,
+          -539.0443286896879
+        ],
+        "radius": 1072.6968095290247,
+        "heading": null
+      },
+      "12": {
+        "point": [
+          -314.3063131879819,
+          1695.0817169300608
+        ],
+        "radius": 1345.4891761100384,
+        "heading": null
+      },
+      "7": {
+        "point": [
+          -1562.9132875308997,
+          -32.5532749526371
+        ],
+        "radius": 1355.4915891115015,
+        "heading": null
+      },
+      "4": {
+        "point": [
+          153.2014838059884,
+          -1753.436275656563
+        ],
+        "radius": 1306.8677249740492,
+        "heading": null
+      },
+      "1": {
+        "point": [
+          1392.60422920349,
+          -818.338564527612
+        ],
+        "radius": 1458.1435720416248,
+        "heading": null
+      },
+      "9": {
+        "point": [
+          -865.9895093473623,
+          -1213.1499051693936
+        ],
+        "radius": 1449.9301351100476,
+        "heading": null
+      },
+      "13": {
+        "point": [
+          692.2541409052781,
+          213.8895060366196
+        ],
+        "radius": 1123.6952531670008,
+        "heading": null
+      },
+      "18": {
+        "point": [
+          -1177.252166882577,
+          4.778242833470849
+        ],
+        "radius": 1240.89302543954,
+        "heading": null
+      },
+      "19": {
+        "point": [
+          -536.2857736218451,
+          1202.895770057898
+        ],
+        "radius": 1105.9461465072513,
+        "heading": null
+      },
+      "14": {
+        "point": [
+          592.8209577027194,
+          -168.61096175940082
+        ],
+        "radius": 1244.7918484021598,
+        "heading": null
+      },
+      "16": {
+        "point": [
+          156.42653171957892,
+          -423.6781338832636
+        ],
+        "radius": 1387.5009437167841,
+        "heading": null
+      },
+      "15": {
+        "point": [
+          334.7934639649698,
+          587.0704982084026
+        ],
+        "radius": 1180.8520194413554,
+        "heading": null
+      }
+    },
+    "errors": "hash_uniform",
+    "layout": "area",
+    "profile": {
+      "version": 1,
+      "official_equivalent": false,
+      "source": "official-calibration-20260912",
+      "n_distribution": "uniform_integer_10_16",
+      "q4_directional_count_model": "uniform_1_N",
+      "position": "uniform_area_disk",
+      "radius": "uniform_1000_1500_unverified",
+      "heading": "uniform_0_2pi_unverified",
+      "bearing_error": "sin_legacy_unverified",
+      "sensitivity_errors": [
+        "sin",
+        "hash_uniform",
+        "plus",
+        "minus",
+        "checker"
+      ],
+      "q4_support_includes_pure_types": true,
+      "note": "Candidate selection on first 35 official Q4 cases; distribution assumptions remain provisional. Pure types are valid scenarios, irrespective of candidate selection."
+    }
+  },
+  {
+    "seed": 2026092418,
+    "n": 10,
+    "directional": 0,
+    "problem": 3,
+    "sources": {
+      "11": {
+        "point": [
+          1269.0256159764647,
+          -38.34411074814861
+        ],
+        "radius": 1040.6080182168355,
+        "heading": null
+      },
+      "10": {
+        "point": [
+          -564.0847129105449,
+          1608.4778201739189
+        ],
+        "radius": 1078.4268452140152,
+        "heading": null
+      },
+      "18": {
+        "point": [
+          1475.809727375442,
+          -77.18115266183683
+        ],
+        "radius": 1024.5503925379385,
+        "heading": null
+      },
+      "12": {
+        "point": [
+          -100.5896804135528,
+          199.48296665103817
+        ],
+        "radius": 1483.3146454421571,
+        "heading": null
+      },
+      "8": {
+        "point": [
+          -533.1627162152123,
+          -482.0504304054521
+        ],
+        "radius": 1171.6924976572761,
+        "heading": null
+      },
+      "13": {
+        "point": [
+          -345.32157996158867,
+          -218.43867067122898
+        ],
+        "radius": 1033.0822594725164,
+        "heading": null
+      },
+      "9": {
+        "point": [
+          -852.8107167066804,
+          -412.24994277025013
+        ],
+        "radius": 1133.7144685752864,
+        "heading": null
+      },
+      "17": {
+        "point": [
+          0.6818864227088246,
+          -1643.676515206507
+        ],
+        "radius": 1118.2889069309751,
+        "heading": null
+      },
+      "3": {
+        "point": [
+          1047.3771035091063,
+          584.1701638402861
+        ],
+        "radius": 1341.2260231554737,
+        "heading": null
+      },
+      "14": {
+        "point": [
+          1524.2789189143707,
+          -587.0629411292535
+        ],
+        "radius": 1261.5577956204202,
+        "heading": null
+      }
+    },
+    "errors": "hash_uniform",
+    "layout": "area",
+    "profile": {
+      "version": 1,
+      "official_equivalent": false,
+      "source": "official-calibration-20260912",
+      "n_distribution": "uniform_integer_10_16",
+      "q4_directional_count_model": "uniform_1_N",
+      "position": "uniform_area_disk",
+      "radius": "uniform_1000_1500_unverified",
+      "heading": "uniform_0_2pi_unverified",
+      "bearing_error": "sin_legacy_unverified",
+      "sensitivity_errors": [
+        "sin",
+        "hash_uniform",
+        "plus",
+        "minus",
+        "checker"
+      ],
+      "q4_support_includes_pure_types": true,
+      "note": "Candidate selection on first 35 official Q4 cases; distribution assumptions remain provisional. Pure types are valid scenarios, irrespective of candidate selection."
+    }
+  },
+  {
+    "seed": 2026092419,
+    "n": 13,
+    "directional": 0,
+    "problem": 3,
+    "sources": {
+      "2": {
+        "point": [
+          -1478.743998491357,
+          826.755503688992
+        ],
+        "radius": 1031.475651724177,
+        "heading": null
+      },
+      "1": {
+        "point": [
+          181.07884547462749,
+          -1028.8841000150228
+        ],
+        "radius": 1312.0307477290457,
+        "heading": null
+      },
+      "14": {
+        "point": [
+          -316.05028388629535,
+          491.8229957358582
+        ],
+        "radius": 1199.3045687699016,
+        "heading": null
+      },
+      "8": {
+        "point": [
+          400.01596955905694,
+          1256.2512158868838
+        ],
+        "radius": 1188.721443737729,
+        "heading": null
+      },
+      "5": {
+        "point": [
+          -305.3361870471435,
+          -1543.6690546420784
+        ],
+        "radius": 1069.982451185899,
+        "heading": null
+      },
+      "19": {
+        "point": [
+          -156.2841090803273,
+          -388.2763697535691
+        ],
+        "radius": 1095.5534827125548,
+        "heading": null
+      },
+      "9": {
+        "point": [
+          -408.3145704631982,
+          702.2048642197537
+        ],
+        "radius": 1022.7791728088074,
+        "heading": null
+      },
+      "20": {
+        "point": [
+          -1518.4674657313108,
+          289.75385023474763
+        ],
+        "radius": 1103.0782410672616,
+        "heading": null
+      },
+      "4": {
+        "point": [
+          783.2079367832633,
+          -1199.3785720391345
+        ],
+        "radius": 1199.215488058943,
+        "heading": null
+      },
+      "16": {
+        "point": [
+          -1598.7271676293828,
+          -647.7858493651856
+        ],
+        "radius": 1366.6780042074818,
+        "heading": null
+      },
+      "6": {
+        "point": [
+          -522.9622750001446,
+          -302.7765789214982
+        ],
+        "radius": 1255.7981968064705,
+        "heading": null
+      },
+      "15": {
+        "point": [
+          -1621.3720907657612,
+          -653.9464848976882
+        ],
+        "radius": 1316.6077971585519,
+        "heading": null
+      },
+      "13": {
+        "point": [
+          -1597.8077858091117,
+          -429.60516972505513
+        ],
+        "radius": 1192.925733720556,
+        "heading": null
+      }
+    },
+    "errors": "hash_uniform",
+    "layout": "area",
+    "profile": {
+      "version": 1,
+      "official_equivalent": false,
+      "source": "official-calibration-20260912",
+      "n_distribution": "uniform_integer_10_16",
+      "q4_directional_count_model": "uniform_1_N",
+      "position": "uniform_area_disk",
+      "radius": "uniform_1000_1500_unverified",
+      "heading": "uniform_0_2pi_unverified",
+      "bearing_error": "sin_legacy_unverified",
+      "sensitivity_errors": [
+        "sin",
+        "hash_uniform",
+        "plus",
+        "minus",
+        "checker"
+      ],
+      "q4_support_includes_pure_types": true,
+      "note": "Candidate selection on first 35 official Q4 cases; distribution assumptions remain provisional. Pure types are valid scenarios, irrespective of candidate selection."
+    }
+  },
+  {
+    "seed": 2026092420,
+    "n": 16,
+    "directional": 0,
+    "problem": 3,
+    "sources": {
+      "14": {
+        "point": [
+          547.4065928580543,
+          -423.78591673596515
+        ],
+        "radius": 1005.8842557829935,
+        "heading": null
+      },
+      "7": {
+        "point": [
+          395.4347805016235,
+          364.72364442881474
+        ],
+        "radius": 1475.3459409199477,
+        "heading": null
+      },
+      "15": {
+        "point": [
+          -318.6802709448708,
+          1730.479607608053
+        ],
+        "radius": 1164.0337129356221,
+        "heading": null
+      },
+      "17": {
+        "point": [
+          593.336878634409,
+          -1575.1322875076214
+        ],
+        "radius": 1377.3474110468967,
+        "heading": null
+      },
+      "1": {
+        "point": [
+          417.9048770499536,
+          -1331.5078447404178
+        ],
+        "radius": 1414.7406303726561,
+        "heading": null
+      },
+      "6": {
+        "point": [
+          290.87141589970133,
+          -1221.6164551970714
+        ],
+        "radius": 1498.2238405924445,
+        "heading": null
+      },
+      "16": {
+        "point": [
+          -417.8861589896043,
+          321.853768686332
+        ],
+        "radius": 1320.1876099114963,
+        "heading": null
+      },
+      "13": {
+        "point": [
+          1555.135818531845,
+          -29.5568520399944
+        ],
+        "radius": 1069.0016224648857,
+        "heading": null
+      },
+      "19": {
+        "point": [
+          -616.6753428606424,
+          1483.5023150160903
+        ],
+        "radius": 1080.1332138011169,
+        "heading": null
+      },
+      "12": {
+        "point": [
+          1124.5341041210168,
+          888.1281747141903
+        ],
+        "radius": 1486.1723827954797,
+        "heading": null
+      },
+      "8": {
+        "point": [
+          946.5685731107275,
+          -1202.0450488906624
+        ],
+        "radius": 1021.7298937622037,
+        "heading": null
+      },
+      "9": {
+        "point": [
+          1279.8895666358312,
+          -735.0402404949128
+        ],
+        "radius": 1306.1078048944519,
+        "heading": null
+      },
+      "10": {
+        "point": [
+          -1102.7360294208654,
+          -995.9733555789863
+        ],
+        "radius": 1004.4106973412711,
+        "heading": null
+      },
+      "4": {
+        "point": [
+          1044.6763117731257,
+          -1268.797555217392
+        ],
+        "radius": 1437.3826570109748,
+        "heading": null
+      },
+      "18": {
+        "point": [
+          -1191.1134452055824,
+          102.19021474364226
+        ],
+        "radius": 1296.08788076532,
+        "heading": null
+      },
+      "2": {
+        "point": [
+          46.608479468899645,
+          119.5347215001435
+        ],
+        "radius": 1126.800698271244,
+        "heading": null
+      }
+    },
+    "errors": "hash_uniform",
+    "layout": "area",
+    "profile": {
+      "version": 1,
+      "official_equivalent": false,
+      "source": "official-calibration-20260912",
+      "n_distribution": "uniform_integer_10_16",
+      "q4_directional_count_model": "uniform_1_N",
+      "position": "uniform_area_disk",
+      "radius": "uniform_1000_1500_unverified",
+      "heading": "uniform_0_2pi_unverified",
+      "bearing_error": "sin_legacy_unverified",
+      "sensitivity_errors": [
+        "sin",
+        "hash_uniform",
+        "plus",
+        "minus",
+        "checker"
+      ],
+      "q4_support_includes_pure_types": true,
+      "note": "Candidate selection on first 35 official Q4 cases; distribution assumptions remain provisional. Pure types are valid scenarios, irrespective of candidate selection."
+    }
+  },
+  {
+    "seed": 2026092421,
+    "n": 15,
+    "directional": 0,
+    "problem": 3,
+    "sources": {
+      "8": {
+        "point": [
+          768.542130290241,
+          1284.946257129617
+        ],
+        "radius": 1467.3103991478831,
+        "heading": null
+      },
+      "15": {
+        "point": [
+          -1575.5726617527748,
+          -558.1102818601424
+        ],
+        "radius": 1349.6706996628927,
+        "heading": null
+      },
+      "14": {
+        "point": [
+          1453.0393300455316,
+          193.00380009384227
+        ],
+        "radius": 1158.6742721162218,
+        "heading": null
+      },
+      "18": {
+        "point": [
+          29.32223778095465,
+          -279.38610204317075
+        ],
+        "radius": 1489.10558428423,
+        "heading": null
+      },
+      "20": {
+        "point": [
+          -59.56270034340775,
+          -1534.0486739767296
+        ],
+        "radius": 1380.4336990652337,
+        "heading": null
+      },
+      "2": {
+        "point": [
+          714.6660410775947,
+          354.24296013482683
+        ],
+        "radius": 1099.9704409095611,
+        "heading": null
+      },
+      "13": {
+        "point": [
+          -965.8563366789126,
+          -948.985762155182
+        ],
+        "radius": 1498.3844263592332,
+        "heading": null
+      },
+      "1": {
+        "point": [
+          372.8283416027424,
+          -892.8822511847234
+        ],
+        "radius": 1473.8827065717958,
+        "heading": null
+      },
+      "12": {
+        "point": [
+          214.06618388125142,
+          541.604190817709
+        ],
+        "radius": 1182.5874234279393,
+        "heading": null
+      },
+      "9": {
+        "point": [
+          -1345.9808480332324,
+          -1177.8385104812942
+        ],
+        "radius": 1162.3870540055432,
+        "heading": null
+      },
+      "11": {
+        "point": [
+          1129.6460914594365,
+          -1217.7790598436588
+        ],
+        "radius": 1095.2058634258453,
+        "heading": null
+      },
+      "3": {
+        "point": [
+          -626.9927513454015,
+          307.70548568591767
+        ],
+        "radius": 1426.7227757732894,
+        "heading": null
+      },
+      "19": {
+        "point": [
+          379.4453776435213,
+          108.69510792897982
+        ],
+        "radius": 1166.8767069702185,
+        "heading": null
+      },
+      "5": {
+        "point": [
+          -1060.756680322732,
+          -557.0942241691067
+        ],
+        "radius": 1182.4243833773517,
+        "heading": null
+      },
+      "10": {
+        "point": [
+          1018.1000637260149,
+          833.7998094686543
+        ],
+        "radius": 1004.4068596390782,
+        "heading": null
+      }
+    },
+    "errors": "hash_uniform",
+    "layout": "area",
+    "profile": {
+      "version": 1,
+      "official_equivalent": false,
+      "source": "official-calibration-20260912",
+      "n_distribution": "uniform_integer_10_16",
+      "q4_directional_count_model": "uniform_1_N",
+      "position": "uniform_area_disk",
+      "radius": "uniform_1000_1500_unverified",
+      "heading": "uniform_0_2pi_unverified",
+      "bearing_error": "sin_legacy_unverified",
+      "sensitivity_errors": [
+        "sin",
+        "hash_uniform",
+        "plus",
+        "minus",
+        "checker"
+      ],
+      "q4_support_includes_pure_types": true,
+      "note": "Candidate selection on first 35 official Q4 cases; distribution assumptions remain provisional. Pure types are valid scenarios, irrespective of candidate selection."
+    }
+  },
+  {
+    "seed": 2026092422,
+    "n": 16,
+    "directional": 0,
+    "problem": 3,
+    "sources": {
+      "5": {
+        "point": [
+          1145.9674646073054,
+          286.1743184105311
+        ],
+        "radius": 1302.293495755649,
+        "heading": null
+      },
+      "6": {
+        "point": [
+          1164.610767381762,
+          -224.08725750734985
+        ],
+        "radius": 1319.967797426114,
+        "heading": null
+      },
+      "20": {
+        "point": [
+          -219.8095775220285,
+          -1304.7600201492219
+        ],
+        "radius": 1154.732299777154,
+        "heading": null
+      },
+      "11": {
+        "point": [
+          -394.34882512085846,
+          -1547.3596278113475
+        ],
+        "radius": 1166.55252723541,
+        "heading": null
+      },
+      "3": {
+        "point": [
+          1235.14438406009,
+          1011.5392547317923
+        ],
+        "radius": 1354.8444966027391,
+        "heading": null
+      },
+      "2": {
+        "point": [
+          875.3336702878009,
+          851.7790651144135
+        ],
+        "radius": 1420.3546562950269,
+        "heading": null
+      },
+      "18": {
+        "point": [
+          -536.8780602293698,
+          1626.634460658054
+        ],
+        "radius": 1262.301739738895,
+        "heading": null
+      },
+      "19": {
+        "point": [
+          -907.3938106568523,
+          1038.158009998864
+        ],
+        "radius": 1499.3895718630683,
+        "heading": null
+      },
+      "16": {
+        "point": [
+          1374.0006007765403,
+          -89.5090422881222
+        ],
+        "radius": 1313.687176335024,
+        "heading": null
+      },
+      "9": {
+        "point": [
+          -1416.6404057145896,
+          36.40053899951659
+        ],
+        "radius": 1345.4068707370425,
+        "heading": null
+      },
+      "8": {
+        "point": [
+          -202.63332270245908,
+          417.30520335397483
+        ],
+        "radius": 1406.7062872416425,
+        "heading": null
+      },
+      "15": {
+        "point": [
+          1654.1900115672568,
+          634.5696502175871
+        ],
+        "radius": 1357.5459669863626,
+        "heading": null
+      },
+      "10": {
+        "point": [
+          -941.4581397637226,
+          574.0211444476133
+        ],
+        "radius": 1018.3875746159406,
+        "heading": null
+      },
+      "7": {
+        "point": [
+          1156.5945750631445,
+          -477.13800260126226
+        ],
+        "radius": 1037.9693366016672,
+        "heading": null
+      },
+      "13": {
+        "point": [
+          -967.3246666688602,
+          -151.35617300654658
+        ],
+        "radius": 1423.9271206942292,
+        "heading": null
+      },
+      "1": {
+        "point": [
+          -1538.0537249664537,
+          -49.65018866380074
+        ],
+        "radius": 1370.0964051384515,
+        "heading": null
+      }
+    },
+    "errors": "hash_uniform",
+    "layout": "area",
+    "profile": {
+      "version": 1,
+      "official_equivalent": false,
+      "source": "official-calibration-20260912",
+      "n_distribution": "uniform_integer_10_16",
+      "q4_directional_count_model": "uniform_1_N",
+      "position": "uniform_area_disk",
+      "radius": "uniform_1000_1500_unverified",
+      "heading": "uniform_0_2pi_unverified",
+      "bearing_error": "sin_legacy_unverified",
+      "sensitivity_errors": [
+        "sin",
+        "hash_uniform",
+        "plus",
+        "minus",
+        "checker"
+      ],
+      "q4_support_includes_pure_types": true,
+      "note": "Candidate selection on first 35 official Q4 cases; distribution assumptions remain provisional. Pure types are valid scenarios, irrespective of candidate selection."
+    }
+  },
+  {
+    "seed": 2026092423,
+    "n": 10,
+    "directional": 0,
+    "problem": 3,
+    "sources": {
+      "20": {
+        "point": [
+          148.79296835967156,
+          127.73758081059354
+        ],
+        "radius": 1104.7455002361896,
+        "heading": null
+      },
+      "16": {
+        "point": [
+          241.89478848899043,
+          1402.1842888210615
+        ],
+        "radius": 1379.0067782333317,
+        "heading": null
+      },
+      "8": {
+        "point": [
+          1284.3919007497277,
+          -1040.817766103744
+        ],
+        "radius": 1267.0365404341646,
+        "heading": null
+      },
+      "17": {
+        "point": [
+          422.13942322776927,
+          -774.2865449162266
+        ],
+        "radius": 1218.340670007622,
+        "heading": null
+      },
+      "1": {
+        "point": [
+          735.1573896312035,
+          1036.3063574469961
+        ],
+        "radius": 1498.091477229057,
+        "heading": null
+      },
+      "11": {
+        "point": [
+          -139.38727416979245,
+          -1512.5768115360377
+        ],
+        "radius": 1381.2729715858413,
+        "heading": null
+      },
+      "13": {
+        "point": [
+          400.5197046553259,
+          1666.335596449584
+        ],
+        "radius": 1118.3706456688756,
+        "heading": null
+      },
+      "7": {
+        "point": [
+          -354.4337337926796,
+          285.81304262863307
+        ],
+        "radius": 1372.3780843573713,
+        "heading": null
+      },
+      "9": {
+        "point": [
+          -328.64386887686396,
+          976.4415388172797
+        ],
+        "radius": 1423.3070714088246,
+        "heading": null
+      },
+      "6": {
+        "point": [
+          468.56774258282553,
+          50.352382817549206
+        ],
+        "radius": 1296.1612043002438,
+        "heading": null
+      }
+    },
+    "errors": "hash_uniform",
+    "layout": "area",
+    "profile": {
+      "version": 1,
+      "official_equivalent": false,
+      "source": "official-calibration-20260912",
+      "n_distribution": "uniform_integer_10_16",
+      "q4_directional_count_model": "uniform_1_N",
+      "position": "uniform_area_disk",
+      "radius": "uniform_1000_1500_unverified",
+      "heading": "uniform_0_2pi_unverified",
+      "bearing_error": "sin_legacy_unverified",
+      "sensitivity_errors": [
+        "sin",
+        "hash_uniform",
+        "plus",
+        "minus",
+        "checker"
+      ],
+      "q4_support_includes_pure_types": true,
+      "note": "Candidate selection on first 35 official Q4 cases; distribution assumptions remain provisional. Pure types are valid scenarios, irrespective of candidate selection."
+    }
+  },
+  {
+    "seed": 2026092424,
+    "n": 10,
+    "directional": 0,
+    "problem": 3,
+    "sources": {
+      "12": {
+        "point": [
+          -943.7596167220588,
+          57.90369352807276
+        ],
+        "radius": 1365.0469113481477,
+        "heading": null
+      },
+      "4": {
+        "point": [
+          -1046.9100024377424,
+          231.6083266084553
+        ],
+        "radius": 1319.658085316947,
+        "heading": null
+      },
+      "6": {
+        "point": [
+          1668.3530521687592,
+          344.2258390250511
+        ],
+        "radius": 1025.5575834517301,
+        "heading": null
+      },
+      "5": {
+        "point": [
+          539.3794110753172,
+          805.165894069111
+        ],
+        "radius": 1122.9013028026002,
+        "heading": null
+      },
+      "13": {
+        "point": [
+          1302.4209445859285,
+          -569.9900246727088
+        ],
+        "radius": 1037.849748042361,
+        "heading": null
+      },
+      "17": {
+        "point": [
+          10.420198250863564,
+          -604.0303188684784
+        ],
+        "radius": 1033.9966889184777,
+        "heading": null
+      },
+      "19": {
+        "point": [
+          -319.42699467416924,
+          -5.154481522688107
+        ],
+        "radius": 1483.6131730640586,
+        "heading": null
+      },
+      "15": {
+        "point": [
+          -785.8824187297564,
+          -1194.9934077914654
+        ],
+        "radius": 1413.0861689566327,
+        "heading": null
+      },
+      "8": {
+        "point": [
+          -1037.0738017545239,
+          -1201.8307042051078
+        ],
+        "radius": 1267.5186033367052,
+        "heading": null
+      },
+      "2": {
+        "point": [
+          1357.3466771019891,
+          758.5796294964995
+        ],
+        "radius": 1038.8380854783702,
+        "heading": null
+      }
+    },
+    "errors": "hash_uniform",
+    "layout": "area",
+    "profile": {
+      "version": 1,
+      "official_equivalent": false,
+      "source": "official-calibration-20260912",
+      "n_distribution": "uniform_integer_10_16",
+      "q4_directional_count_model": "uniform_1_N",
+      "position": "uniform_area_disk",
+      "radius": "uniform_1000_1500_unverified",
+      "heading": "uniform_0_2pi_unverified",
+      "bearing_error": "sin_legacy_unverified",
+      "sensitivity_errors": [
+        "sin",
+        "hash_uniform",
+        "plus",
+        "minus",
+        "checker"
+      ],
+      "q4_support_includes_pure_types": true,
+      "note": "Candidate selection on first 35 official Q4 cases; distribution assumptions remain provisional. Pure types are valid scenarios, irrespective of candidate selection."
+    }
+  },
+  {
+    "seed": 2026092425,
+    "n": 11,
+    "directional": 0,
+    "problem": 3,
+    "sources": {
+      "19": {
+        "point": [
+          -463.4237752526876,
+          -1364.6045901481582
+        ],
+        "radius": 1317.458202861858,
+        "heading": null
+      },
+      "9": {
+        "point": [
+          -1361.0008698492386,
+          -1126.4294693295221
+        ],
+        "radius": 1444.9368727298179,
+        "heading": null
+      },
+      "4": {
+        "point": [
+          -1000.9772022117687,
+          495.10796676892954
+        ],
+        "radius": 1107.771212032252,
+        "heading": null
+      },
+      "13": {
+        "point": [
+          692.29294408065,
+          -767.5051877512799
+        ],
+        "radius": 1356.2470266355092,
+        "heading": null
+      },
+      "7": {
+        "point": [
+          860.375249523656,
+          -607.4224585055442
+        ],
+        "radius": 1190.4779430873764,
+        "heading": null
+      },
+      "8": {
+        "point": [
+          -760.4034737985734,
+          -140.18066459015293
+        ],
+        "radius": 1059.597106914032,
+        "heading": null
+      },
+      "1": {
+        "point": [
+          -109.14986184759223,
+          976.1427611976986
+        ],
+        "radius": 1335.4630887178032,
+        "heading": null
+      },
+      "15": {
+        "point": [
+          -1601.0762593770899,
+          516.9450148713672
+        ],
+        "radius": 1353.7947524504557,
+        "heading": null
+      },
+      "6": {
+        "point": [
+          617.272469907453,
+          1348.0307824242316
+        ],
+        "radius": 1448.9633531188315,
+        "heading": null
+      },
+      "20": {
+        "point": [
+          -133.46795056336444,
+          -355.38415292081004
+        ],
+        "radius": 1283.909953269587,
+        "heading": null
+      },
+      "5": {
+        "point": [
+          67.46816057835856,
+          1573.4128826434955
+        ],
+        "radius": 1013.513713765485,
+        "heading": null
+      }
+    },
+    "errors": "hash_uniform",
+    "layout": "area",
+    "profile": {
+      "version": 1,
+      "official_equivalent": false,
+      "source": "official-calibration-20260912",
+      "n_distribution": "uniform_integer_10_16",
+      "q4_directional_count_model": "uniform_1_N",
+      "position": "uniform_area_disk",
+      "radius": "uniform_1000_1500_unverified",
+      "heading": "uniform_0_2pi_unverified",
+      "bearing_error": "sin_legacy_unverified",
+      "sensitivity_errors": [
+        "sin",
+        "hash_uniform",
+        "plus",
+        "minus",
+        "checker"
+      ],
+      "q4_support_includes_pure_types": true,
+      "note": "Candidate selection on first 35 official Q4 cases; distribution assumptions remain provisional. Pure types are valid scenarios, irrespective of candidate selection."
+    }
+  },
+  {
+    "seed": 2026092426,
+    "n": 13,
+    "directional": 0,
+    "problem": 3,
+    "sources": {
+      "18": {
+        "point": [
+          -1705.7880133659578,
+          71.83463734989328
+        ],
+        "radius": 1071.5165234055821,
+        "heading": null
+      },
+      "2": {
+        "point": [
+          819.9644196854371,
+          -1465.1427975091453
+        ],
+        "radius": 1048.66971987765,
+        "heading": null
+      },
+      "5": {
+        "point": [
+          -705.4969526573003,
+          524.7410664137016
+        ],
+        "radius": 1340.2153611572521,
+        "heading": null
+      },
+      "8": {
+        "point": [
+          358.63026295354683,
+          1262.6339118538137
+        ],
+        "radius": 1456.227567581309,
+        "heading": null
+      },
+      "19": {
+        "point": [
+          -707.9909606595502,
+          243.08209011265126
+        ],
+        "radius": 1148.088424682364,
+        "heading": null
+      },
+      "1": {
+        "point": [
+          570.4489973643811,
+          -1070.9248373858572
+        ],
+        "radius": 1184.478444371307,
+        "heading": null
+      },
+      "4": {
+        "point": [
+          1209.970104887735,
+          -546.1906291780488
+        ],
+        "radius": 1426.1934800979798,
+        "heading": null
+      },
+      "6": {
+        "point": [
+          1037.2340816568446,
+          -207.31708548552513
+        ],
+        "radius": 1268.2867178364834,
+        "heading": null
+      },
+      "7": {
+        "point": [
+          1.090442530498103,
+          -1316.624624517946
+        ],
+        "radius": 1126.963487341621,
+        "heading": null
+      },
+      "3": {
+        "point": [
+          -592.4556679139334,
+          -927.2562152791614
+        ],
+        "radius": 1354.878552794251,
+        "heading": null
+      },
+      "20": {
+        "point": [
+          1529.104468828932,
+          -839.5317855584722
+        ],
+        "radius": 1159.9585727749327,
+        "heading": null
+      },
+      "9": {
+        "point": [
+          760.3259119987589,
+          1532.1256474861523
+        ],
+        "radius": 1386.4845212652242,
+        "heading": null
+      },
+      "11": {
+        "point": [
+          273.65397246796266,
+          -648.9953246841619
+        ],
+        "radius": 1385.6275688513392,
+        "heading": null
+      }
+    },
+    "errors": "hash_uniform",
+    "layout": "area",
+    "profile": {
+      "version": 1,
+      "official_equivalent": false,
+      "source": "official-calibration-20260912",
+      "n_distribution": "uniform_integer_10_16",
+      "q4_directional_count_model": "uniform_1_N",
+      "position": "uniform_area_disk",
+      "radius": "uniform_1000_1500_unverified",
+      "heading": "uniform_0_2pi_unverified",
+      "bearing_error": "sin_legacy_unverified",
+      "sensitivity_errors": [
+        "sin",
+        "hash_uniform",
+        "plus",
+        "minus",
+        "checker"
+      ],
+      "q4_support_includes_pure_types": true,
+      "note": "Candidate selection on first 35 official Q4 cases; distribution assumptions remain provisional. Pure types are valid scenarios, irrespective of candidate selection."
+    }
+  },
+  {
+    "seed": 2026092427,
+    "n": 15,
+    "directional": 0,
+    "problem": 3,
+    "sources": {
+      "14": {
+        "point": [
+          1094.5090083022465,
+          -274.2577918719111
+        ],
+        "radius": 1160.1447584948207,
+        "heading": null
+      },
+      "2": {
+        "point": [
+          -1499.7192535423073,
+          -312.0967682615053
+        ],
+        "radius": 1476.6094662149342,
+        "heading": null
+      },
+      "9": {
+        "point": [
+          517.8771771704497,
+          -1655.5976802722162
+        ],
+        "radius": 1293.9677296290456,
+        "heading": null
+      },
+      "8": {
+        "point": [
+          -394.0803607691755,
+          -1479.4197382089824
+        ],
+        "radius": 1203.081327450587,
+        "heading": null
+      },
+      "6": {
+        "point": [
+          1287.4848528615505,
+          577.9696477833543
+        ],
+        "radius": 1129.3571726655668,
+        "heading": null
+      },
+      "19": {
+        "point": [
+          1295.5359305526881,
+          565.0346344461858
+        ],
+        "radius": 1317.10238460088,
+        "heading": null
+      },
+      "10": {
+        "point": [
+          -369.16761692918425,
+          -181.60651413921428
+        ],
+        "radius": 1111.1728824366273,
+        "heading": null
+      },
+      "5": {
+        "point": [
+          1689.7482583707197,
+          -446.37288400706734
+        ],
+        "radius": 1471.9260275288489,
+        "heading": null
+      },
+      "3": {
+        "point": [
+          1041.9610687684371,
+          -814.1940722236646
+        ],
+        "radius": 1240.068850474353,
+        "heading": null
+      },
+      "12": {
+        "point": [
+          -1473.955586046138,
+          529.4634157295288
+        ],
+        "radius": 1119.946829999058,
+        "heading": null
+      },
+      "4": {
+        "point": [
+          -342.59215402765193,
+          346.8937878992474
+        ],
+        "radius": 1394.0038960405009,
+        "heading": null
+      },
+      "1": {
+        "point": [
+          371.09544898238,
+          -31.03989042109567
+        ],
+        "radius": 1249.837215831384,
+        "heading": null
+      },
+      "11": {
+        "point": [
+          -245.70788347512908,
+          -634.855485177468
+        ],
+        "radius": 1208.505766425335,
+        "heading": null
+      },
+      "13": {
+        "point": [
+          612.9445965607566,
+          -149.08036366012038
+        ],
+        "radius": 1123.4013821223998,
+        "heading": null
+      },
+      "16": {
+        "point": [
+          -814.6851368796674,
+          419.48930445868626
+        ],
+        "radius": 1418.24867627519,
+        "heading": null
+      }
+    },
+    "errors": "hash_uniform",
+    "layout": "area",
+    "profile": {
+      "version": 1,
+      "official_equivalent": false,
+      "source": "official-calibration-20260912",
+      "n_distribution": "uniform_integer_10_16",
+      "q4_directional_count_model": "uniform_1_N",
+      "position": "uniform_area_disk",
+      "radius": "uniform_1000_1500_unverified",
+      "heading": "uniform_0_2pi_unverified",
+      "bearing_error": "sin_legacy_unverified",
+      "sensitivity_errors": [
+        "sin",
+        "hash_uniform",
+        "plus",
+        "minus",
+        "checker"
+      ],
+      "q4_support_includes_pure_types": true,
+      "note": "Candidate selection on first 35 official Q4 cases; distribution assumptions remain provisional. Pure types are valid scenarios, irrespective of candidate selection."
+    }
+  },
+  {
+    "seed": 2026092428,
+    "n": 10,
+    "directional": 0,
+    "problem": 3,
+    "sources": {
+      "14": {
+        "point": [
+          787.2359500901963,
+          -339.1181016913428
+        ],
+        "radius": 1332.6461392452036,
+        "heading": null
+      },
+      "17": {
+        "point": [
+          901.9961744352894,
+          -1267.880775966817
+        ],
+        "radius": 1392.2406141400872,
+        "heading": null
+      },
+      "19": {
+        "point": [
+          614.3819709249381,
+          -1557.7967785580472
+        ],
+        "radius": 1139.0862771635318,
+        "heading": null
+      },
+      "12": {
+        "point": [
+          253.94989703377058,
+          -1231.611225117305
+        ],
+        "radius": 1318.8298613103113,
+        "heading": null
+      },
+      "18": {
+        "point": [
+          1012.1974959006022,
+          601.5995926590043
+        ],
+        "radius": 1410.0878974767134,
+        "heading": null
+      },
+      "15": {
+        "point": [
+          865.7202392407945,
+          -12.939820486508166
+        ],
+        "radius": 1155.9496255329054,
+        "heading": null
+      },
+      "4": {
+        "point": [
+          69.8810790481322,
+          1192.0077504618564
+        ],
+        "radius": 1296.5368596059045,
+        "heading": null
+      },
+      "5": {
+        "point": [
+          -396.09089756698563,
+          975.9048688119749
+        ],
+        "radius": 1153.1552699839358,
+        "heading": null
+      },
+      "11": {
+        "point": [
+          501.78541592321534,
+          866.7102034261663
+        ],
+        "radius": 1041.4637652517424,
+        "heading": null
+      },
+      "6": {
+        "point": [
+          -443.69386797576425,
+          4.139563552665133
+        ],
+        "radius": 1262.007276943824,
+        "heading": null
+      }
+    },
+    "errors": "hash_uniform",
+    "layout": "area",
+    "profile": {
+      "version": 1,
+      "official_equivalent": false,
+      "source": "official-calibration-20260912",
+      "n_distribution": "uniform_integer_10_16",
+      "q4_directional_count_model": "uniform_1_N",
+      "position": "uniform_area_disk",
+      "radius": "uniform_1000_1500_unverified",
+      "heading": "uniform_0_2pi_unverified",
+      "bearing_error": "sin_legacy_unverified",
+      "sensitivity_errors": [
+        "sin",
+        "hash_uniform",
+        "plus",
+        "minus",
+        "checker"
+      ],
+      "q4_support_includes_pure_types": true,
+      "note": "Candidate selection on first 35 official Q4 cases; distribution assumptions remain provisional. Pure types are valid scenarios, irrespective of candidate selection."
+    }
+  },
+  {
+    "seed": 2026092429,
+    "n": 13,
+    "directional": 0,
+    "problem": 3,
+    "sources": {
+      "16": {
+        "point": [
+          -700.6890346348159,
+          -937.5459110029092
+        ],
+        "radius": 1248.9891208715687,
+        "heading": null
+      },
+      "2": {
+        "point": [
+          -970.0044483178822,
+          -918.4929681380407
+        ],
+        "radius": 1446.4680873791335,
+        "heading": null
+      },
+      "1": {
+        "point": [
+          -1112.313336227719,
+          -785.4205224282313
+        ],
+        "radius": 1476.6806770354874,
+        "heading": null
+      },
+      "4": {
+        "point": [
+          265.9656567231794,
+          850.3599150060711
+        ],
+        "radius": 1239.2596616610504,
+        "heading": null
+      },
+      "8": {
+        "point": [
+          -419.97377222845716,
+          -328.9214676068169
+        ],
+        "radius": 1455.467527637642,
+        "heading": null
+      },
+      "15": {
+        "point": [
+          1567.4742803500742,
+          -299.92810810601725
+        ],
+        "radius": 1435.8916876165501,
+        "heading": null
+      },
+      "3": {
+        "point": [
+          592.8547669621792,
+          -77.36748107786222
+        ],
+        "radius": 1449.0221854799945,
+        "heading": null
+      },
+      "19": {
+        "point": [
+          -418.25391279996745,
+          537.6329339337057
+        ],
+        "radius": 1284.6565405814254,
+        "heading": null
+      },
+      "18": {
+        "point": [
+          1635.7260804419993,
+          -306.6976307745945
+        ],
+        "radius": 1433.7591808419584,
+        "heading": null
+      },
+      "12": {
+        "point": [
+          -255.1159311918444,
+          -1619.7103661253375
+        ],
+        "radius": 1149.2062062651264,
+        "heading": null
+      },
+      "6": {
+        "point": [
+          -653.7509228700336,
+          -311.36749642764784
+        ],
+        "radius": 1142.5783130214643,
+        "heading": null
+      },
+      "14": {
+        "point": [
+          -245.47461885190327,
+          -667.0008345485587
+        ],
+        "radius": 1149.6490067461154,
+        "heading": null
+      },
+      "10": {
+        "point": [
+          1442.889206852786,
+          376.7910053245404
+        ],
+        "radius": 1341.4315764028179,
+        "heading": null
+      }
+    },
+    "errors": "hash_uniform",
+    "layout": "area",
+    "profile": {
+      "version": 1,
+      "official_equivalent": false,
+      "source": "official-calibration-20260912",
+      "n_distribution": "uniform_integer_10_16",
+      "q4_directional_count_model": "uniform_1_N",
+      "position": "uniform_area_disk",
+      "radius": "uniform_1000_1500_unverified",
+      "heading": "uniform_0_2pi_unverified",
+      "bearing_error": "sin_legacy_unverified",
+      "sensitivity_errors": [
+        "sin",
+        "hash_uniform",
+        "plus",
+        "minus",
+        "checker"
+      ],
+      "q4_support_includes_pure_types": true,
+      "note": "Candidate selection on first 35 official Q4 cases; distribution assumptions remain provisional. Pure types are valid scenarios, irrespective of candidate selection."
+    }
+  }
+]

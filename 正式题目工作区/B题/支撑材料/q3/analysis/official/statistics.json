@@ -1,0 +1,12 @@
+{
+  "requested": 30,
+  "exported": 30,
+  "full_clear_runs": 30,
+  "incomplete_runs": 0,
+  "mean_seconds_per_target_full_clear": 333.591500496353,
+  "median_seconds_per_target_full_clear": 331.1418355906593,
+  "pooled_seconds_per_target_full_clear": 329.0424208257373,
+  "min_seconds_per_target": 279.20412814285714,
+  "max_seconds_per_target": 396.5196136,
+  "note": "Only full-clear runs enter speed averages; all other runs remain in results and failure counts."
+}
