@@ -1,0 +1,69 @@
+{
+  "checks": [
+    {
+      "actual": "PDF",
+      "detail": "File format is compared with the explicit allow-list.",
+      "expected": [
+        "PDF"
+      ],
+      "name": "format",
+      "status": "pass"
+    }
+  ],
+  "input": {
+    "name": "q2_feedback.pdf",
+    "path": "/Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/正式题目工作区/B题/第二问建模/论文定稿版/论文插图_20260913/figures/q2_feedback.pdf",
+    "size_bytes": 56114,
+    "suffix": ".pdf"
+  },
+  "metadata": {
+    "dpi_x": null,
+    "dpi_y": null,
+    "encrypted": false,
+    "first_page_height_pt": 311.811023622,
+    "first_page_width_pt": 453.5433070866,
+    "font_resources": {
+      "all_embedded": true,
+      "embedded_count": 3,
+      "fonts": [
+        {
+          "base_font": "/COADWR+SimHei",
+          "embedded": true,
+          "resource": "/F1",
+          "subtype": "/Type0"
+        },
+        {
+          "base_font": "/DJKSHH+STIXGeneral-Regular",
+          "embedded": true,
+          "resource": "/F3",
+          "subtype": "/Type0"
+        },
+        {
+          "base_font": "/SJZRWQ+STIXGeneral-Italic",
+          "embedded": true,
+          "resource": "/F2",
+          "subtype": "/Type0"
+        }
+      ],
+      "resource_count": 3,
+      "scope": "first page resource dictionary only",
+      "unembedded_count": 0,
+      "unknown_count": 0
+    },
+    "format": "PDF",
+    "height_mm": 109.99999999998333,
+    "kind": "vector-container",
+    "mode": null,
+    "note": "PDF page size and font resources do not establish the resolution of embedded raster images.",
+    "page_count": 1,
+    "width_mm": 159.999999999995
+  },
+  "notice": "This deterministic metadata screen checks only the supplied constraints. It does not verify visual quality, scientific integrity, accessibility, embedded-raster resolution in vector files, or journal compliance.",
+  "schema_version": "1.0",
+  "screening_summary": {
+    "fail": 0,
+    "pass": 1,
+    "unknown": 0,
+    "warning": 0
+  }
+}

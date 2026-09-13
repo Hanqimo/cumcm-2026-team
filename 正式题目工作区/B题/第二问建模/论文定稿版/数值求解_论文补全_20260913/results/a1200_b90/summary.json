@@ -1,0 +1,67 @@
+{
+  "case": "a1200_b90",
+  "a": 1200.0,
+  "beta_deg": 90.0,
+  "baseline": {
+    "x": 683.76940401012,
+    "y": 11.8479773107384,
+    "J": 253.68647039968,
+    "P_finish": 0.0336914859910043,
+    "P_onsite": 0.00152301567049265,
+    "P_H": 0.00152008349635652,
+    "P_N": 0.0,
+    "P_normal": 0.99847992076442,
+    "P_finish_N": 0.0,
+    "P_finish_normal": 0.0321714024946478,
+    "probability_residual": 4.26077639836819e-09,
+    "mec_gap": 9.11893494048854e-09,
+    "angle_calls": 3570.0,
+    "root_count": 6.0,
+    "depth_capped": 0.0,
+    "distance_K1": 0.0,
+    "x_global": 1188.15202268926,
+    "y_global": 683.76940401012,
+    "level": 5,
+    "scan": 64
+  },
+  "weights": [
+    0.5
+  ],
+  "candidates": [
+    {
+      "x": 798.134096475784,
+      "y": 504.28190375329,
+      "J": 24.1214105058474,
+      "P_finish": 0.403768223962544,
+      "P_onsite": 0.0,
+      "P_H": 0.0,
+      "P_N": 0.0,
+      "P_normal": 0.999999999999922,
+      "P_finish_N": 0.0,
+      "P_finish_normal": 0.403768223962544,
+      "probability_residual": -7.7937656328686e-14,
+      "mec_gap": 1.13908882326541e-13,
+      "angle_calls": 1950.0,
+      "root_count": 4.0,
+      "depth_capped": 0.0,
+      "distance_K1": 490.275738533655,
+      "x_global": 695.71809624671,
+      "y_global": 798.134096475784,
+      "level": 5,
+      "scan": 64,
+      "w": 0.5,
+      "optimizer": {
+        "success": true,
+        "iterations": 21,
+        "simplex_diameter_m": 0.015136558941561679,
+        "simplex_value_spread": 2.5755209076550045e-10
+      },
+      "F": 0.901151150664913
+    }
+  ],
+  "evaluation_count": 5977,
+  "elapsed_seconds": 22.118938457977492,
+  "global_optimality_certified": false,
+  "mirror_equivalence": false,
+  "note": "Candidates are numerical optima from covering search and multistart refinement; only simultaneous J=0/P=1 is a global certificate."
+}

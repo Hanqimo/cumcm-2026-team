@@ -1,0 +1,35 @@
+{
+  "source_files": {
+    "正式题目工作区/B题/第二问建模/期望损失与免补测概率_20260913/src/search_trial.py": "3ca7d2efab685961b93ddaaa179f332b6a3be251ecc80438631c6b7cfa4dfb14",
+    "正式题目工作区/B题/第二问建模/期望损失与免补测概率_20260913/src/trial_solver.cpp": "be09e72575135c4fcd2f5a62e13dd9873cdd5e39d4a2f37bddd466a7bcfde0c6",
+    "正式题目工作区/B题/第二问建模/期望损失与免补测概率_20260913/src/validate_trial.py": "ca1113ab4b55e519b989ce4c2b7f36a078feaaf5d332f2031867a1cfb8bfcf68",
+    "正式题目工作区/B题/第二问建模/期望损失与免补测概率_20260913/inputs/base_solver.cpp": "9c6a113a8c7dff8d1926079f97c7e4645cab6d84a576edc67f951cd78c707b70",
+    "正式题目工作区/B题/第二问建模/期望损失与免补测概率_20260913/inputs/base_search.py": "de344cc3b41a54ee0469de730dd515324d8ef06575ad6f141675dacade2bb667",
+    "正式题目工作区/B题/第二问建模/期望损失与免补测概率_20260913/inputs/base_validate.py": "f9584b82cd50e6e1b6a3403fc60713a19d73f3144a53dfb26d5e5c22ff9e9cb5"
+  },
+  "archive": "templates/修订记录/20260913_131933_问题二数值求解与结果",
+  "pre_edit_hashes": {
+    "templates/论文模版.tex": "e5e1b9fba177dd3f6b12ac70694c53c5e5902328c4992ae98e8491d4483d487c",
+    "templates/论文模版.pdf": "f0c9ff2e3ec83a42401cfbf2b490b125e59d2481bbf482aeb493d932f0a87d0a",
+    "梳理/论文初稿.tex": "e5e1b9fba177dd3f6b12ac70694c53c5e5902328c4992ae98e8491d4483d487c",
+    "梳理/论文初稿.pdf": "1c667e7edfaa0da224851dfcfad676e73b24b021cf8d3f34b7314d7544571800",
+    "正式题目工作区/B题/第二问建模/论文定稿版/第二问正文.tex": "4ca7109a9640e9578f87acf49a29a2033e2f0593702465b3fd35e082b0be3bac",
+    "正式题目工作区/B题/第二问建模/论文定稿版/第二问模型.tex": "7ad6083ac273e477b736603e821412443301d60ebfceb0267e9a792080b2b7b0",
+    "正式题目工作区/B题/第二问建模/论文定稿版/第二问模型.pdf": "6ed1da32f66622a347081951d5adfa505d1a8da211cb27983f1f7d5f2d470019",
+    "正式题目工作区/B题/第二问建模/论文定稿版/README.md": "92c6dd49835786c6a922bd63953a8a67be5e313257b13f5d4034b0b1455f5561",
+    "正式题目工作区/B题/第二问建模/论文定稿版/核查结果.json": "8439995b92e51ad9196c3285d057204d296fff15acc74ecdbc9031b7b943458d",
+    "正式题目工作区/B题/第二问建模/论文定稿版/核查记录.md": "39185db78db09ea9368f5d7694c615344e2558113944b58d784d11e4cd1711f7"
+  },
+  "new_cases": [
+    [
+      1200,
+      30
+    ],
+    [
+      1200,
+      90
+    ]
+  ],
+  "weight": 0.5,
+  "search_timeout_per_case_s": 300
+}

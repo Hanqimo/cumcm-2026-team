@@ -1,0 +1,20 @@
+{
+  "q2_posterior_general": {
+    "width_mm": 160.0,
+    "height_mm": 78.0,
+    "out_of_canvas_text": [],
+    "overall_title": false
+  },
+  "q2_feedback_distribution": {
+    "width_mm": 150.0,
+    "height_mm": 43.0,
+    "out_of_canvas_text": [],
+    "overall_title": false
+  },
+  "q2_feedback_regions": {
+    "width_mm": 130.0,
+    "height_mm": 60.0,
+    "out_of_canvas_text": [],
+    "overall_title": false
+  }
+}

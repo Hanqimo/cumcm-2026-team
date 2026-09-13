@@ -1,0 +1,101 @@
+{
+  "elapsed_s": 1.231346458022017,
+  "results": [
+    {
+      "case": [
+        0,
+        0
+      ],
+      "x": 700.0,
+      "y": 0.0,
+      "J": 303.19702958265,
+      "P_finish": 0.0364548904484893,
+      "P_onsite": 0.0147310531985246,
+      "P_H": 0.00284215306112329,
+      "P_N": 0.0,
+      "P_normal": 0.997157849860758,
+      "P_finish_N": 0.0,
+      "P_finish_normal": 0.033612737387366,
+      "probability_residual": 2.9218811814502e-09,
+      "mec_gap": 3.41060513164848e-13,
+      "angle_calls": 8526.0,
+      "root_count": 4.0,
+      "depth_capped": 0.0,
+      "distance_K1": 0.0,
+      "x_global": 700.0,
+      "y_global": 0.0
+    },
+    {
+      "case": [
+        0,
+        0
+      ],
+      "x": 813.0,
+      "y": 521.0,
+      "J": 25.683705152092,
+      "P_finish": 0.373815373397418,
+      "P_onsite": 0.0,
+      "P_H": 0.0,
+      "P_N": 0.0,
+      "P_normal": 1.00000000000001,
+      "P_finish_N": 0.0,
+      "P_finish_normal": 0.373815373397418,
+      "probability_residual": 5.10702591327572e-15,
+      "mec_gap": 1.06581410364015e-13,
+      "angle_calls": 4242.0,
+      "root_count": 4.0,
+      "depth_capped": 1.0,
+      "distance_K1": 506.731842742968,
+      "x_global": 813.0,
+      "y_global": 521.0
+    },
+    {
+      "case": [
+        1700,
+        0
+      ],
+      "x": -930.0,
+      "y": 0.0,
+      "J": 46.8329039092041,
+      "P_finish": 0.0171286463855444,
+      "P_onsite": 0.0,
+      "P_H": 0.0,
+      "P_N": 0.0162407300351846,
+      "P_normal": 0.983759269964794,
+      "P_finish_N": 0.0162407300351846,
+      "P_finish_normal": 0.000887916350359828,
+      "probability_residual": -2.09832151654155e-14,
+      "mec_gap": 3.5527136788005e-14,
+      "angle_calls": 1638.0,
+      "root_count": 2.0,
+      "depth_capped": 0.0,
+      "distance_K1": 934.999242547797,
+      "x_global": 770.0,
+      "y_global": 0.0
+    },
+    {
+      "case": [
+        1700,
+        0
+      ],
+      "x": 70.0,
+      "y": 0.0,
+      "J": 15.2363674286059,
+      "P_finish": 0.718179533843195,
+      "P_onsite": 0.243996809355643,
+      "P_H": 0.138921219641212,
+      "P_N": 0.0,
+      "P_normal": 0.861078780358791,
+      "P_finish_N": 0.0,
+      "P_finish_normal": 0.579258314201983,
+      "probability_residual": 3.5527136788005e-15,
+      "mec_gap": 2.48689957516035e-14,
+      "angle_calls": 4074.0,
+      "root_count": 6.0,
+      "depth_capped": 0.0,
+      "distance_K1": 0.0,
+      "x_global": 1770.0,
+      "y_global": 0.0
+    }
+  ]
+}

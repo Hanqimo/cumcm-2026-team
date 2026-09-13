@@ -1,0 +1,12 @@
+{
+  "python": "3.12.14",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "numpy": "2.3.5",
+  "matplotlib": "3.11.2",
+  "Pillow": "12.3.0",
+  "pypdf": "6.10.0",
+  "git_branch": "main",
+  "git_head": "40b49d6c8af69cefa004b0b947e97f82f6fa82fc",
+  "worktree_modified": true,
+  "clang": "Apple clang version 17.0.0 (clang-1700.3.19.1)"
+}

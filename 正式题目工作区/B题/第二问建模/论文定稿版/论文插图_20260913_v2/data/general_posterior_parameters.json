@@ -1,0 +1,16 @@
+{
+  "a_m": 1200.0,
+  "beta_deg": [
+    30.0,
+    90.0
+  ],
+  "C1_m2": {
+    "30.0": 7552.930303875267,
+    "90.0": 26408.065032371742
+  },
+  "central_ray_cutoff_m": {
+    "30.0": 657.8257903063877,
+    "90.0": 1341.640786499874
+  },
+  "density_units": "per square metre; not per radial-angular coordinate area"
+}

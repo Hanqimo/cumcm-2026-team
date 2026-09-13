@@ -1,0 +1,76 @@
+{
+  "checks": [
+    {
+      "actual": "PNG",
+      "detail": "File format is compared with the explicit allow-list.",
+      "expected": [
+        "PNG"
+      ],
+      "name": "format",
+      "status": "pass"
+    },
+    {
+      "actual": "RGB",
+      "detail": "Vector containers generally do not expose one image mode.",
+      "expected": [
+        "RGB"
+      ],
+      "name": "mode",
+      "status": "pass"
+    },
+    {
+      "actual": 599.91625,
+      "detail": "DPI basis: effective at target width. Metadata DPI is not a quality measure; effective DPI depends on final physical size.",
+      "expected": {
+        "max": null,
+        "min": 599.8
+      },
+      "name": "dpi",
+      "status": "pass"
+    },
+    {
+      "actual": false,
+      "detail": "Alpha is detected for raster modes/transparency metadata. Vector transparency requires rendered-content inspection.",
+      "expected": "forbid",
+      "name": "alpha",
+      "status": "pass"
+    }
+  ],
+  "input": {
+    "name": "q2_candidates.png",
+    "path": "/Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/正式题目工作区/B题/第二问建模/论文定稿版/论文插图_20260913/figures/q2_candidates.png",
+    "size_bytes": 290623,
+    "suffix": ".png"
+  },
+  "metadata": {
+    "bands": [
+      "R",
+      "G",
+      "B"
+    ],
+    "compression": null,
+    "dpi_x": 599.9988,
+    "dpi_y": 599.9988,
+    "exif_present": false,
+    "format": "PNG",
+    "frames": 1,
+    "has_alpha": false,
+    "height_mm_from_metadata": 79.96782660231987,
+    "height_px": 1889,
+    "icc_profile_bytes": 0,
+    "icc_profile_present": false,
+    "kind": "raster",
+    "mode": "RGB",
+    "pixel_count": 7138531,
+    "width_mm_from_metadata": 159.97798662263992,
+    "width_px": 3779
+  },
+  "notice": "This deterministic metadata screen checks only the supplied constraints. It does not verify visual quality, scientific integrity, accessibility, embedded-raster resolution in vector files, or journal compliance.",
+  "schema_version": "1.0",
+  "screening_summary": {
+    "fail": 0,
+    "pass": 4,
+    "unknown": 0,
+    "warning": 0
+  }
+}

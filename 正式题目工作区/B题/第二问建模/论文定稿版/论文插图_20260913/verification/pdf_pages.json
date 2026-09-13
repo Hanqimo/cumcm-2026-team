@@ -1,0 +1,23 @@
+{
+  "templates/论文模版.pdf": {
+    "pages": 15,
+    "figure_pages": [
+      10,
+      12
+    ]
+  },
+  "梳理/论文初稿.pdf": {
+    "pages": 15,
+    "figure_pages": [
+      10,
+      12
+    ]
+  },
+  "正式题目工作区/B题/第二问建模/论文定稿版/第二问模型.pdf": {
+    "pages": 5,
+    "figure_pages": [
+      3,
+      5
+    ]
+  }
+}

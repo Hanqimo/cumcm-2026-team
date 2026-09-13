@@ -1,0 +1,31 @@
+{
+  "full_papers_identical": true,
+  "body_matches_paper": true,
+  "all_display_equations_unchanged": true,
+  "q3_and_later_unchanged": true,
+  "no_duplicate_labels": true,
+  "no_unwanted_fonts": true,
+  "all_figures_explained_in_body": true,
+  "no_signal_and_onsite_probabilities_not_confused": true,
+  "noncentral_posterior_not_used_as_origin_optimization_result": true,
+  "clean_compilation": true,
+  "paper_pages": 16,
+  "draft_pages": 16,
+  "model_pages": 6,
+  "figure_count_in_q2": 4,
+  "paper_figure_pages": [
+    10,
+    11,
+    12,
+    13
+  ],
+  "model_figure_pages": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "pdf_fonts_embedded": true,
+  "main_and_draft_figure_pages_pixel_identical": true,
+  "visual_review": "Paper figure pages and explanatory paragraphs; standalone figures; font, symbol, scale and label inspection passed."
+}

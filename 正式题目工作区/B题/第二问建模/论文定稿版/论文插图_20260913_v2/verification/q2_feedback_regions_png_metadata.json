@@ -1,0 +1,76 @@
+{
+  "checks": [
+    {
+      "actual": "PNG",
+      "detail": "File format is compared with the explicit allow-list.",
+      "expected": [
+        "PNG"
+      ],
+      "name": "format",
+      "status": "pass"
+    },
+    {
+      "actual": "RGB",
+      "detail": "Vector containers generally do not expose one image mode.",
+      "expected": [
+        "RGB"
+      ],
+      "name": "mode",
+      "status": "pass"
+    },
+    {
+      "actual": 599.8307692307692,
+      "detail": "DPI basis: effective at target width. Metadata DPI is not a quality measure; effective DPI depends on final physical size.",
+      "expected": {
+        "max": null,
+        "min": 599.7
+      },
+      "name": "dpi",
+      "status": "pass"
+    },
+    {
+      "actual": false,
+      "detail": "Alpha is detected for raster modes/transparency metadata. Vector transparency requires rendered-content inspection.",
+      "expected": "forbid",
+      "name": "alpha",
+      "status": "pass"
+    }
+  ],
+  "input": {
+    "name": "q2_feedback_regions.png",
+    "path": "/Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/正式题目工作区/B题/第二问建模/论文定稿版/论文插图_20260913_v2/figures/q2_feedback_regions.png",
+    "size_bytes": 267609,
+    "suffix": ".png"
+  },
+  "metadata": {
+    "bands": [
+      "R",
+      "G",
+      "B"
+    ],
+    "compression": null,
+    "dpi_x": 599.9988,
+    "dpi_y": 599.9988,
+    "exif_present": false,
+    "format": "PNG",
+    "frames": 1,
+    "has_alpha": false,
+    "height_mm_from_metadata": 59.986453306239945,
+    "height_px": 1417,
+    "icc_profile_bytes": 0,
+    "icc_profile_present": false,
+    "kind": "raster",
+    "mode": "RGB",
+    "pixel_count": 4350190,
+    "width_mm_from_metadata": 129.96359326051984,
+    "width_px": 3070
+  },
+  "notice": "This deterministic metadata screen checks only the supplied constraints. It does not verify visual quality, scientific integrity, accessibility, embedded-raster resolution in vector files, or journal compliance.",
+  "schema_version": "1.0",
+  "screening_summary": {
+    "fail": 0,
+    "pass": 4,
+    "unknown": 0,
+    "warning": 0
+  }
+}

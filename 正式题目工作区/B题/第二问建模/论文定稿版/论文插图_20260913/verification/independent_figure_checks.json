@@ -1,0 +1,30 @@
+{
+  "geometry": [
+    {
+      "theta_deg": 270,
+      "independent_sample_count": 32002,
+      "independent_radius_lower_m": 16.87228333649975,
+      "continuous_radius_upper_m": 16.87228333649976,
+      "gap_m": 1.0658141036401503e-14,
+      "max_sample_outside_m": 0.0,
+      "plotted_vertices": 4,
+      "completion_condition_confirmed": true
+    },
+    {
+      "theta_deg": 300,
+      "independent_sample_count": 32002,
+      "independent_radius_lower_m": 30.427280552377844,
+      "continuous_radius_upper_m": 30.42728055237793,
+      "gap_m": 8.526512829121202e-14,
+      "max_sample_outside_m": 3.552713678800501e-15,
+      "plotted_vertices": 4,
+      "completion_condition_confirmed": true
+    }
+  ],
+  "max_pdf_per_degree": 0.01315525880771343,
+  "positive_density_angle_range_deg": [
+    211.7868442291717,
+    325.1736802141675
+  ],
+  "plot_data_ranges_not_clipped": true
+}

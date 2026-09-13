@@ -82,10 +82,15 @@
 % 数学公式、表格与插图。
 \usepackage{amsmath,amssymb,mathtools,bm}
 \usepackage{graphicx}
-\graphicspath{{./}}
+\graphicspath{{./}{期望剩余半径_重新求解_20260913/figures/}}
 \usepackage{booktabs,tabularx,array,multirow}
 \usepackage[table]{xcolor}
 \usepackage{float}
+\usepackage{placeins}
+% 独立模型中允许两张插图同页，避免末页仅有一张浮动图。
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\textfraction}{0.04}
+\setcounter{topnumber}{3}
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{enumitem}

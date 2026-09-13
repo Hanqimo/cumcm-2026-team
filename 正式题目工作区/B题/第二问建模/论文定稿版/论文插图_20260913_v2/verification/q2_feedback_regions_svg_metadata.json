@@ -1,0 +1,51 @@
+{
+  "checks": [
+    {
+      "actual": "SVG",
+      "detail": "File format is compared with the explicit allow-list.",
+      "expected": [
+        "SVG"
+      ],
+      "name": "format",
+      "status": "pass"
+    }
+  ],
+  "input": {
+    "name": "q2_feedback_regions.svg",
+    "path": "/Users/hanqimo/University/Junior/CUMCM/cumcm-2026-team/正式题目工作区/B题/第二问建模/论文定稿版/论文插图_20260913_v2/figures/q2_feedback_regions.svg",
+    "size_bytes": 63336,
+    "suffix": ".svg"
+  },
+  "metadata": {
+    "dpi_x": null,
+    "dpi_y": null,
+    "element_count": 393,
+    "external_image_count": 0,
+    "format": "SVG",
+    "height_mm": 59.99999994444444,
+    "height_raw": "170.07874pt",
+    "height_unit": "pt",
+    "image_element_count": 0,
+    "kind": "vector",
+    "mode": null,
+    "note": "SVG is resolution-independent except for embedded raster images; external image resources were counted but not fetched.",
+    "text_element_count": 0,
+    "viewbox": [
+      0.0,
+      0.0,
+      368.503937,
+      170.07874
+    ],
+    "width_mm": 129.9999999972222,
+    "width_raw": "368.503937pt",
+    "width_unit": "pt"
+  },
+  "notice": "This deterministic metadata screen checks only the supplied constraints. It does not verify visual quality, scientific integrity, accessibility, embedded-raster resolution in vector files, or journal compliance.",
+  "schema_version": "1.0",
+  "screening_summary": {
+    "fail": 0,
+    "pass": 1,
+    "unknown": 0,
+    "warning": 0
+  }
+}
