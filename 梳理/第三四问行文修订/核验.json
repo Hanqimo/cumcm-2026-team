@@ -1,10 +1,9 @@
 {
-  "base_commit": "361677468e1ec02dc879f8d97896fd848df5bc81",
+  "base_commit": "429ac588f1064228416d9c387081972c1a42c4c3",
   "date": "2026-09-13",
-  "scope": "Q3/Q4 strategy names and prose; existing models and experiments retained",
-  "q1_q2_body_unchanged": true,
+  "scope": "全文语言润色及作者确认的第三、四问摘要；模型与实验保留",
+  "q1_q2_body_unchanged": false,
   "new_experiments": 0,
-  "paragraphs_rewritten": 38,
   "strategy_names": {
     "v4": "局部协同",
     "v6": "全程协同",
@@ -20,8 +19,8 @@
       "equations_unchanged": true,
       "table_numbers_unchanged": true,
       "legacy_codes_in_pdf": false,
-      "source_sha256": "625fce33492b68d4b9b5ac91fd8f02230aa2983fab5347d5d6331b3e0dde5e80",
-      "pdf_sha256": "d3f36029c7f7ac33498ecbd7582c03a96cc408cea80d58e64eb87a730bfaa745"
+      "source_sha256": "f510e42f02c8d906fc592d98b88ec1b1ddffb3a748427e6dd98ac737c8d1dcde",
+      "pdf_sha256": "31f6714466bad97c3d596dd4e20a0a3eb38d7c892de4425959ce1b497f970f70"
     },
     "4": {
       "pages": 7,
@@ -29,13 +28,12 @@
       "equations_unchanged": true,
       "table_numbers_unchanged": true,
       "legacy_codes_in_pdf": false,
-      "source_sha256": "3398087f89ffa9ae8096c66db28660279d6f2dea14808925d97c8415c3081ecb",
-      "pdf_sha256": "4ff67d7a91ea1337b09975046a490848b5037d23a60072f2c1f47bf4bcefdc58"
+      "source_sha256": "132ab738231003d8f2f0932cdeb125fde2c075e9a0f21405ad2058b38a5368b9",
+      "pdf_sha256": "304dcb8ea14fdbc3de8cabe28f896603e290c760200346099556b8ca2ac3b35d"
     }
   },
   "full_pages": 29,
-  "full_pdf_sha256": "47682d5bd578defda1dd4167b4f31127e9d25c528470c5b599dc6faede51f6e4",
-  "frozen_code_and_evidence_files_unchanged": 101,
+  "full_pdf_sha256": "85bd883d609cb65bfa5afd9bdf9fe3d2a6d1665af3bddf619ae739fad0465f5d",
   "reference_sources": [
     {
       "paper": "2022 B035",
@@ -53,12 +51,12 @@
       "application": "具体边界检验后直接解释覆盖图、路线长度与题意；本次重看原PDF页面。"
     }
   ],
-  "visual_qa": "Rendered all pages; inspected both chapters and all renamed figures; no missing glyphs or unresolved references.",
-  "latest_integration_base": "4cf94609b932eaa022966b7f9bbec66a33d459e1",
+  "visual_qa": "All 42 pages rendered; visual inspection recorded in publication note.",
+  "latest_integration_base": "429ac588f1064228416d9c387081972c1a42c4c3",
   "abstract_included": true,
-  "abstract_changes": "Only Q3/Q4 strategy names synchronized; latest teammate abstract otherwise retained",
+  "abstract_changes": "第三问合并80场并报告近似加权均值；第四问按证据核定为30场",
   "source_hash_encoding": "UTF-8 with LF newlines",
-  "latest_adjustment": "模拟器演练测试术语统一；7.6.2与7.6.3换序；删除指定两段文字",
+  "latest_adjustment": "全文语言润色及最新版摘要同步",
   "q3_subsection_order": [
     "7.6.1 模拟器演练测试比较",
     "7.6.2 同场景路线比较",
